@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="CoverLip.com:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="coverlip-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="CoverLip.com:war exploded" />
+    </root>
+  </artifact>
+</component>
