@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="coverlip@localhost" uuid="dd719508-4e1c-499b-a5b3-4dae52bc158b">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <introspection-schemas>*:coverlip</introspection-schemas>
+    </data-source>
+  </component>
+</project>
