@@ -3,7 +3,7 @@ package com.clteam.dataobject;
 import javax.persistence.*;
 
 /**
- * Created by Dell on 20-Apr-17.
+ * Created by Dell on 28-Apr-17.
  */
 @Entity
 @Table(name = "top_lip_sync_idol")
@@ -12,11 +12,8 @@ public class TopLipSyncIdol {
     private int accountId;
     private int topId;
     private int score;
-
-    private Account account;
-
-    private TopList topList;
-
+    private Account accountByAccountId;
+    private TopList topListByTopId;
 
     @Id
     @Column(name = "id")
@@ -68,7 +65,9 @@ public class TopLipSyncIdol {
         if (id != that.id) return false;
         if (accountId != that.accountId) return false;
         if (topId != that.topId) return false;
-        return score == that.score;
+        if (score != that.score) return false;
+
+        return true;
     }
 
     @Override
@@ -80,23 +79,23 @@ public class TopLipSyncIdol {
         return result;
     }
 
-//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinColumn(name="account_id")
-//    public Account getAccount() {
-//        return account;
-//    }
-//
-//    public void setAccount(Account account) {
-//        this.account = account;
-//    }
-//
-//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinColumn(name="top_id")
-//    public TopList getTopList() {
-//        return topList;
-//    }
-//
-//    public void setTopList(TopList topList) {
-//        this.topList = topList;
-//    }
+    @ManyToOne
+    @JoinColumn(name = "account_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
+    public Account getAccountByAccountId() {
+        return accountByAccountId;
+    }
+
+    public void setAccountByAccountId(Account accountByAccountId) {
+        this.accountByAccountId = accountByAccountId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "top_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
+    public TopList getTopListByTopId() {
+        return topListByTopId;
+    }
+
+    public void setTopListByTopId(TopList topListByTopId) {
+        this.topListByTopId = topListByTopId;
+    }
 }

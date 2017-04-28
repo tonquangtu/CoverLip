@@ -3,7 +3,7 @@ package com.clteam.dataobject;
 import javax.persistence.*;
 
 /**
- * Created by Dell on 20-Apr-17.
+ * Created by Dell on 28-Apr-17.
  */
 @Entity
 @Table(name = "admin_info")
@@ -13,8 +13,7 @@ public class AdminInfo {
     private String profileImage;
     private String phoneNumber;
     private String address;
-
-    private Account account;
+    private Account accountByAccountId;
 
     @Id
     @Column(name = "id")
@@ -37,7 +36,7 @@ public class AdminInfo {
     }
 
     @Basic
-    @Column(name = "profile_image")
+    @Column(name = "profile_image", columnDefinition = "TEXT")
     public String getProfileImage() {
         return profileImage;
     }
@@ -57,7 +56,7 @@ public class AdminInfo {
     }
 
     @Basic
-    @Column(name = "address", columnDefinition="TEXT")
+    @Column(name = "address", columnDefinition = "TEXT")
     public String getAddress() {
         return address;
     }
@@ -79,7 +78,9 @@ public class AdminInfo {
             return false;
         if (phoneNumber != null ? !phoneNumber.equals(adminInfo.phoneNumber) : adminInfo.phoneNumber != null)
             return false;
-        return address != null ? address.equals(adminInfo.address) : adminInfo.address == null;
+        if (address != null ? !address.equals(adminInfo.address) : adminInfo.address != null) return false;
+
+        return true;
     }
 
     @Override
@@ -92,13 +93,13 @@ public class AdminInfo {
         return result;
     }
 
-//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinColumn(name="account_id")
-//    public Account getAccount() {
-//        return account;
-//    }
+    @ManyToOne
+    @JoinColumn(name = "account_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public Account getAccountByAccountId() {
+        return accountByAccountId;
+    }
 
-    public void setAccount(Account account) {
-        this.account = account;
+    public void setAccountByAccountId(Account accountByAccountId) {
+        this.accountByAccountId = accountByAccountId;
     }
 }
