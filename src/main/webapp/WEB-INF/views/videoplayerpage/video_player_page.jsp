@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:width="http://www.w3.org/1999/xhtml">
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<html>
 <head>
     <meta charset="UTF-8">
     <title>I'm Losing You</title>
     <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
     <meta title="I'm Losing You">
 
+    <%@ include file="../common/common_lib.jsp" %>
     <!--Play One Video Page Script-->
     <script src="../../../resources/scripts/video_player_script.js"></script>
 
@@ -17,20 +21,6 @@
     <link rel="stylesheet" href="../../../resources/styles/main_header_style.css">
 
     <link rel="stylesheet" href="../../../resources/styles/main_footer_style.css">
-
-    <!--JQuery-->
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-
-    <!--Bootstrap-->
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-    <!--Font-->
-     <script src="https://use.fontawesome.com/479981a8a3.js"></script>
-
-    <!--W3 school include module-->
-    <script src="https://www.w3schools.com/lib/w3data.js"></script>
 
     <!--Lib video player-->
     <link rel="stylesheet" href="../../../resources/libs/videoplayer/mediaelementplayer.min.css">
@@ -50,9 +40,10 @@
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script src="../../../resources/libs/facebooksdk/facebook_sdk_script.js"></script>
-<!---------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------..---------------------->
 
-<div w3-include-html="../common/mainheader/main_header.html"></div>
+<%@include file="../common/main_header.jsp"%>
+
 <div class="content container">
 
     <div style="height:30px; width: 100%"></div>
@@ -279,9 +270,11 @@
 
 </div>
 
-<div w3-include-html="../common/mainfooter/main_footer.html"></div>
+<%--<div w3-include-html="../common/main_footer.jsp"></div>--%>
 
-<script type="text/javascript"> w3IncludeHTML();</script>
+<%--<script type="text/javascript"> w3IncludeHTML();</script>--%>
+
+<%@include file="../common/main_footer.jsp"%>
 <script src="../../../resources/libs/videoplayer/mediaelement-and-player.js"></script>
 <script src="../../../resources/libs/videoplayer/video_controller.js"></script>
 </body>

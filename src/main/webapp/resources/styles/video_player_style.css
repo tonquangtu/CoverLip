@@ -54,7 +54,7 @@ a:hover {
 
 .video-detail-box {
 
-    margin-top: -5px;
+    margin-top: 10px;
     padding: 0 8px;
     width: 100%;
 }
@@ -194,7 +194,7 @@ a:hover {
     text-rendering: optimizeLegibility;
     font-size: 13px;
     letter-spacing: 0.5px;
-    display: flex;
+    /*display: flex;*/
     align-items: center;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
@@ -267,6 +267,7 @@ a:hover {
 .list-suggestion-video {
     list-style: none;
     width: 100%;
+    margin-top: 10px;
 }
 
 .suggestion-video-item {
