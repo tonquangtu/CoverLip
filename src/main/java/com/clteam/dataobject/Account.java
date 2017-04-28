@@ -1,15 +1,15 @@
 package com.clteam.dataobject;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by Dell on 20-Apr-17.
  */
 @Entity
+@Table(name="account")
 public class Account {
     private int id;
     private String username;
@@ -18,6 +18,11 @@ public class Account {
     private byte role;
     private byte state;
     private Timestamp dateJoin;
+
+    private Set<IdolFollowing> idols = new HashSet<IdolFollowing>(0);
+
+    private Set<IdolFollowing> fans = new HashSet<IdolFollowing>(0);
+
 
     @Id
     @Column(name = "id")
@@ -102,9 +107,7 @@ public class Account {
         if (username != null ? !username.equals(account.username) : account.username != null) return false;
         if (password != null ? !password.equals(account.password) : account.password != null) return false;
         if (fullname != null ? !fullname.equals(account.fullname) : account.fullname != null) return false;
-        if (dateJoin != null ? !dateJoin.equals(account.dateJoin) : account.dateJoin != null) return false;
-
-        return true;
+        return dateJoin != null ? dateJoin.equals(account.dateJoin) : account.dateJoin == null;
     }
 
     @Override
@@ -118,4 +121,34 @@ public class Account {
         result = 31 * result + (dateJoin != null ? dateJoin.hashCode() : 0);
         return result;
     }
+
+
+//    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinTable(
+//            name = "idol_following",
+//            joinColumns = {@JoinColumn(name = "id")},
+//            inverseJoinColumns = {@JoinColumn(name = "account_id")})
+//    public Set<IdolFollowing> getIdols() {
+//        return idols;
+//    }
+
+    public void setIdols(Set<IdolFollowing> idols) {
+        this.idols = idols;
+    }
+
+//    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinTable(
+//            name = "idol_following",
+//            joinColumns = {@JoinColumn(name = "id")},
+//            inverseJoinColumns = {@JoinColumn(name = "followed_account_id")})
+//    public Set<IdolFollowing> getFans() {
+//        return fans;
+//    }
+
+    public void setFans(Set<IdolFollowing> fans) {
+        this.fans = fans;
+    }
 }
+
+
+

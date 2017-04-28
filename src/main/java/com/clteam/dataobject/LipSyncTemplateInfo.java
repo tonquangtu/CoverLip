@@ -6,12 +6,14 @@ import javax.persistence.*;
  * Created by Dell on 20-Apr-17.
  */
 @Entity
-@Table(name = "lip_sync_template_info", schema = "coverlip", catalog = "")
+@Table(name = "lip_sync_template_info")
 public class LipSyncTemplateInfo {
     private int id;
     private int videoId;
     private String lipsyncTemplateName;
     private int numLipsync;
+
+    private VideoInfo videoInfo;
 
     @Id
     @Column(name = "id")
@@ -63,10 +65,7 @@ public class LipSyncTemplateInfo {
         if (id != that.id) return false;
         if (videoId != that.videoId) return false;
         if (numLipsync != that.numLipsync) return false;
-        if (lipsyncTemplateName != null ? !lipsyncTemplateName.equals(that.lipsyncTemplateName) : that.lipsyncTemplateName != null)
-            return false;
-
-        return true;
+        return lipsyncTemplateName != null ? lipsyncTemplateName.equals(that.lipsyncTemplateName) : that.lipsyncTemplateName == null;
     }
 
     @Override
@@ -77,4 +76,14 @@ public class LipSyncTemplateInfo {
         result = 31 * result + numLipsync;
         return result;
     }
+
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinColumn(name="video_id")
+//    public VideoInfo getVideoInfo() {
+//        return videoInfo;
+//    }
+//
+//    public void setVideoInfo(VideoInfo videoInfo) {
+//        this.videoInfo = videoInfo;
+//    }
 }
