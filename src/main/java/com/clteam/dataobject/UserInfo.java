@@ -7,7 +7,7 @@ import java.sql.Timestamp;
  * Created by Dell on 20-Apr-17.
  */
 @Entity
-@Table(name = "user_info", schema = "coverlip", catalog = "")
+@Table(name = "user_info")
 public class UserInfo {
     private int id;
     private int accountId;
@@ -20,6 +20,8 @@ public class UserInfo {
     private String description;
     private String coverImage;
     private String avatarThumbnail;
+
+    private Account account;
 
     @Id
     @Column(name = "id")
@@ -92,7 +94,7 @@ public class UserInfo {
     }
 
     @Basic
-    @Column(name = "address")
+    @Column(name = "address", columnDefinition="TEXT")
     public String getAddress() {
         return address;
     }
@@ -102,7 +104,7 @@ public class UserInfo {
     }
 
     @Basic
-    @Column(name = "description")
+    @Column(name = "description", columnDefinition="TEXT")
     public String getDescription() {
         return description;
     }
@@ -150,10 +152,7 @@ public class UserInfo {
         if (description != null ? !description.equals(userInfo.description) : userInfo.description != null)
             return false;
         if (coverImage != null ? !coverImage.equals(userInfo.coverImage) : userInfo.coverImage != null) return false;
-        if (avatarThumbnail != null ? !avatarThumbnail.equals(userInfo.avatarThumbnail) : userInfo.avatarThumbnail != null)
-            return false;
-
-        return true;
+        return avatarThumbnail != null ? avatarThumbnail.equals(userInfo.avatarThumbnail) : userInfo.avatarThumbnail == null;
     }
 
     @Override
@@ -171,4 +170,15 @@ public class UserInfo {
         result = 31 * result + (avatarThumbnail != null ? avatarThumbnail.hashCode() : 0);
         return result;
     }
+//
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinColumn(name="account_id")
+//    public Account getAccount() {
+//        return account;
+//    }
+//
+//    public void setAccount(Account account) {
+//        this.account = account;
+//    }
+
 }

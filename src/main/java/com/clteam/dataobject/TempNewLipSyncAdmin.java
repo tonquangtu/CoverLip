@@ -6,10 +6,12 @@ import javax.persistence.*;
  * Created by Dell on 20-Apr-17.
  */
 @Entity
-@Table(name = "temp_new_lip_sync_admin", schema = "coverlip", catalog = "")
+@Table(name = "temp_new_lip_sync_admin")
 public class TempNewLipSyncAdmin {
     private int id;
     private int videoId;
+
+    private VideoInfo videoInfo;
 
     @Id
     @Column(name = "id")
@@ -39,9 +41,7 @@ public class TempNewLipSyncAdmin {
         TempNewLipSyncAdmin that = (TempNewLipSyncAdmin) o;
 
         if (id != that.id) return false;
-        if (videoId != that.videoId) return false;
-
-        return true;
+        return videoId == that.videoId;
     }
 
     @Override
@@ -50,4 +50,15 @@ public class TempNewLipSyncAdmin {
         result = 31 * result + videoId;
         return result;
     }
+
+
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinColumn(name="video_id")
+//    public VideoInfo getVideoInfo() {
+//        return videoInfo;
+//    }
+//
+//    public void setVideoInfo(VideoInfo videoInfo) {
+//        this.videoInfo = videoInfo;
+//    }
 }

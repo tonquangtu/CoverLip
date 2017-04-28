@@ -7,13 +7,17 @@ import java.sql.Timestamp;
  * Created by Dell on 20-Apr-17.
  */
 @Entity
-@Table(name = "cover_of_playlist", schema = "coverlip", catalog = "")
+@Table(name = "cover_of_playlist")
 public class CoverOfPlaylist {
     private int id;
     private int videoId;
     private int playlistId;
     private Timestamp timeAdd;
     private int priority;
+
+    private PlaylistInfo playlistInfo;
+
+    private VideoInfo videoInfo;
 
     @Id
     @Column(name = "id")
@@ -76,9 +80,7 @@ public class CoverOfPlaylist {
         if (videoId != that.videoId) return false;
         if (playlistId != that.playlistId) return false;
         if (priority != that.priority) return false;
-        if (timeAdd != null ? !timeAdd.equals(that.timeAdd) : that.timeAdd != null) return false;
-
-        return true;
+        return timeAdd != null ? timeAdd.equals(that.timeAdd) : that.timeAdd == null;
     }
 
     @Override
@@ -90,4 +92,24 @@ public class CoverOfPlaylist {
         result = 31 * result + priority;
         return result;
     }
+
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinColumn(name="playlist_id")
+//    public PlaylistInfo getPlaylistInfo() {
+//        return playlistInfo;
+//    }
+//
+//    public void setPlaylistInfo(PlaylistInfo playlistInfo) {
+//        this.playlistInfo = playlistInfo;
+//    }
+//
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinColumn(name="video_id")
+//    public VideoInfo getVideoInfo() {
+//        return videoInfo;
+//    }
+//
+//    public void setVideoInfo(VideoInfo videoInfo) {
+//        this.videoInfo = videoInfo;
+//    }
 }

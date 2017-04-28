@@ -7,7 +7,7 @@ import java.sql.Timestamp;
  * Created by Dell on 20-Apr-17.
  */
 @Entity
-@Table(name = "idol_following", schema = "coverlip", catalog = "")
+@Table(name = "idol_following")
 public class IdolFollowing {
     private int id;
     private int accountId;
@@ -64,10 +64,7 @@ public class IdolFollowing {
         if (id != that.id) return false;
         if (accountId != that.accountId) return false;
         if (followedAccountId != that.followedAccountId) return false;
-        if (timeStartFollow != null ? !timeStartFollow.equals(that.timeStartFollow) : that.timeStartFollow != null)
-            return false;
-
-        return true;
+        return timeStartFollow != null ? timeStartFollow.equals(that.timeStartFollow) : that.timeStartFollow == null;
     }
 
     @Override
@@ -78,4 +75,6 @@ public class IdolFollowing {
         result = 31 * result + (timeStartFollow != null ? timeStartFollow.hashCode() : 0);
         return result;
     }
+
+
 }
