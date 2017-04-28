@@ -3,9 +3,10 @@ package com.clteam.dataobject;
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.Collection;
 
 /**
- * Created by Dell on 20-Apr-17.
+ * Created by Dell on 28-Apr-17.
  */
 @Entity
 @Table(name = "top_list")
@@ -14,6 +15,9 @@ public class TopList {
     private Timestamp timeTopStart;
     private Timestamp timeEndStart;
     private Date topDescription;
+    private Collection<CoverTop> coverTopsById;
+    private Collection<TopCoverIdol> topCoverIdolsById;
+    private Collection<TopLipSyncIdol> topLipSyncIdolsById;
 
     @Id
     @Column(name = "id")
@@ -67,7 +71,10 @@ public class TopList {
             return false;
         if (timeEndStart != null ? !timeEndStart.equals(topList.timeEndStart) : topList.timeEndStart != null)
             return false;
-        return topDescription != null ? topDescription.equals(topList.topDescription) : topList.topDescription == null;
+        if (topDescription != null ? !topDescription.equals(topList.topDescription) : topList.topDescription != null)
+            return false;
+
+        return true;
     }
 
     @Override
@@ -77,5 +84,32 @@ public class TopList {
         result = 31 * result + (timeEndStart != null ? timeEndStart.hashCode() : 0);
         result = 31 * result + (topDescription != null ? topDescription.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "topListByTopId")
+    public Collection<CoverTop> getCoverTopsById() {
+        return coverTopsById;
+    }
+
+    public void setCoverTopsById(Collection<CoverTop> coverTopsById) {
+        this.coverTopsById = coverTopsById;
+    }
+
+    @OneToMany(mappedBy = "topListByTopId")
+    public Collection<TopCoverIdol> getTopCoverIdolsById() {
+        return topCoverIdolsById;
+    }
+
+    public void setTopCoverIdolsById(Collection<TopCoverIdol> topCoverIdolsById) {
+        this.topCoverIdolsById = topCoverIdolsById;
+    }
+
+    @OneToMany(mappedBy = "topListByTopId")
+    public Collection<TopLipSyncIdol> getTopLipSyncIdolsById() {
+        return topLipSyncIdolsById;
+    }
+
+    public void setTopLipSyncIdolsById(Collection<TopLipSyncIdol> topLipSyncIdolsById) {
+        this.topLipSyncIdolsById = topLipSyncIdolsById;
     }
 }

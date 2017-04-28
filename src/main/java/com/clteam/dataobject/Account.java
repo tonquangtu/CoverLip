@@ -2,14 +2,13 @@ package com.clteam.dataobject;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Collection;
 
 /**
- * Created by Dell on 20-Apr-17.
+ * Created by Dell on 28-Apr-17.
  */
 @Entity
-@Table(name="account")
+@Table(name = "account")
 public class Account {
     private int id;
     private String username;
@@ -18,11 +17,14 @@ public class Account {
     private byte role;
     private byte state;
     private Timestamp dateJoin;
-
-    private Set<IdolFollowing> idols = new HashSet<IdolFollowing>(0);
-
-    private Set<IdolFollowing> fans = new HashSet<IdolFollowing>(0);
-
+    private Collection<AdminInfo> adminInfosById;
+    private Collection<IdolFollowing> idolFollowingsById;
+    private Collection<IdolFollowing> idolFollowingsById_0;
+    private Collection<PlaylistInfo> playlistInfosById;
+    private Collection<TopCoverIdol> topCoverIdolsById;
+    private Collection<TopLipSyncIdol> topLipSyncIdolsById;
+    private Collection<UserInfo> userInfosById;
+    private Collection<VideoInfo> videoInfosById;
 
     @Id
     @Column(name = "id")
@@ -107,7 +109,9 @@ public class Account {
         if (username != null ? !username.equals(account.username) : account.username != null) return false;
         if (password != null ? !password.equals(account.password) : account.password != null) return false;
         if (fullname != null ? !fullname.equals(account.fullname) : account.fullname != null) return false;
-        return dateJoin != null ? dateJoin.equals(account.dateJoin) : account.dateJoin == null;
+        if (dateJoin != null ? !dateJoin.equals(account.dateJoin) : account.dateJoin != null) return false;
+
+        return true;
     }
 
     @Override
@@ -122,33 +126,83 @@ public class Account {
         return result;
     }
 
-
-//    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinTable(
-//            name = "idol_following",
-//            joinColumns = {@JoinColumn(name = "id")},
-//            inverseJoinColumns = {@JoinColumn(name = "account_id")})
-//    public Set<IdolFollowing> getIdols() {
-//        return idols;
-//    }
-
-    public void setIdols(Set<IdolFollowing> idols) {
-        this.idols = idols;
+    @OneToMany(mappedBy = "accountByAccountId")
+    public Collection<AdminInfo> getAdminInfosById() {
+        return adminInfosById;
     }
 
-//    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinTable(
-//            name = "idol_following",
-//            joinColumns = {@JoinColumn(name = "id")},
-//            inverseJoinColumns = {@JoinColumn(name = "followed_account_id")})
-//    public Set<IdolFollowing> getFans() {
-//        return fans;
-//    }
+    public void setAdminInfosById(Collection<AdminInfo> adminInfosById) {
+        this.adminInfosById = adminInfosById;
+    }
 
-    public void setFans(Set<IdolFollowing> fans) {
-        this.fans = fans;
+    /**
+     * Get Idols
+     * @return
+     */
+    @OneToMany(mappedBy = "accountByAccountId")
+    public Collection<IdolFollowing> getIdolFollowingsById() {
+        return idolFollowingsById;
+    }
+
+    public void setIdolFollowingsById(Collection<IdolFollowing> idolFollowingsById) {
+        this.idolFollowingsById = idolFollowingsById;
+    }
+
+    /**
+     * Get Fans
+     * @return
+     */
+    @OneToMany(mappedBy = "accountByFollowedAccountId")
+    public Collection<IdolFollowing> getIdolFollowingsById_0() {
+        return idolFollowingsById_0;
+    }
+
+    public void setIdolFollowingsById_0(Collection<IdolFollowing> idolFollowingsById_0) {
+        this.idolFollowingsById_0 = idolFollowingsById_0;
+    }
+
+    @OneToMany(mappedBy = "accountByAccountId")
+    public Collection<PlaylistInfo> getPlaylistInfosById() {
+        return playlistInfosById;
+    }
+
+    public void setPlaylistInfosById(Collection<PlaylistInfo> playlistInfosById) {
+        this.playlistInfosById = playlistInfosById;
+    }
+
+    @OneToMany(mappedBy = "accountByAccountId")
+    public Collection<TopCoverIdol> getTopCoverIdolsById() {
+        return topCoverIdolsById;
+    }
+
+    public void setTopCoverIdolsById(Collection<TopCoverIdol> topCoverIdolsById) {
+        this.topCoverIdolsById = topCoverIdolsById;
+    }
+
+    @OneToMany(mappedBy = "accountByAccountId")
+    public Collection<TopLipSyncIdol> getTopLipSyncIdolsById() {
+        return topLipSyncIdolsById;
+    }
+
+    public void setTopLipSyncIdolsById(Collection<TopLipSyncIdol> topLipSyncIdolsById) {
+        this.topLipSyncIdolsById = topLipSyncIdolsById;
+    }
+
+    @OneToMany(mappedBy = "accountByAccountId")
+    public Collection<UserInfo> getUserInfosById() {
+        return userInfosById;
+    }
+
+    public void setUserInfosById(Collection<UserInfo> userInfosById) {
+        this.userInfosById = userInfosById;
+    }
+
+    @OneToMany(mappedBy = "accountByAccountId")
+    public Collection<VideoInfo> getVideoInfosById() {
+        return videoInfosById;
+    }
+
+    public void setVideoInfosById(Collection<VideoInfo> videoInfosById) {
+        this.videoInfosById = videoInfosById;
     }
 }
-
-
-
