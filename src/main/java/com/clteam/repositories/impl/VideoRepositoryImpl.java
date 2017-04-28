@@ -1,18 +1,19 @@
 package com.clteam.repositories.impl;
 
-import com.clteam.dataobject.Account;
 import com.clteam.dataobject.VideoInfo;
 import com.clteam.repositories.api.VideoRepository;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Set;
+import java.util.List;
 
 /**
  * Created by nguyenthanhtung on 27/04/2017.
  */
 @Repository
+@Transactional
 public class VideoRepositoryImpl implements VideoRepository {
 
     @Autowired
@@ -33,7 +34,7 @@ public class VideoRepositoryImpl implements VideoRepository {
         return false;
     }
 
-    public Set<Account> getAllVideo() {
+    public List<VideoInfo> getAllVideo() {
         return null;
     }
 }

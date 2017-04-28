@@ -2,7 +2,7 @@ package com.clteam.repositories.api;
 
 import com.clteam.dataobject.PlaylistInfo;
 
-import java.util.Set;
+import java.util.List;
 
 /**
  * Created by Dell on 28-Apr-17.
@@ -17,5 +17,5 @@ public interface PlaylistRepository {
 
     boolean insertPlaylist(PlaylistInfo playlist);
 
-    Set<PlaylistInfo> getAllPlaylist();
+    List<PlaylistInfo> getAllPlaylist();
 }
