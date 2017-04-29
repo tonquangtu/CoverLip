@@ -4,16 +4,18 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by Dell on 20-Apr-17.
+ * Created by Dell on 28-Apr-17.
  */
 @Entity
-@Table(name = "cover_of_playlist", schema = "coverlip", catalog = "")
+@Table(name = "cover_of_playlist")
 public class CoverOfPlaylist {
     private int id;
     private int videoId;
     private int playlistId;
     private Timestamp timeAdd;
     private int priority;
+    private VideoInfo videoInfoByVideoId;
+    private PlaylistInfo playlistInfoByPlaylistId;
 
     @Id
     @Column(name = "id")
@@ -89,5 +91,25 @@ public class CoverOfPlaylist {
         result = 31 * result + (timeAdd != null ? timeAdd.hashCode() : 0);
         result = 31 * result + priority;
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public VideoInfo getVideoInfoByVideoId() {
+        return videoInfoByVideoId;
+    }
+
+    public void setVideoInfoByVideoId(VideoInfo videoInfoByVideoId) {
+        this.videoInfoByVideoId = videoInfoByVideoId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "playlist_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public PlaylistInfo getPlaylistInfoByPlaylistId() {
+        return playlistInfoByPlaylistId;
+    }
+
+    public void setPlaylistInfoByPlaylistId(PlaylistInfo playlistInfoByPlaylistId) {
+        this.playlistInfoByPlaylistId = playlistInfoByPlaylistId;
     }
 }

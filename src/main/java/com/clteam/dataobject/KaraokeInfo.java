@@ -3,14 +3,15 @@ package com.clteam.dataobject;
 import javax.persistence.*;
 
 /**
- * Created by Dell on 20-Apr-17.
+ * Created by Dell on 28-Apr-17.
  */
 @Entity
-@Table(name = "karaoke_info", schema = "coverlip", catalog = "")
+@Table(name = "karaoke_info")
 public class KaraokeInfo {
     private int id;
     private int videoId;
     private String karaokeName;
+    private VideoInfo videoInfoByVideoId;
 
     @Id
     @Column(name = "id")
@@ -62,5 +63,15 @@ public class KaraokeInfo {
         result = 31 * result + videoId;
         result = 31 * result + (karaokeName != null ? karaokeName.hashCode() : 0);
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public VideoInfo getVideoInfoByVideoId() {
+        return videoInfoByVideoId;
+    }
+
+    public void setVideoInfoByVideoId(VideoInfo videoInfoByVideoId) {
+        this.videoInfoByVideoId = videoInfoByVideoId;
     }
 }

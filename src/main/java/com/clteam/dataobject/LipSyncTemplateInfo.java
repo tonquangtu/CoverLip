@@ -1,17 +1,20 @@
 package com.clteam.dataobject;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 /**
- * Created by Dell on 20-Apr-17.
+ * Created by Dell on 28-Apr-17.
  */
 @Entity
-@Table(name = "lip_sync_template_info", schema = "coverlip", catalog = "")
+@Table(name = "lip_sync_template_info")
 public class LipSyncTemplateInfo {
     private int id;
     private int videoId;
     private String lipsyncTemplateName;
     private int numLipsync;
+    private Collection<LipSyncInfo> lipSyncInfosById;
+    private VideoInfo videoInfoByVideoId;
 
     @Id
     @Column(name = "id")
@@ -76,5 +79,24 @@ public class LipSyncTemplateInfo {
         result = 31 * result + (lipsyncTemplateName != null ? lipsyncTemplateName.hashCode() : 0);
         result = 31 * result + numLipsync;
         return result;
+    }
+
+    @OneToMany(mappedBy = "lipSyncTemplateInfoByLipSyncTemplateId")
+    public Collection<LipSyncInfo> getLipSyncInfosById() {
+        return lipSyncInfosById;
+    }
+
+    public void setLipSyncInfosById(Collection<LipSyncInfo> lipSyncInfosById) {
+        this.lipSyncInfosById = lipSyncInfosById;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
+    public VideoInfo getVideoInfoByVideoId() {
+        return videoInfoByVideoId;
+    }
+
+    public void setVideoInfoByVideoId(VideoInfo videoInfoByVideoId) {
+        this.videoInfoByVideoId = videoInfoByVideoId;
     }
 }

@@ -3,16 +3,17 @@ package com.clteam.dataobject;
 import javax.persistence.*;
 
 /**
- * Created by Dell on 20-Apr-17.
+ * Created by Dell on 28-Apr-17.
  */
 @Entity
-@Table(name = "temp_count_view_lip_sync", schema = "coverlip", catalog = "")
+@Table(name = "temp_count_view_lip_sync")
 public class TempCountViewLipSync {
     private int id;
     private int videoId;
     private int numView;
     private int week;
     private int year;
+    private VideoInfo videoInfoByVideoId;
 
     @Id
     @Column(name = "id")
@@ -88,5 +89,15 @@ public class TempCountViewLipSync {
         result = 31 * result + week;
         result = 31 * result + year;
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
+    public VideoInfo getVideoInfoByVideoId() {
+        return videoInfoByVideoId;
+    }
+
+    public void setVideoInfoByVideoId(VideoInfo videoInfoByVideoId) {
+        this.videoInfoByVideoId = videoInfoByVideoId;
     }
 }

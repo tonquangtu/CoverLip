@@ -2,12 +2,13 @@ package com.clteam.dataobject;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Collection;
 
 /**
- * Created by Dell on 20-Apr-17.
+ * Created by Dell on 28-Apr-17.
  */
 @Entity
-@Table(name = "playlist_info", schema = "coverlip", catalog = "")
+@Table(name = "playlist_info")
 public class PlaylistInfo {
     private int id;
     private int accountId;
@@ -18,6 +19,8 @@ public class PlaylistInfo {
     private Timestamp createDate;
     private byte state;
     private String description;
+    private Collection<CoverOfPlaylist> coverOfPlaylistsById;
+    private Account accountByAccountId;
 
     @Id
     @Column(name = "id")
@@ -50,7 +53,7 @@ public class PlaylistInfo {
     }
 
     @Basic
-    @Column(name = "playlist_thumbnail_link")
+    @Column(name = "playlist_thumbnail_link", columnDefinition = "TEXT")
     public String getPlaylistThumbnailLink() {
         return playlistThumbnailLink;
     }
@@ -100,7 +103,7 @@ public class PlaylistInfo {
     }
 
     @Basic
-    @Column(name = "description")
+    @Column(name = "description", columnDefinition = "TEXT")
     public String getDescription() {
         return description;
     }
@@ -142,5 +145,24 @@ public class PlaylistInfo {
         result = 31 * result + (int) state;
         result = 31 * result + (description != null ? description.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "playlistInfoByPlaylistId")
+    public Collection<CoverOfPlaylist> getCoverOfPlaylistsById() {
+        return coverOfPlaylistsById;
+    }
+
+    public void setCoverOfPlaylistsById(Collection<CoverOfPlaylist> coverOfPlaylistsById) {
+        this.coverOfPlaylistsById = coverOfPlaylistsById;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "account_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
+    public Account getAccountByAccountId() {
+        return accountByAccountId;
+    }
+
+    public void setAccountByAccountId(Account accountByAccountId) {
+        this.accountByAccountId = accountByAccountId;
     }
 }

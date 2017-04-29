@@ -3,15 +3,17 @@ package com.clteam.dataobject;
 import javax.persistence.*;
 
 /**
- * Created by Dell on 20-Apr-17.
+ * Created by Dell on 28-Apr-17.
  */
 @Entity
-@Table(name = "top_lip_sync_idol", schema = "coverlip", catalog = "")
+@Table(name = "top_lip_sync_idol")
 public class TopLipSyncIdol {
     private int id;
     private int accountId;
     private int topId;
     private int score;
+    private Account accountByAccountId;
+    private TopList topListByTopId;
 
     @Id
     @Column(name = "id")
@@ -75,5 +77,25 @@ public class TopLipSyncIdol {
         result = 31 * result + topId;
         result = 31 * result + score;
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "account_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
+    public Account getAccountByAccountId() {
+        return accountByAccountId;
+    }
+
+    public void setAccountByAccountId(Account accountByAccountId) {
+        this.accountByAccountId = accountByAccountId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "top_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
+    public TopList getTopListByTopId() {
+        return topListByTopId;
+    }
+
+    public void setTopListByTopId(TopList topListByTopId) {
+        this.topListByTopId = topListByTopId;
     }
 }

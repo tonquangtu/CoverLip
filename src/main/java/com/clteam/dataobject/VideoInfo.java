@@ -3,17 +3,18 @@ package com.clteam.dataobject;
 import javax.persistence.*;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.util.Collection;
 
 /**
- * Created by Dell on 20-Apr-17.
+ * Created by Dell on 28-Apr-17.
  */
 @Entity
-@Table(name = "video_info", schema = "coverlip", catalog = "")
+@Table(name = "video_info")
 public class VideoInfo {
     private int id;
     private int accountId;
     private String videoLink;
-    private Integer videoThumbnailLink;
+    private String videoThumbnailLink;
     private Time duration;
     private Timestamp createDate;
     private int numView;
@@ -21,6 +22,21 @@ public class VideoInfo {
     private int numComment;
     private byte state;
     private String description;
+    private Collection<CoverInfo> coverInfosById;
+    private Collection<CoverOfPlaylist> coverOfPlaylistsById;
+    private Collection<CoverTop> coverTopsById;
+    private Collection<HotCover> hotCoversById;
+    private Collection<HotLipSync> hotLipSyncsById;
+    private Collection<KaraokeInfo> karaokeInfosById;
+    private Collection<LipSyncInfo> lipSyncInfosById;
+    private Collection<LipSyncTemplateInfo> lipSyncTemplateInfosById;
+    private Collection<NewCover> newCoversById;
+    private Collection<NewLipsync> newLipsyncsById;
+    private Collection<TempCountViewCover> tempCountViewCoversById;
+    private Collection<TempCountViewLipSync> tempCountViewLipSyncsById;
+    private Collection<TempNewCoverAdmin> tempNewCoverAdminsById;
+    private Collection<TempNewLipSyncAdmin> tempNewLipSyncAdminsById;
+    private Account accountByAccountId;
 
     @Id
     @Column(name = "id")
@@ -43,7 +59,7 @@ public class VideoInfo {
     }
 
     @Basic
-    @Column(name = "video_link")
+    @Column(name = "video_link", columnDefinition = "TEXT")
     public String getVideoLink() {
         return videoLink;
     }
@@ -53,12 +69,12 @@ public class VideoInfo {
     }
 
     @Basic
-    @Column(name = "video_thumbnail_link")
-    public Integer getVideoThumbnailLink() {
+    @Column(name = "video_thumbnail_link", columnDefinition = "TEXT")
+    public String getVideoThumbnailLink() {
         return videoThumbnailLink;
     }
 
-    public void setVideoThumbnailLink(Integer videoThumbnailLink) {
+    public void setVideoThumbnailLink(String videoThumbnailLink) {
         this.videoThumbnailLink = videoThumbnailLink;
     }
 
@@ -123,7 +139,7 @@ public class VideoInfo {
     }
 
     @Basic
-    @Column(name = "description")
+    @Column(name = "description", columnDefinition = "TEXT")
     public String getDescription() {
         return description;
     }
@@ -170,5 +186,141 @@ public class VideoInfo {
         result = 31 * result + (int) state;
         result = 31 * result + (description != null ? description.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "videoInfoByVideoId")
+    public Collection<CoverInfo> getCoverInfosById() {
+        return coverInfosById;
+    }
+
+    public void setCoverInfosById(Collection<CoverInfo> coverInfosById) {
+        this.coverInfosById = coverInfosById;
+    }
+
+    @OneToMany(mappedBy = "videoInfoByVideoId")
+    public Collection<CoverOfPlaylist> getCoverOfPlaylistsById() {
+        return coverOfPlaylistsById;
+    }
+
+    public void setCoverOfPlaylistsById(Collection<CoverOfPlaylist> coverOfPlaylistsById) {
+        this.coverOfPlaylistsById = coverOfPlaylistsById;
+    }
+
+    @OneToMany(mappedBy = "videoInfoByVideoId")
+    public Collection<CoverTop> getCoverTopsById() {
+        return coverTopsById;
+    }
+
+    public void setCoverTopsById(Collection<CoverTop> coverTopsById) {
+        this.coverTopsById = coverTopsById;
+    }
+
+    @OneToMany(mappedBy = "videoInfoByVideoId")
+    public Collection<HotCover> getHotCoversById() {
+        return hotCoversById;
+    }
+
+    public void setHotCoversById(Collection<HotCover> hotCoversById) {
+        this.hotCoversById = hotCoversById;
+    }
+
+    @OneToMany(mappedBy = "videoInfoByVideoId")
+    public Collection<HotLipSync> getHotLipSyncsById() {
+        return hotLipSyncsById;
+    }
+
+    public void setHotLipSyncsById(Collection<HotLipSync> hotLipSyncsById) {
+        this.hotLipSyncsById = hotLipSyncsById;
+    }
+
+    @OneToMany(mappedBy = "videoInfoByVideoId")
+    public Collection<KaraokeInfo> getKaraokeInfosById() {
+        return karaokeInfosById;
+    }
+
+    public void setKaraokeInfosById(Collection<KaraokeInfo> karaokeInfosById) {
+        this.karaokeInfosById = karaokeInfosById;
+    }
+
+    @OneToMany(mappedBy = "videoInfoByVideoId")
+    public Collection<LipSyncInfo> getLipSyncInfosById() {
+        return lipSyncInfosById;
+    }
+
+    public void setLipSyncInfosById(Collection<LipSyncInfo> lipSyncInfosById) {
+        this.lipSyncInfosById = lipSyncInfosById;
+    }
+
+    @OneToMany(mappedBy = "videoInfoByVideoId")
+    public Collection<LipSyncTemplateInfo> getLipSyncTemplateInfosById() {
+        return lipSyncTemplateInfosById;
+    }
+
+    public void setLipSyncTemplateInfosById(Collection<LipSyncTemplateInfo> lipSyncTemplateInfosById) {
+        this.lipSyncTemplateInfosById = lipSyncTemplateInfosById;
+    }
+
+    @OneToMany(mappedBy = "videoInfoByVideoId")
+    public Collection<NewCover> getNewCoversById() {
+        return newCoversById;
+    }
+
+    public void setNewCoversById(Collection<NewCover> newCoversById) {
+        this.newCoversById = newCoversById;
+    }
+
+    @OneToMany(mappedBy = "videoInfoByVideoId")
+    public Collection<NewLipsync> getNewLipsyncsById() {
+        return newLipsyncsById;
+    }
+
+    public void setNewLipsyncsById(Collection<NewLipsync> newLipsyncsById) {
+        this.newLipsyncsById = newLipsyncsById;
+    }
+
+    @OneToMany(mappedBy = "videoInfoByVideoId")
+    public Collection<TempCountViewCover> getTempCountViewCoversById() {
+        return tempCountViewCoversById;
+    }
+
+    public void setTempCountViewCoversById(Collection<TempCountViewCover> tempCountViewCoversById) {
+        this.tempCountViewCoversById = tempCountViewCoversById;
+    }
+
+    @OneToMany(mappedBy = "videoInfoByVideoId")
+    public Collection<TempCountViewLipSync> getTempCountViewLipSyncsById() {
+        return tempCountViewLipSyncsById;
+    }
+
+    public void setTempCountViewLipSyncsById(Collection<TempCountViewLipSync> tempCountViewLipSyncsById) {
+        this.tempCountViewLipSyncsById = tempCountViewLipSyncsById;
+    }
+
+    @OneToMany(mappedBy = "videoInfoByVideoId")
+    public Collection<TempNewCoverAdmin> getTempNewCoverAdminsById() {
+        return tempNewCoverAdminsById;
+    }
+
+    public void setTempNewCoverAdminsById(Collection<TempNewCoverAdmin> tempNewCoverAdminsById) {
+        this.tempNewCoverAdminsById = tempNewCoverAdminsById;
+    }
+
+    @OneToMany(mappedBy = "videoInfoByVideoId")
+    public Collection<TempNewLipSyncAdmin> getTempNewLipSyncAdminsById() {
+        return tempNewLipSyncAdminsById;
+    }
+
+    public void setTempNewLipSyncAdminsById(Collection<TempNewLipSyncAdmin> tempNewLipSyncAdminsById) {
+        this.tempNewLipSyncAdminsById = tempNewLipSyncAdminsById;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "account_id", referencedColumnName = "id", nullable = false ,insertable = false, updatable = false)
+    public Account getAccountByAccountId() {
+        return accountByAccountId;
+    }
+
+    public void setAccountByAccountId(Account accountByAccountId) {
+        this.accountByAccountId = accountByAccountId;
     }
 }

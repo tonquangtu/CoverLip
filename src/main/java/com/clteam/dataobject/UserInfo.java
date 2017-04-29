@@ -4,10 +4,10 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by Dell on 20-Apr-17.
+ * Created by Dell on 28-Apr-17.
  */
 @Entity
-@Table(name = "user_info", schema = "coverlip", catalog = "")
+@Table(name = "user_info")
 public class UserInfo {
     private int id;
     private int accountId;
@@ -20,6 +20,7 @@ public class UserInfo {
     private String description;
     private String coverImage;
     private String avatarThumbnail;
+    private Account accountByAccountId;
 
     @Id
     @Column(name = "id")
@@ -92,7 +93,7 @@ public class UserInfo {
     }
 
     @Basic
-    @Column(name = "address")
+    @Column(name = "address",columnDefinition = "TEXT")
     public String getAddress() {
         return address;
     }
@@ -102,7 +103,7 @@ public class UserInfo {
     }
 
     @Basic
-    @Column(name = "description")
+    @Column(name = "description", columnDefinition = "TEXT")
     public String getDescription() {
         return description;
     }
@@ -112,7 +113,7 @@ public class UserInfo {
     }
 
     @Basic
-    @Column(name = "cover_image")
+    @Column(name = "cover_image", columnDefinition = "TEXT")
     public String getCoverImage() {
         return coverImage;
     }
@@ -122,7 +123,7 @@ public class UserInfo {
     }
 
     @Basic
-    @Column(name = "avatar_thumbnail")
+    @Column(name = "avatar_thumbnail", columnDefinition = "TEXT")
     public String getAvatarThumbnail() {
         return avatarThumbnail;
     }
@@ -170,5 +171,15 @@ public class UserInfo {
         result = 31 * result + (coverImage != null ? coverImage.hashCode() : 0);
         result = 31 * result + (avatarThumbnail != null ? avatarThumbnail.hashCode() : 0);
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "account_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
+    public Account getAccountByAccountId() {
+        return accountByAccountId;
+    }
+
+    public void setAccountByAccountId(Account accountByAccountId) {
+        this.accountByAccountId = accountByAccountId;
     }
 }
