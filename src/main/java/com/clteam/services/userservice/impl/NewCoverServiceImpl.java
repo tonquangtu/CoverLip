@@ -30,7 +30,6 @@ public class NewCoverServiceImpl implements NewCoverService {
             OneCardInfo oneCardInfo = new OneCardInfo(videoInfo, account, userInfo,coverInfo);
             listOneCardInfo.add(oneCardInfo);
         }
-        System.out.println(listOneCardInfo.get(5).getCoverInfo().getCoverName());
         return listOneCardInfo;
     }
 }

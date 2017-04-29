@@ -1,6 +1,5 @@
 package com.clteam.repositories.api;
 
-import com.clteam.dataobject.HotCover;
 import com.clteam.dataobject.NewCover;
 import com.clteam.dataobject.VideoInfo;
 
@@ -22,8 +21,5 @@ public interface VideoRepository {
     List<VideoInfo> getAllVideo();
 
     List<NewCover> getAllNewCover();
-
-    List<HotCover> getAllHotCover();
-
 
 }

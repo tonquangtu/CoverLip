@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="/resources/styles/main_footer_style.css"/>
     <link rel="stylesheet" type="text/css" href="/resources/styles/home_cover_style.css"/>
     <link rel="stylesheet" type="text/css" href="/resources/styles/one_card_style.css"/>
-    <script src="/resources/scripts/courial.js"></script>
+    <script src="/resources/libs/scrollslide/courial.js"></script>
     <script src="/resources/scripts/one_card_script.js"></script>
     <script src="/resources/scripts/scroll_card_script.js"></script>
 
