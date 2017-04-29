@@ -5,11 +5,13 @@ import com.clteam.repositories.api.CoverRepository;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Created by nguyenthanhtung on 27/04/2017.
  */
 @Repository
+@Transactional
 public class CoverRepositoryImpl implements CoverRepository {
 
     @Autowired

@@ -2,7 +2,7 @@ package com.clteam.repositories.api;
 
 import com.clteam.dataobject.UserInfo;
 
-import java.util.Set;
+import java.util.List;
 
 /**
  * Created by nguyenthanhtung on 27/04/2017.
@@ -17,7 +17,7 @@ public interface UserRepository {
 
     boolean insertUser(UserInfo user);
 
-    Set<UserInfo> getAllUser();
+    List<UserInfo> getAllUser();
 
 
 }
