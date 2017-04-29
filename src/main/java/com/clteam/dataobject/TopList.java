@@ -8,7 +8,7 @@ import java.sql.Timestamp;
  * Created by Dell on 20-Apr-17.
  */
 @Entity
-@Table(name = "top_list", schema = "coverlip", catalog = "")
+@Table(name = "top_list")
 public class TopList {
     private int id;
     private Timestamp timeTopStart;
@@ -67,10 +67,7 @@ public class TopList {
             return false;
         if (timeEndStart != null ? !timeEndStart.equals(topList.timeEndStart) : topList.timeEndStart != null)
             return false;
-        if (topDescription != null ? !topDescription.equals(topList.topDescription) : topList.topDescription != null)
-            return false;
-
-        return true;
+        return topDescription != null ? topDescription.equals(topList.topDescription) : topList.topDescription == null;
     }
 
     @Override

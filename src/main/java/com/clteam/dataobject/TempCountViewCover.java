@@ -6,13 +6,15 @@ import javax.persistence.*;
  * Created by Dell on 20-Apr-17.
  */
 @Entity
-@Table(name = "temp_count_view_cover", schema = "coverlip", catalog = "")
+@Table(name = "temp_count_view_cover")
 public class TempCountViewCover {
     private int id;
     private int videoId;
     private int numView;
     private int week;
     private int year;
+
+    private VideoInfo videoInfo;
 
     @Id
     @Column(name = "id")
@@ -75,9 +77,7 @@ public class TempCountViewCover {
         if (videoId != that.videoId) return false;
         if (numView != that.numView) return false;
         if (week != that.week) return false;
-        if (year != that.year) return false;
-
-        return true;
+        return year == that.year;
     }
 
     @Override
@@ -89,4 +89,15 @@ public class TempCountViewCover {
         result = 31 * result + year;
         return result;
     }
+
+//
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinColumn(name="video_id")
+//    public VideoInfo getVideoInfo() {
+//        return videoInfo;
+//    }
+//
+//    public void setVideoInfo(VideoInfo videoInfo) {
+//        this.videoInfo = videoInfo;
+//    }
 }

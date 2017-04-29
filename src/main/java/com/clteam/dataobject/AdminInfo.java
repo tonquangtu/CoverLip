@@ -6,13 +6,15 @@ import javax.persistence.*;
  * Created by Dell on 20-Apr-17.
  */
 @Entity
-@Table(name = "admin_info", schema = "coverlip", catalog = "")
+@Table(name = "admin_info")
 public class AdminInfo {
     private int id;
     private int accountId;
     private String profileImage;
     private String phoneNumber;
     private String address;
+
+    private Account account;
 
     @Id
     @Column(name = "id")
@@ -55,7 +57,7 @@ public class AdminInfo {
     }
 
     @Basic
-    @Column(name = "address")
+    @Column(name = "address", columnDefinition="TEXT")
     public String getAddress() {
         return address;
     }
@@ -77,9 +79,7 @@ public class AdminInfo {
             return false;
         if (phoneNumber != null ? !phoneNumber.equals(adminInfo.phoneNumber) : adminInfo.phoneNumber != null)
             return false;
-        if (address != null ? !address.equals(adminInfo.address) : adminInfo.address != null) return false;
-
-        return true;
+        return address != null ? address.equals(adminInfo.address) : adminInfo.address == null;
     }
 
     @Override
@@ -90,5 +90,15 @@ public class AdminInfo {
         result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
         result = 31 * result + (address != null ? address.hashCode() : 0);
         return result;
+    }
+
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinColumn(name="account_id")
+//    public Account getAccount() {
+//        return account;
+//    }
+
+    public void setAccount(Account account) {
+        this.account = account;
     }
 }

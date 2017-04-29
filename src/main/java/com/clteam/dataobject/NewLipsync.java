@@ -6,11 +6,13 @@ import javax.persistence.*;
  * Created by Dell on 20-Apr-17.
  */
 @Entity
-@Table(name = "new_lipsync", schema = "coverlip", catalog = "")
+@Table(name = "new_lipsync")
 public class NewLipsync {
     private int id;
     private int videoId;
     private int priority;
+
+    private VideoInfo videoInfo;
 
     @Id
     @Column(name = "id")
@@ -51,9 +53,7 @@ public class NewLipsync {
 
         if (id != that.id) return false;
         if (videoId != that.videoId) return false;
-        if (priority != that.priority) return false;
-
-        return true;
+        return priority == that.priority;
     }
 
     @Override
@@ -63,4 +63,15 @@ public class NewLipsync {
         result = 31 * result + priority;
         return result;
     }
+
+
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinColumn(name="video_id")
+//    public VideoInfo getVideoInfo() {
+//        return videoInfo;
+//    }
+//
+//    public void setVideoInfo(VideoInfo videoInfo) {
+//        this.videoInfo = videoInfo;
+//    }
 }

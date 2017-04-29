@@ -8,7 +8,7 @@ import java.sql.Timestamp;
  * Created by Dell on 20-Apr-17.
  */
 @Entity
-@Table(name = "video_info", schema = "coverlip", catalog = "")
+@Table(name = "video_info")
 public class VideoInfo {
     private int id;
     private int accountId;
@@ -21,6 +21,8 @@ public class VideoInfo {
     private int numComment;
     private byte state;
     private String description;
+
+    private Account account;
 
     @Id
     @Column(name = "id")
@@ -43,7 +45,7 @@ public class VideoInfo {
     }
 
     @Basic
-    @Column(name = "video_link")
+    @Column(name = "video_link", columnDefinition="TEXT")
     public String getVideoLink() {
         return videoLink;
     }
@@ -53,7 +55,7 @@ public class VideoInfo {
     }
 
     @Basic
-    @Column(name = "video_thumbnail_link")
+    @Column(name = "video_thumbnail_link", columnDefinition="TEXT")
     public Integer getVideoThumbnailLink() {
         return videoThumbnailLink;
     }
@@ -123,7 +125,7 @@ public class VideoInfo {
     }
 
     @Basic
-    @Column(name = "description")
+    @Column(name = "description", columnDefinition="TEXT")
     public String getDescription() {
         return description;
     }
@@ -150,10 +152,7 @@ public class VideoInfo {
             return false;
         if (duration != null ? !duration.equals(videoInfo.duration) : videoInfo.duration != null) return false;
         if (createDate != null ? !createDate.equals(videoInfo.createDate) : videoInfo.createDate != null) return false;
-        if (description != null ? !description.equals(videoInfo.description) : videoInfo.description != null)
-            return false;
-
-        return true;
+        return description != null ? description.equals(videoInfo.description) : videoInfo.description == null;
     }
 
     @Override
@@ -171,4 +170,15 @@ public class VideoInfo {
         result = 31 * result + (description != null ? description.hashCode() : 0);
         return result;
     }
+
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinColumn(name="account_id")
+//    public Account getAccount() {
+//        return account;
+//    }
+//
+//    public void setAccount(Account account) {
+//        this.account = account;
+//    }
+
 }

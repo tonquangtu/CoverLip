@@ -6,12 +6,17 @@ import javax.persistence.*;
  * Created by Dell on 20-Apr-17.
  */
 @Entity
-@Table(name = "top_lip_sync_idol", schema = "coverlip", catalog = "")
+@Table(name = "top_lip_sync_idol")
 public class TopLipSyncIdol {
     private int id;
     private int accountId;
     private int topId;
     private int score;
+
+    private Account account;
+
+    private TopList topList;
+
 
     @Id
     @Column(name = "id")
@@ -63,9 +68,7 @@ public class TopLipSyncIdol {
         if (id != that.id) return false;
         if (accountId != that.accountId) return false;
         if (topId != that.topId) return false;
-        if (score != that.score) return false;
-
-        return true;
+        return score == that.score;
     }
 
     @Override
@@ -76,4 +79,24 @@ public class TopLipSyncIdol {
         result = 31 * result + score;
         return result;
     }
+
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinColumn(name="account_id")
+//    public Account getAccount() {
+//        return account;
+//    }
+//
+//    public void setAccount(Account account) {
+//        this.account = account;
+//    }
+//
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinColumn(name="top_id")
+//    public TopList getTopList() {
+//        return topList;
+//    }
+//
+//    public void setTopList(TopList topList) {
+//        this.topList = topList;
+//    }
 }

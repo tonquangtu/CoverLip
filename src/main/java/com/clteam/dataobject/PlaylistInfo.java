@@ -7,7 +7,7 @@ import java.sql.Timestamp;
  * Created by Dell on 20-Apr-17.
  */
 @Entity
-@Table(name = "playlist_info", schema = "coverlip", catalog = "")
+@Table(name = "playlist_info")
 public class PlaylistInfo {
     private int id;
     private int accountId;
@@ -18,6 +18,8 @@ public class PlaylistInfo {
     private Timestamp createDate;
     private byte state;
     private String description;
+
+    private Account account;
 
     @Id
     @Column(name = "id")
@@ -100,7 +102,7 @@ public class PlaylistInfo {
     }
 
     @Basic
-    @Column(name = "description")
+    @Column(name = "description", columnDefinition="TEXT")
     public String getDescription() {
         return description;
     }
@@ -125,9 +127,7 @@ public class PlaylistInfo {
         if (playlistThumbnailLink != null ? !playlistThumbnailLink.equals(that.playlistThumbnailLink) : that.playlistThumbnailLink != null)
             return false;
         if (createDate != null ? !createDate.equals(that.createDate) : that.createDate != null) return false;
-        if (description != null ? !description.equals(that.description) : that.description != null) return false;
-
-        return true;
+        return description != null ? description.equals(that.description) : that.description == null;
     }
 
     @Override
@@ -143,4 +143,15 @@ public class PlaylistInfo {
         result = 31 * result + (description != null ? description.hashCode() : 0);
         return result;
     }
+
+
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinColumn(name="account_id")
+//    public Account getAccount() {
+//        return account;
+//    }
+//
+//    public void setAccount(Account account) {
+//        this.account = account;
+//    }
 }

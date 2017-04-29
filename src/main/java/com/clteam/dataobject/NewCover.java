@@ -6,11 +6,14 @@ import javax.persistence.*;
  * Created by Dell on 20-Apr-17.
  */
 @Entity
-@Table(name = "new_cover", schema = "coverlip", catalog = "")
+@Table(name = "new_cover")
 public class NewCover {
     private int id;
     private int videoId;
     private int priority;
+
+    private VideoInfo videoInfo;
+
 
     @Id
     @Column(name = "id")
@@ -51,9 +54,7 @@ public class NewCover {
 
         if (id != newCover.id) return false;
         if (videoId != newCover.videoId) return false;
-        if (priority != newCover.priority) return false;
-
-        return true;
+        return priority == newCover.priority;
     }
 
     @Override
@@ -63,4 +64,15 @@ public class NewCover {
         result = 31 * result + priority;
         return result;
     }
+
+
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinColumn(name="video_id")
+//    public VideoInfo getVideoInfo() {
+//        return videoInfo;
+//    }
+//
+//    public void setVideoInfo(VideoInfo videoInfo) {
+//        this.videoInfo = videoInfo;
+//    }
 }
