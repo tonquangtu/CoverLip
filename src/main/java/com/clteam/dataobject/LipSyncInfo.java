@@ -11,6 +11,8 @@ public class LipSyncInfo {
     private int id;
     private int videoId;
     private int lipSyncTemplateId;
+    private VideoInfo videoInfoByVideoId;
+    private LipSyncTemplateInfo lipSyncTemplateInfoByLipSyncTemplateId;
 
     @Id
     @Column(name = "id")
@@ -51,7 +53,9 @@ public class LipSyncInfo {
 
         if (id != that.id) return false;
         if (videoId != that.videoId) return false;
-        return lipSyncTemplateId == that.lipSyncTemplateId;
+        if (lipSyncTemplateId != that.lipSyncTemplateId) return false;
+
+        return true;
     }
 
     @Override
@@ -60,5 +64,25 @@ public class LipSyncInfo {
         result = 31 * result + videoId;
         result = 31 * result + lipSyncTemplateId;
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
+    public VideoInfo getVideoInfoByVideoId() {
+        return videoInfoByVideoId;
+    }
+
+    public void setVideoInfoByVideoId(VideoInfo videoInfoByVideoId) {
+        this.videoInfoByVideoId = videoInfoByVideoId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "lip_sync_template_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
+    public LipSyncTemplateInfo getLipSyncTemplateInfoByLipSyncTemplateId() {
+        return lipSyncTemplateInfoByLipSyncTemplateId;
+    }
+
+    public void setLipSyncTemplateInfoByLipSyncTemplateId(LipSyncTemplateInfo lipSyncTemplateInfoByLipSyncTemplateId) {
+        this.lipSyncTemplateInfoByLipSyncTemplateId = lipSyncTemplateInfoByLipSyncTemplateId;
     }
 }

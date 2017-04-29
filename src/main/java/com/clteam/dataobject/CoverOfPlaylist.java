@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by Dell on 20-Apr-17.
+ * Created by Dell on 28-Apr-17.
  */
 @Entity
 @Table(name = "cover_of_playlist")
@@ -14,10 +14,8 @@ public class CoverOfPlaylist {
     private int playlistId;
     private Timestamp timeAdd;
     private int priority;
-
-    private PlaylistInfo playlistInfo;
-
-    private VideoInfo videoInfo;
+    private VideoInfo videoInfoByVideoId;
+    private PlaylistInfo playlistInfoByPlaylistId;
 
     @Id
     @Column(name = "id")
@@ -80,7 +78,9 @@ public class CoverOfPlaylist {
         if (videoId != that.videoId) return false;
         if (playlistId != that.playlistId) return false;
         if (priority != that.priority) return false;
-        return timeAdd != null ? timeAdd.equals(that.timeAdd) : that.timeAdd == null;
+        if (timeAdd != null ? !timeAdd.equals(that.timeAdd) : that.timeAdd != null) return false;
+
+        return true;
     }
 
     @Override
@@ -93,23 +93,23 @@ public class CoverOfPlaylist {
         return result;
     }
 
-//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinColumn(name="playlist_id")
-//    public PlaylistInfo getPlaylistInfo() {
-//        return playlistInfo;
-//    }
-//
-//    public void setPlaylistInfo(PlaylistInfo playlistInfo) {
-//        this.playlistInfo = playlistInfo;
-//    }
-//
-//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinColumn(name="video_id")
-//    public VideoInfo getVideoInfo() {
-//        return videoInfo;
-//    }
-//
-//    public void setVideoInfo(VideoInfo videoInfo) {
-//        this.videoInfo = videoInfo;
-//    }
+    @ManyToOne
+    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public VideoInfo getVideoInfoByVideoId() {
+        return videoInfoByVideoId;
+    }
+
+    public void setVideoInfoByVideoId(VideoInfo videoInfoByVideoId) {
+        this.videoInfoByVideoId = videoInfoByVideoId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "playlist_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public PlaylistInfo getPlaylistInfoByPlaylistId() {
+        return playlistInfoByPlaylistId;
+    }
+
+    public void setPlaylistInfoByPlaylistId(PlaylistInfo playlistInfoByPlaylistId) {
+        this.playlistInfoByPlaylistId = playlistInfoByPlaylistId;
+    }
 }

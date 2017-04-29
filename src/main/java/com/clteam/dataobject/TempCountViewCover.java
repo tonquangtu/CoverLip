@@ -3,7 +3,7 @@ package com.clteam.dataobject;
 import javax.persistence.*;
 
 /**
- * Created by Dell on 20-Apr-17.
+ * Created by Dell on 28-Apr-17.
  */
 @Entity
 @Table(name = "temp_count_view_cover")
@@ -13,8 +13,7 @@ public class TempCountViewCover {
     private int numView;
     private int week;
     private int year;
-
-    private VideoInfo videoInfo;
+    private VideoInfo videoInfoByVideoId;
 
     @Id
     @Column(name = "id")
@@ -77,7 +76,9 @@ public class TempCountViewCover {
         if (videoId != that.videoId) return false;
         if (numView != that.numView) return false;
         if (week != that.week) return false;
-        return year == that.year;
+        if (year != that.year) return false;
+
+        return true;
     }
 
     @Override
@@ -90,14 +91,13 @@ public class TempCountViewCover {
         return result;
     }
 
-//
-//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinColumn(name="video_id")
-//    public VideoInfo getVideoInfo() {
-//        return videoInfo;
-//    }
-//
-//    public void setVideoInfo(VideoInfo videoInfo) {
-//        this.videoInfo = videoInfo;
-//    }
+    @ManyToOne
+    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
+    public VideoInfo getVideoInfoByVideoId() {
+        return videoInfoByVideoId;
+    }
+
+    public void setVideoInfoByVideoId(VideoInfo videoInfoByVideoId) {
+        this.videoInfoByVideoId = videoInfoByVideoId;
+    }
 }

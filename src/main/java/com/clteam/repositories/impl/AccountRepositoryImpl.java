@@ -6,7 +6,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.util.Set;
+import java.util.List;
 
 /**
  * Created by nguyenthanhtung on 27/04/2017.
@@ -33,7 +33,7 @@ public class AccountRepositoryImpl implements AccountRepository {
         return false;
     }
 
-    public Set<Account> getAllAccount() {
+    public List<Account> getAllAccount() {
         return null;
     }
 }

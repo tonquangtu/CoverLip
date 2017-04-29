@@ -3,19 +3,17 @@ package com.clteam.dataobject;
 import javax.persistence.*;
 
 /**
- * Created by Dell on 20-Apr-17.
+ * Created by Dell on 28-Apr-17.
  */
 @Entity
-@Table(name = "cover_top", schema = "coverlip")
+@Table(name = "cover_top")
 public class CoverTop {
     private int id;
     private int videoId;
     private int topId;
     private int numViewPeriod;
-
-    private TopList topList;
-
-    private VideoInfo videoInfo;
+    private VideoInfo videoInfoByVideoId;
+    private TopList topListByTopId;
 
     @Id
     @Column(name = "id")
@@ -67,7 +65,9 @@ public class CoverTop {
         if (id != coverTop.id) return false;
         if (videoId != coverTop.videoId) return false;
         if (topId != coverTop.topId) return false;
-        return numViewPeriod == coverTop.numViewPeriod;
+        if (numViewPeriod != coverTop.numViewPeriod) return false;
+
+        return true;
     }
 
     @Override
@@ -79,23 +79,23 @@ public class CoverTop {
         return result;
     }
 
-//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinColumn(name="top_id")
-//    public TopList getTopList() {
-//        return topList;
-//    }
+    @ManyToOne
+    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public VideoInfo getVideoInfoByVideoId() {
+        return videoInfoByVideoId;
+    }
 
-//    public void setTopList(TopList topList) {
-//        this.topList = topList;
-//    }
-//
-//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinColumn(name="video_id")
-//    public VideoInfo getVideoInfo() {
-//        return videoInfo;
-//    }
+    public void setVideoInfoByVideoId(VideoInfo videoInfoByVideoId) {
+        this.videoInfoByVideoId = videoInfoByVideoId;
+    }
 
-//    public void setVideoInfo(VideoInfo videoInfo) {
-//        this.videoInfo = videoInfo;
-//    }
+    @ManyToOne
+    @JoinColumn(name = "top_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public TopList getTopListByTopId() {
+        return topListByTopId;
+    }
+
+    public void setTopListByTopId(TopList topListByTopId) {
+        this.topListByTopId = topListByTopId;
+    }
 }

@@ -98,7 +98,7 @@
     </column>
     <column id="51" parent="19" name="profile_image">
       <Position>3</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>text|0</DataType>
     </column>
     <column id="52" parent="19" name="phone_number">
       <Position>4</Position>
@@ -527,7 +527,7 @@ followed_account_id</ColNames>
     </column>
     <column id="139" parent="31" name="playlist_thumbnail_link">
       <Position>4</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>text|0</DataType>
     </column>
     <column id="140" parent="31" name="num_cover">
       <Position>5</Position>
@@ -857,11 +857,11 @@ top_id</ColNames>
     </column>
     <column id="206" parent="39" name="cover_image">
       <Position>10</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>text|0</DataType>
     </column>
     <column id="207" parent="39" name="avatar_thumbnail">
       <Position>11</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>text|0</DataType>
     </column>
     <index id="208" parent="39" name="account_id">
       <ColNames>account_id</ColNames>

@@ -14,14 +14,14 @@
     <title>CoverLip</title>
     <%@ include file="../common/common_lib.html" %>
 
-    <link rel="stylesheet" href="/resources/css/main_navigation_style.css"/>
-    <link rel="stylesheet" href="/resources/css/main_header_style.css"/>
-    <link rel="stylesheet" href="/resources/css/main_footer_style.css"/>
-    <link rel="stylesheet" type="text/css" href="/resources/css/home_cover_style.css"/>
-    <link rel="stylesheet" type="text/css" href="/resources/css/one_card_style.css"/>
-    <script src="/resources/js/courial.js"></script>
-    <script src="/resources/js/one_card_script.js"></script>
-    <script src="/resources/js/scroll_card_script.js"></script>
+    <link rel="stylesheet" href="/resources/styles/main_navigation_style.css"/>
+    <link rel="stylesheet" href="/resources/styles/main_header_style.css"/>
+    <link rel="stylesheet" href="/resources/styles/main_footer_style.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/styles/home_cover_style.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/styles/one_card_style.css"/>
+    <script src="/resources/scripts/courial.js"></script>
+    <script src="/resources/scripts/one_card_script.js"></script>
+    <script src="/resources/scripts/scroll_card_script.js"></script>
 
 </head>
 <body>

@@ -3,16 +3,15 @@ package com.clteam.dataobject;
 import javax.persistence.*;
 
 /**
- * Created by Dell on 20-Apr-17.
+ * Created by Dell on 28-Apr-17.
  */
 @Entity
-@Table(name = "hot_cover", schema = "coverlip")
+@Table(name = "hot_cover")
 public class HotCover {
     private int id;
     private int videoId;
     private int priority;
-
-    private VideoInfo videoInfo;
+    private VideoInfo videoInfoByVideoId;
 
     @Id
     @Column(name = "id")
@@ -53,7 +52,9 @@ public class HotCover {
 
         if (id != hotCover.id) return false;
         if (videoId != hotCover.videoId) return false;
-        return priority == hotCover.priority;
+        if (priority != hotCover.priority) return false;
+
+        return true;
     }
 
     @Override
@@ -63,13 +64,14 @@ public class HotCover {
         result = 31 * result + priority;
         return result;
     }
-//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinColumn(name="video_id")
-//    public VideoInfo getVideoInfo() {
-//        return videoInfo;
-//    }
 
-    public void setVideoInfo(VideoInfo videoInfo) {
-        this.videoInfo = videoInfo;
+    @ManyToOne
+    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
+    public VideoInfo getVideoInfoByVideoId() {
+        return videoInfoByVideoId;
+    }
+
+    public void setVideoInfoByVideoId(VideoInfo videoInfoByVideoId) {
+        this.videoInfoByVideoId = videoInfoByVideoId;
     }
 }

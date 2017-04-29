@@ -1,9 +1,10 @@
 package com.clteam.dataobject;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 /**
- * Created by Dell on 20-Apr-17.
+ * Created by Dell on 28-Apr-17.
  */
 @Entity
 @Table(name = "lip_sync_template_info")
@@ -12,8 +13,8 @@ public class LipSyncTemplateInfo {
     private int videoId;
     private String lipsyncTemplateName;
     private int numLipsync;
-
-    private VideoInfo videoInfo;
+    private Collection<LipSyncInfo> lipSyncInfosById;
+    private VideoInfo videoInfoByVideoId;
 
     @Id
     @Column(name = "id")
@@ -65,7 +66,10 @@ public class LipSyncTemplateInfo {
         if (id != that.id) return false;
         if (videoId != that.videoId) return false;
         if (numLipsync != that.numLipsync) return false;
-        return lipsyncTemplateName != null ? lipsyncTemplateName.equals(that.lipsyncTemplateName) : that.lipsyncTemplateName == null;
+        if (lipsyncTemplateName != null ? !lipsyncTemplateName.equals(that.lipsyncTemplateName) : that.lipsyncTemplateName != null)
+            return false;
+
+        return true;
     }
 
     @Override
@@ -77,13 +81,22 @@ public class LipSyncTemplateInfo {
         return result;
     }
 
-//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinColumn(name="video_id")
-//    public VideoInfo getVideoInfo() {
-//        return videoInfo;
-//    }
-//
-//    public void setVideoInfo(VideoInfo videoInfo) {
-//        this.videoInfo = videoInfo;
-//    }
+    @OneToMany(mappedBy = "lipSyncTemplateInfoByLipSyncTemplateId")
+    public Collection<LipSyncInfo> getLipSyncInfosById() {
+        return lipSyncInfosById;
+    }
+
+    public void setLipSyncInfosById(Collection<LipSyncInfo> lipSyncInfosById) {
+        this.lipSyncInfosById = lipSyncInfosById;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
+    public VideoInfo getVideoInfoByVideoId() {
+        return videoInfoByVideoId;
+    }
+
+    public void setVideoInfoByVideoId(VideoInfo videoInfoByVideoId) {
+        this.videoInfoByVideoId = videoInfoByVideoId;
+    }
 }

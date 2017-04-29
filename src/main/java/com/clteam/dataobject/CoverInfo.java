@@ -3,7 +3,7 @@ package com.clteam.dataobject;
 import javax.persistence.*;
 
 /**
- * Created by Dell on 20-Apr-17.
+ * Created by Dell on 28-Apr-17.
  */
 @Entity
 @Table(name = "cover_info")
@@ -12,6 +12,7 @@ public class CoverInfo {
     private int videoId;
     private String coverName;
     private String mp3Link;
+    private VideoInfo videoInfoByVideoId;
 
     @Id
     @Column(name = "id")
@@ -63,7 +64,9 @@ public class CoverInfo {
         if (id != coverInfo.id) return false;
         if (videoId != coverInfo.videoId) return false;
         if (coverName != null ? !coverName.equals(coverInfo.coverName) : coverInfo.coverName != null) return false;
-        return mp3Link != null ? mp3Link.equals(coverInfo.mp3Link) : coverInfo.mp3Link == null;
+        if (mp3Link != null ? !mp3Link.equals(coverInfo.mp3Link) : coverInfo.mp3Link != null) return false;
+
+        return true;
     }
 
     @Override
@@ -75,13 +78,13 @@ public class CoverInfo {
         return result;
     }
 
-//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinColumn(name="video_id")
-//    public VideoInfo getVideoInfo() {
-//        return videoInfo;
-//    }
-//
-//    public void setVideoInfo(VideoInfo videoInfo) {
-//        this.videoInfo = videoInfo;
-//    }
+    @ManyToOne
+    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
+    public VideoInfo getVideoInfoByVideoId() {
+        return videoInfoByVideoId;
+    }
+
+    public void setVideoInfoByVideoId(VideoInfo videoInfoByVideoId) {
+        this.videoInfoByVideoId = videoInfoByVideoId;
+    }
 }

@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by Dell on 20-Apr-17.
+ * Created by Dell on 28-Apr-17.
  */
 @Entity
 @Table(name = "user_info")
@@ -20,8 +20,7 @@ public class UserInfo {
     private String description;
     private String coverImage;
     private String avatarThumbnail;
-
-    private Account account;
+    private Account accountByAccountId;
 
     @Id
     @Column(name = "id")
@@ -94,7 +93,7 @@ public class UserInfo {
     }
 
     @Basic
-    @Column(name = "address", columnDefinition="TEXT")
+    @Column(name = "address",columnDefinition = "TEXT")
     public String getAddress() {
         return address;
     }
@@ -104,7 +103,7 @@ public class UserInfo {
     }
 
     @Basic
-    @Column(name = "description", columnDefinition="TEXT")
+    @Column(name = "description", columnDefinition = "TEXT")
     public String getDescription() {
         return description;
     }
@@ -114,7 +113,7 @@ public class UserInfo {
     }
 
     @Basic
-    @Column(name = "cover_image")
+    @Column(name = "cover_image", columnDefinition = "TEXT")
     public String getCoverImage() {
         return coverImage;
     }
@@ -124,7 +123,7 @@ public class UserInfo {
     }
 
     @Basic
-    @Column(name = "avatar_thumbnail")
+    @Column(name = "avatar_thumbnail", columnDefinition = "TEXT")
     public String getAvatarThumbnail() {
         return avatarThumbnail;
     }
@@ -152,7 +151,10 @@ public class UserInfo {
         if (description != null ? !description.equals(userInfo.description) : userInfo.description != null)
             return false;
         if (coverImage != null ? !coverImage.equals(userInfo.coverImage) : userInfo.coverImage != null) return false;
-        return avatarThumbnail != null ? avatarThumbnail.equals(userInfo.avatarThumbnail) : userInfo.avatarThumbnail == null;
+        if (avatarThumbnail != null ? !avatarThumbnail.equals(userInfo.avatarThumbnail) : userInfo.avatarThumbnail != null)
+            return false;
+
+        return true;
     }
 
     @Override
@@ -170,15 +172,14 @@ public class UserInfo {
         result = 31 * result + (avatarThumbnail != null ? avatarThumbnail.hashCode() : 0);
         return result;
     }
-//
-//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinColumn(name="account_id")
-//    public Account getAccount() {
-//        return account;
-//    }
-//
-//    public void setAccount(Account account) {
-//        this.account = account;
-//    }
 
+    @ManyToOne
+    @JoinColumn(name = "account_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
+    public Account getAccountByAccountId() {
+        return accountByAccountId;
+    }
+
+    public void setAccountByAccountId(Account accountByAccountId) {
+        this.accountByAccountId = accountByAccountId;
+    }
 }
