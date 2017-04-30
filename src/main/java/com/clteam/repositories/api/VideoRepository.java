@@ -9,9 +9,9 @@ import java.util.List;
  */
 public interface VideoRepository {
 
-    VideoInfo getVideoInfo(int videoId);
+    VideoInfo getVideoInfo(long videoId);
 
-    boolean deleteVideo(int videoId);
+    boolean deleteVideo(long videoId);
 
     boolean updateVideo(VideoInfo video);
 

@@ -5,7 +5,6 @@ import com.clteam.repositories.api.VideoRepository;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -13,16 +12,23 @@ import java.util.List;
  * Created by nguyenthanhtung on 27/04/2017.
  */
 @Repository
-@Transactional
 public class VideoRepositoryImpl implements VideoRepository {
 
     @Autowired
     private SessionFactory sessionFactory;
-    public VideoInfo getVideoInfo(int videoId) {
-        return (VideoInfo)sessionFactory.getCurrentSession().get(VideoInfo.class, videoId);
+
+    public VideoInfo getVideoInfo(long videoId) {
+        VideoInfo video = null;
+        try {
+
+            video = (VideoInfo)sessionFactory.getCurrentSession().get(VideoInfo.class, videoId);
+        }catch(Exception ex) {
+            ex.printStackTrace();
+        }
+        return video;
     }
 
-    public boolean deleteVideo(int videoId) {
+    public boolean deleteVideo(long videoId) {
         return false;
     }
 
