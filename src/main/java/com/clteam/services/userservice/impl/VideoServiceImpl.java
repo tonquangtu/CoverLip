@@ -1,7 +1,5 @@
 package com.clteam.services.userservice.impl;
 
-import com.clteam.dataobject.CoverInfo;
-import com.clteam.dataobject.VideoInfo;
 import com.clteam.model.FullCoverInfo;
 import com.clteam.repositories.api.VideoRepository;
 import com.clteam.services.userservice.api.VideoService;

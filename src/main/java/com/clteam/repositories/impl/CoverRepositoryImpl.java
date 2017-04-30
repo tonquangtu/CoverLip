@@ -1,6 +1,5 @@
 package com.clteam.repositories.impl;
 
-import com.clteam.dataobject.CoverInfo;
 import com.clteam.repositories.api.CoverRepository;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;

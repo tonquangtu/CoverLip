@@ -1,7 +1,5 @@
 package com.clteam.repositories.api;
 
-import com.clteam.dataobject.TopList;
-
 import java.util.List;
 
 /**

@@ -1,6 +1,5 @@
 package com.clteam.repositories.impl;
 
-import com.clteam.dataobject.UserInfo;
 import com.clteam.repositories.api.UserRepository;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;

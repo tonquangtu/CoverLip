@@ -1,7 +1,5 @@
 package com.clteam.repositories.api;
 
-import com.clteam.dataobject.CoverInfo;
-
 /**
  * Created by nguyenthanhtung on 27/04/2017.
  */

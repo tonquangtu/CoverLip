@@ -1,10 +1,5 @@
 package com.clteam.model;
 
-import com.clteam.dataobject.Account;
-import com.clteam.dataobject.CoverInfo;
-import com.clteam.dataobject.UserInfo;
-import com.clteam.dataobject.VideoInfo;
-
 /**
  * Created by nguyenthanhtung on 27/04/2017.
  */

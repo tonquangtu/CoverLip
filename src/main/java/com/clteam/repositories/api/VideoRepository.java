@@ -1,7 +1,5 @@
 package com.clteam.repositories.api;
 
-import com.clteam.dataobject.VideoInfo;
-
 import java.util.List;
 
 /**

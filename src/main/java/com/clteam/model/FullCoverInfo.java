@@ -1,8 +1,5 @@
 package com.clteam.model;
 
-import com.clteam.dataobject.CoverInfo;
-import com.clteam.dataobject.VideoInfo;
-
 import java.sql.Time;
 import java.sql.Timestamp;
 

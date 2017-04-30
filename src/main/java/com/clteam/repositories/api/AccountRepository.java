@@ -1,7 +1,5 @@
 package com.clteam.repositories.api;
 
-import com.clteam.dataobject.Account;
-
 import java.util.List;
 
 /**

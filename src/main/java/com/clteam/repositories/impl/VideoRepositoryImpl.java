@@ -1,6 +1,5 @@
 package com.clteam.repositories.impl;
 
-import com.clteam.dataobject.VideoInfo;
 import com.clteam.repositories.api.VideoRepository;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;

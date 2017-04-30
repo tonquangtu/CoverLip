@@ -1,7 +1,5 @@
 package com.clteam.repositories.api;
 
-import com.clteam.dataobject.PlaylistInfo;
-
 import java.util.List;
 
 /**
