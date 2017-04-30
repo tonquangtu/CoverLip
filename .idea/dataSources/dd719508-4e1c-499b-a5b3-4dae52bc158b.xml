@@ -134,7 +134,7 @@
     </column>
     <column id="54" parent="14" name="mp3_link">
       <Position>4</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>text|0</DataType>
     </column>
     <index id="55" parent="14" name="video_id">
       <ColNames>video_id</ColNames>
@@ -809,7 +809,7 @@ top_id</ColNames>
     </column>
     <column id="190" parent="32" name="top_description">
       <Position>4</Position>
-      <DataType>date|0</DataType>
+      <DataType>text|0</DataType>
     </column>
     <key id="191" parent="32" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>

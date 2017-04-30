@@ -5,11 +5,11 @@ import java.sql.Timestamp;
 import java.util.Collection;
 
 /**
- * Created by Dell on 28-Apr-17.
+ * Created by Dell on 30-Apr-17.
  */
 @Entity
 @Table(name = "playlist_info")
-public class PlaylistInfo {
+public class PlaylistInfoEntity {
     private int id;
     private int accountId;
     private String playlistName;
@@ -19,8 +19,8 @@ public class PlaylistInfo {
     private Timestamp createDate;
     private byte state;
     private String description;
-    private Collection<CoverOfPlaylist> coverOfPlaylistsById;
-    private Account accountByAccountId;
+    private Collection<CoverOfPlaylistEntity> coverOfPlaylistsById;
+    private AccountEntity accountByAccountId;
 
     @Id
     @Column(name = "id")
@@ -53,7 +53,7 @@ public class PlaylistInfo {
     }
 
     @Basic
-    @Column(name = "playlist_thumbnail_link", columnDefinition = "TEXT")
+    @Column(name = "playlist_thumbnail_link",columnDefinition = "TEXT")
     public String getPlaylistThumbnailLink() {
         return playlistThumbnailLink;
     }
@@ -103,7 +103,7 @@ public class PlaylistInfo {
     }
 
     @Basic
-    @Column(name = "description", columnDefinition = "TEXT")
+    @Column(name = "description",columnDefinition = "TEXT")
     public String getDescription() {
         return description;
     }
@@ -117,7 +117,7 @@ public class PlaylistInfo {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        PlaylistInfo that = (PlaylistInfo) o;
+        PlaylistInfoEntity that = (PlaylistInfoEntity) o;
 
         if (id != that.id) return false;
         if (accountId != that.accountId) return false;
@@ -148,21 +148,21 @@ public class PlaylistInfo {
     }
 
     @OneToMany(mappedBy = "playlistInfoByPlaylistId")
-    public Collection<CoverOfPlaylist> getCoverOfPlaylistsById() {
+    public Collection<CoverOfPlaylistEntity> getCoverOfPlaylistsById() {
         return coverOfPlaylistsById;
     }
 
-    public void setCoverOfPlaylistsById(Collection<CoverOfPlaylist> coverOfPlaylistsById) {
+    public void setCoverOfPlaylistsById(Collection<CoverOfPlaylistEntity> coverOfPlaylistsById) {
         this.coverOfPlaylistsById = coverOfPlaylistsById;
     }
 
     @ManyToOne
-    @JoinColumn(name = "account_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public Account getAccountByAccountId() {
+    @JoinColumn(name = "account_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public AccountEntity getAccountByAccountId() {
         return accountByAccountId;
     }
 
-    public void setAccountByAccountId(Account accountByAccountId) {
+    public void setAccountByAccountId(AccountEntity accountByAccountId) {
         this.accountByAccountId = accountByAccountId;
     }
 }

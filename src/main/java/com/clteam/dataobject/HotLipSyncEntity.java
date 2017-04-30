@@ -3,14 +3,15 @@ package com.clteam.dataobject;
 import javax.persistence.*;
 
 /**
- * Created by Dell on 28-Apr-17.
+ * Created by Dell on 30-Apr-17.
  */
 @Entity
-@Table(name = "temp_new_cover_admin")
-public class TempNewCoverAdmin {
+@Table(name = "hot_lip_sync")
+public class HotLipSyncEntity {
     private int id;
     private int videoId;
-    private VideoInfo videoInfoByVideoId;
+    private int priority;
+    private VideoInfoEntity videoInfoByVideoId;
 
     @Id
     @Column(name = "id")
@@ -32,15 +33,26 @@ public class TempNewCoverAdmin {
         this.videoId = videoId;
     }
 
+    @Basic
+    @Column(name = "priority")
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        TempNewCoverAdmin that = (TempNewCoverAdmin) o;
+        HotLipSyncEntity that = (HotLipSyncEntity) o;
 
         if (id != that.id) return false;
         if (videoId != that.videoId) return false;
+        if (priority != that.priority) return false;
 
         return true;
     }
@@ -49,16 +61,17 @@ public class TempNewCoverAdmin {
     public int hashCode() {
         int result = id;
         result = 31 * result + videoId;
+        result = 31 * result + priority;
         return result;
     }
 
     @ManyToOne
-    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public VideoInfo getVideoInfoByVideoId() {
+    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public VideoInfoEntity getVideoInfoByVideoId() {
         return videoInfoByVideoId;
     }
 
-    public void setVideoInfoByVideoId(VideoInfo videoInfoByVideoId) {
+    public void setVideoInfoByVideoId(VideoInfoEntity videoInfoByVideoId) {
         this.videoInfoByVideoId = videoInfoByVideoId;
     }
 }

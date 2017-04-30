@@ -4,17 +4,17 @@ import javax.persistence.*;
 import java.util.Collection;
 
 /**
- * Created by Dell on 28-Apr-17.
+ * Created by Dell on 30-Apr-17.
  */
 @Entity
 @Table(name = "lip_sync_template_info")
-public class LipSyncTemplateInfo {
+public class LipSyncTemplateInfoEntity {
     private int id;
     private int videoId;
     private String lipsyncTemplateName;
     private int numLipsync;
-    private Collection<LipSyncInfo> lipSyncInfosById;
-    private VideoInfo videoInfoByVideoId;
+    private Collection<LipSyncInfoEntity> lipSyncInfosById;
+    private VideoInfoEntity videoInfoByVideoId;
 
     @Id
     @Column(name = "id")
@@ -61,7 +61,7 @@ public class LipSyncTemplateInfo {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        LipSyncTemplateInfo that = (LipSyncTemplateInfo) o;
+        LipSyncTemplateInfoEntity that = (LipSyncTemplateInfoEntity) o;
 
         if (id != that.id) return false;
         if (videoId != that.videoId) return false;
@@ -82,21 +82,21 @@ public class LipSyncTemplateInfo {
     }
 
     @OneToMany(mappedBy = "lipSyncTemplateInfoByLipSyncTemplateId")
-    public Collection<LipSyncInfo> getLipSyncInfosById() {
+    public Collection<LipSyncInfoEntity> getLipSyncInfosById() {
         return lipSyncInfosById;
     }
 
-    public void setLipSyncInfosById(Collection<LipSyncInfo> lipSyncInfosById) {
+    public void setLipSyncInfosById(Collection<LipSyncInfoEntity> lipSyncInfosById) {
         this.lipSyncInfosById = lipSyncInfosById;
     }
 
     @ManyToOne
-    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public VideoInfo getVideoInfoByVideoId() {
+    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public VideoInfoEntity getVideoInfoByVideoId() {
         return videoInfoByVideoId;
     }
 
-    public void setVideoInfoByVideoId(VideoInfo videoInfoByVideoId) {
+    public void setVideoInfoByVideoId(VideoInfoEntity videoInfoByVideoId) {
         this.videoInfoByVideoId = videoInfoByVideoId;
     }
 }

@@ -3,17 +3,17 @@ package com.clteam.dataobject;
 import javax.persistence.*;
 
 /**
- * Created by Dell on 28-Apr-17.
+ * Created by Dell on 30-Apr-17.
  */
 @Entity
 @Table(name = "cover_top")
-public class CoverTop {
+public class CoverTopEntity {
     private int id;
     private int videoId;
     private int topId;
     private int numViewPeriod;
-    private VideoInfo videoInfoByVideoId;
-    private TopList topListByTopId;
+    private VideoInfoEntity videoInfoByVideoId;
+    private TopListEntity topListByTopId;
 
     @Id
     @Column(name = "id")
@@ -60,12 +60,12 @@ public class CoverTop {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        CoverTop coverTop = (CoverTop) o;
+        CoverTopEntity that = (CoverTopEntity) o;
 
-        if (id != coverTop.id) return false;
-        if (videoId != coverTop.videoId) return false;
-        if (topId != coverTop.topId) return false;
-        if (numViewPeriod != coverTop.numViewPeriod) return false;
+        if (id != that.id) return false;
+        if (videoId != that.videoId) return false;
+        if (topId != that.topId) return false;
+        if (numViewPeriod != that.numViewPeriod) return false;
 
         return true;
     }
@@ -81,21 +81,21 @@ public class CoverTop {
 
     @ManyToOne
     @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-    public VideoInfo getVideoInfoByVideoId() {
+    public VideoInfoEntity getVideoInfoByVideoId() {
         return videoInfoByVideoId;
     }
 
-    public void setVideoInfoByVideoId(VideoInfo videoInfoByVideoId) {
+    public void setVideoInfoByVideoId(VideoInfoEntity videoInfoByVideoId) {
         this.videoInfoByVideoId = videoInfoByVideoId;
     }
 
     @ManyToOne
     @JoinColumn(name = "top_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-    public TopList getTopListByTopId() {
+    public TopListEntity getTopListByTopId() {
         return topListByTopId;
     }
 
-    public void setTopListByTopId(TopList topListByTopId) {
+    public void setTopListByTopId(TopListEntity topListByTopId) {
         this.topListByTopId = topListByTopId;
     }
 }

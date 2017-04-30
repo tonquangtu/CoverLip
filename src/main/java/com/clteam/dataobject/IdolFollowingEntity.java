@@ -4,17 +4,17 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by Dell on 28-Apr-17.
+ * Created by Dell on 30-Apr-17.
  */
 @Entity
-@Table(name = "idol_following")
-public class IdolFollowing {
+@Table(name = "idol_following", schema = "coverlip", catalog = "")
+public class IdolFollowingEntity {
     private int id;
     private int accountId;
     private int followedAccountId;
     private Timestamp timeStartFollow;
-    private Account accountByAccountId;
-    private Account accountByFollowedAccountId;
+    private AccountEntity accountByAccountId;
+    private AccountEntity accountByFollowedAccountId;
 
     @Id
     @Column(name = "id")
@@ -61,7 +61,7 @@ public class IdolFollowing {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        IdolFollowing that = (IdolFollowing) o;
+        IdolFollowingEntity that = (IdolFollowingEntity) o;
 
         if (id != that.id) return false;
         if (accountId != that.accountId) return false;
@@ -83,21 +83,21 @@ public class IdolFollowing {
 
     @ManyToOne
     @JoinColumn(name = "account_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-    public Account getAccountByAccountId() {
+    public AccountEntity getAccountByAccountId() {
         return accountByAccountId;
     }
 
-    public void setAccountByAccountId(Account accountByAccountId) {
+    public void setAccountByAccountId(AccountEntity accountByAccountId) {
         this.accountByAccountId = accountByAccountId;
     }
 
     @ManyToOne
     @JoinColumn(name = "followed_account_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-    public Account getAccountByFollowedAccountId() {
+    public AccountEntity getAccountByFollowedAccountId() {
         return accountByFollowedAccountId;
     }
 
-    public void setAccountByFollowedAccountId(Account accountByFollowedAccountId) {
+    public void setAccountByFollowedAccountId(AccountEntity accountByFollowedAccountId) {
         this.accountByFollowedAccountId = accountByFollowedAccountId;
     }
 }

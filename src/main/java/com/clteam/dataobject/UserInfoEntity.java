@@ -4,11 +4,11 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by Dell on 28-Apr-17.
+ * Created by Dell on 30-Apr-17.
  */
 @Entity
 @Table(name = "user_info")
-public class UserInfo {
+public class UserInfoEntity {
     private int id;
     private int accountId;
     private int numHaveFollowed;
@@ -20,7 +20,7 @@ public class UserInfo {
     private String description;
     private String coverImage;
     private String avatarThumbnail;
-    private Account accountByAccountId;
+    private AccountEntity accountByAccountId;
 
     @Id
     @Column(name = "id")
@@ -93,7 +93,7 @@ public class UserInfo {
     }
 
     @Basic
-    @Column(name = "address",columnDefinition = "TEXT")
+    @Column(name = "address", columnDefinition = "TEXT")
     public String getAddress() {
         return address;
     }
@@ -137,21 +137,19 @@ public class UserInfo {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        UserInfo userInfo = (UserInfo) o;
+        UserInfoEntity that = (UserInfoEntity) o;
 
-        if (id != userInfo.id) return false;
-        if (accountId != userInfo.accountId) return false;
-        if (numHaveFollowed != userInfo.numHaveFollowed) return false;
-        if (numCover != userInfo.numCover) return false;
-        if (numLipsync != userInfo.numLipsync) return false;
-        if (numPlaylist != userInfo.numPlaylist) return false;
-        if (dateOfBirth != null ? !dateOfBirth.equals(userInfo.dateOfBirth) : userInfo.dateOfBirth != null)
-            return false;
-        if (address != null ? !address.equals(userInfo.address) : userInfo.address != null) return false;
-        if (description != null ? !description.equals(userInfo.description) : userInfo.description != null)
-            return false;
-        if (coverImage != null ? !coverImage.equals(userInfo.coverImage) : userInfo.coverImage != null) return false;
-        if (avatarThumbnail != null ? !avatarThumbnail.equals(userInfo.avatarThumbnail) : userInfo.avatarThumbnail != null)
+        if (id != that.id) return false;
+        if (accountId != that.accountId) return false;
+        if (numHaveFollowed != that.numHaveFollowed) return false;
+        if (numCover != that.numCover) return false;
+        if (numLipsync != that.numLipsync) return false;
+        if (numPlaylist != that.numPlaylist) return false;
+        if (dateOfBirth != null ? !dateOfBirth.equals(that.dateOfBirth) : that.dateOfBirth != null) return false;
+        if (address != null ? !address.equals(that.address) : that.address != null) return false;
+        if (description != null ? !description.equals(that.description) : that.description != null) return false;
+        if (coverImage != null ? !coverImage.equals(that.coverImage) : that.coverImage != null) return false;
+        if (avatarThumbnail != null ? !avatarThumbnail.equals(that.avatarThumbnail) : that.avatarThumbnail != null)
             return false;
 
         return true;
@@ -174,12 +172,12 @@ public class UserInfo {
     }
 
     @ManyToOne
-    @JoinColumn(name = "account_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public Account getAccountByAccountId() {
+    @JoinColumn(name = "account_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public AccountEntity getAccountByAccountId() {
         return accountByAccountId;
     }
 
-    public void setAccountByAccountId(Account accountByAccountId) {
+    public void setAccountByAccountId(AccountEntity accountByAccountId) {
         this.accountByAccountId = accountByAccountId;
     }
 }

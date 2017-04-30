@@ -1,6 +1,6 @@
 package com.clteam.repositories.impl;
 
-import com.clteam.dataobject.VideoInfo;
+import com.clteam.dataobject.VideoInfoEntity;
 import com.clteam.repositories.api.VideoRepository;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,23 +18,23 @@ public class VideoRepositoryImpl implements VideoRepository {
 
     @Autowired
     private SessionFactory sessionFactory;
-    public VideoInfo getVideoInfo(int videoId) {
-        return (VideoInfo)sessionFactory.getCurrentSession().get(VideoInfo.class, videoId);
+    public VideoInfoEntity getVideoInfo(int videoId) {
+        return (VideoInfoEntity)sessionFactory.getCurrentSession().get(VideoInfoEntity.class, videoId);
     }
 
     public boolean deleteVideo(int videoId) {
         return false;
     }
 
-    public boolean updateVideo(VideoInfo video) {
+    public boolean updateVideo(VideoInfoEntity video) {
         return false;
     }
 
-    public boolean insertVideo(VideoInfo video) {
+    public boolean insertVideo(VideoInfoEntity video) {
         return false;
     }
 
-    public List<VideoInfo> getAllVideo() {
+    public List<VideoInfoEntity> getAllVideo() {
         return null;
     }
 }

@@ -3,15 +3,15 @@ package com.clteam.dataobject;
 import javax.persistence.*;
 
 /**
- * Created by Dell on 28-Apr-17.
+ * Created by Dell on 30-Apr-17.
  */
 @Entity
-@Table(name = "new_lipsync")
-public class NewLipsync {
+@Table(name = "karaoke_info")
+public class KaraokeInfoEntity {
     private int id;
     private int videoId;
-    private int priority;
-    private VideoInfo videoInfoByVideoId;
+    private String karaokeName;
+    private VideoInfoEntity videoInfoByVideoId;
 
     @Id
     @Column(name = "id")
@@ -34,13 +34,13 @@ public class NewLipsync {
     }
 
     @Basic
-    @Column(name = "priority")
-    public int getPriority() {
-        return priority;
+    @Column(name = "karaoke_name")
+    public String getKaraokeName() {
+        return karaokeName;
     }
 
-    public void setPriority(int priority) {
-        this.priority = priority;
+    public void setKaraokeName(String karaokeName) {
+        this.karaokeName = karaokeName;
     }
 
     @Override
@@ -48,11 +48,11 @@ public class NewLipsync {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        NewLipsync that = (NewLipsync) o;
+        KaraokeInfoEntity that = (KaraokeInfoEntity) o;
 
         if (id != that.id) return false;
         if (videoId != that.videoId) return false;
-        if (priority != that.priority) return false;
+        if (karaokeName != null ? !karaokeName.equals(that.karaokeName) : that.karaokeName != null) return false;
 
         return true;
     }
@@ -61,17 +61,17 @@ public class NewLipsync {
     public int hashCode() {
         int result = id;
         result = 31 * result + videoId;
-        result = 31 * result + priority;
+        result = 31 * result + (karaokeName != null ? karaokeName.hashCode() : 0);
         return result;
     }
 
     @ManyToOne
-    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public VideoInfo getVideoInfoByVideoId() {
+    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public VideoInfoEntity getVideoInfoByVideoId() {
         return videoInfoByVideoId;
     }
 
-    public void setVideoInfoByVideoId(VideoInfo videoInfoByVideoId) {
+    public void setVideoInfoByVideoId(VideoInfoEntity videoInfoByVideoId) {
         this.videoInfoByVideoId = videoInfoByVideoId;
     }
 }

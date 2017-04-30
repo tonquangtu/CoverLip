@@ -3,14 +3,14 @@ package com.clteam.dataobject;
 import javax.persistence.*;
 
 /**
- * Created by Dell on 28-Apr-17.
+ * Created by Dell on 30-Apr-17.
  */
 @Entity
 @Table(name = "temp_new_lip_sync_admin")
-public class TempNewLipSyncAdmin {
+public class TempNewLipSyncAdminEntity {
     private int id;
     private int videoId;
-    private VideoInfo videoInfoByVideoId;
+    private VideoInfoEntity videoInfoByVideoId;
 
     @Id
     @Column(name = "id")
@@ -37,7 +37,7 @@ public class TempNewLipSyncAdmin {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        TempNewLipSyncAdmin that = (TempNewLipSyncAdmin) o;
+        TempNewLipSyncAdminEntity that = (TempNewLipSyncAdminEntity) o;
 
         if (id != that.id) return false;
         if (videoId != that.videoId) return false;
@@ -53,12 +53,12 @@ public class TempNewLipSyncAdmin {
     }
 
     @ManyToOne
-    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public VideoInfo getVideoInfoByVideoId() {
+    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public VideoInfoEntity getVideoInfoByVideoId() {
         return videoInfoByVideoId;
     }
 
-    public void setVideoInfoByVideoId(VideoInfo videoInfoByVideoId) {
+    public void setVideoInfoByVideoId(VideoInfoEntity videoInfoByVideoId) {
         this.videoInfoByVideoId = videoInfoByVideoId;
     }
 }

@@ -3,17 +3,17 @@ package com.clteam.dataobject;
 import javax.persistence.*;
 
 /**
- * Created by Dell on 28-Apr-17.
+ * Created by Dell on 30-Apr-17.
  */
 @Entity
 @Table(name = "admin_info")
-public class AdminInfo {
+public class AdminInfoEntity {
     private int id;
     private int accountId;
     private String profileImage;
     private String phoneNumber;
     private String address;
-    private Account accountByAccountId;
+    private AccountEntity accountByAccountId;
 
     @Id
     @Column(name = "id")
@@ -70,15 +70,13 @@ public class AdminInfo {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        AdminInfo adminInfo = (AdminInfo) o;
+        AdminInfoEntity that = (AdminInfoEntity) o;
 
-        if (id != adminInfo.id) return false;
-        if (accountId != adminInfo.accountId) return false;
-        if (profileImage != null ? !profileImage.equals(adminInfo.profileImage) : adminInfo.profileImage != null)
-            return false;
-        if (phoneNumber != null ? !phoneNumber.equals(adminInfo.phoneNumber) : adminInfo.phoneNumber != null)
-            return false;
-        if (address != null ? !address.equals(adminInfo.address) : adminInfo.address != null) return false;
+        if (id != that.id) return false;
+        if (accountId != that.accountId) return false;
+        if (profileImage != null ? !profileImage.equals(that.profileImage) : that.profileImage != null) return false;
+        if (phoneNumber != null ? !phoneNumber.equals(that.phoneNumber) : that.phoneNumber != null) return false;
+        if (address != null ? !address.equals(that.address) : that.address != null) return false;
 
         return true;
     }
@@ -95,11 +93,11 @@ public class AdminInfo {
 
     @ManyToOne
     @JoinColumn(name = "account_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-    public Account getAccountByAccountId() {
+    public AccountEntity getAccountByAccountId() {
         return accountByAccountId;
     }
 
-    public void setAccountByAccountId(Account accountByAccountId) {
+    public void setAccountByAccountId(AccountEntity accountByAccountId) {
         this.accountByAccountId = accountByAccountId;
     }
 }

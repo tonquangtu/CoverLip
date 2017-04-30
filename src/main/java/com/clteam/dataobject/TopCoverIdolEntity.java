@@ -3,17 +3,17 @@ package com.clteam.dataobject;
 import javax.persistence.*;
 
 /**
- * Created by Dell on 28-Apr-17.
+ * Created by Dell on 30-Apr-17.
  */
 @Entity
 @Table(name = "top_cover_idol")
-public class TopCoverIdol {
+public class TopCoverIdolEntity {
     private int id;
     private int accountId;
     private int topId;
     private int score;
-    private Account accountByAccountId;
-    private TopList topListByTopId;
+    private AccountEntity accountByAccountId;
+    private TopListEntity topListByTopId;
 
     @Id
     @Column(name = "id")
@@ -60,7 +60,7 @@ public class TopCoverIdol {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        TopCoverIdol that = (TopCoverIdol) o;
+        TopCoverIdolEntity that = (TopCoverIdolEntity) o;
 
         if (id != that.id) return false;
         if (accountId != that.accountId) return false;
@@ -81,21 +81,21 @@ public class TopCoverIdol {
 
     @ManyToOne
     @JoinColumn(name = "account_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-    public Account getAccountByAccountId() {
+    public AccountEntity getAccountByAccountId() {
         return accountByAccountId;
     }
 
-    public void setAccountByAccountId(Account accountByAccountId) {
+    public void setAccountByAccountId(AccountEntity accountByAccountId) {
         this.accountByAccountId = accountByAccountId;
     }
 
     @ManyToOne
     @JoinColumn(name = "top_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-    public TopList getTopListByTopId() {
+    public TopListEntity getTopListByTopId() {
         return topListByTopId;
     }
 
-    public void setTopListByTopId(TopList topListByTopId) {
+    public void setTopListByTopId(TopListEntity topListByTopId) {
         this.topListByTopId = topListByTopId;
     }
 }

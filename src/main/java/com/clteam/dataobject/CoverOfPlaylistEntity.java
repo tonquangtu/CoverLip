@@ -4,18 +4,18 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by Dell on 28-Apr-17.
+ * Created by Dell on 30-Apr-17.
  */
 @Entity
 @Table(name = "cover_of_playlist")
-public class CoverOfPlaylist {
+public class CoverOfPlaylistEntity {
     private int id;
     private int videoId;
     private int playlistId;
     private Timestamp timeAdd;
     private int priority;
-    private VideoInfo videoInfoByVideoId;
-    private PlaylistInfo playlistInfoByPlaylistId;
+    private VideoInfoEntity videoInfoByVideoId;
+    private PlaylistInfoEntity playlistInfoByPlaylistId;
 
     @Id
     @Column(name = "id")
@@ -72,7 +72,7 @@ public class CoverOfPlaylist {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        CoverOfPlaylist that = (CoverOfPlaylist) o;
+        CoverOfPlaylistEntity that = (CoverOfPlaylistEntity) o;
 
         if (id != that.id) return false;
         if (videoId != that.videoId) return false;
@@ -95,21 +95,21 @@ public class CoverOfPlaylist {
 
     @ManyToOne
     @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-    public VideoInfo getVideoInfoByVideoId() {
+    public VideoInfoEntity getVideoInfoByVideoId() {
         return videoInfoByVideoId;
     }
 
-    public void setVideoInfoByVideoId(VideoInfo videoInfoByVideoId) {
+    public void setVideoInfoByVideoId(VideoInfoEntity videoInfoByVideoId) {
         this.videoInfoByVideoId = videoInfoByVideoId;
     }
 
     @ManyToOne
     @JoinColumn(name = "playlist_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-    public PlaylistInfo getPlaylistInfoByPlaylistId() {
+    public PlaylistInfoEntity getPlaylistInfoByPlaylistId() {
         return playlistInfoByPlaylistId;
     }
 
-    public void setPlaylistInfoByPlaylistId(PlaylistInfo playlistInfoByPlaylistId) {
+    public void setPlaylistInfoByPlaylistId(PlaylistInfoEntity playlistInfoByPlaylistId) {
         this.playlistInfoByPlaylistId = playlistInfoByPlaylistId;
     }
 }

@@ -3,15 +3,15 @@ package com.clteam.dataobject;
 import javax.persistence.*;
 
 /**
- * Created by Dell on 28-Apr-17.
+ * Created by Dell on 30-Apr-17.
  */
 @Entity
-@Table(name = "new_cover")
-public class NewCover {
+@Table(name = "hot_cover")
+public class HotCoverEntity {
     private int id;
     private int videoId;
     private int priority;
-    private VideoInfo videoInfoByVideoId;
+    private VideoInfoEntity videoInfoByVideoId;
 
     @Id
     @Column(name = "id")
@@ -48,11 +48,11 @@ public class NewCover {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        NewCover newCover = (NewCover) o;
+        HotCoverEntity that = (HotCoverEntity) o;
 
-        if (id != newCover.id) return false;
-        if (videoId != newCover.videoId) return false;
-        if (priority != newCover.priority) return false;
+        if (id != that.id) return false;
+        if (videoId != that.videoId) return false;
+        if (priority != that.priority) return false;
 
         return true;
     }
@@ -66,12 +66,12 @@ public class NewCover {
     }
 
     @ManyToOne
-    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public VideoInfo getVideoInfoByVideoId() {
+    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public VideoInfoEntity getVideoInfoByVideoId() {
         return videoInfoByVideoId;
     }
 
-    public void setVideoInfoByVideoId(VideoInfo videoInfoByVideoId) {
+    public void setVideoInfoByVideoId(VideoInfoEntity videoInfoByVideoId) {
         this.videoInfoByVideoId = videoInfoByVideoId;
     }
 }

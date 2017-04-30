@@ -3,17 +3,17 @@ package com.clteam.dataobject;
 import javax.persistence.*;
 
 /**
- * Created by Dell on 28-Apr-17.
+ * Created by Dell on 30-Apr-17.
  */
 @Entity
 @Table(name = "temp_count_view_lip_sync")
-public class TempCountViewLipSync {
+public class TempCountViewLipSyncEntity {
     private int id;
     private int videoId;
     private int numView;
     private int week;
     private int year;
-    private VideoInfo videoInfoByVideoId;
+    private VideoInfoEntity videoInfoByVideoId;
 
     @Id
     @Column(name = "id")
@@ -70,7 +70,7 @@ public class TempCountViewLipSync {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        TempCountViewLipSync that = (TempCountViewLipSync) o;
+        TempCountViewLipSyncEntity that = (TempCountViewLipSyncEntity) o;
 
         if (id != that.id) return false;
         if (videoId != that.videoId) return false;
@@ -92,12 +92,12 @@ public class TempCountViewLipSync {
     }
 
     @ManyToOne
-    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public VideoInfo getVideoInfoByVideoId() {
+    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public VideoInfoEntity getVideoInfoByVideoId() {
         return videoInfoByVideoId;
     }
 
-    public void setVideoInfoByVideoId(VideoInfo videoInfoByVideoId) {
+    public void setVideoInfoByVideoId(VideoInfoEntity videoInfoByVideoId) {
         this.videoInfoByVideoId = videoInfoByVideoId;
     }
 }

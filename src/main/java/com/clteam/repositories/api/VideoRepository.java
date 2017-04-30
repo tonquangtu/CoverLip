@@ -1,6 +1,6 @@
 package com.clteam.repositories.api;
 
-import com.clteam.dataobject.VideoInfo;
+import com.clteam.dataobject.VideoInfoEntity;
 
 import java.util.List;
 
@@ -9,15 +9,15 @@ import java.util.List;
  */
 public interface VideoRepository {
 
-    VideoInfo getVideoInfo(int videoId);
+    VideoInfoEntity getVideoInfo(int videoId);
 
     boolean deleteVideo(int videoId);
 
-    boolean updateVideo(VideoInfo video);
+    boolean updateVideo(VideoInfoEntity video);
 
-    boolean insertVideo(VideoInfo video);
+    boolean insertVideo(VideoInfoEntity video);
 
-    List<VideoInfo> getAllVideo();
+    List<VideoInfoEntity> getAllVideo();
 
 
 }

@@ -1,6 +1,6 @@
 package com.clteam.repositories.impl;
 
-import com.clteam.dataobject.CoverInfo;
+import com.clteam.dataobject.CoverInfoEntity;
 import com.clteam.repositories.api.CoverRepository;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +17,11 @@ public class CoverRepositoryImpl implements CoverRepository {
     @Autowired
     private SessionFactory sessionFactory;
 
-    public CoverInfo getCoverInfo(int coverId) {
-        return (CoverInfo)sessionFactory.getCurrentSession().get(CoverInfo.class, coverId);
+    public CoverInfoEntity getCoverInfo(int coverId) {
+        return (CoverInfoEntity)sessionFactory.getCurrentSession().get(CoverInfoEntity.class, coverId);
     }
 
-    public CoverInfo getCoverInfoByVideoId(int videoId) {
+    public CoverInfoEntity getCoverInfoByVideoId(int videoId) {
         return null;
     }
 }

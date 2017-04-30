@@ -5,11 +5,11 @@ import java.sql.Timestamp;
 import java.util.Collection;
 
 /**
- * Created by Dell on 28-Apr-17.
+ * Created by Dell on 30-Apr-17.
  */
 @Entity
 @Table(name = "account")
-public class Account {
+public class AccountEntity {
     private int id;
     private String username;
     private String password;
@@ -17,14 +17,14 @@ public class Account {
     private byte role;
     private byte state;
     private Timestamp dateJoin;
-    private Collection<AdminInfo> adminInfosById;
-    private Collection<IdolFollowing> idolFollowingsById;
-    private Collection<IdolFollowing> idolFollowingsById_0;
-    private Collection<PlaylistInfo> playlistInfosById;
-    private Collection<TopCoverIdol> topCoverIdolsById;
-    private Collection<TopLipSyncIdol> topLipSyncIdolsById;
-    private Collection<UserInfo> userInfosById;
-    private Collection<VideoInfo> videoInfosById;
+    private Collection<AdminInfoEntity> adminInfosById;
+    private Collection<IdolFollowingEntity> idolFollowingsById;
+    private Collection<IdolFollowingEntity> idolFollowingsById_0;
+    private Collection<PlaylistInfoEntity> playlistInfosById;
+    private Collection<TopCoverIdolEntity> topCoverIdolsById;
+    private Collection<TopLipSyncIdolEntity> topLipSyncIdolsById;
+    private Collection<UserInfoEntity> userInfosById;
+    private Collection<VideoInfoEntity> videoInfosById;
 
     @Id
     @Column(name = "id")
@@ -101,15 +101,15 @@ public class Account {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Account account = (Account) o;
+        AccountEntity that = (AccountEntity) o;
 
-        if (id != account.id) return false;
-        if (role != account.role) return false;
-        if (state != account.state) return false;
-        if (username != null ? !username.equals(account.username) : account.username != null) return false;
-        if (password != null ? !password.equals(account.password) : account.password != null) return false;
-        if (fullname != null ? !fullname.equals(account.fullname) : account.fullname != null) return false;
-        if (dateJoin != null ? !dateJoin.equals(account.dateJoin) : account.dateJoin != null) return false;
+        if (id != that.id) return false;
+        if (role != that.role) return false;
+        if (state != that.state) return false;
+        if (username != null ? !username.equals(that.username) : that.username != null) return false;
+        if (password != null ? !password.equals(that.password) : that.password != null) return false;
+        if (fullname != null ? !fullname.equals(that.fullname) : that.fullname != null) return false;
+        if (dateJoin != null ? !dateJoin.equals(that.dateJoin) : that.dateJoin != null) return false;
 
         return true;
     }
@@ -127,82 +127,74 @@ public class Account {
     }
 
     @OneToMany(mappedBy = "accountByAccountId")
-    public Collection<AdminInfo> getAdminInfosById() {
+    public Collection<AdminInfoEntity> getAdminInfosById() {
         return adminInfosById;
     }
 
-    public void setAdminInfosById(Collection<AdminInfo> adminInfosById) {
+    public void setAdminInfosById(Collection<AdminInfoEntity> adminInfosById) {
         this.adminInfosById = adminInfosById;
     }
 
-    /**
-     * Get Idols
-     * @return
-     */
     @OneToMany(mappedBy = "accountByAccountId")
-    public Collection<IdolFollowing> getIdolFollowingsById() {
+    public Collection<IdolFollowingEntity> getIdolFollowingsById() {
         return idolFollowingsById;
     }
 
-    public void setIdolFollowingsById(Collection<IdolFollowing> idolFollowingsById) {
+    public void setIdolFollowingsById(Collection<IdolFollowingEntity> idolFollowingsById) {
         this.idolFollowingsById = idolFollowingsById;
     }
 
-    /**
-     * Get Fans
-     * @return
-     */
     @OneToMany(mappedBy = "accountByFollowedAccountId")
-    public Collection<IdolFollowing> getIdolFollowingsById_0() {
+    public Collection<IdolFollowingEntity> getIdolFollowingsById_0() {
         return idolFollowingsById_0;
     }
 
-    public void setIdolFollowingsById_0(Collection<IdolFollowing> idolFollowingsById_0) {
+    public void setIdolFollowingsById_0(Collection<IdolFollowingEntity> idolFollowingsById_0) {
         this.idolFollowingsById_0 = idolFollowingsById_0;
     }
 
     @OneToMany(mappedBy = "accountByAccountId")
-    public Collection<PlaylistInfo> getPlaylistInfosById() {
+    public Collection<PlaylistInfoEntity> getPlaylistInfosById() {
         return playlistInfosById;
     }
 
-    public void setPlaylistInfosById(Collection<PlaylistInfo> playlistInfosById) {
+    public void setPlaylistInfosById(Collection<PlaylistInfoEntity> playlistInfosById) {
         this.playlistInfosById = playlistInfosById;
     }
 
     @OneToMany(mappedBy = "accountByAccountId")
-    public Collection<TopCoverIdol> getTopCoverIdolsById() {
+    public Collection<TopCoverIdolEntity> getTopCoverIdolsById() {
         return topCoverIdolsById;
     }
 
-    public void setTopCoverIdolsById(Collection<TopCoverIdol> topCoverIdolsById) {
+    public void setTopCoverIdolsById(Collection<TopCoverIdolEntity> topCoverIdolsById) {
         this.topCoverIdolsById = topCoverIdolsById;
     }
 
     @OneToMany(mappedBy = "accountByAccountId")
-    public Collection<TopLipSyncIdol> getTopLipSyncIdolsById() {
+    public Collection<TopLipSyncIdolEntity> getTopLipSyncIdolsById() {
         return topLipSyncIdolsById;
     }
 
-    public void setTopLipSyncIdolsById(Collection<TopLipSyncIdol> topLipSyncIdolsById) {
+    public void setTopLipSyncIdolsById(Collection<TopLipSyncIdolEntity> topLipSyncIdolsById) {
         this.topLipSyncIdolsById = topLipSyncIdolsById;
     }
 
     @OneToMany(mappedBy = "accountByAccountId")
-    public Collection<UserInfo> getUserInfosById() {
+    public Collection<UserInfoEntity> getUserInfosById() {
         return userInfosById;
     }
 
-    public void setUserInfosById(Collection<UserInfo> userInfosById) {
+    public void setUserInfosById(Collection<UserInfoEntity> userInfosById) {
         this.userInfosById = userInfosById;
     }
 
     @OneToMany(mappedBy = "accountByAccountId")
-    public Collection<VideoInfo> getVideoInfosById() {
+    public Collection<VideoInfoEntity> getVideoInfosById() {
         return videoInfosById;
     }
 
-    public void setVideoInfosById(Collection<VideoInfo> videoInfosById) {
+    public void setVideoInfosById(Collection<VideoInfoEntity> videoInfosById) {
         this.videoInfosById = videoInfosById;
     }
 }

@@ -1,23 +1,22 @@
 package com.clteam.dataobject;
 
 import javax.persistence.*;
-import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.Collection;
 
 /**
- * Created by Dell on 28-Apr-17.
+ * Created by Dell on 30-Apr-17.
  */
 @Entity
 @Table(name = "top_list")
-public class TopList {
+public class TopListEntity {
     private int id;
     private Timestamp timeTopStart;
     private Timestamp timeEndStart;
-    private Date topDescription;
-    private Collection<CoverTop> coverTopsById;
-    private Collection<TopCoverIdol> topCoverIdolsById;
-    private Collection<TopLipSyncIdol> topLipSyncIdolsById;
+    private String topDescription;
+    private Collection<CoverTopEntity> coverTopsById;
+    private Collection<TopCoverIdolEntity> topCoverIdolsById;
+    private Collection<TopLipSyncIdolEntity> topLipSyncIdolsById;
 
     @Id
     @Column(name = "id")
@@ -50,12 +49,12 @@ public class TopList {
     }
 
     @Basic
-    @Column(name = "top_description")
-    public Date getTopDescription() {
+    @Column(name = "top_description",columnDefinition = "TEXT")
+    public String getTopDescription() {
         return topDescription;
     }
 
-    public void setTopDescription(Date topDescription) {
+    public void setTopDescription(String topDescription) {
         this.topDescription = topDescription;
     }
 
@@ -64,14 +63,12 @@ public class TopList {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        TopList topList = (TopList) o;
+        TopListEntity that = (TopListEntity) o;
 
-        if (id != topList.id) return false;
-        if (timeTopStart != null ? !timeTopStart.equals(topList.timeTopStart) : topList.timeTopStart != null)
-            return false;
-        if (timeEndStart != null ? !timeEndStart.equals(topList.timeEndStart) : topList.timeEndStart != null)
-            return false;
-        if (topDescription != null ? !topDescription.equals(topList.topDescription) : topList.topDescription != null)
+        if (id != that.id) return false;
+        if (timeTopStart != null ? !timeTopStart.equals(that.timeTopStart) : that.timeTopStart != null) return false;
+        if (timeEndStart != null ? !timeEndStart.equals(that.timeEndStart) : that.timeEndStart != null) return false;
+        if (topDescription != null ? !topDescription.equals(that.topDescription) : that.topDescription != null)
             return false;
 
         return true;
@@ -87,29 +84,29 @@ public class TopList {
     }
 
     @OneToMany(mappedBy = "topListByTopId")
-    public Collection<CoverTop> getCoverTopsById() {
+    public Collection<CoverTopEntity> getCoverTopsById() {
         return coverTopsById;
     }
 
-    public void setCoverTopsById(Collection<CoverTop> coverTopsById) {
+    public void setCoverTopsById(Collection<CoverTopEntity> coverTopsById) {
         this.coverTopsById = coverTopsById;
     }
 
     @OneToMany(mappedBy = "topListByTopId")
-    public Collection<TopCoverIdol> getTopCoverIdolsById() {
+    public Collection<TopCoverIdolEntity> getTopCoverIdolsById() {
         return topCoverIdolsById;
     }
 
-    public void setTopCoverIdolsById(Collection<TopCoverIdol> topCoverIdolsById) {
+    public void setTopCoverIdolsById(Collection<TopCoverIdolEntity> topCoverIdolsById) {
         this.topCoverIdolsById = topCoverIdolsById;
     }
 
     @OneToMany(mappedBy = "topListByTopId")
-    public Collection<TopLipSyncIdol> getTopLipSyncIdolsById() {
+    public Collection<TopLipSyncIdolEntity> getTopLipSyncIdolsById() {
         return topLipSyncIdolsById;
     }
 
-    public void setTopLipSyncIdolsById(Collection<TopLipSyncIdol> topLipSyncIdolsById) {
+    public void setTopLipSyncIdolsById(Collection<TopLipSyncIdolEntity> topLipSyncIdolsById) {
         this.topLipSyncIdolsById = topLipSyncIdolsById;
     }
 }

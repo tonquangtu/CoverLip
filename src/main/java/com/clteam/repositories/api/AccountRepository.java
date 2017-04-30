@@ -1,6 +1,6 @@
 package com.clteam.repositories.api;
 
-import com.clteam.dataobject.Account;
+import com.clteam.dataobject.AccountEntity;
 
 import java.util.List;
 
@@ -9,15 +9,15 @@ import java.util.List;
  */
 public interface AccountRepository {
 
-    Account getAccount(int accountId);
+    AccountEntity getAccount(int accountId);
 
     boolean deleteAccount(int accountId);
 
-    boolean updateAccount(Account account);
+    boolean updateAccount(AccountEntity account);
 
-    boolean insertAccount(Account account);
+    boolean insertAccount(AccountEntity account);
 
-    List<Account> getAllAccount();
+    List<AccountEntity> getAllAccount();
 
 
 }

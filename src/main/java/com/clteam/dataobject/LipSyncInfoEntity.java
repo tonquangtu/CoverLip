@@ -3,16 +3,16 @@ package com.clteam.dataobject;
 import javax.persistence.*;
 
 /**
- * Created by Dell on 28-Apr-17.
+ * Created by Dell on 30-Apr-17.
  */
 @Entity
-@Table(name = "lip_sync_info")
-public class LipSyncInfo {
+@Table(name = "lip_sync_info", schema = "coverlip", catalog = "")
+public class LipSyncInfoEntity {
     private int id;
     private int videoId;
     private int lipSyncTemplateId;
-    private VideoInfo videoInfoByVideoId;
-    private LipSyncTemplateInfo lipSyncTemplateInfoByLipSyncTemplateId;
+    private VideoInfoEntity videoInfoByVideoId;
+    private LipSyncTemplateInfoEntity lipSyncTemplateInfoByLipSyncTemplateId;
 
     @Id
     @Column(name = "id")
@@ -49,7 +49,7 @@ public class LipSyncInfo {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        LipSyncInfo that = (LipSyncInfo) o;
+        LipSyncInfoEntity that = (LipSyncInfoEntity) o;
 
         if (id != that.id) return false;
         if (videoId != that.videoId) return false;
@@ -67,22 +67,22 @@ public class LipSyncInfo {
     }
 
     @ManyToOne
-    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public VideoInfo getVideoInfoByVideoId() {
+    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public VideoInfoEntity getVideoInfoByVideoId() {
         return videoInfoByVideoId;
     }
 
-    public void setVideoInfoByVideoId(VideoInfo videoInfoByVideoId) {
+    public void setVideoInfoByVideoId(VideoInfoEntity videoInfoByVideoId) {
         this.videoInfoByVideoId = videoInfoByVideoId;
     }
 
     @ManyToOne
-    @JoinColumn(name = "lip_sync_template_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public LipSyncTemplateInfo getLipSyncTemplateInfoByLipSyncTemplateId() {
+    @JoinColumn(name = "lip_sync_template_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public LipSyncTemplateInfoEntity getLipSyncTemplateInfoByLipSyncTemplateId() {
         return lipSyncTemplateInfoByLipSyncTemplateId;
     }
 
-    public void setLipSyncTemplateInfoByLipSyncTemplateId(LipSyncTemplateInfo lipSyncTemplateInfoByLipSyncTemplateId) {
+    public void setLipSyncTemplateInfoByLipSyncTemplateId(LipSyncTemplateInfoEntity lipSyncTemplateInfoByLipSyncTemplateId) {
         this.lipSyncTemplateInfoByLipSyncTemplateId = lipSyncTemplateInfoByLipSyncTemplateId;
     }
 }

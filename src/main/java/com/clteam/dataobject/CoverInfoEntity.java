@@ -3,16 +3,16 @@ package com.clteam.dataobject;
 import javax.persistence.*;
 
 /**
- * Created by Dell on 28-Apr-17.
+ * Created by Dell on 30-Apr-17.
  */
 @Entity
 @Table(name = "cover_info")
-public class CoverInfo {
+public class CoverInfoEntity {
     private int id;
     private int videoId;
     private String coverName;
     private String mp3Link;
-    private VideoInfo videoInfoByVideoId;
+    private VideoInfoEntity videoInfoByVideoId;
 
     @Id
     @Column(name = "id")
@@ -45,7 +45,7 @@ public class CoverInfo {
     }
 
     @Basic
-    @Column(name = "mp3_link")
+    @Column(name = "mp3_link", columnDefinition = "TEXT")
     public String getMp3Link() {
         return mp3Link;
     }
@@ -59,12 +59,12 @@ public class CoverInfo {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        CoverInfo coverInfo = (CoverInfo) o;
+        CoverInfoEntity that = (CoverInfoEntity) o;
 
-        if (id != coverInfo.id) return false;
-        if (videoId != coverInfo.videoId) return false;
-        if (coverName != null ? !coverName.equals(coverInfo.coverName) : coverInfo.coverName != null) return false;
-        if (mp3Link != null ? !mp3Link.equals(coverInfo.mp3Link) : coverInfo.mp3Link != null) return false;
+        if (id != that.id) return false;
+        if (videoId != that.videoId) return false;
+        if (coverName != null ? !coverName.equals(that.coverName) : that.coverName != null) return false;
+        if (mp3Link != null ? !mp3Link.equals(that.mp3Link) : that.mp3Link != null) return false;
 
         return true;
     }
@@ -79,12 +79,12 @@ public class CoverInfo {
     }
 
     @ManyToOne
-    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false,insertable = false, updatable = false)
-    public VideoInfo getVideoInfoByVideoId() {
+    @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    public VideoInfoEntity getVideoInfoByVideoId() {
         return videoInfoByVideoId;
     }
 
-    public void setVideoInfoByVideoId(VideoInfo videoInfoByVideoId) {
+    public void setVideoInfoByVideoId(VideoInfoEntity videoInfoByVideoId) {
         this.videoInfoByVideoId = videoInfoByVideoId;
     }
 }
