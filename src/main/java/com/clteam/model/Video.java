@@ -1,20 +1,20 @@
 package com.clteam.model;
 
+import com.clteam.dataobject.AccountEntity;
+import com.clteam.dataobject.VideoInfoEntity;
+
+import java.io.Serializable;
 import java.sql.Time;
 import java.sql.Timestamp;
 
 /**
- * Created by Dell on 29-Apr-17.
+ * Created by Dell on 30-Apr-17.
  */
-public class FullCoverInfo {
+public class Video implements Serializable{
+    public Video() {
+    }
 
-    private long videoId;
-
-    private String coverName;
-
-    private String mp3Link;
-
-    private long accountId;
+    private int id;
 
     private String videoLink;
 
@@ -24,9 +24,9 @@ public class FullCoverInfo {
 
     private Timestamp createDate;
 
-    private int numLike;
-
     private int numView;
+
+    private int numLike;
 
     private int numComment;
 
@@ -34,36 +34,14 @@ public class FullCoverInfo {
 
     private String description;
 
-    public long getVideoId() {
-        return videoId;
+    private Account account;
+
+    public int getId() {
+        return id;
     }
 
-    public void setVideoId(long videoId) {
-        this.videoId = videoId;
-    }
-
-    public String getCoverName() {
-        return coverName;
-    }
-
-    public void setCoverName(String coverName) {
-        this.coverName = coverName;
-    }
-
-    public String getMp3Link() {
-        return mp3Link;
-    }
-
-    public void setMp3Link(String mp3Link) {
-        this.mp3Link = mp3Link;
-    }
-
-    public long getAccountId() {
-        return accountId;
-    }
-
-    public void setAccountId(long accountId) {
-        this.accountId = accountId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getVideoLink() {
@@ -98,20 +76,20 @@ public class FullCoverInfo {
         this.createDate = createDate;
     }
 
-    public int getNumLike() {
-        return numLike;
-    }
-
-    public void setNumLike(int numLike) {
-        this.numLike = numLike;
-    }
-
     public int getNumView() {
         return numView;
     }
 
     public void setNumView(int numView) {
         this.numView = numView;
+    }
+
+    public int getNumLike() {
+        return numLike;
+    }
+
+    public void setNumLike(int numLike) {
+        this.numLike = numLike;
     }
 
     public int getNumComment() {
@@ -138,33 +116,37 @@ public class FullCoverInfo {
         this.description = description;
     }
 
-    public void copyData(CoverInfo cover,VideoInfo video) {
+    public Account getAccount() {
+        return account;
+    }
 
-        videoId = cover.getVideoId();
+    public void setAccount(Account account) {
+        this.account = account;
+    }
 
-        coverName = cover.getCoverName();
+    public void copyData(VideoInfoEntity videoEntity, AccountEntity accountEntity) {
 
-        mp3Link = cover.getMp3Link();
+        id = videoEntity.getId();
 
-        accountId = video.getAccountId();
+        videoLink = videoEntity.getVideoLink();
 
-        videoLink = video.getVideoLink();
+        videoThumbnailLink = videoEntity.getVideoThumbnailLink();
 
-        videoThumbnailLink = video.getVideoThumbnailLink();
+        duration = videoEntity.getDuration();
 
-        duration = video.getDuration();
+        createDate = videoEntity.getCreateDate();
 
-        createDate = video.getCreateDate();
+        numView = videoEntity.getNumView();
 
-        numLike = video.getNumLike();
+        numLike = videoEntity.getNumLike();
 
-        numView = video.getNumView();
+        numComment = videoEntity.getNumComment();
 
-        numComment  = video.getNumComment();
+        state = videoEntity.getState();
 
-        state = video.getState();
+        description = videoEntity.getDescription();
 
-        description = video.getDescription();
-
+        this.account = new Account();
+        this.account.copyData(accountEntity);
     }
 }

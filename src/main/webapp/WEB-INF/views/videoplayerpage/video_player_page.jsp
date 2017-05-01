@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>I'm Losing You</title>
+    <title>${cover.coverName}</title>
     <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
     <meta title="I'm Losing You">
 
@@ -53,7 +53,7 @@
            <div class="video-content-box box-shadow">
                <div class="media-wrapper">
                    <video id="player1" width="750" height="460">
-                       <source   type="video/mp4"  src="${fullCoverInfo.videoLink}"/>
+                       <source   type="video/mp4"  src="${cover.video.videoLink}"/>
 
 
                        <!-- <track srclang="en" label="English" kind=
@@ -65,21 +65,21 @@
                <div class="video-detail-box">
 
                    <div class="video-title-box">
-                       <h1><a class="video-title pull-left" href="#">${fullCoverInfo.coverName}</a></h1>
+                       <h1><a class="video-title pull-left" href="#">${cover.coverName}</a></h1>
                        <ul class="video-counter">
                            <li class="like-counter-box ">
                                <img class="icon-like" src="../../../resources/icons/icon_like.svg"/>
-                               <span class="like-counter">${fullCoverInfo.numLike}</span>
+                               <span class="like-counter">${cover.video.numLike}</span>
                            </li>
 
                            <li class="comment-counter-box ">
                                <img class="icon-comment" src="../../../resources/icons/icon_comment.svg">
-                               <span class="comment-counter">${fullCoverInfo.numComment}</span>
+                               <span class="comment-counter">${cover.video.numComment}</span>
                            </li>
 
                            <li class="view-counter-box ">
                                <img class="icon-view" src="../../../resources/icons/icon_view.svg">
-                               <span class="view-counter">${fullCoverInfo.numView}</span>
+                               <span class="view-counter">${cover.video.numView}</span>
                            </li>
 
                        </ul>
@@ -89,7 +89,7 @@
                    <div class="line-horizontal-left">
                        <div class="video-owner-box pull-left">
                            <a class="video-owner-thumbnail" style = "background-image: url('http://avatar.muvik.tv/d/iidm9c');" href="#"></a>
-                           <a class="video-owner-name center-vertical" href="#">${fullCoverInfo.}</a>
+                           <a class="video-owner-name center-vertical" href="#">${cover.video.account.fullname}</a>
                        </div>
                    </div>
                    <div class="time-upload-video pull-right">Đăng từ <span>2 ngày trước</span></div>

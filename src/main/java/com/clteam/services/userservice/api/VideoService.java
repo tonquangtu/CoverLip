@@ -1,12 +1,12 @@
 package com.clteam.services.userservice.api;
 
-import com.clteam.model.FullCoverInfo;
+import com.clteam.model.Cover;
 
 /**
  * Created by Dell on 28-Apr-17.
  */
 public interface VideoService {
 
-    public FullCoverInfo getFullCoverInfo(long coverId);
+    public Cover getCoverInfo(int coverId);
 
 }

@@ -1,5 +1,6 @@
 package com.clteam.repositories.impl;
 
+import com.clteam.dataobject.UserInfoEntity;
 import com.clteam.repositories.api.UserRepository;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,15 +18,15 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Autowired
     private SessionFactory sessionFactory;
-    public UserInfo getUserInfo(int userId) {
-        return (UserInfo)sessionFactory.getCurrentSession().get(UserInfo.class, userId);
+    public UserInfoEntity getUserInfo(int userId) {
+        return (UserInfoEntity)sessionFactory.getCurrentSession().get(UserInfoEntity.class, userId);
     }
 
-    public UserInfo getUserInfoByAccountId(int accountId) {
-        return (UserInfo)sessionFactory.getCurrentSession().createQuery("from UserInfo where accountId="+accountId).list().get(0);
+    public UserInfoEntity getUserInfoByAccountId(int accountId) {
+        return (UserInfoEntity)sessionFactory.getCurrentSession().createQuery("from UserInfoEntity where accountId="+accountId).list().get(0);
     }
 
-    public UserInfo getUser(int accountId) {
+    public UserInfoEntity getUser(int accountId) {
         return null;
     }
 
@@ -33,15 +34,15 @@ public class UserRepositoryImpl implements UserRepository {
         return false;
     }
 
-    public boolean updateUser(UserInfo user) {
+    public boolean updateUser(UserInfoEntity user) {
         return false;
     }
 
-    public boolean insertUser(UserInfo user) {
+    public boolean insertUser(UserInfoEntity user) {
         return false;
     }
 
-    public List<UserInfo> getAllUser() {
+    public List<UserInfoEntity> getAllUser() {
         return null;
     }
 }

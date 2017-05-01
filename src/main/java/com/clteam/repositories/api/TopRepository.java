@@ -1,5 +1,7 @@
 package com.clteam.repositories.api;
 
+import com.clteam.dataobject.TopListEntity;
+
 import java.util.List;
 
 /**
@@ -7,13 +9,13 @@ import java.util.List;
  */
 public interface TopRepository {
 
-    TopList getTop(int topId);
+    TopListEntity getTop(int topId);
 
     boolean deleteTop(int topId);
 
-    boolean updateTop(TopList top);
+    boolean updateTop(TopListEntity top);
 
-    boolean insertTop(TopList top);
+    boolean insertTop(TopListEntity top);
 
-    List<TopList> getAllTop();
+    List<TopListEntity> getAllTop();
 }

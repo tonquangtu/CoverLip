@@ -1,6 +1,6 @@
 package com.clteam.controllers.usercontroller;
 
-import com.clteam.model.FullCoverInfo;
+import com.clteam.model.Cover;
 import com.clteam.services.userservice.api.VideoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,19 +31,21 @@ public class VideoPlayerPageController {
 
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();
-
         try {
-            long videoId = Integer.parseInt(videoIdString);
-            FullCoverInfo fullCoverInfo = videoService.getFullCoverInfo(videoId);
-            if (fullCoverInfo != null) {
-
-                map.put("fullCoverInfo", fullCoverInfo);
-                modelAndView.addAllObjects(map);
+            int videoId = Integer.parseInt(videoIdString);
+            Cover cover = videoService.getCoverInfo(videoId);
+            if (cover != null) {
+                map.put("cover", cover);
                 modelAndView.setViewName("videoplayerpage/video_player_page");
+            }else {
+                modelAndView.setViewName("common/error");
             }
         }catch(Exception e) {
             modelAndView.setViewName("common/error");
+            e.printStackTrace();
         }
+
+        modelAndView.addAllObjects(map);
         return modelAndView;
     }
 

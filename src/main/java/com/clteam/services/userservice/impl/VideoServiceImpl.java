@@ -1,6 +1,10 @@
 package com.clteam.services.userservice.impl;
 
-import com.clteam.model.FullCoverInfo;
+import com.clteam.dataobject.AccountEntity;
+import com.clteam.dataobject.CoverInfoEntity;
+import com.clteam.dataobject.VideoInfoEntity;
+import com.clteam.model.Cover;
+import com.clteam.model.Video;
 import com.clteam.repositories.api.VideoRepository;
 import com.clteam.services.userservice.api.VideoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,23 +21,28 @@ public class VideoServiceImpl implements VideoService{
     @Autowired
     private VideoRepository videoRepo;
 
-    public FullCoverInfo getFullCoverInfo(long coverId) {
+    public Cover getCoverInfo(int coverId) {
 
-        FullCoverInfo fullCoverInfo = null;
+        Cover cover = null;
+        VideoInfoEntity videoEntity = videoRepo.getVideoInfo(coverId);
+        if (videoEntity != null) {
 
-        VideoInfo videoInfo = videoRepo.getVideoInfo(coverId);
-        if (videoInfo != null) {
+            Collection<CoverInfoEntity> coverEntities = videoEntity.getCoverInfosById();
+            if (coverEntities != null && coverEntities.size() >= 1) {
+                CoverInfoEntity coverEntity = (CoverInfoEntity)coverEntities.toArray()[0];
+                if (coverEntity != null) {
 
-            Collection<CoverInfo> covers = videoInfo.getCoverInfosById();
-            if (covers != null && covers.size() >= 1) {
-                CoverInfo cover = (CoverInfo)covers.toArray()[0];
-                if (cover != null) {
-                    fullCoverInfo = new FullCoverInfo();
-                    fullCoverInfo.copyData(cover, videoInfo);
+                    cover = new Cover();
+                    cover.setCoverName(coverEntity.getCoverName());
+                    cover.setMp3Link(coverEntity.getMp3Link());
+
+                    Video video = new Video();
+                    AccountEntity accountEntity = videoEntity.getAccountByAccountId();
+                    video.copyData(videoEntity, accountEntity);
+                    cover.setVideo(video);
                 }
             }
         }
-
-        return fullCoverInfo;
+        return cover;
     }
 }

@@ -1,5 +1,7 @@
 package com.clteam.repositories.api;
 
+import com.clteam.dataobject.PlaylistInfoEntity;
+
 import java.util.List;
 
 /**
@@ -7,13 +9,13 @@ import java.util.List;
  */
 public interface PlaylistRepository {
 
-    PlaylistInfo getPlaylist(int playlistId);
+    PlaylistInfoEntity getPlaylist(int playlistId);
 
     boolean deletePlaylist(int playlistId);
 
-    boolean updatePlaylist(PlaylistInfo playlist);
+    boolean updatePlaylist(PlaylistInfoEntity playlist);
 
-    boolean insertPlaylist(PlaylistInfo playlist);
+    boolean insertPlaylist(PlaylistInfoEntity playlist);
 
-    List<PlaylistInfo> getAllPlaylist();
+    List<PlaylistInfoEntity> getAllPlaylist();
 }

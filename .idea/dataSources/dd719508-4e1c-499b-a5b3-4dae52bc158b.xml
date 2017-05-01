@@ -27,7 +27,7 @@
     <table id="21" parent="2" name="lip_sync_info"/>
     <table id="22" parent="2" name="lip_sync_template_info"/>
     <table id="23" parent="2" name="new_cover"/>
-    <table id="24" parent="2" name="new_lipsync"/>
+    <table id="24" parent="2" name="new_lip_sync"/>
     <table id="25" parent="2" name="playlist_info"/>
     <table id="26" parent="2" name="temp_count_view_cover"/>
     <table id="27" parent="2" name="temp_count_view_lip_sync"/>
@@ -134,7 +134,7 @@
     </column>
     <column id="54" parent="14" name="mp3_link">
       <Position>4</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>text|0</DataType>
     </column>
     <index id="55" parent="14" name="video_id">
       <ColNames>video_id</ColNames>
@@ -429,12 +429,12 @@ followed_account_id</ColNames>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="114" parent="22" name="lipsync_template_name">
+    <column id="114" parent="22" name="lip_sync_template_name">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="115" parent="22" name="num_lipsync">
+    <column id="115" parent="22" name="num_lip_sync">
       <Position>4</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
@@ -507,7 +507,7 @@ followed_account_id</ColNames>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="130" parent="24" name="new_lipsync_ibfk_1">
+    <foreign-key id="130" parent="24" name="new_lip_sync_ibfk_1">
       <ColNames>video_id</ColNames>
       <RefSchemaName>coverlip</RefSchemaName>
       <RefTableName>video_info</RefTableName>
@@ -809,7 +809,7 @@ top_id</ColNames>
     </column>
     <column id="190" parent="32" name="top_description">
       <Position>4</Position>
-      <DataType>date|0</DataType>
+      <DataType>text|0</DataType>
     </column>
     <key id="191" parent="32" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
