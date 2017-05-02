@@ -1,13 +1,16 @@
 package com.clteam.services.userservice.impl;
 
-import com.clteam.dataobject.*;
-import com.clteam.model.OneCardInfo;
-import com.clteam.repositories.api.VideoRepository;
+import com.clteam.dataobject.CoverInfoEntity;
+import com.clteam.dataobject.NewCoverEntity;
+import com.clteam.dataobject.VideoInfoEntity;
+import com.clteam.model.Cover;
+import com.clteam.repositories.api.CoverRepository;
 import com.clteam.services.userservice.api.NewCoverService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -17,19 +20,21 @@ import java.util.List;
 public class NewCoverServiceImpl implements NewCoverService {
 
     @Autowired
-    private VideoRepository videoRepository;
+    private CoverRepository coverRepository;
 
-    public List<OneCardInfo> getListNewCover() {
-        List<OneCardInfo>listOneCardInfo = new ArrayList<OneCardInfo>();
-        List<NewCover> listNewCover = videoRepository.getAllNewCover();
-        for (int i=0; i<listNewCover.size(); i++){
-            VideoInfo videoInfo = listNewCover.get(i).getVideoInfoByVideoId();
-            Account account = videoInfo.getAccountByAccountId();
-            UserInfo userInfo = (UserInfo)account.getUserInfosById().toArray()[0];
-            CoverInfo coverInfo = (CoverInfo)videoInfo.getCoverInfosById().toArray()[0];
-            OneCardInfo oneCardInfo = new OneCardInfo(videoInfo, account, userInfo,coverInfo);
-            listOneCardInfo.add(oneCardInfo);
+    public List<Cover> getListNewCover(int limit) {
+        List<NewCoverEntity> newCoverEntityList = coverRepository.getListNewCover(limit);
+        List<Cover> coverList = new ArrayList<Cover>();
+        for(int i=0; i<newCoverEntityList.size(); i++){
+            Cover cover = new Cover();
+            VideoInfoEntity videoInfoEntity = newCoverEntityList.get(i).getVideoInfoByVideoId();
+            Collection<CoverInfoEntity> coverInfoEntities =  videoInfoEntity.getCoverInfosById();
+            if(coverInfoEntities!=null){
+                CoverInfoEntity coverInfoEntity = (CoverInfoEntity)coverInfoEntities.toArray()[0];
+                cover.copyData(coverInfoEntity, videoInfoEntity);
+                coverList.add(cover);
+            }
         }
-        return listOneCardInfo;
+        return coverList;
     }
 }

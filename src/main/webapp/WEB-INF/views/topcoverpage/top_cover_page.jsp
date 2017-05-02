@@ -12,7 +12,7 @@ pageEncoding="UTF-8" %>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>CoverLip</title>
-    <%@ include file="../common/common_lib.html" %>
+    <%@ include file="../common/common_lib.jsp" %>
 
     <link rel="stylesheet" href="/resources/styles/main_navigation_style.css"/>
     <link rel="stylesheet" href="/resources/styles/main_header_style.css"/>
@@ -41,7 +41,7 @@ pageEncoding="UTF-8" %>
             </div>
             <div class="list-item">
                     <ul>
-                        <c:forEach begin="0" end="10" varStatus="i">
+                        <c:forEach begin="0" end="9" varStatus="i">
                         <li class="one-song">
                             <span class="priority">${i.count}</span>
                             <span class="change">
@@ -49,7 +49,7 @@ pageEncoding="UTF-8" %>
 			            		<p>6</p>
 			            	</span>
                             <a class="thumb-song" href="#" title="Bài hát Anh Vẫn Thấy - Trọng Hiếu">
-                                <img class="img-responsive img-circle" alt="Anh Vẫn Thấy" src="http://zmp3-photo.d.za.zdn.vn/thumb/94_94/covers/e/0/e0a93e9df0a781ff081d1414bdffc919_1487580385.jpg" width="50">
+                                <img class="img-responsive" alt="Anh Vẫn Thấy" src="/resources/storage/image/thumbnail/video_thumbnail/anh1.jpg" style="width:180px">
                                 <span class="icon-circle-play icon-small"></span>
                             </a>
                             <div class="tool-song">
@@ -90,7 +90,25 @@ pageEncoding="UTF-8" %>
                 </div>
             </div>
         <div class="col-md-3" style="background:red; height:500px">
-
+            <div class="">
+                <div class="box_title">
+                    <h2 class="name"><a href="">Hot List</a></h2>
+                </div>
+                <div class="box_content">
+                    <ul class="list_playlist_table">
+                        <c:forEach begin="0" end="4" varStatus="i">
+                            <li class="playlist">
+                                <div class="one_playlist">
+                                    <a class="image_playlist" href="http://nhac.vn/playlist-nhung-bai-hat-tre-hay-nhat-ve-tinh-yeu-viet-nam-pl3rAm"><img class="thumb fll" src="http://v2.cdn.nhac.vn/kv0puCNE4oNNfn7YhOpK/1491381727/v1/album/s4/0/0/58/59488.jpg" alt="Những Bài Hát Trẻ Hay Nhất Về Tình Yêu Việt Nam - Various Artists" width="48" height="48"></a>
+                                    <div class="info-table">
+                                        <h4 class="name_playlist"><a href="http://nhac.vn/playlist-nhung-bai-hat-tre-hay-nhat-ve-tinh-yeu-viet-nam-pl3rAm" title="Những Bài Hát Trẻ Hay Nhất Về Tình Yêu Việt Nam">Những Bài Hát Trẻ Hay Nhất Về Tình Yêu Việt Nam</a></h4>
+                                    </div>
+                                </div>
+                            </li>
+                        </c:forEach>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </content>

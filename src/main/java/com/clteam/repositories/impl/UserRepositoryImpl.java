@@ -1,10 +1,11 @@
 package com.clteam.repositories.impl;
 
-import com.clteam.dataobject.UserInfo;
+import com.clteam.dataobject.UserInfoEntity;
 import com.clteam.repositories.api.UserRepository;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -12,19 +13,20 @@ import java.util.List;
  * Created by nguyenthanhtung on 27/04/2017.
  */
 @Repository
+@Transactional
 public class UserRepositoryImpl implements UserRepository {
 
     @Autowired
     private SessionFactory sessionFactory;
-    public UserInfo getUserInfo(int userId) {
-        return (UserInfo)sessionFactory.getCurrentSession().get(UserInfo.class, userId);
+    public UserInfoEntity getUserInfo(int userId) {
+        return (UserInfoEntity)sessionFactory.getCurrentSession().get(UserInfoEntity.class, userId);
     }
 
-    public UserInfo getUserInfoByAccountId(int accountId) {
-        return (UserInfo)sessionFactory.getCurrentSession().createQuery("from UserInfo where accountId="+accountId).list().get(0);
+    public UserInfoEntity getUserInfoByAccountId(int accountId) {
+        return (UserInfoEntity)sessionFactory.getCurrentSession().createQuery("from UserInfoEntity where accountId="+accountId).list().get(0);
     }
 
-    public UserInfo getUser(int accountId) {
+    public UserInfoEntity getUser(int accountId) {
         return null;
     }
 
@@ -32,15 +34,12 @@ public class UserRepositoryImpl implements UserRepository {
         return false;
     }
 
-    public boolean updateUser(UserInfo user) {
+    public boolean updateUser(UserInfoEntity user) {
         return false;
     }
 
-    public boolean insertUser(UserInfo user) {
+    public boolean insertUser(UserInfoEntity user) {
         return false;
     }
 
-    public List<UserInfo> getAllUser() {
-        return null;
-    }
 }

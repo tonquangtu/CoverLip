@@ -1,6 +1,6 @@
 package com.clteam.repositories.api;
 
-import com.clteam.dataobject.UserInfo;
+import com.clteam.dataobject.UserInfoEntity;
 
 import java.util.List;
 
@@ -9,15 +9,14 @@ import java.util.List;
  */
 public interface UserRepository {
 
-    UserInfo getUser(int accountId);
+    UserInfoEntity getUser(int accountId);
 
     boolean deleteUser(int accountId);
 
-    boolean updateUser(UserInfo user);
+    boolean updateUser(UserInfoEntity user);
 
-    boolean insertUser(UserInfo user);
+    boolean insertUser(UserInfoEntity user);
 
-    List<UserInfo> getAllUser();
 
 
 }

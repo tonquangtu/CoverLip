@@ -1,8 +1,7 @@
 package com.clteam.repositories.impl;
 
-import com.clteam.dataobject.HotCover;
-import com.clteam.dataobject.NewCover;
-import com.clteam.dataobject.VideoInfo;
+import com.clteam.dataobject.VideoInfoEntity;
+import com.clteam.model.Cover;
 import com.clteam.repositories.api.VideoRepository;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,33 +17,24 @@ import java.util.List;
 @Transactional
 public class VideoRepositoryImpl implements VideoRepository {
 
-    @Autowired
-    private SessionFactory sessionFactory;
-    public VideoInfo getVideoInfo(int videoId) {
-        return (VideoInfo)sessionFactory.getCurrentSession().get(VideoInfo.class, videoId);
+
+    public VideoInfoEntity getVideoInfo(int videoId) {
+        return null;
     }
 
     public boolean deleteVideo(int videoId) {
         return false;
     }
 
-    public boolean updateVideo(VideoInfo video) {
+    public boolean updateVideo(VideoInfoEntity video) {
         return false;
     }
 
-    public boolean insertVideo(VideoInfo video) {
+    public boolean insertVideo(VideoInfoEntity video) {
         return false;
     }
 
-    public List<VideoInfo> getAllVideo() {
-        return null;
-    }
-
-    public List<NewCover> getAllNewCover() {
-        return sessionFactory.getCurrentSession().createQuery("from NewCover order by priority asc").list();
-    }
-
-    public List<HotCover> getAllHotCover() {
+    public List<Cover> getAllNewCover() {
         return null;
     }
 }

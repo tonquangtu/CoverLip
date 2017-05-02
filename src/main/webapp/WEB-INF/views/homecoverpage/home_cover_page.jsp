@@ -12,7 +12,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>CoverLip</title>
-    <%@ include file="../common/common_lib.html" %>
+    <%@ include file="../common/common_lib.jsp" %>
 
     <link rel="stylesheet" href="/resources/styles/main_navigation_style.css"/>
     <link rel="stylesheet" href="/resources/styles/main_header_style.css"/>
@@ -118,13 +118,13 @@
 
                 <div class="col-md-9" style="padding-right:0;padding-left:0;">
                     <% int m=0; %>
-                    <c:forEach var="item" items="${listNewCover}" varStatus="i">
+                    <c:forEach var="item" items="${newCoverList}" varStatus="i">
                         <c:if test="${i.index<12}">
                             <c:if test="${i.index%4==0}" >
                                 <ul id="demo_first_<%= m++%>" class="one_list">
                             </c:if>
+                                <c:set var="item" value="${item}" scope="request"/>
                                 <%@ include file="../common/one_card.jsp" %>
-
                             <c:if test="${i.index%4==3}">
                                 </ul>
                             </c:if>
@@ -183,11 +183,12 @@
 
                 <div class="col-md-9" style="padding-right:0;padding-left:0;">
                     <% m=0; %>
-                    <c:forEach var="item" items="${listNewCover}" varStatus="i">
+                    <c:forEach var="item" items="${hotCoverList}" varStatus="i">
                         <c:if test="${i.index<12}">
                             <c:if test="${i.index%4==0}" >
                                 <ul id="demo_second_<%= m++%>" class="one_list">
                             </c:if>
+                                <c:set var="item" value="${item}" scope="request"/>
                                 <%@ include file="../common/one_card.jsp" %>
                             <c:if test="${i.index%4==3}">
                                 </ul>
@@ -224,12 +225,13 @@
             <div class="row" style="overflow:hidden;">
 
                 <div class="col-md-12" style="padding-right:0;padding-left:0;">
-                    <c:forEach var="item" items="${listNewCover}" varStatus="i">
+                    <c:forEach var="item" items="${newCoverList}" varStatus="i">
                         <c:if test="${i.index<12}">
                             <c:if test="${i.index%4==0}">
                                 <div class="row" style="margin-right: 0px; margin-left: 15px;">
                             </c:if>
                             <div class="col-md-3" style="padding-right:12px; padding-left:0">
+                                <c:set var="item" value="${item}" scope="request"/>
                                 <%@include file="../common/one_card.jsp" %>
                             </div>
                             <c:if test="${i.index%4==3}">
@@ -265,7 +267,7 @@
                     </div>
                 </div>
                 <div class="col-md-9">
-                    <c:forEach items="${listNewCover}" var="item" varStatus="i">
+                    <c:forEach items="${topIdolList}" var="item" varStatus="i">
                         <c:if test="${i.index<8}">
                             <c:if test="${i.index%4==0}">
                                 <div class="row">
