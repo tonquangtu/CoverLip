@@ -20,6 +20,6 @@ public class HomeCoverPageController {
     public String visitHomePage(HashMap<String, Object> map){
         List<OneCardInfo> listNewCover = newCoverService.getListNewCover();
         map.put("listNewCover", listNewCover);
-        return "homecoverpage/home_cover_page";
+        return "topcoverpage/top_cover_page";
     }
 }

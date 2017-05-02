@@ -266,3 +266,11 @@ div.one_card.col-md-3:last-child{
 .item_singer_video{
     list-style: none;
 }
+.icon_react{
+    height: 20px;
+    width: 20px;
+    margin-top: -2px;
+}
+.icon_more_vertical{
+    height: 15px;
+}
