@@ -11,12 +11,16 @@ ul li.one-song{
     list-style-type: none;
     border-bottom: 1px solid #d5d5d5;
 }
+ul li.one-song:hover{
+    background:whitesmoke;
+}
 ul li.one-song a{
     color: black;
     text-decoration: none;
 }
 ul li.one-song a:hover{
     text-decoration: none;
+    color:#1ABC9C;
 }
 .thumb-song{
     float: left;
@@ -53,6 +57,7 @@ ul li.one-song a:hover{
     filter: alpha(opacity=0);
     -webkit-transition: all .3s ease-in; -moz-transition: all .3s ease-in; -o-transition: all .3s ease-in; -ms-transition: all .3s ease-in; transition: all .3s ease-in;
     margin-top: 35px;
+    margin-right:5px;
     /*margin-bottom: 45px;*/
 
 }
@@ -106,7 +111,7 @@ ul li.one-song a:hover{
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
-    padding-right:45px;
+    padding-right:30px;
     padding-left:15px;
 }
 .one-song .change{
@@ -171,7 +176,7 @@ ul li.one-song a:hover{
     list-style-type: none;
     float: left;
     width:auto;
-    margin-right:25px;
+    margin-right:15px;
 }
 .footer_card .like{
     text-align: left;
@@ -202,7 +207,7 @@ ul li.one-song a:hover{
 }
 .box_view_week{
     float: left;
-    width: 820px;
+    width: 100%;
     height: 40px;
     margin: 10px 0 0 0;
     background: #1abc9c;
@@ -285,4 +290,36 @@ ul li.one-song a:hover{
     font-size: 18px;
     font-weight: 300;
     color: #fff;
+}
+
+
+/*Playlist*/
+.playlist{
+    list-style-type: none;
+    width: 100%;
+    border-bottom: 1px solid #EEE;
+}
+.one_playlist{
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-top:10px;
+}
+.image_playlist{
+    float: left;
+    margin-right: 10px;
+}
+
+h4.name_playlist{
+    margin-top: 5px;
+}
+
+h4.name_playlist a{
+    text-decoration: none;
+    color: #000;
+    font-weight: normal;
+    font-size: 14px;
+}
+h4.name_playlist a:hover{
+    color:#1ABC9C !important;
+    text-decoration: none;
 }

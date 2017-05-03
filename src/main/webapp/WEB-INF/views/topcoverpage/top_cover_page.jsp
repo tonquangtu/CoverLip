@@ -31,13 +31,13 @@ pageEncoding="UTF-8" %>
                 <p>Cập nhật vào Thứ Hai hàng tuần, dữ liệu được thống kê từ Zing MP3 (BXH Zing) và tham khảo các BXH âm nhạc uy tín khác như Billboard (US-UK), Soompi (K-Pop)</p>
             </div>
         </div>
-        <div class="col-md-9" style="padding-left:0">
+        <div class="col-md-8" style="padding-left:0; padding-right:0;">
             <div class="box_view_week">
-                <a id="prev_foo_video_more" class="prev" href="http://www.nhaccuatui.com/bai-hat/top-20.nhac-viet.tuan-17.2017.html" style="display: block;" title="Bảng xếp hạng tuần trước"></a>
+                <a id="prev_foo_video_more" class="prev" href="" style="display: block;" title="Bảng xếp hạng tuần trước"></a>
                 <h2><strong>Tuần 18</strong> (30/04/2017 - 06/05/2017)</h2>
-                <a id="next_foo_video_more" class="next" href="http://www.nhaccuatui.com/bai-hat/top-20.nhac-viet.tuan-19.2017.html" style="display: none;" title="Bảng xếp hạng tuần kế tiếp"></a>
+                <a id="next_foo_video_more" class="next" href="" style="display: none;" title="Bảng xếp hạng tuần kế tiếp"></a>
                 <a href="javascript:;" title="Chọn ngày" class="select_date" id="select_date"></a>
-                <a href="http://www.nhaccuatui.com/playlist/top-20-bai-hat-viet-nam-nhaccuatui-tuan-172017-va.KzulS3wj8Tb3.html" class="active_play" title="Nghe Toàn Bộ"><span class="icon_playall"></span>Nghe Toàn Bộ</a>
+                <a href="" class="active_play" title="Nghe Toàn Bộ"><span class="icon_playall"></span>Nghe Toàn Bộ</a>
             </div>
             <div class="list-item">
                     <ul>
@@ -49,7 +49,7 @@ pageEncoding="UTF-8" %>
 			            		<p>6</p>
 			            	</span>
                             <a class="thumb-song" href="#" title="Bài hát Anh Vẫn Thấy - Trọng Hiếu">
-                                <img class="img-responsive" alt="Anh Vẫn Thấy" src="/resources/storage/image/thumbnail/video_thumbnail/anh1.jpg" style="width:180px">
+                                <img class="img-responsive" alt="Anh Vẫn Thấy" src="/resources/storage/image/thumbnail/video_thumbnail/anh1.jpg" style="width:170px">
                                 <span class="icon-circle-play icon-small"></span>
                             </a>
                             <div class="tool-song">
@@ -89,7 +89,7 @@ pageEncoding="UTF-8" %>
                     </ul>
                 </div>
             </div>
-        <div class="col-md-3" style="background:red; height:500px">
+        <div class="col-md-4" style="padding-left:30px; padding-right:0">
             <div class="">
                 <div class="box_title">
                     <h2 class="name"><a href="">Hot List</a></h2>
@@ -99,9 +99,9 @@ pageEncoding="UTF-8" %>
                         <c:forEach begin="0" end="4" varStatus="i">
                             <li class="playlist">
                                 <div class="one_playlist">
-                                    <a class="image_playlist" href="http://nhac.vn/playlist-nhung-bai-hat-tre-hay-nhat-ve-tinh-yeu-viet-nam-pl3rAm"><img class="thumb fll" src="http://v2.cdn.nhac.vn/kv0puCNE4oNNfn7YhOpK/1491381727/v1/album/s4/0/0/58/59488.jpg" alt="Những Bài Hát Trẻ Hay Nhất Về Tình Yêu Việt Nam - Various Artists" width="48" height="48"></a>
+                                    <a class="image_playlist" href=""><img class="thumb fll" src="/resources/storage/image/thumbnail/owner_thumbnail/avatar1.jpg" alt="Những Bài Hát Trẻ Hay Nhất Về Tình Yêu Việt Nam - Various Artists" width="48" height="48"></a>
                                     <div class="info-table">
-                                        <h4 class="name_playlist"><a href="http://nhac.vn/playlist-nhung-bai-hat-tre-hay-nhat-ve-tinh-yeu-viet-nam-pl3rAm" title="Những Bài Hát Trẻ Hay Nhất Về Tình Yêu Việt Nam">Những Bài Hát Trẻ Hay Nhất Về Tình Yêu Việt Nam</a></h4>
+                                        <h4 class="name_playlist"><a href="" title="Những Bài Hát Trẻ Hay Nhất Về Tình Yêu Việt Nam">Những Bài Hát Trẻ Hay Nhất Về Tình Yêu Việt Nam</a></h4>
                                     </div>
                                 </div>
                             </li>

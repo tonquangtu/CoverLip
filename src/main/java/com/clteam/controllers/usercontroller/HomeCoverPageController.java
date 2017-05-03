@@ -32,6 +32,7 @@ public class HomeCoverPageController {
         List<TopIdol> topIdolList = topIdolService.getListTopIdol();
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();
+        System.out.println("size "+newCoverList.size());
         map.put("newCoverList", newCoverList);
         map.put("hotCoverList", hotCoverList);
         map.put("topIdolList", topIdolList);
