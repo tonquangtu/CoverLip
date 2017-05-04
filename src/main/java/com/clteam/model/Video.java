@@ -1,11 +1,12 @@
 package com.clteam.model;
 
-import com.clteam.dataobject.AccountEntity;
 import com.clteam.dataobject.VideoInfoEntity;
 
 import java.io.Serializable;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.time.Duration;
+import java.util.Date;
 
 /**
  * Created by Dell on 30-Apr-17.
@@ -124,7 +125,7 @@ public class Video implements Serializable{
         this.account = account;
     }
 
-    public void copyData(VideoInfoEntity videoEntity, AccountEntity accountEntity) {
+    public void copyData(VideoInfoEntity videoEntity) {
 
         id = videoEntity.getId();
 
@@ -145,8 +146,48 @@ public class Video implements Serializable{
         state = videoEntity.getState();
 
         description = videoEntity.getDescription();
+    }
 
-        this.account = new Account();
-        this.account.copyData(accountEntity);
+    public String periodCreatedForNow() {
+
+        String period = "";
+        Date start = new Date(createDate.getTime());
+        Date today = new Date(System.currentTimeMillis());
+
+        Duration duration = Duration.between(start.toInstant(), today.toInstant());
+
+        long minutes = duration.toMinutes();
+       if (minutes == 0) {
+           period = "Vừa mới đăng";
+       } else if (minutes < 60) {
+           period = "Đăng cách đây " + minutes + " phút";
+
+       } else {
+
+           long hours = duration.toHours();
+           if (hours < 24) {
+               period = "Đăng cách đây " + hours + " giờ";
+
+           } else {
+
+               long days = duration.toDays();
+               if (days < 30) {
+                   period = "Đăng cách đây " + days + " ngày";
+
+               } else {
+
+                   long months = days / 30;
+                   if (months < 12) {
+                       period = "Đăng cách đây " + months + " tháng";
+
+                   } else {
+
+                       long years = months / 12;
+                       period = "Đăng cách đây " + years + " năm";
+                   }
+               }
+           }
+       }
+       return period;
     }
 }

@@ -1,5 +1,8 @@
 package com.clteam.dataobject;
 
+import org.apache.solr.analysis.*;
+import org.hibernate.search.annotations.*;
+
 import javax.persistence.*;
 
 /**
@@ -7,6 +10,19 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "cover_info")
+@Indexed
+@AnalyzerDef(name = "customanalyzer",
+        tokenizer = @TokenizerDef(factory = StandardTokenizerFactory.class),
+        filters = {
+                @TokenFilterDef(factory = LowerCaseFilterFactory.class),
+                @TokenFilterDef(factory = StopFilterFactory.class),
+//                @TokenFilterDef(factory = SnowballPorterFilterFactory.class, params = {
+//                        @Parameter(name = "language", value = "English")
+//                }),
+                @TokenFilterDef(factory = ASCIIFoldingFilterFactory.class),
+                @TokenFilterDef(factory = SnowballPorterFilterFactory.class)
+
+        })
 public class CoverInfoEntity {
     private int id;
     private int videoId;
@@ -36,6 +52,8 @@ public class CoverInfoEntity {
 
     @Basic
     @Column(name = "cover_name")
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
+    @Analyzer(definition = "customanalyzer")
     public String getCoverName() {
         return coverName;
     }

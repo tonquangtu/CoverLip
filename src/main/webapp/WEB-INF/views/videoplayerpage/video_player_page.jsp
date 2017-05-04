@@ -88,11 +88,11 @@
                    <div class="divider"></div>
                    <div class="line-horizontal-left">
                        <div class="video-owner-box pull-left">
-                           <a class="video-owner-thumbnail" style = "background-image: url('http://avatar.muvik.tv/d/iidm9c');" href="#"></a>
+                           <a class="video-owner-thumbnail" style = "background-image: url('${user.avatarThumbnail}');" href="#"></a>
                            <a class="video-owner-name center-vertical" href="#">${cover.video.account.fullname}</a>
                        </div>
                    </div>
-                   <div class="time-upload-video pull-right">Đăng từ <span>2 ngày trước</span></div>
+                   <div class="time-upload-video pull-right"><span>${cover.video.periodCreatedForNow()}</span></div>
 
                    <div class="divider"></div>
 

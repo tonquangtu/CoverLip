@@ -1,12 +1,15 @@
 package com.clteam.model;
 
+import com.clteam.dataobject.PlaylistInfoEntity;
+
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Dell on 30-Apr-17.
  */
-public class Playlist<E> {
+public class Playlist {
 
     private int id;
 
@@ -26,7 +29,12 @@ public class Playlist<E> {
 
     private Account account;
 
-    private List<E> items;
+    private List<PlaylistItem> items;
+
+    public Playlist() {
+        items = new ArrayList<>();
+        account = new Account();
+    }
 
     public int getId() {
         return id;
@@ -100,11 +108,40 @@ public class Playlist<E> {
         this.account = account;
     }
 
-    public List<E> getItems() {
+    public List<PlaylistItem> getItems() {
         return items;
     }
 
-    public void setItems(List<E> items) {
+    public void setItems(List<PlaylistItem> items) {
         this.items = items;
+    }
+
+    public void addItem(PlaylistItem item) {
+        items.add(item);
+    }
+
+    public void copyData(PlaylistInfoEntity playlistEntity) {
+
+        this.id = playlistEntity.getId();
+
+        this.playlistName = playlistEntity.getPlaylistName();
+
+        this.playlistThumbnaiLink = playlistEntity.getPlaylistThumbnailLink();
+
+        this.numCover = playlistEntity.getNumCover();
+
+        this.numView = playlistEntity.getNumView();
+
+        this.createDate = playlistEntity.getCreateDate();
+
+        this.state = playlistEntity.getState();
+
+        this.description = playlistEntity.getDescription();
+
+        if (account == null) {
+            account = new Account();
+        }
+        this.account.setId(playlistEntity.getAccountId());
+
     }
 }

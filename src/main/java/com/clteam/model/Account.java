@@ -10,6 +10,10 @@ import java.sql.Timestamp;
  */
 public class Account implements Serializable {
 
+    public static final int ADMIN = 2;
+
+    public static final int USER = 1;
+
     public Account() {
     }
 

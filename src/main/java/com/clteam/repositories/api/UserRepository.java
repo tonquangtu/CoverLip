@@ -19,5 +19,8 @@ public interface UserRepository {
 
     List<UserInfoEntity> getAllUser();
 
+    public UserInfoEntity getUserInfoByAccountId(int accountId);
+
+    public void indexTables();
 
 }
