@@ -308,7 +308,9 @@ ul li.one-song a:hover{
     float: left;
     margin-right: 10px;
 }
-
+.hot_list{
+    padding-left:15px;
+}
 h4.name_playlist{
     margin-top: 5px;
 }
@@ -322,4 +324,16 @@ h4.name_playlist a{
 h4.name_playlist a:hover{
     color:#1ABC9C !important;
     text-decoration: none;
+}
+.box_title h4.name{
+    margin-top: 16px;
+}
+.box_title h4.name a{
+    text-decoration:none;
+}
+.box_title h4.name a:hover{
+    color:#1ABC9C;
+}
+.top_idol{
+    margin-top:50px;
 }

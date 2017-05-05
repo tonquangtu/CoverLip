@@ -2,6 +2,7 @@ package com.clteam.repositories.impl;
 
 import com.clteam.dataobject.CoverInfoEntity;
 import com.clteam.dataobject.NewCoverEntity;
+import com.clteam.model.Cover;
 import com.clteam.repositories.api.CoverRepository;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
@@ -32,5 +33,10 @@ public class CoverRepositoryImpl implements CoverRepository {
     public List<NewCoverEntity> getListNewCover(int limit) {
         Query query = sessionFactory.getCurrentSession().createQuery("from NewCoverEntity order by priority asc");
         return (List<NewCoverEntity>)query.setMaxResults(limit).list();
+    }
+
+    public List<Cover> getListHotCover(int limit) {
+        //To do
+        return null;
     }
 }

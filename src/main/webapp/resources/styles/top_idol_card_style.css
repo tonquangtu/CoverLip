@@ -1,0 +1,59 @@
+#top_cover_idol{
+
+    background-color: #ffffff;
+    margin-top: 15px;
+    padding-left: 15px;
+    border-radius: 5px;
+}
+
+
+.item_not_first{
+
+    margin-top: 20px;
+    /*padding: 0 15px;*/
+}
+
+.item_top_cover_idol{
+
+    list-style-type: none;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 10px 0;
+    /*background-color: red;*/
+    position: relative;
+    overflow: hidden;
+}
+
+.item_top_cover_idol img{
+
+    width: 70px;
+    height: 70px;
+    float: left;
+    margin-right: 10px;
+
+}
+
+.item_top_cover_idol button{
+    position: absolute;
+    top: 30px;
+    right: 10px;
+
+}
+
+.item_top_cover_idol .idol_info{
+
+    padding-top: 15px;
+}
+
+.item_top_cover_idol .idol_info p{
+
+    margin-bottom: 0;
+}
+
+
+#top_cover_idol h3{
+
+    padding: 10px 0;
+    margin: 0;
+    color: red;
+
+}

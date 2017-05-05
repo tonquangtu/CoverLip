@@ -7,7 +7,7 @@
             <img class="img-responsive" src="${item.video.account.username}" alt="A">
         </div>
         <div class="name_member">
-            <h2>${item.video.account.fullname}</h2>
+            <a href=""><h2>${item.video.account.fullname}</h2></a>
         </div>
         <div class="option_card">
             <img src="/resources/icons/icon_more_vertical.svg" alt="${item.coverName}" class="icon_more_vertical">

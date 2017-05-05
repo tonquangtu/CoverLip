@@ -31,4 +31,5 @@ public class Following {
     public void setTimeStart(Timestamp timeStart) {
         this.timeStart = timeStart;
     }
+
 }

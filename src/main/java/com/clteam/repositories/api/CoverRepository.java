@@ -3,6 +3,7 @@ package com.clteam.repositories.api;
 
 import com.clteam.dataobject.CoverInfoEntity;
 import com.clteam.dataobject.NewCoverEntity;
+import com.clteam.model.Cover;
 
 import java.util.List;
 
@@ -15,5 +16,5 @@ public interface CoverRepository {
     CoverInfoEntity getCoverInfoByVideoId(int videoId);
 
     List<NewCoverEntity> getListNewCover(int limit);
-
+    List<Cover> getListHotCover(int limit);
 }

@@ -12,7 +12,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>CoverLip</title>
-    <%@ include file="../common/common_lib.jsp" %>
+    <%@ include file="../common/common_lib2.jsp" %>
 
     <link rel="stylesheet" href="/resources/styles/main_navigation_style.css"/>
     <link rel="stylesheet" href="/resources/styles/main_header_style.css"/>
@@ -85,7 +85,7 @@
             <!-- Page Header -->
             <div class="row title">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Moi Dang
+                    <h1 class="page-header">Mới Đăng
                         <!-- <small>Secondary Text</small> -->
                         <div class="action_slide">
                             <div class="btn-group">
@@ -109,17 +109,16 @@
                                  src="/resources/storage/image/normal_image/slide_image/singer.jpg" alt="">
                         </a>
                         <h3>
-                            <a href="#">Moi Dang</a>
+                            <a href="#">Mới Đăng</a>
                         </h3>
                         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p> -->
-                        <button type="button" class="btn btn-primary">Xem toan bo</button>
+                        <a href=""><button type="button" class="btn btn-primary">Xem toàn bộ</button></a>
                     </div>
                 </div>
 
                 <div class="col-md-9" style="padding-right:0;padding-left:0;">
                     <% int m=0; %>
                     <c:forEach var="item" items="${newCoverList}" varStatus="i">
-                        abc
                         <c:if test="${i.index<12}">
                             <c:if test="${i.index%4==0}" >
                                 <ul id="demo_first_<%= m++%>" class="one_list">
@@ -174,11 +173,13 @@
                             <img class="img-responsive"
                                  src="/resources/storage/image/normal_image/slide_image/singer.jpg" alt="">
                         </a>
-                        <h3>
-                            <a href="#">Cover Hot</a>
-                        </h3>
+                        <a href="#">
+                            <h3>
+                            Cover Hot
+                            </h3>
+                        </a>
                         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p> -->
-                        <button type="button" class="btn btn-primary">Xem toan bo</button>
+                        <a href="#"><button type="button" class="btn btn-primary">Xem toàn bộ</button></a>
                     </div>
                 </div>
 
@@ -216,8 +217,7 @@
             <!-- Page Header -->
             <div class="row title">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Cover Hay Moi Ngay
-                    </h1>
+                    <a href="#"><h1 class="page-header">Cover Hay Mỗi Ngày</h1></a>
                 </div>
             </div>
             <!-- /.row -->
@@ -250,8 +250,8 @@
             <!-- Page Header -->
             <div class="row title">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Top Nguoi Dang Noi Bat
-                    </h1>
+                    <a href=""><h1 class="page-header">Top Người Đăng Nổi Bật
+                    </h1></a>
                 </div>
             </div>
             <!-- /.row -->
@@ -259,26 +259,26 @@
                 <div class="col-md-3">
                     <div class="one_member text-center subject" style="padding-bottom:10px;box-shadow:unset">
                         <a href="">
-                            <img src="/resources/storage/image/thumbnail/owner_thumbnail/avatar1.jpg" alt="Son Tung MTP"
+                            <img src="${topIdolList.get(0).user.avatarThumbnail}" alt="${topIdolList.get(0).user.account.fullname}"
                                  class="img-responsive" style="width:100%">
                             <div class="name_of_member">
-                                <p>Son Tung MTP</p>
+                                <p>${topIdolList.get(0).user.account.fullname}</p>
                             </div>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-9">
-                    <c:forEach items="${topIdolList}" var="item" varStatus="i">
+                    <c:forEach items="${topIdolList}" var="item1" varStatus="i" begin="1">
                         <c:if test="${i.index<8}">
                             <c:if test="${i.index%4==0}">
                                 <div class="row">
                             </c:if>
                             <div class="col-md-3 one_member text-center">
                                 <a href="">
-                                    <img src="/resources/storage/image/thumbnail/owner_thumbnail/avatar1.jpg" alt="Son Tung MTP"
+                                    <img src="${item1.user.avatarThumbnail}" alt="${item1.user.account.fullname}"
                                          class="img-responsive img-circle">
                                     <div class="name_of_member">
-                                        <p>Son Tung MTP</p>
+                                        <p>${item1.user.account.fullname}</p>
                                     </div>
                                 </a>
                             </div>
