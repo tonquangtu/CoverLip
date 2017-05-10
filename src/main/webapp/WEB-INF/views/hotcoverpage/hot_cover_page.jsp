@@ -64,7 +64,7 @@
                                     </c:if>
                                         <div class="col-md-6">
 
-                                            <%--<%@ include file="../common/one_card.jsp" %>--%>
+                                            <%@ include file="../common/one_card.jsp" %>
                                         </div>
 
                                      <c:if test="${i.index == 1}">
@@ -82,10 +82,10 @@
                                     </c:if>
                                         <div class="col-md-4">
 
-                                            <%--<%@ include file="../common/one_card.jsp" %>--%>
+                                            <%@ include file="../common/one_card.jsp" %>
                                         </div>
 
-                                     <c:if test="${i.index % 3 == 1} || ${i.index == (hotCoverList.size() - 1)}">
+                                     <c:if test="${i.index % 3 == 1 || i.index == (hotCoverList.size() - 1)}">
                                             <p>${hotCoverList.size()} ${i.index}</p>
                                         </div>
                                      </c:if>
