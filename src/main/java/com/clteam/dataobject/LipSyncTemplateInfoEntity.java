@@ -1,5 +1,7 @@
 package com.clteam.dataobject;
 
+import org.hibernate.search.annotations.*;
+
 import javax.persistence.*;
 import java.util.Collection;
 
@@ -8,6 +10,8 @@ import java.util.Collection;
  */
 @Entity
 @Table(name = "lip_sync_template_info")
+@Indexed
+
 public class LipSyncTemplateInfoEntity {
     private int id;
     private int videoId;
@@ -17,6 +21,7 @@ public class LipSyncTemplateInfoEntity {
     private VideoInfoEntity videoInfoByVideoId;
 
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
     public int getId() {
         return id;
@@ -38,6 +43,8 @@ public class LipSyncTemplateInfoEntity {
 
     @Basic
     @Column(name = "lip_sync_template_name")
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
+    @Analyzer(definition = "customanalyzer")
     public String getLipSyncTemplateName() {
         return lipSyncTemplateName;
     }

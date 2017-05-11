@@ -9,6 +9,8 @@ public class LipSync {
 
     private LipSyncTemplate lipSyncTemplate;
 
+    public LipSync() {}
+
     public LipSync(Video video, LipSyncTemplate lipSyncTemplate) {
         this.video = video;
         this.lipSyncTemplate = lipSyncTemplate;

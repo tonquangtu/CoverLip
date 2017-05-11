@@ -144,4 +144,16 @@ public class Playlist {
         this.account.setId(playlistEntity.getAccountId());
 
     }
+
+    public List<Cover> getCoverInPlaylist() {
+
+        List<Cover> covers = new ArrayList<>();
+        if (items != null && items.size() > 0) {
+
+            for (PlaylistItem item : items) {
+                covers.add(item.getItem());
+            }
+        }
+        return covers;
+    }
 }

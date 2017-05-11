@@ -1,6 +1,8 @@
 package com.clteam.model;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Dell on 03-May-17.
@@ -50,4 +52,6 @@ public class PlaylistItem {
     public void setPriority(int priority) {
         this.priority = priority;
     }
+
+
 }

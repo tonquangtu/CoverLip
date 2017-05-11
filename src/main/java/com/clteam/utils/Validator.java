@@ -3,7 +3,7 @@ package com.clteam.utils;
 /**
  * Created by Dell on 29-Apr-17.
  */
-public class ValidatorUtil {
+public class Validator {
 
     public static boolean isEmpty(String s) {
         if (s == null || s.length() <= 0) {

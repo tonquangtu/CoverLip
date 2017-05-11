@@ -26,8 +26,11 @@ public class TestSearchController {
     UserService userService;
 
 
+
     @RequestMapping("test/{name}")
     public ModelAndView testSearch(@PathVariable String name) {
+
+     //   videoService.createTestLipSyncData();
 
         System.out.println("Vao test");
         ModelAndView modelAndView = new ModelAndView();

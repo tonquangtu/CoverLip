@@ -19,5 +19,6 @@ public class BaseApplication implements ApplicationListener<ContextRefreshedEven
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
         System.out.println("Index for all tables");
         userService.indexForAllTables();
+        System.out.println("Complete index full text search");
     }
 }

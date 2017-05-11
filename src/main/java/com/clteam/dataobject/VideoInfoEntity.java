@@ -22,6 +22,8 @@ public class VideoInfoEntity {
     private int numComment;
     private byte state;
     private String description;
+    private int type;
+
     private Collection<CoverInfoEntity> coverInfosById;
     private Collection<CoverOfPlaylistEntity> coverOfPlaylistsById;
     private Collection<CoverTopEntity> coverTopsById;
@@ -39,6 +41,7 @@ public class VideoInfoEntity {
     private AccountEntity accountByAccountId;
 
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
     public int getId() {
         return id;
@@ -146,6 +149,16 @@ public class VideoInfoEntity {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Basic
+    @Column(name="type")
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 
     @Override

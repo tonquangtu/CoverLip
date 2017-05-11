@@ -1,5 +1,7 @@
 package com.clteam.dataobject;
 
+import org.hibernate.search.annotations.*;
+
 import javax.persistence.*;
 
 /**
@@ -7,6 +9,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "cover_top")
+
 public class CoverTopEntity {
     private int id;
     private int videoId;
@@ -47,6 +50,8 @@ public class CoverTopEntity {
 
     @Basic
     @Column(name = "num_view_period")
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
+    @Analyzer(definition = "customanalyzer")
     public int getNumViewPeriod() {
         return numViewPeriod;
     }

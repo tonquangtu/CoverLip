@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by Dell on 30-Apr-17.
  */
 @Entity
-@Table(name = "lip_sync_info", schema = "coverlip", catalog = "")
+@Table(name = "lip_sync_info", schema = "coverlip")
 public class LipSyncInfoEntity {
     private int id;
     private int videoId;
@@ -15,6 +15,7 @@ public class LipSyncInfoEntity {
     private LipSyncTemplateInfoEntity lipSyncTemplateInfoByLipSyncTemplateId;
 
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
     public int getId() {
         return id;

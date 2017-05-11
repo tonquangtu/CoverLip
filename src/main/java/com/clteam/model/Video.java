@@ -1,5 +1,6 @@
 package com.clteam.model;
 
+import com.clteam.dataconstant.DataConstant;
 import com.clteam.dataobject.VideoInfoEntity;
 
 import java.io.Serializable;
@@ -12,6 +13,12 @@ import java.util.Date;
  * Created by Dell on 30-Apr-17.
  */
 public class Video implements Serializable{
+
+    public static final int COVER_TYPE = 1;
+
+    public static final int LIP_SYNC_TYPE = 2;
+
+
     public Video() {
     }
 
@@ -35,6 +42,9 @@ public class Video implements Serializable{
 
     private String description;
 
+    private int type;
+
+
     private Account account;
 
     public int getId() {
@@ -54,7 +64,7 @@ public class Video implements Serializable{
     }
 
     public String getVideoThumbnailLink() {
-        return videoThumbnailLink;
+        return DataConstant.STORAGE_BASE_URL + videoThumbnailLink;
     }
 
     public void setVideoThumbnailLink(String videoThumbnailLink) {
@@ -117,6 +127,14 @@ public class Video implements Serializable{
         this.description = description;
     }
 
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
     public Account getAccount() {
         return account;
     }
@@ -146,6 +164,8 @@ public class Video implements Serializable{
         state = videoEntity.getState();
 
         description = videoEntity.getDescription();
+
+        this.type = videoEntity.getType();
     }
 
     public String periodCreatedForNow() {

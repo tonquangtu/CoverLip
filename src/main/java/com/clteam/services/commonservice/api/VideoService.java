@@ -1,7 +1,6 @@
 package com.clteam.services.commonservice.api;
 
-import com.clteam.model.Cover;
-import com.clteam.model.Playlist;
+import com.clteam.model.*;
 
 import java.util.List;
 
@@ -22,5 +21,19 @@ public interface VideoService {
 
     public List<Cover> searchCoverByName(String name, int limit);
 
+    public List<Video> findTopVideoOfAccount(int accountId, int limit);
+
     public List<Cover> findTopCoverOfAccount(int accountId, int limit);
+
+    public CoverWrapper getCoverWrapper(Cover cover);
+
+    public List<LipSync> getHotLipSyncs(int limit);
+
+    public List<LipSync> searchLipSyncByName(String name, int limit);
+
+    public void createTestLipSyncData();
+
+    public LipSync getLipSync(int videoId);
+
+
 }

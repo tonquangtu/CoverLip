@@ -28,6 +28,7 @@ public class CoverInfoEntity {
     private int videoId;
     private String coverName;
     private String mp3Link;
+
     private VideoInfoEntity videoInfoByVideoId;
 
     @Id

@@ -1,6 +1,5 @@
 package com.clteam.repositories.api;
 
-import com.clteam.dataobject.CoverInfoEntity;
 import com.clteam.dataobject.VideoInfoEntity;
 
 import java.util.List;
@@ -16,12 +15,14 @@ public interface VideoRepository {
 
     boolean updateVideo(VideoInfoEntity video);
 
-    boolean insertVideo(VideoInfoEntity video);
+    int insertVideo(VideoInfoEntity video);
 
     List<VideoInfoEntity> getAllVideo();
 
 
     List<VideoInfoEntity> getVideosByAccountId(int accountId, int limit);
+
+    List<VideoInfoEntity> findTopVideoOfAccount(int accountId, int limit);
 
 
 }

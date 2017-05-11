@@ -1,10 +1,7 @@
 package com.clteam.repositories.api;
 
 
-import com.clteam.dataobject.CoverInfoEntity;
-import com.clteam.dataobject.CoverOfPlaylistEntity;
-import com.clteam.dataobject.HotCoverEntity;
-import com.clteam.dataobject.PlaylistInfoEntity;
+import com.clteam.dataobject.*;
 
 import java.util.List;
 
@@ -32,5 +29,11 @@ public interface CoverRepository {
     List<CoverInfoEntity> searchCoverByName(String name, int limit);
 
     List<CoverInfoEntity> findTopCoverOfAccount(int accountId, int limit);
+
+    List<VideoInfoEntity> findTopCoverOfAccount2(int accountId, int limit);
+
+    HotCoverEntity findHotCover(int videoId);
+
+    List<CoverInfoEntity> getAllCovers();
 
 }

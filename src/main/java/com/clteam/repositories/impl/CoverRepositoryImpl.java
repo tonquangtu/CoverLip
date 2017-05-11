@@ -1,15 +1,14 @@
 package com.clteam.repositories.impl;
 
-import com.clteam.dataobject.CoverInfoEntity;
-import com.clteam.dataobject.CoverOfPlaylistEntity;
-import com.clteam.dataobject.HotCoverEntity;
-import com.clteam.dataobject.PlaylistInfoEntity;
+import com.clteam.dataobject.*;
+import com.clteam.model.Video;
 import com.clteam.repositories.api.CoverRepository;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import org.hibernate.search.FullTextSession;
 import org.hibernate.search.Search;
 import org.hibernate.search.query.dsl.QueryBuilder;
@@ -42,7 +41,7 @@ public class CoverRepositoryImpl implements CoverRepository {
 
         Session session = sessionFactory.getCurrentSession();
         Criteria criteria = session.createCriteria(HotCoverEntity.class);
-        criteria.addOrder(Order.asc("priority"));
+        criteria.addOrder(Order.desc("priority"));
         return criteria.list();
     }
 
@@ -55,7 +54,8 @@ public class CoverRepositoryImpl implements CoverRepository {
         Session session = sessionFactory.getCurrentSession();
         Criteria criteria = session.createCriteria(HotCoverEntity.class);
         criteria.setMaxResults(limit);
-        criteria.addOrder(Order.asc("priority"));
+        criteria.addOrder(Order.desc("priority"));
+        criteria.setMaxResults(limit);
         return criteria.list();
     }
 
@@ -65,7 +65,6 @@ public class CoverRepositoryImpl implements CoverRepository {
         if (name != null && name.length() > 0 && limit > 0) {
 
             Session session = sessionFactory.getCurrentSession();
-            Criteria criteria = session.createCriteria("from CoverInfoEntity where coverName = :cover_name");
             Query query = session.createQuery("from CoverInfoEntity where coverName = :cover_name ");
             query.setMaxResults(limit);
             query.setParameter("cover_name", name);
@@ -141,17 +140,57 @@ public class CoverRepositoryImpl implements CoverRepository {
     @Override
     public List<CoverInfoEntity> findTopCoverOfAccount(int accountId, int limit) {
 
-        if (accountId < 0 || limit <= 0) {
+        if (accountId <= 0 && limit <= 0) {
             return null;
         }
 
         Session session = sessionFactory.getCurrentSession();
-//        Query query = session.createQuery("from CoverInfoEntity where ")
+        Criteria criteria = session.createCriteria(CoverInfoEntity.class, "cover");
+        criteria.createAlias("cover.videoInfoByVideoId", "video");
+        criteria.add(Restrictions.eq("video.accountId", accountId));
+        criteria.addOrder(Order.desc("video.numView"));
+        criteria.setMaxResults(limit);
 
-        return null;
+        return criteria.list();
     }
 
+    public List<VideoInfoEntity> findTopCoverOfAccount2(int accountId, int limit) {
 
+        if (accountId <= 0 && limit <= 0) {
+            return null;
+        }
+        Session session = sessionFactory.getCurrentSession();
+        Criteria videoCriteria = session.createCriteria(VideoInfoEntity.class);
+        videoCriteria.add(Restrictions.eq("accountId", accountId));
+        videoCriteria.add(Restrictions.eq("type", Video.COVER_TYPE));
+        videoCriteria.setMaxResults(limit);
+        videoCriteria.addOrder(Order.desc("numView"));
+
+        return videoCriteria.list();
+    }
+
+    @Override
+    public HotCoverEntity findHotCover(int videoId) {
+
+        HotCoverEntity hotCoverEntity = null;
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(HotCoverEntity.class);
+        criteria.add(Restrictions.eq("videoId", videoId));
+
+        List<HotCoverEntity> hotCoverEntities = criteria.list();
+        if (hotCoverEntities != null && hotCoverEntities.size() > 0) {
+            hotCoverEntity = hotCoverEntities.get(0);
+        }
+        return hotCoverEntity;
+    }
+
+    @Override
+    public List<CoverInfoEntity> getAllCovers() {
+
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(CoverInfoEntity.class);
+        return criteria.list();
+    }
 
 
 }
