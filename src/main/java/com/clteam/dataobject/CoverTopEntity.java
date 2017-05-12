@@ -1,5 +1,7 @@
 package com.clteam.dataobject;
 
+import org.hibernate.search.annotations.*;
+
 import javax.persistence.*;
 
 /**
@@ -47,6 +49,7 @@ public class CoverTopEntity {
 
     @Basic
     @Column(name = "num_view_period")
+
     public int getNumViewPeriod() {
         return numViewPeriod;
     }

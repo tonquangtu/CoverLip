@@ -1,16 +1,24 @@
 package com.clteam.model;
 
-import com.clteam.dataobject.AccountEntity;
+import com.clteam.dataconstant.DataConstant;
 import com.clteam.dataobject.VideoInfoEntity;
 
 import java.io.Serializable;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.time.Duration;
+import java.util.Date;
 
 /**
  * Created by Dell on 30-Apr-17.
  */
 public class Video implements Serializable{
+
+    public static final int COVER_TYPE = 1;
+
+    public static final int LIP_SYNC_TYPE = 2;
+
+
     public Video() {
     }
 
@@ -34,6 +42,9 @@ public class Video implements Serializable{
 
     private String description;
 
+    private int type;
+
+
     private Account account;
 
     public int getId() {
@@ -53,7 +64,7 @@ public class Video implements Serializable{
     }
 
     public String getVideoThumbnailLink() {
-        return videoThumbnailLink;
+        return DataConstant.STORAGE_BASE_URL + videoThumbnailLink;
     }
 
     public void setVideoThumbnailLink(String videoThumbnailLink) {
@@ -116,6 +127,14 @@ public class Video implements Serializable{
         this.description = description;
     }
 
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
     public Account getAccount() {
         return account;
     }
@@ -124,7 +143,7 @@ public class Video implements Serializable{
         this.account = account;
     }
 
-    public void copyData(VideoInfoEntity videoEntity, AccountEntity accountEntity) {
+    public void copyData(VideoInfoEntity videoEntity) {
 
         id = videoEntity.getId();
 
@@ -146,7 +165,49 @@ public class Video implements Serializable{
 
         description = videoEntity.getDescription();
 
-        this.account = new Account();
-        this.account.copyData(accountEntity);
+        this.type = videoEntity.getType();
+    }
+
+    public String periodCreatedForNow() {
+
+        String period = "";
+        Date start = new Date(createDate.getTime());
+        Date today = new Date(System.currentTimeMillis());
+
+        Duration duration = Duration.between(start.toInstant(), today.toInstant());
+
+        long minutes = duration.toMinutes();
+       if (minutes == 0) {
+           period = "Vừa mới đăng";
+       } else if (minutes < 60) {
+           period = "Đăng cách đây " + minutes + " phút";
+
+       } else {
+
+           long hours = duration.toHours();
+           if (hours < 24) {
+               period = "Đăng cách đây " + hours + " giờ";
+
+           } else {
+
+               long days = duration.toDays();
+               if (days < 30) {
+                   period = "Đăng cách đây " + days + " ngày";
+
+               } else {
+
+                   long months = days / 30;
+                   if (months < 12) {
+                       period = "Đăng cách đây " + months + " tháng";
+
+                   } else {
+
+                       long years = months / 12;
+                       period = "Đăng cách đây " + years + " năm";
+                   }
+               }
+           }
+       }
+       return period;
     }
 }

@@ -1,6 +1,7 @@
 package com.clteam.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by Dell on 30-Apr-17.
@@ -39,4 +40,49 @@ public class Cover implements Serializable{
     public void setMp3Link(String mp3Link) {
         this.mp3Link = mp3Link;
     }
+
+    public boolean equals(Cover equalCover) {
+
+        if (equalCover == null || equalCover.getVideo() == null || this.video == null) {
+            return false;
+        }
+        if (equalCover.getVideo().getId() == this.video.getId()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static boolean isExitsItem(Cover checkItem, List<Cover> list) {
+        if (checkItem == null || list == null || list.size() <= 0) {
+            return false;
+        }
+        boolean isExists = false;
+        try {
+            int checkItemId = checkItem.getVideo().getId();
+            for (Cover item : list) {
+
+                if (item.getVideo().getId() == checkItemId) {
+                    isExists = true;
+                    break;
+                }
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+     //   System.out.println("IsExits: " + isExists);
+        return isExists;
+    }
+
+    public VideoWrapper toVideoWrapper() {
+        VideoWrapper videoWrapper = new VideoWrapper();
+        videoWrapper.setVideo(this.video);
+        videoWrapper.setVideoName(this.coverName);
+        videoWrapper.setMp3Link(this.mp3Link);
+
+        return videoWrapper;
+    }
+
+
+
 }
