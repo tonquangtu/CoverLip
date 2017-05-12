@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>${cover.coverName}</title>
+    <title>${currItem.videoName}</title>
     <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
     <meta title="I'm Losing You">
 
@@ -55,7 +55,7 @@
                    <video id="player1" width="750" height="460">
                        <%--../../..${cover.video.videoLink}--%>
 
-                       <source type="video/mp4"  src="${cover.video.videoLink}"/>
+                       <source type="video/mp4"  src="${currItem.video.videoLink}"/>
 
 
                        <!-- <track srclang="en" label="English" kind=
@@ -67,22 +67,22 @@
                <div class="video-detail-box">
 
                    <div class="video-title-box">
-                       <h1><a class="video-title pull-left" href="#">${cover.coverName}</a></h1>
+                       <h1><a class="video-title pull-left" href="#">${currItem.videoName}</a></h1>
                        <ul class="video-counter">
                            <li class="like-counter-box ">
 
                                <img class="icon-like" src="../../../resources/icons/icon_like.svg"/>
-                               <span class="like-counter">${cover.video.numLike}</span>
+                               <span class="like-counter">${currItem.video.numLike}</span>
                            </li>
 
                            <li class="comment-counter-box ">
                                <img class="icon-comment" src="../../../resources/icons/icon_comment.svg">
-                               <span class="comment-counter">${cover.video.numComment}</span>
+                               <span class="comment-counter">${currItem.video.numComment}</span>
                            </li>
 
                            <li class="view-counter-box ">
                                <img class="icon-view" src="../../../resources/icons/icon_view.svg">
-                               <span class="view-counter">${cover.video.numView}</span>
+                               <span class="view-counter">${currItem.video.numView}</span>
                            </li>
 
                        </ul>
@@ -92,10 +92,10 @@
                    <div class="line-horizontal-left">
                        <div class="video-owner-box pull-left">
                            <a class="video-owner-thumbnail" style = "background-image: url('${user.avatarThumbnail}');" href="#"></a>
-                           <a class="video-owner-name center-vertical" href="#">${cover.video.account.fullname}</a>
+                           <a class="video-owner-name center-vertical" href="#">${currItem.video.account.fullname}</a>
                        </div>
                    </div>
-                   <div class="time-upload-video pull-right"><span>${cover.video.periodCreatedForNow()}</span></div>
+                   <div class="time-upload-video pull-right"><span>${currItem.video.periodCreatedForNow()}</span></div>
 
                    <div class="divider"></div>
 
@@ -164,7 +164,7 @@
                             </div>
 
                             <div>
-                                <a class="suggestion-video-title center-vertical-content" href="#">${recommendationList.get(i).coverName}</a>
+                                <a class="suggestion-video-title center-vertical-content" href="#">${recommendationList.get(i).videoName}</a>
                             </div>
 
                         </div>

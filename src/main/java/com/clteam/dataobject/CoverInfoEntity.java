@@ -23,7 +23,7 @@ import javax.persistence.*;
                 @TokenFilterDef(factory = SnowballPorterFilterFactory.class)
 
         })
-public class CoverInfoEntity {
+public class CoverInfoEntity{
     private int id;
     private int videoId;
     private String coverName;

@@ -9,31 +9,37 @@ import java.util.List;
  */
 public interface VideoService {
 
-    public Cover getCoverInfo(int videoId);
+     Cover getCoverInfo(int videoId);
 
-    public List<Cover> getHotCovers(int limit);
+     List<Cover> getHotCovers(int limit);
 
-    public List<Cover> getCoversByName(String name, int limit);
+     List<Cover> getCoversByName(String name, int limit);
 
-    public List<Cover> getCoversByAccountId(int accountId, int limit);
+     List<Cover> getCoversByAccountId(int accountId, int limit);
 
-    public List<Playlist> findCoversSamePlaylist(int videoId, int limit);
+     List<Playlist> findCoversSamePlaylist(int videoId, int limit);
 
-    public List<Cover> searchCoverByName(String name, int limit);
+     List<Cover> searchCoverByName(String name, int limit);
 
-    public List<Video> findTopVideoOfAccount(int accountId, int limit);
+     List<Video> findTopVideoOfAccount(int accountId, int limit);
 
-    public List<Cover> findTopCoverOfAccount(int accountId, int limit);
+     List<Cover> findTopCoverOfAccount(int accountId, int limit);
 
-    public CoverWrapper getCoverWrapper(Cover cover);
+     CoverWrapper getCoverWrapper(Cover cover);
 
-    public List<LipSync> getHotLipSyncs(int limit);
+     LipSyncWrapper getLipSyncWrapper(LipSync lipSync);
 
-    public List<LipSync> searchLipSyncByName(String name, int limit);
+     List<LipSync> getHotLipSyncs(int limit);
 
-    public void createTestLipSyncData();
+     List<LipSync> searchLipSyncByName(String name, int limit);
 
-    public LipSync getLipSync(int videoId);
+     void createTestLipSyncData();
+
+     LipSync getLipSync(int videoId);
+
+    List<LipSync> findTopLipSyncOfAccount(int accountId, int limit);
+
+
 
 
 }

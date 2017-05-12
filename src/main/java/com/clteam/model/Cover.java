@@ -74,4 +74,15 @@ public class Cover implements Serializable{
         return isExists;
     }
 
+    public VideoWrapper toVideoWrapper() {
+        VideoWrapper videoWrapper = new VideoWrapper();
+        videoWrapper.setVideo(this.video);
+        videoWrapper.setVideoName(this.coverName);
+        videoWrapper.setMp3Link(this.mp3Link);
+
+        return videoWrapper;
+    }
+
+
+
 }

@@ -1,5 +1,6 @@
 package com.clteam.repositories.api;
 
+import com.clteam.dataobject.HotLipSyncEntity;
 import com.clteam.dataobject.LipSyncInfoEntity;
 import com.clteam.dataobject.LipSyncTemplateInfoEntity;
 
@@ -10,13 +11,20 @@ import java.util.List;
  */
 public interface LipSyncRepository {
 
-    public List<LipSyncTemplateInfoEntity> searchLipSyncByName(String name, int limit);
+     List<LipSyncTemplateInfoEntity> searchLipSyncByName(String name, int limit);
 
-    public int insertTemplate(LipSyncTemplateInfoEntity templateEntity);
+     int insertTemplate(LipSyncTemplateInfoEntity templateEntity);
 
-    public int insertLipSync(LipSyncInfoEntity lipSync);
+     int insertLipSync(LipSyncInfoEntity lipSync);
 
-    public LipSyncInfoEntity getLipSync(int videoId);
+     LipSyncInfoEntity getLipSync(int videoId);
 
-    public LipSyncTemplateInfoEntity getLipSyncTemplate(int videoId);
+     LipSyncTemplateInfoEntity getLipSyncTemplate(int videoId);
+
+     List<LipSyncInfoEntity> findTopLipSyncOfAccount(int accountId, int limit);
+
+     List<HotLipSyncEntity> getLimitHotLipSync(int limit);
+
+     HotLipSyncEntity findHotLipSync(int videoId);
+
 }

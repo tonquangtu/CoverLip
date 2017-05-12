@@ -1,11 +1,13 @@
 package com.clteam.repositories.impl;
 
+import com.clteam.dataobject.HotLipSyncEntity;
 import com.clteam.dataobject.LipSyncInfoEntity;
 import com.clteam.dataobject.LipSyncTemplateInfoEntity;
 import com.clteam.repositories.api.LipSyncRepository;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.search.FullTextSession;
 import org.hibernate.search.Search;
@@ -88,8 +90,62 @@ public class LipSyncRepositoryImpl  implements LipSyncRepository {
     @Override
     public LipSyncTemplateInfoEntity getLipSyncTemplate(int videoId) {
 
+        LipSyncTemplateInfoEntity templateEntity = null;
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(LipSyncInfoEntity.class);
+        criteria.add(Restrictions.eq("videoId", videoId));
+        List<LipSyncTemplateInfoEntity> list  = criteria.list();
+        if (list != null && list.size() > 0) {
+            templateEntity = list.get(0);
+        }
 
-        return null;
+        return templateEntity;
+    }
+
+    @Override
+    public List<LipSyncInfoEntity> findTopLipSyncOfAccount(int accountId, int limit) {
+
+        if (accountId <= 0 && limit <= 0) {
+            return null;
+        }
+
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(LipSyncInfoEntity.class, "lipSync");
+        criteria.createAlias("lipSync.videoInfoByVideoId", "video");
+        criteria.add(Restrictions.eq("video.accountId", accountId));
+        criteria.addOrder(Order.desc("video.numView"));
+        criteria.setMaxResults(limit);
+
+        return criteria.list();
+    }
+
+    @Override
+    public List<HotLipSyncEntity> getLimitHotLipSync(int limit) {
+
+        if (limit <= 0) {
+            return null;
+        }
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(HotLipSyncEntity.class);
+        criteria.setMaxResults(limit);
+        criteria.addOrder(Order.desc("priority"));
+        criteria.setMaxResults(limit);
+        return criteria.list();
+    }
+
+    @Override
+    public HotLipSyncEntity findHotLipSync(int videoId) {
+
+        HotLipSyncEntity hotLipSyncEntity = null;
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(HotLipSyncEntity.class);
+        criteria.add(Restrictions.eq("videoId", videoId));
+
+        List<HotLipSyncEntity> list = criteria.list();
+        if (list != null && list.size() > 0) {
+            hotLipSyncEntity =  list.get(0);
+        }
+        return hotLipSyncEntity;
     }
 
 

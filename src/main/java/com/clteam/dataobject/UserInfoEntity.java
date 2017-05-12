@@ -8,6 +8,7 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "user_info")
+
 public class UserInfoEntity {
     private int id;
     private int accountId;
@@ -94,6 +95,8 @@ public class UserInfoEntity {
 
     @Basic
     @Column(name = "address", columnDefinition = "TEXT")
+//    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
+//    @Analyzer(definition = "customanalyzer")
     public String getAddress() {
         return address;
     }

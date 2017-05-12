@@ -13,18 +13,25 @@ import java.util.List;
  */
 public class SimilarityVideo {
 
-    public static int FILTER_BY_NAME_CLASS = 1;
+    public static int FILTER_BY_COVER_NAME_CLASS = 1;
 
-    public static int FILTER_BY_OWNER_CLASS = 2;
+    public static int FILTER_BY_COVER_OWNER_CLASS = 2;
 
-    public static int FILTER_BY_HOT_CLASS = 3;
+    public static int FILTER_BY_COVER_HOT_CLASS = 3;
 
-    public static int FILTER_BY_PLAYLIST_CLASS = 4;
+    public static int FILTER_BY_COVER_PLAYLIST_CLASS = 4;
+
+    public static int FILTER_BY_LIP_SYNC_NAME_CLASS = 5;
+
+    public static int FILTER_BY_LIP_SYNC_OWNER_CLASS = 6;
+
+    public static int FILTER_BY_LIP_SYNC_HOT_CLASS = 7;
+
     /**
      * Calculate similarity of two cover. CurrCover is cover is playing.
      * Other Cover is cover needed compare similarity with curr cover
      */
-    public static float calculateSimilarity(CoverWrapper currCoverWrapper, CoverWrapper otherCoverWrapper, int state) {
+    public static float calculateSimilarityWithCover(CoverWrapper currCoverWrapper, CoverWrapper otherCoverWrapper, int state) {
 
         Cover currCover = currCoverWrapper.getCover();
         Cover otherCover = otherCoverWrapper.getCover();
@@ -48,18 +55,44 @@ public class SimilarityVideo {
         float fDescription = factorForDescription(state) * similarityStrings(currCover.getVideo().getDescription(), otherCover.getVideo().getDescription());
         float fTime = factorForTime(state) * similarityTime(currCover.getVideo().getCreateDate(), otherCover.getVideo().getCreateDate());
         float fPopularVideo = factorForPopularVideo(state) * popularOfVideo(otherCover.getVideo());
-        if (otherCoverWrapper.getCover().getVideo().getId() == 264) {
-            System.out.println("Diem tung thanh phan: ----------------------------");
-            System.out.println("Fname: " + fName);
-            System.out.println("FOwner: " + fOwner);
-            System.out.println("fPlaylist: " + fPlaylist);
-            System.out.println("fHot: " + fHot);
-            System.out.println("fPopularOwner: " + fPopularOwner);
-            System.out.println("fDescription: " + fDescription);
-            System.out.println("fTime: " + fTime);
-            System.out.println("fPopularVideo: " + fPopularVideo);
-        }
+
         float f = fName + fOwner + fPlaylist + fHot + fPopularOwner + fDescription + fTime + fPopularVideo;
+        return f;
+    }
+
+    public static float calculateSimilarityWithLipSync(LipSyncWrapper currLSWrapper, LipSyncWrapper otherLSWrapper, int state) {
+
+        LipSync currLipSync = currLSWrapper.getLipSync();
+        LipSync otherLipSync = otherLSWrapper.getLipSync();
+
+        if (currLipSync == null || otherLipSync == null || currLipSync.getVideo() == null || otherLipSync.getVideo() == null) {
+            return 0.0f;
+        }
+        if (currLipSync.getVideo().getId() == otherLipSync.getVideo().getId()) {
+            return 0.0f;
+        }
+
+        Video currLsVideo = currLipSync.getVideo();
+        Video otherLSVideo = otherLipSync.getVideo();
+
+        float fName = factorForName(state) * similarityStrings(currLipSync.getLipSyncTemplate().getLipSyncTemplateName(),
+                otherLipSync.getLipSyncTemplate().getLipSyncTemplateName());
+
+        float fOwner = 0.0f;
+        Account ownerAccount = currLsVideo.getAccount();
+        Account otherAccount = otherLSVideo.getAccount();
+        if (ownerAccount != null && otherAccount != null) {
+            fOwner = factorForOwner(state) * similarityOwner(ownerAccount, otherAccount);
+        }
+
+        float fHot = factorForHot(state) * isHot(otherLSWrapper.isHot());
+        float fPopularOwner = factorForPopularOwner(state) * popularOwner(otherLSWrapper.getUser());
+
+        float fDescription = factorForDescription(state) * similarityStrings(currLsVideo.getDescription(), otherLSVideo.getDescription());
+        float fTime = factorForTime(state) * similarityTime(currLsVideo.getCreateDate(), otherLSVideo.getCreateDate());
+        float fPopularVideo = factorForPopularVideo(state) * popularOfVideo(otherLSVideo);
+
+        float f = fName + fOwner + fHot + fPopularOwner + fDescription + fTime + fPopularVideo;
         return f;
     }
 
@@ -188,18 +221,26 @@ public class SimilarityVideo {
 
 
     public static float factorForName(int state) {
-        if (state == FILTER_BY_NAME_CLASS) {
+        if (state == FILTER_BY_COVER_NAME_CLASS) {
             return 35.0f;
-        } else if (state == FILTER_BY_OWNER_CLASS) {
+        } else if (state == FILTER_BY_COVER_OWNER_CLASS) {
+            return 15.0f;
+        } else if (state == FILTER_BY_LIP_SYNC_NAME_CLASS) {
+            return 30.0f;
+        } else if (state == FILTER_BY_LIP_SYNC_OWNER_CLASS) {
             return 15.0f;
         }
         return 20.0f;
     }
 
     public static float factorForOwner(int state) {
-        if (state == FILTER_BY_NAME_CLASS) {
+        if (state == FILTER_BY_COVER_NAME_CLASS) {
             return 10.0f;
-        } else if(state == FILTER_BY_OWNER_CLASS) {
+        } else if(state == FILTER_BY_COVER_OWNER_CLASS) {
+            return 15.0f;
+        } else if(state == FILTER_BY_LIP_SYNC_NAME_CLASS) {
+            return 10.0f;
+        } else if (state == FILTER_BY_LIP_SYNC_OWNER_CLASS) {
             return 15.0f;
         }
         return 15.0f;
@@ -211,7 +252,9 @@ public class SimilarityVideo {
 
     public static float factorForPopularVideo(int state) {
 
-        if(state == FILTER_BY_OWNER_CLASS) {
+        if(state == FILTER_BY_COVER_OWNER_CLASS) {
+            return 15.0f;
+        } else if (state == FILTER_BY_LIP_SYNC_OWNER_CLASS) {
             return 15.0f;
         }
         return 10.0f;
@@ -230,6 +273,12 @@ public class SimilarityVideo {
     }
 
     public static float factorForHot(int state) {
+
+        if (state == FILTER_BY_COVER_HOT_CLASS) {
+            return 15.0f;
+        } else if (state == FILTER_BY_LIP_SYNC_HOT_CLASS) {
+            return 15.0f;
+        }
         return 10.0f;
     }
 

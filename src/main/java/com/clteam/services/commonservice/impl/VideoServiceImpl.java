@@ -163,8 +163,45 @@ public class VideoServiceImpl implements VideoService{
     }
 
     @Override
+    public LipSyncWrapper getLipSyncWrapper(LipSync lipSync) {
+
+        LipSyncWrapper lipSyncWrapper = null;
+        if (lipSync != null) {
+            lipSyncWrapper = new LipSyncWrapper();
+            lipSyncWrapper.setLipSync(lipSync);
+            Video lipSyncVideo = lipSync.getVideo();
+            if (lipSyncVideo != null) {
+
+                User user = getUser(lipSyncVideo.getAccount());
+                lipSyncWrapper.setUser(user);
+
+                boolean isHot = false;
+                HotLipSyncEntity hotLipSyncEntity = lipSyncRepo.findHotLipSync(lipSyncVideo.getId());
+                if (hotLipSyncEntity != null) {
+                    isHot = true;
+                }
+                lipSyncWrapper.setHot(isHot);
+            }
+        }
+        return lipSyncWrapper;
+    }
+
+    @Override
     public List<LipSync> getHotLipSyncs(int limit) {
-        return null;
+
+        List<LipSync> hotLipSyncs = new ArrayList<>();
+        List<HotLipSyncEntity> hotLipSyncEntities = lipSyncRepo.getLimitHotLipSync(limit);
+        if (hotLipSyncEntities != null && hotLipSyncEntities.size() > 0) {
+
+            for(HotLipSyncEntity hotLipSyncEntity : hotLipSyncEntities) {
+
+                LipSync lipSync = getLipSync(hotLipSyncEntity.getVideoId());
+                if (lipSync != null) {
+                    hotLipSyncs.add(lipSync);
+                }
+            }
+        }
+        return hotLipSyncs;
     }
 
     @Override
@@ -185,10 +222,12 @@ public class VideoServiceImpl implements VideoService{
 
                         VideoInfoEntity videoEntity = lipSyncEntity.getVideoInfoByVideoId();
                         if (videoEntity != null) {
-                            Video video = new Video();
-                            video.copyData(videoEntity);
-                            LipSync lipSync = new LipSync(video, template);
+                            Video lipSyncVideo = getVideo(videoEntity);
+                            LipSync lipSync = new LipSync(lipSyncVideo, template);
                             lipSyncs.add(lipSync);
+                            if (lipSyncs.size() >= limit) {
+                                break;
+                            }
                         }
                     }
                 }
@@ -429,19 +468,42 @@ public class VideoServiceImpl implements VideoService{
     @Override
     public LipSync getLipSync(int videoId) {
 
-        LipSync lipSync =  null;
         LipSyncInfoEntity lipSyncEntity = lipSyncRepo.getLipSync(videoId);
+        return getLipSync(lipSyncEntity);
+    }
+
+    @Override
+    public List<LipSync> findTopLipSyncOfAccount(int accountId, int limit) {
+
+        List<LipSync> lipSyncs = new ArrayList<>();
+        List<LipSyncInfoEntity> lipSyncEntities = lipSyncRepo.findTopLipSyncOfAccount(accountId, limit);
+        if (lipSyncEntities != null) {
+
+            for (LipSyncInfoEntity lipSyncEntity : lipSyncEntities) {
+
+                LipSync lipSync = getLipSync(lipSyncEntity);
+                if (lipSync != null) {
+                    lipSyncs.add(lipSync);
+                }
+            }
+        }
+        return lipSyncs;
+    }
+
+
+
+    public LipSync getLipSync(LipSyncInfoEntity lipSyncEntity) {
+
+        LipSync lipSync = null;
         if (lipSyncEntity != null) {
             lipSync = new LipSync();
-            LipSyncTemplateInfoEntity templateEntity =  lipSyncEntity.getLipSyncTemplateInfoByLipSyncTemplateId();
+            LipSyncTemplateInfoEntity templateEntity = lipSyncEntity.getLipSyncTemplateInfoByLipSyncTemplateId();
             if (templateEntity != null) {
 
                 LipSyncTemplate template = new LipSyncTemplate();
-
                 VideoInfoEntity templateVideoEntity = templateEntity.getVideoInfoByVideoId();
                 if (templateVideoEntity != null) {
-                    Video video = new Video();
-                    video.copyData(templateVideoEntity);
+                    Video video = getVideo(templateVideoEntity);
                     template.setVideo(video);
                 }
                 template.copyData(templateEntity);
@@ -450,13 +512,14 @@ public class VideoServiceImpl implements VideoService{
 
             VideoInfoEntity videoEntity = lipSyncEntity.getVideoInfoByVideoId();
             if (videoEntity != null) {
-                Video video = new Video();
-                video.copyData(videoEntity);
-                lipSync.setVideo(video);
+                Video lipSyncVideo = getVideo(videoEntity);
+                lipSync.setVideo(lipSyncVideo);
             }
         }
         return lipSync;
     }
+
+
 
 
 }

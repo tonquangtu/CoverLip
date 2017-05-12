@@ -1,9 +1,6 @@
 package com.clteam.controllers.usercontroller;
 
-import com.clteam.model.Account;
-import com.clteam.model.Cover;
-import com.clteam.model.LipSync;
-import com.clteam.model.User;
+import com.clteam.model.*;
 import com.clteam.services.commonservice.api.RecommenderService;
 import com.clteam.services.commonservice.api.VideoService;
 import com.clteam.services.userservice.api.UserService;
@@ -13,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,7 +33,7 @@ public class VideoPlayerPageController {
     RecommenderService recommenderService;
 
     @RequestMapping("cover/{singerName}/{songName}/{videoIdString}")
-    public ModelAndView visitVideoPlayerPage(@PathVariable String singerName,
+    public ModelAndView playCover(@PathVariable String singerName,
                                              @PathVariable String songName,
                                              @PathVariable String videoIdString) {
 
@@ -43,18 +41,29 @@ public class VideoPlayerPageController {
         Map<String, Object> map = new HashMap<String, Object>();
         try {
             int videoId = Integer.parseInt(videoIdString);
-            Cover cover = videoService.getCoverInfo(videoId);
+            Cover currCover = videoService.getCoverInfo(videoId);
 
-            if (cover != null) {
+            if (currCover != null) {
 
-                map.put("cover", cover);
-                Account ownerAccount = cover.getVideo().getAccount();
+                map.put("currItem", currCover.toVideoWrapper());
+                Account ownerAccount = currCover.getVideo().getAccount();
                 User user = null;
                 if (ownerAccount != null) {
                     user = userService.getUser(ownerAccount.getId());
 
                 }
-                List<Cover> recommendationList = recommenderService.recommendCovers(cover, null, 6);
+
+                List<VideoWrapper> recommendationList = new ArrayList<>();
+                List<Cover> recommendationCoverList = recommenderService.recommendCovers(currCover, null, 6);
+
+                if (recommendationCoverList != null) {
+
+                    for (Cover item : recommendationCoverList) {
+                        recommendationList.add(item.toVideoWrapper());
+                    }
+                }
+
+
                 map.put("user", user);
                 map.put("recommendationList", recommendationList);
                 modelAndView.setViewName("videoplayerpage/video_player_page");
@@ -71,7 +80,7 @@ public class VideoPlayerPageController {
     }
 
     @RequestMapping("lipsync/{singerName}/{songName}/{videoIdString}")
-    public ModelAndView test(@PathVariable String singerName,
+    public ModelAndView playLipSync(@PathVariable String singerName,
                                              @PathVariable String songName,
                                              @PathVariable String videoIdString) {
 
@@ -84,17 +93,24 @@ public class VideoPlayerPageController {
 
             if (currLipSync != null) {
 
-                map.put("lipSync", currLipSync);
+                map.put("currItem", currLipSync.toVideoWrapper());
                 Account ownerAccount = currLipSync.getVideo().getAccount();
                 User user = null;
                 if (ownerAccount != null) {
                     user = userService.getUser(ownerAccount.getId());
-
                 }
-                List<LipSync> recommendationList = recommenderService.recommendLipSyncs(currLipSync, null, 6);
+
+                List<VideoWrapper> recommendationList = new ArrayList<>();
+                List<LipSync> recommendationLSList = recommenderService.recommendLipSyncs(currLipSync, null, 6);
+                if (recommendationLSList != null) {
+                    for (LipSync item : recommendationLSList) {
+                        recommendationList.add(item.toVideoWrapper());
+                    }
+                }
+
                 map.put("user", user);
                 map.put("recommendationList", recommendationList);
-                modelAndView.setViewName("common/error");
+                modelAndView.setViewName("videoplayerpage/video_player_page");
             }else {
                 modelAndView.setViewName("common/error");
             }
@@ -106,6 +122,7 @@ public class VideoPlayerPageController {
         modelAndView.addAllObjects(map);
         return modelAndView;
     }
+
 
 
 }

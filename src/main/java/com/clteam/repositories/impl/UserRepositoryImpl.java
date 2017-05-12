@@ -4,7 +4,6 @@ import com.clteam.dataobject.CoverInfoEntity;
 import com.clteam.dataobject.LipSyncTemplateInfoEntity;
 import com.clteam.dataobject.UserInfoEntity;
 import com.clteam.repositories.api.UserRepository;
-import org.hibernate.CacheMode;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.search.FullTextSession;
@@ -59,19 +58,20 @@ public class UserRepositoryImpl implements UserRepository {
         try {
             Session session = sessionFactory.getCurrentSession();
             FullTextSession fullTextSession = Search.getFullTextSession(session);
+
+            fullTextSession.createIndexer(CoverInfoEntity.class).startAndWait();
+
+            fullTextSession.createIndexer(LipSyncTemplateInfoEntity.class).startAndWait();
+
+
+//
 //            fullTextSession
 //                    .createIndexer(LipSyncTemplateInfoEntity.class, CoverInfoEntity.class)
+//                    .batchSizeToLoadObjects( 25 )
+//                    .cacheMode( CacheMode.IGNORE )
+//                    .threadsToLoadObjects( 12 )
+//                    .idFetchSize( 150 )
 //                    .startAndWait();
-
-
-
-            fullTextSession
-                    .createIndexer(LipSyncTemplateInfoEntity.class, CoverInfoEntity.class)
-                    .batchSizeToLoadObjects( 25 )
-                    .cacheMode( CacheMode.IGNORE )
-                    .threadsToLoadObjects( 12 )
-                    .idFetchSize( 150 )
-                    .startAndWait();
 
 
         } catch(Exception e) {

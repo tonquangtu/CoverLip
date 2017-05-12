@@ -12,13 +12,19 @@ import org.springframework.stereotype.Component;
 @Component
 public class BaseApplication implements ApplicationListener<ContextRefreshedEvent> {
 
+    public static boolean isIndexed = false;
+
     @Autowired
     UserService userService;
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-        System.out.println("Index for all tables");
-        userService.indexForAllTables();
-        System.out.println("Complete index full text search");
+
+        if (!isIndexed) {
+            isIndexed = true;
+            System.out.println("Start Index for all table");
+            userService.indexForAllTables();
+            System.out.println("Complete index for all table");
+        }
     }
 }
