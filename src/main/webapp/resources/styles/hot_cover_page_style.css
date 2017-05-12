@@ -54,7 +54,6 @@ body{
 #cover_list{
 
     margin-top: 15px;
-    height: 1000px;
 }
 
 #top_cover_idol{
@@ -109,11 +108,11 @@ body{
     margin-bottom: 0;
 }
 
-.col-md-9 {
+#cover_list{
     width: 72%;
 }
 
-.col-md-3{
+.top_cover_idol_layout{
     width: 28%;
     padding-left: 0;
 }

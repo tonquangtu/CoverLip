@@ -44,6 +44,8 @@ body{
 
     background-color: white;
     border-radius: 3px;
+    margin-top: 15px;
+    padding: 20px 0;
 }
 
 
@@ -78,4 +80,15 @@ body{
 .card_playlist{
 
     margin: 0 auto;
+}
+
+#cover_page{
+
+    position: relative;
+}
+
+#cover_page #title_cover{
+    position: absolute;
+    bottom: 10px;
+    left: 25px;
 }

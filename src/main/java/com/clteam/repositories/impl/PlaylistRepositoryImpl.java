@@ -1,8 +1,12 @@
 package com.clteam.repositories.impl;
 
+import com.clteam.dataobject.HotCoverEntity;
 import com.clteam.dataobject.PlaylistInfoEntity;
 import com.clteam.repositories.api.PlaylistRepository;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -37,6 +41,9 @@ public class PlaylistRepositoryImpl implements PlaylistRepository{
 
     public List<PlaylistInfoEntity> getAllPlaylist(int limit) {
 
-        return sessionFactory.getCurrentSession().createQuery("from PlaylistInfoEntity").list();
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(PlaylistInfoEntity.class);
+        List playListInfoEntity = criteria.addOrder(Order.asc("numView")).list();
+        return playListInfoEntity;
     }
 }

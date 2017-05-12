@@ -48,7 +48,7 @@ public class TopRepositoryImpl implements TopRepository{
     public List<TopCoverIdolEntity> getListTopCoverIdols(int limit) {
         Session session = sessionFactory.getCurrentSession();
         Criteria criteria = session.createCriteria(TopCoverIdolEntity.class);
-        List topCoverIdol = criteria.addOrder(Order.desc("score")).setMaxResults(limit).setFirstResult(4).list();
+        List topCoverIdol = criteria.addOrder(Order.desc("score")).setMaxResults(limit).list();
 
         return topCoverIdol;
     }

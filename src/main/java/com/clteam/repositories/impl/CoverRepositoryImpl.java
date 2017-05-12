@@ -3,7 +3,10 @@ package com.clteam.repositories.impl;
 import com.clteam.dataobject.CoverInfoEntity;
 import com.clteam.dataobject.HotCoverEntity;
 import com.clteam.repositories.api.CoverRepository;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,6 +33,9 @@ public class CoverRepositoryImpl implements CoverRepository {
 
     public List<HotCoverEntity> getAllHotCover(int limit) {
 
-        return  sessionFactory.getCurrentSession().createQuery("from HotCoverEntity order by priority ASC ").list();
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(HotCoverEntity.class);
+        List hotCoverEntity = criteria.addOrder(Order.asc("priority")).list();
+        return hotCoverEntity;
     }
 }

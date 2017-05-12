@@ -4,7 +4,8 @@
     <div id="main_header">
         <div class="container">
             <div id="logo" class="col-md-2">
-                <img src="../../../resources/icons/youtube_logo.png" class="img-responsive"/></div><!-- /logo -->
+                <a href="/"><img src="/resources/icons/youtube_logo.png" class="img-responsive"/></a>
+            </div><!-- /logo -->
             <div id="menu" class="col-md-3">
                 <ul>
                     <li class="col-md-4  text-center active_menu"><a href="#">Cover</a></li>
