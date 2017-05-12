@@ -172,107 +172,17 @@
                         <a href="#">
                             <span class="icon-play"></span>
                         </a>
-
                     </li>
-
 
                 </c:forEach>
 
-
-                <%--<li class="suggestion-video-item box-shadow">--%>
-
-                    <%--<a href="#">--%>
-                        <%--<div class="video-thumbnail-box">--%>
-                            <%--<img class="video-thumbnail" src="../../../resources/storage/image/thumbnail/owner_thumbnail/thumbnail_singer_3.jpg"/>--%>
-                        <%--</div>--%>
-                    <%--</a>--%>
-
-                    <%--<a href="#">--%>
-                        <%--<div class="thumb-mask"></div>--%>
-                    <%--</a>--%>
-
-                    <%--<div class="suggestion-video-info">--%>
-
-                        <%--<div class="suggestion-video-owner-box pull-left">--%>
-                            <%--<a class="suggestion-video-owner-thumbnail" style = "background-image: url('http://avatar.muvik.tv/7/iiXMWN');" href="#"></a>--%>
-                            <%--<a class="suggestion-video-owner-name center-vertical" href="#">Thanh Trần</a>--%>
-                        <%--</div>--%>
-
-                        <%--<div>--%>
-                            <%--<a class="suggestion-video-title center-vertical-content" href="#">Lời tỏ tình - Sơn Ngọc Minh ft Hariwon</a>--%>
-                        <%--</div>--%>
-
-                    <%--</div>--%>
-
-                    <%--<a href="#">--%>
-                        <%--<span class="icon-play"></span>--%>
-                    <%--</a>--%>
-
-                <%--</li>--%>
-
-                <%--<li class="suggestion-video-item box-shadow">--%>
-
-                    <%--<a href="#">--%>
-                        <%--<div class="video-thumbnail-box">--%>
-                            <%--<img class="video-thumbnail" src="../../../resources/storage/image/thumbnail/owner_thumbnail/thumbnail_singer_4.jpg"/>--%>
-                        <%--</div>--%>
-                    <%--</a>--%>
-
-                    <%--<a href="#">--%>
-                        <%--<div class="thumb-mask"></div>--%>
-                    <%--</a>--%>
-
-                    <%--<div class="suggestion-video-info">--%>
-
-                        <%--<div class="suggestion-video-owner-box pull-left">--%>
-                            <%--<a class="suggestion-video-owner-thumbnail" style = "background-image: url('http://avatar.muvik.tv/7/iiXMWN');" href="#"></a>--%>
-                            <%--<a class="suggestion-video-owner-name center-vertical" href="#">Dương Minh Hằng</a>--%>
-                        <%--</div>--%>
-
-                        <%--<div>--%>
-                            <%--<a class="suggestion-video-title center-vertical-content" href="#">Là con gái thật tuyệt - Khởi My</a>--%>
-                        <%--</div>--%>
-
-                    <%--</div>--%>
-
-                    <%--<a href="#">--%>
-                        <%--<span class="icon-play"></span>--%>
-                    <%--</a>--%>
-
-                <%--</li>--%>
-
-                <%--<li class="suggestion-video-item box-shadow">--%>
-
-                    <%--<a href="#">--%>
-                        <%--<div class="video-thumbnail-box">--%>
-                            <%--<img class="video-thumbnail" src="../../../resources/storage/image/thumbnail/owner_thumbnail/thumbnail_singer_5.jpg"/>--%>
-                        <%--</div>--%>
-                    <%--</a>--%>
-
-                    <%--<a href="#">--%>
-                        <%--<div class="thumb-mask"></div>--%>
-                    <%--</a>--%>
-
-                    <%--<div class="suggestion-video-info">--%>
-
-                        <%--<div class="suggestion-video-owner-box pull-left">--%>
-                            <%--<a class="suggestion-video-owner-thumbnail" style = "background-image: url('http://avatar.muvik.tv/7/iiXMWN');" href="#"></a>--%>
-                            <%--<a class="suggestion-video-owner-name center-vertical" href="#">Ánh Ngọc Lê</a>--%>
-                        <%--</div>--%>
-
-                        <%--<div>--%>
-                            <%--<a class="suggestion-video-title center-vertical-content" href="#">Em đang nghĩ gì - Hoàng Tôn</a>--%>
-                        <%--</div>--%>
-
-                    <%--</div>--%>
-
-                    <%--<a href="#">--%>
-                        <%--<span class="icon-play"></span>--%>
-                    <%--</a>--%>
-
-                <%--</li>--%>
-
             </ul>
+            <div>
+                <button>
+
+                </button>
+
+            </div>
 
         </div>
     </div>
