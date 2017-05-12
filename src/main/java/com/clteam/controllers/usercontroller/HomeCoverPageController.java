@@ -1,9 +1,11 @@
 package com.clteam.controllers.usercontroller;
 
 import com.clteam.model.Cover;
+import com.clteam.model.Playlist;
 import com.clteam.model.TopIdol;
 import com.clteam.services.userservice.api.HotCoverService;
 import com.clteam.services.userservice.api.NewCoverService;
+import com.clteam.services.userservice.api.PlayListCoverService;
 import com.clteam.services.userservice.api.TopIdolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,11 +27,14 @@ public class HomeCoverPageController {
     private HotCoverService hotCoverService;
     @Autowired
     private TopIdolService topIdolService;
+    @Autowired
+    private PlayListCoverService playListCoverService;
+
     @RequestMapping("/")
     public ModelAndView visitHomeCoverPage(){
         List<Cover> newCoverList = newCoverService.getListNewCover(12);
         List<Cover> hotCoverList = hotCoverService.getListHotCover(12);
-        List<TopIdol> topIdolList = topIdolService.getListTopIdol();
+        List<TopIdol> topIdolList = topIdolService.getListTopCoverIdols(9);
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();
         System.out.println("size "+newCoverList.size());
@@ -45,6 +50,11 @@ public class HomeCoverPageController {
     public ModelAndView visitTopCoverPage(){
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();
+
+        List<Playlist> playlistList = playListCoverService.getListPlayListCover(-1);
+        List<TopIdol> topIdolList = topIdolService.getListTopCoverIdols(5);
+        map.put("hotPlayListCover", playlistList);
+        map.put("topIdolList", topIdolList);
         modelAndView.setViewName("topcoverpage/top_cover_page");
         modelAndView.addAllObjects(map);
         return modelAndView;
@@ -63,7 +73,7 @@ public class HomeCoverPageController {
     public ModelAndView visitUserPage(){
         List<Cover> newCoverList = newCoverService.getListNewCover(12);
         List<Cover> hotCoverList = hotCoverService.getListHotCover(12);
-        List<TopIdol> topIdolList = topIdolService.getListTopIdol();
+        List<TopIdol> topIdolList = topIdolService.getListTopCoverIdols(5);
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();
         System.out.println("size "+newCoverList.size());

@@ -86,88 +86,88 @@
                     </c:forEach>
                 </div>
                 <div class="col-md-4" style="padding-right:0;">
-                    <div class="top_idol">
-                        <div id="top_cover_idol">
-                            <h3 id="title_top_cover_idol">TOP COVER IDOL</h3>
-                            <ul>
-                                <c:forEach begin="0" end="4" varStatus="i">
-                                    <li class="item_top_cover_idol">
-                                        <img src="/resources/storage/image/thumbnail/owner_thumbnail/avatar1.jpg"
-                                             class="img-circle" alt="top cover idol">
-                                        <div class="idol_info">
-                                            <p><strong>Minh Anh</strong></p>
-                                            <p><fmt:formatNumber>30000</fmt:formatNumber></p>
-                                        </div>
-                                        <button type="button" class="btn btn-success btn-sm">Theo doi</button>
-                                    </li>
-                                </c:forEach>
-                            </ul>
-                        </div>
-                    </div>
+                    <c:set var="listHot" value="${topIdolList}" scope="request"/>
+                    <%@include file="../common/top_idol_card.jsp" %>
+                    <%--<div class="top_idol">--%>
+                        <%--<div id="top_cover_idol">--%>
+                            <%--<h3 id="title_top_cover_idol">TOP COVER IDOL</h3>--%>
+                            <%--<ul>--%>
+                                <%--<c:forEach begin="0" end="4" varStatus="i">--%>
+                                    <%--<li class="item_top_cover_idol">--%>
+                                        <%--<img src="/resources/storage/image/thumbnail/owner_thumbnail/avatar1.jpg"--%>
+                                             <%--class="img-circle" alt="top cover idol">--%>
+                                        <%--<div class="idol_info">--%>
+                                            <%--<p><strong>Minh Anh</strong></p>--%>
+                                            <%--<p><fmt:formatNumber>30000</fmt:formatNumber></p>--%>
+                                        <%--</div>--%>
+                                        <%--<button type="button" class="btn btn-success btn-sm">Theo doi</button>--%>
+                                    <%--</li>--%>
+                                <%--</c:forEach>--%>
+                            <%--</ul>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
                 </div>
             </div>
             <div id="addHistoryFeed2" style="padding-right:5px; padding-left:0;">
                 <!-- Main-->
-                <c:forEach var="item" items="${newCoverList}" varStatus="i" begin="4">
-                    <c:if test="${i.index<12}">
-                        <c:if test="${(i.index+2)%3==0}">
-                            <div class="row" style="margin-left:0; margin-right: -20px;">
-                        </c:if>
-                        <div class="col-md-4" style="padding-right:20px; padding-left:0">
-                            <c:set var="item" value="${item}" scope="request"/>
-                            <%@include file="../common/one_card.jsp" %>
-                        </div>
-                        <c:if test="${(i.index+2)%3==2}">
-                            </div>
-                        </c:if>
-                        <c:if test = "${i.index==11&&(i.index+2)%3!=2}">
-                            </div>
-                        </c:if>
+                <c:forEach var="item" items="${newCoverList}" varStatus="i" begin="4" end="11">
+                <c:if test="${(i.index+2)%3==0}">
+                <div class="row" style="margin-left:0; margin-right: -20px;">
                     </c:if>
-                </c:forEach>
-                <br><br>
-
+                    <div class="col-md-4" style="padding-right:20px; padding-left:0">
+                        <c:set var="item" value="${item}" scope="request"/>
+                        <%@include file="../common/one_card.jsp" %>
+                    </div>
+                    <c:if test="${(i.index+2)%3==2}">
+                </div>
+                </c:if>
+                <c:if test="${i.index==11&&(i.index+2)%3!=2}">
             </div>
-            <div class="show_box" feedid="">
-                <div class="modal fade" id="show_box_report">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
-                                </button>
-                                <h4 class="modal-title">Hãy nói cho chúng tôi điều gì xảy ra với bài đăng này</h4>
+            </c:if>
+            </c:forEach>
+            <br><br>
+
+        </div>
+        <div class="show_box" feedid="">
+            <div class="modal fade" id="show_box_report">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+                            </button>
+                            <h4 class="modal-title">Hãy nói cho chúng tôi điều gì xảy ra với bài đăng này</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="img_report">
+                                <img src="" class="img-responsive">
                             </div>
-                            <div class="modal-body">
-                                <div class="img_report">
-                                    <img src="" class="img-responsive">
+                            <div class="content_report">
+                                <div class="radio">
+                                    <label><input name="choose_report" value="2" type="radio">Có tôi trong bài
+                                        đăng này, tôi không muốn mọi người xem.</label>
                                 </div>
-                                <div class="content_report">
-                                    <div class="radio">
-                                        <label><input name="choose_report" value="2" type="radio">Có tôi trong bài
-                                            đăng này, tôi không muốn mọi người xem.</label>
-                                    </div>
-                                    <div class="radio">
-                                        <label><input name="choose_report" value="3" type="radio">Đây là spam, không
-                                            đúng chủ đề.</label>
-                                    </div>
-                                    <div class="radio">
-                                        <label><input name="choose_report" value="4" type="radio">Bài đăng chứa nội
-                                            dung nhạy cảm, không phù hợp.</label>
-                                    </div>
+                                <div class="radio">
+                                    <label><input name="choose_report" value="3" type="radio">Đây là spam, không
+                                        đúng chủ đề.</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input name="choose_report" value="4" type="radio">Bài đăng chứa nội
+                                        dung nhạy cảm, không phù hợp.</label>
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary send_report" disabled="">Gửi</button>
-                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary send_report" disabled="">Gửi</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="loading" currentfeedid="" type="posted">
-                <span><img class="loadicon" src="/resources/icons/loadding.svg" style="width:50px"></span>
-                <span>Đang tải dữ liệu...</span>
-            </div>
         </div>
+        <div id="loading" currentfeedid="" type="posted">
+            <span><img class="loadicon" src="/resources/icons/loadding.svg" style="width:50px"></span>
+            <span>Đang tải dữ liệu...</span>
+        </div>
+    </div>
     </div>
 </content>
 <%@ include file="/WEB-INF/views/common/main_footer.jsp" %>

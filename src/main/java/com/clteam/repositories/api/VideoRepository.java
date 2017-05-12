@@ -1,8 +1,6 @@
 package com.clteam.repositories.api;
 
-
 import com.clteam.dataobject.VideoInfoEntity;
-import com.clteam.model.Cover;
 
 import java.util.List;
 
@@ -19,6 +17,7 @@ public interface VideoRepository {
 
     boolean insertVideo(VideoInfoEntity video);
 
-    List<Cover> getAllNewCover();
+    List<VideoInfoEntity> getAllVideo();
+
 
 }

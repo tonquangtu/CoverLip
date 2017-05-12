@@ -1,4 +1,10 @@
-
+.title_top_cover{
+    -moz-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    overflow: hidden;
+}
 .link-to-list{
     text-decoration: none;
     color: black;
@@ -6,29 +12,32 @@
 a.link-to-list:hover{
     text-decoration: none;
 }
-ul li.one-song{
+ul li.one-video{
     padding: 10px 0;
     list-style-type: none;
     border-bottom: 1px solid #d5d5d5;
 }
-ul li.one-song:hover{
+ul li.one-video:last-child{
+    border-bottom:none;
+}
+ul li.one-video:hover{
     background:whitesmoke;
 }
-ul li.one-song a{
+ul li. a{
     color: black;
     text-decoration: none;
 }
-ul li.one-song a:hover{
+ul li.one-video a:hover{
     text-decoration: none;
     color:#1ABC9C;
 }
-.thumb-song{
+.thumb-video{
     float: left;
     margin-right: 10px;
     border-radius: 50%;
     position: relative;
 }
-.title-song{
+.title-video{
     font-size: 18px;
     padding-top: 5px;
     margin-bottom: 3px;
@@ -37,19 +46,19 @@ ul li.one-song a:hover{
     font-size: 13px;
     line-height: 5px;
 }
-.thumb-song img{
+.thumb-video img{
     min-width: 75px;
     border: 1px solid #d5d5d5;
 }
-.thumb-song .icon-circle-play {position: absolute; z-index: 101; top: 50%; left: 50%; margin: -16px 0 0 -16px; width: 36px; height: 36px; display: block; background: url(http://stc.id.nixcdn.com/v11/images/icon-repeat.png) left -788px no-repeat; opacity: 0; visibility: visible; display: block !important; -webkit-transition: all .3s ease-in; -moz-transition: all .3s ease-in; -o-transition: all .3s ease-in; -ms-transition: all .3s ease-in; transition: all .3s ease-in; -moz-opacity: 0; -webkit-transform: scale(0); -moz-transform: scale(0); -ms-transform: scale(0); -o-transform: scale(0); transform: scale(0); -webkit-backface-visibility: hidden; }
-.thumb-song:hover .icon-circle-play {opacity: 1; -moz-opacity: 1; -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); -o-transform: scale(1); transform: scale(1); }
+.thumb-video .icon-circle-play {position: absolute; z-index: 101; top: 50%; left: 50%; margin: -16px 0 0 -16px; width: 36px; height: 36px; display: block; background: url(http://stc.id.nixcdn.com/v11/images/icon-repeat.png) left -788px no-repeat; opacity: 0; visibility: visible; display: block !important; -webkit-transition: all .3s ease-in; -moz-transition: all .3s ease-in; -o-transition: all .3s ease-in; -ms-transition: all .3s ease-in; transition: all .3s ease-in; -moz-opacity: 0; -webkit-transform: scale(0); -moz-transform: scale(0); -ms-transform: scale(0); -o-transform: scale(0); transform: scale(0); -webkit-backface-visibility: hidden; }
+.thumb-video:hover .icon-circle-play {opacity: 1; -moz-opacity: 1; -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); -o-transform: scale(1); transform: scale(1); }
 
-.thumb-song:hover img{
+.thumb-video:hover img{
     -webkit-box-shadow: 0px 0px 3px 0.5px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 3px 0.5px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 3px 0.5px rgba(0,0,0,0.75);
 }
-.tool-song{
+.tool-video{
     opacity: 0;
     -moz-opacity: 0;
     -khtml-opacity: 0;
@@ -61,10 +70,10 @@ ul li.one-song a:hover{
     /*margin-bottom: 45px;*/
 
 }
-.one-song:hover .tool-song{
+.one-video:hover .tool-video{
     opacity: 1;
 }
-.tool-song a{
+.tool-video a{
     width: 25px;
     height: 25px;
     float: left;
@@ -74,7 +83,7 @@ ul li.one-song a:hover{
     background: url(http://static.mp3.zdn.vn/skins/zmp3-v4.2/images/icon.png) no-repeat;
     background-position:  0 -1359px;
 }
-.tool-song [class *="link-"]:hover{
+.tool-video [class *="link-"]:hover{
     background-position-x: -25px;
 }
 .link-addlist{
@@ -99,7 +108,7 @@ ul li.one-song a:hover{
     padding: 10px;
 }
 
-.one-song .priority{
+.one-video .priority{
     width: 40px;
     height: 40px;
     color: #1abc9c;
@@ -114,7 +123,7 @@ ul li.one-song a:hover{
     padding-right:30px;
     padding-left:15px;
 }
-.one-song .change{
+.one-video .change{
     float: left;
     width: 40px;
     height: 40px;
@@ -122,7 +131,7 @@ ul li.one-song a:hover{
     text-align: center;
     margin-left: 10px;
 }
-.one-song .change span{
+.one-video .change span{
     width: 18px;
     height: 18px;
     background: url(http://stc.id.nixcdn.com/v11/images/icon.png) no-repeat;
@@ -131,32 +140,32 @@ ul li.one-song a:hover{
     margin: 37px 8px 0 11px;
     background-position: -98px -58px;
 }
-.one-song .change p{
+.one-video .change p{
     color: #00CC33;
     font-size: 12px;
     font-weight: bold;
 }
 
-.one-song:first-child .priority{
+.one-video:first-child .priority{
     color: #e74c3c;
 }
-.one-song:nth-child(2) .priority{
+.one-video:nth-child(2) .priority{
     color:red;
 }
-.one-song:nth-child(3) .priority{
+.one-video:nth-child(3) .priority{
     color:green;
 }
-.thumb-song{
+.thumb-video{
     margin-right: 30px;
     margin-left: 30px;
 }
-.thumb-song img{
+.thumb-video img{
     min-width: 100px;
 }
-.title-song{
+.title-video{
     margin-top: 5px;
 }
-.tool-song{
+.tool-video{
     float: right;
 }
 .icon-download, .icon-addlist, .icon-share{
@@ -301,29 +310,69 @@ ul li.one-song a:hover{
 }
 .one_playlist{
     display: inline-block;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     margin-top:10px;
+    overflow: hidden;
+    width: 100%;
 }
 .image_playlist{
     float: left;
     margin-right: 10px;
 }
-.hot_list{
-    padding-left:15px;
+.hot_list, .main_page{
+    margin-top: 3px;
+    margin-bottom: 12px;
+    padding-left: 0;
+    padding-right: 0;
+    -moz-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
+    background-color: #fefefe;
+    -moz-border-radius: 2px;
+    border-radius: 5px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+.box_title, .box_content{
+    padding-left:10px;
+}
+.box_content .list_playlist_table .playlist:last-child{
+    border-bottom:none;
+}
+.info-table{
+    float:left;
 }
 h4.name_playlist{
-    margin-top: 5px;
+    margin-top: 3px;
+    margin-bottom:7px;
 }
 
 h4.name_playlist a{
     text-decoration: none;
     color: #000;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 16px;
 }
-h4.name_playlist a:hover{
+h4.name_playlist a:hover, .member_post a:hover{
     color:#1ABC9C !important;
     text-decoration: none;
+}
+.member_post a{
+    color:black;
+}
+
+.member_post p{
+    font-size: 12px;
+    line-height: 20px;
+    margin-left: 5px;
+    margin-bottom:0;
+    float: left;
+}
+.avatar_member{
+    width: 20px;
+    height: 20px;
+    float: left;
+    border: white 1px solid;
 }
 .box_title h4.name{
     margin-top: 16px;

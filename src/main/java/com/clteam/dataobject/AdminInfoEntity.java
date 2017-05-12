@@ -91,7 +91,7 @@ public class AdminInfoEntity {
         return result;
     }
 
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = "account_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public AccountEntity getAccountByAccountId() {
         return accountByAccountId;

@@ -35,4 +35,7 @@ public class AccountRepositoryImpl implements AccountRepository {
         return false;
     }
 
+    public List<AccountEntity> getAllAccount() {
+        return null;
+    }
 }

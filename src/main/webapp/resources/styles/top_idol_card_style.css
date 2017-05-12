@@ -14,7 +14,6 @@
 }
 
 .item_top_cover_idol{
-
     list-style-type: none;
     border-bottom: 1px solid #e5e5e5;
     padding: 10px 0;
@@ -24,28 +23,26 @@
 }
 
 .item_top_cover_idol img{
-
     width: 70px;
     height: 70px;
     float: left;
     margin-right: 10px;
-
 }
 
+.item_top_cover_idol:last-child{
+    border-bottom:none;
+}
 .item_top_cover_idol button{
     position: absolute;
     top: 30px;
     right: 10px;
-
 }
 
 .item_top_cover_idol .idol_info{
-
     padding-top: 15px;
 }
 
 .item_top_cover_idol .idol_info p{
-
     margin-bottom: 0;
 }
 

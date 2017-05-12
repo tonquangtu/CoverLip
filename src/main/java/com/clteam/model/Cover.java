@@ -1,5 +1,9 @@
 package com.clteam.model;
 
+import com.clteam.dataobject.AccountEntity;
+import com.clteam.dataobject.CoverInfoEntity;
+import com.clteam.dataobject.VideoInfoEntity;
+
 import java.io.Serializable;
 
 /**
@@ -46,10 +50,11 @@ public class Cover implements Serializable{
         this.mp3Link = mp3Link;
     }
 
-//    public void copyData(CoverInfoEntity coverInfoEntity, VideoInfoEntity videoInfoEntity, AccountEntity accountEntity){
-//        this.coverName = coverInfoEntity.getCoverName();
-//        this.mp3Link = coverInfoEntity.getMp3Link();
-//        this.video = new Video();
-//        this.video.copyData(videoInfoEntity, accountEntity);
-//    }
+    public void  copyData(CoverInfoEntity coverInfoEntity, VideoInfoEntity videoInfoEntity){
+        this.coverName = coverInfoEntity.getCoverName();
+        this.mp3Link = coverInfoEntity.getMp3Link();
+        this.video = new Video();
+        AccountEntity accountEntity = videoInfoEntity.getAccountByAccountId();
+        this.video.copyData(videoInfoEntity, accountEntity);
+    }
 }

@@ -1,12 +1,19 @@
 package com.clteam.model;
 
+import com.clteam.dataobject.AccountEntity;
+import com.clteam.dataobject.CoverOfPlaylistEntity;
+import com.clteam.dataobject.PlaylistInfoEntity;
+import com.clteam.dataobject.VideoInfoEntity;
+
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
  * Created by Dell on 30-Apr-17.
  */
-public class Playlist<E> {
+public class Playlist {
 
     private int id;
 
@@ -26,7 +33,7 @@ public class Playlist<E> {
 
     private Account account;
 
-    private List<E> items;
+    private List<PlaylistItem> items;
 
     public int getId() {
         return id;
@@ -100,11 +107,55 @@ public class Playlist<E> {
         this.account = account;
     }
 
-    public List<E> getItems() {
+    public List<PlaylistItem> getItems() {
         return items;
     }
 
-    public void setItems(List<E> items) {
+    public void setItems(List<PlaylistItem> items) {
         this.items = items;
+    }
+
+    public void copyData(PlaylistInfoEntity playlistInfoEntity){
+
+        id = playlistInfoEntity.getId();
+
+        playlistName = playlistInfoEntity.getPlaylistName();
+
+        playlistThumbnaiLink = playlistInfoEntity.getPlaylistThumbnailLink();
+
+        numCover = playlistInfoEntity.getNumCover();
+
+        numView = playlistInfoEntity.getNumView();
+
+        createDate = playlistInfoEntity.getCreateDate();
+
+        state = playlistInfoEntity.getState();
+
+        description = playlistInfoEntity.getDescription();
+
+        if (account == null){
+            account = new Account();
+        }
+
+        account.copyData(playlistInfoEntity.getAccountByAccountId());
+
+        if (items == null){
+            items = new ArrayList<PlaylistItem>();
+        }
+
+        Collection<CoverOfPlaylistEntity> coverOfPlaylistEntities = playlistInfoEntity.getCoverOfPlaylistsById();
+        if (coverOfPlaylistEntities != null){
+
+            for (int i=0; i < coverOfPlaylistEntities.size(); i++){
+
+                PlaylistItem playlistItem = new PlaylistItem();
+
+                CoverOfPlaylistEntity coverOfPlaylistEntity = (CoverOfPlaylistEntity) coverOfPlaylistEntities.toArray()[i];
+                VideoInfoEntity videoInfoEntity = coverOfPlaylistEntity.getVideoInfoByVideoId();
+                playlistItem.copyData(coverOfPlaylistEntity, videoInfoEntity);
+
+                items.add(playlistItem);
+            }
+        }
     }
 }

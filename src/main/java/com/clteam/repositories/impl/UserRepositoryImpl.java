@@ -42,4 +42,7 @@ public class UserRepositoryImpl implements UserRepository {
         return false;
     }
 
+    public List<UserInfoEntity> getAllUser() {
+        return null;
+    }
 }

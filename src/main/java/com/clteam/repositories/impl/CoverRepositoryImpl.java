@@ -1,8 +1,8 @@
 package com.clteam.repositories.impl;
 
 import com.clteam.dataobject.CoverInfoEntity;
+import com.clteam.dataobject.HotCoverEntity;
 import com.clteam.dataobject.NewCoverEntity;
-import com.clteam.model.Cover;
 import com.clteam.repositories.api.CoverRepository;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -39,8 +39,12 @@ public class CoverRepositoryImpl implements CoverRepository {
         return newCoverList;
     }
 
-    public List<Cover> getListHotCover(int limit) {
-        //To do
-        return null;
+
+    public List<HotCoverEntity> getAllHotCover(int limit) {
+
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(HotCoverEntity.class);
+        List hotCoverEntity = criteria.addOrder(Order.asc("priority")).list();
+        return hotCoverEntity;
     }
 }

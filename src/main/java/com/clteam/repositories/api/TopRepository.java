@@ -1,5 +1,6 @@
 package com.clteam.repositories.api;
 
+import com.clteam.dataobject.TopCoverIdolEntity;
 import com.clteam.dataobject.TopListEntity;
 
 import java.util.List;
@@ -17,4 +18,6 @@ public interface TopRepository {
 
     boolean insertTop(TopListEntity top);
 
+    List<TopCoverIdolEntity> getListTopCoverIdols(int limit);
+    List<TopListEntity> getAllTop();
 }

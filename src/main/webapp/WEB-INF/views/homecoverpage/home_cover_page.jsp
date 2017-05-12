@@ -270,8 +270,8 @@
                 </div>
                 <div class="col-md-9">
                     <c:forEach items="${topIdolList}" var="item1" varStatus="i" begin="1">
-                        <c:if test="${i.index<8}">
-                            <c:if test="${i.index%4==0}">
+                        <c:if test="${i.index<9}">
+                            <c:if test="${(i.index+3)%4==0}">
                                 <div class="row">
                             </c:if>
                             <div class="col-md-3 one_member text-center">
@@ -283,7 +283,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <c:if test="${i.index%4==3}">
+                            <c:if test="${(i.index+3)%4==3}">
                                 </div>
                             </c:if>
                         </c:if>

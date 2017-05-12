@@ -35,86 +35,100 @@ To change this template use File | Settings | File Templates.
             </div>
         </div>
         <div class="col-md-8" style="padding-left:0; padding-right:0;">
-            <div class="box_view_week">
-                <a id="prev_foo_video_more" class="prev" href="" style="display: block;"
-                   title="Bảng xếp hạng tuần trước"></a>
-                <h2><strong>Tuần 18</strong> (30/04/2017 - 06/05/2017)</h2>
-                <a id="next_foo_video_more" class="next" href="" style="display: none;"
-                   title="Bảng xếp hạng tuần kế tiếp"></a>
-                <a href="javascript:;" title="Chọn ngày" class="select_date" id="select_date"></a>
-                <a href="" class="active_play" title="Nghe Toàn Bộ"><span class="icon_playall"></span>Nghe Toàn Bộ</a>
-            </div>
-            <div class="list-item">
-                <ul>
-                    <c:forEach begin="0" end="9" varStatus="i">
-                        <li class="one-song">
-                            <span class="priority">${i.count}</span>
-                            <span class="change">
+            <div class="main_page">
+                <div class="box_view_week">
+                    <a id="prev_foo_video_more" class="prev" href="" style="display: block;"
+                       title="Bảng xếp hạng tuần trước"></a>
+                    <h2><strong>Tuần 18</strong> (30/04/2017 - 06/05/2017)</h2>
+                    <a id="next_foo_video_more" class="next" href="" style="display: none;"
+                       title="Bảng xếp hạng tuần kế tiếp"></a>
+                    <a href="javascript:;" title="Chọn ngày" class="select_date" id="select_date"></a>
+                    <a href="" class="active_play" title="Nghe Toàn Bộ"><span class="icon_playall"></span>Nghe Toàn
+                        Bộ</a>
+                </div>
+                <div class="list-item">
+                    <ul>
+                        <c:forEach begin="0" end="9" varStatus="i">
+                            <li class="one-video">
+                                <span class="priority">${i.count}</span>
+                                <span class="change">
 			            		<span class=""></span>
 			            		<p>6</p>
 			            	</span>
-                            <a class="thumb-song" href="#" title="Bài hát Anh Vẫn Thấy - Trọng Hiếu">
-                                <img class="img-responsive" alt="Anh Vẫn Thấy"
-                                     src="/resources/storage/image/thumbnail/video_thumbnail/anh1.jpg"
-                                     style="width:170px">
-                                <span class="icon-circle-play icon-small"></span>
-                            </a>
-                            <div class="tool-song">
-                                <div class="icon-download"><a title="Download" class="link-download"></a></div>
-                                <div class="icon-addlist"><a title="Thêm vào" class="link-addlist"></a></div>
-                                <div class="icon-share"><a title="Chia sẻ" class="link-share"></a></div>
-                            </div>
-                            <div style="width:100%;">
-                                <h3 class="title-song">
-                                    <a class="" href="#" title="Bài hát Anh Vẫn Thấy - Trọng Hiếu">Anh Vẫn Thấy</a>
-                                </h3>
-                                <span class="singer">
+                                <a class="thumb-video" href="#" title="Bài hát Anh Vẫn Thấy - Trọng Hiếu">
+                                    <img class="img-responsive" alt="Anh Vẫn Thấy"
+                                         src="/resources/storage/image/thumbnail/video_thumbnail/anh1.jpg"
+                                         style="width:170px">
+                                    <span class="icon-circle-play icon-small"></span>
+                                </a>
+                                <div class="tool-video">
+                                    <div class="icon-download"><a title="Download" class="link-download"></a></div>
+                                    <div class="icon-addlist"><a title="Thêm vào" class="link-addlist"></a></div>
+                                    <div class="icon-share"><a title="Chia sẻ" class="link-share"></a></div>
+                                </div>
+                                <div style="width:100%;">
+                                    <h3 class="title-video">
+                                        <a class="" href="#" title="Bài hát Anh Vẫn Thấy - Trọng Hiếu">Anh Vẫn Thấy</a>
+                                    </h3>
+                                    <span class="singer">
 				                    <h4><a href="#" title="Nghệ sĩ Trọng Hiếu">Trọng Hiếu</a></h4>
 				                </span>
-                                <div class="footer_card">
-                                    <ul class="interaction">
-                                        <li class="like">
-                                            <img src="/resources/icons/icon_like.svg" alt=""
-                                                 class="icon_react">&nbsp;<span
-                                                class="like_counter">100</span>
-                                        </li>
-                                        <li class="comment">
-                                            <a href="#">
-                                                <img src="/resources/icons/icon_comment.svg" alt="" class="icon_react">&nbsp;100
-                                            </a>
-                                        </li>
-                                        <li class="view">
-                                            <span> <img src="/resources/icons/icon_view.svg" alt="" class="icon_react">&nbsp;100 </span>
-                                        </li>
-                                    </ul>
-                                    <div style="clear:both;"></div>
+                                    <div class="footer_card">
+                                        <ul class="interaction">
+                                            <li class="like">
+                                                <img src="/resources/icons/icon_like.svg" alt=""
+                                                     class="icon_react">&nbsp;<span
+                                                    class="like_counter">100</span>
+                                            </li>
+                                            <li class="comment">
+                                                <a href="#">
+                                                    <img src="/resources/icons/icon_comment.svg" alt=""
+                                                         class="icon_react">&nbsp;100
+                                                </a>
+                                            </li>
+                                            <li class="view">
+                                                <span> <img src="/resources/icons/icon_view.svg" alt=""
+                                                            class="icon_react">&nbsp;100 </span>
+                                            </li>
+                                        </ul>
+                                        <div style="clear:both;"></div>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div style="clear:both;"></div>
-                        </li>
-                    </c:forEach>
-                </ul>
+                                <div style="clear:both;"></div>
+                            </li>
+                        </c:forEach>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="col-md-4" style="padding-left:30px; padding-right:0">
             <div class="hot_list">
                 <div class="box_title">
-                    <h2 class="name"><a href="">Hot List</a></h2>
+                    <h2 class="name"><a href="">Hot PlayList</a></h2>
                 </div>
                 <div class="box_content">
                     <ul class="list_playlist_table">
-                        <c:forEach begin="0" end="4" varStatus="i">
+                        <c:forEach var="item" items="${hotPlayListCover}" begin="0" end="4" varStatus="i">
                             <li class="playlist">
                                 <div class="one_playlist">
-                                    <a class="image_playlist" href=""><img class="thumb fll"
-                                                                           src="/resources/storage/image/thumbnail/owner_thumbnail/avatar1.jpg"
-                                                                           alt="Những Bài Hát Trẻ Hay Nhất Về Tình Yêu Việt Nam - Various Artists"
-                                                                           width="48" height="48"></a>
+                                    <a class="image_playlist" href="">
+                                        <img class="thumb fll"
+                                             src="http://${item.playlistThumbnaiLink}"
+                                             alt="${item.description}"
+                                             width="55" height="55">
+                                    </a>
                                     <div class="info-table">
-                                        <h4 class="name_playlist"><a href=""
-                                                                     title="Những Bài Hát Trẻ Hay Nhất Về Tình Yêu Việt Nam">Những
-                                            Bài Hát Trẻ Hay Nhất Về Tình Yêu Việt Nam</a></h4>
+                                        <h4 class="name_playlist">
+                                            <a href="" title="${item.playlistName}">${item.playlistName}</a>
+                                        </h4>
+                                        <div class="member_post">
+                                            <a href="#" title="Nghệ sĩ ${item.account.fullname}">
+                                                <img src="/resources/storage/image/thumbnail/owner_thumbnail/avatar1.jpg"
+                                                     class="img-circle avatar_member">
+                                                <p>${item.account.fullname}</p>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </li>
@@ -122,23 +136,8 @@ To change this template use File | Settings | File Templates.
                     </ul>
                 </div>
             </div>
-            <div class="top_idol">
-                <div id="top_cover_idol">
-                    <h3 id="title_top_cover_idol">TOP COVER IDOL</h3>
-                    <ul>
-                        <c:forEach begin="0" end="5" varStatus="i">
-                            <li class="item_top_cover_idol">
-                                <img src="/resources/storage/image/thumbnail/owner_thumbnail/avatar1.jpg" class="img-circle" alt="top cover idol">
-                                <div class="idol_info">
-                                    <p><strong>Minh Anh</strong></p>
-                                    <p><fmt:formatNumber>30000</fmt:formatNumber></p>
-                                </div>
-                                <button type="button" class="btn btn-success btn-sm">Theo doi</button>
-                            </li>
-                        </c:forEach>
-                    </ul>
-                </div>
-            </div>
+            <c:set var="listHot" value="${topIdolList}" scope="request"/>
+            <%@include file="../common/top_idol_card.jsp" %>
         </div>
     </div>
 </content>

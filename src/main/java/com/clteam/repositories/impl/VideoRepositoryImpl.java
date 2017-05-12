@@ -1,7 +1,6 @@
 package com.clteam.repositories.impl;
 
 import com.clteam.dataobject.VideoInfoEntity;
-import com.clteam.model.Cover;
 import com.clteam.repositories.api.VideoRepository;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +16,10 @@ import java.util.List;
 @Transactional
 public class VideoRepositoryImpl implements VideoRepository {
 
-
+    @Autowired
+    private SessionFactory sessionFactory;
     public VideoInfoEntity getVideoInfo(int videoId) {
-        return null;
+        return (VideoInfoEntity)sessionFactory.getCurrentSession().get(VideoInfoEntity.class, videoId);
     }
 
     public boolean deleteVideo(int videoId) {
@@ -34,7 +34,7 @@ public class VideoRepositoryImpl implements VideoRepository {
         return false;
     }
 
-    public List<Cover> getAllNewCover() {
+    public List<VideoInfoEntity> getAllVideo() {
         return null;
     }
 }

@@ -17,6 +17,7 @@ public interface UserRepository {
 
     boolean insertUser(UserInfoEntity user);
 
+    List<UserInfoEntity> getAllUser();
 
 
 }

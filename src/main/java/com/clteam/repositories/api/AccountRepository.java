@@ -17,4 +17,7 @@ public interface AccountRepository {
 
     boolean insertAccount(AccountEntity account);
 
+    List<AccountEntity> getAllAccount();
+
+
 }
