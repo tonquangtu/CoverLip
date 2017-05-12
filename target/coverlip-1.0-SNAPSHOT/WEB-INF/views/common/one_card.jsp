@@ -21,7 +21,7 @@
                         <a class="thumbnail_video" href="#"
                            title="${item.coverName}">
                             <span class="icon_play"></span>
-                            <img src="${item.video.videoThumbnailLink}" alt="${item.coverName}"
+                            <img src="http://zmp3-photo-td.zadn.vn/thumb/240_135/${item.video.videoThumbnailLink}" alt="${item.coverName}"
                                  title="${item.coverName}">
                         </a>
                     </div>

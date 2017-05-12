@@ -57,3 +57,17 @@
     color: red;
 
 }
+.top_idol{
+    margin-top: 3px;
+    margin-bottom: 12px;
+    padding-left: 0;
+    padding-right: 0;
+    -moz-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
+    background-color: #fefefe;
+    -moz-border-radius: 2px;
+    border-radius: 5px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}

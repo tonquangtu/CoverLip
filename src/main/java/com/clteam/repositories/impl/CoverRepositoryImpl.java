@@ -4,8 +4,10 @@ import com.clteam.dataobject.CoverInfoEntity;
 import com.clteam.dataobject.NewCoverEntity;
 import com.clteam.model.Cover;
 import com.clteam.repositories.api.CoverRepository;
-import org.hibernate.Query;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,8 +33,10 @@ public class CoverRepositoryImpl implements CoverRepository {
     }
 
     public List<NewCoverEntity> getListNewCover(int limit) {
-        Query query = sessionFactory.getCurrentSession().createQuery("from NewCoverEntity order by priority asc");
-        return (List<NewCoverEntity>)query.setMaxResults(limit).list();
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(NewCoverEntity.class);
+        List newCoverList = criteria.addOrder(Order.asc("priority")).setMaxResults(limit).list();
+        return newCoverList;
     }
 
     public List<Cover> getListHotCover(int limit) {

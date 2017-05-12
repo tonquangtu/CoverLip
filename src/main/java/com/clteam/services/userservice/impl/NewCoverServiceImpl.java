@@ -4,6 +4,7 @@ import com.clteam.dataobject.CoverInfoEntity;
 import com.clteam.dataobject.NewCoverEntity;
 import com.clteam.dataobject.VideoInfoEntity;
 import com.clteam.model.Cover;
+import com.clteam.model.Video;
 import com.clteam.repositories.api.CoverRepository;
 import com.clteam.services.userservice.api.NewCoverService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +27,15 @@ public class NewCoverServiceImpl implements NewCoverService {
         List<NewCoverEntity> newCoverEntityList = coverRepository.getListNewCover(limit);
         List<Cover> coverList = new ArrayList<Cover>();
         for(int i=0; i<newCoverEntityList.size(); i++){
-            Cover cover = new Cover();
+//            Cover cover = new Cover();
             VideoInfoEntity videoInfoEntity = newCoverEntityList.get(i).getVideoInfoByVideoId();
             Collection<CoverInfoEntity> coverInfoEntities =  videoInfoEntity.getCoverInfosById();
             if(coverInfoEntities!=null){
                 CoverInfoEntity coverInfoEntity = (CoverInfoEntity)coverInfoEntities.toArray()[0];
-                cover.copyData(coverInfoEntity, videoInfoEntity, videoInfoEntity.getAccountByAccountId());
+                Video video = new Video();
+                video.copyData(videoInfoEntity, videoInfoEntity.getAccountByAccountId());
+                Cover cover = new Cover(video, coverInfoEntity.getCoverName(), coverInfoEntity.getMp3Link());
+//                cover.copyData(coverInfoEntity, videoInfoEntity, videoInfoEntity.getAccountByAccountId());
                 coverList.add(cover);
             }
         }

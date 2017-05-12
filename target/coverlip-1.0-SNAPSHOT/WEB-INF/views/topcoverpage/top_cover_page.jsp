@@ -8,11 +8,12 @@ To change this template use File | Settings | File Templates.
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>CoverLip</title>
-    <%@ include file="../common/common_lib2.jsp" %>
+    <%@ include file="../common/common_lib.jsp" %>
 
     <link rel="stylesheet" href="/resources/styles/main_navigation_style.css"/>
     <link rel="stylesheet" href="/resources/styles/main_header_style.css"/>
@@ -130,7 +131,7 @@ To change this template use File | Settings | File Templates.
                                 <img src="/resources/storage/image/thumbnail/owner_thumbnail/avatar1.jpg" class="img-circle" alt="top cover idol">
                                 <div class="idol_info">
                                     <p><strong>Minh Anh</strong></p>
-                                    <p>30K</p>
+                                    <p><fmt:formatNumber>30000</fmt:formatNumber></p>
                                 </div>
                                 <button type="button" class="btn btn-success btn-sm">Theo doi</button>
                             </li>

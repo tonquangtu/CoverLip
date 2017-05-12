@@ -12,7 +12,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>CoverLip</title>
-    <%@ include file="../common/common_lib2.jsp" %>
+    <%@ include file="../common/common_lib.jsp" %>
 
     <link rel="stylesheet" href="/resources/styles/main_navigation_style.css"/>
     <link rel="stylesheet" href="/resources/styles/main_header_style.css"/>
@@ -22,6 +22,7 @@
     <script src="/resources/libs/scrollslide/courial.js"></script>
     <script src="/resources/scripts/one_card_script.js"></script>
     <script src="/resources/scripts/scroll_card_script.js"></script>
+    <script src="/resources/scripts/home_cover_script.js"></script>
 
 </head>
 <body>
@@ -81,7 +82,7 @@
     </div> <!-- slider -->
     <div id="main_content" class="container">
         <!-- List video -->
-        <div class="first_content">
+        <div class="new_list_content">
             <!-- Page Header -->
             <div class="row title">
                 <div class="col-lg-12">
@@ -146,7 +147,7 @@
             <!-- /.row -->
         </div>
 
-        <div class="first_content">
+        <div class="hot_list_content">
             <!-- Page Header -->
             <div class="row title">
                 <div class="col-lg-12">
@@ -213,7 +214,7 @@
 
 
         <!-- Cover hay moi ngay -->
-        <div class="first_content">
+        <div class="cover_list_content">
             <!-- Page Header -->
             <div class="row title">
                 <div class="col-lg-12">

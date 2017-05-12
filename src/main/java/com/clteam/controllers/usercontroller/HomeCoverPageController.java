@@ -49,4 +49,29 @@ public class HomeCoverPageController {
         modelAndView.addAllObjects(map);
         return modelAndView;
     }
+
+    @RequestMapping("/persional-setting")
+    public ModelAndView visitPersionalInfomationPage(){
+        ModelAndView modelAndView = new ModelAndView();
+        Map<String, Object> map = new HashMap<String, Object>();
+
+        modelAndView.setViewName("persionalinfomationpage/persional_infomation_page");
+        modelAndView.addAllObjects(map);
+        return modelAndView;
+    }
+    @RequestMapping("/user")
+    public ModelAndView visitUserPage(){
+        List<Cover> newCoverList = newCoverService.getListNewCover(12);
+        List<Cover> hotCoverList = hotCoverService.getListHotCover(12);
+        List<TopIdol> topIdolList = topIdolService.getListTopIdol();
+        ModelAndView modelAndView = new ModelAndView();
+        Map<String, Object> map = new HashMap<String, Object>();
+        System.out.println("size "+newCoverList.size());
+        map.put("newCoverList", newCoverList);
+        map.put("hotCoverList", hotCoverList);
+        map.put("topIdolList", topIdolList);
+        modelAndView.setViewName("userpage/user_page");
+        modelAndView.addAllObjects(map);
+        return modelAndView;
+    }
 }

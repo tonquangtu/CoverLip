@@ -76,5 +76,6 @@
     <orderEntry type="library" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.0.Final" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-c3p0:4.1.0.Final" level="project" />
     <orderEntry type="library" name="Maven: c3p0:c3p0:0.9.1" level="project" />
+    <orderEntry type="library" name="org.fluttercode.datafactory:datafactory:0.8" level="project" />
   </component>
 </module>
