@@ -17,6 +17,8 @@ public class AccountEntity {
     private byte role;
     private byte state;
     private Timestamp dateJoin;
+    private String coverImage;
+    private String avatarThumbnail;
     private Collection<AdminInfoEntity> adminInfosById;
     private Collection<IdolFollowingEntity> idolFollowingsById;
     private Collection<IdolFollowingEntity> idolFollowingsById_0;
@@ -96,6 +98,26 @@ public class AccountEntity {
         this.dateJoin = dateJoin;
     }
 
+    @Basic
+    @Column(name = "cover_image", columnDefinition = "TEXT")
+    public String getCoverImage() {
+        return coverImage;
+    }
+
+    public void setCoverImage(String coverImage) {
+        this.coverImage = coverImage;
+    }
+
+    @Basic
+    @Column(name = "avatar_thumbnail", columnDefinition = "TEXT")
+    public String getAvatarThumbnail() {
+        return avatarThumbnail;
+    }
+
+    public void setAvatarThumbnail(String avatarThumbnail) {
+        this.avatarThumbnail = avatarThumbnail;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -110,7 +132,9 @@ public class AccountEntity {
         if (password != null ? !password.equals(that.password) : that.password != null) return false;
         if (fullname != null ? !fullname.equals(that.fullname) : that.fullname != null) return false;
         if (dateJoin != null ? !dateJoin.equals(that.dateJoin) : that.dateJoin != null) return false;
-
+        if (coverImage != null ? !coverImage.equals(that.coverImage) : that.coverImage != null) return false;
+        if (avatarThumbnail != null ? !avatarThumbnail.equals(that.avatarThumbnail) : that.avatarThumbnail != null)
+            return false;
         return true;
     }
 
@@ -123,6 +147,8 @@ public class AccountEntity {
         result = 31 * result + (int) role;
         result = 31 * result + (int) state;
         result = 31 * result + (dateJoin != null ? dateJoin.hashCode() : 0);
+        result = 31 * result + (coverImage != null ? coverImage.hashCode() : 0);
+        result = 31 * result + (avatarThumbnail != null ? avatarThumbnail.hashCode() : 0);
         return result;
     }
 

@@ -3,12 +3,11 @@ package com.clteam.controllers.usercontroller;
 import com.clteam.model.Cover;
 import com.clteam.model.Playlist;
 import com.clteam.model.TopIdol;
-import com.clteam.services.userservice.api.HotCoverService;
-import com.clteam.services.userservice.api.NewCoverService;
-import com.clteam.services.userservice.api.PlayListCoverService;
-import com.clteam.services.userservice.api.TopIdolService;
+import com.clteam.model.User;
+import com.clteam.services.userservice.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -21,6 +20,8 @@ import java.util.Map;
  */
 @Controller
 public class HomeCoverPageController {
+    @Autowired
+    private UserService userService;
     @Autowired
     private NewCoverService newCoverService;
     @Autowired
@@ -69,14 +70,17 @@ public class HomeCoverPageController {
         modelAndView.addAllObjects(map);
         return modelAndView;
     }
-    @RequestMapping("/user")
-    public ModelAndView visitUserPage(){
+    @RequestMapping("/user/{idUser}")
+    public ModelAndView visitUserPage(@PathVariable String idUser){
+        int accountId = Integer.parseInt(idUser);
+        User user = userService.getUser(accountId);
         List<Cover> newCoverList = newCoverService.getListNewCover(12);
         List<Cover> hotCoverList = hotCoverService.getListHotCover(12);
         List<TopIdol> topIdolList = topIdolService.getListTopCoverIdols(5);
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();
         System.out.println("size "+newCoverList.size());
+        map.put("userInfo", user);
         map.put("newCoverList", newCoverList);
         map.put("hotCoverList", hotCoverList);
         map.put("topIdolList", topIdolList);

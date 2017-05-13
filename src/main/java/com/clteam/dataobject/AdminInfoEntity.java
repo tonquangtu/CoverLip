@@ -10,7 +10,6 @@ import javax.persistence.*;
 public class AdminInfoEntity {
     private int id;
     private int accountId;
-    private String profileImage;
     private String phoneNumber;
     private String address;
     private AccountEntity accountByAccountId;
@@ -33,16 +32,6 @@ public class AdminInfoEntity {
 
     public void setAccountId(int accountId) {
         this.accountId = accountId;
-    }
-
-    @Basic
-    @Column(name = "profile_image", columnDefinition = "TEXT")
-    public String getProfileImage() {
-        return profileImage;
-    }
-
-    public void setProfileImage(String profileImage) {
-        this.profileImage = profileImage;
     }
 
     @Basic
@@ -74,7 +63,6 @@ public class AdminInfoEntity {
 
         if (id != that.id) return false;
         if (accountId != that.accountId) return false;
-        if (profileImage != null ? !profileImage.equals(that.profileImage) : that.profileImage != null) return false;
         if (phoneNumber != null ? !phoneNumber.equals(that.phoneNumber) : that.phoneNumber != null) return false;
         if (address != null ? !address.equals(that.address) : that.address != null) return false;
 
@@ -85,7 +73,6 @@ public class AdminInfoEntity {
     public int hashCode() {
         int result = id;
         result = 31 * result + accountId;
-        result = 31 * result + (profileImage != null ? profileImage.hashCode() : 0);
         result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
         result = 31 * result + (address != null ? address.hashCode() : 0);
         return result;
