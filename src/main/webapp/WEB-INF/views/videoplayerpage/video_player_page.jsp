@@ -141,18 +141,33 @@
             <h3 class="title-box box-shadow">
                 <a class="column-suggestion-title center-vertical-content" href="#" title="Xem tất cả các video liên quan">VIDEO LIÊN QUAN</a>
             </h3>
-            <ul class="list-suggestion-video">
 
-                <c:forEach var ="i" begin="0" end="${recommendationList.size() - 1}">
+            <c:set var="size1" scope="page"/>
+
+            <c:choose>
+                <c:when test="${recommendationList.size() > 6}">
+                    <c:set var="size1" value="6"/>
+                </c:when>
+
+                <c:otherwise>
+                    <c:set var="size1" value="${recommendationList.size()}"/>
+                </c:otherwise>
+                
+            </c:choose>
+            
+            <ul class="list-suggestion-video list-suggestion1">
+                <c:forEach var ="item" begin="0" end="${size1 -1}" items="${recommendationList}" varStatus="i">
+
+                    <%--${VideoWrapper video = recommendationList.get(i)}--%>
                     <li class="suggestion-video-item box-shadow">
 
-                        <a href="${recommendationList.get(i).video.videoLink}">
+                        <a href="${item.video.videoLink}">
                             <div class="video-thumbnail-box">
-                                <img class="video-thumbnail" src="${recommendationList.get(i).video.videoThumbnailLink}"/>
+                                <img class="video-thumbnail" src="${item.video.videoThumbnailLink}"/>
                             </div>
                         </a>
 
-                        <a href="${recommendationList.get(i).video.videoLink}">
+                        <a href="${item.video.videoLink}">
                             <div class="thumb-mask"></div>
                         </a>
 
@@ -160,11 +175,11 @@
 
                             <div class="suggestion-video-owner-box pull-left">
                                 <a class="suggestion-video-owner-thumbnail" style = "background-image: url('http://avatar.muvik.tv/7/iiXMWN');" href="#"></a>
-                                <a class="suggestion-video-owner-name center-vertical" href="#">${recommendationList.get(i).video.account.fullname}</a>
+                                <a class="suggestion-video-owner-name center-vertical" href="#">${item.video.account.fullname}</a>
                             </div>
 
                             <div>
-                                <a class="suggestion-video-title center-vertical-content" href="#">${recommendationList.get(i).videoName}</a>
+                                <a class="suggestion-video-title center-vertical-content" href="#">${item.videoName}</a>
                             </div>
 
                         </div>
@@ -173,15 +188,45 @@
                             <span class="icon-play"></span>
                         </a>
                     </li>
-
                 </c:forEach>
-
             </ul>
+
+            <ul class="list-suggestion-video list-suggestion2">
+                <c:forEach var ="item" begin="${size1}" end="${recommendationList.size() - 1}" items="${recommendationList}">
+                    <li class="suggestion-video-item box-shadow">
+
+                        <a href="${item.video.videoLink}">
+                            <div class="video-thumbnail-box">
+                                <img class="video-thumbnail" src="${item.video.videoThumbnailLink}"/>
+                            </div>
+                        </a>
+
+                        <a href="${item.video.videoLink}">
+                            <div class="thumb-mask"></div>
+                        </a>
+
+                        <div class="suggestion-video-info">
+
+                            <div class="suggestion-video-owner-box pull-left">
+                                <a class="suggestion-video-owner-thumbnail" style = "background-image: url('http://avatar.muvik.tv/7/iiXMWN');" href="#"></a>
+                                <a class="suggestion-video-owner-name center-vertical" href="#">${item.video.account.fullname}</a>
+                            </div>
+
+                            <div>
+                                <a class="suggestion-video-title center-vertical-content" href="#">${item.videoName}</a>
+                            </div>
+
+                        </div>
+
+                        <a href="#">
+                            <span class="icon-play"></span>
+                        </a>
+                    </li>
+                </c:forEach>
+            </ul>
+
             <div>
-                <button>
-
-                </button>
-
+                <button class="btn-view-more-suggestion box-shadow" id="btn-view-more-suggestion" style= "vertical-align:middle"><span>Xem thêm gợi ý </span></button>
             </div>
 
         </div>

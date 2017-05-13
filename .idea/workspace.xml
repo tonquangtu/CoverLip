@@ -2,293 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0b42ca8-e3c9-41fc-bfaa-36ce203b6f1e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/api/VideoService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/VideoServiceImpl.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon-repeat.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon-repeat.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon@2x.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon@2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon_zing.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon_zing.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/icons/youtube_logo.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/icons/youtube_logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/fonts/FontAwesome.otf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/fonts/fontawesome-webfont.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/fonts/fontawesome-webfont.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/fonts/fontawesome-webfont.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/fonts/fontawesome-webfont.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/videoplayer/mejs-controls.png" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/videoplayer/mejs-controls.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/normal_image/owner_image/cover_hot.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/normal_image/owner_image/cover_hot.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/normal_image/owner_image/cover_playlist.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/normal_image/owner_image/cover_playlist.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/normal_image/owner_image/lactroi.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/normal_image/owner_image/lactroi.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/normal_image/slide_image/didetrove.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/normal_image/slide_image/didetrove.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/normal_image/slide_image/lactroi.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/normal_image/slide_image/lactroi.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/normal_image/slide_image/phiasaumotcogai.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/normal_image/slide_image/phiasaumotcogai.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/normal_image/slide_image/singer.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/normal_image/slide_image/singer.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/thumbnail/owner_thumbnail/avatar1.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/thumbnail/owner_thumbnail/avatar1.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/thumbnail/owner_thumbnail/thumbnail_singer_1.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/thumbnail/owner_thumbnail/thumbnail_singer_1.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/thumbnail/owner_thumbnail/thumbnail_singer_2.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/thumbnail/owner_thumbnail/thumbnail_singer_2.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/thumbnail/owner_thumbnail/thumbnail_singer_3.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/thumbnail/owner_thumbnail/thumbnail_singer_3.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/thumbnail/owner_thumbnail/thumbnail_singer_4.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/thumbnail/owner_thumbnail/thumbnail_singer_4.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/thumbnail/owner_thumbnail/thumbnail_singer_5.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/thumbnail/owner_thumbnail/thumbnail_singer_5.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/thumbnail/owner_thumbnail/thumbnail_singer_6.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/thumbnail/owner_thumbnail/thumbnail_singer_6.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/thumbnail/video_thumbnail/anh1.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/thumbnail/video_thumbnail/anh1.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/thumbnail/video_thumbnail/anh2.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/thumbnail/video_thumbnail/anh2.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/CoverLip_com_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/CoverLip_com_war.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/CoverLip_com_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/CoverLip_com_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/2fc81469-b1fd-45e0-8bc0-09198f0e48ad.corrupted.20170513-064611.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/2fc81469-b1fd-45e0-8bc0-09198f0e48ad.corrupted.20170513-064611.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/2fc81469-b1fd-45e0-8bc0-09198f0e48ad.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/2fc81469-b1fd-45e0-8bc0-09198f0e48ad.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__c3p0_c3p0_0_9_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__c3p0_c3p0_0_9_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_thoughtworks_paranamer_paranamer_2_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_thoughtworks_paranamer_paranamer_2_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_6.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_6.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_dbcp_commons_dbcp_1_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_dbcp_commons_dbcp_1_4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_pool_commons_pool_1_5_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_pool_commons_pool_1_5_4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jstl_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jstl_1_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_36.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_36.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_avro_avro_1_6_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_avro_avro_1_6_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_analyzers_3_6_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_analyzers_3_6_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_core_3_6_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_core_3_6_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_facet_3_6_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_facet_3_6_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_grouping_3_6_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_grouping_3_6_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_highlighter_3_6_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_highlighter_3_6_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_kuromoji_3_6_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_kuromoji_3_6_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_memory_3_6_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_memory_3_6_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_misc_3_6_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_misc_3_6_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_phonetic_3_6_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_phonetic_3_6_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_smartcn_3_6_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_smartcn_3_6_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_spatial_3_6_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_spatial_3_6_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_spellchecker_3_6_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_spellchecker_3_6_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_stempel_3_6_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_stempel_3_6_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_solr_solr_analysis_extras_3_6_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_solr_solr_analysis_extras_3_6_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_solr_solr_core_3_6_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_solr_solr_core_3_6_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_solr_solr_solrj_3_6_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_solr_solr_solrj_3_6_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_10.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_10.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_10.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_10.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_4_0_1_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_4_0_1_Final.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_c3p0_4_1_0_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_c3p0_4_1_0_Final.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_4_1_0_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_4_1_0_Final.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_search_analyzers_4_3_0_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_search_analyzers_4_3_0_Final.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_search_engine_4_3_0_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_search_engine_4_3_0_Final.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_search_orm_4_3_0_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_search_orm_4_3_0_Final.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_0_api_1_0_0_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_0_api_1_0_0_Final.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_15_0_GA.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_15_0_GA.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_1_0_CR2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_1_0_CR2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_1_spec_1_0_0_Final.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_1_spec_1_0_0_Final.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_8_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_8_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_8_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_4_3_8_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_4_3_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_8_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_8_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_8_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_4_3_8_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_4_3_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_8_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_8_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_8_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_8_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_xerial_snappy_snappy_java_1_0_4_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xerial_snappy_snappy_java_1_0_4_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/org_fluttercode_datafactory_datafactory_0_8.xml" afterPath="$PROJECT_DIR$/.idea/libraries/org_fluttercode_datafactory_datafactory_0_8.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml.orig" afterPath="$PROJECT_DIR$/.idea/workspace.xml.orig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CoverLip.com.iml" afterPath="$PROJECT_DIR$/CoverLip.com.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/naming_convention" afterPath="$PROJECT_DIR$/naming_convention" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/configuration/BaseApplication.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/configuration/BaseApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/TestSearchController.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/TestSearchController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/admincontroller/naming_convention" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/admincontroller/naming_convention" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/commoncontroller/naming_convention" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/commoncontroller/naming_convention" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/usercontroller/HomeCoverPageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/usercontroller/HomeCoverPageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/usercontroller/HotCoverPageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/usercontroller/HotCoverPageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/usercontroller/PlaylistCoverPageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/usercontroller/PlaylistCoverPageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/usercontroller/TopCoverPageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/usercontroller/TopCoverPageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/usercontroller/VideoPlayerPageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/usercontroller/VideoPlayerPageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/videocontroller/naming_convention" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/videocontroller/naming_convention" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataconstant/DataConstant.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataconstant/DataConstant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/AccountEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/AccountEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/AdminInfoEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/AdminInfoEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/CoverInfoEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/CoverInfoEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/CoverOfPlaylistEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/CoverOfPlaylistEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/CoverTopEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/CoverTopEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/HotCoverEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/HotCoverEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/HotLipSyncEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/HotLipSyncEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/IdolFollowingEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/IdolFollowingEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/KaraokeInfoEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/KaraokeInfoEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/LipSyncInfoEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/LipSyncInfoEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/LipSyncTemplateInfoEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/LipSyncTemplateInfoEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/NewCoverEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/NewCoverEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/NewLipsyncEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/NewLipsyncEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/PlaylistInfoEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/PlaylistInfoEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/TempCountViewCoverEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/TempCountViewCoverEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/TempCountViewLipSyncEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/TempCountViewLipSyncEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/TempNewCoverAdminEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/TempNewCoverAdminEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/TempNewLipSyncAdminEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/TempNewLipSyncAdminEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/TopCoverIdolEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/TopCoverIdolEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/TopLipSyncIdolEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/TopLipSyncIdolEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/TopListEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/TopListEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/UserInfoEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/UserInfoEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/VideoInfoEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/VideoInfoEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/factory/naming_convention" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/factory/naming_convention" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/Account.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/Account.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/Admin.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/Admin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/Cover.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/Cover.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/CoverWrapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/CoverWrapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/Following.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/Following.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/FollowingList.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/FollowingList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/LipSync.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/LipSync.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/LipSyncTemplate.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/LipSyncTemplate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/LipSyncWrapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/LipSyncWrapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/Playlist.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/Playlist.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/PlaylistItem.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/PlaylistItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/TempCountViewVideo.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/TempCountViewVideo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/TopCover.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/TopCover.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/TopIdol.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/TopIdol.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/TopList.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/TopList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/Video.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/Video.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/VideoWrapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/VideoWrapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/AccountRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/AccountRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/AdminRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/AdminRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/CoverRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/CoverRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/LipSyncRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/LipSyncRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/PlaylistRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/PlaylistRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/TopRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/TopRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/UserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/UserRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/VideoRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/VideoRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/AccountRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/AccountRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/AdminRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/AdminRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/CoverRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/CoverRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/LipSyncRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/LipSyncRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/PlaylistRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/PlaylistRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/TopRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/TopRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/UserRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/UserRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/VideoRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/VideoRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/adminservice/naming_convention" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/adminservice/naming_convention" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/api/RecommenderService.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/api/RecommenderService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/api/VideoService.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/api/VideoService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/RecommendationData.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/RecommendationData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/RecommenderServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/RecommenderServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/VideoServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/VideoServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/api/HotCoverService.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/api/HotCoverService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/api/NewCoverService.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/api/NewCoverService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/api/PlayListCoverService.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/api/PlayListCoverService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/api/TopIdolService.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/api/TopIdolService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/api/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/api/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/HotCoverServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/HotCoverServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/NewCoverServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/NewCoverServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/PlayListCoverServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/PlayListCoverServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/TopIdolServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/TopIdolServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/utils/CommonUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/utils/CommonUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/utils/SimilarityVideo.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/utils/SimilarityVideo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/utils/StringToEnglish.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/utils/StringToEnglish.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/utils/Validator.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/utils/Validator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/applicationContext.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/dispatcher-servlet.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/common_lib.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/common_lib.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/common_lib2.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/common_lib2.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/error.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/error.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/main_footer.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/main_footer.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/main_header.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/main_header.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/one_card.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/one_card.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/top_idol_card.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/top_idol_card.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homecoverpage/home_cover_page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homecoverpage/home_cover_page.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homelippage/naming_convention" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homelippage/naming_convention" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/hotcoverpage/hot_cover_page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/hotcoverpage/hot_cover_page.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/persionalinfomationpage/persional_infomation_page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/persionalinfomationpage/persional_infomation_page.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/playlistcoverpage/playlist_cover_page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/playlistcoverpage/playlist_cover_page.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/test.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/test.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/userpage/user_page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/userpage/user_page.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/videoplayerpage/video_player_page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/videoplayerpage/video_player_page.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon_comment.svg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon_comment.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon_down_arrow.svg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon_down_arrow.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon_download.svg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon_download.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon_like.svg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon_like.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon_like_face.svg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon_like_face.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon_more_vertical.svg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon_more_vertical.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon_mp3.svg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon_mp3.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon_share.svg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon_share.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon_up_arrow.svg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon_up_arrow.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon_view.svg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/icons/icon_view.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/icons/loadding.svg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/icons/loadding.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/facebooksdk/facebook_sdk_script.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/facebooksdk/facebook_sdk_script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/HELP-US-OUT.txt" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/HELP-US-OUT.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/css/font-awesome.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/css/font-awesome.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/css/font-awesome.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/fonts/fontawesome-webfont.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/animated.less" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/animated.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/bordered-pulled.less" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/bordered-pulled.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/core.less" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/core.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/fixed-width.less" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/fixed-width.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/font-awesome.less" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/font-awesome.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/icons.less" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/icons.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/larger.less" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/larger.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/list.less" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/list.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/mixins.less" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/mixins.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/path.less" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/path.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/rotated-flipped.less" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/rotated-flipped.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/screen-reader.less" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/screen-reader.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/stacked.less" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/stacked.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/variables.less" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/less/variables.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_animated.scss" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_animated.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_bordered-pulled.scss" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_bordered-pulled.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_core.scss" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_core.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_fixed-width.scss" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_fixed-width.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_icons.scss" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_icons.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_larger.scss" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_larger.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_list.scss" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_list.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_mixins.scss" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_mixins.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_path.scss" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_path.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_rotated-flipped.scss" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_rotated-flipped.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_screen-reader.scss" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_screen-reader.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_stacked.scss" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_stacked.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_variables.scss" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/_variables.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/font-awesome.scss" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/font-awesome/scss/font-awesome.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/jb/bootstrap.min.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/jb/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/scrollslide/courial.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/scrollslide/courial.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/videoplayer/jquery.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/videoplayer/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/videoplayer/mediaelement-and-player.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/videoplayer/mediaelement-and-player.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/videoplayer/mediaelementplayer.min.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/videoplayer/mediaelementplayer.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/videoplayer/mejs-controls.svg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/videoplayer/mejs-controls.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/libs/videoplayer/video_controller.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/videoplayer/video_controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/home_cover_script.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/home_cover_script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/one_card_script.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/one_card_script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/persional_infomation_script.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/persional_infomation_script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/scroll_card_script.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/scroll_card_script.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/video_player_script.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/video_player_script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/normal_image/video_image/naming_convention" afterPath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/normal_image/video_image/naming_convention" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/storage/video/cover/naming_convention" afterPath="$PROJECT_DIR$/src/main/webapp/resources/storage/video/cover/naming_convention" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/storage/video/karaoke/naming_convention" afterPath="$PROJECT_DIR$/src/main/webapp/resources/storage/video/karaoke/naming_convention" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/storage/video/lipsync/lipsync_template/naming_convention" afterPath="$PROJECT_DIR$/src/main/webapp/resources/storage/video/lipsync/lipsync_template/naming_convention" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/storage/video/lipsync/owner_lipsync/naming_convention" afterPath="$PROJECT_DIR$/src/main/webapp/resources/storage/video/lipsync/owner_lipsync/naming_convention" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/card_playlist_cover_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/card_playlist_cover_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/home_cover_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/home_cover_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/hot_cover_page_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/hot_cover_page_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/main_footer_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/main_footer_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/main_header_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/main_header_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/main_navigation_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/main_navigation_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/one_card_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/one_card_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/persional_infomation_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/persional_infomation_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/playlist_cover_page_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/playlist_cover_page_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/top_cover_page_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/top_cover_page_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/top_idol_card_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/top_idol_card_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/user_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/user_style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/video_player_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/video_player_style.css" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -357,14 +73,65 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="video_player_page.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="video_player_page.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/videoplayerpage/video_player_page.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="190" column="0" lean-forward="false" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+            <state relative-caret-position="-525">
+              <caret line="188" column="28" lean-forward="false" selection-start-line="188" selection-start-column="28" selection-end-line="188" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home_cover_script.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/home_cover_script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1494669939051" expanded="true" signature="166:375" ph="..." />
+                <marker date="1494669939051" expanded="true" signature="471:709" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="one_card_script.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/one_card_script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="video_player_script.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/video_player_script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="62" lean-forward="false" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="persional_infomation_script.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/persional_infomation_script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scroll_card_script.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/scroll_card_script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-774">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -372,29 +139,11 @@
       <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
+            <state relative-caret-position="306">
               <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/model/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1343">
-              <caret line="114" column="54" lean-forward="false" selection-start-line="114" selection-start-column="54" selection-end-line="114" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccountEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/dataobject/AccountEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-119">
-              <caret line="13" column="28" lean-forward="false" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -404,46 +153,56 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
               <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#556#557#0" expanded="false" />
+                <element signature="e#581#582#0" expanded="false" />
+                <element signature="e#614#615#0" expanded="false" />
+                <element signature="e#642#643#0" expanded="false" />
+                <element signature="e#719#720#0" expanded="false" />
+                <element signature="e#751#752#0" expanded="false" />
+                <element signature="e#798#799#0" expanded="false" />
+                <element signature="e#840#841#0" expanded="false" />
+                <element signature="e#930#931#0" expanded="false" />
+                <element signature="e#968#969#0" expanded="false" />
+                <element signature="e#1027#1028#0" expanded="false" />
+                <element signature="e#1081#1082#0" expanded="false" />
+                <element signature="e#1156#1157#0" expanded="false" />
+                <element signature="e#1187#1188#0" expanded="false" />
+                <element signature="e#1232#1233#0" expanded="false" />
+                <element signature="e#1272#1273#0" expanded="false" />
+                <element signature="e#1351#1352#0" expanded="false" />
+                <element signature="e#1384#1385#0" expanded="false" />
+                <element signature="e#1433#1434#0" expanded="false" />
+                <element signature="e#1477#1478#0" expanded="false" />
+                <element signature="e#1558#1559#0" expanded="false" />
+                <element signature="e#1592#1593#0" expanded="false" />
+                <element signature="e#1643#1644#0" expanded="false" />
+                <element signature="e#1689#1690#0" expanded="false" />
+                <element signature="e#1777#1778#0" expanded="false" />
+                <element signature="e#1811#1812#0" expanded="false" />
+                <element signature="e#1868#1869#0" expanded="false" />
+                <element signature="e#1914#1915#0" expanded="false" />
+                <element signature="e#2133#2134#0" expanded="false" />
+                <element signature="e#2163#2164#0" expanded="false" />
+                <element signature="e#2209#2210#0" expanded="false" />
+                <element signature="e#2247#2248#0" expanded="false" />
+                <element signature="e#2357#2358#0" expanded="false" />
+                <element signature="e#2391#2392#0" expanded="false" />
+                <element signature="e#2445#2446#0" expanded="false" />
+                <element signature="e#2491#2492#0" expanded="false" />
+                <element signature="e#4133#4134#0" expanded="false" />
+                <element signature="e#4174#4175#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayListCoverServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/PlayListCoverServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="39" column="125" lean-forward="false" selection-start-line="39" selection-start-column="125" selection-end-line="39" selection-end-column="125" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewCoverServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/NewCoverServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HotCoverServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/HotCoverServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RecommenderServiceImpl.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RecommenderServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/RecommenderServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-690">
-              <caret line="323" column="42" lean-forward="false" selection-start-line="323" selection-start-column="42" selection-end-line="323" selection-end-column="42" />
+            <state relative-caret-position="102">
+              <caret line="325" column="32" lean-forward="true" selection-start-line="325" selection-start-column="32" selection-end-line="325" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -452,9 +211,11 @@
       <file leaf-file-name="VideoServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/VideoServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6406">
+            <state relative-caret-position="136">
               <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -637,75 +398,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="CoverLipCopy">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="CoverLipCopy">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src/main">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="webapp">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="WEB-INF">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="CoverLipCopy">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src/main">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="webapp">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="CoverLipCopy">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src/main">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -929,6 +623,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoverLip" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoverLip" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1198,7 +926,74 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="CoverLipCopy">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="CoverLipCopy">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/main">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="webapp">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="WEB-INF">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="CoverLipCopy">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/main">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="webapp">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="CoverLipCopy">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/main">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1780,8 +1575,8 @@
       </method>
     </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Application.TestLibRec" />
-      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.Unnamed" />
+      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Unnamed" />
+      <item index="1" class="java.lang.String" itemvalue="Application.TestLibRec" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -1866,6 +1661,7 @@
       <workItem from="1494649499812" duration="4836000" />
       <workItem from="1494657679563" duration="6742000" />
       <workItem from="1494668657299" duration="1184000" />
+      <workItem from="1494670054386" duration="565000" />
     </task>
     <task id="LOCAL-00001" summary="init project coverlip&#10;Init structure for project&#10;by Quang Tu">
       <created>1490494974394</created>
@@ -1878,7 +1674,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="434455000" />
+    <option name="totallyTimeSpent" value="435020000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1911,12 +1707,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.61374795" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.61374795" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37806875" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37806875" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2677761" sideWeight="0.30114567" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33812407" sideWeight="0.57610476" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34341908" sideWeight="0.57610476" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27155825" sideWeight="0.42389524" order="2" side_tool="true" content_ui="tabs" />
@@ -1996,42 +1792,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/model/LipSyncTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/model/LipSyncWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/model/Playlist.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="148" column="79" lean-forward="false" selection-start-line="148" selection-start-column="79" selection-end-line="148" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/model/PlaylistItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="73" column="69" lean-forward="false" selection-start-line="73" selection-start-column="69" selection-end-line="73" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/model/TempCountViewVideo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/model/TopCover.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -2189,7 +1949,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2229,7 +1988,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="66" lean-forward="false" selection-start-line="16" selection-start-column="66" selection-end-line="16" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2237,7 +1995,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4709">
           <caret line="277" column="43" lean-forward="false" selection-start-line="277" selection-start-column="43" selection-end-line="277" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2245,7 +2002,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="28" column="40" lean-forward="false" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2266,7 +2022,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2306,31 +2061,39 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-49">
           <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/PlayListCoverServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="493">
           <caret line="39" column="125" lean-forward="false" selection-start-line="39" selection-start-column="125" selection-end-line="39" selection-end-column="125" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#758#768#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/NewCoverServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
+        <state relative-caret-position="136">
           <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#923#930#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/HotCoverServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
+        <state relative-caret-position="153">
           <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#687#694#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2338,15 +2101,109 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1343">
           <caret line="114" column="54" lean-forward="false" selection-start-line="114" selection-start-column="54" selection-end-line="114" selection-end-column="54" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#491#492#0" expanded="false" />
+            <element signature="e#529#530#0" expanded="false" />
+            <element signature="e#588#589#0" expanded="false" />
+            <element signature="e#642#643#0" expanded="false" />
+            <element signature="e#674#675#0" expanded="false" />
+            <element signature="e#705#706#0" expanded="false" />
+            <element signature="e#750#751#0" expanded="false" />
+            <element signature="e#790#791#0" expanded="false" />
+            <element signature="e#824#825#0" expanded="false" />
+            <element signature="e#857#858#0" expanded="false" />
+            <element signature="e#906#907#0" expanded="false" />
+            <element signature="e#950#951#0" expanded="false" />
+            <element signature="e#985#986#0" expanded="false" />
+            <element signature="e#1019#1020#0" expanded="false" />
+            <element signature="e#1070#1071#0" expanded="false" />
+            <element signature="e#1116#1117#0" expanded="false" />
+            <element signature="e#1157#1158#0" expanded="false" />
+            <element signature="e#1191#1192#0" expanded="false" />
+            <element signature="e#1248#1249#0" expanded="false" />
+            <element signature="e#1294#1295#0" expanded="false" />
+            <element signature="e#1328#1329#0" expanded="false" />
+            <element signature="e#1358#1359#0" expanded="false" />
+            <element signature="e#1404#1405#0" expanded="false" />
+            <element signature="e#1442#1443#0" expanded="false" />
+            <element signature="e#1480#1481#0" expanded="false" />
+            <element signature="e#1514#1515#0" expanded="false" />
+            <element signature="e#1568#1569#0" expanded="false" />
+            <element signature="e#1614#1615#0" expanded="false" />
+            <element signature="e#1649#1650#0" expanded="false" />
+            <element signature="e#1679#1680#0" expanded="false" />
+            <element signature="e#1726#1727#0" expanded="false" />
+            <element signature="e#1764#1765#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/dataobject/AccountEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
+        <state relative-caret-position="187">
           <caret line="13" column="28" lean-forward="false" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1016#1017#0" expanded="false" />
+            <element signature="e#1041#1042#0" expanded="false" />
+            <element signature="e#1074#1075#0" expanded="false" />
+            <element signature="e#1102#1103#0" expanded="false" />
+            <element signature="e#1179#1180#0" expanded="false" />
+            <element signature="e#1210#1211#0" expanded="false" />
+            <element signature="e#1258#1259#0" expanded="false" />
+            <element signature="e#1298#1299#0" expanded="false" />
+            <element signature="e#1375#1376#0" expanded="false" />
+            <element signature="e#1406#1407#0" expanded="false" />
+            <element signature="e#1454#1455#0" expanded="false" />
+            <element signature="e#1494#1495#0" expanded="false" />
+            <element signature="e#1571#1572#0" expanded="false" />
+            <element signature="e#1602#1603#0" expanded="false" />
+            <element signature="e#1650#1651#0" expanded="false" />
+            <element signature="e#1690#1691#0" expanded="false" />
+            <element signature="e#1757#1758#0" expanded="false" />
+            <element signature="e#1784#1785#0" expanded="false" />
+            <element signature="e#1822#1823#0" expanded="false" />
+            <element signature="e#1854#1855#0" expanded="false" />
+            <element signature="e#1923#1924#0" expanded="false" />
+            <element signature="e#1951#1952#0" expanded="false" />
+            <element signature="e#1991#1992#0" expanded="false" />
+            <element signature="e#2025#2026#0" expanded="false" />
+            <element signature="e#2106#2107#0" expanded="false" />
+            <element signature="e#2137#2138#0" expanded="false" />
+            <element signature="e#2188#2189#0" expanded="false" />
+            <element signature="e#2228#2229#0" expanded="false" />
+            <element signature="e#2337#2338#0" expanded="false" />
+            <element signature="e#2370#2371#0" expanded="false" />
+            <element signature="e#2422#2423#0" expanded="false" />
+            <element signature="e#2466#2467#0" expanded="false" />
+            <element signature="e#2585#2586#0" expanded="false" />
+            <element signature="e#2623#2624#0" expanded="false" />
+            <element signature="e#2685#2686#0" expanded="false" />
+            <element signature="e#2739#2740#0" expanded="false" />
+            <element signature="e#4539#4540#0" expanded="false" />
+            <element signature="e#4576#4577#0" expanded="false" />
+            <element signature="e#4657#4658#0" expanded="false" />
+            <element signature="e#4709#4710#0" expanded="false" />
+            <element signature="e#4827#4828#0" expanded="false" />
+            <element signature="e#4868#4869#0" expanded="false" />
+            <element signature="e#5149#5150#0" expanded="false" />
+            <element signature="e#5192#5193#0" expanded="false" />
+            <element signature="e#5469#5470#0" expanded="false" />
+            <element signature="e#5509#5510#0" expanded="false" />
+            <element signature="e#5773#5774#0" expanded="false" />
+            <element signature="e#5813#5814#0" expanded="false" />
+            <element signature="e#6081#6082#0" expanded="false" />
+            <element signature="e#6123#6124#0" expanded="false" />
+            <element signature="e#6389#6390#0" expanded="false" />
+            <element signature="e#6425#6426#0" expanded="false" />
+            <element signature="e#6503#6504#0" expanded="false" />
+            <element signature="e#6553#6554#0" expanded="false" />
+            <element signature="e#6663#6664#0" expanded="false" />
+            <element signature="e#6700#6701#0" expanded="false" />
+            <element signature="e#6781#6782#0" expanded="false" />
+            <element signature="e#6833#6834#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2354,41 +2211,126 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#556#557#0" expanded="false" />
+            <element signature="e#581#582#0" expanded="false" />
+            <element signature="e#614#615#0" expanded="false" />
+            <element signature="e#642#643#0" expanded="false" />
+            <element signature="e#719#720#0" expanded="false" />
+            <element signature="e#751#752#0" expanded="false" />
+            <element signature="e#798#799#0" expanded="false" />
+            <element signature="e#840#841#0" expanded="false" />
+            <element signature="e#930#931#0" expanded="false" />
+            <element signature="e#968#969#0" expanded="false" />
+            <element signature="e#1027#1028#0" expanded="false" />
+            <element signature="e#1081#1082#0" expanded="false" />
+            <element signature="e#1156#1157#0" expanded="false" />
+            <element signature="e#1187#1188#0" expanded="false" />
+            <element signature="e#1232#1233#0" expanded="false" />
+            <element signature="e#1272#1273#0" expanded="false" />
+            <element signature="e#1351#1352#0" expanded="false" />
+            <element signature="e#1384#1385#0" expanded="false" />
+            <element signature="e#1433#1434#0" expanded="false" />
+            <element signature="e#1477#1478#0" expanded="false" />
+            <element signature="e#1558#1559#0" expanded="false" />
+            <element signature="e#1592#1593#0" expanded="false" />
+            <element signature="e#1643#1644#0" expanded="false" />
+            <element signature="e#1689#1690#0" expanded="false" />
+            <element signature="e#1777#1778#0" expanded="false" />
+            <element signature="e#1811#1812#0" expanded="false" />
+            <element signature="e#1868#1869#0" expanded="false" />
+            <element signature="e#1914#1915#0" expanded="false" />
+            <element signature="e#2133#2134#0" expanded="false" />
+            <element signature="e#2163#2164#0" expanded="false" />
+            <element signature="e#2209#2210#0" expanded="false" />
+            <element signature="e#2247#2248#0" expanded="false" />
+            <element signature="e#2357#2358#0" expanded="false" />
+            <element signature="e#2391#2392#0" expanded="false" />
+            <element signature="e#2445#2446#0" expanded="false" />
+            <element signature="e#2491#2492#0" expanded="false" />
+            <element signature="e#4133#4134#0" expanded="false" />
+            <element signature="e#4174#4175#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
+        <state relative-caret-position="306">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/VideoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/videoplayerpage/video_player_page.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-525">
+          <caret line="188" column="28" lean-forward="false" selection-start-line="188" selection-start-column="28" selection-end-line="188" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/home_cover_script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1494669939051" expanded="true" signature="166:375" ph="..." />
+            <marker date="1494669939051" expanded="true" signature="471:709" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/one_card_script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/persional_infomation_script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/scroll_card_script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-774">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/video_player_script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="62" lean-forward="false" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/RecommenderServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-690">
-          <caret line="323" column="42" lean-forward="false" selection-start-line="323" selection-start-column="42" selection-end-line="323" selection-end-column="42" />
+        <state relative-caret-position="102">
+          <caret line="325" column="32" lean-forward="true" selection-start-line="325" selection-start-column="32" selection-end-line="325" selection-end-column="32" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/VideoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6406">
-          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/videoplayerpage/video_player_page.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="190" column="0" lean-forward="false" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
