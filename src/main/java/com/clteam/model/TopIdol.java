@@ -1,5 +1,6 @@
 package com.clteam.model;
 
+import com.clteam.dataobject.AccountEntity;
 import com.clteam.dataobject.TopCoverIdolEntity;
 import com.clteam.dataobject.UserInfoEntity;
 
@@ -45,12 +46,12 @@ public class TopIdol {
         this.score = score;
     }
 
-    public void copyData(TopCoverIdolEntity topCoverIdolEntity, UserInfoEntity userInfoEntity){
+    public void copyData(TopCoverIdolEntity topCoverIdolEntity, UserInfoEntity userInfoEntity, AccountEntity accountEntity){
 
         topId = topCoverIdolEntity.getTopId();
         score = topCoverIdolEntity.getScore();
 
         user = new User();
-        user.copyData(userInfoEntity, userInfoEntity.getAccountByAccountId());
+        user.copyData(userInfoEntity, accountEntity);
     }
 }

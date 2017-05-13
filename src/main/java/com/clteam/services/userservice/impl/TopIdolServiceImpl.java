@@ -35,7 +35,7 @@ public class TopIdolServiceImpl implements TopIdolService {
             if (userInfoEntities != null){
 
                 UserInfoEntity userInfoEntity = (UserInfoEntity) userInfoEntities.toArray()[0];
-                topIdol.copyData(topCoverIdolEntity, userInfoEntity);
+                topIdol.copyData(topCoverIdolEntity, userInfoEntity, userInfoEntity.getAccountByAccountId());
             }
 
             topIdolList.add(topIdol);

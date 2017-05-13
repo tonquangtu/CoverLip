@@ -96,11 +96,10 @@ public class Cover implements Serializable{
 
 
 
-    public void  copyData(CoverInfoEntity coverInfoEntity, VideoInfoEntity videoInfoEntity){
+    public void  copyData(CoverInfoEntity coverInfoEntity, VideoInfoEntity videoInfoEntity, AccountEntity accountEntity){
         this.coverName = coverInfoEntity.getCoverName();
         this.mp3Link = coverInfoEntity.getMp3Link();
         this.video = new Video();
-        AccountEntity accountEntity = videoInfoEntity.getAccountByAccountId();
         this.video.copyData(videoInfoEntity, accountEntity);
     }
 }

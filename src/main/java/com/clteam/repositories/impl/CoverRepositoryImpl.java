@@ -48,14 +48,13 @@ public class CoverRepositoryImpl implements CoverRepository {
     @Override
     public List<HotCoverEntity> getLimitHotCover(int limit) {
 
-        if (limit <= 0) {
-            return null;
-        }
         Session session = sessionFactory.getCurrentSession();
         Criteria criteria = session.createCriteria(HotCoverEntity.class);
-        criteria.setMaxResults(limit);
         criteria.addOrder(Order.desc("priority"));
-        criteria.setMaxResults(limit);
+        if (limit >= 0) {
+            criteria.setMaxResults(limit);
+        }
+
         return criteria.list();
     }
 

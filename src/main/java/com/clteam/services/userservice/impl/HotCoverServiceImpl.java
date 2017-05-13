@@ -23,7 +23,7 @@ public class HotCoverServiceImpl implements HotCoverService{
 
     public List<Cover> getListHotCover(int limit) {
         List<Cover> coverList = new ArrayList<Cover>();
-        List<HotCoverEntity> hotCoverList = coverRepository.getAllHotCover(limit);
+        List<HotCoverEntity> hotCoverList = coverRepository.getLimitHotCover(limit);
 
         for (int i=0; i<hotCoverList.size(); i++){
 
@@ -34,7 +34,7 @@ public class HotCoverServiceImpl implements HotCoverService{
             if (coverInfoEntities != null){
 
                 CoverInfoEntity coverInfoEntity = (CoverInfoEntity) coverInfoEntities.toArray()[0];
-                cover.copyData(coverInfoEntity, videoInfoEntity);
+                cover.copyData(coverInfoEntity, videoInfoEntity, videoInfoEntity.getAccountByAccountId());
                 coverList.add(cover);
             }
 
