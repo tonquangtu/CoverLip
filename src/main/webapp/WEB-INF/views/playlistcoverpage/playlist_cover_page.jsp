@@ -58,7 +58,7 @@
                             <img src="http://${item.playlistThumbnaiLink}" class="avatar_playlist">
                             <ul class="avatar_cover_list">
                                 <c:forEach var="itemCover" items="${item.items}" varStatus="j" end="4">
-                                    <li><img src="http://zmp3-photo-td.zadn.vn/${itemCover.item.video.videoThumbnailLink}"
+                                    <li><img src="${itemCover.item.video.videoThumbnailLink}"
                                              class="img-circle img-responsive"></li>
                                 </c:forEach>
                             </ul>

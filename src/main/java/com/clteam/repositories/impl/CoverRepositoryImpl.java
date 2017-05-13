@@ -198,7 +198,10 @@ public class CoverRepositoryImpl implements CoverRepository {
 
     @Override
     public List<NewCoverEntity> getListNewCover(int limit) {
-        return null;
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(NewCoverEntity.class);
+        List newCoverList = criteria.addOrder(Order.asc("priority")).setMaxResults(limit).list();
+        return newCoverList;
     }
 
 

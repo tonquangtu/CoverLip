@@ -22,8 +22,8 @@
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/coverlip?UseUnicode=true&amp;characterEncoding=utf8" />
-        <property name="username" value="root" />
-        <property name="password" value="" />
+        <property name="username" value="thanhtung" />
+        <property name="password" value="123456789" />
     </bean>
 
     <!-- Session Factory Declaration -->
@@ -47,7 +47,7 @@
                 <!--<prop key="hibernate.connection.useUnicode">true</prop>-->
 
                 <prop key="hibernate.search.default.directory_provider">filesystem</prop>
-                <prop key="hibernate.search.default.indexBase">/var/lucene/indexes</prop>
+                <prop key="hibernate.search.default.indexBase">$CONF{hibernate.search.default.indexBase}</prop>
             </props>
         </property>
 
