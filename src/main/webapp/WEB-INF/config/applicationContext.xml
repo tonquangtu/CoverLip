@@ -47,7 +47,7 @@
                 <!--<prop key="hibernate.connection.useUnicode">true</prop>-->
 
                 <prop key="hibernate.search.default.directory_provider">filesystem</prop>
-                <prop key="hibernate.search.default.indexBase">/var/lucene/indexes</prop>
+                <prop key="hibernate.search.default.indexBase">$CONF{hibernate.search.default.indexBase}</prop>
             </props>
         </property>
 

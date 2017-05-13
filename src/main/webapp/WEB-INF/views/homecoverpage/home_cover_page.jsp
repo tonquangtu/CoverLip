@@ -260,7 +260,7 @@
                 <div class="col-md-3">
                     <div class="one_member text-center subject" style="padding-bottom:10px;box-shadow:unset">
                         <a href="">
-                            <img src="${topIdolList.get(0).user.avatarThumbnail}" alt="${topIdolList.get(0).user.account.fullname}"
+                            <img src="${topIdolList.get(0).user.account.avatarThumbnail}" alt="${topIdolList.get(0).user.account.fullname}"
                                  class="img-responsive" style="width:100%">
                             <div class="name_of_member">
                                 <p>${topIdolList.get(0).user.account.fullname}</p>
@@ -276,7 +276,7 @@
                             </c:if>
                             <div class="col-md-3 one_member text-center">
                                 <a href="">
-                                    <img src="${item1.user.avatarThumbnail}" alt="${item1.user.account.fullname}"
+                                    <img src="${item1.user.account.avatarThumbnail}" alt="${item1.user.account.fullname}"
                                          class="img-responsive img-circle">
                                     <div class="name_of_member">
                                         <p>${item1.user.account.fullname}</p>

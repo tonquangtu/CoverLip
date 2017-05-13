@@ -1,5 +1,10 @@
 package com.clteam.model;
 
+import com.clteam.dataobject.AccountEntity;
+import com.clteam.dataobject.CoverInfoEntity;
+import com.clteam.dataobject.CoverOfPlaylistEntity;
+import com.clteam.dataobject.VideoInfoEntity;
+
 import java.sql.Timestamp;
 
 /**
@@ -60,5 +65,21 @@ public class PlaylistItem {
         this.priority = priority;
     }
 
+    public void copyData(CoverOfPlaylistEntity coverOfPlaylistEntity, CoverInfoEntity coverInfoEntity, VideoInfoEntity videoInfoEntity, AccountEntity accountEntity){
+
+        if (item == null){
+            item = new Cover();
+        }
+
+        item.copyData(coverInfoEntity, videoInfoEntity, accountEntity);
+
+        playlistId = coverOfPlaylistEntity.getPlaylistId();
+
+        timeAdd = coverOfPlaylistEntity.getTimeAdd();
+
+        priority = coverOfPlaylistEntity.getPriority();
+
+
+    }
 
 }

@@ -31,6 +31,12 @@ public class Account implements Serializable {
 
     private Timestamp dateJoin;
 
+    private String coverImage;
+
+    private String avatarThumbnail;
+
+    private Account account;
+
     public int getId() {
         return id;
     }
@@ -86,6 +92,29 @@ public class Account implements Serializable {
     public void setDateJoin(Timestamp dateJoin) {
         this.dateJoin = dateJoin;
     }
+    public String getCoverImage() {
+        return coverImage;
+    }
+
+    public void setCoverImage(String coverImage) {
+        this.coverImage = coverImage;
+    }
+
+    public String getAvatarThumbnail() {
+        return avatarThumbnail;
+    }
+
+    public void setAvatarThumbnail(String avatarThumbnail) {
+        this.avatarThumbnail = avatarThumbnail;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
 
     public void copyData(AccountEntity accountEntity) {
 
@@ -102,5 +131,7 @@ public class Account implements Serializable {
         this.state = accountEntity.getState();
 
         this.dateJoin = accountEntity.getDateJoin();
+        coverImage = accountEntity.getCoverImage();
+        avatarThumbnail = accountEntity.getAvatarThumbnail();
     }
 }

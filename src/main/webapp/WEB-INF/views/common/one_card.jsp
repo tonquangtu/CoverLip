@@ -4,7 +4,7 @@
 <div class="one_card col-md-12">
     <div class="header_card">
         <div class="img-circle avatar_member">
-            <img class="img-responsive" src="${item.video.account.username}" alt="A">
+            <img class="img-responsive img-circle" src="${item.video.account.avatarThumbnail}" alt="${item.video.account.fullname}">
         </div>
         <div class="name_member">
             <a href=""><h2>${item.video.account.fullname}</h2></a>
@@ -21,7 +21,7 @@
                         <a class="thumbnail_video" href="#"
                            title="${item.coverName}">
                             <span class="icon_play"></span>
-                            <img src="http://zmp3-photo-td.zadn.vn/thumb/240_135/${item.video.videoThumbnailLink}" alt="${item.coverName}"
+                            <img src="${item.video.videoThumbnailLink}" alt="${item.coverName}"
                                  title="${item.coverName}">
                         </a>
                     </div>

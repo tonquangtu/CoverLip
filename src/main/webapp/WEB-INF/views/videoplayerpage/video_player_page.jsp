@@ -91,7 +91,7 @@
                    <div class="divider"></div>
                    <div class="line-horizontal-left">
                        <div class="video-owner-box pull-left">
-                           <a class="video-owner-thumbnail" style = "background-image: url('${user.avatarThumbnail}');" href="#"></a>
+                           <a class="video-owner-thumbnail" style = "background-image: url('${user.account.avatarThumbnail}');" href="#"></a>
                            <a class="video-owner-name center-vertical" href="#">${currItem.video.account.fullname}</a>
                        </div>
                    </div>
