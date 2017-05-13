@@ -13,21 +13,11 @@ public class Admin implements Serializable{
     public Admin() {
     }
 
-    private String profileImage;
-
     private String phoneNumber;
 
     private String address;
 
     private Account account;
-
-    public String getProfileImage() {
-        return profileImage;
-    }
-
-    public void setProfileImage(String profileImage) {
-        this.profileImage = profileImage;
-    }
 
     public String getPhoneNumber() {
         return phoneNumber;
@@ -54,8 +44,6 @@ public class Admin implements Serializable{
     }
 
     public void copyData(AdminInfoEntity adminInfoEntity, AccountEntity accountEntity){
-        profileImage = adminInfoEntity.getProfileImage();
-
         phoneNumber = adminInfoEntity.getPhoneNumber();
 
         address = adminInfoEntity.getAddress();

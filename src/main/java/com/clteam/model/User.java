@@ -24,10 +24,6 @@ public class User {
 
     private String description;
 
-    private String coverImage;
-
-    private String avatarThumbnail;
-
     private Account account;
 
     public int getNumHaveFollowed() {
@@ -86,22 +82,6 @@ public class User {
         this.description = description;
     }
 
-    public String getCoverImage() {
-        return coverImage;
-    }
-
-    public void setCoverImage(String coverImage) {
-        this.coverImage = coverImage;
-    }
-
-    public String getAvatarThumbnail() {
-        return avatarThumbnail;
-    }
-
-    public void setAvatarThumbnail(String avatarThumbnail) {
-        this.avatarThumbnail = avatarThumbnail;
-    }
-
     public Account getAccount() {
         return account;
     }
@@ -119,8 +99,6 @@ public class User {
         dateOfBirth = userInfoEntity.getDateOfBirth();
         address = userInfoEntity.getAddress();
         description = userInfoEntity.getDescription();
-        coverImage = userInfoEntity.getCoverImage();
-        avatarThumbnail = userInfoEntity.getAvatarThumbnail();
         account = new Account();
         account.copyData(accountEntity);
     }
@@ -139,10 +117,6 @@ public class User {
         this.address = userEntity.getAddress();
 
         this.description = userEntity.getDescription();
-
-        this.coverImage = userEntity.getCoverImage();
-
-        this.avatarThumbnail = userEntity.getAvatarThumbnail();
     }
 
 

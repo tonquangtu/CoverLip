@@ -19,8 +19,6 @@ public class UserInfoEntity {
     private Timestamp dateOfBirth;
     private String address;
     private String description;
-    private String coverImage;
-    private String avatarThumbnail;
     private AccountEntity accountByAccountId;
 
     @Id
@@ -115,25 +113,6 @@ public class UserInfoEntity {
         this.description = description;
     }
 
-    @Basic
-    @Column(name = "cover_image", columnDefinition = "TEXT")
-    public String getCoverImage() {
-        return coverImage;
-    }
-
-    public void setCoverImage(String coverImage) {
-        this.coverImage = coverImage;
-    }
-
-    @Basic
-    @Column(name = "avatar_thumbnail", columnDefinition = "TEXT")
-    public String getAvatarThumbnail() {
-        return avatarThumbnail;
-    }
-
-    public void setAvatarThumbnail(String avatarThumbnail) {
-        this.avatarThumbnail = avatarThumbnail;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -151,9 +130,7 @@ public class UserInfoEntity {
         if (dateOfBirth != null ? !dateOfBirth.equals(that.dateOfBirth) : that.dateOfBirth != null) return false;
         if (address != null ? !address.equals(that.address) : that.address != null) return false;
         if (description != null ? !description.equals(that.description) : that.description != null) return false;
-        if (coverImage != null ? !coverImage.equals(that.coverImage) : that.coverImage != null) return false;
-        if (avatarThumbnail != null ? !avatarThumbnail.equals(that.avatarThumbnail) : that.avatarThumbnail != null)
-            return false;
+
 
         return true;
     }
@@ -169,8 +146,6 @@ public class UserInfoEntity {
         result = 31 * result + (dateOfBirth != null ? dateOfBirth.hashCode() : 0);
         result = 31 * result + (address != null ? address.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
-        result = 31 * result + (coverImage != null ? coverImage.hashCode() : 0);
-        result = 31 * result + (avatarThumbnail != null ? avatarThumbnail.hashCode() : 0);
         return result;
     }
 
