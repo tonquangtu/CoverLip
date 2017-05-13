@@ -14,12 +14,12 @@
         <ul>
             <c:forEach items="${listHot}" var="item1" varStatus="i">
                 <li class="item_top_cover_idol">
-                    <img src="${item1.user.avatarThumbnail}" class="img-circle" alt="top cover idol">
+                    <img src="${item1.user.avatarThumbnail}" class="img-circle hvr-pulse-grow" alt="top cover idol">
                     <div class="idol_info">
                         <p><strong>${item1.user.account.fullname}</strong></p>
                         <p>${item1.user.numHaveFollowed} người theo dõi</p>
                     </div>
-                    <button type="button" class="btn btn-success btn-sm">Theo dõi</button>
+                    <button type="button" class="btn btn-success btn-sm hvr-buzz-out">Theo dõi</button>
                 </li>
             </c:forEach>
         </ul>
