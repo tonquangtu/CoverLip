@@ -29,7 +29,6 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     public UserInfoEntity getUserInfoByAccountId(int accountId) {
-
         return (UserInfoEntity)sessionFactory.getCurrentSession().createQuery("from UserInfoEntity where accountId="+accountId).list().get(0);
     }
 

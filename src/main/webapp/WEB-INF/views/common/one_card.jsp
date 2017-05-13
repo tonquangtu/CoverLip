@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+
 <div class="one_card col-md-12">
     <div class="header_card">
         <div class="img-circle avatar_member">
-            <img class="img-responsive" src="${item.getUserInfo().getAvatarThumbnail()}" alt="Avatar Member">
+            <img class="img-responsive" src="${item.video.account.username}" alt="A">
         </div>
         <div class="name_member">
-            <h2>${item.getAccount().getFullname()}</h2>
+            <a href=""><h2>${item.video.account.fullname}</h2></a>
         </div>
         <div class="option_card">
-            <img src="/resources/icons/icon_more_vertical.svg" alt="${item.getCoverInfo().getCoverName()}" class="icon_more_vertical">
+            <img src="/resources/icons/icon_more_vertical.svg" alt="${item.coverName}" class="icon_more_vertical">
         </div>
     </div>
     <div class="content_card">
@@ -18,15 +19,15 @@
                 <div class="singer_video_box">
                     <div class="thumbnail_video_box">
                         <a class="thumbnail_video" href="#"
-                           title="${item.getCoverInfo().getCoverName()}">
+                           title="${item.coverName}">
                             <span class="icon_play"></span>
-                            <img src="${item.getVideoInfo().getVideoThumbnailLink()}" alt="${item.getCoverInfo().getCoverName()}"
-                                 title="${item.getCoverInfo().getCoverName()}">
+                            <img src="http://zmp3-photo-td.zadn.vn/thumb/240_135/${item.video.videoThumbnailLink}" alt="${item.coverName}"
+                                 title="${item.coverName}">
                         </a>
                     </div>
 
                     <div class="info_singer_video_box">
-                        <span>${item.getCoverInfo().getCoverName()}</span>
+                        <span>${item.coverName}</span>
                     </div>
                 </div>
             </li>
@@ -36,15 +37,15 @@
         <ul class="interaction">
             <li class="like">
                 <img src="/resources/icons/icon_like.svg" alt="" class="icon_react">&nbsp;<span
-                    class="like_counter">${item.getVideoInfo().getNumLike()}</span>
+                    class="like_counter">${item.video.numLike}</span>
             </li>
             <li class="comment">
                 <a href="#">
-                    <img src="/resources/icons/icon_comment.svg" alt="" class="icon_react">&nbsp;${item.getVideoInfo().getNumComment()}
+                    <img src="/resources/icons/icon_comment.svg" alt="" class="icon_react">&nbsp;${item.video.numComment}
                 </a>
             </li>
             <li class="view">
-                <span> <img src="/resources/icons/icon_view.svg" alt="" class="icon_react">&nbsp;${item.getVideoInfo().getNumView()} </span>
+                <span> <img src="/resources/icons/icon_view.svg" alt="" class="icon_react">&nbsp;${item.video.numView} </span>
             </li>
         </ul>
         <%--<div class="facebook">--%>

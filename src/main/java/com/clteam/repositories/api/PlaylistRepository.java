@@ -17,5 +17,5 @@ public interface PlaylistRepository {
 
     boolean insertPlaylist(PlaylistInfoEntity playlist);
 
-    List<PlaylistInfoEntity> getAllPlaylist();
+    List<PlaylistInfoEntity> getAllPlaylist(int limit);
 }

@@ -26,106 +26,6 @@
 		.one_list{padding-left:5px;padding-right:7px;}
 		.one_video h4 {width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; float: left; color: #acacac; margin-top: 0; }
 		.name_singer {color: #999999; font-size: 14px; }
-		
-
-
-		/*List music*/
-		.link-to-list{
-			text-decoration: none;
-			color: black;
-		}
-		a.link-to-list:hover{
-			text-decoration: none;
-		}
-		ul li.one-song{
-			margin-top: -10px;
-			list-style-type: none;
-			border-bottom: 1px solid #d5d5d5;
-		}
-		ul li.one-song a{
-			color: black;
-			text-decoration: none;
-		}
-		ul li.one-song a:hover{
-			text-decoration: none;
-		}
-		.thumb-song{
-			float: left;
-			margin-right: 10px;
-			border-radius: 50%;
-			position: relative;
-		}
-		.title-song{
-			font-size: 18px;
-			padding-top: 5px;
-			margin-bottom: 3px;
-		}
-		.singer h4{
-			font-size: 13px;
-			line-height: 5px;
-		}
-		.thumb-song img{
-			min-width: 75px;
-			border: 1px solid #d5d5d5;
-		}
-		.thumb-song .icon-circle-play {position: absolute; z-index: 101; top: 50%; left: 50%; margin: -16px 0 0 -16px; width: 36px; height: 36px; display: block; background: url(http://stc.id.nixcdn.com/v11/images/icon-repeat.png) left -788px no-repeat; opacity: 0; visibility: visible; display: block !important; -webkit-transition: all .3s ease-in; -moz-transition: all .3s ease-in; -o-transition: all .3s ease-in; -ms-transition: all .3s ease-in; transition: all .3s ease-in; -moz-opacity: 0; -webkit-transform: scale(0); -moz-transform: scale(0); -ms-transform: scale(0); -o-transform: scale(0); transform: scale(0); -webkit-backface-visibility: hidden; }
-		.thumb-song:hover .icon-circle-play {opacity: 1; -moz-opacity: 1; -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); -o-transform: scale(1); transform: scale(1); }
-		
-		.thumb-song:hover img{
-			-webkit-box-shadow: 0px 0px 3px 0.5px rgba(0,0,0,0.75);
-			-moz-box-shadow: 0px 0px 3px 0.5px rgba(0,0,0,0.75);
-			box-shadow: 0px 0px 3px 0.5px rgba(0,0,0,0.75);
-		}
-		.tool-song{
-			opacity: 0;
-			-moz-opacity: 0;
-			-khtml-opacity: 0;
-			-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-			filter: alpha(opacity=0);
-			-webkit-transition: all .3s ease-in; -moz-transition: all .3s ease-in; -o-transition: all .3s ease-in; -ms-transition: all .3s ease-in; transition: all .3s ease-in; 
-			margin-top: 15px;
-			margin-bottom: 45px;
-
-		}
-		.one-song:hover .tool-song{
-			opacity: 1;
-		}
-		.tool-song a{
-			width: 25px;
-			height: 25px;
-			float: left;
-			display: inline-block;
-		}
-		.link-download{
-			background: url(http://static.mp3.zdn.vn/skins/zmp3-v4.2/images/icon.png) no-repeat;
-			background-position:  0 -1359px;
-		}
-		.tool-song [class *="link-"]:hover{
-			background-position-x: -25px;
-		}
-		.link-addlist{
-			background: url(http://static.mp3.zdn.vn/skins/zmp3-v4.2/images/icon.png) no-repeat;
-			background-position: 0 -1384px;
-		}
-		.link-share{
-			background: url(http://static.mp3.zdn.vn/skins/zmp3-v4.2/images/icon.png) no-repeat;
-			background-position: 0 -1409px;
-		}
-		.list_music .col-md-4{
-			border-right: 1px solid #d5d5d5;
-		}
-		.list_music .col-md-4:last-child{
-			border-right: 0px;
-		}
-		.title-section{
-			margin-top: 0px;
-			margin-bottom: 50px;
-			/* text-align: center; */
-			/* background: red; */
-			padding: 10px;
-		}
-
-
 
         .action_slide{
             float: right;
@@ -182,14 +82,7 @@
 .name_of_member{
 	margin-top: 15px;
 }
-.icon_react{
-	height: 20px;
-	width: 20px;
-	margin-top: -2px;
-}
-.icon_more_vertical{
-	height: 15px;
-}
+
 
 .one_member{
 	margin-bottom:20px;
@@ -206,4 +99,10 @@
 	-moz-transform: scale(1.1);
 	-webkit-transform: scale(1.1);
 	transform: scale(1.1);
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
 }

@@ -496,7 +496,7 @@
 /* forms */
 /**/
 .navigation form fieldset {
-	display: block;	
+	display: block;
 	padding: 25px 30px;
 }
 .navigation form fieldset + fieldset {
@@ -637,7 +637,7 @@
 	.navigation li a > .fa-indicator {
 		margin-right: -5px;
 	}
-	
+
 	.navigation .grid-column2,
 	.navigation .grid-container2 {
 		width: 117px;
@@ -716,8 +716,8 @@
 		padding-right: 10px;
 		padding-left: 10px;
 	}
-	
-	
+
+
 	.navigation-response-to-stack > li {
 		display: block;
 		float: none;
@@ -737,10 +737,10 @@
 	}
 	.navigation-response-to-switcher:hover > li {
 		display: block;
-		border-top: 1px solid #d9d9d9;		
+		border-top: 1px solid #d9d9d9;
 	}
 	.navigation-response-to-switcher:hover > .switcher {
-		display: none;	
+		display: none;
 	}
 	.navigation-response-to-stack li > div,
 	.navigation-response-to-stack li > [class^="grid-container"],
@@ -749,7 +749,7 @@
 		top: 100%;
 		bottom: auto;
 		width: auto;
-		margin: 8px 0 0 0;		
+		margin: 8px 0 0 0;
 		-o-transform-origin: 0 0;
 		-ms-transform-origin: 0 0;
 		-moz-transform-origin: 0 0;
@@ -802,8 +802,8 @@
 	.navigation-response-to-stack .search .input input,
 	.navigation-response-to-switcher .search .input input {
 		width: 100%;
-	}	
-	
+	}
+
   .navigation-response-to-icons li {
   	position: static;
   	font-size: 0;
@@ -820,7 +820,7 @@
 	}
 	.navigation-response-to-icons li a > .fa {
 		margin: 0;
-	}	
+	}
 	.navigation-response-to-icons li a > .fa-indicator {
 		position: static;
 		display: block;
@@ -869,7 +869,7 @@
 		top: auto;
 		bottom: 100%;
 		margin: 0 0 8px 0;
-	}	
+	}
 	.navigation-pos-bottom.navigation-response-to-icons li li > div:after {
 		top: 100%;
 		bottom: auto;

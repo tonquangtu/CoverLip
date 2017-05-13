@@ -1,6 +1,7 @@
 package com.clteam.model;
 
 import com.clteam.dataconstant.DataConstant;
+import com.clteam.dataobject.AccountEntity;
 import com.clteam.dataobject.VideoInfoEntity;
 
 import java.io.Serializable;
@@ -143,6 +144,7 @@ public class Video implements Serializable{
         this.account = account;
     }
 
+
     public void copyData(VideoInfoEntity videoEntity) {
 
         id = videoEntity.getId();
@@ -209,5 +211,31 @@ public class Video implements Serializable{
            }
        }
        return period;
+    }
+
+    public void copyData(VideoInfoEntity videoEntity, AccountEntity accountEntity) {
+
+        id = videoEntity.getId();
+
+        videoLink = videoEntity.getVideoLink();
+
+        videoThumbnailLink = videoEntity.getVideoThumbnailLink();
+
+        duration = videoEntity.getDuration();
+
+        createDate = videoEntity.getCreateDate();
+
+        numView = videoEntity.getNumView();
+
+        numLike = videoEntity.getNumLike();
+
+        numComment = videoEntity.getNumComment();
+
+        state = videoEntity.getState();
+
+        description = videoEntity.getDescription();
+
+        this.account = new Account();
+        this.account.copyData(accountEntity);
     }
 }

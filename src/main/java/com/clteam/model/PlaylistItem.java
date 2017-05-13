@@ -1,11 +1,18 @@
 package com.clteam.model;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Dell on 03-May-17.
+import com.clteam.dataobject.CoverInfoEntity;
+import com.clteam.dataobject.CoverOfPlaylistEntity;
+import com.clteam.dataobject.VideoInfoEntity;
+
+import java.sql.Timestamp;
+import java.util.Collection;
+
+/**
+ * Created by mrgnu on 05/05/2017.
  */
 public class PlaylistItem {
 

@@ -1,5 +1,8 @@
 package com.clteam.model;
 
+import com.clteam.dataobject.TopCoverIdolEntity;
+import com.clteam.dataobject.UserInfoEntity;
+
 /**
  * Created by Dell on 30-Apr-17.
  */
@@ -11,6 +14,7 @@ public class TopIdol {
 
     private int score;
 
+    public TopIdol(){}
     public TopIdol(User user, int topId, int score) {
         this.user = user;
         this.topId = topId;
@@ -39,5 +43,14 @@ public class TopIdol {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public void copyData(TopCoverIdolEntity topCoverIdolEntity, UserInfoEntity userInfoEntity){
+
+        topId = topCoverIdolEntity.getTopId();
+        score = topCoverIdolEntity.getScore();
+
+        user = new User();
+        user.copyData(userInfoEntity, userInfoEntity.getAccountByAccountId());
     }
 }

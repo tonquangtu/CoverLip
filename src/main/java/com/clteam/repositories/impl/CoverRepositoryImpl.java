@@ -192,5 +192,15 @@ public class CoverRepositoryImpl implements CoverRepository {
         return criteria.list();
     }
 
+    @Override
+    public List<HotCoverEntity> getAllHotCover(int limit) {
+        return null;
+    }
+
+    @Override
+    public List<NewCoverEntity> getListNewCover(int limit) {
+        return null;
+    }
+
 
 }

@@ -1,5 +1,8 @@
 package com.clteam.model;
 
+import com.clteam.dataobject.AccountEntity;
+import com.clteam.dataobject.AdminInfoEntity;
+
 import java.io.Serializable;
 
 /**
@@ -48,5 +51,16 @@ public class Admin implements Serializable{
 
     public void setAccount(Account account) {
         this.account = account;
+    }
+
+    public void copyData(AdminInfoEntity adminInfoEntity, AccountEntity accountEntity){
+        profileImage = adminInfoEntity.getProfileImage();
+
+        phoneNumber = adminInfoEntity.getPhoneNumber();
+
+        address = adminInfoEntity.getAddress();
+
+        account = new Account();
+        account.copyData(accountEntity);
     }
 }

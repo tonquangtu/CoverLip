@@ -2,6 +2,11 @@ package com.clteam.model;
 
 import java.io.Serializable;
 import java.util.List;
+import com.clteam.dataobject.AccountEntity;
+import com.clteam.dataobject.CoverInfoEntity;
+import com.clteam.dataobject.VideoInfoEntity;
+
+import java.io.Serializable;
 
 /**
  * Created by Dell on 30-Apr-17.
@@ -9,6 +14,12 @@ import java.util.List;
 public class Cover implements Serializable{
 
     public Cover() {
+    }
+
+    public Cover(Video video, String coverName, String mp3Link) {
+        this.video = video;
+        this.coverName = coverName;
+        this.mp3Link = mp3Link;
     }
 
     private Video video;
@@ -85,4 +96,11 @@ public class Cover implements Serializable{
 
 
 
+    public void  copyData(CoverInfoEntity coverInfoEntity, VideoInfoEntity videoInfoEntity){
+        this.coverName = coverInfoEntity.getCoverName();
+        this.mp3Link = coverInfoEntity.getMp3Link();
+        this.video = new Video();
+        AccountEntity accountEntity = videoInfoEntity.getAccountByAccountId();
+        this.video.copyData(videoInfoEntity, accountEntity);
+    }
 }

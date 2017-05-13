@@ -14,6 +14,7 @@ public interface CoverRepository {
 
     CoverInfoEntity getCoverInfoByVideoId(int videoId);
 
+
     List<HotCoverEntity> getAllHotCover();
 
     List<HotCoverEntity> getLimitHotCover(int limit);
@@ -36,4 +37,6 @@ public interface CoverRepository {
 
     List<CoverInfoEntity> getAllCovers();
 
+    List<HotCoverEntity> getAllHotCover(int limit);
+    List<NewCoverEntity> getListNewCover(int limit);
 }

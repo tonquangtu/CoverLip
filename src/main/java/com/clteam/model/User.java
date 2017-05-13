@@ -1,5 +1,6 @@
 package com.clteam.model;
 
+import com.clteam.dataobject.AccountEntity;
 import com.clteam.dataobject.UserInfoEntity;
 
 import java.sql.Timestamp;
@@ -107,6 +108,21 @@ public class User {
 
     public void setAccount(Account account) {
         this.account = account;
+    }
+
+    public void copyData(UserInfoEntity userInfoEntity, AccountEntity accountEntity){
+
+        numHaveFollowed = userInfoEntity.getNumHaveFollowed();
+        numCover = userInfoEntity.getNumCover();
+        numLipsync = userInfoEntity.getNumLipsync();
+        numPlaylist = userInfoEntity.getNumPlaylist();
+        dateOfBirth = userInfoEntity.getDateOfBirth();
+        address = userInfoEntity.getAddress();
+        description = userInfoEntity.getDescription();
+        coverImage = userInfoEntity.getCoverImage();
+        avatarThumbnail = userInfoEntity.getAvatarThumbnail();
+        account = new Account();
+        account.copyData(accountEntity);
     }
 
     public void copyData(UserInfoEntity userEntity) {
