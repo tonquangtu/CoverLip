@@ -1,5 +1,6 @@
 package com.clteam.model;
 
+import com.clteam.dataobject.AccountEntity;
 import com.clteam.dataobject.PlaylistInfoEntity;
 
 import java.sql.Timestamp;
@@ -145,6 +146,30 @@ public class Playlist {
 
     }
 
+    public void copyData(PlaylistInfoEntity playlistEntity, List<PlaylistItem> items, AccountEntity accountEntity) {
+
+        this.id = playlistEntity.getId();
+
+        this.playlistName = playlistEntity.getPlaylistName();
+
+        this.playlistThumbnaiLink = playlistEntity.getPlaylistThumbnailLink();
+
+        this.numCover = playlistEntity.getNumCover();
+
+        this.numView = playlistEntity.getNumView();
+
+        this.createDate = playlistEntity.getCreateDate();
+
+        this.state = playlistEntity.getState();
+
+        this.description = playlistEntity.getDescription();
+
+        this.items = items;
+        if (account == null) {
+            account = new Account();
+        }
+        this.account.copyData(accountEntity);
+    }
     public List<Cover> getCoverInPlaylist() {
 
         List<Cover> covers = new ArrayList<>();

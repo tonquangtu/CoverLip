@@ -1,12 +1,11 @@
 package com.clteam.model;
 
-import java.io.Serializable;
-import java.util.List;
 import com.clteam.dataobject.AccountEntity;
 import com.clteam.dataobject.CoverInfoEntity;
 import com.clteam.dataobject.VideoInfoEntity;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by Dell on 30-Apr-17.
