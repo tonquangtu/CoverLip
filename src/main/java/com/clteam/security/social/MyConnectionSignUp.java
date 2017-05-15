@@ -20,6 +20,6 @@ public class MyConnectionSignUp implements ConnectionSignUp {
     public String execute(Connection<?> connection) {
         System.out.println("### execute in MyConnectionSignUp class");
         AccountEntity account = accountSecurityService.createNewAccount(connection);
-        return String.valueOf(account.getUsername());
+        return String.valueOf(account.getId());
     }
 }

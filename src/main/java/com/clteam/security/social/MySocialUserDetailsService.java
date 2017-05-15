@@ -29,8 +29,8 @@ public class MySocialUserDetailsService implements SocialUserDetailsService {
 
     @Override
     public SocialUserDetails loadUserByUserId(String s) throws UsernameNotFoundException {
-//        return findUserByUserId(s);
-        return findUserByEmail(s);
+        return findUserByUserId(s);
+//        return findUserByEmail(s);
     }
 
     private SocialUserDetails findUserByEmail(String email) {
