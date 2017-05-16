@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0b42ca8-e3c9-41fc-bfaa-36ce203b6f1e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/2fc81469-b1fd-45e0-8bc0-09198f0e48ad.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/2fc81469-b1fd-45e0-8bc0-09198f0e48ad.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/top_idol_card.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/top_idol_card.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/config/applicationContext.xml" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/config/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/views/common/common_lib.jsp" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/views/common/common_lib.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/views/common/top_idol_card.jsp" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/views/common/top_idol_card.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/views/hotcoverpage/hot_cover_page.jsp" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/views/hotcoverpage/hot_cover_page.jsp" />
-    </list>
+    <list default="true" id="a0b42ca8-e3c9-41fc-bfaa-36ce203b6f1e" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -1567,7 +1556,7 @@
       <workItem from="1494635892425" duration="2714000" />
       <workItem from="1494649499812" duration="4836000" />
       <workItem from="1494657679563" duration="6742000" />
-      <workItem from="1494904338575" duration="166000" />
+      <workItem from="1494904338575" duration="374000" />
     </task>
     <task id="LOCAL-00001" summary="init project coverlip&#10;Init structure for project&#10;by Quang Tu">
       <created>1490494974394</created>
@@ -1580,7 +1569,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="434917000" />
+    <option name="totallyTimeSpent" value="435125000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
