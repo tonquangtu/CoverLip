@@ -1,0 +1,41 @@
+/*Reset CSS*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-center-vertical {
+    display: flex;
+    align-items: center;
+}
+
+/*Shadow effect with specified position*/
+.shadow-top {
+    box-shadow: 0 -5px 5px -5px rgba(0,0,0,0.3);
+}
+
+.shadow-right {
+    box-shadow: 5px 0 5px -5px rgba(0,0,0,0.3);
+}
+
+.shadow-bottom {
+    box-shadow: 0 5px 5px -5px rgba(0,0,0,0.3);
+}
+
+.shadow-left {
+    box-shadow: -5px 0 5px -5px rgba(0,0,0,0.3);
+}
+
+.shadow, .shadow-all {
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.right-nav-shadow {
+    box-shadow: 5px 0 5px -2px rgba(0,0,0,0.4);
+}
