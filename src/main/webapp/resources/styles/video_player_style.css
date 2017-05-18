@@ -5,7 +5,7 @@
 }
 
 body {
-    background: #eeeeee !important;
+    background: #f1f1f1 !important;
 }
 
 h1, h2, h3, h4, h5 h6 {
@@ -22,7 +22,7 @@ a {
 
 a:hover {
     outline: 0;
-    color: #00c853;
+    color: #ff6d00;
     text-decoration: none !important;
 }
 
@@ -43,7 +43,7 @@ a:hover {
 
 .column-content {
 
-    height: 1000px;
+    height: 1100px;
 }
 
 .video-content-box {
@@ -275,13 +275,13 @@ a:hover {
     margin-top: 0 !important;
     display: inline-block;
     width : 100%;
-    height: 35px;
+    height: 33px;
     /*background: #ffffff;*/
 }
 
 .column-suggestion-title {
     color: #212121;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 300;
     height: 30px;
     font-style: normal;
@@ -508,7 +508,7 @@ input:checked + .slider:before {
 .btn-view-more-suggestion {
     display: inline-block;
     border-radius: 4px;
-    background-color: #f4511e;
+    background-color: #ff6d00;
     border: none;
     color: #FFFFFF;
     text-align: center;
@@ -549,7 +549,7 @@ input:checked + .slider:before {
 .btn-collapsed-suggestion {
     display: inline-block;
     border-radius: 4px;
-    background-color: #f4511e;
+    background-color: #ff6d00;
     border: none;
     color: #FFFFFF;
     text-align: center;

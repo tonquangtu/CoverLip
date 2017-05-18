@@ -14,16 +14,19 @@
     <script src="../../../resources/scripts/video_player_script.js"></script>
 
     <!--Play one video style-->
-    <link rel="stylesheet" href="../../../resources/styles/video_player_style.css">
 
-    <link rel="stylesheet" href="../../../resources/styles/main_navigation_style.css">
+    <%--<link rel="stylesheet" href="../../../resources/styles/main_navigation_style.css">--%>
 
     <link rel="stylesheet" href="../../../resources/styles/main_header_style.css">
+
+    <script src="../../../resources/scripts/main_header_script.js"></script>
 
     <link rel="stylesheet" href="../../../resources/styles/main_footer_style.css">
 
     <!--Lib video player-->
     <link rel="stylesheet" href="../../../resources/libs/videoplayer/mediaelementplayer.min.css">
+
+    <link rel="stylesheet" href="../../../resources/styles/video_player_style.css">
 
     <!--Facebook header-->
     <meta property="og:url"           content="http://localhost:63342/CoverLip.com/html/play_one_video_page.html" />
@@ -44,9 +47,11 @@
 
 <%@include file="../common/main_header.jsp"%>
 
+<%--<jsp:directive.include file = "../test/main_header.jsp" />--%>
+
 <div class="content container">
 
-    <div style="height:15px; width: 100%"></div>
+    <div style="height:20px; width: 100%; clear: both"></div>
     <div class="row">
 
         <div class="col-md-8 column-content">
@@ -147,7 +152,7 @@
 
             <%--<h3 class="title-box box-shadow">--%>
             <div class="title-box box-shadow">
-                <div class="column-suggestion-title center-vertical-content" >Đừng bỏ lỡ</div>
+                <div class="column-suggestion-title center-vertical-content" >Nghe tiếp nào</div>
 
                 <div class="switch-box center-vertical-content">
                     Auto play

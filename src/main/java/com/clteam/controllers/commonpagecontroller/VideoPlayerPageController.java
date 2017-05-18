@@ -134,7 +134,7 @@ public class VideoPlayerPageController {
     @RequestMapping("menu1")
     public ModelAndView testMenu1() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("test/main_header1");
+        modelAndView.setViewName("common/main_header");
         return modelAndView;
     }
 }

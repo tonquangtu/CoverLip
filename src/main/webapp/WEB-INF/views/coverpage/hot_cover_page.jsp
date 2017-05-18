@@ -10,10 +10,11 @@
     <%@include file="../common/common_lib.jsp"%>
 
     <link rel="stylesheet" href="../../../resources/styles/hot_cover_page_style.css">
-    <link rel="stylesheet" href="/resources/styles/main_navigation_style.css">
+    <%--<link rel="stylesheet" href="/resources/styles/main_navigation_style.css">--%>
     <link rel="stylesheet" href="/resources/styles/main_header_style.css">
     <link rel="stylesheet" href="/resources/styles/main_footer_style.css">
     <link rel="stylesheet" href="/resources/styles/one_card_style.css">
+    <script src="/resources/scripts/main_header_script.js"></script>
 
 </head>
 <body>
@@ -21,6 +22,7 @@
 <%@include file="../common/main_header.jsp"%>
 
 <content>
+    <div style="height:20px; width: 100%; clear: both"></div>
     <div id="main_content_hot_cover" class="container">
 
         <div id="cover_page" class="container">

@@ -14,7 +14,7 @@
     <title>CoverLip</title>
     <%@ include file="../common/common_lib.jsp" %>
 
-    <link rel="stylesheet" href="/resources/styles/main_navigation_style.css"/>
+    <%--<link rel="stylesheet" href="/resources/styles/main_navigation_style.css"/>--%>
     <link rel="stylesheet" href="/resources/styles/main_header_style.css"/>
     <link rel="stylesheet" href="/resources/styles/main_footer_style.css"/>
     <link rel="stylesheet" type="text/css" href="/resources/styles/home_cover_style.css"/>
@@ -23,12 +23,14 @@
     <script src="/resources/scripts/one_card_script.js"></script>
     <script src="/resources/scripts/scroll_card_script.js"></script>
     <script src="/resources/scripts/home_cover_script.js"></script>
+    <script src="/resources/scripts/main_header_script.js"></script>
 
 </head>
 <body>
 <%@include file="../common/main_header.jsp" %>
 
 <content>
+    <div style="height:20px; width: 100%; clear: both"></div>
     <div id="slider" class="container">
         <div id="carousel-id" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
