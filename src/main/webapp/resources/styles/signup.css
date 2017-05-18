@@ -26,3 +26,8 @@
 .sign-up {
     padding: 10px;
 }
+
+.progress {
+    margin: 5px 0;
+    border-radius: 0;
+}

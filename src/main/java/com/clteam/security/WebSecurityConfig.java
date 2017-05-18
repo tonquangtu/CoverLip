@@ -3,6 +3,8 @@ package com.clteam.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -112,6 +114,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         config.alwaysUsePostLoginUrl(true);
         config.postLoginUrl("/profile");
         return config;
+    }
+
+    @Bean
+    public ResourceBundleMessageSource messageSource() {
+        ResourceBundleMessageSource rb = new ResourceBundleMessageSource();
+        rb.setBasenames(new String[] { "message", "application" });
+        return rb;
     }
 
 }

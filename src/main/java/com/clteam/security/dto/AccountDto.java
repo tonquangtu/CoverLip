@@ -1,6 +1,7 @@
 package com.clteam.security.dto;
 
 import com.clteam.security.validation.PasswordMatches;
+import com.clteam.security.validation.ValidEmail;
 import com.clteam.security.validation.ValidPassword;
 
 import javax.validation.constraints.NotNull;
@@ -9,20 +10,22 @@ import javax.validation.constraints.Size;
 /**
  * Created by Khanh Nguyen on 16/5/2017.
  */
-@PasswordMatches
+@PasswordMatches(field = "password", verifyField = "confirmPassword")
 public class AccountDto {
 
+    @ValidEmail
+    @NotNull
+    @Size(min = 5, max = 50)
     private String email;
 
     @ValidPassword
     private String password;
 
     @NotNull
-    @Size(min = 1)
     private String confirmPassword;
 
     @NotNull
-    @Size(min = 1)
+    @Size(min = 1, max = 50)
     private String fullName;
 
     private String address;

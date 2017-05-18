@@ -25,4 +25,8 @@ public @interface PasswordMatches {
 
     Class<? extends Payload>[] payload() default {};
 
+    String field();
+
+    String verifyField();
+
 }

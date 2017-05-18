@@ -95,7 +95,7 @@
                                 <%--</a>--%>
                                 <div class="form-group">
                                     <span class="pull-right">
-                                        <a href="#">Đăng ký</a> |
+                                        <a href="/signup">Đăng ký</a> |
                                         <a href="#">Quên mật khẩu?</a>
                                     </span>
                                 </div>
