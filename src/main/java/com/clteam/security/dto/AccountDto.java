@@ -1,5 +1,6 @@
 package com.clteam.security.dto;
 
+import com.clteam.security.validation.EmailAlreadyExist;
 import com.clteam.security.validation.PasswordMatches;
 import com.clteam.security.validation.ValidEmail;
 import com.clteam.security.validation.ValidPassword;
@@ -14,6 +15,7 @@ import javax.validation.constraints.Size;
 public class AccountDto {
 
     @ValidEmail
+    @EmailAlreadyExist
     @NotNull
     @Size(min = 5, max = 50)
     private String email;

@@ -116,11 +116,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return config;
     }
 
-    @Bean
-    public ResourceBundleMessageSource messageSource() {
-        ResourceBundleMessageSource rb = new ResourceBundleMessageSource();
-        rb.setBasenames(new String[] { "message", "application" });
-        return rb;
-    }
-
 }

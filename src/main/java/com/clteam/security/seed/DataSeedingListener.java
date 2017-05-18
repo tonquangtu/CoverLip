@@ -1,6 +1,7 @@
 package com.clteam.security.seed;
 
 import com.clteam.dataobject.AccountEntity;
+import com.clteam.security.constant.Constant;
 import com.clteam.security.service.AccountSecurityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
@@ -33,8 +34,8 @@ public class DataSeedingListener implements ApplicationListener<ContextRefreshed
         accountEntity.setUsername("admin@gmail.com");
         accountEntity.setPassword(passwordEncoder.encode("Abc@1234"));
         accountEntity.setFullname("Khanh Nguyen");
-        accountEntity.setRole((byte) 1);
-        accountEntity.setState((byte) 1);
+        accountEntity.setRole((byte) Constant.ROLE_ADMIN_INT);
+        accountEntity.setState((byte) Constant.ACCOUNT_ACTIVATED);
         accountEntity.setDateJoin(new Timestamp(new Date().getTime()));
         if (userService.findByEmail(accountEntity.getUsername()) == null) {
             System.out.println("### Begin insert account");

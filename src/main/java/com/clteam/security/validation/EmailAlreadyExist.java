@@ -1,5 +1,4 @@
 package com.clteam.security.validation;
-
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.Documented;
@@ -17,11 +16,11 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Target({TYPE, FIELD, ANNOTATION_TYPE})
 @Retention(RUNTIME)
-@Constraint(validatedBy = EmailValidator.class)
+@Constraint(validatedBy = EmailAlreadyExistValidator.class)
 @Documented
-public @interface ValidEmail {
+public @interface EmailAlreadyExist {
 
-    String message() default "{ValidEmail.message}";
+    String message() default "{EmailAlreadyExist.message}";
 
     Class<?>[] groups() default {};
 

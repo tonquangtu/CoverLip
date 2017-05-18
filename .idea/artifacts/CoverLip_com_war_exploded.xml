@@ -91,6 +91,7 @@
           <element id="library" level="project" name="Maven: javax.validation:validation-api:1.0.0.GA" />
           <element id="library" level="project" name="Maven: com.google.guava:guava:21.0" />
           <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.9.3" />
+          <element id="library" level="project" name="Maven: javax.mail:javax.mail-api:1.5.6" />
         </element>
       </element>
       <element id="directory" name="META-INF">
