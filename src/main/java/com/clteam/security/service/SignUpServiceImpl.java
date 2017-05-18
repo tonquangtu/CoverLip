@@ -25,7 +25,7 @@ public class SignUpServiceImpl implements SignUpService {
     private PasswordEncoder passwordEncoder;
 
     @Override
-    public void saveAccount(AccountDto accountDto) {
+    public AccountEntity createNewAccount(AccountDto accountDto) {
         AccountEntity accountEntity = new AccountEntity();
         accountEntity.setUsername(accountDto.getEmail());
         accountEntity.setPassword(passwordEncoder.encode(accountDto.getPassword()));
@@ -35,7 +35,24 @@ public class SignUpServiceImpl implements SignUpService {
         accountEntity.setDateJoin(DateTimeUtil.getCurrentTime());
         accountSecurityRepository.saveAccountEntity(accountEntity);
 
+        AccountEntity newAccount = accountSecurityRepository.findByEmail(accountEntity.getUsername());
+
         UserInfoEntity userInfoEntity = new UserInfoEntity();
+        userInfoEntity.setAccountByAccountId(newAccount);
+        userInfoEntity.setNumCover(0);
+        userInfoEntity.setNumHaveFollowed(0);
+        userInfoEntity.setNumLipsync(0);
+        userInfoEntity.setNumPlaylist(0);
+        userInfoEntity.setDateOfBirth(DateTimeUtil.convertDateToTimestamp(accountDto.getDateOfBirth()));
+        userInfoEntity.setAddress(accountDto.getAddress());
+        userInfoEntity.setDescription("");
+
+        return newAccount;
+    }
+
+    @Override
+    public void createVerificationToken(AccountEntity accountEntity, String token) {
+
     }
 
 }

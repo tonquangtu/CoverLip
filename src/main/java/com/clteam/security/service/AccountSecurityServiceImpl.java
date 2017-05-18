@@ -1,6 +1,7 @@
 package com.clteam.security.service;
 
 import com.clteam.dataobject.AccountEntity;
+import com.clteam.dataobject.UserInfoEntity;
 import com.clteam.security.repository.AccountSecurityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.social.connect.Connection;
@@ -36,6 +37,11 @@ public class AccountSecurityServiceImpl implements AccountSecurityService {
     @Override
     public void saveAccountEntity(AccountEntity accountEntity) {
         userRepository.saveAccountEntity(accountEntity);
+    }
+
+    @Override
+    public void saveUserInfoEntity(UserInfoEntity userInfoEntity) {
+        userRepository.saveUserInfoEntity(userInfoEntity);
     }
 
     @Override

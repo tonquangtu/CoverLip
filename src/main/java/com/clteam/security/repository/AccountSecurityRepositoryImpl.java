@@ -1,6 +1,7 @@
 package com.clteam.security.repository;
 
 import com.clteam.dataobject.AccountEntity;
+import com.clteam.dataobject.UserInfoEntity;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,11 @@ public class AccountSecurityRepositoryImpl implements AccountSecurityRepository 
     @Override
     public void saveAccountEntity(AccountEntity accountEntity) {
         sessionFactory.getCurrentSession().save(accountEntity);
+    }
+
+    @Override
+    public void saveUserInfoEntity(UserInfoEntity userInfoEntity) {
+        sessionFactory.getCurrentSession().save(userInfoEntity);
     }
 
     @Override

@@ -1,4 +1,5 @@
 package com.clteam.security.validation;
+
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.Documented;
