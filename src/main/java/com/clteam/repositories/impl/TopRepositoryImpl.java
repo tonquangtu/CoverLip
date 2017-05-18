@@ -44,6 +44,14 @@ public class TopRepositoryImpl implements TopRepository{
         return null;
     }
 
+    @Override
+    public TopListEntity getNewTop() {
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(TopListEntity.class);
+        List topListEntity = criteria.addOrder(Order.desc("id")).setMaxResults(1).list();
+        return (TopListEntity) topListEntity.get(0);
+    }
+
     public List<TopCoverIdolEntity> getListTopCoverIdols(int limit) {
         Session session = sessionFactory.getCurrentSession();
         Criteria criteria = session.createCriteria(TopCoverIdolEntity.class);

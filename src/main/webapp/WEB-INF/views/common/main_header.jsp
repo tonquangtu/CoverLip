@@ -4,7 +4,7 @@
     <div id="main_header">
         <div class="container">
             <div id="logo" class="col-md-2">
-                <a href="/"><img src="/resources/icons/youtube_logo.png" class="img-responsive"/></a>
+                <a href="/"><img src="/resources/icons/logo2.png" class="img-responsive"/></a>
             </div><!-- /logo -->
             <div id="menu" class="col-md-3">
                 <ul>

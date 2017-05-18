@@ -7,14 +7,14 @@ a{
 }
 #main_header{height: 60px; background: #f1f1f1; }
 #logo{/* background: yellow; */ height: 60px; overflow: hidden; padding-left:0;}
-#logo img{height: 120px; margin-top: -30px; }
+#logo img{/*height: 120px; margin-top: -30px;*/ height:100%; }
 #search, #upload_signin{/* background: green; */padding-right: 0; height: 60px; display: inline-block; float: left; padding-top: 11px; padding-left: 40px; }
-#menu{/* background: blue; */ height: 60px; padding-right: 0; }
+#menu{/* background: blue; */ height: 60px; padding-right: 0; padding:3px 0; }
 #menu ul{position: relative; z-index: 999; background: rgba(255,255,255,0.9); box-shadow: 0 0 20px rgba(0,0,0,.3); font-size: 0; line-height: 0; text-align: right; }
 #menu ul li{position: relative; display: inline-block; float: left; padding: 7px; border-style: solid; border-color: rgba(0,0,0,.1); border-right-width: 1px; font-size: 16px; line-height: 45px; text-align: left; white-space: nowrap; }
 #menu ul li a{display: block; text-align:center; text-decoration: none; color: #666; transition: background 0.4s, color 0.4s; -o-transition: background 0.4s, color 0.4s; -ms-transition: background 0.4s, color 0.4s; -moz-transition: background 0.4s, color 0.4s; -webkit-transition: background 0.4s, color 0.4s; }
 #search input[name="keyword"]{width: 91.66666%; outline: none; border: 1px; background-color: white; border-radius: 5px; color: #4d4141; display: inline-block; padding: 8px 40px 8px 15px; text-decoration: none; -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.4), 1px 1px 0 rgba(0, 0, 0, 0.15); -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.4), 1px 1px 0 rgba(0, 0, 0, 0.15); box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.4), 1px 1px 0 rgba(0, 0, 0, 0.15); }
-#searchsubmit{ border: 0px; width: 32px; height: 32px; display: inline-block; margin-left: -38px; top: 10px; outline: none; }
+#searchsubmit{background-image:url("../icons/icon_search.png"); border: 0; width: 32px; height: 32px; display: inline-block; margin-left: -38px; top: 10px; outline: none; }
 
 .navigation{
     box-shadow: unset !important;

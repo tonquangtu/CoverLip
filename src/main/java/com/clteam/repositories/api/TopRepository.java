@@ -20,4 +20,6 @@ public interface TopRepository {
 
     List<TopCoverIdolEntity> getListTopCoverIdols(int limit);
     List<TopListEntity> getAllTop();
+
+    TopListEntity getNewTop();
 }
