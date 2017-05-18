@@ -1,4 +1,4 @@
-package com.clteam.controllers.usercontroller;
+package com.clteam.controllers.coverpagecontroller;
 
 import org.springframework.stereotype.Controller;
 

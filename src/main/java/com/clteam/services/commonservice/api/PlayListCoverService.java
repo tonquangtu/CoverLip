@@ -1,4 +1,4 @@
-package com.clteam.services.userservice.api;
+package com.clteam.services.commonservice.api;
 
 import com.clteam.model.Playlist;
 

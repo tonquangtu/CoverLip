@@ -1,9 +1,9 @@
-package com.clteam.services.userservice.impl;
+package com.clteam.services.commonservice.impl;
 
 import com.clteam.dataobject.*;
 import com.clteam.model.Cover;
 import com.clteam.repositories.api.CoverRepository;
-import com.clteam.services.userservice.api.HotCoverService;
+import com.clteam.services.commonservice.api.HotCoverService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

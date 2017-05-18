@@ -1,4 +1,4 @@
-package com.clteam.controllers.usercontroller;
+package com.clteam.controllers.commonpagecontroller;
 
 import com.clteam.model.*;
 import com.clteam.services.commonservice.api.RecommenderService;
@@ -66,12 +66,12 @@ public class VideoPlayerPageController {
 
                 map.put("user", user);
                 map.put("recommendationList", recommendationList);
-                modelAndView.setViewName("videoplayerpage/video_player_page");
+                modelAndView.setViewName("commonpage/video_player_page");
             }else {
-                modelAndView.setViewName("common/error");
+                modelAndView.setViewName("commonpage/error_page");
             }
         }catch(Exception e) {
-            modelAndView.setViewName("common/error");
+            modelAndView.setViewName("commonpage/error_page");
             e.printStackTrace();
         }
 
@@ -110,12 +110,12 @@ public class VideoPlayerPageController {
 
                 map.put("user", user);
                 map.put("recommendationList", recommendationList);
-                modelAndView.setViewName("videoplayerpage/video_player_page");
+                modelAndView.setViewName("commonpage/video_player_page");
             }else {
-                modelAndView.setViewName("common/error");
+                modelAndView.setViewName("commonpage/error_page");
             }
         }catch(Exception e) {
-            modelAndView.setViewName("common/error");
+            modelAndView.setViewName("commonpage/error_page");
             e.printStackTrace();
         }
 
@@ -123,6 +123,18 @@ public class VideoPlayerPageController {
         return modelAndView;
     }
 
+    @RequestMapping("menu")
+    public ModelAndView testMenu() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("test/menu1");
+        return modelAndView;
+    }
 
 
+    @RequestMapping("menu1")
+    public ModelAndView testMenu1() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("test/main_header1");
+        return modelAndView;
+    }
 }

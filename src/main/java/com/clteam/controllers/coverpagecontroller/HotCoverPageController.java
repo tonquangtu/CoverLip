@@ -1,8 +1,8 @@
-package com.clteam.controllers.usercontroller;
+package com.clteam.controllers.coverpagecontroller;
 
 import com.clteam.model.Cover;
 import com.clteam.model.TopIdol;
-import com.clteam.services.userservice.api.HotCoverService;
+import com.clteam.services.commonservice.api.HotCoverService;
 import com.clteam.services.userservice.api.TopIdolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -38,7 +38,7 @@ public class HotCoverPageController {
         map.put("hotCoverList", hotCoverList);
         map.put("listTopCoverIdols", listTopCoverIdols);
 
-        modelAndView.setViewName("hotcoverpage/hot_cover_page");
+        modelAndView.setViewName("coverpage/hot_cover_page");
         modelAndView.addAllObjects(map);
         return modelAndView;
     }

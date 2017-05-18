@@ -1,10 +1,10 @@
-package com.clteam.services.userservice.impl;
+package com.clteam.services.commonservice.impl;
 
 import com.clteam.dataobject.*;
 import com.clteam.model.Playlist;
 import com.clteam.model.PlaylistItem;
 import com.clteam.repositories.api.PlaylistRepository;
-import com.clteam.services.userservice.api.PlayListCoverService;
+import com.clteam.services.commonservice.api.PlayListCoverService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

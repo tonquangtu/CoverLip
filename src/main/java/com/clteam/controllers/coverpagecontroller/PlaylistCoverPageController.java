@@ -1,7 +1,7 @@
-package com.clteam.controllers.usercontroller;
+package com.clteam.controllers.coverpagecontroller;
 
 import com.clteam.model.Playlist;
-import com.clteam.services.userservice.api.PlayListCoverService;
+import com.clteam.services.commonservice.api.PlayListCoverService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,7 +29,7 @@ public class PlaylistCoverPageController {
         List<Playlist> playlistList = playListCoverService.getListPlayListCover(-1);
         map.put("playlistList", playlistList);
 
-        modelAndView.setViewName("playlistcoverpage/playlist_cover_page");
+        modelAndView.setViewName("coverpage/playlist_cover_page");
         modelAndView.addAllObjects(map);
 
         return modelAndView;

@@ -1,9 +1,12 @@
-package com.clteam.controllers.usercontroller;
+package com.clteam.controllers.coverpagecontroller;
 
 import com.clteam.model.Cover;
 import com.clteam.model.Playlist;
 import com.clteam.model.TopIdol;
 import com.clteam.model.User;
+import com.clteam.services.commonservice.api.HotCoverService;
+import com.clteam.services.commonservice.api.NewCoverService;
+import com.clteam.services.commonservice.api.PlayListCoverService;
 import com.clteam.services.userservice.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +22,7 @@ import java.util.Map;
  * Created by nguyenthanhtung on 29/04/2017.
  */
 @Controller
-public class HomeCoverPageController {
+public class CoverHomePageController {
     @Autowired
     private UserService userService;
     @Autowired
@@ -42,7 +45,7 @@ public class HomeCoverPageController {
         map.put("newCoverList", newCoverList);
         map.put("hotCoverList", hotCoverList);
         map.put("topIdolList", topIdolList);
-        modelAndView.setViewName("homecoverpage/home_cover_page");
+        modelAndView.setViewName("coverpage/home_cover_page");
         modelAndView.addAllObjects(map);
         return modelAndView;
     }
@@ -56,7 +59,7 @@ public class HomeCoverPageController {
         List<TopIdol> topIdolList = topIdolService.getListTopCoverIdols(5);
         map.put("hotPlayListCover", playlistList);
         map.put("topIdolList", topIdolList);
-        modelAndView.setViewName("topcoverpage/top_cover_page");
+        modelAndView.setViewName("coverpage/top_cover_page");
         modelAndView.addAllObjects(map);
         return modelAndView;
     }
@@ -66,7 +69,7 @@ public class HomeCoverPageController {
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();
 
-        modelAndView.setViewName("persionalinfomationpage/persional_infomation_page");
+        modelAndView.setViewName("commonpage/persional_infomation_page");
         modelAndView.addAllObjects(map);
         return modelAndView;
     }
@@ -84,7 +87,7 @@ public class HomeCoverPageController {
         map.put("newCoverList", newCoverList);
         map.put("hotCoverList", hotCoverList);
         map.put("topIdolList", topIdolList);
-        modelAndView.setViewName("userpage/user_page");
+        modelAndView.setViewName("commonpage/user_page");
         modelAndView.addAllObjects(map);
         return modelAndView;
     }

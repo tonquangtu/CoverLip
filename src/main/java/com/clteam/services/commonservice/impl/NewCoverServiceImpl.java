@@ -1,4 +1,4 @@
-package com.clteam.services.userservice.impl;
+package com.clteam.services.commonservice.impl;
 
 import com.clteam.dataobject.CoverInfoEntity;
 import com.clteam.dataobject.NewCoverEntity;
@@ -6,7 +6,7 @@ import com.clteam.dataobject.VideoInfoEntity;
 import com.clteam.model.Cover;
 import com.clteam.model.Video;
 import com.clteam.repositories.api.CoverRepository;
-import com.clteam.services.userservice.api.NewCoverService;
+import com.clteam.services.commonservice.api.NewCoverService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
