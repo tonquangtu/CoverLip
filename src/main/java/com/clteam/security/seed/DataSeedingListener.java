@@ -26,15 +26,19 @@ public class DataSeedingListener implements ApplicationListener<ContextRefreshed
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
-        //insertAccount();
+//        insertAccount("admin@gmail.com",
+//                "Abc@1234",
+//                "Khanh Nguyen",
+//                (byte) Constant.ROLE_ADMIN_INT,
+//                (byte) Constant.ACCOUNT_ACTIVATED);
     }
 
-    private void insertAccount() {
+    private void insertAccount(String email, String pwd, String fullName, byte role, byte status) {
         AccountEntity accountEntity = new AccountEntity();
-        accountEntity.setUsername("admin@gmail.com");
-        accountEntity.setPassword(passwordEncoder.encode("Abc@1234"));
-        accountEntity.setFullname("Khanh Nguyen");
-        accountEntity.setRole((byte) Constant.ROLE_ADMIN_INT);
+        accountEntity.setUsername(email);
+        accountEntity.setPassword(passwordEncoder.encode(pwd));
+        accountEntity.setFullname(fullName);
+        accountEntity.setRole(role);
         accountEntity.setState((byte) Constant.ACCOUNT_ACTIVATED);
         accountEntity.setDateJoin(new Timestamp(new Date().getTime()));
         if (userService.findByEmail(accountEntity.getUsername()) == null) {
