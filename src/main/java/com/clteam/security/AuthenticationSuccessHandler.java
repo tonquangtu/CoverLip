@@ -1,7 +1,10 @@
 package com.clteam.security;
 
 
+import com.clteam.security.constant.Constant;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
@@ -10,6 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Khanh Nguyen on 6/5/2017.
@@ -27,7 +34,13 @@ public class AuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccess
             // set timeout = 20 minutes
             session.setMaxInactiveInterval(20 * 60);
         }
-        setDefaultTargetUrl("/admin");
+        Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+        boolean authorized = authorities.contains(new SimpleGrantedAuthority(Constant.ROLE_ADMIN_STR));
+        if (authorized) {
+            setDefaultTargetUrl("/admin");
+        } else {
+            setDefaultTargetUrl("/user");
+        }
         super.onAuthenticationSuccess(request, response, authentication);
     }
 

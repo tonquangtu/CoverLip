@@ -61,6 +61,10 @@ $(function () {
         }
     });
 
+    $("#logout").on("click", function() {
+        $("#logoutForm").submit();
+    });
+
 });
 
 function myFunction(x) {

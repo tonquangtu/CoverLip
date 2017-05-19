@@ -1,6 +1,8 @@
 package com.clteam.security.social;
 
 import com.clteam.dataobject.AccountEntity;
+import com.clteam.security.constant.Constant;
+import com.clteam.security.model.CustomSocialUser;
 import com.clteam.security.service.AccountSecurityService;
 import com.clteam.security.service.SecurityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +43,7 @@ public class MySocialUserDetailsService implements SocialUserDetailsService {
             throw new UsernameNotFoundException("User not found");
         }
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
-        grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_FB_USER"));
+        grantedAuthorities.add(new SimpleGrantedAuthority(Constant.ROLE_USER_STR));
         return new SocialUser(String.valueOf(accountEntity.getId()), "", grantedAuthorities);
     }
 
@@ -53,8 +55,8 @@ public class MySocialUserDetailsService implements SocialUserDetailsService {
             throw new UsernameNotFoundException("User not found");
         }
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
-        grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_FB_USER"));
-        return new SocialUser(String.valueOf(accountEntity.getId()), "", grantedAuthorities);
+        grantedAuthorities.add(new SimpleGrantedAuthority(Constant.ROLE_USER_STR));
+        return new CustomSocialUser(String.valueOf(accountEntity.getId()), "", grantedAuthorities, accountEntity.getFullname());
     }
 
 }

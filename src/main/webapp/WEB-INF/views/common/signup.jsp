@@ -110,6 +110,7 @@
                                                 class="form-control" id="confirmPassword"
                                                 placeholder="Confirm password"/>
                                     <form:errors path="confirmPassword" class="control-label"/>
+                                    <span id="globalError" style="color: #d52929"></span>
                                 </div>
                             </div>
                         </spring:bind>

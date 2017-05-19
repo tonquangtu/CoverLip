@@ -12,24 +12,24 @@
 <head>
     <title>Title</title>
 </head>
-
+<h1>After normal user login</h1>
 <sec:authorize access="isAuthenticated()">
+    <h2><sec:authentication property="principal.name"/></h2>
     <h2><sec:authentication property="principal.username"/></h2>
-    <h2><sec:authentication property="principal.fullName"/></h2>
 </sec:authorize>
 <c:choose>
     <c:when test="${not empty sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}}">
         <h1>${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}</h1>
     </c:when>
     <%--<c:when test="${}">--%>
-        <%----%>
+    <%----%>
     <%--</c:when>--%>
     <c:otherwise>
         <h1>username is empty</h1>
     </c:otherwise>
 </c:choose>
 <%--<c:if test="${not empty sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}">--%>
-    <%--<h1>${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}</h1>--%>
+<%--<h1>${sessionScope.SPRING_SECURITY_CONTEXT.authentication.principal.username}</h1>--%>
 <%--</c:if>--%>
 </body>
 </html>

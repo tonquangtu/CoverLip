@@ -15,7 +15,7 @@ public class UserController {
 
     @GetMapping("")
     public String index() {
-        return "common/error";
+        return "common/after_user_login";
     }
 
 }
