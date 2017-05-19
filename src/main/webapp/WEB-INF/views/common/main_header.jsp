@@ -5,6 +5,7 @@
   Time: 7:05 AM
   To change this template use File | Settings | File Templates.
 --%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%--<html>--%>
@@ -19,6 +20,8 @@
 <%--</head>--%>
 <%--<body>--%>
 
+<c:set var="targetPage" scope="page" value="${requestScope.targetPage}"/>
+
 <div class="main-menu header-shadow">
     <div class="header-box" id="header">
         <div class="container">
@@ -26,8 +29,20 @@
 
                 <a class="logo" title="Cùng thưởng thức những bài cover tuyệt đỉnh cùng CoverLip" href="/"></a>
                 <div class="super-menu">
-                    <a href="http://localhost:8080/cover" class="active">COVER</a>
-                    <a href="http://localhost:8080/lipsync" target="_blank">LIP-SYNC</a>
+
+                   <c:choose>
+                       <c:when test="${targetPage eq 'cover_home_page'}">
+                           <a href="http://localhost:8080/cover" class="active">COVER</a>
+                           <a href="http://localhost:8080/lipsync">LIP-SYNC</a>
+                       </c:when>
+
+                       <c:otherwise>
+                           <a href="http://localhost:8080/cover" >COVER</a>
+                           <a href="http://localhost:8080/lipsync" class="active">LIP-SYNC</a>
+                       </c:otherwise>
+                   </c:choose>
+
+
                 </div>
 
                 <div id="quick-search-box" class="search-box">
@@ -110,31 +125,54 @@
         <div class="container">
 
             <div class="menu-top">
-                <ul class="notifi" id="menuTop">
-                    <li class="icon_logo_menu" id="icon_menu_logo">
-                        <a href="http://www.nhaccuatui.com/" title="Trang chủ" class="active">Trang chủ</a>
-                    </li>
+                <c:choose>
 
-                    <li class="">
-                        <a href="http://www.nhaccuatui.com/kham-pha.html" title="Khám phá">Cover mới</a>
-                    </li>
+                    <c:when test="${targetPage eq 'cover_home_page'}">
+                        <ul class="notifi" id="menuTop">
+                            <li class="icon_logo_menu" id="icon_menu_logo">
+                                <a href="http://www.nhaccuatui.com/" title="Trang chủ" class="active">Trang chủ</a>
+                            </li>
 
-                    <li class="">
-                        <a href="http://www.nhaccuatui.com/kham-pha.html" title="Khám phá">Cover hot</a>
-                    </li>
+                            <li class="">
+                                <a href="http://www.nhaccuatui.com/kham-pha.html" title="Khám phá">Cover mới</a>
+                            </li>
 
-                    <li class="">
-                        <a href="http://www.nhaccuatui.com/kham-pha.html" title="Khám phá">Bảng xếp hạng</a>
-                    </li>
+                            <li class="">
+                                <a href="http://www.nhaccuatui.com/kham-pha.html" title="Khám phá">Cover hot</a>
+                            </li>
 
-                    <li class="">
-                        <a href="http://www.nhaccuatui.com/kham-pha.html" title="Khám phá">Playlist</a>
-                    </li>
+                            <li class="">
+                                <a href="http://www.nhaccuatui.com/kham-pha.html" title="Khám phá">Bảng xếp hạng</a>
+                            </li>
 
-                    <li class="">
-                        <a href="http://www.nhaccuatui.com/kham-pha.html" title="Khám phá">Tất cả</a>
-                    </li>
-                </ul>
+                            <li class="">
+                                <a href="http://www.nhaccuatui.com/kham-pha.html" title="Khám phá">Playlist</a>
+                            </li>
+
+                            <li class="">
+                                <a href="http://www.nhaccuatui.com/kham-pha.html" title="Khám phá">Tất cả</a>
+                            </li>
+                        </ul>
+                    </c:when>
+
+                    <c:otherwise>
+                        <ul class="notifi" id="menuTop">
+                            <li class="icon_logo_menu" >
+                                <a href="http://www.nhaccuatui.com/" title="Thịnh hành" class="active">Thịnh hành</a>
+                            </li>
+
+                            <li class="">
+                                <a href="http://www.nhaccuatui.com/kham-pha.html" title="Lipsync mới">Lipsync mới</a>
+                            </li>
+
+                            <li class="">
+                                <a href="http://www.nhaccuatui.com/kham-pha.html" title="Tất cả">Tất cả</a>
+                            </li>
+                        </ul>
+                    </c:otherwise>
+
+                </c:choose>
+
             </div>
         </div>
     </div>

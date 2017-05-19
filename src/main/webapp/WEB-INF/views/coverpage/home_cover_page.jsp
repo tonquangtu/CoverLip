@@ -27,7 +27,14 @@
 
 </head>
 <body>
+
+
+<c:set var="targetPage" scope="request" value="cover_home_page"/>
 <%@include file="../common/main_header.jsp" %>
+
+<%--<jsp:include page="../common/main_header.jsp">--%>
+    <%--<jsp:param name="location" value="1"/>--%>
+<%--</jsp:include>--%>
 
 <content>
     <div style="height:20px; width: 100%; clear: both"></div>
