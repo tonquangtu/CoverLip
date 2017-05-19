@@ -32,12 +32,12 @@
 }
 
 .logo {
-    width: 76px;
+    width: 88px;
     height: 40px;
     float: left;
-    background: url(http://stc.id.nixcdn.com/v11/images/logo-nhaccuatui.png) no-repeat;
+    background: url(/resources/icons/logo2.png) no-repeat;
     background-size: 100%;
-    margin: 10px 16px 0 0;
+    margin: 10px 10px 0 0;
     text-indent: -10000px;
 }
 
@@ -339,7 +339,7 @@ ul.notifi {
 ul.notifi li {
     float: left;
     position: relative;
-    padding: 0 15px 0 0px !important;
+    padding: 0 20px 0 0px !important;
 }
 
 

@@ -32,10 +32,6 @@
 <c:set var="targetPage" scope="request" value="cover_home_page"/>
 <%@include file="../common/main_header.jsp" %>
 
-<%--<jsp:include page="../common/main_header.jsp">--%>
-    <%--<jsp:param name="location" value="1"/>--%>
-<%--</jsp:include>--%>
-
 <content>
     <div style="height:20px; width: 100%; clear: both"></div>
     <div id="slider" class="container">
@@ -48,7 +44,7 @@
             <div class="carousel-inner">
                 <div class="item active">
                     <img class="img-responsive" data-src="" alt="First slide"
-                         src="/resources/storage/image/normal_image/slide_image/phiasaumotcogai.jpg">
+                         src="../../../resources/storage/image/normal_image/slide_image/phiasaumotcogai.jpg">
                     <div class="background-gadian"></div>
                     <div class="container">
                         <div class="carousel-caption">
@@ -60,7 +56,7 @@
                 </div>
                 <div class="item">
                     <img class="img-responsive" data-src="" alt="Second slide"
-                         src="/resources/storage/image/normal_image/slide_image/didetrove.jpg">
+                         src="../../../resources/storage/image/normal_image/slide_image/didetrove.jpg">
                     <div class="background-gadian"></div>
                     <div class="container">
                         <div class="carousel-caption">
@@ -72,7 +68,7 @@
                 </div>
                 <div class="item">
                     <img class="img-responsive" data-src="" alt="Third slide"
-                         src="/resources/storage/image/normal_image/slide_image/lactroi.jpg">
+                         src="../../../resources/storage/image/normal_image/slide_image/lactroi.jpg">
                     <div class="background-gadian"></div>
                     <div class="container">
                         <div class="carousel-caption">
@@ -95,7 +91,7 @@
             <!-- Page Header -->
             <div class="row title">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Mới Đăng
+                    <h2 class="page-header"><a href="">Mới Đăng</a>
                         <!-- <small>Secondary Text</small> -->
                         <div class="action_slide">
                             <div class="btn-group">
@@ -105,7 +101,7 @@
                                         class="glyphicon glyphicon-chevron-down"></span></button>
                             </div>
                         </div>
-                    </h1>
+                    </h2>
                 </div>
             </div>
             <!-- /.row -->
@@ -116,7 +112,7 @@
                     <div class="subject">
                         <a href="#">
                             <img class="img-responsive"
-                                 src="/resources/storage/image/normal_image/slide_image/singer.jpg" alt="">
+                                 src="../../../resources/storage/image/normal_image/slide_image/singer.jpg" alt="">
                         </a>
                         <h3>
                             <a href="#">Mới Đăng</a>
@@ -126,7 +122,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-9" style="padding-right:0;padding-left:0;">
+                <div class="col-md-9" style="padding-right:0;padding-left:0;margin-left:-2px;">
                     <% int m=0; %>
                     <c:forEach var="item" items="${newCoverList}" varStatus="i">
                         <c:if test="${i.index<12}">
@@ -160,7 +156,7 @@
             <!-- Page Header -->
             <div class="row title">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Cover Hot
+                    <h2 class="page-header"><a href="">Cover Hot</a>
                         <!-- <small>Secondary Text</small> -->
                         <div class="action_slide">
                             <div class="btn-group">
@@ -170,7 +166,7 @@
                                         class="glyphicon glyphicon-chevron-down"></span></button>
                             </div>
                         </div>
-                    </h1>
+                    </h2>
                 </div>
             </div>
             <!-- /.row -->
@@ -181,7 +177,7 @@
                     <div class="subject">
                         <a href="#">
                             <img class="img-responsive"
-                                 src="/resources/storage/image/normal_image/slide_image/singer.jpg" alt="">
+                                 src="../../../resources/storage/image/normal_image/slide_image/singer.jpg" alt="">
                         </a>
                         <a href="#">
                             <h3>
@@ -193,7 +189,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-9" style="padding-right:0;padding-left:0;">
+                <div class="col-md-9" style="padding-right:0;padding-left:0;margin-left:-2px;">
                     <% m=0; %>
                     <c:forEach var="item" items="${hotCoverList}" varStatus="i">
                         <c:if test="${i.index<12}">
@@ -221,25 +217,24 @@
             <!-- /.row -->
         </div>
 
-
         <!-- Cover hay moi ngay -->
         <div class="cover_list_content">
             <!-- Page Header -->
             <div class="row title">
                 <div class="col-lg-12">
-                    <a href="#"><h1 class="page-header">Cover Hay Mỗi Ngày</h1></a>
+                    <h2 class="page-header"><a href="#">Cover Hay Mỗi Ngày</a></h2>
                 </div>
             </div>
             <!-- /.row -->
 
             <!-- Projects Row -->
-            <div class="row" style="overflow:hidden;">
+            <div class="row" style="overflow:hidden;margin-right:-12px;">
 
                 <div class="col-md-12" style="padding-right:0;padding-left:0;">
                     <c:forEach var="item" items="${newCoverList}" varStatus="i">
                         <c:if test="${i.index<12}">
                             <c:if test="${i.index%4==0}">
-                                <div class="row" style="margin-right: 0px; margin-left: 15px;">
+                                <div class="row" style="margin-right: 0; margin-left: 15px;">
                             </c:if>
                             <div class="col-md-3" style="padding-right:12px; padding-left:0">
                                 <c:set var="item" value="${item}" scope="request"/>
@@ -250,7 +245,7 @@
                             </c:if>
                         </c:if>
                     </c:forEach>
-                    <br><br>
+                    <br>
                 </div>
             </div>
             <!-- /.row -->
@@ -260,24 +255,27 @@
             <!-- Page Header -->
             <div class="row title">
                 <div class="col-lg-12">
-                    <a href=""><h1 class="page-header">Top Người Đăng Nổi Bật
-                    </h1></a>
+                    <h2 class="page-header"><a href="">Top Người Đăng Nổi Bật</a></h2>
                 </div>
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-md-3">
-                    <div class="one_member text-center subject" style="padding-bottom:10px;box-shadow:unset">
-                        <a href="">
-                            <img src="${topIdolList.get(0).user.account.avatarThumbnail}" alt="${topIdolList.get(0).user.account.fullname}"
-                                 class="img-responsive" style="width:100%">
-                            <div class="name_of_member">
-                                <p>${topIdolList.get(0).user.account.fullname}</p>
-                            </div>
-                        </a>
+                <div class="top_idol">
+                    <div class="col-md-3">
+                        <div class="one_member text-center subject" style="padding-bottom:10px;box-shadow:unset;border-top-right-radius: 32px;">
+                            <a href="">
+                                <div class="avatar">
+                                    <img src="${topIdolList.get(0).user.account.avatarThumbnail}" alt="${topIdolList.get(0).user.account.fullname}"
+                                         class="img-responsive" style="width:100%">
+                                    <span class="numberOne">01</span>
+                                </div>
+                                <div class="name_of_member">
+                                    <p>${topIdolList.get(0).user.account.fullname}</p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-9">
+                    <div class="col-md-9">
                     <c:forEach items="${topIdolList}" var="item1" varStatus="i" begin="1">
                         <c:if test="${i.index<9}">
                             <c:if test="${(i.index+3)%4==0}">
@@ -285,8 +283,11 @@
                             </c:if>
                             <div class="col-md-3 one_member text-center">
                                 <a href="">
-                                    <img src="${item1.user.account.avatarThumbnail}" alt="${item1.user.account.fullname}"
-                                         class="img-responsive img-circle">
+                                    <div class="avatar">
+                                        <img src="${item1.user.account.avatarThumbnail}" alt="${item1.user.account.fullname}"
+                                             class="img-responsive img-circle">
+                                        <span>0${i.index+1}</span>
+                                    </div>
                                     <div class="name_of_member">
                                         <p>${item1.user.account.fullname}</p>
                                     </div>
@@ -297,6 +298,7 @@
                             </c:if>
                         </c:if>
                     </c:forEach>
+                </div>
                 </div>
             </div>
 

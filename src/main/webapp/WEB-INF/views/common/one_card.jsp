@@ -7,10 +7,11 @@
             <img class="img-responsive img-circle" src="${item.video.account.avatarThumbnail}" alt="${item.video.account.fullname}">
         </div>
         <div class="name_member">
-            <a href=""><h2>${item.video.account.fullname}</h2></a>
+            <a href="/user/${item.video.account.id}"><h2>${item.video.account.fullname}</h2></a>
         </div>
-        <div class="option_card">
-            <img src="/resources/icons/icon_more_vertical.svg" alt="${item.coverName}" class="icon_more_vertical">
+        <div class="option_card" role="button">
+            <img src="../../../resources/icons/icon_more_vertical.svg" alt="" class="icon_more_vertical">
+
         </div>
     </div>
     <div class="content_card">
@@ -23,11 +24,11 @@
                             <span class="icon_play"></span>
                             <img src="${item.video.videoThumbnailLink}" alt="${item.coverName}"
                                  title="${item.coverName}">
+                            <div class="background_one_card"></div>
                         </a>
                     </div>
-
                     <div class="info_singer_video_box">
-                        <span>${item.coverName}</span>
+                        <span>${item.compactNameCover(5)}</span>
                     </div>
                 </div>
             </li>
@@ -36,16 +37,16 @@
     <div class="footer_card">
         <ul class="interaction">
             <li class="like">
-                <img src="/resources/icons/icon_like.svg" alt="" class="icon_react">&nbsp;<span
+                <img src="../../../resources/icons/icon_like.svg" alt="" class="icon_react">&nbsp;<span
                     class="like_counter">${item.video.numLike}</span>
             </li>
             <li class="comment">
                 <a href="#">
-                    <img src="/resources/icons/icon_comment.svg" alt="" class="icon_react">&nbsp;${item.video.numComment}
+                    <img src="../../../resources/icons/icon_comment.svg" alt="" class="icon_react">&nbsp;${item.video.numComment}
                 </a>
             </li>
             <li class="view">
-                <span> <img src="/resources/icons/icon_view.svg" alt="" class="icon_react">&nbsp;${item.video.numView} </span>
+                <span> <img src="../../../resources/icons/icon_view.svg" alt="" class="icon_react">&nbsp;${item.video.numView} </span>
             </li>
         </ul>
         <%--<div class="facebook">--%>

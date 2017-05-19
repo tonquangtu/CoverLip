@@ -16,14 +16,14 @@
     <%@ include file="../common/common_lib2.jsp" %>
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/styles/main_navigation_style.css"/>
-    <link rel="stylesheet" href="/resources/styles/main_header_style.css"/>
-    <link rel="stylesheet" href="/resources/styles/main_footer_style.css"/>
-    <link rel="stylesheet" href="/resources/styles/persional_infomation_style.css">
+    <link rel="stylesheet" href="../../../resources/styles/main_navigation_style.css"/>
+    <link rel="stylesheet" href="../../../resources/styles/main_header_style.css"/>
+    <link rel="stylesheet" href="../../../resources/styles/main_footer_style.css"/>
+    <link rel="stylesheet" href="../../../resources/styles/persional_infomation_style.css">
 
     <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
 
-    <script type="text/javascript" src="/resources/scripts/persional_infomation_script.js"></script>
+    <script type="text/javascript" src="../../../resources/scripts/persional_infomation_script.js"></script>
 
 </head>
 <body>

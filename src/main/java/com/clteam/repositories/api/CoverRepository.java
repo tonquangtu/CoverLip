@@ -39,4 +39,6 @@ public interface CoverRepository {
 
     List<HotCoverEntity> getAllHotCover(int limit);
     List<NewCoverEntity> getListNewCover(int limit);
+
+    List<CoverInfoEntity> getListTopCover();
 }

@@ -32,12 +32,12 @@
 
                    <c:choose>
                        <c:when test="${targetPage eq 'cover_home_page'}">
-                           <a href="http://localhost:8080/cover" class="active">COVER</a>
+                           <a href="http://localhost:8080/" class="active">COVER</a>
                            <a href="http://localhost:8080/lipsync">LIP-SYNC</a>
                        </c:when>
 
                        <c:otherwise>
-                           <a href="http://localhost:8080/cover" >COVER</a>
+                           <a href="http://localhost:8080/" >COVER</a>
                            <a href="http://localhost:8080/lipsync" class="active">LIP-SYNC</a>
                        </c:otherwise>
                    </c:choose>
