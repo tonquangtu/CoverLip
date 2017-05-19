@@ -2,6 +2,7 @@ package com.clteam.security.repository;
 
 import com.clteam.dataobject.AccountEntity;
 import com.clteam.dataobject.UserInfoEntity;
+import com.clteam.dataobject.VerificationTokenEntity;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,11 @@ public class AccountSecurityRepositoryImpl implements AccountSecurityRepository 
     }
 
     @Override
-    public void saveAccountEntity(AccountEntity accountEntity) {
-        sessionFactory.getCurrentSession().save(accountEntity);
+    public int saveAccountEntity(AccountEntity accountEntity) {
+        if (accountEntity == null) {
+            return -1;
+        }
+        return (Integer) sessionFactory.getCurrentSession().save(accountEntity);
     }
 
     @Override
@@ -40,5 +44,14 @@ public class AccountSecurityRepositoryImpl implements AccountSecurityRepository 
         int id = Integer.parseInt(userId);
         query.setParameter("userId", id);
         return (AccountEntity) query.uniqueResult();
+    }
+
+    @Override
+    public int saveVerificationTokenEntity(VerificationTokenEntity verificationTokenEntity) {
+        if (verificationTokenEntity == null) {
+            return -1;
+        } else {
+            return (Integer) sessionFactory.getCurrentSession().save(verificationTokenEntity);
+        }
     }
 }

@@ -1,6 +1,7 @@
 package com.clteam.security.controller;
 
 import com.clteam.dataobject.AccountEntity;
+import com.clteam.security.constant.Token;
 import com.clteam.security.dto.AccountDto;
 import com.clteam.security.listener.OnRegistrationCompleteEvent;
 import com.clteam.security.service.SignUpService;
@@ -11,8 +12,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.io.UnsupportedEncodingException;
 
 /**
  * Created by Khanh Nguyen on 15/5/2017.
@@ -35,6 +38,11 @@ public class SignUpController {
 
     @PostMapping("")
     public String save(@Valid @ModelAttribute("accountForm") AccountDto accountDto, BindingResult result, Model model, final HttpServletRequest req) {
+        try {
+            req.setCharacterEncoding("UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         if (result.hasErrors()) {
             model.addAttribute("accountForm", accountDto);
             return "common/signup";
@@ -49,6 +57,19 @@ public class SignUpController {
     @GetMapping("/success")
     public String signUpSuccess() {
         return "common/sign_up_success";
+    }
+
+    @GetMapping("/registrationConfirm")
+    public String registrationConfirm(@RequestParam("token") final String token, Model model) {
+        Token result = signUpService.validateVerificationToken(token);
+        if (result == Token.TOKEN_VALID) {
+            model.addAttribute("status", "token valid");
+        } else if (result == Token.TOKEN_EXPIRED) {
+            model.addAttribute("status", "token expired");
+        } else {
+            model.addAttribute("status", "token invalid");
+        }
+        return "common/after_activate";
     }
 
 

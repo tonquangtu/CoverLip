@@ -2,14 +2,19 @@ package com.clteam.security.service;
 
 import com.clteam.dataobject.AccountEntity;
 import com.clteam.dataobject.UserInfoEntity;
+import com.clteam.dataobject.VerificationTokenEntity;
 import com.clteam.security.constant.Constant;
+import com.clteam.security.constant.Token;
 import com.clteam.security.dto.AccountDto;
 import com.clteam.security.repository.AccountSecurityRepository;
+import com.clteam.security.repository.SignUpRepository;
 import com.clteam.security.util.DateTimeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Calendar;
 
 /**
  * Created by Khanh Nguyen on 18/5/2017.
@@ -22,6 +27,9 @@ public class SignUpServiceImpl implements SignUpService {
     private AccountSecurityRepository accountSecurityRepository;
 
     @Autowired
+    private SignUpRepository signUpRepository;
+
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Override
@@ -29,16 +37,18 @@ public class SignUpServiceImpl implements SignUpService {
         AccountEntity accountEntity = new AccountEntity();
         accountEntity.setUsername(accountDto.getEmail());
         accountEntity.setPassword(passwordEncoder.encode(accountDto.getPassword()));
-        accountEntity.setFullname(accountEntity.getFullname());
+        accountEntity.setFullname(accountDto.getFullName());
         accountEntity.setRole((byte) Constant.ROLE_USER_INT);
         accountEntity.setState((byte) Constant.ACCOUNT_NON_ACTIVATED);
         accountEntity.setDateJoin(DateTimeUtil.getCurrentTime());
-        accountSecurityRepository.saveAccountEntity(accountEntity);
+        int accountId = accountSecurityRepository.saveAccountEntity(accountEntity);
+
+        System.out.println("### address: " + accountDto.getAddress());
 
         AccountEntity newAccount = accountSecurityRepository.findByEmail(accountEntity.getUsername());
 
         UserInfoEntity userInfoEntity = new UserInfoEntity();
-        userInfoEntity.setAccountByAccountId(newAccount);
+        userInfoEntity.setAccountId(accountId);
         userInfoEntity.setNumCover(0);
         userInfoEntity.setNumHaveFollowed(0);
         userInfoEntity.setNumLipsync(0);
@@ -46,13 +56,33 @@ public class SignUpServiceImpl implements SignUpService {
         userInfoEntity.setDateOfBirth(DateTimeUtil.convertDateToTimestamp(accountDto.getDateOfBirth()));
         userInfoEntity.setAddress(accountDto.getAddress());
         userInfoEntity.setDescription("");
+        accountSecurityRepository.saveUserInfoEntity(userInfoEntity);
 
         return newAccount;
     }
 
     @Override
-    public void createVerificationToken(AccountEntity accountEntity, String token) {
+    public int createVerificationToken(AccountEntity accountEntity, String token) {
+        VerificationTokenEntity verificationTokenEntity = new VerificationTokenEntity(token);
+        verificationTokenEntity.setAccountId(accountEntity.getId());
+        return accountSecurityRepository.saveVerificationTokenEntity(verificationTokenEntity);
+    }
 
+    @Override
+    public Token validateVerificationToken(String token) {
+        final VerificationTokenEntity verificationToken = signUpRepository.findByToken(token);
+        if (verificationToken == null) {
+            return Token.TOKEN_INVALID;
+        }
+        final AccountEntity account = verificationToken.getAccountByAccountId();
+        final Calendar cal = Calendar.getInstance();
+        if ((verificationToken.getExpiryDate().getTime() - cal.getTime().getTime()) <= 0) {
+            signUpRepository.delete(verificationToken);
+            return Token.TOKEN_EXPIRED;
+        }
+        account.setState((byte) Constant.ACCOUNT_ACTIVATED);
+        signUpRepository.saveAccountEntity(account);
+        return Token.TOKEN_VALID;
     }
 
 }

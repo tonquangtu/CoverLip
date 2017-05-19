@@ -1,6 +1,7 @@
 package com.clteam.security.service;
 
 import com.clteam.dataobject.AccountEntity;
+import com.clteam.security.constant.Token;
 import com.clteam.security.dto.AccountDto;
 
 /**
@@ -10,6 +11,8 @@ public interface SignUpService {
 
     public AccountEntity createNewAccount(AccountDto accountDto);
 
-    public void createVerificationToken(AccountEntity accountEntity, String token);
+    public int createVerificationToken(AccountEntity accountEntity, String token);
+
+    public Token validateVerificationToken(String token);
 
 }

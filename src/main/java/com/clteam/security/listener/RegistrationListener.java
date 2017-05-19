@@ -36,18 +36,22 @@ public class RegistrationListener implements ApplicationListener<OnRegistrationC
     }
 
     private void confirmRegistration(final OnRegistrationCompleteEvent event) {
+        System.out.println("### Begin send mail confirm");
         final AccountEntity account = event.getAccount();
         final String token = UUID.randomUUID().toString();
-        signUpService.createVerificationToken(account, token);
+        int result = signUpService.createVerificationToken(account, token);
+        if (result != -1) {
+            final SimpleMailMessage email = createEmailMessage(event, account, token);
+            mailSender.send(email);
+        } else {
 
-        final SimpleMailMessage email = constructEmailMessage(event, account, token);
-        mailSender.send(email);
+        }
     }
 
-    private SimpleMailMessage constructEmailMessage(OnRegistrationCompleteEvent event, AccountEntity account, String token) {
+    private SimpleMailMessage createEmailMessage(OnRegistrationCompleteEvent event, AccountEntity account, String token) {
         final String recipientAddress = account.getUsername();
         final String subject = "Registration Confirmation";
-        final String confirmationUrl = event.getAppUrl() + "/registrationConfirm?token=" + token;
+        final String confirmationUrl = event.getAppUrl() + "/signup/registrationConfirm?token=" + token;
         final String message = messageSource.getMessage("message.registrationSuccess", null, null);
         final SimpleMailMessage email = new SimpleMailMessage();
         email.setTo(recipientAddress);
@@ -56,6 +60,5 @@ public class RegistrationListener implements ApplicationListener<OnRegistrationC
         email.setFrom(env.getProperty("support.email"));
         return email;
     }
-
 
 }

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-
+<%--<%@ page language="java" contentType="text/html; charset=ISO-8859-1"--%>
+         <%--pageEncoding="ISO-8859-1"%>--%>
 <footer class="footer-distributed">
     <div class="footer-left">
         <h3>Company<span>logo</span></h3>
