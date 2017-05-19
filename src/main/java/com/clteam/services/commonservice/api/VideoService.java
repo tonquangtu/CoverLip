@@ -39,5 +39,5 @@ public interface VideoService {
 
     List<LipSync> findTopLipSyncOfAccount(int accountId, int limit);
 
-
+     List<LipSync> getListLipSyncOfUser(int accountId, int limit, int currentVideoId);
 }

@@ -31,10 +31,10 @@ $(document).ready(function(){
     var type = $('.menu').attr('type');
     var atag= $('.menu a');
     atag.removeClass('selected');
-    $.each(atag,function(i, item){
-        var uri = item.href;
+    $.each(atag, function(){
+        var uri = $(this).attr('href');
         if(type===uri.substring(uri.lastIndexOf('/')+1, uri.length)){
-            item.addClass('selected');
+            $(this).addClass('selected');
             return false;
         }
     });

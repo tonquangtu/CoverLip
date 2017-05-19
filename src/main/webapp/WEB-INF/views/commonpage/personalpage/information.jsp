@@ -8,11 +8,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<div class="information_person">
+<div class="information_person main_person">
     <div class="subhead">
         <h2 class="subhead-heading">Thông Tin Công Khai</h2>
     </div>
-    <form accept-charset="UTF-8" action="" class="" method="post">
+    <form accept-charset="UTF-8" action="" class="form_person" method="post">
         <dl class="form-group float-right col-md-4">
             <dt><label>Ảnh Đại Diện</label></dt>
             <dd class="" style="padding:0; width:100%;">

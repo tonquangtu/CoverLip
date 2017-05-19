@@ -44,6 +44,10 @@ a, a:hover{
     background: transparent none repeat scroll 0 0;
     outline: none;
 }
+.carousel-caption .banner-button:hover{
+    border: 1px solid #e80000;
+    background: #e80000;
+}
 .carousel-caption .banner-button img{
     height: 17px !important;
     width: 17px !important;
@@ -52,7 +56,7 @@ a, a:hover{
     float: left !important;
     margin-right: 7px;
 }
-.carousel-caption .banner-button img p{
+.carousel-caption .banner-button p{
     font-size: 13px;
     color: #fff;
     font-weight: bold;

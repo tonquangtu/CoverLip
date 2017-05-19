@@ -1,9 +1,8 @@
 package com.clteam.controllers.coverpagecontroller;
 
-import com.clteam.model.Cover;
-import com.clteam.model.TopIdol;
-import com.clteam.model.User;
+import com.clteam.model.*;
 import com.clteam.services.commonservice.api.CoverService;
+import com.clteam.services.commonservice.api.VideoService;
 import com.clteam.services.userservice.api.TopIdolService;
 import com.clteam.services.userservice.api.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +33,8 @@ public class CoverHomePageController {
     private TopIdolService topIdolService;
     @Autowired
     private CoverService coverService;
+    @Autowired
+    private VideoService videoService;
 
     @RequestMapping("/")
     public ModelAndView visitHomeCoverPage(HttpServletResponse response) {
@@ -70,15 +71,19 @@ public class CoverHomePageController {
         Cookie cookie = WebUtils.getCookie(request, "myaccount");
         int accountId = Integer.parseInt(cookie.getValue());
         User user = userService.getUser(accountId);
+        map.put("userInfo",user);
         //
         if(Objects.equals(type, "information")){
-            map.put("userInfo",user);
+
         }else if(Objects.equals(type, "change-password")){
 
         }else if(Objects.equals(type, "my-cover")){
-
+            List<Cover> coverOfUserList = coverService.getListCoverOfUser(accountId, 6, -1);
+            map.put("videoList", coverOfUserList);
         }else if(Objects.equals(type, "my-lipsync")){
-
+            List<LipSync> lipSyncOfUserList = videoService.getListLipSyncOfUser(accountId,6,-1);
+            System.out.println(lipSyncOfUserList.size());
+            map.put("videoList", lipSyncOfUserList);
         }else if(Objects.equals(type,"my-playlist")){
 
         }else if(Objects.equals(type, "my-idol")){
@@ -125,7 +130,7 @@ public class CoverHomePageController {
 
     @RequestMapping("/user")
     public @ResponseBody
-    List<Cover> getMoreVideoOfUser(@RequestParam String accountId,
+    List<Cover> getMoreCoverOfUser(@RequestParam String accountId,
                                    @RequestParam String currentVideoId,
                                    @RequestParam String limit,
                                    @RequestParam String type) {
@@ -136,6 +141,20 @@ public class CoverHomePageController {
         if(Objects.equals(type, "cover")){
             List<Cover> coverOfUserList = coverService.getListCoverOfUser(accountIdx, limitx,currentVideoIdx);
             return coverOfUserList;
+        }
+        return null;
+    }
+    @RequestMapping("/user")
+    public @ResponseBody List<LipSync> getMoreLipSyncOfUser(@RequestParam String accountId,
+                                     @RequestParam String currentVideoId,
+                                     @RequestParam String limit,
+                                     @RequestParam String type){
+        int accountIdx = Integer.parseInt(accountId);
+        int currentVideoIdx = Integer.parseInt(currentVideoId);
+        int limitx = Integer.parseInt(limit);
+        if(Objects.equals(type, "lipsync")){
+            List<LipSync> lipSyncOfUserList = videoService.getListLipSyncOfUser(accountIdx, limitx, currentVideoIdx);
+            return lipSyncOfUserList;
         }
         return null;
     }

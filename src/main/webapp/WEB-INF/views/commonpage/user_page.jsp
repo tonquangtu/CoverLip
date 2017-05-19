@@ -80,7 +80,7 @@
                             <c:set var="item" value="${item}" scope="request"/>
                             <%@include file="../common/one_card.jsp" %>
                         </div>
-                        <c:if test="${i.index%2==1||((i.index==coverList.size()-1)&&i.index%2==0)}">
+                        <c:if test="${i.index%2==1||((i.index==videoList.size()-1)&&i.index%2==0)}">
                             </div>
                         </c:if>
                     </c:forEach>

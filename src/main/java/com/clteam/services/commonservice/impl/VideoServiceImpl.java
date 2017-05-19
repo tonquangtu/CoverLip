@@ -490,6 +490,19 @@ public class VideoServiceImpl implements VideoService{
         return lipSyncs;
     }
 
+    public List<LipSync> getListLipSyncOfUser(int accountId, int limit, int currentVideoId){
+        List<LipSync> lipSyncList = new ArrayList<>();
+        List<LipSyncInfoEntity> lipSyncInfoEntities = lipSyncRepo.getListLipSyncOfUser(accountId,limit,currentVideoId);
+
+        if (lipSyncInfoEntities != null) {
+            for (LipSyncInfoEntity lipSyncEntity : lipSyncInfoEntities) {
+                LipSync lipSync = getLipSync(lipSyncEntity);
+                if (lipSync != null) lipSyncList.add(lipSync);
+            }
+        }
+        return lipSyncList;
+    }
+
 
 
     public LipSync getLipSync(LipSyncInfoEntity lipSyncEntity) {

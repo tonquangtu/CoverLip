@@ -38,11 +38,10 @@ a:hover{
     color:#3c3c3c;
 }
 .menu a:hover, .selected{
-    color: #1abc9c;
+    color: #1abc9c !important;
     background:#eaeaea;
 }
 .main_person{
-    padding-bottom: 20px;
     -moz-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
     box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
     background-color: #fefefe;
@@ -51,11 +50,17 @@ a:hover{
     display: block;
     position: relative;
     overflow: hidden;
-    margin: 3px -20px 12px 20px;
+    margin: 3px 0 12px 0;
+    padding: 0 5px 15px 20px;
 }
 .subhead-heading{
-    margin-bottom: 35px;
+    margin-top:15px;
+    margin-bottom:0;
     text-align: center;
+}
+.form_person{
+    margin-top:50px;
+    overflow: hidden;
 }
 .avatar{
     border-radius:5px;
@@ -92,4 +97,8 @@ a:hover{
 .change_password button{
     margin-top:20px;
     margin-bottom:30px;
+}
+
+#loading{
+    text-align: center;
 }

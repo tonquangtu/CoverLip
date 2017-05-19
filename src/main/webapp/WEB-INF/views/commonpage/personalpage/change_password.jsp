@@ -8,7 +8,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<div class="change_password">
+<div class="change_password main_person">
     <div class="subhead">
         <h2 class="subhead-heading">Thay Đổi Mật Khẩu</h2>
     </div>
