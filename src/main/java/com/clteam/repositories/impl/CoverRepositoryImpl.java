@@ -204,5 +204,10 @@ public class CoverRepositoryImpl implements CoverRepository {
         return newCoverList;
     }
 
+    @Override
+    public List<CoverInfoEntity> getListTopCover() {
+        return null;
+    }
+
 
 }

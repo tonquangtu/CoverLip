@@ -2,7 +2,7 @@ package com.clteam.controllers.coverpagecontroller;
 
 import com.clteam.model.Cover;
 import com.clteam.model.TopIdol;
-import com.clteam.services.commonservice.api.HotCoverService;
+import com.clteam.services.commonservice.api.CoverService;
 import com.clteam.services.userservice.api.TopIdolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,7 +20,7 @@ import java.util.Map;
 public class HotCoverPageController {
 
     @Autowired
-    private HotCoverService hotCoverService;
+    private CoverService coverService;
     @Autowired
     private TopIdolService topIdolService;
 
@@ -30,7 +30,7 @@ public class HotCoverPageController {
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();
 
-        List<Cover> hotCoverList = hotCoverService.getListHotCover(-1);
+        List<Cover> hotCoverList = coverService.getListHotCover(-1);
         List<TopIdol> listTopCoverIdols = topIdolService.getListTopCoverIdols(10);
 
         System.out.println(listTopCoverIdols.get(0).getUser().getAccount().getFullname());

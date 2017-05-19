@@ -1,7 +1,7 @@
 package com.clteam.controllers.coverpagecontroller;
 
 import com.clteam.model.Playlist;
-import com.clteam.services.commonservice.api.PlayListCoverService;
+import com.clteam.services.commonservice.api.CoverService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +18,7 @@ import java.util.Map;
 public class PlaylistCoverPageController {
 
     @Autowired
-    PlayListCoverService playListCoverService;
+    CoverService coverService;
 
     @RequestMapping("/playlist")
     public ModelAndView PlaylistCoverPage(){
@@ -26,7 +26,7 @@ public class PlaylistCoverPageController {
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();
 
-        List<Playlist> playlistList = playListCoverService.getListPlayListCover(-1);
+        List<Playlist> playlistList = coverService.getListPlayListCover(-1);
         map.put("playlistList", playlistList);
 
         modelAndView.setViewName("coverpage/playlist_cover_page");

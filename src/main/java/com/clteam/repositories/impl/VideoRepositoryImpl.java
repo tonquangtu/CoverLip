@@ -84,4 +84,23 @@ public class VideoRepositoryImpl implements VideoRepository {
         return criteria.list();
     }
 
+    @Override
+    public List<VideoInfoEntity> getListVideoOfAccountByType(int accountId, int limit, int type, int currentVideoId) {
+        if(accountId<0||type<1||type>3){
+            return null;
+        }
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(VideoInfoEntity.class);
+        criteria.add(Restrictions.eq("accountId", accountId));
+        criteria.add(Restrictions.eq("type", type));
+        if(currentVideoId!=-1) {
+            criteria.add(Restrictions.lt("id", currentVideoId));
+        }
+        criteria.addOrder(Order.desc("id"));
+        if(limit>0){
+            criteria.setMaxResults(limit);
+        }
+        return criteria.list();
+    }
+
 }
