@@ -148,5 +148,19 @@ public class LipSyncRepositoryImpl  implements LipSyncRepository {
         return hotLipSyncEntity;
     }
 
+    @Override
+    public List<HotLipSyncEntity> getHotLipSyncsFrom(int start, int limit) {
+
+        if (limit <= 0) {
+            return null;
+        }
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(HotLipSyncEntity.class);
+        criteria.setMaxResults(limit);
+        criteria.addOrder(Order.desc("priority"));
+        criteria.setMaxResults(limit);
+        return criteria.list();
+    }
+
 
 }

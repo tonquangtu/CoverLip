@@ -20,10 +20,10 @@
                 <div class="singer_video_box">
                     <div class="thumbnail_video_box">
                         <a class="thumbnail_video" href="#"
-                           title="${item.coverName}">
+                           title="${item.videoName}">
                             <span class="icon_play"></span>
-                            <img src="${item.video.videoThumbnailLink}" alt="${item.coverName}"
-                                 title="${item.coverName}">
+                            <img src="${item.video.videoThumbnailLink}" alt="${item.videoName}"
+                                 title="${item.videoName}">
                             <div class="background_one_card"></div>
                         </a>
                     </div>
@@ -49,22 +49,7 @@
                 <span> <img src="../../../resources/icons/icon_view.svg" alt="" class="icon_react">&nbsp;${item.video.numView} </span>
             </li>
         </ul>
-        <%--<div class="facebook">--%>
 
-            <%--<div class="col-md-6">--%>
-                <%--<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/"--%>
-                     <%--data-layout="button" data-action="like" data-size="large"--%>
-                     <%--data-show-faces="false" data-share="false"></div>--%>
-            <%--</div>--%>
-            <%--<div class="col-md-6">--%>
-                <%--<div class="fb-share-button"--%>
-                     <%--data-href="https://developers.facebook.com/docs/plugins/"--%>
-                     <%--data-layout="button" data-size="large" data-mobile-iframe="false"><a--%>
-                        <%--class="fb-xfbml-parse-ignore" target="_blank"--%>
-                        <%--href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-        <%--</div>--%>
         <div style="clear:both;"></div>
     </div>
 </div>

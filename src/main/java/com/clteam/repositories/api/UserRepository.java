@@ -1,5 +1,6 @@
 package com.clteam.repositories.api;
 
+import com.clteam.dataobject.TopLipSyncIdolEntity;
 import com.clteam.dataobject.UserInfoEntity;
 
 import java.util.List;
@@ -22,5 +23,9 @@ public interface UserRepository {
     public UserInfoEntity getUserInfoByAccountId(int accountId);
 
     public void indexTables();
+
+    public List<TopLipSyncIdolEntity> getTopLipSyncIdols(int limit);
+
+
 
 }

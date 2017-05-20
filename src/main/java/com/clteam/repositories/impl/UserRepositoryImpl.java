@@ -1,11 +1,13 @@
 package com.clteam.repositories.impl;
 
-import com.clteam.dataobject.CoverInfoEntity;
-import com.clteam.dataobject.LipSyncTemplateInfoEntity;
-import com.clteam.dataobject.UserInfoEntity;
+import com.clteam.dataobject.*;
+import com.clteam.model.TopList;
 import com.clteam.repositories.api.UserRepository;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import org.hibernate.search.FullTextSession;
 import org.hibernate.search.Search;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +31,15 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     public UserInfoEntity getUserInfoByAccountId(int accountId) {
-        return (UserInfoEntity)sessionFactory.getCurrentSession().createQuery("from UserInfoEntity where accountId="+accountId).list().get(0);
+
+        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(UserInfoEntity.class);
+        criteria.add(Restrictions.eq("accountId", accountId));
+        List<UserInfoEntity> list = criteria.list();
+        if (list != null && list.size() > 0) {
+            return list.get(0);
+        }
+
+        return null;
     }
 
     public UserInfoEntity getUser(int accountId) {
@@ -77,4 +87,29 @@ public class UserRepositoryImpl implements UserRepository {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public List<TopLipSyncIdolEntity> getTopLipSyncIdols(int limit) {
+
+        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(TopListEntity.class);
+        criteria.add(Restrictions.eq("active", TopList.ACTIVE));
+        criteria.add(Restrictions.eq("type", TopList.TOP_LIP_SYNC_IDOL));
+
+        List<TopListEntity> topEntities =  criteria.list();
+        if (topEntities != null && topEntities.size() > 0) {
+            int topId  = topEntities.get(0).getId();
+
+            criteria = sessionFactory.getCurrentSession().createCriteria(TopLipSyncIdolEntity.class);
+            criteria.add(Restrictions.eq("topId", topId));
+            criteria.addOrder(Order.desc("score"));
+            if (limit > 0) {
+                criteria.setMaxResults(limit);
+            }
+
+            return criteria.list();
+        }
+
+        return null;
+    }
+
 }
