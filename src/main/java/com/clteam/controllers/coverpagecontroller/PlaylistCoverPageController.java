@@ -1,4 +1,4 @@
-package com.clteam.controllers.usercontroller;
+package com.clteam.controllers.coverpagecontroller;
 
 import com.clteam.model.Playlist;
 import com.clteam.services.commonservice.api.CoverService;

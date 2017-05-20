@@ -24,10 +24,10 @@
 <content>
     <div id="main_content_playlist" class="container">
         <div id="cover_page" class="container">
-            <img src="/resources/storage/image/normal_image/owner_image/cover_playlist.jpg" height="250px" width="100%">
+            <img src="/resources/storage/image/normal_image/owner_image/top_cover_background.jpg" height="250px" width="100%">
             <div id="title_cover">
                 <h1 style="color: white;">PLAYLIST</h1>
-                <p style="color: white;">Tổng hợp những playlist hay nhất trên thế giới</p>
+                <p style="color: white; font-weight: bold">Tổng hợp những playlist cover hay nhất trên thế giới</p>
             </div>
         </div>
 
@@ -57,24 +57,8 @@
                         <div class="row list_playlist">
                     </c:if>
                     <div class="col-md-3">
-                        <div class="card_playlist" style="background-color: <%= cardColor[(new Random()).nextInt(15)]%>">
-                            <img src="http://${item.playlistThumbnaiLink}" class="avatar_playlist">
-                            <ul class="avatar_cover_list">
-                                <c:forEach var="itemCover" items="${item.items}" varStatus="j" end="4">
-                                    <li><img src="${itemCover.item.video.videoThumbnailLink}"
-                                             class="img-circle img-responsive"></li>
-                                </c:forEach>
-                            </ul>
-                            <div class="info_card_playlist">
-                                <p><strong>${item.numView} view</strong></p>
-                                <h5><strong>${item.playlistName}</strong></h5>
-                                <div class="member_post">
-                                    <img src="/resources/storage/image/thumbnail/owner_thumbnail/avatar1.jpg"
-                                         class="img-circle avatar_member">
-                                    <a href="#">${item.account.fullname}</a>
-                                </div>
-                            </div>
-                        </div>
+                        <c:set var="item" value="${playlistList}" scope="request"/>
+                        <%@include file="../common/playlist_card.jsp"%>
                     </div>
 
                     <c:if test="${i.index % 4 == 3 || i.index == (playlistList.size() - 1)}">

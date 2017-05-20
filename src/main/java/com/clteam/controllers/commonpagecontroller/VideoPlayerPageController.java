@@ -1,4 +1,4 @@
-package com.clteam.controllers.usercontroller;
+package com.clteam.controllers.commonpagecontroller;
 
 import com.clteam.model.*;
 import com.clteam.services.commonservice.api.RecommenderService;
@@ -68,10 +68,10 @@ public class VideoPlayerPageController {
                 map.put("recommendationList", recommendationList);
                 modelAndView.setViewName("commonpage/video_player_page");
             }else {
-                modelAndView.setViewName("common/error");
+                modelAndView.setViewName("commonpage/error_page");
             }
         }catch(Exception e) {
-            modelAndView.setViewName("common/error");
+            modelAndView.setViewName("commonpage/error_page");
             e.printStackTrace();
         }
 
@@ -112,10 +112,10 @@ public class VideoPlayerPageController {
                 map.put("recommendationList", recommendationList);
                 modelAndView.setViewName("commonpage/video_player_page");
             }else {
-                modelAndView.setViewName("common/error");
+                modelAndView.setViewName("commonpage/error_page");
             }
         }catch(Exception e) {
-            modelAndView.setViewName("common/error");
+            modelAndView.setViewName("commonpage/error_page");
             e.printStackTrace();
         }
 

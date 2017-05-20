@@ -1,5 +1,7 @@
 package com.clteam.model;
 
+import java.util.StringTokenizer;
+
 /**
  * Created by Dell on 12-May-17.
  */
@@ -42,5 +44,20 @@ public class VideoWrapper {
 
     public void setMp3Link(String mp3Link) {
         this.mp3Link = mp3Link;
+    }
+
+    public String compactNameVideo(int numWord) {
+        StringBuilder result = new StringBuilder();
+        StringTokenizer stringTokenizer = new StringTokenizer(this.videoName, " ");
+        if (stringTokenizer.countTokens() <= numWord) {
+            return this.videoName;
+        }
+        int count = 0;
+        while (stringTokenizer.hasMoreTokens() && count < numWord) {
+            result.append(stringTokenizer.nextToken()).append(" ");
+            count++;
+        }
+
+        return result.toString().trim() + "...";
     }
 }

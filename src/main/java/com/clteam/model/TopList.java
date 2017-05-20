@@ -1,6 +1,10 @@
 package com.clteam.model;
 
 import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -56,5 +60,24 @@ public class TopList<E> {
 
     public void setItems(List<E> items) {
         this.items = items;
+    }
+
+    public String formatTimestamp(Timestamp timestamp){
+        String date = new SimpleDateFormat("MM/dd/yyyy").format(timestamp);
+        return date;
+    }
+    public int getWeekFromTime(Timestamp timestamp){
+        String format = "dd/MM/yyyy";
+        try {
+            SimpleDateFormat df = new SimpleDateFormat(format);
+            Date date = df.parse(formatTimestamp(timestamp));
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(date);
+
+            return cal.get(Calendar.WEEK_OF_YEAR);
+        } catch (ParseException e) {
+            System.out.println("Could not find a week");
+            return 0;
+        }
     }
 }

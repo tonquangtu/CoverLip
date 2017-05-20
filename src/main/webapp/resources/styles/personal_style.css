@@ -1,0 +1,104 @@
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+.float-left{
+    float:left;
+}
+.float-right{
+    float:right;
+}
+.menu_right{
+    margin-top:3px;
+    margin-bottom: 12px;
+    padding-left: 0;
+    padding-right:0;
+    -moz-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
+    background-color: #fefefe;
+    -moz-border-radius: 2px;
+    border-radius: 5px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+.menu_heading{
+    background: grey;
+    margin: 0;
+    padding: 10px;
+    color: white;
+}
+.menu a{
+    position: relative;
+    display: block;
+    padding: 12px 10px;
+    border-bottom: 1px solid #e1e4e8;
+    color:#3c3c3c;
+}
+.menu a:hover, .selected{
+    color: #1abc9c !important;
+    background:#eaeaea;
+}
+.main_person{
+    -moz-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
+    background-color: #fefefe;
+    -moz-border-radius: 2px;
+    border-radius: 5px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: 3px 0 12px 0;
+    padding: 0 5px 15px 20px;
+}
+.subhead-heading{
+    margin-top:15px;
+    margin-bottom:0;
+    text-align: center;
+}
+.form_person{
+    margin-top:50px;
+    overflow: hidden;
+}
+.avatar{
+    border-radius:5px;
+    width:100%;
+    height:245px;
+}
+.avatar-upload{
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+}
+.avatar-upload label{
+    margin-bottom: 0;
+}
+.avatar-upload label input[type="file"]{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.change_password .form-group{
+    overflow:hidden;
+}
+.change_password .form-group label{
+    text-align:right;
+}
+.change_password button{
+    margin-top:20px;
+    margin-bottom:30px;
+}
+
+#loading{
+    text-align: center;
+}

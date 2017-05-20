@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by Dell on 30-Apr-17.
  */
-public class Cover implements Serializable{
+public class Cover implements Serializable {
 
     public Cover() {
     }
@@ -77,10 +77,10 @@ public class Cover implements Serializable{
                     break;
                 }
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-     //   System.out.println("IsExits: " + isExists);
+        //   System.out.println("IsExits: " + isExists);
         return isExists;
     }
 
@@ -94,8 +94,7 @@ public class Cover implements Serializable{
     }
 
 
-
-    public void  copyData(CoverInfoEntity coverInfoEntity, VideoInfoEntity videoInfoEntity, AccountEntity accountEntity){
+    public void copyData(CoverInfoEntity coverInfoEntity, VideoInfoEntity videoInfoEntity, AccountEntity accountEntity) {
         this.coverName = coverInfoEntity.getCoverName();
         this.mp3Link = coverInfoEntity.getMp3Link();
         this.video = new Video();

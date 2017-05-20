@@ -26,15 +26,15 @@
     <div id="main_content_hot_cover" class="container">
 
         <div id="cover_page" class="container">
-            <img src="/resources/storage/image/normal_image/owner_image/cover_hot.jpg" height="250px" width="100%">
+            <img src="/resources/storage/image/normal_image/owner_image/new_cover.jpg" height="250px" width="100%">
             <div id="title_cover">
-                <h1 style="color: white;">COVER HOT</h1>
-                <p style="color: white;">Tổng hợp những cover hot nhất trên thế giới</p>
+                <h1 style="color: white;">Những bài hit cover mới</h1>
+                <p style="color: white; font-weight: bold;">Chuyên mục được cập nhật vào cuối mỗi tuần.
+                    Đó là những bài hát cover hit mới đang được cộng đồng mạng săn đón.</p>
             </div>
         </div>
 
         <div id="content_page" class="container">
-            <div class="row">
                 <div id="cover_list" class="col-md-9">
 
                     <c:forEach var="item" items="${newCoverList}" varStatus="i">
@@ -70,13 +70,14 @@
 
                     </c:forEach>
                     <div id="addVideo"></div>
-                    <button id="load_more_new_cover" currentVideoId="${newCoverList.get(newCoverList.size() - 1).video.id}" type="button" class="btn btn-success btn-sm hvr-buzz-out" style="text-align: center;">Loadmore</button>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <button id="load_more_new_cover" currentVideoId="${newCoverList.get(newCoverList.size() - 1).video.id}" type="button" class="btn btn-success btn-sm hvr-buzz-out">Loadmore</button>
+                    </div>
                 </div>
                 <div  class="col-md-3 top_cover_idol_layout">
                     <c:set var="listHot" value="${listTopCoverIdols}" scope="request"/>
                     <%@include file="../common/top_idol_card.jsp" %>
                 </div>
-            </div>
         </div>
     </div> <!-- main content -->
 </content>

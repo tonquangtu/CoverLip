@@ -10,4 +10,4 @@
 <script src="https://use.fontawesome.com/479981a8a3.js"></script>
 
 <!--W3 school include module-->
-<script src="https://www.w3schools.com/lib/w3data.js"></script>
+<%--<script src="https://www.w3schools.com/lib/w3data.js"></script>--%>

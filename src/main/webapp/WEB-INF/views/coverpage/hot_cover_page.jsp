@@ -33,7 +33,6 @@
         </div>
 
         <div id="content_page" class="container">
-            <div class="row">
                 <div id="cover_list" class="col-md-9">
 
                         <c:forEach var="item" items="${hotCoverList}" varStatus="i">
@@ -43,6 +42,7 @@
                                         <div class="row item_first">
                                     </c:if>
                                         <div class="col-md-6">
+                                            <c:set var="item" scope="request" value="${item}"/>
                                             <%@ include file="../common/one_card.jsp" %>
                                         </div>
                                      <c:if test="${i.index == 1}">
@@ -73,7 +73,6 @@
                         <c:set var="listHot" value="${listTopCoverIdols}" scope="request"/>
                         <%@include file="../common/top_idol_card.jsp" %>
                 </div>
-            </div>
         </div>
     </div> <!-- main content -->
 </content>

@@ -24,5 +24,5 @@ public interface VideoRepository {
 
     List<VideoInfoEntity> findTopVideoOfAccount(int accountId, int limit);
 
-
+    List<VideoInfoEntity> getListVideoOfAccountByType(int accountId, int limit, int type, int currentVideoId);
 }

@@ -37,7 +37,7 @@ div.one_card.col-md-3:last-child{
 }
 .name_member h2{
 	font-size: 16px;
-	font-weight: bold;
+	/*font-weight: bold;*/
 	margin: 0;
 	line-height: 24px;
 	padding-left: 10px;
@@ -232,7 +232,7 @@ div.one_card.col-md-3:last-child{
 			position: relative;
 		}
         .singer_video_box .info_singer_video_box{
-        	background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
+        	/*background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;*/
 			bottom: 0;
 			right: 0;
 			padding: 3% 0 3% 5%;
@@ -256,7 +256,7 @@ div.one_card.col-md-3:last-child{
 }
 .singer_video_box .info_singer_video_box span{
     font-size: 16px;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 .facebook{
     margin-top: 5px;
@@ -273,4 +273,59 @@ div.one_card.col-md-3:last-child{
 }
 .icon_more_vertical{
     height: 15px;
+}
+
+.background_one_card{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #ffffff;
+    height: 40%;
+    background: -webkit-linear-gradient(top,rgba(0,0,0,1),rgba(15,10,13,0.0));
+    background: -o-linear-gradient(top,rgba(0,0,0,1),rgba(15,10,13,0.0));
+    background: -moz-linear-gradient(top,rgba(0,0,255,1),rgba(0,0,0,.0));
+    background: linear-gradient(to top, rgba(0,0,0,1), rgba(3,2,2,.0));
+}
+.one_card a{
+    color:#3c3c3c !important;
+}
+.one_card .name_member a:hover{
+    text-decoration:none;
+    color: #1ABC9C !important;
+}
+.main_action{
+    z-index: 500;
+    background: white;
+    position: absolute;
+    right: 5px;
+    top: 35px;
+    padding: 5px 0;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 3px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+}
+.main_action ul{
+    padding: 5px 0;
+    list-style: none;
+    margin-bottom: 0;
+}
+.main_action ul li{
+    padding: 7px 25px 7px 15px;
+}
+.main_action ul li:hover{
+    background: #eeeeee;
+}
+.main_action ul li span{
+    border-width: 1px 0;
+    color: #1d2129;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 22px;
+    padding: 0 12px 0 0;
+}
+.main_action ul li:hover span{
+    color: #3c3c3c;
 }

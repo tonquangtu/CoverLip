@@ -17,11 +17,8 @@ $(document).ready(function (){
                 url: urlServer,
                 data: {currentVideoId: currentVideoId, limit: limit},
                 success: function (data) {
-                    // alert(data.length);
                     if (data != null && data.length > 0){
                         currentVideoId = data[data.length - 1].video.id;
-                        alert(currentVideoId);
-                        alert("" + currentVideoId);
                         var string = '';
 
                         $.each(data, function (i, item) {
@@ -36,6 +33,9 @@ $(document).ready(function (){
                             }
                         });
                         $('#addVideo').append(string);
+                    }
+                    else {
+                        $('#load_more_new_cover').hide();
                     }
                 }
             })

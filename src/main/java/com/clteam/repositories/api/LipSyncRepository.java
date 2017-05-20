@@ -27,4 +27,5 @@ public interface LipSyncRepository {
 
      HotLipSyncEntity findHotLipSync(int videoId);
 
+     List<LipSyncInfoEntity> getListLipSyncOfUser(int accountId, int limit, int currentVideoId);
 }

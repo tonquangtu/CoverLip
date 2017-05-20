@@ -21,7 +21,10 @@ public interface TopRepository {
     boolean insertTop(TopListEntity top);
 
     List<TopCoverIdolEntity> getListTopCoverIdols(int limit, int topId);
+
     List<TopListEntity> getAllTop();
-    public TopListEntity getTop(Date date);
+
     public int getMaxTopId();
+
+    TopListEntity getNewTop();
 }

@@ -27,7 +27,6 @@ public class TopRepositoryImpl implements TopRepository{
     @Autowired
     private SessionFactory sessionFactory;
 
-
     public TopListEntity getTop(int topId) {
         return null;
     }
@@ -48,34 +47,20 @@ public class TopRepositoryImpl implements TopRepository{
         return null;
     }
 
+    @Override
+    public TopListEntity getNewTop() {
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(TopListEntity.class);
+        List topListEntity = criteria.addOrder(Order.desc("id")).setMaxResults(1).list();
+        return (TopListEntity) topListEntity.get(0);
+    }
+
     public List<TopCoverIdolEntity> getListTopCoverIdols(int limit, int topId) {
         Session session = sessionFactory.getCurrentSession();
         Criteria criteria = session.createCriteria(TopCoverIdolEntity.class);
         List topCoverIdol = criteria.add(Restrictions.eq("topId", topId)).addOrder(Order.desc("score")).setMaxResults(limit).list();
 
         return topCoverIdol;
-    }
-
-    public TopListEntity getTop(Date date){
-
-        Session session = sessionFactory.getCurrentSession();
-        Criteria criteria = session.createCriteria(TopListEntity.class);
-
-        Criterion begin = Restrictions.lt("timeTopStart", date);
-        Criterion end = Restrictions.gt("timeEndStart", date);
-
-        List<TopListEntity> list = criteria.add(Restrictions.and(begin, end)).list();
-
-        if (list != null){
-
-            if (list.size() > 0){
-
-                TopListEntity topListEntity = list.get(0);
-                return topListEntity;
-            }
-        }
-
-        return null;
     }
 
     public int getMaxTopId(){
