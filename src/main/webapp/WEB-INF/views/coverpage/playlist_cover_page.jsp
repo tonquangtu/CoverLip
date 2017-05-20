@@ -1,8 +1,8 @@
 <%@ page import="java.util.Random" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%! String[] cardColor = {"#33d2b0", "#e62222", "#e68322", "#33ded2", "#ced233", "#8bd233", "#53d233",
-"#33d251", "#33b6d2", "#ad33d2", "#272ece", "bcce13", "#e154ae", "#e6ac22", "#54e182", "#a754e1"};%>
+<%! String[] cardColor = {"#f44336", "#e91e63", "#9c27b0", "#673ab7", "#3f51b5", "#2196f3", "#03a9f4",
+"#009688", "#4caf50", "#8bc34a", "#cddc39", "ffeb3b", "#ffc107", "#ff9800", "#795548", "#9e9e9e"};%>
 <html>
 <head>
     <meta charset="utf-8">
