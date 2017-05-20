@@ -1,5 +1,6 @@
 package com.clteam.security.dto;
 
+import com.clteam.security.util.DateTimeUtil;
 import com.clteam.security.validation.EmailAlreadyExist;
 import com.clteam.security.validation.PasswordMatches;
 import com.clteam.security.validation.ValidEmail;
@@ -32,7 +33,7 @@ public class AccountDto {
 
     private String address;
 
-    private String dateOfBirth;
+    private String dateOfBirth = DateTimeUtil.getRelativeDate(-365*12);
 
     public String getEmail() {
         return email;

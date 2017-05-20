@@ -75,7 +75,7 @@
 
                                 <form:input path="dateOfBirth" id="select-date"
                                        placeholder="Date of birth"
-                                       class="form-control date-readonly" value="" readonly="true"
+                                       class="form-control date-readonly" readonly="true"
                                        type="text" data-provide="datepicker"
                                        data-date-format="dd/mm/yyyy" style="cursor: pointer; background-color: #eee"/>
                             </div>
@@ -210,7 +210,12 @@
         }
 
         $(function () {
-            $('#select-date').datepicker();
+            <c:set value="${365*100}" var="maxAge"/>
+            <c:set value="${365*12 - 1}" var="minAge"/>
+            $('#select-date').datepicker({
+                startDate: '-${maxAge}d',
+                endDate: '-${minAge}d'
+            });
         });
     </script>
 </div>
