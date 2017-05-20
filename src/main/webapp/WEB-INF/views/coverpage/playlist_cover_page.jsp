@@ -8,17 +8,20 @@
 
     <%@include file="../common/common_lib.jsp" %>
 
-    <link rel="stylesheet" href="/resources/styles/main_navigation_style.css">
+    <%--<link rel="stylesheet" href="/resources/styles/main_navigation_style.css">--%>
     <link rel="stylesheet" href="/resources/styles/main_header_style.css">
     <link rel="stylesheet" href="/resources/styles/main_footer_style.css">
     <link rel="stylesheet" type="text/css" href="/resources/styles/card_playlist_cover_style.css">
     <link rel="stylesheet" type="text/css" href="/resources/styles/playlist_cover_page_style.css">
+    <script src="/resources/scripts/main_header_script.js"></script>
 
 </head>
 <body>
+<c:set var="targetPage" scope="request" value="cover_home_page"/>
 <%@include file="../common/main_header.jsp" %>
 
 <content>
+    <div style="height:20px; width: 100%; clear: both"></div>
     <div id="main_content_playlist" class="container">
         <div id="cover_page" class="container">
             <img src="/resources/storage/image/normal_image/owner_image/cover_playlist.jpg" height="250px" width="100%">

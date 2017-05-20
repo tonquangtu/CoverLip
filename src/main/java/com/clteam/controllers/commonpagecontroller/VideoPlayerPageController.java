@@ -123,6 +123,18 @@ public class VideoPlayerPageController {
         return modelAndView;
     }
 
+    @RequestMapping("menu")
+    public ModelAndView testMenu() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("test/menu1");
+        return modelAndView;
+    }
 
 
+    @RequestMapping("menu1")
+    public ModelAndView testMenu1() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("common/main_header");
+        return modelAndView;
+    }
 }

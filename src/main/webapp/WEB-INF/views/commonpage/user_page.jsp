@@ -19,6 +19,7 @@
 
 </head>
 <body>
+<c:set var="targetPage" scope="request" value="cover_home_page"/>
 <%@include file="../common/main_header.jsp" %>
 
 <content>

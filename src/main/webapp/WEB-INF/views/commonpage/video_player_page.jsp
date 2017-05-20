@@ -14,16 +14,19 @@
     <script src="../../../resources/scripts/video_player_script.js"></script>
 
     <!--Play one video style-->
-    <link rel="stylesheet" href="../../../resources/styles/video_player_style.css">
 
-    <link rel="stylesheet" href="../../../resources/styles/main_navigation_style.css">
+    <%--<link rel="stylesheet" href="../../../resources/styles/main_navigation_style.css">--%>
 
     <link rel="stylesheet" href="../../../resources/styles/main_header_style.css">
+
+    <script src="../../../resources/scripts/main_header_script.js"></script>
 
     <link rel="stylesheet" href="../../../resources/styles/main_footer_style.css">
 
     <!--Lib video player-->
     <link rel="stylesheet" href="../../../resources/libs/videoplayer/mediaelementplayer.min.css">
+
+    <link rel="stylesheet" href="../../../resources/styles/video_player_style.css">
 
     <!--Facebook header-->
     <meta property="og:url"           content="http://localhost:63342/CoverLip.com/html/play_one_video_page.html" />
@@ -44,14 +47,16 @@
 
 <%@include file="../common/main_header.jsp"%>
 
+<%--<jsp:directive.include file = "../test/main_header.jsp" />--%>
+
 <div class="content container">
 
-    <div style="height:30px; width: 100%"></div>
+    <div style="height:20px; width: 100%; clear: both"></div>
     <div class="row">
 
         <div class="col-md-8 column-content">
-           <div class="video-content-box box-shadow">
-               <div class="media-wrapper">
+           <div class="video-content-box">
+               <div class="media-wrapper box-shadow">
                    <video id="player1" width="750" height="460">
                        <%--../../..${cover.video.videoLink}--%>
 
@@ -64,69 +69,76 @@
                    </video>
                </div>
 
-               <div class="video-detail-box">
+               <div class="video-detail-box box-shadow">
 
-                   <div class="video-title-box">
-                       <h1><a class="video-title pull-left" href="#">${currItem.videoName}</a></h1>
-                       <ul class="video-counter">
-                           <li class="like-counter-box ">
+                   <div class="video-common-info">
+                       <div class="video-title-box">
+                           <h1><a class="video-title pull-left" href="#">${currItem.videoName}</a></h1>
+                           <ul class="video-counter">
+                               <li class="like-counter-box ">
 
-                               <img class="icon-like" src="../../../resources/icons/icon_like.svg"/>
-                               <span class="like-counter">${currItem.video.numLike}</span>
-                           </li>
+                                   <img class="icon-like" src="../../../resources/icons/icon_like.svg"/>
+                                   <span class="like-counter">${currItem.video.numLike}</span>
+                               </li>
 
-                           <li class="comment-counter-box ">
-                               <img class="icon-comment" src="../../../resources/icons/icon_comment.svg">
-                               <span class="comment-counter">${currItem.video.numComment}</span>
-                           </li>
+                               <li class="comment-counter-box ">
+                                   <img class="icon-comment" src="../../../resources/icons/icon_comment.svg">
+                                   <span class="comment-counter">${currItem.video.numComment}</span>
+                               </li>
 
-                           <li class="view-counter-box ">
-                               <img class="icon-view" src="../../../resources/icons/icon_view.svg">
-                               <span class="view-counter">${currItem.video.numView}</span>
-                           </li>
+                               <li class="view-counter-box ">
+                                   <img class="icon-view" src="../../../resources/icons/icon_view.svg">
+                                   <span class="view-counter">${currItem.video.numView}</span>
+                               </li>
 
-                       </ul>
+                           </ul>
 
-                   </div>
-                   <div class="divider"></div>
-                   <div class="line-horizontal-left">
-                       <div class="video-owner-box pull-left">
-                           <a class="video-owner-thumbnail" style = "background-image: url('${user.account.avatarThumbnail}');" href="#"></a>
-                           <a class="video-owner-name center-vertical" href="#">${currItem.video.account.fullname}</a>
                        </div>
-                   </div>
-                   <div class="time-upload-video pull-right"><span>${currItem.video.periodCreatedForNow()}</span></div>
+                       <div class="divider"></div>
+                       <div class="line-horizontal-left">
+                           <div class="video-owner-box pull-left">
+                               <a class="video-owner-thumbnail" style = "background-image: url('${user.account.avatarThumbnail}');" href="#"></a>
+                               <a class="video-owner-name center-vertical" href="#">${currItem.video.account.fullname}</a>
+                           </div>
+                       </div>
+                       <div class="time-upload-video pull-right"><span>${currItem.video.periodCreatedForNow()}</span></div>
 
-                   <div class="divider"></div>
+                       <div class="divider"></div>
 
-                   <div class="line-horizontal-left btn-group-interact-video">
-                       <button id="btn-follow" class="btn btn-template btn-follow " type="button">Theo dõi Idol</button>
-                       <button class="btn btn-template btn-add-favorite " type= "button">Thêm vào danh sách yêu thích</button>
+                       <div class="line-horizontal-left btn-group-interact-video">
+                           <button id="btn-follow" class="btn btn-template btn-follow " type="button">Theo dõi Idol</button>
+                           <button class="btn btn-template btn-add-favorite " type= "button">Thêm vào danh sách yêu thích</button>
 
-                   </div>
+                       </div>
 
-                   <div class="line-horizontal-right btn-group-interact-video">
+                       <div class="line-horizontal-right btn-group-interact-video">
                        <button class="btn btn-template btn-download " type= "button">Tải về</button>
                        <button class="btn btn-template btn-report " type= "button">Báo cáo vi phạm</button>
                    </div>
-
-                   <div class="fb-like"
-                        data-href="http://localhost:63342/CoverLip.com/html/play_one_video_page.html"
-                        data-width="700"
-                        data-layout="standard"
-                        data-action="like"
-                        data-size="large"
-                        data-show-faces="true"
-                        data-share="true">
                    </div>
+                   <div class="divider"></div>
+                  <div class="fb-like-share-box">
+
+                      <div class="fb-like "
+                           data-href="http://localhost:63342/CoverLip.com/html/play_one_video_page.html"
+                           data-width="700"
+                           data-layout="standard"
+                           data-action="like"
+                           data-size="large"
+                           data-show-faces="true"
+                           data-share="true">
+                      </div>
+                  </div>
 
                </div>
 
-               <h3 class="comment-title center-vertical-content">BÌNH LUẬN</h3>
-               <div class="fb-comments custom-fb-comment"
-                    data-href="http://localhost:63342/CoverLip.com/html/play_one_video_page.html"
-                    data-width="100%"
-                    data-numposts="5">
+               <div class="box-shadow fb-comment-box">
+                   <h3 class="comment-title center-vertical-content">BÌNH LUẬN</h3>
+                   <div class="fb-comments custom-fb-comment"
+                        data-href="http://localhost:63342/CoverLip.com/html/play_one_video_page.html"
+                        data-width="100%"
+                        data-numposts="5">
+                   </div>
                </div>
            </div>
 
@@ -138,9 +150,21 @@
         <!--Start column suggestion-->
         <div class="col-md-4 column-suggestion-video">
 
-            <h3 class="title-box box-shadow">
-                <a class="column-suggestion-title center-vertical-content" href="#" title="Xem tất cả các video liên quan">VIDEO LIÊN QUAN</a>
-            </h3>
+            <%--<h3 class="title-box box-shadow">--%>
+            <div class="title-box box-shadow">
+                <div class="column-suggestion-title center-vertical-content" >Nghe tiếp nào</div>
+
+                <div class="switch-box center-vertical-content">
+                    Auto play
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+
+            </div>
+
+            <%--</h3>--%>
 
             <c:set var="size1" scope="page"/>
 
