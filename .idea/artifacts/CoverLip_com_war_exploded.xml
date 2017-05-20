@@ -62,9 +62,38 @@
           <element id="library" level="project" name="Maven: org.apache.avro:avro:1.6.3" />
           <element id="library" level="project" name="Maven: com.thoughtworks.paranamer:paranamer:2.3" />
           <element id="library" level="project" name="Maven: org.xerial.snappy:snappy-java:1.0.4.1" />
-          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.6.4" />
           <element id="library" level="project" name="Maven: org.apache.lucene:lucene-facet:3.6.2" />
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-search-orm:4.3.0.Final" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:4.2.2.RELEASE" />
+          <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:4.2.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:4.2.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-taglibs:4.2.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-acl:4.2.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.social:spring-social-config:1.1.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.social:spring-social-core:1.1.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.social:spring-social-web:1.1.4.RELEASE" />
+          <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
+          <element id="library" level="project" name="Maven: org.springframework.social:spring-social-security:1.1.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.social:spring-social-facebook:3.0.0.M1" />
+          <element id="library" level="project" name="Maven: org.springframework.social:spring-social-google:1.0.0.RELEASE" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.3.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.3.3" />
+          <element id="library" level="project" name="Maven: org.springframework.social:spring-social-twitter:1.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-crypto:3.2.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.social:spring-social-linkedin:1.0.2.RELEASE" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.8" />
+          <element id="library" level="project" name="Maven: org.passay:passay:1.2.0" />
+          <element id="library" level="project" name="Maven: org.cryptacular:cryptacular:1.2.0" />
+          <element id="library" level="project" name="Maven: org.bouncycastle:bcprov-jdk15on:1.54" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-validator:4.2.0.Final" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.6.1" />
+          <element id="library" level="project" name="Maven: javax.validation:validation-api:1.0.0.GA" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:21.0" />
+          <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.9.3" />
+          <element id="library" level="project" name="Maven: javax.mail:javax.mail-api:1.5.6" />
+          <element id="library" level="project" name="Maven: com.sun.mail:javax.mail:1.5.6" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">

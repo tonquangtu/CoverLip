@@ -110,7 +110,7 @@
                 <div id="user_login_box" class="user-login-box">
 
                     <div class="avatar" style="float: right;">
-                        <a id="btnShowBoxLogin" title="Đăng nhập" rel="nofollow" href="#">Đăng nhập</a> |
+                        <a id="btnShowBoxLogin" title="Đăng nhập" rel="nofollow" href="/login">Đăng nhập</a> |
                         <a title="Upload" rel="nofollow" href="#">Upload</a>
                     </div>
 
