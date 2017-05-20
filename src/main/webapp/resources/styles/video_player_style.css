@@ -413,6 +413,92 @@ a:hover {
     white-space: nowrap;
 }
 
+.btn-view-more-suggestion {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 5px;
+    width: 100%;
+    transition: all 0.5s;
+    cursor: pointer;
+    /*margin: 5px;*/
+}
+
+.btn-view-more-suggestion span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.btn-view-more-suggestion span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    display: block;
+}
+
+.btn-view-more-suggestion:hover span {
+    padding-right: 25px;
+}
+
+.btn-view-more-suggestion:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+/*------------------------------------------------*/
+.btn-collapsed-suggestion {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 5px;
+    width: 100%;
+    transition: all 0.5s;
+    cursor: pointer;
+    /*margin: 5px;*/
+}
+
+.btn-collapsed-suggestion span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.btn-collapsed-suggestion span:before {
+
+    content:"\00ab";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: -20px;
+    transition: 0.5s;
+}
+
+.btn-collapsed-suggestion:hover span {
+    padding-left: 25px;
+}
+
+.btn-collapsed-suggestion:hover span:before {
+    opacity: 1;
+    left: 0;
+}
+
+
+.list-suggestion2 {
+    display: none;
+}
 
 .background1 {
     background: #ffffff;

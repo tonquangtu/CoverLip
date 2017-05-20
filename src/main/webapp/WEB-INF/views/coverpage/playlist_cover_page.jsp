@@ -1,5 +1,8 @@
+<%@ page import="java.util.Random" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%! String[] cardColor = {"#33d2b0", "#e62222", "#e68322", "#33ded2", "#ced233", "#8bd233", "#53d233",
+"#33d251", "#33b6d2", "#ad33d2", "#272ece", "bcce13", "#e154ae", "#e6ac22", "#54e182", "#a754e1"};%>
 <html>
 <head>
     <meta charset="utf-8">
@@ -54,7 +57,7 @@
                         <div class="row list_playlist">
                     </c:if>
                     <div class="col-md-3">
-                        <div class="card_playlist">
+                        <div class="card_playlist" style="background-color: <%= cardColor[(new Random()).nextInt(15)]%>">
                             <img src="http://${item.playlistThumbnaiLink}" class="avatar_playlist">
                             <ul class="avatar_cover_list">
                                 <c:forEach var="itemCover" items="${item.items}" varStatus="j" end="4">
@@ -68,7 +71,7 @@
                                 <div class="member_post">
                                     <img src="/resources/storage/image/thumbnail/owner_thumbnail/avatar1.jpg"
                                          class="img-circle avatar_member">
-                                    <p>${item.account.fullname}</p>
+                                    <a href="#">${item.account.fullname}</a>
                                 </div>
                             </div>
                         </div>

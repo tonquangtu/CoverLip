@@ -3,6 +3,8 @@ package com.clteam.repositories.api;
 import com.clteam.dataobject.TopCoverIdolEntity;
 import com.clteam.dataobject.TopListEntity;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -18,6 +20,8 @@ public interface TopRepository {
 
     boolean insertTop(TopListEntity top);
 
-    List<TopCoverIdolEntity> getListTopCoverIdols(int limit);
+    List<TopCoverIdolEntity> getListTopCoverIdols(int limit, int topId);
     List<TopListEntity> getAllTop();
+    public TopListEntity getTop(Date date);
+    public int getMaxTopId();
 }

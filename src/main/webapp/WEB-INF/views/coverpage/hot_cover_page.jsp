@@ -70,21 +70,6 @@
                         </c:forEach>
                 </div>
                 <div  class="col-md-3 top_cover_idol_layout">
-                    <%--<div id="top_cover_idol">--%>
-                        <%--<h3 id="title_top_cover_idol">TOP COVER IDOL</h3>--%>
-                        <%--<ul>--%>
-                            <%--<c:forEach var="item1" items="${listTopCoverIdols}" varStatus="i">--%>
-                                <%--<li class="item_top_cover_idol">--%>
-                                    <%--<img src="${item1.user.avatarThumbnail}" class="img-circle" alt="top cover idol">--%>
-                                    <%--<div class="idol_info">--%>
-                                        <%--<p><strong>${item1.user.account.fullname}</strong></p>--%>
-                                        <%--<p>${item1.user.numHaveFollowed}</p>--%>
-                                    <%--</div>--%>
-                                    <%--<button type="button" class="btn btn-success btn-sm">Theo doi</button>--%>
-                                <%--</li>--%>
-                            <%--</c:forEach>--%>
-                        <%--</ul>--%>
-                    <%--</div>--%>
                         <c:set var="listHot" value="${listTopCoverIdols}" scope="request"/>
                         <%@include file="../common/top_idol_card.jsp" %>
                 </div>

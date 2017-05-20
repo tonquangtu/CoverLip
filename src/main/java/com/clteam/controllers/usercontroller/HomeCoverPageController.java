@@ -4,6 +4,7 @@ import com.clteam.model.Cover;
 import com.clteam.model.Playlist;
 import com.clteam.model.TopIdol;
 import com.clteam.model.User;
+import com.clteam.services.commonservice.api.CoverService;
 import com.clteam.services.userservice.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,18 +24,14 @@ public class HomeCoverPageController {
     @Autowired
     private UserService userService;
     @Autowired
-    private NewCoverService newCoverService;
-    @Autowired
-    private HotCoverService hotCoverService;
-    @Autowired
     private TopIdolService topIdolService;
     @Autowired
-    private PlayListCoverService playListCoverService;
+    private CoverService coverService;
 
     @RequestMapping("/")
     public ModelAndView visitHomeCoverPage(){
-        List<Cover> newCoverList = newCoverService.getListNewCover(12);
-        List<Cover> hotCoverList = hotCoverService.getListHotCover(12);
+        List<Cover> newCoverList = coverService.getListNewCover(12);
+        List<Cover> hotCoverList = coverService.getListHotCover(12);
         List<TopIdol> topIdolList = topIdolService.getListTopCoverIdols(9);
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();
@@ -42,7 +39,7 @@ public class HomeCoverPageController {
         map.put("newCoverList", newCoverList);
         map.put("hotCoverList", hotCoverList);
         map.put("topIdolList", topIdolList);
-        modelAndView.setViewName("homecoverpage/home_cover_page");
+        modelAndView.setViewName("coverpage/home_cover_page");
         modelAndView.addAllObjects(map);
         return modelAndView;
     }
@@ -52,11 +49,11 @@ public class HomeCoverPageController {
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();
 
-        List<Playlist> playlistList = playListCoverService.getListPlayListCover(-1);
+        List<Playlist> playlistList = coverService.getListPlayListCover(-1);
         List<TopIdol> topIdolList = topIdolService.getListTopCoverIdols(5);
         map.put("hotPlayListCover", playlistList);
         map.put("topIdolList", topIdolList);
-        modelAndView.setViewName("topcoverpage/top_cover_page");
+        modelAndView.setViewName("coverpage/top_cover_page");
         modelAndView.addAllObjects(map);
         return modelAndView;
     }
@@ -66,7 +63,7 @@ public class HomeCoverPageController {
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();
 
-        modelAndView.setViewName("persionalinfomationpage/persional_infomation_page");
+        modelAndView.setViewName("commonpage/persional_infomation_page");
         modelAndView.addAllObjects(map);
         return modelAndView;
     }
@@ -74,8 +71,8 @@ public class HomeCoverPageController {
     public ModelAndView visitUserPage(@PathVariable String idUser){
         int accountId = Integer.parseInt(idUser);
         User user = userService.getUser(accountId);
-        List<Cover> newCoverList = newCoverService.getListNewCover(12);
-        List<Cover> hotCoverList = hotCoverService.getListHotCover(12);
+        List<Cover> newCoverList = coverService.getListNewCover(12);
+        List<Cover> hotCoverList = coverService.getListHotCover(12);
         List<TopIdol> topIdolList = topIdolService.getListTopCoverIdols(5);
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();
@@ -84,7 +81,7 @@ public class HomeCoverPageController {
         map.put("newCoverList", newCoverList);
         map.put("hotCoverList", hotCoverList);
         map.put("topIdolList", topIdolList);
-        modelAndView.setViewName("userpage/user_page");
+        modelAndView.setViewName("commonpage/user_page");
         modelAndView.addAllObjects(map);
         return modelAndView;
     }

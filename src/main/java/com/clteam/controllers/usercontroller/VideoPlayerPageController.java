@@ -66,7 +66,7 @@ public class VideoPlayerPageController {
 
                 map.put("user", user);
                 map.put("recommendationList", recommendationList);
-                modelAndView.setViewName("videoplayerpage/video_player_page");
+                modelAndView.setViewName("commonpage/video_player_page");
             }else {
                 modelAndView.setViewName("common/error");
             }
@@ -110,7 +110,7 @@ public class VideoPlayerPageController {
 
                 map.put("user", user);
                 map.put("recommendationList", recommendationList);
-                modelAndView.setViewName("videoplayerpage/video_player_page");
+                modelAndView.setViewName("commonpage/video_player_page");
             }else {
                 modelAndView.setViewName("common/error");
             }

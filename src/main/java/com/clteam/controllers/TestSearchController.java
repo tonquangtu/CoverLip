@@ -48,7 +48,7 @@ public class TestSearchController {
         Map<String, String> map = new HashMap<>();
         map.put("coverName", coverNames.toString());
         modelAndView.addAllObjects(map);
-        modelAndView.setViewName("test");
+        modelAndView.setViewName("test/test");
         return modelAndView;
 
 
