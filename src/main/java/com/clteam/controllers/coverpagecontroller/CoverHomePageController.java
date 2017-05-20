@@ -17,10 +17,7 @@ import org.springframework.web.util.WebUtils;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Created by nguyenthanhtung on 29/04/2017.
@@ -43,8 +40,16 @@ public class CoverHomePageController {
         List<TopIdol> topIdolList = topIdolService.getListTopCoverIdols(9);
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("newCoverList", newCoverList);
-        map.put("hotCoverList", hotCoverList);
+        List<VideoWrapper> newCoverWrapperList = new ArrayList<>();
+        for(Cover cover:newCoverList){
+            newCoverWrapperList.add(cover.toVideoWrapper());
+        }
+        List<VideoWrapper> hotCoverWrapperList = new ArrayList<>();
+        for(Cover cover:hotCoverList){
+            hotCoverWrapperList.add(cover.toVideoWrapper());
+        }
+        map.put("newCoverList", newCoverWrapperList);
+        map.put("hotCoverList", hotCoverWrapperList);
         map.put("topIdolList", topIdolList);
         modelAndView.setViewName("coverpage/home_cover_page");
         modelAndView.addAllObjects(map);
@@ -73,17 +78,24 @@ public class CoverHomePageController {
         User user = userService.getUser(accountId);
         map.put("userInfo",user);
         //
+
+        List<VideoWrapper> videoWrapperList = new ArrayList<>();
         if(Objects.equals(type, "information")){
 
         }else if(Objects.equals(type, "change-password")){
 
         }else if(Objects.equals(type, "my-cover")){
             List<Cover> coverOfUserList = coverService.getListCoverOfUser(accountId, 6, -1);
-            map.put("videoList", coverOfUserList);
+            for(Cover cover:coverOfUserList){
+                videoWrapperList.add(cover.toVideoWrapper());
+            }
+            map.put("videoList", videoWrapperList);
         }else if(Objects.equals(type, "my-lipsync")){
             List<LipSync> lipSyncOfUserList = videoService.getListLipSyncOfUser(accountId,6,-1);
-            System.out.println(lipSyncOfUserList.size());
-            map.put("videoList", lipSyncOfUserList);
+            for(LipSync lipSync:lipSyncOfUserList){
+                videoWrapperList.add(lipSync.toVideoWrapper());
+            }
+            map.put("videoList", videoWrapperList);
         }else if(Objects.equals(type,"my-playlist")){
 
         }else if(Objects.equals(type, "my-idol")){
@@ -109,20 +121,24 @@ public class CoverHomePageController {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("userInfo", user);
         map.put("type", type);
+        List<VideoWrapper> videoWrapperList = new ArrayList<>();
         if(Objects.equals(type, "cover")){
             List<Cover> coverOfUserList = coverService.getListCoverOfUser(accountId, 4, -1);
             List<TopIdol> topIdolList = topIdolService.getListTopCoverIdols(5);
-            map.put("videoList", coverOfUserList);
+            for(Cover cover:coverOfUserList){
+                videoWrapperList.add(cover.toVideoWrapper());
+            }
+            map.put("videoList", videoWrapperList);
             map.put("topIdolList", topIdolList);
         }else if(Objects.equals(type, "lipsync")){
-
-            //Edit here........
-            List<Cover> lipSyncOfUserList = null;
-            List<TopIdol> topIdolList = null;
-            map.put("videoList", lipSyncOfUserList);
+            List<LipSync> lipSyncOfUserList = videoService.getListLipSyncOfUser(accountId, 4, -1);
+            List<TopIdol> topIdolList = topIdolService.getListTopCoverIdols(5);
+            for(LipSync lipSync:lipSyncOfUserList){
+                videoWrapperList.add(lipSync.toVideoWrapper());
+            }
+            map.put("videoList", videoWrapperList);
             map.put("topIdolList", topIdolList);
         }
-
         modelAndView.setViewName("commonpage/user_page");
         modelAndView.addAllObjects(map);
         return modelAndView;
@@ -130,32 +146,26 @@ public class CoverHomePageController {
 
     @RequestMapping("/user")
     public @ResponseBody
-    List<Cover> getMoreCoverOfUser(@RequestParam String accountId,
+    List<VideoWrapper> getMoreCoverOfUser(@RequestParam String accountId,
                                    @RequestParam String currentVideoId,
                                    @RequestParam String limit,
                                    @RequestParam String type) {
         int accountIdx = Integer.parseInt(accountId);
         int currentVideoIdx = Integer.parseInt(currentVideoId);
         int limitx = Integer.parseInt(limit);
-
+        List<VideoWrapper> videoWrapperList = new ArrayList<>();
         if(Objects.equals(type, "cover")){
             List<Cover> coverOfUserList = coverService.getListCoverOfUser(accountIdx, limitx,currentVideoIdx);
-            return coverOfUserList;
-        }
-        return null;
-    }
-    @RequestMapping("/user")
-    public @ResponseBody List<LipSync> getMoreLipSyncOfUser(@RequestParam String accountId,
-                                     @RequestParam String currentVideoId,
-                                     @RequestParam String limit,
-                                     @RequestParam String type){
-        int accountIdx = Integer.parseInt(accountId);
-        int currentVideoIdx = Integer.parseInt(currentVideoId);
-        int limitx = Integer.parseInt(limit);
-        if(Objects.equals(type, "lipsync")){
+            for(Cover cover:coverOfUserList){
+                videoWrapperList.add(cover.toVideoWrapper());
+            }
+        }else if(Objects.equals(type, "lipsync")){
             List<LipSync> lipSyncOfUserList = videoService.getListLipSyncOfUser(accountIdx, limitx, currentVideoIdx);
-            return lipSyncOfUserList;
+            for(LipSync lipSync:lipSyncOfUserList){
+                videoWrapperList.add(lipSync.toVideoWrapper());
+            }
         }
-        return null;
+
+        return videoWrapperList;
     }
 }

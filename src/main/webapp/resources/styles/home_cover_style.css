@@ -26,9 +26,10 @@ a, a:hover{
     width: 5%;
 }
 .carousel-caption {
-    right: 65%;
-    left: 5%;
+    right: 60%;
+    left: 6%;
     top: 15%;
+    text-align: left;
 }
 .carousel-caption .banner-button{
     height: 36px;

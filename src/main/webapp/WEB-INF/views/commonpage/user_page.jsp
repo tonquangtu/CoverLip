@@ -70,6 +70,7 @@
             <div style="clear:both; margin-bottom:20px;"></div>
 
             <div style="overflow:hidden">
+
                 <div id="addHistoryFeed" class="col-md-8" style="padding-right:5px; padding-left:0;">
                     <!-- Main-->
                     <c:forEach var="item" items="${videoList}" varStatus="i" end="3">
@@ -79,6 +80,7 @@
                         <div class="col-md-6" style="padding-right:20px; padding-left:0">
                             <c:set var="item" value="${item}" scope="request"/>
                             <%@include file="../common/one_card.jsp" %>
+
                         </div>
                         <c:if test="${i.index%2==1||((i.index==videoList.size()-1)&&i.index%2==0)}">
                             </div>
@@ -108,7 +110,9 @@
             </div>
             <div id="addVideo"></div>
 
-            <div id="loading" currentvideoid="${(videoList!=null&&videoList.size()>0)?videoList.get(videoList.size()-1).video.id:0}" type="${type}" accountid="${userInfo.account.id}">
+            <div id="loading"
+                 currentvideoid="${(videoList!=null&&videoList.size()>0)?videoList.get(videoList.size()-1).video.id:0}"
+                 type="${type}" accountid="${userInfo.account.id}">
                 <span><img class="loadicon" src="../../../resources/icons/loadding.svg" style="width:50px"></span>
                 <span>Đang tải dữ liệu...</span>
             </div>
