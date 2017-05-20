@@ -83,18 +83,18 @@
             </li>
             <li>
                 <div class="left-nav-content-main">
-                    <i class="glyphicon glyphicon-cog fa"></i> Quản lý lộ trình <span
+                    <i class="glyphicon glyphicon-cog fa"></i> Quản lý Cover <span
                         class="glyphicon glyphicon-chevron-down gl-right"></span>
                 </div>
                 <ul class="child-menu">
-                    <li class=""><a href="#">Danh sách lộ trình</a></li>
+                    <li class=""><a href="#">Danh sách Cover</a></li>
                     <li><a href="#">Dashboard 1</a></li>
                     <li><a href="#">Dashboard 1</a></li>
                 </ul>
             </li>
             <li>
                 <div class="left-nav-content-main">
-                    <i class="glyphicon glyphicon-cog fa"></i> Quản lý lịch chạy <span
+                    <i class="glyphicon glyphicon-cog fa"></i> Quản lý Lipsync <span
                         class="glyphicon glyphicon-chevron-down gl-right"></span>
                 </div>
                 <ul class="child-menu">
@@ -104,22 +104,22 @@
             </li>
             <li>
                 <div class="left-nav-content-main">
-                    <i class="glyphicon glyphicon-cog fa"></i> Quản lý tài xế <span
+                    <i class="glyphicon glyphicon-cog fa"></i> Quản lý danh sách phát <span
                         class="glyphicon glyphicon-chevron-down gl-right"></span>
                 </div>
                 <ul class="child-menu">
-                    <li class=""><a href="#">Danh sách tài xế</a></li>
+                    <li class=""><a href="#">Danh sách các danh sách phát</a></li>
                     <li><a href="#">Dashboard 1</a></li>
                     <li><a href="#">Dashboard 1</a></li>
                 </ul>
             </li>
             <li>
                 <div class="left-nav-content-main">
-                    <i class="glyphicon glyphicon-cog fa"></i> Quản lý xe <span
+                    <i class="glyphicon glyphicon-cog fa"></i> Quản lý người đăng <span
                         class="glyphicon glyphicon-chevron-down gl-right"></span>
                 </div>
                 <ul class="child-menu">
-                    <li class=""><a href="#">Danh sách xe</a></li>
+                    <li class=""><a href="#">Danh sách người đăng </a></li>
                     <li><a href="#">Dashboard 1</a></li>
                     <li><a href="#">Dashboard 1</a></li>
                     <li><a href="#">Dashboard 1</a></li>
@@ -132,7 +132,7 @@
                         class="glyphicon glyphicon-chevron-down gl-right"></span>
                 </div>
                 <ul class="child-menu">
-                    <li class=""><a href="#">Thống kê doanh thu</a></li>
+                    <li class=""><a href="#">Thống kê lượt xem </a></li>
                     <li><a href="#">Dashboard 1</a></li>
                     <li><a href="#">Dashboard 1</a></li>
                 </ul>

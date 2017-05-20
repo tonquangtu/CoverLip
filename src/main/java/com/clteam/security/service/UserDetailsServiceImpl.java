@@ -46,8 +46,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         int role = accountEntity.getRole();
         if (role == Constant.ROLE_ADMIN_INT) {
             grantedAuthorities.add(new SimpleGrantedAuthority(Constant.ROLE_ADMIN_STR));
+        } else if (role == Constant.ROLE_USER_INT) {
+            grantedAuthorities.add(new SimpleGrantedAuthority(Constant.ROLE_USER_STR));
         }
-        grantedAuthorities.add(new SimpleGrantedAuthority(Constant.ROLE_USER_STR));
         return new CustomUser(accountEntity.getUsername(), accountEntity.getPassword(), grantedAuthorities, accountEntity.getFullname());
     }
 

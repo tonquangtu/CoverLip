@@ -16,7 +16,7 @@ public class SocialLoginController {
 
     @GetMapping("/profile")
     public String profile() {
-        return "common/afterLoginFacebook";
+        return "redirect:/user";
     }
 
 }

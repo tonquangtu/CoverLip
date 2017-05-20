@@ -10,19 +10,19 @@ import java.util.Collection;
  */
 public class CustomSocialUser extends SocialUser {
 
-    private String fullName;
+    private String name;
 
-    public CustomSocialUser(String username, String password, Collection<? extends GrantedAuthority> authorities, String fullName) {
+    public CustomSocialUser(String username, String password, Collection<? extends GrantedAuthority> authorities, String name) {
         super(username, password, authorities);
-        this.fullName = fullName;
+        this.name = name;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getName() {
+        return name;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setName(String name) {
+        this.name = name;
     }
 
 }
