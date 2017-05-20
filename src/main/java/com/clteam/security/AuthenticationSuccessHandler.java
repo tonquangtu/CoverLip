@@ -1,7 +1,7 @@
 package com.clteam.security;
 
 
-import com.clteam.security.constant.Constant;
+import com.clteam.security.constant.SecurityConstant;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -32,7 +32,7 @@ public class AuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccess
             session.setMaxInactiveInterval(20 * 60);
         }
         Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
-        boolean authorized = authorities.contains(new SimpleGrantedAuthority(Constant.ROLE_ADMIN_STR));
+        boolean authorized = authorities.contains(new SimpleGrantedAuthority(SecurityConstant.ROLE_ADMIN_STR));
         if (authorized) {
             setDefaultTargetUrl("/admin");
         } else {

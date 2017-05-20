@@ -3,8 +3,8 @@ package com.clteam.security.service;
 import com.clteam.dataobject.AccountEntity;
 import com.clteam.dataobject.UserInfoEntity;
 import com.clteam.dataobject.VerificationTokenEntity;
-import com.clteam.security.constant.Constant;
-import com.clteam.security.constant.Token;
+import com.clteam.security.constant.SecurityConstant;
+import com.clteam.security.constant.ActivateAccountToken;
 import com.clteam.security.dto.AccountDto;
 import com.clteam.security.repository.AccountSecurityRepository;
 import com.clteam.security.repository.SignUpRepository;
@@ -38,8 +38,8 @@ public class SignUpServiceImpl implements SignUpService {
         accountEntity.setUsername(accountDto.getEmail());
         accountEntity.setPassword(passwordEncoder.encode(accountDto.getPassword()));
         accountEntity.setFullname(accountDto.getFullName());
-        accountEntity.setRole((byte) Constant.ROLE_USER_INT);
-        accountEntity.setState((byte) Constant.ACCOUNT_NON_ACTIVATED);
+        accountEntity.setRole((byte) SecurityConstant.ROLE_USER_INT);
+        accountEntity.setState((byte) SecurityConstant.ACCOUNT_NON_ACTIVATED);
         accountEntity.setDateJoin(DateTimeUtil.getCurrentTime());
         int accountId = accountSecurityRepository.saveAccountEntity(accountEntity);
 
@@ -69,20 +69,20 @@ public class SignUpServiceImpl implements SignUpService {
     }
 
     @Override
-    public Token validateVerificationToken(String token) {
+    public ActivateAccountToken validateVerificationToken(String token) {
         final VerificationTokenEntity verificationToken = signUpRepository.findByToken(token);
         if (verificationToken == null) {
-            return Token.TOKEN_INVALID;
+            return ActivateAccountToken.TOKEN_INVALID;
         }
         final AccountEntity account = verificationToken.getAccountByAccountId();
         final Calendar cal = Calendar.getInstance();
         if ((verificationToken.getExpiryDate().getTime() - cal.getTime().getTime()) <= 0) {
             signUpRepository.delete(verificationToken);
-            return Token.TOKEN_EXPIRED;
+            return ActivateAccountToken.TOKEN_EXPIRED;
         }
-        account.setState((byte) Constant.ACCOUNT_ACTIVATED);
+        account.setState((byte) SecurityConstant.ACCOUNT_ACTIVATED);
         signUpRepository.saveAccountEntity(account);
-        return Token.TOKEN_VALID;
+        return ActivateAccountToken.TOKEN_VALID;
     }
 
 }

@@ -1,11 +1,10 @@
 package com.clteam.security.controller;
 
 import com.clteam.dataobject.AccountEntity;
-import com.clteam.security.constant.Token;
+import com.clteam.security.constant.ActivateAccountToken;
 import com.clteam.security.dto.AccountDto;
 import com.clteam.security.listener.OnRegistrationCompleteEvent;
 import com.clteam.security.service.SignUpService;
-import com.clteam.security.util.DateTimeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Controller;
@@ -61,10 +60,10 @@ public class SignUpController {
 
     @GetMapping("/registrationConfirm")
     public String registrationConfirm(@RequestParam("token") final String token, Model model) {
-        Token result = signUpService.validateVerificationToken(token);
-        if (result == Token.TOKEN_VALID) {
+        ActivateAccountToken result = signUpService.validateVerificationToken(token);
+        if (result == ActivateAccountToken.TOKEN_VALID) {
             model.addAttribute("status", "token valid");
-        } else if (result == Token.TOKEN_EXPIRED) {
+        } else if (result == ActivateAccountToken.TOKEN_EXPIRED) {
             model.addAttribute("status", "token expired");
         } else {
             model.addAttribute("status", "token invalid");

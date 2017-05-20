@@ -1,7 +1,7 @@
 package com.clteam.security.service;
 
 import com.clteam.dataobject.AccountEntity;
-import com.clteam.security.constant.Constant;
+import com.clteam.security.constant.SecurityConstant;
 import com.clteam.security.model.CustomUser;
 import com.clteam.security.repository.AccountSecurityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,10 +42,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         // }
 
         int role = accountEntity.getRole();
-        if (role == Constant.ROLE_ADMIN_INT) {
-            grantedAuthorities.add(new SimpleGrantedAuthority(Constant.ROLE_ADMIN_STR));
-        } else if (role == Constant.ROLE_USER_INT) {
-            grantedAuthorities.add(new SimpleGrantedAuthority(Constant.ROLE_USER_STR));
+        if (role == SecurityConstant.ROLE_ADMIN_INT) {
+            grantedAuthorities.add(new SimpleGrantedAuthority(SecurityConstant.ROLE_ADMIN_STR));
+        } else if (role == SecurityConstant.ROLE_USER_INT) {
+            grantedAuthorities.add(new SimpleGrantedAuthority(SecurityConstant.ROLE_USER_STR));
         }
         return new CustomUser(accountEntity.getUsername(), accountEntity.getPassword(), grantedAuthorities, accountEntity.getFullname());
     }

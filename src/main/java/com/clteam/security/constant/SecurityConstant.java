@@ -3,7 +3,7 @@ package com.clteam.security.constant;
 /**
  * Created by Khanh Nguyen on 12/5/2017.
  */
-public final class Constant {
+public final class SecurityConstant {
 
     public static final String ROLE_ADMIN_STR = "ROLE_ADMIN";
     public static final String ROLE_USER_STR = "ROLE_USER";

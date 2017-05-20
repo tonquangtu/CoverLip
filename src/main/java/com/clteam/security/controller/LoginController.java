@@ -1,6 +1,6 @@
 package com.clteam.security.controller;
 
-import com.clteam.security.constant.Constant;
+import com.clteam.security.constant.SecurityConstant;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -27,7 +27,7 @@ public class LoginController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (!(auth instanceof AnonymousAuthenticationToken)) {
             Collection<? extends GrantedAuthority> authorities = auth.getAuthorities();
-            boolean authorized = authorities.contains(new SimpleGrantedAuthority(Constant.ROLE_ADMIN_STR));
+            boolean authorized = authorities.contains(new SimpleGrantedAuthority(SecurityConstant.ROLE_ADMIN_STR));
             if (authorized) {
                 return "redirect:/admin";
             } else {
