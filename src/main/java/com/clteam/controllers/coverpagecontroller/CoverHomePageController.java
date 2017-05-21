@@ -109,24 +109,53 @@ public class CoverHomePageController {
 
         } else if (Objects.equals(type, "my-cover")) {
             List<Cover> coverOfUserList = coverService.getListCoverOfUser(accountId, 6, -1);
-            for (Cover cover : coverOfUserList) {
-                videoWrapperList.add(cover.toVideoWrapper());
+            if (coverOfUserList == null) {
+                modelAndView.setViewName("commonpage/error_page");
+            } else {
+                for (Cover cover : coverOfUserList) {
+                    videoWrapperList.add(cover.toVideoWrapper());
+                }
+                map.put("videoList", videoWrapperList);
+                modelAndView.setViewName("commonpage/personal_page");
             }
-            map.put("videoList", videoWrapperList);
+
         } else if (Objects.equals(type, "my-lipsync")) {
             List<LipSync> lipSyncOfUserList = videoService.getListLipSyncOfUser(accountId, 6, -1);
-            for (LipSync lipSync : lipSyncOfUserList) {
-                videoWrapperList.add(lipSync.toVideoWrapper());
+            if (lipSyncOfUserList == null) {
+                modelAndView.setViewName("commonpage/error_page");
+            } else {
+                for (LipSync lipSync : lipSyncOfUserList) {
+                    videoWrapperList.add(lipSync.toVideoWrapper());
+                }
+                map.put("videoList", videoWrapperList);
+                modelAndView.setViewName("commonpage/personal_page");
             }
-            map.put("videoList", videoWrapperList);
         } else if (Objects.equals(type, "my-playlist")) {
-
+            List<Playlist> playlistList = coverService.getListPlaylistOfUser(accountId, 3, -1);
+            if (playlistList == null) {
+                modelAndView.setViewName("commonpage/error_page");
+            } else {
+                map.put("playlistList", playlistList);
+                modelAndView.setViewName("commonpage/personal_page");
+            }
         } else if (Objects.equals(type, "my-idol")) {
-
+            FollowingList userList = userService.getIdolOfUser(accountId, 3, -1);
+            if (userList == null) {
+                modelAndView.setViewName("commonpage/error_page");
+            } else {
+                map.put("idolList", userList.getFollowings());
+                modelAndView.setViewName("commonpage/personal_page");
+            }
         } else if (Objects.equals(type, "my-fan")) {
-
+            FollowingList userList = userService.getFanOfUser(accountId, 3, -1);
+            if (userList == null) {
+                modelAndView.setViewName("commonpage/error_page");
+            } else {
+                map.put("fanList", userList.getFollowings());
+                modelAndView.setViewName("commonpage/personal_page");
+            }
         }
-        modelAndView.setViewName("commonpage/personal_page");
+
         modelAndView.addAllObjects(map);
         return modelAndView;
     }
@@ -161,6 +190,11 @@ public class CoverHomePageController {
             }
             map.put("videoList", videoWrapperList);
             map.put("topIdolList", topIdolList);
+        } else if (Objects.equals(type, "playlist")) {
+            List<Playlist> playlistList = coverService.getListPlaylistOfUser(accountId, 2, -1);
+            List<TopIdol> topIdolList = topIdolService.getListTopCoverIdols(5);
+            map.put("playlistList", playlistList);
+            map.put("topIdolList", topIdolList);
         }
         modelAndView.setViewName("commonpage/user_page");
         modelAndView.addAllObjects(map);
@@ -169,26 +203,36 @@ public class CoverHomePageController {
 
     @RequestMapping("/user")
     public @ResponseBody
-    List<VideoWrapper> getMoreCoverOfUser(@RequestParam String accountId,
-                                          @RequestParam String currentVideoId,
-                                          @RequestParam String limit,
-                                          @RequestParam String type) {
+    List getMoreCoverOfUser(@RequestParam String accountId,
+                            @RequestParam String currentItemId,
+                            @RequestParam String limit,
+                            @RequestParam String type) {
         int accountIdx = Integer.parseInt(accountId);
-        int currentVideoIdx = Integer.parseInt(currentVideoId);
+        int currentItemIdx = Integer.parseInt(currentItemId);
         int limitx = Integer.parseInt(limit);
         List<VideoWrapper> videoWrapperList = new ArrayList<>();
         if (Objects.equals(type, "cover")) {
-            List<Cover> coverOfUserList = coverService.getListCoverOfUser(accountIdx, limitx, currentVideoIdx);
+            List<Cover> coverOfUserList = coverService.getListCoverOfUser(accountIdx, limitx, currentItemIdx);
             for (Cover cover : coverOfUserList) {
                 videoWrapperList.add(cover.toVideoWrapper());
             }
+            return videoWrapperList;
         } else if (Objects.equals(type, "lipsync")) {
-            List<LipSync> lipSyncOfUserList = videoService.getListLipSyncOfUser(accountIdx, limitx, currentVideoIdx);
+            List<LipSync> lipSyncOfUserList = videoService.getListLipSyncOfUser(accountIdx, limitx, currentItemIdx);
             for (LipSync lipSync : lipSyncOfUserList) {
                 videoWrapperList.add(lipSync.toVideoWrapper());
             }
+            return videoWrapperList;
+        } else if (Objects.equals(type, "playlist")) {
+            return coverService.getListPlaylistOfUser(accountIdx, limitx, currentItemIdx);
+        } else if (Objects.equals(type, "idol")) {
+            FollowingList userList = userService.getIdolOfUser(accountIdx, limitx, currentItemIdx);
+            return userList.getFollowings();
+        } else if (Objects.equals(type, "fan")) {
+            FollowingList userList = userService.getFanOfUser(accountIdx, limitx, currentItemIdx);
+            return userList.getFollowings();
         }
-
-        return videoWrapperList;
+        return null;
     }
+
 }

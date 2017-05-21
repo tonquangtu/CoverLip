@@ -1,5 +1,6 @@
 package com.clteam.services.userservice.api;
 
+import com.clteam.model.FollowingList;
 import com.clteam.model.User;
 
 /**
@@ -11,4 +12,6 @@ public interface UserService {
 
     public User getUser(int accountId);
 
+    FollowingList getIdolOfUser(int accountId, int limit, int currentIdolFollowingId);
+    FollowingList getFanOfUser(int accountId, int limit, int currentIdolFollowingId);
 }

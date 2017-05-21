@@ -9,6 +9,7 @@
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -16,15 +17,15 @@
     <%@ include file="../common/common_lib.jsp" %>
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="../../../resources/styles/main_navigation_style.css"/>
     <link rel="stylesheet" href="../../../resources/styles/main_header_style.css"/>
     <link rel="stylesheet" href="../../../resources/styles/main_footer_style.css"/>
     <link rel="stylesheet" href="../../../resources/styles/one_card_style.css">
+    <link rel="stylesheet" href="../../../resources/styles/card_playlist_cover_style.css">
     <link rel="stylesheet" href="../../../resources/styles/personal_style.css">
 
     <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
     <script src = "../../../resources/scripts/one_card_script.js"></script>
-    <script src="../../../resources/scripts/user_script.js"></script>
+    <script src="../../../resources/scripts/more_item_script.js"></script>
     <script type="text/javascript" src="../../../resources/scripts/personal_script.js"></script>
 
 </head>
@@ -33,6 +34,7 @@
 <%@include file="../common/main_header.jsp" %>
 
 <content>
+    <div style="height:20px; width: 100%; clear: both"></div>
     <div class="container">
         <div class="">
             <div class="col-md-3 float-left menu_right" role="navigation">
@@ -74,15 +76,21 @@
                         <%@include file="personalpage/my_lipsync.jsp"%>
                     </c:when>
                     <c:when test="${type.equals('my-playlist')}">
-                        <c:set var="playList" scope="request" value="${playList}"/>
+                        <c:set var="playlistList" scope="request" value="${playlistList}"/>
                         <c:set var="type" scope="request" value="${type.substring(3)}"/>
                         <c:set var="userInfo" scope="request" value="${userInfo}"/>
                         <%@include file="personalpage/my_playlist.jsp"%>
                     </c:when>
                     <c:when test="${type.equals('my-idol')}">
+                        <c:set var="idolList" scope="request" value="${idolList}"/>
+                        <c:set var="type" scope="request" value="${type.substring(3)}"/>
+                        <c:set var="userInfo" scope="request" value="${userInfo}"/>
                         <%@include file="personalpage/my_idol.jsp"%>
                     </c:when>
                     <c:when test="${type.equals('my-fan')}">
+                        <c:set var="fanList" scope="request" value="${fanList}"/>
+                        <c:set var="type" scope="request" value="${type.substring(3)}"/>
+                        <c:set var="userInfo" scope="request" value="${userInfo}"/>
                         <%@include file="personalpage/my_fan.jsp"%>
                     </c:when>
                     <c:otherwise>

@@ -276,7 +276,7 @@
                 <div class="top_idol">
                     <div class="col-md-3">
                         <div class="one_member text-center subject"
-                             style="padding-bottom:10px;box-shadow:unset;border-top-right-radius: 32px;">
+                             style="padding-bottom:10px;">
                             <a href="">
                                 <div class="avatar">
                                     <img src="${topIdolList.get(0).user.account.avatarThumbnail}"

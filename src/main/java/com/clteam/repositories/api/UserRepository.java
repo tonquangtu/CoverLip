@@ -1,5 +1,6 @@
 package com.clteam.repositories.api;
 
+import com.clteam.dataobject.IdolFollowingEntity;
 import com.clteam.dataobject.UserInfoEntity;
 
 import java.util.List;
@@ -23,4 +24,9 @@ public interface UserRepository {
 
     public void indexTables();
 
+    List<IdolFollowingEntity> getListIdolOfUser(int accountId, int limit, int currentIdolFollowingId);
+
+    List<IdolFollowingEntity> getListFanOfUser(int accountId, int limit, int currentIdolFollowingId);
+
+    int getIdolFollowingIdFromAccountId(int accountId, int followedAccountId);
 }

@@ -16,7 +16,7 @@
         <dl class="form-group float-right col-md-4">
             <dt><label>Ảnh Đại Diện</label></dt>
             <dd class="" style="padding:0; width:100%;">
-                <img alt="" class="avatar"
+                <img alt="" class="avatar_person"
                      src="${userInfo.account.avatarThumbnail}">
                 <div class="btn btn-success avatar-upload">
                     <label>
