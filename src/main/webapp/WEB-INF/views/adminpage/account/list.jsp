@@ -18,6 +18,7 @@
             $("#success-msg").delay(2000).slideUp(1000);
         });
     </script>
+    <link rel="stylesheet" href="/resources/styles/admin/admin_account.css">
 </head>
 <body>
 
@@ -30,7 +31,7 @@
                 <div id="creator-subheader">
                     <div class="creator-subheader-content">
                         <h2>Danh sách tài khoản</h2>
-                        <span id="creator-subheader-item-count" class="badge-creator">100</span>
+                        <span id="creator-subheader-item-count" class="badge-creator" style="display: none;">100</span>
                     </div>
                     <div class="creator-subheader-controls">
                         <form action="" method="GET">
@@ -86,12 +87,17 @@
                                     </ul>
                                 </div></th>-->
                         <th>#</th>
-                        <th>Email</th>
+                        <th>Username</th>
                         <th>Tên</th>
-                        <th>Số điện thoại</th>
-                        <th>Địa chỉ</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                        <th>Ngày sinh</th>
+                        <th>Trạng thái</th>
+                        <th>Ngày tham gia</th>
+                        <th>Ảnh đại diện</th>
+                        <th>Luợt theo dõi</th>
+                        <th>Số bài cover</th>
+                        <th>Tổng số Lipsync</th>
+                        <th>Tổng số playlist</th>
+                        <th>Mô tả</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -130,19 +136,27 @@
                                                 <li><a href="javascript:void(0)">Delete</a></li>
                                                 <li><a href="user-detail.html">View Detail</a></li>
                                             </ul>
-                                        </div></td>-->                                    <c:set var="count" value="${count + 1}"/>
-
+                                        </div></td>-->
+                                    <c:set var="count" value="${count + 1}"/>
                                     <td>${count}</td>
                                     <td>${user.account.username}</td>
                                     <td>${user.account.fullname}</td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>${user.dateOfBirth}</td>
+                                    <td>${user.account.state == 1 ? 'Đã kích hoạt' : 'Chưa kích hoạt'}</td>
+                                    <td>${user.account.dateJoin}</td>
+                                    <td class="text-center"><img src="${user.account.coverImage}" alt="Không có ảnh" class="cover-image"></td>
+                                    <td>${user.numHaveFollowed}</td>
+                                    <td>${user.numCover}</td>
+                                    <td>${user.numLipsync}</td>
+                                    <td>${user.numPlaylist}</td>
+                                    <td>${user.description}</td>
                                         <%--<td><a href="<c:url value="/admin/account/edit"/>"><span class="glyphicon glyphicon-pencil"></span></a></td>--%>
                                         <%--<td><a href="<c:url value="/admin/account/delete"/>"><span class="glyphicon glyphicon-trash"></span></a></td>--%>
                                 </tr>
                             </c:forEach>
                         </c:otherwise>
                     </c:choose>
+
                     </tbody>
                 </table>
                 <div>

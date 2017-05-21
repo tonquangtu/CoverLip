@@ -37,4 +37,9 @@ public class LoginController {
         return "common/login";
     }
 
+    @GetMapping("/non-activate")
+    public String accountNonActivate() {
+        return "common/account_non_activate";
+    }
+
 }

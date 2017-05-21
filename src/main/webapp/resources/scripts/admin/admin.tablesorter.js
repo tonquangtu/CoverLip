@@ -17,9 +17,9 @@ $(function () {
             filter_reset: '.reset'
         }
     });
-    $(".tablesorter thead tr:nth-child(2) td:nth-child(1) input, .tablesorter thead tr:nth-child(2) td:nth-child(3) input")
-        .prop("disabled", true)
-        .attr("placeholder", "Disabled")
-        .css("background-color", "#ccc");
+    // $(".tablesorter thead tr:nth-child(2) td:nth-child(1) input, .tablesorter thead tr:nth-child(2) td:nth-child(3) input")
+    //     .prop("disabled", true)
+    //     .attr("placeholder", "Disabled")
+    //     .css("background-color", "#ccc");
 
 });

@@ -11,10 +11,12 @@ import java.util.Set;
 public class CustomUser extends User {
 
     private String name;
+    private byte state;
 
-    public CustomUser(String username, String password, Set<GrantedAuthority> grantedAuthorities, String name) {
+    public CustomUser(String username, String password, Set<GrantedAuthority> grantedAuthorities, String name, byte state) {
         super(username, password, grantedAuthorities);
         this.name = name;
+        this.state = state;
     }
 
     public String getName() {
@@ -23,5 +25,13 @@ public class CustomUser extends User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public byte getState() {
+        return state;
+    }
+
+    public void setState(byte state) {
+        this.state = state;
     }
 }

@@ -16,6 +16,9 @@ public final class SecurityConstant {
     public static final byte ACCOUNT_ACTIVATED = (byte) 1;
     public static final byte ACCOUNT_NON_ACTIVATED = (byte) 0;
 
+    public static final int ACCOUNT_ACTIVATED_INT =  1;
+    public static final int ACCOUNT_NON_ACTIVATED_INT =  0;
+
     public static final byte ROLE_ADMIN_BYTE = (byte) 1;
     public static final byte ROLE_USER_BYTE = (byte) 2;
     public static final byte ROLE_FB_USER_BYTE = (byte) 3;

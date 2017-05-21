@@ -56,7 +56,8 @@ public class MySocialUserDetailsService implements SocialUserDetailsService {
         }
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
         grantedAuthorities.add(new SimpleGrantedAuthority(SecurityConstant.ROLE_USER_STR));
-        return new CustomSocialUser(String.valueOf(accountEntity.getId()), "", grantedAuthorities, accountEntity.getFullname());
+        return new CustomSocialUser(String.valueOf(accountEntity.getId()), "",
+                grantedAuthorities, accountEntity.getFullname(), accountEntity.getState());
     }
 
 }
