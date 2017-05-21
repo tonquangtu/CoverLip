@@ -29,8 +29,13 @@ public class DataSeedingListener implements ApplicationListener<ContextRefreshed
 //        insertAccount("admin@gmail.com",
 //                "Abc@1234",
 //                "Khanh Nguyen",
-//                (byte) Constant.ROLE_ADMIN_INT,
-//                (byte) Constant.ACCOUNT_ACTIVATED);
+//                (byte) SecurityConstant.ROLE_ADMIN_BYTE,
+//                (byte) SecurityConstant.ACCOUNT_ACTIVATED);
+//        insertAccount("normal@gmail.com",
+//                "Abc@1234",
+//                "Khanh Nguyen",
+//                (byte) SecurityConstant.ROLE_USER_BYTE,
+//                (byte) SecurityConstant.ACCOUNT_ACTIVATED);
     }
 
     private void insertAccount(String email, String pwd, String fullName, byte role, byte status) {
