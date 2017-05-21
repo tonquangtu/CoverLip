@@ -2,35 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0b42ca8-e3c9-41fc-bfaa-36ce203b6f1e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/playlist_card.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/more_item_script.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/CoverHomePageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/CoverHomePageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/IdolFollowingEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/IdolFollowingEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/PlaylistRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/PlaylistRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/UserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/UserRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/PlaylistRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/PlaylistRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/UserRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/UserRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/api/CoverService.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/api/CoverService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/CoverServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/CoverServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/api/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/api/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personal_page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personal_page.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/information.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/information.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/my_cover.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/my_cover.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/my_fan.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/my_fan.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/my_idol.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/my_idol.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/my_lipsync.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/my_lipsync.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/my_playlist.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/my_playlist.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/user_page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/user_page.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/coverpage/home_cover_page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/coverpage/home_cover_page.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/coverpage/playlist_cover_page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/coverpage/playlist_cover_page.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/coverpage/top_cover_page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/coverpage/top_cover_page.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/user_script.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/user_script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/home_cover_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/home_cover_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/one_card_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/one_card_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/personal_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/personal_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/user_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/user_style.css" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -148,7 +120,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/my_idol.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="251">
-              <caret line="25" column="25" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="32" selection-end-column="22" />
+              <caret line="25" column="25" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="32" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -160,7 +132,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/my_fan.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="50">
-              <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+              <caret line="27" column="30" lean-forward="false" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -185,7 +157,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="749">
-              <caret line="80" column="38" lean-forward="true" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
+              <caret line="80" column="38" lean-forward="false" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
               <folding>
                 <element signature="method#getUser#0;class#UserServiceImpl#0" expanded="false" />
               </folding>
@@ -216,21 +188,21 @@
       <file leaf-file-name="more_item_script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/more_item_script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="29" column="59" lean-forward="false" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
+            <state relative-caret-position="20">
+              <caret line="26" column="36" lean-forward="false" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
               <folding>
                 <element signature="e#7053#9462#0" expanded="false" />
                 <element signature="e#9503#10475#0" expanded="false" />
                 <element signature="e#10999#11216#0" expanded="false" />
-                <marker date="1495345105684" expanded="true" signature="1664:1699" ph="..." />
-                <marker date="1495345105684" expanded="true" signature="1811:1845" ph="..." />
-                <marker date="1495345105684" expanded="true" signature="3894:3929" ph="..." />
-                <marker date="1495345105684" expanded="true" signature="4041:4075" ph="..." />
-                <marker date="1495345105684" expanded="true" signature="6117:6152" ph="..." />
-                <marker date="1495345105684" expanded="true" signature="8803:8809" ph="&amp;nbsp;" />
-                <marker date="1495345105684" expanded="true" signature="9070:9076" ph="&amp;nbsp;" />
-                <marker date="1495345105684" expanded="true" signature="9277:9283" ph="&amp;nbsp;" />
-                <marker date="1495345105684" expanded="true" signature="9389:9400" ph="..." />
+                <marker date="1495351854127" expanded="true" signature="1664:1699" ph="..." />
+                <marker date="1495351854127" expanded="true" signature="1811:1845" ph="..." />
+                <marker date="1495351854127" expanded="true" signature="3894:3929" ph="..." />
+                <marker date="1495351854127" expanded="true" signature="4041:4075" ph="..." />
+                <marker date="1495351854127" expanded="true" signature="6117:6152" ph="..." />
+                <marker date="1495351854127" expanded="true" signature="8803:8809" ph="&amp;nbsp;" />
+                <marker date="1495351854127" expanded="true" signature="9070:9076" ph="&amp;nbsp;" />
+                <marker date="1495351854127" expanded="true" signature="9277:9283" ph="&amp;nbsp;" />
+                <marker date="1495351854127" expanded="true" signature="9389:9400" ph="..." />
               </folding>
             </state>
           </provider>
@@ -255,7 +227,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/user_page.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="167">
-              <caret line="145" column="122" lean-forward="true" selection-start-line="145" selection-start-column="122" selection-end-line="145" selection-end-column="122" />
+              <caret line="145" column="122" lean-forward="false" selection-start-line="145" selection-start-column="122" selection-end-line="145" selection-end-column="122" />
               <folding>
                 <element signature="n#c:forEach#0;n#jsp:root#0;n#!!top" expanded="false" />
               </folding>
@@ -2161,7 +2133,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="607251000" />
+    <option name="totallyTimeSpent" value="608945000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2174,7 +2146,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2600,7 +2571,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/user_page.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
-          <caret line="145" column="122" lean-forward="true" selection-start-line="145" selection-start-column="122" selection-end-line="145" selection-end-column="122" />
+          <caret line="145" column="122" lean-forward="false" selection-start-line="145" selection-start-column="122" selection-end-line="145" selection-end-column="122" />
           <folding>
             <element signature="n#c:forEach#0;n#jsp:root#0;n#!!top" expanded="false" />
           </folding>
@@ -2650,7 +2621,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/my_idol.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
-          <caret line="25" column="25" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="32" selection-end-column="22" />
+          <caret line="25" column="25" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="32" selection-end-column="22" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
@@ -2673,7 +2644,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/my_fan.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
-          <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+          <caret line="27" column="30" lean-forward="false" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
@@ -2711,7 +2682,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="749">
-          <caret line="80" column="38" lean-forward="true" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
+          <caret line="80" column="38" lean-forward="false" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
           <folding>
             <element signature="method#getUser#0;class#UserServiceImpl#0" expanded="false" />
           </folding>
@@ -2731,21 +2702,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/scripts/more_item_script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="29" column="59" lean-forward="false" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
+        <state relative-caret-position="20">
+          <caret line="26" column="36" lean-forward="false" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
           <folding>
             <element signature="e#7053#9462#0" expanded="false" />
             <element signature="e#9503#10475#0" expanded="false" />
             <element signature="e#10999#11216#0" expanded="false" />
-            <marker date="1495345105684" expanded="true" signature="1664:1699" ph="..." />
-            <marker date="1495345105684" expanded="true" signature="1811:1845" ph="..." />
-            <marker date="1495345105684" expanded="true" signature="3894:3929" ph="..." />
-            <marker date="1495345105684" expanded="true" signature="4041:4075" ph="..." />
-            <marker date="1495345105684" expanded="true" signature="6117:6152" ph="..." />
-            <marker date="1495345105684" expanded="true" signature="8803:8809" ph="&amp;nbsp;" />
-            <marker date="1495345105684" expanded="true" signature="9070:9076" ph="&amp;nbsp;" />
-            <marker date="1495345105684" expanded="true" signature="9277:9283" ph="&amp;nbsp;" />
-            <marker date="1495345105684" expanded="true" signature="9389:9400" ph="..." />
+            <marker date="1495351854127" expanded="true" signature="1664:1699" ph="..." />
+            <marker date="1495351854127" expanded="true" signature="1811:1845" ph="..." />
+            <marker date="1495351854127" expanded="true" signature="3894:3929" ph="..." />
+            <marker date="1495351854127" expanded="true" signature="4041:4075" ph="..." />
+            <marker date="1495351854127" expanded="true" signature="6117:6152" ph="..." />
+            <marker date="1495351854127" expanded="true" signature="8803:8809" ph="&amp;nbsp;" />
+            <marker date="1495351854127" expanded="true" signature="9070:9076" ph="&amp;nbsp;" />
+            <marker date="1495351854127" expanded="true" signature="9277:9283" ph="&amp;nbsp;" />
+            <marker date="1495351854127" expanded="true" signature="9389:9400" ph="..." />
           </folding>
         </state>
       </provider>
