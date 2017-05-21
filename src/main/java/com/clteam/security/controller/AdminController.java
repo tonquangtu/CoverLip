@@ -17,4 +17,9 @@ public class AdminController {
         return "redirect:/admin/account/list";
     }
 
+//    @GetMapping("/account/list")
+//    public String list() {
+//        return "adminpage/account/list";
+//    }
+
 }

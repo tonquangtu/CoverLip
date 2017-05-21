@@ -104,48 +104,88 @@
                     <!--<th><input type="text" class="form-control" placeholder="Email" ></th>-->
                     <!--<th><input type="text" class="form-control" placeholder="Address"></th>-->
 
-                    <c:if test="${empty requestScope.userList}">
-                        <h3>Danh sách tài khoản rỗng</h3>
-                    </c:if>
-                    <c:if test="${not empty requestScope.userList}">
-                        <c:set var="count" value="0" scope="page" />
-                        <c:forEach items="${requestScope.userList}" var="user">
-                            <tr>
-                                <!--
-                                <td><input type="checkbox" name="selected[]" value="">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-default select-action">Action</button>
-                                        <button type="button"
-                                            class="btn btn-default dropdown-toggle caret-action"
-                                            data-toggle="dropdown">
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="javascript:void(0)">Delete</a></li>
-                                            <li><a href="user-detail.html">View Detail</a></li>
-                                        </ul>
-                                    </div></td>-->
-                                <c:set var="count" value="${count + 1}" scope="page" />
-                                <td>${count}</td>
-                                <td>${user.account.username}</td>
-                                <td>${user.account.fullname}</td>
-                                <td></td>
-                                <td></td>
-                                <%--<td><a href="<c:url value="/admin/account/edit"/>"><span class="glyphicon glyphicon-pencil"></span></a></td>--%>
-                                <%--<td><a href="<c:url value="/admin/account/delete"/>"><span class="glyphicon glyphicon-trash"></span></a></td>--%>
-                            </tr>
-                        </c:forEach>
-                    </c:if>
+                    <c:choose>
+                        <c:when test="${empty requestScope.pagingUser}">
+                            <h3>Danh sách tài khoản rỗng</h3>
+                        </c:when>
+                        <c:otherwise>
+                            <c:if test="${not empty param.page}">
+                                <c:set var="count" value="${(param.page - 1) * (pagingUser.maxRecordPerPage)}" scope="page" />
+                            </c:if>
+                            <c:if test="${empty param.page}">
+                                <c:set var="count" value="${0}" scope="page"/>
+                            </c:if>
+                            <c:forEach items="${requestScope.pagingUser.resultList}" var="user">
+                                <tr>
+                                    <!--
+                                    <td><input type="checkbox" name="selected[]" value="">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default select-action">Action</button>
+                                            <button type="button"
+                                                class="btn btn-default dropdown-toggle caret-action"
+                                                data-toggle="dropdown">
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="javascript:void(0)">Delete</a></li>
+                                                <li><a href="user-detail.html">View Detail</a></li>
+                                            </ul>
+                                        </div></td>-->                                    <c:set var="count" value="${count + 1}"/>
+
+                                    <td>${count}</td>
+                                    <td>${user.account.username}</td>
+                                    <td>${user.account.fullname}</td>
+                                    <td></td>
+                                    <td></td>
+                                        <%--<td><a href="<c:url value="/admin/account/edit"/>"><span class="glyphicon glyphicon-pencil"></span></a></td>--%>
+                                        <%--<td><a href="<c:url value="/admin/account/delete"/>"><span class="glyphicon glyphicon-trash"></span></a></td>--%>
+                                </tr>
+                            </c:forEach>
+                        </c:otherwise>
+                    </c:choose>
                     </tbody>
                 </table>
                 <div>
-                    <ul class="pagination pull-right">
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li class="disabled"><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                    </ul>
+                    <div class="pull-right">
+                        <div class="pagination">
+                            <c:if test="${not empty param.page}">
+                                <c:set var="currentPage" value="${param.page}"/>
+                            </c:if>
+                            <c:if test="${empty param.page}">
+                                <c:set var="currentPage" value="${1}"/>
+                            </c:if>
+
+                            <c:if test="${currentPage > 1}">
+                                <c:url var="firstPageUrl" value="/admin/account/list">
+                                    <c:param name="page" value="1"/>
+                                </c:url>
+                                <a href="${firstPageUrl}">Đầu</a>
+                                <c:url var="previousPageUrl" value="/admin/account/list">
+                                    <c:param name="page" value="${currentPage - 1}"/>
+                                </c:url>
+                                <a href="${previousPageUrl}">&laquo;</a>
+                            </c:if>
+
+                            <c:forEach items="${pagingUser.indexPageList}" var="indexPage">
+                                <c:url var="currentUrl" value="/admin/account/list">
+                                    <c:param name="page" value="${indexPage}"/>
+                                </c:url>
+                                <a href="${currentUrl}" class="${indexPage == currentPage ? 'active' : ''}">${indexPage}</a>
+                            </c:forEach>
+
+                            <c:set var="lastPage" value="${pagingUser.totalPage}"/>
+                            <c:if test="${currentPage < lastPage}">
+                                <c:url var="lastPageUrl" value="/admin/account/list">
+                                    <c:param name="page" value="${lastPage}"/>
+                                </c:url>
+                                <c:url var="nextPageUrl" value="/admin/account/list">
+                                    <c:param name="page" value="${currentPage + 1}"/>
+                                </c:url>
+                                <a href="${nextPageUrl}">&raquo;</a>
+                                <a href="${lastPageUrl}">Cuối</a>
+                            </c:if>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 package com.clteam.security.repository;
 
 import com.clteam.dataobject.AccountEntity;
+import com.clteam.model.User;
 import com.clteam.security.constant.SecurityConstant;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
@@ -25,6 +26,16 @@ public class AdminAccountRepositoryImpl implements AdminAccountRepository {
                 .createQuery("from AccountEntity where role=:role")
                 .setParameter("role", SecurityConstant.ROLE_USER_BYTE)
                 .list();
+    }
+
+    @Override
+    public Query getQuery() {
+        return sessionFactory
+                .getCurrentSession()
+                .createQuery("select new " + User.class.getName() +
+                        "(a)" +
+                        " from AccountEntity a where role=:role")
+                .setParameter("role", SecurityConstant.ROLE_USER_BYTE);
     }
 
 }

@@ -1,6 +1,7 @@
 package com.clteam.security.repository;
 
 import com.clteam.dataobject.AccountEntity;
+import org.hibernate.Query;
 
 import java.util.List;
 
@@ -10,5 +11,7 @@ import java.util.List;
 public interface AdminAccountRepository {
 
     public List<AccountEntity> findAll();
+
+    public Query getQuery();
 
 }

@@ -4,6 +4,7 @@ import com.clteam.dataobject.AccountEntity;
 import com.clteam.dataobject.UserInfoEntity;
 
 import java.sql.Timestamp;
+import java.util.Collection;
 
 /**
  * Created by Dell on 30-Apr-17.
@@ -25,6 +26,19 @@ public class User {
     private String description;
 
     private Account account;
+
+    public User() {
+    }
+
+    public User(AccountEntity accountEntity) {
+        Collection<UserInfoEntity> userInfoEntity = accountEntity.getUserInfosById();
+        if (userInfoEntity != null && !userInfoEntity.isEmpty()) {
+            copyData(userInfoEntity.iterator().next(), accountEntity);
+        } else {
+            account = new Account();
+            account.copyData(accountEntity);
+        }
+    }
 
     public int getNumHaveFollowed() {
         return numHaveFollowed;

@@ -1,6 +1,7 @@
 package com.clteam.security.service;
 
 import com.clteam.model.User;
+import com.clteam.security.util.PaginationUtil;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,5 +13,7 @@ import java.util.List;
 public interface AdminAccountService {
 
     List<User> findAllUser();
+
+    PaginationUtil<User> pagingUser(int currentPage);
 
 }

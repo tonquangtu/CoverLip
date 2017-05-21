@@ -4,6 +4,7 @@ import com.clteam.dataobject.AccountEntity;
 import com.clteam.dataobject.UserInfoEntity;
 import com.clteam.model.User;
 import com.clteam.security.repository.AdminAccountRepository;
+import com.clteam.security.util.PaginationUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -35,6 +36,11 @@ public class AdminAccountServiceImpl implements AdminAccountService {
             listUser.add(u);
         }
         return listUser;
+    }
+
+    @Override
+    public PaginationUtil<User> pagingUser(int currentPage) {
+        return new PaginationUtil<User>(adminAccountRepository.getQuery(), currentPage);
     }
 
 }
