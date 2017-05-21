@@ -67,7 +67,7 @@ public class TopList<E> {
         return date;
     }
     public int getWeekFromTime(Timestamp timestamp){
-        String format = "MM/dd/yyyy";
+        String format = "dd/MM/yyyy";
         try {
             SimpleDateFormat df = new SimpleDateFormat(format);
             Date date = df.parse(formatTimestamp(timestamp));
