@@ -1,5 +1,6 @@
 package com.clteam.security;
 
+import com.clteam.security.constant.SecurityConstant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -74,8 +75,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .and()
                 //Authorize request
                 .authorizeRequests()
-                .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers("/user/**").hasRole("USER")
+                .antMatchers("/admin/**").hasRole(SecurityConstant.ADMIN)
+                .antMatchers("/user/**").hasRole(SecurityConstant.USER)
         .and()
                 .exceptionHandling().accessDeniedPage("/403")
         .and()

@@ -104,12 +104,12 @@
                     <!--<th><input type="text" class="form-control" placeholder="Email" ></th>-->
                     <!--<th><input type="text" class="form-control" placeholder="Address"></th>-->
 
-                    <c:if test="${empty requestScope.accountList}">
+                    <c:if test="${empty requestScope.userList}">
                         <h3>Danh sách tài khoản rỗng</h3>
                     </c:if>
-                    <c:if test="${not empty requestScope.accountList}">
+                    <c:if test="${not empty requestScope.userList}">
                         <c:set var="count" value="0" scope="page" />
-                        <c:forEach items="${requestScope.accountList}" var="account">
+                        <c:forEach items="${requestScope.userList}" var="user">
                             <tr>
                                 <!--
                                 <td><input type="checkbox" name="selected[]" value="">
@@ -127,12 +127,12 @@
                                     </div></td>-->
                                 <c:set var="count" value="${count + 1}" scope="page" />
                                 <td>${count}</td>
-                                <td>${account.email}</td>
-                                <td>${account.name}</td>
-                                <td>${account.phoneNumber}</td>
-                                <td>${account.address}</td>
-                                <td><a href="<c:url value="/admin/account/${account.accountId}/edit"/>"><span class="glyphicon glyphicon-pencil"></span></a></td>
-                                <td><a href="<c:url value="/admin/account/${account.accountId}/delete"/>"><span class="glyphicon glyphicon-trash"></span></a></td>
+                                <td>${user.account.username}</td>
+                                <td>${user.account.fullname}</td>
+                                <td></td>
+                                <td></td>
+                                <%--<td><a href="<c:url value="/admin/account/edit"/>"><span class="glyphicon glyphicon-pencil"></span></a></td>--%>
+                                <%--<td><a href="<c:url value="/admin/account/delete"/>"><span class="glyphicon glyphicon-trash"></span></a></td>--%>
                             </tr>
                         </c:forEach>
                     </c:if>

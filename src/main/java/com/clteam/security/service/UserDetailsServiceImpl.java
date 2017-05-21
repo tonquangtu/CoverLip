@@ -41,10 +41,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         // grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
         // }
 
-        int role = accountEntity.getRole();
-        if (role == SecurityConstant.ROLE_ADMIN_INT) {
+        byte role = accountEntity.getRole();
+        if (role == SecurityConstant.ROLE_ADMIN_BYTE) {
             grantedAuthorities.add(new SimpleGrantedAuthority(SecurityConstant.ROLE_ADMIN_STR));
-        } else if (role == SecurityConstant.ROLE_USER_INT) {
+        } else if (role == SecurityConstant.ROLE_USER_BYTE) {
             grantedAuthorities.add(new SimpleGrantedAuthority(SecurityConstant.ROLE_USER_STR));
         }
         return new CustomUser(accountEntity.getUsername(), accountEntity.getPassword(), grantedAuthorities, accountEntity.getFullname());

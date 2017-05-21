@@ -25,18 +25,20 @@ public class AuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccess
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         System.out.println("### login success handler");
         HttpSession session = request.getSession();
-        if (session != null ) {
-            // System.out.println("### set timeout for session, default is: " + session.getMaxInactiveInterval());
-            // set timeout for session (unit: seconds), default timeout is 30 minutes (1800 seconds)
-            // set timeout = 20 minutes
-            session.setMaxInactiveInterval(20 * 60);
-        }
+//        if (session != null ) {
+//            // System.out.println("### set timeout for session, default is: " + session.getMaxInactiveInterval());
+//            // set timeout for session (unit: seconds), default timeout is 30 minutes (1800 seconds)
+//            // set timeout = 20 minutes
+//            session.setMaxInactiveInterval(20 * 60);
+//        }
         Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
         boolean authorized = authorities.contains(new SimpleGrantedAuthority(SecurityConstant.ROLE_ADMIN_STR));
         if (authorized) {
-            setDefaultTargetUrl("/admin");
+            setDefaultTargetUrl(SecurityConstant.TARGET_ADMIN_URL);
+            session.setMaxInactiveInterval(SecurityConstant.ADMIN_SESSION_TIMEOUT);
         } else {
-            setDefaultTargetUrl("/user");
+            setDefaultTargetUrl(SecurityConstant.TARGET_USER_URL);
+            session.setMaxInactiveInterval(SecurityConstant.USER_SESSION_TIMEOUT);
         }
         super.onAuthenticationSuccess(request, response, authentication);
     }

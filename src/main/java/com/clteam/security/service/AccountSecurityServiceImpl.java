@@ -2,6 +2,7 @@ package com.clteam.security.service;
 
 import com.clteam.dataobject.AccountEntity;
 import com.clteam.dataobject.UserInfoEntity;
+import com.clteam.security.constant.SecurityConstant;
 import com.clteam.security.repository.AccountSecurityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.social.connect.Connection;
@@ -64,8 +65,8 @@ public class AccountSecurityServiceImpl implements AccountSecurityService {
                 newAccount.setUsername(userProfile.getEmail());
                 newAccount.setPassword("");
                 newAccount.setFullname(userProfile.getFirstName() + " " + userProfile.getLastName());
-                newAccount.setState((byte) 1);
-                newAccount.setRole((byte) 1);
+                newAccount.setState(SecurityConstant.ACCOUNT_NON_ACTIVATED);
+                newAccount.setRole(SecurityConstant.ROLE_USER_BYTE);
                 newAccount.setDateJoin(new Timestamp(new Date().getTime()));
                 saveAccountEntity(newAccount);
                 return userRepository.findByEmail(newAccount.getUsername());

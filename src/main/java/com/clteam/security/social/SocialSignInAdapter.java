@@ -1,5 +1,6 @@
 package com.clteam.security.social;
 
+import com.clteam.security.constant.SecurityConstant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -23,7 +24,10 @@ public class SocialSignInAdapter implements SignInAdapter {
         System.out.println("### Sign In adapter");
         UserDetails userDetails = userDetailsService.loadUserByUsername(connection.getDisplayName());
         System.out.println("### conn display name: " + connection.getDisplayName());
-        SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(connection.getDisplayName(), null, Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"))));
+        SecurityContextHolder.getContext().setAuthentication(
+                new UsernamePasswordAuthenticationToken(connection.getDisplayName(),
+                        null,
+                        Arrays.asList(new SimpleGrantedAuthority(SecurityConstant.ROLE_USER_STR))));
         return null;
     }
 }

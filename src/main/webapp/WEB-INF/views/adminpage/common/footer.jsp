@@ -25,4 +25,4 @@
     }
 
 </script>
-<script src="resources/scripts/admin/admin.js"></script>
+<script src="/resources/scripts/admin/admin.js"></script>

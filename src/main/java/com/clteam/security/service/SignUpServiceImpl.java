@@ -38,8 +38,8 @@ public class SignUpServiceImpl implements SignUpService {
         accountEntity.setUsername(accountDto.getEmail());
         accountEntity.setPassword(passwordEncoder.encode(accountDto.getPassword()));
         accountEntity.setFullname(accountDto.getFullName());
-        accountEntity.setRole((byte) SecurityConstant.ROLE_USER_INT);
-        accountEntity.setState((byte) SecurityConstant.ACCOUNT_NON_ACTIVATED);
+        accountEntity.setRole(SecurityConstant.ROLE_USER_BYTE);
+        accountEntity.setState(SecurityConstant.ACCOUNT_NON_ACTIVATED);
         accountEntity.setDateJoin(DateTimeUtil.getCurrentTime());
         int accountId = accountSecurityRepository.saveAccountEntity(accountEntity);
 
@@ -80,7 +80,7 @@ public class SignUpServiceImpl implements SignUpService {
             signUpRepository.delete(verificationToken);
             return ActivateAccountToken.TOKEN_EXPIRED;
         }
-        account.setState((byte) SecurityConstant.ACCOUNT_ACTIVATED);
+        account.setState(SecurityConstant.ACCOUNT_ACTIVATED);
         signUpRepository.saveAccountEntity(account);
         return ActivateAccountToken.TOKEN_VALID;
     }

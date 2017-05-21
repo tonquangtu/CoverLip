@@ -23,7 +23,7 @@
     <div class="admin pull-right flex">
         <div class="admin-name">
             <img class="img-circle"
-                 src="resources/icons/profile.jpg"
+                 src="/resources/icons/profile.jpg"
                  alt="null"> <span>${fullName} <i
                 class="glyphicon glyphicon-chevron-down" style="font-size: 10px;"></i></span>
         </div>
@@ -57,7 +57,7 @@
     <div class="profile">
         <div class="profile-pic">
             <img class="img-circle profile-image"
-                 src="resources/icons/profile.jpg"
+                 src="/resources/icons/profile.jpg"
                  alt="null">
         </div>
         <div class="profile-info">

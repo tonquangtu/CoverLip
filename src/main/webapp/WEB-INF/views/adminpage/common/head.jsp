@@ -35,9 +35,9 @@
 <script src="http://www.w3schools.com/lib/w3data.js"></script>
 <!-- Add my css -->
 <link rel="stylesheet"
-      href="resources/styles/admin/common.css">
+      href="/resources/styles/admin/common.css">
 <link rel="stylesheet"
-      href="resources/styles/admin/admin.css">
+      href="/resources/styles/admin/admin.css">
 <!-- fullscreen mode -->
 <script
-        src="resources/scripts/admin/jquery.fullscreen-min.js"></script>
+        src="/resources/scripts/admin/jquery.fullscreen-min.js"></script>
