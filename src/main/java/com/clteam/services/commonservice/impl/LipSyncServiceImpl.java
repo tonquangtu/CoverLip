@@ -40,8 +40,25 @@ public class LipSyncServiceImpl implements LipSyncService{
     @Override
     public List<LipSync> getHotLipSyncs(int limit) {
 
-        List<LipSync> hotLipSyncs = new ArrayList<>();
         List<HotLipSyncEntity> hotLipSyncEntities = lipSyncRepo.getLimitHotLipSync(limit);
+        return toLipSyncs(hotLipSyncEntities);
+    }
+
+    @Override
+    public List<LipSync> getHotLipSyncsFrom(int startId, int limit) {
+
+        List<LipSync> hotLipSyncs = new ArrayList<>();
+        if (limit > 30 || limit <= 0) {
+            return hotLipSyncs;
+        }
+
+        List<HotLipSyncEntity> hotLipSyncEntities = lipSyncRepo.getHotLipSyncsFrom(startId, limit);
+        return toLipSyncs(hotLipSyncEntities);
+    }
+
+    public List<LipSync> toLipSyncs(List<HotLipSyncEntity> hotLipSyncEntities) {
+
+        List<LipSync> hotLipSyncs = new ArrayList<>();
         if (hotLipSyncEntities != null && hotLipSyncEntities.size() > 0) {
 
             for(HotLipSyncEntity hotLipSyncEntity : hotLipSyncEntities) {
@@ -53,16 +70,6 @@ public class LipSyncServiceImpl implements LipSyncService{
             }
         }
         return hotLipSyncs;
-    }
-
-    @Override
-    public List<LipSync> getHotLipSyncsFrom(int start, int limit) {
-
-
-
-
-
-        return null;
     }
 
 

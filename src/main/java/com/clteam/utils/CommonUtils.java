@@ -39,4 +39,22 @@ public class CommonUtils {
         aString = StringToEnglish.removeAccent(aString);
         return aString;
     }
+
+    public static String[] splitString(String aString) {
+
+        aString = standardSearchString(aString);
+        if (aString != null) {
+            return aString.split(" ");
+        }
+        return null;
+    }
+
+    public static String transformToSluxSearch(String aString) {
+
+        aString = standardSearchString(aString);
+        if (aString != null) {
+            return aString.replaceAll("-", " ");
+        }
+        return "";
+    }
 }

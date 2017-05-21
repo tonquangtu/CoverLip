@@ -1,5 +1,8 @@
 package com.clteam.model;
 
+import com.clteam.dataconstant.DataConstant;
+import com.clteam.utils.CommonUtils;
+
 import java.util.StringTokenizer;
 
 /**
@@ -60,4 +63,24 @@ public class VideoWrapper {
 
         return result.toString().trim() + " ...";
     }
+
+    public String getFullVideoLink(String subBaseUrl) {
+        String fullLink = DataConstant.BASE_URL + subBaseUrl + "/";
+        try {
+
+            String newOwnerName = CommonUtils.transformToSluxSearch(video.getAccount().getFullname());
+            String newVideoName = CommonUtils.transformToSluxSearch(videoName);
+
+            fullLink += newOwnerName + "-" + newVideoName + "/" + video.getId();
+
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return fullLink;
+    }
+
+
+
+
 }

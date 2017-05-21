@@ -127,7 +127,6 @@ public class LipSyncRepositoryImpl  implements LipSyncRepository {
         }
         Session session = sessionFactory.getCurrentSession();
         Criteria criteria = session.createCriteria(HotLipSyncEntity.class);
-        criteria.setMaxResults(limit);
         criteria.addOrder(Order.desc("priority"));
         criteria.setMaxResults(limit);
         return criteria.list();
@@ -149,16 +148,32 @@ public class LipSyncRepositoryImpl  implements LipSyncRepository {
     }
 
     @Override
-    public List<HotLipSyncEntity> getHotLipSyncsFrom(int start, int limit) {
+    public List<HotLipSyncEntity> getHotLipSyncsFrom(int startId, int limit) {
 
         if (limit <= 0) {
             return null;
         }
         Session session = sessionFactory.getCurrentSession();
         Criteria criteria = session.createCriteria(HotLipSyncEntity.class);
-        criteria.setMaxResults(limit);
-        criteria.addOrder(Order.desc("priority"));
-        criteria.setMaxResults(limit);
+        criteria.add(Restrictions.eq("videoId" , startId));
+        List<HotLipSyncEntity> list = criteria.list();
+        criteria = sessionFactory.getCurrentSession().createCriteria(HotLipSyncEntity.class);
+
+        if (list != null && list.size() > 0) {
+
+            HotLipSyncEntity startEntity = list.get(0);
+            int startPriority = startEntity.getPriority();
+
+            criteria.addOrder(Order.desc("priority"));
+            criteria.add(Restrictions.le("priority", startPriority));
+            criteria.add(Restrictions.ne("videoId", startId));
+            criteria.setMaxResults(limit);
+
+        } else {
+            criteria.addOrder(Order.desc("priority"));
+            criteria.setMaxResults(limit);
+        }
+
         return criteria.list();
     }
 
