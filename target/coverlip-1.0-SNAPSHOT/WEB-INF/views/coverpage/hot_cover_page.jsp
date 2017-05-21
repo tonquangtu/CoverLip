@@ -14,11 +14,12 @@
     <link rel="stylesheet" href="/resources/styles/main_header_style.css">
     <link rel="stylesheet" href="/resources/styles/main_footer_style.css">
     <link rel="stylesheet" href="/resources/styles/one_card_style.css">
+    <link rel="stylesheet" href="/resources/libs/jb/hover-min.css">
     <script src="/resources/scripts/main_header_script.js"></script>
 
 </head>
 <body>
-
+<c:set var="targetPage" scope="request" value="cover_home_page"/>
 <%@include file="../common/main_header.jsp"%>
 
 <content>
@@ -34,31 +35,22 @@
         </div>
 
         <div id="content_page" class="container">
-            <div class="row">
                 <div id="cover_list" class="col-md-9">
 
-
                         <c:forEach var="item" items="${hotCoverList}" varStatus="i">
-
                             <c:choose>
-
                                 <c:when test="${i.index < 2}">
                                     <c:if test="${i.index == 0}">
-
                                         <div class="row item_first">
                                     </c:if>
                                         <div class="col-md-6">
-
+                                            <c:set var="item" scope="request" value="${item}"/>
                                             <%@ include file="../common/one_card.jsp" %>
                                         </div>
-
                                      <c:if test="${i.index == 1}">
-
                                          </div>
                                      </c:if>
-
                                 </c:when>
-
                                 <c:otherwise>
                                     <%--dong tiep theo bat dau phan tu la 2 3 4--%>
                                     <c:if test="${i.index % 3 == 2}">
@@ -80,25 +72,9 @@
                         </c:forEach>
                 </div>
                 <div  class="col-md-3 top_cover_idol_layout">
-                    <%--<div id="top_cover_idol">--%>
-                        <%--<h3 id="title_top_cover_idol">TOP COVER IDOL</h3>--%>
-                        <%--<ul>--%>
-                            <%--<c:forEach var="item1" items="${listTopCoverIdols}" varStatus="i">--%>
-                                <%--<li class="item_top_cover_idol">--%>
-                                    <%--<img src="${item1.user.avatarThumbnail}" class="img-circle" alt="top cover idol">--%>
-                                    <%--<div class="idol_info">--%>
-                                        <%--<p><strong>${item1.user.account.fullname}</strong></p>--%>
-                                        <%--<p>${item1.user.numHaveFollowed}</p>--%>
-                                    <%--</div>--%>
-                                    <%--<button type="button" class="btn btn-success btn-sm">Theo doi</button>--%>
-                                <%--</li>--%>
-                            <%--</c:forEach>--%>
-                        <%--</ul>--%>
-                    <%--</div>--%>
                         <c:set var="listHot" value="${listTopCoverIdols}" scope="request"/>
                         <%@include file="../common/top_idol_card.jsp" %>
                 </div>
-            </div>
         </div>
     </div> <!-- main content -->
 </content>

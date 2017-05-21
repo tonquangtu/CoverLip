@@ -64,6 +64,9 @@ public class VideoWrapper {
         return result.toString().trim() + " ...";
     }
 
+    public String compactNameVideo(int numWord){
+        return compactNameCover(numWord);
+    }
     public String getFullVideoLink(String subBaseUrl) {
         String fullLink = DataConstant.BASE_URL + subBaseUrl + "/";
         try {

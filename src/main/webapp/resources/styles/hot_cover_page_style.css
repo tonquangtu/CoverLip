@@ -53,11 +53,10 @@ body{
 
 #cover_list{
 
-    margin-top: 15px;
+    margin-top: 13px;
 }
 
 #top_cover_idol{
-
     background-color: #ffffff;
     height: 1000px;
     margin-top: 15px;
@@ -69,8 +68,6 @@ body{
 
     padding: 0 6px;
 }
-
-
 
 .item_top_cover_idol{
 
@@ -110,11 +107,13 @@ body{
 
 #cover_list{
     width: 72%;
+    padding-right: 22px;
 }
 
 .top_cover_idol_layout{
     width: 28%;
     padding-left: 0;
+    padding-right: 0;
 }
 
 #top_cover_idol h3{
@@ -148,4 +147,11 @@ body{
 
 .item_not_first .thumbnail_video img {
     height: 150px !important;
+}
+
+.top_idol{
+    box-shadow: 2px 1px 4px 2px rgba(0,0,0,0.14);
+}
+#content_page{
+    padding-left: 0;
 }

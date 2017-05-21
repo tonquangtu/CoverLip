@@ -50,7 +50,10 @@
                         <div class="carousel-caption">
                             <h1>Phia Sau Mot Co Gai</h1>
                             <p>Mot ban cover di vao long nguoi cua hot girl Beo La</p><br>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Xem ngay</a></p>
+                            <a href="" class="banner-button">
+                                <img src="https://fptplay.net/img/playicon.png"/>
+                                <p>Xem Ngay</p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -62,7 +65,10 @@
                         <div class="carousel-caption">
                             <h1>Di De Tro Ve</h1>
                             <p>Le Roi tro lai voi ban hit dinh dam "Di de tro ve"</p><br>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Xem ngay</a></p>
+                            <a href="" class="banner-button">
+                                <img src="https://fptplay.net/img/playicon.png"/>
+                                <p>Xem Ngay</p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -74,7 +80,10 @@
                         <div class="carousel-caption">
                             <h1>Lac Troi</h1>
                             <p>Girl Xinh Maria Ozawa cover hit Lac Troi cua Son Tung MTP</p><br>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Xem ngay</a></p>
+                            <a href="" class="banner-button">
+                                <img src="https://fptplay.net/img/playicon.png"/>
+                                <p>Xem Ngay</p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -118,19 +127,21 @@
                             <a href="#">Mới Đăng</a>
                         </h3>
                         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p> -->
-                        <a href=""><button type="button" class="btn btn-primary">Xem toàn bộ</button></a>
+                        <a href="">
+                            <button type="button" class="btn btn-primary">Xem toàn bộ</button>
+                        </a>
                     </div>
                 </div>
 
                 <div class="col-md-9" style="padding-right:0;padding-left:0;margin-left:-2px;">
-                    <% int m=0; %>
+                    <% int m = 0; %>
                     <c:forEach var="item" items="${newCoverList}" varStatus="i">
                         <c:if test="${i.index<12}">
-                            <c:if test="${i.index%4==0}" >
+                            <c:if test="${i.index%4==0}">
                                 <ul id="demo_first_<%= m++%>" class="one_list">
                             </c:if>
-                                <c:set var="item" value="${item}" scope="request"/>
-                                <%@ include file="../common/one_card.jsp" %>
+                            <c:set var="item" value="${item}" scope="request"/>
+                            <%@ include file="../common/one_card.jsp" %>
                             <c:if test="${i.index%4==3}">
                                 </ul>
                             </c:if>
@@ -156,7 +167,7 @@
             <!-- Page Header -->
             <div class="row title">
                 <div class="col-lg-12">
-                    <h2 class="page-header"><a href="">Cover Hot</a>
+                    <h2 class="page-header"><a href="/hot-cover">Cover Hot</a>
                         <!-- <small>Secondary Text</small> -->
                         <div class="action_slide">
                             <div class="btn-group">
@@ -175,29 +186,31 @@
             <div class="row" style="overflow:hidden;">
                 <div class="col-md-3 text-center">
                     <div class="subject">
-                        <a href="#">
+                        <a href="/hot-cover">
                             <img class="img-responsive"
                                  src="../../../resources/storage/image/normal_image/slide_image/singer.jpg" alt="">
                         </a>
-                        <a href="#">
+                        <a href="/hot-cover">
                             <h3>
-                            Cover Hot
+                                Cover Hot
                             </h3>
                         </a>
                         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p> -->
-                        <a href="#"><button type="button" class="btn btn-primary">Xem toàn bộ</button></a>
+                        <a href="/hot-cover">
+                            <button type="button" class="btn btn-primary">Xem toàn bộ</button>
+                        </a>
                     </div>
                 </div>
 
                 <div class="col-md-9" style="padding-right:0;padding-left:0;margin-left:-2px;">
-                    <% m=0; %>
+                    <% m = 0; %>
                     <c:forEach var="item" items="${hotCoverList}" varStatus="i">
                         <c:if test="${i.index<12}">
-                            <c:if test="${i.index%4==0}" >
+                            <c:if test="${i.index%4==0}">
                                 <ul id="demo_second_<%= m++%>" class="one_list">
                             </c:if>
-                                <c:set var="item" value="${item}" scope="request"/>
-                                <%@ include file="../common/one_card.jsp" %>
+                            <c:set var="item" value="${item}" scope="request"/>
+                            <%@ include file="../common/one_card.jsp" %>
                             <c:if test="${i.index%4==3}">
                                 </ul>
                             </c:if>
@@ -262,10 +275,12 @@
             <div class="row">
                 <div class="top_idol">
                     <div class="col-md-3">
-                        <div class="one_member text-center subject" style="padding-bottom:10px;box-shadow:unset;border-top-right-radius: 32px;">
+                        <div class="one_member text-center subject"
+                             style="padding-bottom:10px;">
                             <a href="">
                                 <div class="avatar">
-                                    <img src="${topIdolList.get(0).user.account.avatarThumbnail}" alt="${topIdolList.get(0).user.account.fullname}"
+                                    <img src="${topIdolList.get(0).user.account.avatarThumbnail}"
+                                         alt="${topIdolList.get(0).user.account.fullname}"
                                          class="img-responsive" style="width:100%">
                                     <span class="numberOne">01</span>
                                 </div>
@@ -276,29 +291,30 @@
                         </div>
                     </div>
                     <div class="col-md-9">
-                    <c:forEach items="${topIdolList}" var="item1" varStatus="i" begin="1">
-                        <c:if test="${i.index<9}">
-                            <c:if test="${(i.index+3)%4==0}">
-                                <div class="row">
-                            </c:if>
-                            <div class="col-md-3 one_member text-center">
-                                <a href="">
-                                    <div class="avatar">
-                                        <img src="${item1.user.account.avatarThumbnail}" alt="${item1.user.account.fullname}"
-                                             class="img-responsive img-circle">
-                                        <span>0${i.index+1}</span>
-                                    </div>
-                                    <div class="name_of_member">
-                                        <p>${item1.user.account.fullname}</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <c:if test="${(i.index+3)%4==3}">
+                        <c:forEach items="${topIdolList}" var="item1" varStatus="i" begin="1">
+                            <c:if test="${i.index<9}">
+                                <c:if test="${(i.index+3)%4==0}">
+                                    <div class="row">
+                                </c:if>
+                                <div class="col-md-3 one_member text-center">
+                                    <a href="">
+                                        <div class="avatar">
+                                            <img src="${item1.user.account.avatarThumbnail}"
+                                                 alt="${item1.user.account.fullname}"
+                                                 class="img-responsive img-circle">
+                                            <span>0${i.index+1}</span>
+                                        </div>
+                                        <div class="name_of_member">
+                                            <p>${item1.user.account.fullname}</p>
+                                        </div>
+                                    </a>
                                 </div>
+                                <c:if test="${(i.index+3)%4==3}">
+                                    </div>
+                                </c:if>
                             </c:if>
-                        </c:if>
-                    </c:forEach>
-                </div>
+                        </c:forEach>
+                    </div>
                 </div>
             </div>
 

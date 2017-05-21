@@ -1,5 +1,6 @@
 package com.clteam.repositories.api;
 
+import com.clteam.dataobject.IdolFollowingEntity;
 import com.clteam.dataobject.TopLipSyncIdolEntity;
 import com.clteam.dataobject.UserInfoEntity;
 
@@ -28,4 +29,9 @@ public interface UserRepository {
 
 
 
+    List<IdolFollowingEntity> getListIdolOfUser(int accountId, int limit, int currentIdolFollowingId);
+
+    List<IdolFollowingEntity> getListFanOfUser(int accountId, int limit, int currentIdolFollowingId);
+
+    int getIdolFollowingIdFromAccountId(int accountId, int followedAccountId);
 }

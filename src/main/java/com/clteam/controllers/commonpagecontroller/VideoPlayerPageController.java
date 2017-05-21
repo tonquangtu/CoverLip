@@ -79,10 +79,8 @@ public class VideoPlayerPageController {
         return modelAndView;
     }
 
-    @RequestMapping("lipsync/{singerName}/{songName}/{videoIdString}")
-    public ModelAndView playLipSync(@PathVariable String singerName,
-                                             @PathVariable String songName,
-                                             @PathVariable String videoIdString) {
+    @RequestMapping("lipsync/{videoInfoString}/{videoIdString}")
+    public ModelAndView playLipSync(@PathVariable String videoInfoString, @PathVariable String videoIdString) {
 
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();

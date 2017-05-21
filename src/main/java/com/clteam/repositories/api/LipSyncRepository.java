@@ -32,4 +32,5 @@ public interface LipSyncRepository {
 
 
 
+     List<LipSyncInfoEntity> getListLipSyncOfUser(int accountId, int limit, int currentVideoId);
 }

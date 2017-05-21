@@ -111,5 +111,59 @@ public class UserRepositoryImpl implements UserRepository {
 
         return null;
     }
+    @Override
+    public List<IdolFollowingEntity> getListIdolOfUser(int accountId, int limit, int currentIdolAccountId) {
+        if(accountId<0) return null;
+        int currentIdolFollowingId = -1;
+        if(currentIdolAccountId>0){
+            currentIdolFollowingId = getIdolFollowingIdFromAccountId(accountId, currentIdolAccountId);
+        }
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(IdolFollowingEntity.class);
+        criteria.add(Restrictions.eq("accountId", accountId));
+        if(currentIdolFollowingId>0){
+            criteria.add(Restrictions.lt("id", currentIdolFollowingId));
+        }
+        criteria.addOrder(Order.desc("id"));
+        if(limit>0){
+            criteria.setMaxResults(limit);
+        }
+
+        return criteria.list();
+    }
+
+    @Override
+    public List<IdolFollowingEntity> getListFanOfUser(int accountId, int limit, int currentFanAccountId) {
+        if(accountId<0) return null;
+        int currentIdolFollowingId = -1;
+        if(currentFanAccountId>0){
+            currentIdolFollowingId = getIdolFollowingIdFromAccountId(currentFanAccountId, accountId);
+        }
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(IdolFollowingEntity.class);
+        criteria.add(Restrictions.eq("followedAccountId", accountId));
+        if(currentIdolFollowingId>0){
+            criteria.add(Restrictions.lt("id", currentIdolFollowingId));
+        }
+        criteria.addOrder(Order.desc("id"));
+        if(limit>0){
+            criteria.setMaxResults(limit);
+        }
+
+        return criteria.list();
+    }
+
+    @Override
+    public int getIdolFollowingIdFromAccountId(int accountId, int followedAccountId) {
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(IdolFollowingEntity.class);
+        criteria.add(Restrictions.eq("accountId", accountId));
+        criteria.add(Restrictions.eq("followedAccountId", followedAccountId));
+        if(criteria.list()!=null && criteria.list().size()>0){
+            IdolFollowingEntity idolFollowingEntity = (IdolFollowingEntity) criteria.list().get(0);
+            return idolFollowingEntity.getId();
+        }
+        return 0;
+    }
 
 }

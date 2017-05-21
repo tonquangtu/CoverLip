@@ -177,5 +177,24 @@ public class LipSyncRepositoryImpl  implements LipSyncRepository {
         return criteria.list();
     }
 
+    public List<LipSyncInfoEntity> getListLipSyncOfUser(int accountId, int limit, int currentVideoId){
+        if (accountId <= 0) {
+            return null;
+        }
+
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(LipSyncInfoEntity.class, "lipSync");
+        criteria.createAlias("lipSync.videoInfoByVideoId", "video");
+        criteria.add(Restrictions.eq("video.accountId", accountId));
+        if(currentVideoId>-1){
+            criteria.add(Restrictions.lt("lipSync.videoId", currentVideoId));
+        }
+        criteria.addOrder(Order.desc("video.id"));
+        if(limit>0){
+            criteria.setMaxResults(limit);
+        }
+
+        return criteria.list();
+    }
 
 }

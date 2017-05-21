@@ -4,6 +4,7 @@ import com.clteam.dataobject.AccountEntity;
 import com.clteam.dataobject.UserInfoEntity;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 
 /**
  * Created by Dell on 30-Apr-17.
@@ -119,5 +120,8 @@ public class User {
         this.description = userEntity.getDescription();
     }
 
-
+    public String formatTimestamp(Timestamp timestamp){
+        String date = new SimpleDateFormat("dd/MM/yyyy").format(timestamp);
+        return date;
+    }
 }

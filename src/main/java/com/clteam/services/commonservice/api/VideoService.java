@@ -43,4 +43,5 @@ public interface VideoService {
      public Video getVideo(VideoInfoEntity videoEntity);
 
 
+     List<LipSync> getListLipSyncOfUser(int accountId, int limit, int currentVideoId);
 }

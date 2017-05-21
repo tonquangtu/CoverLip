@@ -16,10 +16,12 @@ To change this template use File | Settings | File Templates.
     <%@ include file="../common/common_lib.jsp" %>
 
     <%--<link rel="stylesheet" href="/resources/styles/main_navigation_style.css"/>--%>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/styles/main_header_style.css"/>
     <link rel="stylesheet" href="/resources/styles/main_footer_style.css"/>
-    <link rel="stylesheet" type="text/css" href="/resources/styles/top_cover_page_style.css"/>
     <link rel="stylesheet" href="/resources/styles/top_idol_card_style.css">
+    <link rel="stylesheet" href="/resources/libs/jb/hover-min.css">
+    <link rel="stylesheet" type="text/css" href="/resources/styles/top_cover_page_style.css"/>
     <script src="/resources/scripts/main_header_script.js"></script>
 
 
@@ -27,6 +29,7 @@ To change this template use File | Settings | File Templates.
     <script src="../../../resources/scripts/top_cover_script.js"></script>
 </head>
 <body>
+<c:set var="targetPage" scope="request" value="cover_home_page"/>
 <%@include file="../common/main_header.jsp" %>
 
 <content>
@@ -128,7 +131,7 @@ To change this template use File | Settings | File Templates.
                                             <a href="" title="${item.playlistName}">${item.playlistName}</a>
                                         </h4>
                                         <div class="member_post">
-                                            <a href="#" title="Nghệ sĩ ${item.account.fullname}">
+                                            <a href="/user/${item.account.id}" title="Nghệ sĩ ${item.account.fullname}">
                                                 <img src="../../../resources/storage/image/thumbnail/owner_thumbnail/avatar1.jpg"
                                                      class="img-circle avatar_member">
                                                 <p>${item.account.fullname}</p>
