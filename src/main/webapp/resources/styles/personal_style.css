@@ -41,8 +41,8 @@ a:hover{
     color:#3c3c3c;
 }
 .menu a:hover, .selected{
-    color: #1abc9c !important;
-    background:#eaeaea;
+    color: #ff6d00 !important;
+    background:#f3f3f3;
 }
 .main_person{
     -moz-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);

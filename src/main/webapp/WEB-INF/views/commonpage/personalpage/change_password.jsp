@@ -12,7 +12,7 @@
     <div class="subhead">
         <h2 class="subhead-heading">Thay Đổi Mật Khẩu</h2>
     </div>
-    <form accept-charset="UTF-8" action="" class="" method="post">
+    <form accept-charset="UTF-8" action="" class="" method="post" style="margin-top:45px;">
         <div class="form-group">
             <label class="col-sm-2 col-sm-offset-2 control-label">Mật Khẩu Cũ</label>
             <div class="col-sm-6">

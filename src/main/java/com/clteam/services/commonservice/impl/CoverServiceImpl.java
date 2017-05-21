@@ -48,6 +48,27 @@ public class CoverServiceImpl implements CoverService {
         return coverList;
     }
 
+    @Override
+    public List<Cover> getListNewCover(int limit, int currentVideoId) {
+
+        List<NewCoverEntity> newCoverEntityList = coverRepository.getListNewCover(limit, currentVideoId);
+        List<Cover> coverList = new ArrayList<Cover>();
+        for(int i=0; i<newCoverEntityList.size(); i++){
+//            Cover cover = new Cover();
+            VideoInfoEntity videoInfoEntity = newCoverEntityList.get(i).getVideoInfoByVideoId();
+            Collection<CoverInfoEntity> coverInfoEntities =  videoInfoEntity.getCoverInfosById();
+            if(coverInfoEntities!=null){
+                CoverInfoEntity coverInfoEntity = (CoverInfoEntity)coverInfoEntities.toArray()[0];
+                Video video = new Video();
+                video.copyData(videoInfoEntity, videoInfoEntity.getAccountByAccountId());
+                Cover cover = new Cover(video, coverInfoEntity.getCoverName(), coverInfoEntity.getMp3Link());
+//                cover.copyData(coverInfoEntity, videoInfoEntity, videoInfoEntity.getAccountByAccountId());
+                coverList.add(cover);
+            }
+        }
+        return coverList;
+    }
+
     public List<Cover> getListHotCover(int limit) {
         List<Cover> coverList = new ArrayList<Cover>();
         List<HotCoverEntity> hotCoverList = coverRepository.getLimitHotCover(limit);

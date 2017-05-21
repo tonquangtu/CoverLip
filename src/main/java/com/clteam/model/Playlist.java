@@ -6,6 +6,7 @@ import com.clteam.dataobject.PlaylistInfoEntity;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by Dell on 30-Apr-17.
@@ -170,6 +171,13 @@ public class Playlist {
         }
         this.account.copyData(accountEntity);
     }
+
+    public String getRandomColor(){
+        String[] cardColor = {"#f44336", "#e91e63", "#9c27b0", "#673ab7", "#3f51b5", "#2196f3", "#03a9f4",
+                "#009688", "#4caf50", "#8bc34a", "#cddc39", "#ffeb3b", "#ffc107", "#ff9800", "#795548", "#9e9e9e"};
+        return cardColor[(new Random()).nextInt(cardColor.length-1)];
+    }
+
     public List<Cover> getCoverInPlaylist() {
 
         List<Cover> covers = new ArrayList<>();
@@ -181,4 +189,6 @@ public class Playlist {
         }
         return covers;
     }
+
+
 }

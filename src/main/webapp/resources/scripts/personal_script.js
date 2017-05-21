@@ -10,7 +10,7 @@ $(document).ready(function(){
     $('#choose_file').on('change',function(){
         var imgPath = $(this).val();
         var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
-        var avatar = $('.avatar');
+        var avatar = $('.avatar_person');
         if (extn === "gif" || extn === "png" || extn === "jpg" || extn === "jpeg") {
             if (typeof(FileReader) !== "undefined") {
 

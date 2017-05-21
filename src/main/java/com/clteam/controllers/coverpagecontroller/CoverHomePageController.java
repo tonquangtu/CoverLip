@@ -104,9 +104,9 @@ public class CoverHomePageController {
 
         List<VideoWrapper> videoWrapperList = new ArrayList<>();
         if (Objects.equals(type, "information")) {
-
+            modelAndView.setViewName("commonpage/personal_page");
         } else if (Objects.equals(type, "change-password")) {
-
+            modelAndView.setViewName("commonpage/personal_page");
         } else if (Objects.equals(type, "my-cover")) {
             List<Cover> coverOfUserList = coverService.getListCoverOfUser(accountId, 6, -1);
             if (coverOfUserList == null) {

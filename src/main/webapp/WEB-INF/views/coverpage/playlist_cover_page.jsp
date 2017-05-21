@@ -1,5 +1,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -24,10 +25,10 @@
     <div style="height:20px; width: 100%; clear: both"></div>
     <div id="main_content_playlist" class="container">
         <div id="cover_page" class="container">
-            <img src="/resources/storage/image/normal_image/owner_image/cover_playlist.jpg" height="250px" width="100%">
+            <img src="/resources/storage/image/normal_image/owner_image/top_cover_background.jpg" height="250px" width="100%">
             <div id="title_cover">
                 <h1 style="color: white;">PLAYLIST</h1>
-                <p style="color: white;">Tổng hợp những playlist hay nhất trên thế giới</p>
+                <p style="color: white; font-weight: bold">Tổng hợp những playlist cover hay nhất trên thế giới</p>
             </div>
         </div>
 

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../../../resources/styles/top_idol_card_style.css">
     <link rel="stylesheet" href="../../../resources/styles/card_playlist_cover_style.css">
     <link rel="stylesheet" type="text/css" href="../../../resources/styles/user_style.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../resources/libs/jb/hover-min.css"/>
     <script src="../../../resources/scripts/one_card_script.js"></script>
     <script src="../../../resources/scripts/more_item_script.js"></script>
     <script src="../../../resources/scripts/user_script.js"></script>

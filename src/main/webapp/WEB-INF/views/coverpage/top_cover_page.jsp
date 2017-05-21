@@ -19,8 +19,9 @@ To change this template use File | Settings | File Templates.
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/styles/main_header_style.css"/>
     <link rel="stylesheet" href="/resources/styles/main_footer_style.css"/>
-    <link rel="stylesheet" type="text/css" href="/resources/styles/top_cover_page_style.css"/>
     <link rel="stylesheet" href="/resources/styles/top_idol_card_style.css">
+    <link rel="stylesheet" href="/resources/libs/jb/hover-min.css">
+    <link rel="stylesheet" type="text/css" href="/resources/styles/top_cover_page_style.css"/>
     <script src="/resources/scripts/main_header_script.js"></script>
 
 

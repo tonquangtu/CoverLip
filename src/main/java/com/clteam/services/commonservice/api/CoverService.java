@@ -16,4 +16,5 @@ public interface CoverService {
     TopList<Cover> getListTopCover();
     List<Cover> getListCoverOfUser(int accountId, int limit, int currentVideoId);
     List<Playlist> getListPlaylistOfUser(int accountId, int limit, int currentPlaylistId);
+    public List<Cover> getListNewCover(int limit, int currentVideoId);
 }
