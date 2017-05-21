@@ -2,145 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0b42ca8-e3c9-41fc-bfaa-36ce203b6f1e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/storage/image/normal_image/owner_image/new_cover.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/NewCoverPageController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/playlist_card.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personal_page.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/change_password.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/information.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/my_cover.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/my_fan.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/my_idol.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/my_lipsync.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/personalpage/my_playlist.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/user_page.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/coverpage/new_cover_page.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/libs/jb/hover-min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/more_item_script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/new_cover_script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/personal_script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/personal_style.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/persional_infomation_page.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/persional_infomation_script.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/persional_infomation_style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/views/commonpage/persional_infomation_page.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/resources/scripts/persional_infomation_script.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/resources/styles/persional_infomation_style.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/controllers/commonpagecontroller/VideoPlayerPageController.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/controllers/commonpagecontroller/VideoPlayerPageController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/controllers/coverpagecontroller/CoverHomePageController.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/controllers/coverpagecontroller/CoverHomePageController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/controllers/coverpagecontroller/HotCoverPageController.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/controllers/coverpagecontroller/HotCoverPageController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/dataobject/IdolFollowingEntity.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/dataobject/IdolFollowingEntity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/model/Cover.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/model/Cover.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/model/Playlist.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/model/Playlist.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/model/PlaylistItem.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/model/PlaylistItem.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/model/User.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/model/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/model/VideoWrapper.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/model/VideoWrapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/repositories/api/CoverRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/repositories/api/CoverRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/repositories/api/LipSyncRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/repositories/api/LipSyncRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/repositories/api/PlaylistRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/repositories/api/PlaylistRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/repositories/api/TopRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/repositories/api/TopRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/repositories/api/UserRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/repositories/api/UserRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/repositories/impl/CoverRepositoryImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/repositories/impl/CoverRepositoryImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/repositories/impl/LipSyncRepositoryImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/repositories/impl/LipSyncRepositoryImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/repositories/impl/PlaylistRepositoryImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/repositories/impl/PlaylistRepositoryImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/repositories/impl/TopRepositoryImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/repositories/impl/TopRepositoryImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/repositories/impl/UserRepositoryImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/repositories/impl/UserRepositoryImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/services/commonservice/api/CoverService.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/services/commonservice/api/CoverService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/services/commonservice/api/VideoService.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/services/commonservice/api/VideoService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/services/commonservice/impl/CoverServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/services/commonservice/impl/CoverServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/services/commonservice/impl/VideoServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/services/commonservice/impl/VideoServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/services/userservice/api/UserService.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/services/userservice/api/UserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/services/userservice/impl/TopIdolServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/services/userservice/impl/TopIdolServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/clteam/services/userservice/impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/clteam/services/userservice/impl/UserServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/controllers/commonpagecontroller/VideoPlayerPageController.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/controllers/commonpagecontroller/VideoPlayerPageController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/controllers/coverpagecontroller/CoverHomePageController.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/controllers/coverpagecontroller/CoverHomePageController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/controllers/coverpagecontroller/HotCoverPageController.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/controllers/coverpagecontroller/HotCoverPageController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/dataobject/IdolFollowingEntity.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/dataobject/IdolFollowingEntity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/model/Cover.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/model/Cover.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/model/Playlist.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/model/Playlist.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/model/PlaylistItem.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/model/PlaylistItem.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/model/User.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/model/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/model/VideoWrapper.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/model/VideoWrapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/repositories/api/CoverRepository.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/repositories/api/CoverRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/repositories/api/LipSyncRepository.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/repositories/api/LipSyncRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/repositories/api/PlaylistRepository.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/repositories/api/PlaylistRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/repositories/api/TopRepository.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/repositories/api/TopRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/repositories/api/UserRepository.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/repositories/api/UserRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/repositories/impl/CoverRepositoryImpl.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/repositories/impl/CoverRepositoryImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/repositories/impl/LipSyncRepositoryImpl.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/repositories/impl/LipSyncRepositoryImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/repositories/impl/PlaylistRepositoryImpl.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/repositories/impl/PlaylistRepositoryImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/repositories/impl/TopRepositoryImpl.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/repositories/impl/TopRepositoryImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/repositories/impl/UserRepositoryImpl.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/repositories/impl/UserRepositoryImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/services/commonservice/api/CoverService.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/services/commonservice/api/CoverService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/services/commonservice/api/VideoService.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/services/commonservice/api/VideoService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/services/commonservice/impl/CoverServiceImpl.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/services/commonservice/impl/CoverServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/services/commonservice/impl/VideoServiceImpl.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/services/commonservice/impl/VideoServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/services/userservice/api/UserService.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/services/userservice/api/UserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/services/userservice/impl/TopIdolServiceImpl.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/services/userservice/impl/TopIdolServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/services/userservice/impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/classes/com/clteam/services/userservice/impl/UserServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/2fc81469-b1fd-45e0-8bc0-09198f0e48ad.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/2fc81469-b1fd-45e0-8bc0-09198f0e48ad.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/controllers/commonpagecontroller/VideoPlayerPageController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/controllers/coverpagecontroller/CoverHomePageController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/controllers/coverpagecontroller/HotCoverPageController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/dataobject/IdolFollowingEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/model/Cover.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/model/Playlist.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/model/PlaylistItem.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/model/User.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/model/VideoWrapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/repositories/api/CoverRepository.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/repositories/api/LipSyncRepository.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/repositories/api/PlaylistRepository.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/repositories/api/TopRepository.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/repositories/api/UserRepository.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/repositories/impl/CoverRepositoryImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/repositories/impl/LipSyncRepositoryImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/repositories/impl/PlaylistRepositoryImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/repositories/impl/TopRepositoryImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/repositories/impl/UserRepositoryImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/services/commonservice/api/CoverService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/services/commonservice/api/VideoService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/services/commonservice/impl/CoverServiceImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/services/commonservice/impl/VideoServiceImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/services/userservice/api/UserService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/services/userservice/impl/TopIdolServiceImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/clteam/services/userservice/impl/UserServiceImpl.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/commonpagecontroller/VideoPlayerPageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/commonpagecontroller/VideoPlayerPageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/CoverHomePageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/CoverHomePageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/HotCoverPageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/HotCoverPageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/IdolFollowingEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/dataobject/IdolFollowingEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/Cover.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/Cover.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/Playlist.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/Playlist.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/PlaylistItem.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/PlaylistItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/VideoWrapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/VideoWrapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/CoverRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/CoverRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/LipSyncRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/LipSyncRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/PlaylistRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/PlaylistRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/TopRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/TopRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/UserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/UserRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/CoverRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/CoverRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/LipSyncRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/LipSyncRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/PlaylistRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/PlaylistRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/TopRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/TopRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/UserRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/UserRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/api/CoverService.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/api/CoverService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/api/VideoService.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/api/VideoService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/CoverServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/CoverServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/VideoServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/VideoServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/api/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/api/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/TopIdolServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/TopIdolServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/applicationContext.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/common_lib.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/common_lib.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/one_card.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/one_card.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/top_idol_card.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/top_idol_card.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/coverpage/home_cover_page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/coverpage/home_cover_page.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/coverpage/hot_cover_page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/coverpage/hot_cover_page.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/coverpage/playlist_cover_page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/coverpage/playlist_cover_page.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/coverpage/top_cover_page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/coverpage/top_cover_page.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/top_cover_script.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/top_cover_script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/user_script.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/user_script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/card_playlist_cover_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/card_playlist_cover_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/home_cover_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/home_cover_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/hot_cover_page_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/hot_cover_page_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/main_header_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/main_header_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/one_card_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/one_card_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/top_idol_card_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/top_idol_card_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/user_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/user_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/views/common/common_lib.jsp" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/views/common/common_lib.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/views/common/one_card.jsp" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/views/common/one_card.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/views/common/top_idol_card.jsp" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/views/common/top_idol_card.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/views/coverpage/home_cover_page.jsp" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/views/coverpage/home_cover_page.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/views/coverpage/hot_cover_page.jsp" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/views/coverpage/hot_cover_page.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/views/coverpage/playlist_cover_page.jsp" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/views/coverpage/playlist_cover_page.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/views/coverpage/top_cover_page.jsp" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/WEB-INF/views/coverpage/top_cover_page.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/resources/scripts/top_cover_script.js" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/resources/scripts/top_cover_script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/resources/scripts/user_script.js" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/resources/scripts/user_script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/resources/styles/card_playlist_cover_style.css" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/resources/styles/card_playlist_cover_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/resources/styles/home_cover_style.css" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/resources/styles/home_cover_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/resources/styles/hot_cover_page_style.css" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/resources/styles/hot_cover_page_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/resources/styles/main_header_style.css" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/resources/styles/main_header_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/resources/styles/one_card_style.css" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/resources/styles/one_card_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/resources/styles/top_idol_card_style.css" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/resources/styles/top_idol_card_style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/resources/styles/user_style.css" afterPath="$PROJECT_DIR$/target/coverlip-1.0-SNAPSHOT/resources/styles/user_style.css" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -392,12 +280,11 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/model/VideoWrapper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
-              <caret line="79" column="32" lean-forward="true" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
+              <caret line="79" column="32" lean-forward="false" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#compactNameCover#0;class#VideoWrapper#0" expanded="false" />
-                <element signature="e#1490#1491#0" expanded="true" />
-                <element signature="e#1538#1539#0" expanded="true" />
+                <marker date="1495381252799" expanded="true" signature="1594:2050" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -407,7 +294,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/lipsyncpage/lip_sync_home_page.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="254">
-              <caret line="84" column="18" lean-forward="true" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="18" />
+              <caret line="84" column="18" lean-forward="false" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="18" />
               <folding>
                 <marker date="1495363033485" expanded="true" signature="5505:5513" ph="..." />
               </folding>
@@ -418,8 +305,8 @@
       <file leaf-file-name="lip_sync_home_page_style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/lip_sync_home_page_style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
-              <caret line="279" column="23" lean-forward="false" selection-start-line="279" selection-start-column="23" selection-end-line="279" selection-end-column="23" />
+            <state relative-caret-position="458">
+              <caret line="282" column="1" lean-forward="false" selection-start-line="282" selection-start-column="1" selection-end-line="282" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -448,7 +335,7 @@
       <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/api/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="187">
               <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="false" />
@@ -470,8 +357,8 @@
       <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1632">
-              <caret line="96" column="68" lean-forward="false" selection-start-line="96" selection-start-column="68" selection-end-line="96" selection-end-column="68" />
+            <state relative-caret-position="1768">
+              <caret line="104" column="5" lean-forward="false" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -480,23 +367,8 @@
       <file leaf-file-name="CoverHomePageController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/CoverHomePageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="65" column="33" lean-forward="true" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
-              <folding>
-                <element signature="e#1658#1674#0" expanded="true" />
-                <element signature="e#2674#2690#0" expanded="true" />
-                <element signature="e#3779#3795#0" expanded="true" />
-                <element signature="e#7364#7380#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewCoverPageController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/NewCoverPageController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+            <state relative-caret-position="526">
+              <caret line="65" column="33" lean-forward="false" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -605,7 +477,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/LipSyncServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/scripts/user_script.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/clteam/model/ClientData.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/styles/lip_sync_home_page_style.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/scripts/lip_sync_home_page_script.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/clteam/dataconstant/DataConstant.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/video_player_page.jsp" />
@@ -622,6 +493,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/clteam/model/VideoWrapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/clteam/controllers/commonpagecontroller/VideoPlayerPageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/CoverHomePageController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/styles/lip_sync_home_page_style.css" />
       </list>
     </option>
   </component>
@@ -2455,7 +2327,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="642732000" />
+    <option name="totallyTimeSpent" value="642793000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2490,7 +2362,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45171848" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45171848" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38297874" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35022694" sideWeight="0.3586626" order="9" side_tool="true" content_ui="tabs" />
@@ -2499,12 +2371,40 @@
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27155825" sideWeight="0.42389524" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54664487" sideWeight="0.5060514" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42284417" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24886535" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5531915" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23076923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45171848" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38297874" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35022694" sideWeight="0.3586626" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3698941" sideWeight="0.6413374" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27155825" sideWeight="0.42389524" order="8" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2710,7 +2610,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2816,7 +2715,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="48" column="16" lean-forward="false" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2874,7 +2772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="55" lean-forward="false" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2890,7 +2787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
           <caret line="59" column="1" lean-forward="false" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2950,7 +2846,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/api/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="187">
           <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="false" />
@@ -2960,8 +2856,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/services/userservice/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="96" column="68" lean-forward="false" selection-start-line="96" selection-start-column="68" selection-end-line="96" selection-end-column="68" />
+        <state relative-caret-position="1768">
+          <caret line="104" column="5" lean-forward="false" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -2994,32 +2890,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/CoverHomePageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="65" column="33" lean-forward="true" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
-          <folding>
-            <element signature="e#1658#1674#0" expanded="true" />
-            <element signature="e#2674#2690#0" expanded="true" />
-            <element signature="e#3779#3795#0" expanded="true" />
-            <element signature="e#7364#7380#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="526">
+          <caret line="65" column="33" lean-forward="false" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/model/VideoWrapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="79" column="32" lean-forward="true" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
+          <caret line="79" column="32" lean-forward="false" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#compactNameCover#0;class#VideoWrapper#0" expanded="false" />
-            <element signature="e#1490#1491#0" expanded="true" />
-            <element signature="e#1538#1539#0" expanded="true" />
+            <marker date="1495381252799" expanded="true" signature="1594:2050" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -3027,7 +2916,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/lipsyncpage/lip_sync_home_page.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
-          <caret line="84" column="18" lean-forward="true" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="18" />
+          <caret line="84" column="18" lean-forward="false" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="18" />
           <folding>
             <marker date="1495363033485" expanded="true" signature="5505:5513" ph="..." />
           </folding>
@@ -3036,8 +2925,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/lip_sync_home_page_style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="279" column="23" lean-forward="false" selection-start-line="279" selection-start-column="23" selection-end-line="279" selection-end-column="23" />
+        <state relative-caret-position="458">
+          <caret line="282" column="1" lean-forward="false" selection-start-line="282" selection-start-column="1" selection-end-line="282" selection-end-column="1" />
           <folding />
         </state>
       </provider>
