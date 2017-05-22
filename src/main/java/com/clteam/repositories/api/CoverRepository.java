@@ -42,4 +42,6 @@ public interface CoverRepository {
     public List<NewCoverEntity> getListNewCover(int limit, int currentVideoId);
 
     List<CoverInfoEntity> getListTopCover();
+
+    List<CoverInfoEntity> getAllCover(int limit, int currentVideoId);
 }

@@ -222,5 +222,16 @@ public class CoverRepositoryImpl implements CoverRepository {
         return null;
     }
 
+    @Override
+    public List<CoverInfoEntity> getAllCover(int limit, int currentVideoId){
 
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(CoverInfoEntity.class);
+
+        if (currentVideoId > -1){
+            criteria.add(Restrictions.lt("id", currentVideoId));
+        }
+        List coverList = criteria.addOrder(Order.desc("id")).setMaxResults(limit).list();
+        return coverList;
+    }
 }

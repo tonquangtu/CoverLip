@@ -57,7 +57,7 @@
                         <div class="row list_playlist">
                     </c:if>
                     <div class="col-md-3">
-                        <c:set var="item" value="${playlistList}" scope="request"/>
+                        <c:set var="item" value="${item}" scope="request"/>
                         <%@include file="../common/playlist_card.jsp"%>
                     </div>
 
