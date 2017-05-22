@@ -53,7 +53,7 @@ public class CommonUtils {
 
         aString = standardSearchString(aString);
         if (aString != null) {
-            return aString.replaceAll("-", " ");
+            return aString.replaceAll(" ", "-");
         }
         return "";
     }

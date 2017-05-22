@@ -74,7 +74,7 @@ body {
 }
 
 .first-idol {
-    height: 355px;
+    height: 352px;
     margin-top: 3px;
     border: 1px solid #e0e0e0;
     padding: 0 0 10px 0;
@@ -249,6 +249,7 @@ body {
 /* one card*/
 .header_card {
     padding: 5px 7px !important;
+    height: 37px !important;
 }
 
 .name_member h2 {
@@ -261,7 +262,7 @@ body {
 }
 
 .icon_more_vertical {
-    margin-top: 7px !important;
+    margin-top: 0px !important;
 }
 
 .singer_video_box .info_singer_video_box {
@@ -279,5 +280,8 @@ body {
     height:40px;
     text-align: center;
 
+}
 
+.singer_video_box:hover span {
+    color: #989595 !important;
 }

@@ -112,7 +112,7 @@ $(document).ready(function () {
             '<li class="item_singer_video ">' +
             '<div class="singer_video_box">' +
             '<div class="thumbnail_video_box">' +
-            '<a class="thumbnail_video" href="#" title="' + item.videoName + '">' +
+            '<a class="thumbnail_video" href="' + item.fullLink + '" title="' + item.videoName + '">' +
             '<span class="icon_play"></span>' +
             '<img src="' + storageUrl + item.video.videoThumbnailLink + '" alt="' + item.videoName + '" title="' + item.videoName + '">' +
             '<div class="background_one_card"></div>' +

@@ -44,7 +44,7 @@
                             <a href="">
                                 <div class="avatar">
                                     <img src="${topIdolList.get(0).user.account.avatarThumbnail}" alt="${topIdolList.get(0).user.account.fullname}"
-                                         class="img-responsive" style="width:100% ; height:88%;">
+                                         class="img-responsive" style="width:100% ; height:302px;">
                                     <span class="numberOne">01</span>
                                     <button class="button-transparent button-follow first-position-button-follow ">Follow</button>
 
