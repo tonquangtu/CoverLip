@@ -1,8 +1,6 @@
-<%@ page import="java.util.Random" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%! String[] cardColor = {"#f44336", "#e91e63", "#9c27b0", "#673ab7", "#3f51b5", "#2196f3", "#03a9f4",
-"#009688", "#4caf50", "#8bc34a", "#cddc39", "ffeb3b", "#ffc107", "#ff9800", "#795548", "#9e9e9e"};%>
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -11,17 +9,20 @@
 
     <%@include file="../common/common_lib.jsp" %>
 
-    <link rel="stylesheet" href="/resources/styles/main_navigation_style.css">
+    <%--<link rel="stylesheet" href="/resources/styles/main_navigation_style.css">--%>
     <link rel="stylesheet" href="/resources/styles/main_header_style.css">
     <link rel="stylesheet" href="/resources/styles/main_footer_style.css">
     <link rel="stylesheet" type="text/css" href="/resources/styles/card_playlist_cover_style.css">
     <link rel="stylesheet" type="text/css" href="/resources/styles/playlist_cover_page_style.css">
+    <script src="/resources/scripts/main_header_script.js"></script>
 
 </head>
 <body>
+<c:set var="targetPage" scope="request" value="cover_home_page"/>
 <%@include file="../common/main_header.jsp" %>
 
 <content>
+    <div style="height:20px; width: 100%; clear: both"></div>
     <div id="main_content_playlist" class="container">
         <div id="cover_page" class="container">
             <img src="/resources/storage/image/normal_image/owner_image/top_cover_background.jpg" height="250px" width="100%">
@@ -57,7 +58,7 @@
                         <div class="row list_playlist">
                     </c:if>
                     <div class="col-md-3">
-                        <c:set var="item" value="${item}" scope="request"/>
+                        <c:set scope="request" var="item" value="${item}"/>
                         <%@include file="../common/playlist_card.jsp"%>
                     </div>
 

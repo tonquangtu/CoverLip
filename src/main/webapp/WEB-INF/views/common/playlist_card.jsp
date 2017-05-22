@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 
-<div class="card_playlist" style="background-color: <%= cardColor[(new Random()).nextInt(15)]%>">
+<div class="card_playlist" style="background-color:${item.randomColor} ">
     <img src="http://${item.playlistThumbnaiLink}" class="avatar_playlist">
     <ul class="avatar_cover_list">
         <c:forEach var="itemCover" items="${item.items}" varStatus="j" end="4">

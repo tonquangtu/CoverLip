@@ -58,6 +58,7 @@
 .info_card_playlist {
 	clear: both;
 	margin-left: 10px;
+	overflow: hidden;
 }
 
 .member_post img{

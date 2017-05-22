@@ -5,7 +5,7 @@
 }
 
 body {
-    background: #eeeeee !important;
+    background: #f1f1f1 !important;
 }
 
 h1, h2, h3, h4, h5 h6 {
@@ -22,7 +22,7 @@ a {
 
 a:hover {
     outline: 0;
-    color: #00c853;
+    color: #ff6d00;
     text-decoration: none !important;
 }
 
@@ -37,34 +37,54 @@ a:hover {
     box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
     transition: 0.3s;
     z-index: 1;
+
+    /*box-shadow: 0 1px 2px rgba(0,0,0,.1);*/
 }
 
 .column-content {
 
-    height: 1000px;
+    height: 1100px;
 }
 
 .video-content-box {
     width: 100%;
     height:100%;
-    background: #ffffff;
+    /*background: #ffffff;*/
 }
 
 
 
 .video-detail-box {
 
+    background: #ffffff;
     margin-top: 10px;
-    padding: 0 8px;
+    padding: 10px 8px;
     width: 100%;
+}
+
+.video-common-info {
+    /*background: #ffffff;*/
+
+
+}
+
+.fb-like-share-box {
+    /*background: #ffffff;*/
+    margin-top: 13px;
+}
+
+.fb-comment-box {
+    background: #ffffff;
+    margin: 10px 0;
 }
 
 .video-title-box {
 
-    height: 25px;
+    height: 32px;
     width: 100%;
     text-overflow: ellipsis;
     margin-bottom: 10px;
+    padding-top: 6px;
 }
 
 .video-title{
@@ -96,8 +116,8 @@ a:hover {
 
 .video-counter img {
 
-    height: 25px;
-    width: 25px;
+    height: 22px;
+    width: 22px;
 }
 
 .video-counter .comment-counter-box {
@@ -174,13 +194,13 @@ a:hover {
 }
 
 .btn-group-interact-video {
-    margin-top: 15px;
+    margin-top: 13px;
     margin-bottom: 13px;
 }
 
 .btn-follow {
 
-    background: #9c27b0;
+    background: #00c853;
 }
 
 .btn-template {
@@ -227,15 +247,16 @@ a:hover {
 }
 
 .comment-title {
-    margin: 30px 8px 10px 8px ;
-    font-weight: 300;
-    font-size: 17px;
-    height: 35px;
+    /*margin-top: 10px;*/
+    /*font-weight: 300;*/
+    font-size: 20px;
+    height: 45px;
     color: #212121;
-    padding: 0 8px;
-    border-left: 6px solid #9c27b0;
-    background: #e1bee7;
+    /*padding: 0 8px;*/
+    /*border-left: 6px solid #9c27b0;*/
+    /*background: #e1bee7;*/
     font-style: normal;
+    padding: 10px 8px 5px 8px;
 }
 /* End style Video content--------------------------------------------------------------------------------------------*/
 
@@ -252,22 +273,93 @@ a:hover {
 
 .title-box {
     margin-top: 0 !important;
+    display: inline-block;
+    width : 100%;
+    height: 33px;
     /*background: #ffffff;*/
 }
 
 .column-suggestion-title {
-    color: #9c27b0;
-    font-size: 17px;
+    color: #212121;
+    font-size: 18px;
     font-weight: 300;
     height: 30px;
     font-style: normal;
     padding-left: 15px;
+    float:left;
+    /*background: #ffffff;*/
 }
+/*Switcher auto play -------------------------------------------------------------------------------------------------*/
+.switch-box {
+    float:right;
+
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 20px;
+    float: right;
+    margin-top:6px;
+    margin-right:5px;
+    margin-left: 5px;
+
+}
+
+.switch input {display:none;}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #00c853;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #00c853;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
 
 .list-suggestion-video {
     list-style: none;
     width: 100%;
-    margin-top: 10px;
+    /*margin-top: 10px;*/
 }
 
 .suggestion-video-item {
@@ -281,7 +373,7 @@ a:hover {
 }
 
 .suggestion-video-owner-name:hover {
-    color: #9c27b0 !important;
+    color: #ff6d00 !important;
 }
 
 .suggestion-video-item:hover a {
@@ -416,7 +508,7 @@ a:hover {
 .btn-view-more-suggestion {
     display: inline-block;
     border-radius: 4px;
-    background-color: #f4511e;
+    background-color: #ff6d00;
     border: none;
     color: #FFFFFF;
     text-align: center;
@@ -457,7 +549,7 @@ a:hover {
 .btn-collapsed-suggestion {
     display: inline-block;
     border-radius: 4px;
-    background-color: #f4511e;
+    background-color: #ff6d00;
     border: none;
     color: #FFFFFF;
     text-align: center;
@@ -516,6 +608,9 @@ a:hover {
     background: #ffffff;
 }
 
+.border-box {
+    border-radius: 2px !important;
+}
 
 
 

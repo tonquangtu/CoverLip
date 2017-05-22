@@ -9,6 +9,8 @@ import com.clteam.services.userservice.api.TopIdolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
@@ -48,4 +50,22 @@ public class AllCoverPageController {
         modelAndView.addAllObjects(map);
         return modelAndView;
     }
+
+    @RequestMapping("/load_more_all_cover")
+    public @ResponseBody
+    List<VideoWrapper> loadMoreAllCoverPage(@RequestParam String currentVideoId,
+                                     @RequestParam String limit){
+        int currentVideoIdx = Integer.parseInt(currentVideoId);
+        int limitx = Integer.parseInt(limit);
+        List<VideoWrapper> videoWrapperList = new ArrayList<VideoWrapper>();
+        List<Cover> coverList = coverService.getAllCover(limitx, currentVideoIdx);
+
+        for ( Cover cover: coverList) {
+            videoWrapperList.add(cover.toVideoWrapper());
+        }
+
+        return videoWrapperList;
+    }
+
+
 }

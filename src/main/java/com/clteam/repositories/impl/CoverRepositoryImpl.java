@@ -229,9 +229,9 @@ public class CoverRepositoryImpl implements CoverRepository {
         Criteria criteria = session.createCriteria(CoverInfoEntity.class);
 
         if (currentVideoId > -1){
-            criteria.add(Restrictions.lt("id", currentVideoId));
+            criteria.add(Restrictions.lt("videoId", currentVideoId));
         }
-        List coverList = criteria.addOrder(Order.desc("id")).setMaxResults(limit).list();
+        List coverList = criteria.addOrder(Order.desc("videoId")).setMaxResults(limit).list();
         return coverList;
     }
 }

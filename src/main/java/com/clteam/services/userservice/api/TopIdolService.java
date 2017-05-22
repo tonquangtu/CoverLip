@@ -11,4 +11,5 @@ import java.util.List;
 public interface TopIdolService {
 
     public List<TopIdol> getListTopCoverIdols(int limit);
+    public List<TopIdol> getListTopLipSyncIdols(int limit);
 }

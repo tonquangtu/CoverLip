@@ -41,11 +41,11 @@ public class CoverHomePageController {
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();
         List<VideoWrapper> newCoverWrapperList = new ArrayList<>();
-        for(Cover cover:newCoverList){
+        for (Cover cover : newCoverList) {
             newCoverWrapperList.add(cover.toVideoWrapper());
         }
         List<VideoWrapper> hotCoverWrapperList = new ArrayList<>();
-        for(Cover cover:hotCoverList){
+        for (Cover cover : hotCoverList) {
             hotCoverWrapperList.add(cover.toVideoWrapper());
         }
         map.put("newCoverList", newCoverWrapperList);
@@ -56,16 +56,40 @@ public class CoverHomePageController {
 
 
         //Gia lap cookie sau khi login
-        response.addCookie(new Cookie("myaccount", ""+userService.getUser(8).getAccount().getId()));
+        response.addCookie(new Cookie("myaccount", "" + userService.getUser(8).getAccount().getId()));
 
         //
         return modelAndView;
     }
 
+
+    @RequestMapping("/top-cover")
+    public ModelAndView visitTopCoverPage() {
+
+        ModelAndView modelAndView = new ModelAndView();
+        Map<String, Object> map = new HashMap<String, Object>();
+
+        List<Playlist> playlistList = coverService.getListPlayListCover(-1);
+        List<TopIdol> topIdolList = topIdolService.getListTopCoverIdols(5);
+        TopList<Cover> coverTopList = coverService.getListTopCover();
+
+        if (playlistList == null || topIdolList == null || coverTopList == null) {
+            modelAndView.setViewName("commonpage/error_page");
+        } else {
+            map.put("hotPlayListCover", playlistList);
+            map.put("topIdolList", topIdolList);
+            map.put("coverTopList", coverTopList);
+            modelAndView.setViewName("coverpage/top_cover_page");
+        }
+        modelAndView.addAllObjects(map);
+        return modelAndView;
+    }
+
     @RequestMapping("/personal")
-    public String visitPersonalInfomationPage(){
+    public String visitPersonalInfomationPage() {
         return "redirect:/personal/information";
     }
+
     @RequestMapping("/personal/{type}")
     public ModelAndView visitPersonalInfomationPage(@PathVariable String type, HttpServletRequest request) {
         ModelAndView modelAndView = new ModelAndView();
@@ -76,41 +100,70 @@ public class CoverHomePageController {
         Cookie cookie = WebUtils.getCookie(request, "myaccount");
         int accountId = Integer.parseInt(cookie.getValue());
         User user = userService.getUser(accountId);
-        map.put("userInfo",user);
+        map.put("userInfo", user);
         //
 
         List<VideoWrapper> videoWrapperList = new ArrayList<>();
-        if(Objects.equals(type, "information")){
-
-        }else if(Objects.equals(type, "change-password")){
-
-        }else if(Objects.equals(type, "my-cover")){
+        if (Objects.equals(type, "information")) {
+            modelAndView.setViewName("commonpage/personal_page");
+        } else if (Objects.equals(type, "change-password")) {
+            modelAndView.setViewName("commonpage/personal_page");
+        } else if (Objects.equals(type, "my-cover")) {
             List<Cover> coverOfUserList = coverService.getListCoverOfUser(accountId, 6, -1);
-            for(Cover cover:coverOfUserList){
-                videoWrapperList.add(cover.toVideoWrapper());
+            if (coverOfUserList == null) {
+                modelAndView.setViewName("commonpage/error_page");
+            } else {
+                for (Cover cover : coverOfUserList) {
+                    videoWrapperList.add(cover.toVideoWrapper());
+                }
+                map.put("videoList", videoWrapperList);
+                modelAndView.setViewName("commonpage/personal_page");
             }
-            map.put("videoList", videoWrapperList);
-        }else if(Objects.equals(type, "my-lipsync")){
-            List<LipSync> lipSyncOfUserList = videoService.getListLipSyncOfUser(accountId,6,-1);
-            for(LipSync lipSync:lipSyncOfUserList){
-                videoWrapperList.add(lipSync.toVideoWrapper());
+
+        } else if (Objects.equals(type, "my-lipsync")) {
+            List<LipSync> lipSyncOfUserList = videoService.getListLipSyncOfUser(accountId, 6, -1);
+            if (lipSyncOfUserList == null) {
+                modelAndView.setViewName("commonpage/error_page");
+            } else {
+                for (LipSync lipSync : lipSyncOfUserList) {
+                    videoWrapperList.add(lipSync.toVideoWrapper());
+                }
+                map.put("videoList", videoWrapperList);
+                modelAndView.setViewName("commonpage/personal_page");
             }
-            map.put("videoList", videoWrapperList);
-        }else if(Objects.equals(type,"my-playlist")){
-
-        }else if(Objects.equals(type, "my-idol")){
-
-        }else if(Objects.equals(type, "my-fan")){
-
+        } else if (Objects.equals(type, "my-playlist")) {
+            List<Playlist> playlistList = coverService.getListPlaylistOfUser(accountId, 3, -1);
+            if (playlistList == null) {
+                modelAndView.setViewName("commonpage/error_page");
+            } else {
+                map.put("playlistList", playlistList);
+                modelAndView.setViewName("commonpage/personal_page");
+            }
+        } else if (Objects.equals(type, "my-idol")) {
+            FollowingList userList = userService.getIdolOfUser(accountId, 3, -1);
+            if (userList == null) {
+                modelAndView.setViewName("commonpage/error_page");
+            } else {
+                map.put("idolList", userList.getFollowings());
+                modelAndView.setViewName("commonpage/personal_page");
+            }
+        } else if (Objects.equals(type, "my-fan")) {
+            FollowingList userList = userService.getFanOfUser(accountId, 3, -1);
+            if (userList == null) {
+                modelAndView.setViewName("commonpage/error_page");
+            } else {
+                map.put("fanList", userList.getFollowings());
+                modelAndView.setViewName("commonpage/personal_page");
+            }
         }
-        modelAndView.setViewName("commonpage/personal_page");
+
         modelAndView.addAllObjects(map);
         return modelAndView;
     }
 
     @RequestMapping("user/{idUser}")
-    public String visitUserPage(@PathVariable String idUser){
-        return "redirect: /user/"+idUser+"/cover";
+    public String visitUserPage(@PathVariable String idUser) {
+        return "redirect: /user/" + idUser + "/cover";
     }
 
     @RequestMapping("/user/{idUser}/{type}")
@@ -122,21 +175,26 @@ public class CoverHomePageController {
         map.put("userInfo", user);
         map.put("type", type);
         List<VideoWrapper> videoWrapperList = new ArrayList<>();
-        if(Objects.equals(type, "cover")){
+        if (Objects.equals(type, "cover")) {
             List<Cover> coverOfUserList = coverService.getListCoverOfUser(accountId, 4, -1);
             List<TopIdol> topIdolList = topIdolService.getListTopCoverIdols(5);
-            for(Cover cover:coverOfUserList){
+            for (Cover cover : coverOfUserList) {
                 videoWrapperList.add(cover.toVideoWrapper());
             }
             map.put("videoList", videoWrapperList);
             map.put("topIdolList", topIdolList);
-        }else if(Objects.equals(type, "lipsync")){
+        } else if (Objects.equals(type, "lipsync")) {
             List<LipSync> lipSyncOfUserList = videoService.getListLipSyncOfUser(accountId, 4, -1);
             List<TopIdol> topIdolList = topIdolService.getListTopCoverIdols(5);
-            for(LipSync lipSync:lipSyncOfUserList){
+            for (LipSync lipSync : lipSyncOfUserList) {
                 videoWrapperList.add(lipSync.toVideoWrapper());
             }
             map.put("videoList", videoWrapperList);
+            map.put("topIdolList", topIdolList);
+        } else if (Objects.equals(type, "playlist")) {
+            List<Playlist> playlistList = coverService.getListPlaylistOfUser(accountId, 2, -1);
+            List<TopIdol> topIdolList = topIdolService.getListTopCoverIdols(5);
+            map.put("playlistList", playlistList);
             map.put("topIdolList", topIdolList);
         }
         modelAndView.setViewName("commonpage/user_page");
@@ -146,26 +204,36 @@ public class CoverHomePageController {
 
     @RequestMapping("/user")
     public @ResponseBody
-    List<VideoWrapper> getMoreCoverOfUser(@RequestParam String accountId,
-                                   @RequestParam String currentVideoId,
-                                   @RequestParam String limit,
-                                   @RequestParam String type) {
+    List getMoreCoverOfUser(@RequestParam String accountId,
+                            @RequestParam String currentItemId,
+                            @RequestParam String limit,
+                            @RequestParam String type) {
         int accountIdx = Integer.parseInt(accountId);
-        int currentVideoIdx = Integer.parseInt(currentVideoId);
+        int currentItemIdx = Integer.parseInt(currentItemId);
         int limitx = Integer.parseInt(limit);
         List<VideoWrapper> videoWrapperList = new ArrayList<>();
-        if(Objects.equals(type, "cover")){
-            List<Cover> coverOfUserList = coverService.getListCoverOfUser(accountIdx, limitx,currentVideoIdx);
-            for(Cover cover:coverOfUserList){
+        if (Objects.equals(type, "cover")) {
+            List<Cover> coverOfUserList = coverService.getListCoverOfUser(accountIdx, limitx, currentItemIdx);
+            for (Cover cover : coverOfUserList) {
                 videoWrapperList.add(cover.toVideoWrapper());
             }
-        }else if(Objects.equals(type, "lipsync")){
-            List<LipSync> lipSyncOfUserList = videoService.getListLipSyncOfUser(accountIdx, limitx, currentVideoIdx);
-            for(LipSync lipSync:lipSyncOfUserList){
+            return videoWrapperList;
+        } else if (Objects.equals(type, "lipsync")) {
+            List<LipSync> lipSyncOfUserList = videoService.getListLipSyncOfUser(accountIdx, limitx, currentItemIdx);
+            for (LipSync lipSync : lipSyncOfUserList) {
                 videoWrapperList.add(lipSync.toVideoWrapper());
             }
+            return videoWrapperList;
+        } else if (Objects.equals(type, "playlist")) {
+            return coverService.getListPlaylistOfUser(accountIdx, limitx, currentItemIdx);
+        } else if (Objects.equals(type, "idol")) {
+            FollowingList userList = userService.getIdolOfUser(accountIdx, limitx, currentItemIdx);
+            return userList.getFollowings();
+        } else if (Objects.equals(type, "fan")) {
+            FollowingList userList = userService.getFanOfUser(accountIdx, limitx, currentItemIdx);
+            return userList.getFollowings();
         }
-
-        return videoWrapperList;
+        return null;
     }
+
 }

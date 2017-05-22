@@ -8,9 +8,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <div class="top_idol">
     <div id="top_cover_idol">
-        <h3 id="title_top_cover_idol">TOP COVER IDOL</h3>
+        <c:choose>
+            <c:when test="${targetPage== 'cover_home_page'}">
+                <h3 id="title_top_cover_idol">TOP COVER IDOL</h3>
+            </c:when>
+            <c:otherwise>
+                <h3 id="title_top_cover_idol">TOP LIP SYNC IDOL</h3>
+            </c:otherwise>
+        </c:choose>
+
         <ul>
             <c:forEach items="${listHot}" var="item1" varStatus="i">
                 <li class="item_top_cover_idol">
@@ -19,7 +28,7 @@
                         <a href="#"><strong>${item1.user.account.fullname}</strong></a>
                         <p>${item1.user.numHaveFollowed} người theo dõi</p>
                     </div>
-                    <button type="button" class="btn btn-success btn-sm hvr-buzz-out">Theo dõi</button>
+                    <button type="button" class="btn-follow btn btn-success btn-sm hvr-buzz-out">Theo dõi</button>
                 </li>
             </c:forEach>
         </ul>

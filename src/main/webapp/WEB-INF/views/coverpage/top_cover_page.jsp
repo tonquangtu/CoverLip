@@ -15,20 +15,25 @@ To change this template use File | Settings | File Templates.
     <title>CoverLip</title>
     <%@ include file="../common/common_lib.jsp" %>
 
+    <%--<link rel="stylesheet" href="/resources/styles/main_navigation_style.css"/>--%>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="../../../resources/styles/main_navigation_style.css"/>
-    <link rel="stylesheet" href="../../../resources/styles/main_header_style.css"/>
-    <link rel="stylesheet" href="../../../resources/styles/main_footer_style.css"/>
-    <link rel="stylesheet" type="text/css" href="../../../resources/styles/top_cover_page_style.css"/>
-    <link rel="stylesheet" href="../../../resources/styles/top_idol_card_style.css">
+    <link rel="stylesheet" href="/resources/styles/main_header_style.css"/>
+    <link rel="stylesheet" href="/resources/styles/main_footer_style.css"/>
+    <link rel="stylesheet" href="/resources/styles/top_idol_card_style.css">
+    <link rel="stylesheet" href="/resources/libs/jb/hover-min.css">
+    <link rel="stylesheet" type="text/css" href="/resources/styles/top_cover_page_style.css"/>
+    <script src="/resources/scripts/main_header_script.js"></script>
+
 
     <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
     <script src="../../../resources/scripts/top_cover_script.js"></script>
 </head>
 <body>
+<c:set var="targetPage" scope="request" value="cover_home_page"/>
 <%@include file="../common/main_header.jsp" %>
 
 <content>
+    <div style="height:20px; width: 100%; clear: both"></div>
     <div class="container">
         <div class="col-md-12" style="padding:0">
             <div class="title_top_cover text-center">

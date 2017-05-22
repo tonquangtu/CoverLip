@@ -1,6 +1,7 @@
 package com.clteam.repositories.api;
 
 import com.clteam.dataobject.TopCoverIdolEntity;
+import com.clteam.dataobject.TopLipSyncIdolEntity;
 import com.clteam.dataobject.TopListEntity;
 
 import java.sql.Timestamp;
@@ -27,4 +28,6 @@ public interface TopRepository {
     public int getMaxTopId();
 
     TopListEntity getNewTop();
+
+    List<TopLipSyncIdolEntity> getListTopLipSyncIdols(int limit, int topId);
 }

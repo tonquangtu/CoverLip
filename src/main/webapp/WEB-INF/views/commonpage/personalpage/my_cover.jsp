@@ -26,7 +26,7 @@
                 </div>
             </c:if>
         </c:forEach>
-        <div id="addVideo"></div>
+        <div id="addItem"></div>
     </div>
     <div id="loading" currentvideoid="${(videoList!=null&&videoList.size()>0)?videoList.get(videoList.size()-1).video.id:0}" type="${type}" accountid="${userInfo.account.id}">
         <span><img class="loadicon" src="../../../resources/icons/loadding.svg" style="width:50px"></span>

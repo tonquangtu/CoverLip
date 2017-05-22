@@ -6,6 +6,7 @@ import com.clteam.repositories.api.CoverRepository;
 import com.clteam.repositories.api.LipSyncRepository;
 import com.clteam.repositories.api.UserRepository;
 import com.clteam.repositories.api.VideoRepository;
+import com.clteam.services.commonservice.api.LipSyncService;
 import com.clteam.services.commonservice.api.VideoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,6 +35,9 @@ public class VideoServiceImpl implements VideoService{
 
     @Autowired
     LipSyncRepository lipSyncRepo;
+
+    @Autowired
+    LipSyncService lipSyncService;
 
 
     public Cover getCoverInfo(int videoId) {
@@ -189,19 +193,7 @@ public class VideoServiceImpl implements VideoService{
     @Override
     public List<LipSync> getHotLipSyncs(int limit) {
 
-        List<LipSync> hotLipSyncs = new ArrayList<>();
-        List<HotLipSyncEntity> hotLipSyncEntities = lipSyncRepo.getLimitHotLipSync(limit);
-        if (hotLipSyncEntities != null && hotLipSyncEntities.size() > 0) {
-
-            for(HotLipSyncEntity hotLipSyncEntity : hotLipSyncEntities) {
-
-                LipSync lipSync = getLipSync(hotLipSyncEntity.getVideoId());
-                if (lipSync != null) {
-                    hotLipSyncs.add(lipSync);
-                }
-            }
-        }
-        return hotLipSyncs;
+        return lipSyncService.getHotLipSyncs(limit);
     }
 
     @Override
@@ -380,6 +372,7 @@ public class VideoServiceImpl implements VideoService{
         return cover;
     }
 
+    @Override
     public Video getVideo(VideoInfoEntity videoEntity) {
 
         Video video = null;
@@ -507,29 +500,7 @@ public class VideoServiceImpl implements VideoService{
 
     public LipSync getLipSync(LipSyncInfoEntity lipSyncEntity) {
 
-        LipSync lipSync = null;
-        if (lipSyncEntity != null) {
-            lipSync = new LipSync();
-            LipSyncTemplateInfoEntity templateEntity = lipSyncEntity.getLipSyncTemplateInfoByLipSyncTemplateId();
-            if (templateEntity != null) {
-
-                LipSyncTemplate template = new LipSyncTemplate();
-                VideoInfoEntity templateVideoEntity = templateEntity.getVideoInfoByVideoId();
-                if (templateVideoEntity != null) {
-                    Video video = getVideo(templateVideoEntity);
-                    template.setVideo(video);
-                }
-                template.copyData(templateEntity);
-                lipSync.setLipSyncTemplate(template);
-            }
-
-            VideoInfoEntity videoEntity = lipSyncEntity.getVideoInfoByVideoId();
-            if (videoEntity != null) {
-                Video lipSyncVideo = getVideo(videoEntity);
-                lipSync.setVideo(lipSyncVideo);
-            }
-        }
-        return lipSync;
+        return lipSyncService.getLipSync(lipSyncEntity);
     }
 
 

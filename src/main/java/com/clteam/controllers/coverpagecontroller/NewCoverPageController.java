@@ -54,7 +54,6 @@ public class NewCoverPageController {
     List<Cover> loadMoreNewCover(@RequestParam String currentVideoId,
                                  @RequestParam String limit){
 
-        System.out.println("trung " + currentVideoId);
         int currentVideoIdx = Integer.parseInt(currentVideoId);
         int limitx = Integer.parseInt(limit);
         List<Cover> newCoverList = coverService.getListNewCover(limitx, currentVideoIdx);

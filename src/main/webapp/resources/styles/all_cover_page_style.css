@@ -275,7 +275,10 @@ a{
     bottom: auto;
 }
 
-
 .video-item:hover .order_number{
     background: #1abc9c;
+}
+
+#loading{
+    text-align: center;
 }

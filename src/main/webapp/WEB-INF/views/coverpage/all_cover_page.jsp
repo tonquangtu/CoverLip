@@ -15,21 +15,22 @@
     <link rel="stylesheet" href="/resources/styles/main_footer_style.css">
     <link rel="stylesheet" href="/resources/styles/one_card_style.css">
     <link rel="stylesheet" href="/resources/libs/jb/hover-min.css">
-
+    <script src="/resources/scripts/all_cover_lipsync_script.js"></script>
 </head>
 <body>
-
+<c:set var="targetPage" scope="request" value="cover_home_page"/>
 <%@include file="../common/main_header.jsp"%>
 
 <content>
+    <div style="height:20px; width: 100%; clear: both"></div>
     <div id="main_content_hot_cover" class="container">
 
         <div id="cover_page" class="container">
-            <img src="/resources/storage/image/normal_image/owner_image/cover_hot.jpg" height="250px" width="100%">
-            <div id="title_cover">
-                <h1 style="color: white;">COVER HOT</h1>
-                <p style="color: white;">Tổng hợp những cover hot nhất trên thế giới</p>
-            </div>
+            <img src="/resources/storage/image/normal_image/owner_image/all_cover.jpg" height="250px" width="100%">
+            <%--<div id="title_cover">--%>
+                <%--<h1 style="color: white;">COVER HOT</h1>--%>
+                <%--<p style="color: white;">Tổng hợp những cover hot nhất trên thế giới</p>--%>
+            <%--</div>--%>
         </div>
 
         <div id="content_page" class="container">
@@ -46,6 +47,14 @@
                         </div>
                     </c:if>
                 </c:forEach>
+                <div id="addVideo"></div>
+
+                <div id="loading"
+                     currentvideoid="${(coverList!=null&&coverList.size()>0)?coverList.get(coverList.size()-1).video.id:0}"
+                     type="cover">
+                    <span><img class="loadicon" src="../../../resources/icons/loadding.svg" style="width:50px"></span>
+                    <span>Đang tải dữ liệu...</span>
+                </div>
             </div>
             <div  class="col-md-3 top_cover_layout">
                 <div class="top_cover">
@@ -95,10 +104,6 @@
     </div> <!-- main content -->
 </content>
 <%@include file="../common/main_footer.jsp"%>
-
-<script type="text/javascript">
-    w3IncludeHTML();
-</script>
 
 </body>
 </html>

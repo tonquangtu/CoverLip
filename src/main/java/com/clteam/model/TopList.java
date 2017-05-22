@@ -12,6 +12,12 @@ import java.util.List;
  */
 public class TopList<E> {
 
+    public static int TOP_COVER = 1;
+    public static int TOP_COVER_IDOL = 2;
+    public static int TOP_LIP_SYNC_IDOL = 3;
+
+    public static int ACTIVE = 1;
+
     private int id;
 
     private Timestamp timeTopStart;
@@ -63,7 +69,7 @@ public class TopList<E> {
     }
 
     public String formatTimestamp(Timestamp timestamp){
-        String date = new SimpleDateFormat("MM/dd/yyyy").format(timestamp);
+        String date = new SimpleDateFormat("dd/MM/yyyy").format(timestamp);
         return date;
     }
     public int getWeekFromTime(Timestamp timestamp){

@@ -206,12 +206,12 @@ a, a:hover{
 }
 .one_member .avatar span.numberOne{
     font-size:22px;
-    width: 60px;
-    height: 60px;
-    line-height: 55px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
     background: #b00000;
-    right: 0;
-    top: 0;
+    right: 4px;
+    top: 4px;
     bottom:auto;
 }
 .name_of_member {
@@ -229,6 +229,11 @@ a, a:hover{
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
+    text-decoration: none;
+    opacity: 0.85;
+    -webkit-box-shadow: 0 0 3px 0.5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0 3px 0.5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 3px 0.5px rgba(0, 0, 0, 0.75);
 }
 .one_member a img {
     margin-bottom: 12px;
@@ -243,9 +248,9 @@ a, a:hover{
 .one_member a:hover img{
     text-decoration: none;
     opacity: 0.85;
-    -webkit-box-shadow: 0 0 3px 0.5px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0 0 3px 0.5px rgba(0, 0, 0, 0.75);
-    box-shadow: 0 0 3px 0.5px rgba(0, 0, 0, 0.75);
+    /*-webkit-box-shadow: 0 0 3px 0.5px rgba(0, 0, 0, 0.75);*/
+    /*-moz-box-shadow: 0 0 3px 0.5px rgba(0, 0, 0, 0.75);*/
+    /*box-shadow: 0 0 3px 0.5px rgba(0, 0, 0, 0.75);*/
 }
 .one_member .name_of_member p{
     color:#3c3c3c;
@@ -365,3 +370,6 @@ a, a:hover{
     float: left !important;
 }
 
+a:hover{
+    color: #FF6D00!important;
+}

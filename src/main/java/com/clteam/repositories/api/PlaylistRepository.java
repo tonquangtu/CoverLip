@@ -18,4 +18,6 @@ public interface PlaylistRepository {
     boolean insertPlaylist(PlaylistInfoEntity playlist);
 
     List<PlaylistInfoEntity> getAllPlaylist(int limit);
+
+    List<PlaylistInfoEntity> getListPlaylistOfUser(int accountId, int limit, int currentPlaylistId);
 }

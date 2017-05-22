@@ -1,6 +1,7 @@
 package com.clteam.repositories.impl;
 
 import com.clteam.dataobject.TopCoverIdolEntity;
+import com.clteam.dataobject.TopLipSyncIdolEntity;
 import com.clteam.dataobject.TopListEntity;
 import com.clteam.repositories.api.TopRepository;
 import org.hibernate.Criteria;
@@ -75,5 +76,14 @@ public class TopRepositoryImpl implements TopRepository{
             maxTopId = topListEntity.getId();
         }
         return maxTopId;
+    }
+
+    public List<TopLipSyncIdolEntity> getListTopLipSyncIdols(int limit, int topId){
+
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(TopLipSyncIdolEntity.class);
+        List topLipSyncIdol = criteria.add(Restrictions.eq("topId", topId)).addOrder(Order.desc("score")).setMaxResults(limit).list();
+
+        return topLipSyncIdol;
     }
 }
