@@ -99,7 +99,7 @@
                 </div>
                 <ul class="child-menu">
                     <li><a href="#">Danh sách lipsync</a></li>
-                    <li><a href="#">Lịch chạy tuần</a></li>
+                    <li><a href="#">Dashboard</a></li>
                 </ul>
             </li>
             <li>

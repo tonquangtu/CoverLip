@@ -111,7 +111,7 @@
                                     <td>${playlist.state}</td>
                                     <td>${playlist.description}</td>
                                     <td>${playlist.account.fullname}</td>
-                                    <td class="align-center"><button>+</button></td>
+                                    <td class="align-center"><button> + </button></td>
                                 </tr>
                                 <tr style="display: none">
                                     <td colspan="11">
@@ -136,11 +136,6 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <%--<tr>--%>
-                                                <%--<c:forEach begin="1" end="13">--%>
-                                                    <%--<td></td>--%>
-                                                <%--</c:forEach>--%>
-                                            <%--</tr>--%>
                                             <c:set var="index" value="${0}"/>
                                                 <c:forEach items="${playlist.items}" var="playlistItems">
                                                 <tr>
