@@ -43,4 +43,5 @@ public class VideoWrapper {
     public void setMp3Link(String mp3Link) {
         this.mp3Link = mp3Link;
     }
+
 }
