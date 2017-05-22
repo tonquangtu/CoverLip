@@ -74,20 +74,6 @@
                 <table class="table table-hover tablesorter" id="myTable">
                         <thead>
                         <tr>
-                            <!--
-                                <th><input type="checkbox" name="select-all" value="">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-default select-action">Action</button>
-                                        <button type="button"
-                                            class="btn btn-default dropdown-toggle caret-action"
-                                            data-toggle="dropdown">
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Delete</a></li>
-                                            <li><a href="#">More</a></li>
-                                        </ul>
-                                    </div></th>-->
                             <th>#</th>
                             <th>Tên cover</th>
                             <th>MP3 link</th>
@@ -104,15 +90,6 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <!--<tr class="filters">-->
-                        <!--<th><input type="text" class="form-control" placeholder="Action" disabled></th>-->
-                        <!--<th><input type="text" class="form-control" placeholder="#" ></th>-->
-                        <!--<th><input type="text" class="form-control" placeholder="Picture" disabled></th>-->
-                        <!--<th><input type="text" class="form-control" placeholder="Firstname"></th>-->
-                        <!--<th><input type="text" class="form-control" placeholder="Lastname" ></th>-->
-                        <!--<th><input type="text" class="form-control" placeholder="Email" ></th>-->
-                        <!--<th><input type="text" class="form-control" placeholder="Address"></th>-->
-
                         <c:choose>
                             <c:when test="${empty requestScope.pagingCover}">
                                 <h3>Danh sách Cover rỗng</h3>

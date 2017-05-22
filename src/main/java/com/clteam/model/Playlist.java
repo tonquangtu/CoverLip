@@ -1,10 +1,10 @@
 package com.clteam.model;
 
-import com.clteam.dataobject.AccountEntity;
-import com.clteam.dataobject.PlaylistInfoEntity;
+import com.clteam.dataobject.*;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
@@ -44,6 +44,23 @@ public class Playlist {
             account = new Account();
         }
         this.account.copyData(playlistInfoEntity.getAccountByAccountId());
+        if (items == null) {
+            items = new ArrayList<>();
+        }
+        for (CoverOfPlaylistEntity c : playlistInfoEntity.getCoverOfPlaylistsById()) {
+            VideoInfoEntity videoInfoEntity = c.getVideoInfoByVideoId();
+            Collection<CoverInfoEntity> coverInfoEntities = videoInfoEntity.getCoverInfosById();
+            CoverInfoEntity coverInfoEntity;
+            if (coverInfoEntities != null && !coverInfoEntities.isEmpty()) {
+                coverInfoEntity = coverInfoEntities.iterator().next();
+                PlaylistItem playlistItem = new PlaylistItem();
+                playlistItem.copyData(c,
+                        coverInfoEntity,
+                        videoInfoEntity,
+                        videoInfoEntity.getAccountByAccountId());
+                items.add(playlistItem);
+            }
+        }
     }
 
     public int getId() {

@@ -21,6 +21,7 @@
     </script>
     <link rel="stylesheet" href="/resources/styles/admin/admin_account.css">
     <link rel="stylesheet" href="/resources/styles/admin/admin_cover_list.css">
+    <script src="/resources/scripts/admin/admin_playlist_list.js"></script>
 </head>
 <body>
 
@@ -83,6 +84,7 @@
                         <th>Trạng thái</th>
                         <th>Mô tả</th>
                         <th>Tạo bởi</th>
+                        <th>Chi tiết</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -109,6 +111,61 @@
                                     <td>${playlist.state}</td>
                                     <td>${playlist.description}</td>
                                     <td>${playlist.account.fullname}</td>
+                                    <td class="align-center"><button>+</button></td>
+                                </tr>
+                                <tr style="display: none">
+                                    <td colspan="11">
+                                        <table>
+                                            <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Tên cover</th>
+                                                <th>MP3 link</th>
+                                                <th>Video link</th>
+                                                <th>Ảnh</th>
+                                                <th>Độ dài</th>
+                                                <th>Ngày tạo</th>
+                                                <th>Lượt xem</th>
+                                                <th>Lượt thích</th>
+                                                <th>Lượt bình luận</th>
+                                                <th>Trạng thái</th>
+                                                <th>Mô tả</th>
+                                                <th>Đăng bởi</th>
+                                                <th>Vị trí</th>
+                                                <th>Thời gian thêm</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <%--<tr>--%>
+                                                <%--<c:forEach begin="1" end="13">--%>
+                                                    <%--<td></td>--%>
+                                                <%--</c:forEach>--%>
+                                            <%--</tr>--%>
+                                            <c:set var="index" value="${0}"/>
+                                                <c:forEach items="${playlist.items}" var="playlistItems">
+                                                <tr>
+                                                <c:set var="cover" value="${playlistItems.item}"/>
+                                                <c:set var="index" value="${index + 1}"/>
+                                                <td>${index}</td>
+                                                <td>${cover.coverName}</td>
+                                                <td>${cover.mp3Link}</td>
+                                                <td>${cover.video.videoLink}</td>
+                                                <td><img src="${cover.video.videoThumbnailLink}" class="video-thumbnail-size"/></td>
+                                                <td><fmt:formatDate pattern="HH:mm:ss" value="${cover.video.duration}"/></td>
+                                                <td><fmt:formatDate pattern="dd-MM-yyyy HH:mm:ss" value="${cover.video.createDate}"/></td>
+                                                <td>${cover.video.numView}</td>
+                                                <td>${cover.video.numLike}</td>
+                                                <td>${cover.video.numComment}</td>
+                                                <td>${cover.video.state}</td>
+                                                <td>${cover.video.description}</td>
+                                                <td>${cover.video.account.fullname}</td>
+                                                <td>${playlistItems.priority}</td>
+                                                <td><fmt:formatDate pattern="dd-MM-yyyy HH:mm:ss" value="${playlistItems.timeAdd}"/></td>
+                                                </tr>
+                                                </c:forEach>
+                                            </tbody>
+                                        </table>
+                                    </td>
                                 </tr>
                             </c:forEach>
                         </c:otherwise>
