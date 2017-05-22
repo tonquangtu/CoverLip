@@ -27,17 +27,17 @@
         <div class="container">
             <div class="header">
 
-                <a class="logo" title="Cùng thưởng thức những bài cover tuyệt đỉnh cùng CoverLip" href="/"></a>
+                <a class="logo" title="Cùng thưởng thức những bài cover tuyệt đỉnh cùng CoverLip" href="/cover"></a>
                 <div class="super-menu">
 
                    <c:choose>
                        <c:when test="${targetPage eq 'cover_home_page'}">
-                           <a href="http://localhost:8080/" class="active">COVER</a>
+                           <a href="http://localhost:8080/cover" class="active">COVER</a>
                            <a href="http://localhost:8080/lipsync">LIP-SYNC</a>
                        </c:when>
 
                        <c:otherwise>
-                           <a href="http://localhost:8080/" >COVER</a>
+                           <a href="http://localhost:8080/cover" >COVER</a>
                            <a href="http://localhost:8080/lipsync" class="active">LIP-SYNC</a>
                        </c:otherwise>
                    </c:choose>
@@ -130,27 +130,27 @@
                     <c:when test="${targetPage eq 'cover_home_page'}">
                         <ul class="notifi" id="menuTop">
                             <li class="icon_logo_menu" id="icon_menu_logo">
-                                <a href="http://www.nhaccuatui.com/" title="Trang chủ" class="active">Trang chủ</a>
+                                <a href="/cover" title="Trang chủ" class="active">Trang chủ</a>
                             </li>
 
                             <li class="">
-                                <a href="http://www.nhaccuatui.com/kham-pha.html" title="Khám phá">Cover mới</a>
+                                <a href="/new-cover" title="Cover mới">Cover mới</a>
                             </li>
 
                             <li class="">
-                                <a href="http://www.nhaccuatui.com/kham-pha.html" title="Khám phá">Cover hot</a>
+                                <a href="/hot-cover" title="Cover hot">Cover hot</a>
                             </li>
 
                             <li class="">
-                                <a href="http://www.nhaccuatui.com/kham-pha.html" title="Khám phá">Bảng xếp hạng</a>
+                                <a href="/top-cover" title="Bảng xếp hạng">Bảng xếp hạng</a>
                             </li>
 
                             <li class="">
-                                <a href="http://www.nhaccuatui.com/kham-pha.html" title="Khám phá">Playlist</a>
+                                <a href="/playlist" title="Playlist">Playlist</a>
                             </li>
 
                             <li class="">
-                                <a href="http://www.nhaccuatui.com/kham-pha.html" title="Khám phá">Tất cả</a>
+                                <a href="/all-cover" title="Tất cả">Tất cả</a>
                             </li>
                         </ul>
                     </c:when>
@@ -158,15 +158,15 @@
                     <c:otherwise>
                         <ul class="notifi" id="menuTop">
                             <li class="icon_logo_menu" >
-                                <a href="http://www.nhaccuatui.com/" title="Thịnh hành" class="active">Thịnh hành</a>
+                                <a href="/" title="Thịnh hành" class="active">Thịnh hành</a>
                             </li>
 
                             <li class="">
-                                <a href="http://www.nhaccuatui.com/kham-pha.html" title="Lipsync mới">Lipsync mới</a>
+                                <a href="/" title="Lipsync mới">Lipsync mới</a>
                             </li>
 
                             <li class="">
-                                <a href="http://www.nhaccuatui.com/kham-pha.html" title="Tất cả">Tất cả</a>
+                                <a href="/" title="Tất cả">Tất cả</a>
                             </li>
                         </ul>
                     </c:otherwise>

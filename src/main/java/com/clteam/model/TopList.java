@@ -12,6 +12,12 @@ import java.util.List;
  */
 public class TopList<E> {
 
+    public static int TOP_COVER = 1;
+    public static int TOP_COVER_IDOL = 2;
+    public static int TOP_LIP_SYNC_IDOL = 3;
+
+    public static int ACTIVE = 1;
+
     private int id;
 
     private Timestamp timeTopStart;

@@ -9,7 +9,8 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.0.xsd
         http://www.springframework.org/schema/mvc
-        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd"
+       xmlns:beans="http://www.springframework.org/schema/beans">
 
     <!-- Enable autowire -->
     <context:annotation-config />
@@ -34,7 +35,7 @@
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-                <prop key="hibernate.show_sql">true</prop>
+                <!--<prop key="hibernate.show_sql">true</prop>-->
                 <prop key="hibernate.enable_lazy_load_no_trans">true</prop>
                 <prop key="hibernate.default_schema">coverlip</prop>
                 <prop key="format_sql">true</prop>
@@ -50,8 +51,19 @@
                 <prop key="hibernate.search.default.indexBase">$CONF{hibernate.search.default.indexBase}</prop>
             </props>
         </property>
-
     </bean>
+
+    <!--Upload bean-->
+    <!--<bean id="multipartResolver"-->
+          <!--class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->
+        <!--<property name="maxUploadSize" value="100000" />-->
+    <!--</bean >-->
+
+    <beans:bean id="multipartResolver"
+                class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- setting maximum upload size -->
+        <beans:property name="maxUploadSize" value="100000000" />
+    </beans:bean>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 

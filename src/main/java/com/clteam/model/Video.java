@@ -235,6 +235,7 @@ public class Video implements Serializable{
 
         description = videoEntity.getDescription();
 
+        this.type = videoEntity.getType();
         this.account = new Account();
         this.account.copyData(accountEntity);
     }

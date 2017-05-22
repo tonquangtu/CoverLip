@@ -7,6 +7,7 @@ $(document).ready(function () {
     var cardColor = ["#f44336", "#e91e63", "#9c27b0", "#673ab7", "#3f51b5", "#2196f3", "#03a9f4",
         "#009688", "#4caf50", "#8bc34a", "#cddc39", "#ffeb3b", "#ffc107", "#ff9800", "#795548", "#9e9e9e"];
     var loading = $('#loading');
+    loading.hide();
     var type = loading.attr('type');
     if (type === 'cover'){
         loadMoreVideo();
@@ -60,6 +61,7 @@ $(document).ready(function () {
                     data: {currentItemId: currentItemId, limit: limit, accountId: accountId, type: type},
                     beforeSend: function () {
                         status = false;
+                        loading.show();
                     },
                     success: function (data) {
                         if (data !== null && data.length >0) {
@@ -90,6 +92,7 @@ $(document).ready(function () {
                     },
                     complete: function () {
                         status = true;
+                        loading.hide();
                     }
                 });
             }

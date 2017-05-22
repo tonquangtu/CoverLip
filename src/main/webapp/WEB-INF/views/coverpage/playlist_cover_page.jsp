@@ -34,7 +34,7 @@
 
         <%--<h1>Tổng hợp playlist cover</h1>--%>
 
-        <div class="container">
+        <div class="container" style="padding-left:0;">
             <div class=content_page_playlist>
                 <%--<div class="order">--%>
                 <%----%>

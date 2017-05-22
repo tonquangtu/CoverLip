@@ -6,7 +6,6 @@ import com.clteam.repositories.api.TopRepository;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Timestamp;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -22,7 +20,7 @@ import java.util.List;
  */
 @Repository
 @Transactional
-public class TopRepositoryImpl implements TopRepository{
+public class TopRepositoryImpl implements TopRepository {
 
     @Autowired
     private SessionFactory sessionFactory;
@@ -48,11 +46,18 @@ public class TopRepositoryImpl implements TopRepository{
     }
 
     @Override
-    public TopListEntity getNewTop() {
+    public TopListEntity getTopList(int type, int numWeek) {
+
         Session session = sessionFactory.getCurrentSession();
         Criteria criteria = session.createCriteria(TopListEntity.class);
-        List topListEntity = criteria.addOrder(Order.desc("id")).setMaxResults(1).list();
-        return (TopListEntity) topListEntity.get(0);
+        criteria.add(Restrictions.ge("type", type));
+        if (numWeek > 0) {
+            List<TopListEntity> topListEntities = criteria.list();
+            if (topListEntities.size() >= numWeek)
+                return topListEntities.get(numWeek - 1);
+        }
+        criteria.add(Restrictions.eq("active", 1));
+        return (TopListEntity) criteria.list().get(0);
     }
 
     public List<TopCoverIdolEntity> getListTopCoverIdols(int limit, int topId) {
@@ -63,17 +68,42 @@ public class TopRepositoryImpl implements TopRepository{
         return topCoverIdol;
     }
 
-    public int getMaxTopId(){
+    public int getMaxTopId() {
 
         int maxTopId = -1;
         Session session = sessionFactory.getCurrentSession();
         Criteria criteria = session.createCriteria(TopListEntity.class);
 
         List<TopListEntity> list = criteria.addOrder(Order.desc("id")).list();
-        if (list != null){
+        if (list != null) {
             TopListEntity topListEntity = list.get(0);
             maxTopId = topListEntity.getId();
         }
         return maxTopId;
+    }
+
+    public int getNumWeekFromTimestamp(int type, Timestamp timestamp) {
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(TopListEntity.class);
+        criteria.add(Restrictions.ge("type", type));
+        List<TopListEntity> topListEntities = criteria.list();
+        int i = 0;
+        if (timestamp != null) {
+            for (TopListEntity topListEntity : topListEntities) {
+                i++;
+                if (timestamp.after(topListEntity.getTimeTopStart()) && timestamp.before(topListEntity.getTimeEndStart())) {
+                    return i;
+                }
+            }
+        }
+        i = 0;
+        for (TopListEntity topListEntity : topListEntities) {
+            i++;
+            if (topListEntity.getActive() == 1) {
+                return i;
+            }
+        }
+
+        return 0;
     }
 }

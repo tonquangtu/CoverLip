@@ -4,7 +4,6 @@ import com.clteam.dataobject.TopCoverIdolEntity;
 import com.clteam.dataobject.TopListEntity;
 
 import java.sql.Timestamp;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -26,5 +25,6 @@ public interface TopRepository {
 
     public int getMaxTopId();
 
-    TopListEntity getNewTop();
+    TopListEntity getTopList(int type, int numWeek);
+    public int getNumWeekFromTimestamp(int type, Timestamp timestamp);
 }

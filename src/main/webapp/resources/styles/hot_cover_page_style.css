@@ -42,7 +42,7 @@ body{
 #cover_page{
 
     position: relative;
-    padding-left: 6px;
+    padding-left: 0;
 }
 
 #cover_page #title_cover{
@@ -108,12 +108,14 @@ body{
 #cover_list{
     width: 72%;
     padding-right: 22px;
+    padding-left: 9px;
 }
 
 .top_cover_idol_layout{
     width: 28%;
     padding-left: 0;
     padding-right: 0;
+    margin-top:12px;
 }
 
 #top_cover_idol h3{

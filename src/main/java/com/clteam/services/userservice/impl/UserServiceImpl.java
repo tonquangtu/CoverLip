@@ -2,11 +2,9 @@ package com.clteam.services.userservice.impl;
 
 import com.clteam.dataobject.AccountEntity;
 import com.clteam.dataobject.IdolFollowingEntity;
+import com.clteam.dataobject.TopLipSyncIdolEntity;
 import com.clteam.dataobject.UserInfoEntity;
-import com.clteam.model.Account;
-import com.clteam.model.Following;
-import com.clteam.model.FollowingList;
-import com.clteam.model.User;
+import com.clteam.model.*;
 import com.clteam.repositories.api.UserRepository;
 import com.clteam.services.userservice.api.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +27,7 @@ public class UserServiceImpl implements UserService {
     UserRepository userRepo;
 
     public void indexForAllTables() {
+
         userRepo.indexTables();
     }
 
@@ -48,6 +47,27 @@ public class UserServiceImpl implements UserService {
             user.setAccount(account);
         }
         return user;
+    }
+
+    @Override
+    public List<TopIdol> getLipSyncIdols(int limit) {
+
+        List<TopIdol> idols = new ArrayList<>();
+        List<TopLipSyncIdolEntity> topLipSyncIdolEntities = userRepo.getTopLipSyncIdols(limit);
+        if (topLipSyncIdolEntities != null) {
+            for (TopLipSyncIdolEntity idolEntity : topLipSyncIdolEntities) {
+
+                TopIdol idol = new TopIdol();
+                AccountEntity accountEntity = idolEntity.getAccountByAccountId();
+                UserInfoEntity userEntity = userRepo.getUserInfoByAccountId(idolEntity.getAccountId());
+                if (accountEntity != null && userEntity != null) {
+                    idol.copyData(idolEntity, userEntity, accountEntity);
+                }
+                idols.add(idol);
+            }
+        }
+
+        return idols;
     }
 
     public FollowingList getIdolOfUser(int accountId, int limit, int currentIdolAccountId) {

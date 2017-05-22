@@ -45,6 +45,7 @@
 <script src="../../../resources/libs/facebooksdk/facebook_sdk_script.js"></script>
 <!------------------------------------------------------------------------..---------------------->
 
+<c:set var="targetPage" value="${targetPage}" scope="request"/>
 <%@include file="../common/main_header.jsp"%>
 
 <%--<jsp:directive.include file = "../test/main_header.jsp" />--%>
@@ -183,15 +184,15 @@
                 <c:forEach var ="item" begin="0" end="${size1 -1}" items="${recommendationList}" varStatus="i">
 
                     <%--${VideoWrapper video = recommendationList.get(i)}--%>
-                    <li class="suggestion-video-item box-shadow">
+                    <li class="suggestion-video-item box-shadow ">
 
-                        <a href="${item.video.videoLink}">
+                        <a href="${item.getFullVideoLink(subBaseUrl)}">
                             <div class="video-thumbnail-box">
-                                <img class="video-thumbnail" src="${item.video.videoThumbnailLink}"/>
+                                <img class="video-thumbnail " src="${item.video.videoThumbnailLink}"/>
                             </div>
                         </a>
 
-                        <a href="${item.video.videoLink}">
+                        <a href="${item.getFullVideoLink(subBaseUrl)}">
                             <div class="thumb-mask"></div>
                         </a>
 

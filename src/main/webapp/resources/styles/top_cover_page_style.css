@@ -387,4 +387,12 @@ ul .one-video a:hover{
     /*color:#1ABC9C;*/
 /*}*/
 
+.not_data{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 100px;
+    margin-top: 70px;
+    display: inline-block;
+    width: 100%;
+}
 
