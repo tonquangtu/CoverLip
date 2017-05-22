@@ -4,6 +4,8 @@ package com.clteam.security;
 import com.clteam.security.constant.SecurityConstant;
 import com.clteam.security.model.CustomSocialUser;
 import com.clteam.security.model.CustomUser;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -26,6 +28,9 @@ import java.util.Collection;
  */
 @Component
 public class AuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
+
+    @Autowired
+    private SecurityContextLogoutHandler securityContextLogoutHandler;
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
@@ -57,7 +62,7 @@ public class AuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccess
                 session.setMaxInactiveInterval(SecurityConstant.USER_SESSION_TIMEOUT);
             }
         } else {
-            new SecurityContextLogoutHandler().logout(request, response, authentication);
+            securityContextLogoutHandler.logout(request, response, authentication);
             response.sendRedirect(SecurityConstant.NON_ACTIVATE_URL);
         }
         super.onAuthenticationSuccess(request, response, authentication);

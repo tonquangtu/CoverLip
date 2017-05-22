@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.social.security.SpringSocialConfigurer;
 
 /**
@@ -35,6 +36,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean(name = "passwordEncoder")
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public SecurityContextLogoutHandler getSecurityContextLogoutHandler() {
+        return new SecurityContextLogoutHandler();
     }
 
     @Bean
