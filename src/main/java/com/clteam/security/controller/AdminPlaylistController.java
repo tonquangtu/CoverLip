@@ -1,7 +1,7 @@
 package com.clteam.security.controller;
 
-import com.clteam.model.User;
-import com.clteam.security.service.AdminAccountService;
+import com.clteam.model.Playlist;
+import com.clteam.security.service.AdminPlaylistService;
 import com.clteam.security.util.PaginationUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,28 +10,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.ServletContext;
-
 /**
- * Created by Khanh Nguyen on 21/5/2017.
+ * Created by Khanh Nguyen on 22/5/2017.
  */
 @Controller
-@RequestMapping("/admin/account")
-public class AdminAccountController {
+@RequestMapping("/admin/playlist")
+public class AdminPlaylistController {
 
     @Autowired
-    private AdminAccountService adminAccountService;
-
-//    @GetMapping("/list")
-//    public String list(Model model) {
-//        model.addAttribute("userList", adminAccountService.findAllUser());
-//        return "adminpage/account/list";
-//    }
+    private AdminPlaylistService adminPlaylistService;
 
     @GetMapping("/list")
     public String list(Model model, @RequestParam(value = "page", defaultValue = "1") String page) {
         int currentPage = 1;
-        String redirectUrl = "redirect:/admin/account/list?page=1";
+        String redirectUrl = "redirect:/admin/playlist/list?page=1";
         try {
             currentPage = Integer.parseInt(page);
         } catch (Exception e) {
@@ -40,12 +32,12 @@ public class AdminAccountController {
         if (currentPage <= 0) {
             return redirectUrl;
         }
-        PaginationUtil<User> pagingUser = adminAccountService.pagingUser(currentPage);
-        if (!pagingUser.isFound()) {
+        PaginationUtil<Playlist> pagingCover = adminPlaylistService.pagingPlaylist(currentPage);
+        if (!pagingCover.isFound()) {
             return redirectUrl;
         } else {
-            model.addAttribute("pagingUser", pagingUser);
-            return "adminpage/account/account_list";
+            model.addAttribute("pagingPlaylist", pagingCover);
+            return "adminpage/playlist/playlist_list";
         }
     }
 

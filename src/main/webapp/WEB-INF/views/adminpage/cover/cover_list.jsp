@@ -9,7 +9,6 @@
          pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ page import="com.clteam.dataconstant.DataConstant" %>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -21,6 +20,7 @@
         });
     </script>
     <link rel="stylesheet" href="/resources/styles/admin/admin_account.css">
+    <link rel="stylesheet" href="/resources/styles/admin/admin_cover_list.css">
 </head>
 <body>
 
@@ -32,7 +32,7 @@
             <div class="list shadow-all">
                 <div id="creator-subheader">
                     <div class="creator-subheader-content">
-                        <h2>Danh sách tài khoản</h2>
+                        <h2>Danh sách cover</h2>
                         <span id="creator-subheader-item-count" class="badge-creator" style="display: none;">100</span>
                     </div>
                     <div class="creator-subheader-controls">
@@ -72,82 +72,81 @@
                     </div>
                 </div>
                 <table class="table table-hover tablesorter" id="myTable">
-                    <thead>
-                    <tr>
-                        <!--
-                            <th><input type="checkbox" name="select-all" value="">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default select-action">Action</button>
-                                    <button type="button"
-                                        class="btn btn-default dropdown-toggle caret-action"
-                                        data-toggle="dropdown">
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">Delete</a></li>
-                                        <li><a href="#">More</a></li>
-                                    </ul>
-                                </div></th>-->
-                        <th>#</th>
-                        <th>Video link</th>
-                        <th>Tên</th>
-                        <th>Ngày sinh</th>
-                        <th>Trạng thái</th>
-                        <th>Ngày tham gia</th>
-                        <th>Ảnh đại diện</th>
-                        <th>Luợt theo dõi</th>
-                        <th>Số bài cover</th>
-                        <th>Tổng số Lipsync</th>
-                        <th>Tổng số playlist</th>
-                        <th>Mô tả</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <!--<tr class="filters">-->
-                    <!--<th><input type="text" class="form-control" placeholder="Action" disabled></th>-->
-                    <!--<th><input type="text" class="form-control" placeholder="#" ></th>-->
-                    <!--<th><input type="text" class="form-control" placeholder="Picture" disabled></th>-->
-                    <!--<th><input type="text" class="form-control" placeholder="Firstname"></th>-->
-                    <!--<th><input type="text" class="form-control" placeholder="Lastname" ></th>-->
-                    <!--<th><input type="text" class="form-control" placeholder="Email" ></th>-->
-                    <!--<th><input type="text" class="form-control" placeholder="Address"></th>-->
+                        <thead>
+                        <tr>
+                            <!--
+                                <th><input type="checkbox" name="select-all" value="">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default select-action">Action</button>
+                                        <button type="button"
+                                            class="btn btn-default dropdown-toggle caret-action"
+                                            data-toggle="dropdown">
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Delete</a></li>
+                                            <li><a href="#">More</a></li>
+                                        </ul>
+                                    </div></th>-->
+                            <th>#</th>
+                            <th>Tên cover</th>
+                            <th>MP3 link</th>
+                            <th>Video link</th>
+                            <th>Ảnh</th>
+                            <th>Độ dài</th>
+                            <th>Ngày tạo</th>
+                            <th>Lượt xem</th>
+                            <th>Lượt thích</th>
+                            <th>Lượt bình luận</th>
+                            <th>Trạng thái</th>
+                            <th>Mô tả</th>
+                            <th>Đăng bởi</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!--<tr class="filters">-->
+                        <!--<th><input type="text" class="form-control" placeholder="Action" disabled></th>-->
+                        <!--<th><input type="text" class="form-control" placeholder="#" ></th>-->
+                        <!--<th><input type="text" class="form-control" placeholder="Picture" disabled></th>-->
+                        <!--<th><input type="text" class="form-control" placeholder="Firstname"></th>-->
+                        <!--<th><input type="text" class="form-control" placeholder="Lastname" ></th>-->
+                        <!--<th><input type="text" class="form-control" placeholder="Email" ></th>-->
+                        <!--<th><input type="text" class="form-control" placeholder="Address"></th>-->
 
-                    <c:choose>
-                        <c:when test="${empty requestScope.pagingCover}">
-                            <h3>Danh sách Cover rỗng</h3>
-                        </c:when>
-                        <c:otherwise>
-                            <c:if test="${not empty param.page}">
-                                <c:set var="count" value="${(param.page - 1) * (pagingCover.maxRecordPerPage)}" scope="page" />
-                            </c:if>
-                            <c:if test="${empty param.page}">
-                                <c:set var="count" value="${0}" scope="page"/>
-                            </c:if>
-                            <c:set var="zingCdnUrl" value="<%= DataConstant.STORAGE_BASE_URL%>"/>
-                            <c:forEach items="${requestScope.pagingCover.resultList}" var="cover">
-                                <tr>
-                                    <c:set var="count" value="${count + 1}"/>
-                                    <td>${count}</td>
-                                    <td>${cover.video.videoLink}</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                        <%--<td><a href="<c:url value="/admin/account/edit"/>"><span class="glyphicon glyphicon-pencil"></span></a></td>--%>
-                                        <%--<td><a href="<c:url value="/admin/account/delete"/>"><span class="glyphicon glyphicon-trash"></span></a></td>--%>
-                                </tr>
-                            </c:forEach>
-                        </c:otherwise>
-                    </c:choose>
+                        <c:choose>
+                            <c:when test="${empty requestScope.pagingCover}">
+                                <h3>Danh sách Cover rỗng</h3>
+                            </c:when>
+                            <c:otherwise>
+                                <c:if test="${not empty param.page}">
+                                    <c:set var="count" value="${(param.page - 1) * (pagingCover.maxRecordPerPage)}" scope="page" />
+                                </c:if>
+                                <c:if test="${empty param.page}">
+                                    <c:set var="count" value="${0}" scope="page"/>
+                                </c:if>
+                                <c:forEach items="${requestScope.pagingCover.resultList}" var="cover">
+                                    <tr>
+                                        <c:set var="count" value="${count + 1}"/>
+                                        <td>${count}</td>
+                                        <td>${cover.coverName}</td>
+                                        <td>${cover.mp3Link}</td>
+                                        <td>${cover.video.videoLink}</td>
+                                        <td><img src="${cover.video.videoThumbnailLink}" class="video-thumbnail-size"/></td>
+                                        <td><fmt:formatDate pattern="HH:mm:ss" value="${cover.video.duration}"/></td>
+                                        <td><fmt:formatDate pattern="dd-MM-yyyy HH:mm:ss" value="${cover.video.createDate}"/></td>
+                                        <td>${cover.video.numView}</td>
+                                        <td>${cover.video.numLike}</td>
+                                        <td>${cover.video.numComment}</td>
+                                        <td>${cover.video.state}</td>
+                                        <td>${cover.video.description}</td>
+                                        <td>${cover.video.account.fullname}</td>
+                                    </tr>
+                                </c:forEach>
+                            </c:otherwise>
+                        </c:choose>
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
                 <div>
                     <div class="pull-right">
                         <div class="pagination">

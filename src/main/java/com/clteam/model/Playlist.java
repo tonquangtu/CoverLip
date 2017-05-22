@@ -38,6 +38,14 @@ public class Playlist {
         account = new Account();
     }
 
+    public Playlist(PlaylistInfoEntity playlistInfoEntity) {
+        copyData(playlistInfoEntity);
+        if (account == null) {
+            account = new Account();
+        }
+        this.account.copyData(playlistInfoEntity.getAccountByAccountId());
+    }
+
     public int getId() {
         return id;
     }

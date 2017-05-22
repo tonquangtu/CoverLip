@@ -18,6 +18,6 @@ $(function() {
         $("#error-login-content").text(notifyDisabledCookie);
     }
 
-    //$(".error-login").delay(1000).slideUp(1000);
+    $(".error-login").delay(1000).fadeOut(1000);
 
 });

@@ -30,9 +30,8 @@ public final class SecurityConstant {
     public static final String TARGET_ADMIN_URL = "/admin";
 
     public static final int MAX_RECORD_PER_PAGE = 20;
-    public static final int MAX_NUM_PER_PAGE = 3;
+    public static final int MAX_NUM_PER_PAGE = 5;
 
     public static final String NON_ACTIVATE_URL = "/non-activate";
-
 
 }

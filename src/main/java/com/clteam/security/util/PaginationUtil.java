@@ -30,7 +30,7 @@ public class PaginationUtil<E> {
         maxRecordPerPage = SecurityConstant.MAX_RECORD_PER_PAGE;
         maxNumberPerPage = SecurityConstant.MAX_NUM_PER_PAGE;
         paginationResult();
-        createListIndexPage();
+        createIndexPageList();
     }
 
     public PaginationUtil(Query query, int currentPage, int maxNumberPerPage, int maxRecordPerPage) {
@@ -39,10 +39,10 @@ public class PaginationUtil<E> {
         this.maxNumberPerPage = maxNumberPerPage;
         this.maxRecordPerPage = maxRecordPerPage;
         paginationResult();
-        createListIndexPage();
+        createIndexPageList();
     }
 
-    private void createListIndexPage() {
+    private void createIndexPageList() {
         indexPageList.add(currentPage);
         int i = 1;
         int prev = currentPage - 1;

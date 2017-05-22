@@ -37,16 +37,18 @@
                                 <div class="login-title">
                                     Đăng nhập CoverLip
                                 </div>
-                                <c:if test="${not empty error}">
-                                    <div class="alert alert-danger alert-dismissable error-login">
-                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                        <span>${error}</span>
+                                <%--<c:if test="${not empty error}">--%>
+                                    <%--<div class="alert alert-danger alert-dismissable error-login">--%>
+                                        <%--<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>--%>
+                                        <%--<span>${error}</span>--%>
+                                    <%--</div>--%>
+                                <%--</c:if>--%>
+                                <c:if test="${not empty param.error}">
+                                    <div class="alert alert-danger alert-dismissable error-login-container error-login" style="display: block;">
+                                        <a href="#" class="close" data-dismiss="alert" aria-label="close" id="close-error-login">&times;</a>
+                                        <span id="error-login-content">Tên đăng nhập hoặc mật khẩu không đúng</span>
                                     </div>
                                 </c:if>
-                                <div class="alert alert-danger alert-dismissable error-login-container">
-                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                    <span id="error-login-content"></span>
-                                </div>
                             </div>
                             <form id="loginForm" action="https://localhost:8443/perform_login" method="POST">
                                 <%--<form method="POST" action="/perform_login">--%>

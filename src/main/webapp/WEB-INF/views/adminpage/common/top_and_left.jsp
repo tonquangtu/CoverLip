@@ -98,7 +98,7 @@
                         class="glyphicon glyphicon-chevron-down gl-right"></span>
                 </div>
                 <ul class="child-menu">
-                    <li><a href="#">Danh sách lypsync</a></li>
+                    <li><a href="#">Danh sách lipsync</a></li>
                     <li><a href="#">Lịch chạy tuần</a></li>
                 </ul>
             </li>
@@ -108,7 +108,7 @@
                         class="glyphicon glyphicon-chevron-down gl-right"></span>
                 </div>
                 <ul class="child-menu">
-                    <li class=""><a href="#">Danh sách playlist</a></li>
+                    <li class=""><a href="/admin/playlist/list">Danh sách playlist</a></li>
                     <li><a href="#">Dashboard 1</a></li>
                     <li><a href="#">Dashboard 1</a></li>
                 </ul>
