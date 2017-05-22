@@ -10,6 +10,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletException;
@@ -56,10 +57,7 @@ public class AuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccess
                 session.setMaxInactiveInterval(SecurityConstant.USER_SESSION_TIMEOUT);
             }
         } else {
-            SecurityContextHolder.clearContext();
-            if (session != null) {
-                session.invalidate();
-            }
+            new SecurityContextLogoutHandler().logout(request, response, authentication);
             response.sendRedirect(SecurityConstant.NON_ACTIVATE_URL);
         }
         super.onAuthenticationSuccess(request, response, authentication);
