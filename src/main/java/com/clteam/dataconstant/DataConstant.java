@@ -10,4 +10,5 @@ public class DataConstant {
     public static final int TYPE_COVER = 1;
     public static final int TYPE_LIPSYNC = 2;
     public static final int TYPE_KARAOKE = 3;
+
 }

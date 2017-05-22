@@ -17,7 +17,7 @@
             <!--<div class="bar1"></div>--> <!--<div class="bar2"></div>--> <!--<div class="bar3"></div>-->
             <!--</div>--> <!--<span class="glyphicon glyphicon-home"></span>--> <span
                     style="font-size: 30px; cursor: pointer" class="toggle-open">&#9776;
-				open</span> <a href="/"><span>CoverLip</span></a>
+				Menu</span> <a href="/"><span>CoverLip</span></a>
         </div>
     </div>
     <div class="admin pull-right flex">
@@ -76,7 +76,7 @@
                         class="glyphicon glyphicon-chevron-down gl-right"></span>
                 </div> <!--  <ul class="child-menu" styte="display: block"> -->
                 <ul class="child-menu">
-                    <li class="current-page"><a href="#">Danh sách
+                    <li class="current-page"><a href="/admin/account/list">Danh sách
                         tài khoản</a></li>
                     <li><a href="#">Thêm tài khoản</a></li>
                 </ul>
@@ -87,28 +87,28 @@
                         class="glyphicon glyphicon-chevron-down gl-right"></span>
                 </div>
                 <ul class="child-menu">
-                    <li class=""><a href="#">Danh sách Cover</a></li>
-                    <li><a href="#">Dashboard 1</a></li>
+                    <li class=""><a href="/admin/cover/list"> Danh sách cover </a></li>
+                    <li><a href="#">Danh sách cover</a></li>
                     <li><a href="#">Dashboard 1</a></li>
                 </ul>
             </li>
             <li>
                 <div class="left-nav-content-main">
-                    <i class="glyphicon glyphicon-cog fa"></i> Quản lý Lipsync <span
+                    <i class="glyphicon glyphicon-cog fa"></i> Quản lý lipsync <span
                         class="glyphicon glyphicon-chevron-down gl-right"></span>
                 </div>
                 <ul class="child-menu">
-                    <li><a href="#">Lịch chạy</a></li>
+                    <li><a href="#">Danh sách lypsync</a></li>
                     <li><a href="#">Lịch chạy tuần</a></li>
                 </ul>
             </li>
             <li>
                 <div class="left-nav-content-main">
-                    <i class="glyphicon glyphicon-cog fa"></i> Quản lý danh sách phát <span
+                    <i class="glyphicon glyphicon-cog fa"></i> Quản lý playlist <span
                         class="glyphicon glyphicon-chevron-down gl-right"></span>
                 </div>
                 <ul class="child-menu">
-                    <li class=""><a href="#">Danh sách các danh sách phát</a></li>
+                    <li class=""><a href="#">Danh sách playlist</a></li>
                     <li><a href="#">Dashboard 1</a></li>
                     <li><a href="#">Dashboard 1</a></li>
                 </ul>

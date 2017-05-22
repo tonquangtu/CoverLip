@@ -499,3 +499,15 @@ ul.admin-content li:hover {
 .account-info input, .account-info button {
     border-radius: 0;
 }
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}

@@ -29,12 +29,12 @@ public class AdminAccountRepositoryImpl implements AdminAccountRepository {
     }
 
     @Override
-    public Query getQuery() {
+    public Query getQueryAccountList() {
         return sessionFactory
                 .getCurrentSession()
                 .createQuery("select new " + User.class.getName() +
                         "(a)" +
-                        " from AccountEntity a where role=:role")
+                        " from AccountEntity a where a.role=:role order by a.dateJoin desc ")
                 .setParameter("role", SecurityConstant.ROLE_USER_BYTE);
     }
 

@@ -12,6 +12,6 @@ public interface AdminAccountRepository {
 
     public List<AccountEntity> findAll();
 
-    public Query getQuery();
+    public Query getQueryAccountList();
 
 }

@@ -40,7 +40,7 @@ public class AdminAccountServiceImpl implements AdminAccountService {
 
     @Override
     public PaginationUtil<User> pagingUser(int currentPage) {
-        return new PaginationUtil<User>(adminAccountRepository.getQuery(), currentPage);
+        return new PaginationUtil<User>(adminAccountRepository.getQueryAccountList(), currentPage);
     }
 
 }

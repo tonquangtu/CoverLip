@@ -60,7 +60,7 @@ public class AuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccess
             if (session != null) {
                 session.invalidate();
             }
-            response.sendRedirect("/non-activate");
+            response.sendRedirect(SecurityConstant.NON_ACTIVATE_URL);
         }
         super.onAuthenticationSuccess(request, response, authentication);
     }

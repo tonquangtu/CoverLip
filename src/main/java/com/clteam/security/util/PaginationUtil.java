@@ -22,19 +22,23 @@ public class PaginationUtil<E> {
     private List<E> resultList;
     private boolean found = false;
     private List<Integer> indexPageList = new ArrayList<>();
+    private Query query;
 
     public PaginationUtil(Query query, int currentPage) {
+        this.currentPage = currentPage;
+        this.query = query;
         maxRecordPerPage = SecurityConstant.MAX_RECORD_PER_PAGE;
         maxNumberPerPage = SecurityConstant.MAX_NUM_PER_PAGE;
-        paginationResult(query, currentPage);
+        paginationResult();
         createListIndexPage();
     }
 
     public PaginationUtil(Query query, int currentPage, int maxNumberPerPage, int maxRecordPerPage) {
         this.currentPage = currentPage;
+        this.query = query;
         this.maxNumberPerPage = maxNumberPerPage;
         this.maxRecordPerPage = maxRecordPerPage;
-        paginationResult(query, currentPage);
+        paginationResult();
         createListIndexPage();
     }
 
@@ -61,8 +65,7 @@ public class PaginationUtil<E> {
         Collections.sort(indexPageList);
     }
 
-    private boolean paginationResult(Query query, int currentPage) {
-        this.currentPage = currentPage;
+    private boolean paginationResult() {
         ScrollableResults resultScroll = query.scroll(ScrollMode.FORWARD_ONLY);
         List results = new ArrayList();
         resultScroll.last();

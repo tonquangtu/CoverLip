@@ -8,6 +8,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ page import="com.clteam.dataconstant.DataConstant" %>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -87,7 +89,7 @@
                                     </ul>
                                 </div></th>-->
                         <th>#</th>
-                        <th>Username</th>
+                        <th>Video link</th>
                         <th>Tên</th>
                         <th>Ngày sinh</th>
                         <th>Trạng thái</th>
@@ -111,45 +113,32 @@
                     <!--<th><input type="text" class="form-control" placeholder="Address"></th>-->
 
                     <c:choose>
-                        <c:when test="${empty requestScope.pagingUser}">
-                            <h3>Danh sách tài khoản rỗng</h3>
+                        <c:when test="${empty requestScope.pagingCover}">
+                            <h3>Danh sách Cover rỗng</h3>
                         </c:when>
                         <c:otherwise>
                             <c:if test="${not empty param.page}">
-                                <c:set var="count" value="${(param.page - 1) * (pagingUser.maxRecordPerPage)}" scope="page" />
+                                <c:set var="count" value="${(param.page - 1) * (pagingCover.maxRecordPerPage)}" scope="page" />
                             </c:if>
                             <c:if test="${empty param.page}">
                                 <c:set var="count" value="${0}" scope="page"/>
                             </c:if>
-                            <c:forEach items="${requestScope.pagingUser.resultList}" var="user">
+                            <c:set var="zingCdnUrl" value="<%= DataConstant.STORAGE_BASE_URL%>"/>
+                            <c:forEach items="${requestScope.pagingCover.resultList}" var="cover">
                                 <tr>
-                                    <!--
-                                    <td><input type="checkbox" name="selected[]" value="">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-default select-action">Action</button>
-                                            <button type="button"
-                                                class="btn btn-default dropdown-toggle caret-action"
-                                                data-toggle="dropdown">
-                                                <span class="caret"></span>
-                                            </button>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="javascript:void(0)">Delete</a></li>
-                                                <li><a href="user-detail.html">View Detail</a></li>
-                                            </ul>
-                                        </div></td>-->
                                     <c:set var="count" value="${count + 1}"/>
                                     <td>${count}</td>
-                                    <td>${user.account.username}</td>
-                                    <td>${user.account.fullname}</td>
-                                    <td>${user.dateOfBirth}</td>
-                                    <td>${user.account.state == 1 ? 'Đã kích hoạt' : 'Chưa kích hoạt'}</td>
-                                    <td>${user.account.dateJoin}</td>
-                                    <td class="text-center"><img src="${user.account.coverImage}" alt="Không có ảnh" class="cover-image"></td>
-                                    <td>${user.numHaveFollowed}</td>
-                                    <td>${user.numCover}</td>
-                                    <td>${user.numLipsync}</td>
-                                    <td>${user.numPlaylist}</td>
-                                    <td>${user.description}</td>
+                                    <td>${cover.video.videoLink}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                         <%--<td><a href="<c:url value="/admin/account/edit"/>"><span class="glyphicon glyphicon-pencil"></span></a></td>--%>
                                         <%--<td><a href="<c:url value="/admin/account/delete"/>"><span class="glyphicon glyphicon-trash"></span></a></td>--%>
                                 </tr>
@@ -168,31 +157,31 @@
                             <c:if test="${empty param.page}">
                                 <c:set var="currentPage" value="${1}"/>
                             </c:if>
-
+                            <c:set var="baseUrl" value="/admin/cover/list"/>
                             <c:if test="${currentPage > 1}">
-                                <c:url var="firstPageUrl" value="/admin/account/list">
+                                <c:url var="firstPageUrl" value="${baseUrl}">
                                     <c:param name="page" value="1"/>
                                 </c:url>
                                 <a href="${firstPageUrl}">Đầu</a>
-                                <c:url var="previousPageUrl" value="/admin/account/list">
+                                <c:url var="previousPageUrl" value="${baseUrl}">
                                     <c:param name="page" value="${currentPage - 1}"/>
                                 </c:url>
                                 <a href="${previousPageUrl}">&laquo;</a>
                             </c:if>
 
-                            <c:forEach items="${pagingUser.indexPageList}" var="indexPage">
-                                <c:url var="currentUrl" value="/admin/account/list">
+                            <c:forEach items="${pagingCover.indexPageList}" var="indexPage">
+                                <c:url var="currentUrl" value="${baseUrl}">
                                     <c:param name="page" value="${indexPage}"/>
                                 </c:url>
                                 <a href="${currentUrl}" class="${indexPage == currentPage ? 'active' : ''}">${indexPage}</a>
                             </c:forEach>
 
-                            <c:set var="lastPage" value="${pagingUser.totalPage}"/>
+                            <c:set var="lastPage" value="${pagingCover.totalPage}"/>
                             <c:if test="${currentPage < lastPage}">
-                                <c:url var="lastPageUrl" value="/admin/account/list">
+                                <c:url var="lastPageUrl" value="${baseUrl}">
                                     <c:param name="page" value="${lastPage}"/>
                                 </c:url>
-                                <c:url var="nextPageUrl" value="/admin/account/list">
+                                <c:url var="nextPageUrl" value="${baseUrl}">
                                     <c:param name="page" value="${currentPage + 1}"/>
                                 </c:url>
                                 <a href="${nextPageUrl}">&raquo;</a>
@@ -204,14 +193,7 @@
             </div>
         </div>
     </div>
-
-    <!--<div style=" background-color: #1abb9c; height: 500px; margin: 20px;">-->
-
-    <!--</div>-->
-
 </div>
-
 <%@ include file="../common/footer.jsp"%>
-
 </body>
 </html>

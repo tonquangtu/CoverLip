@@ -15,6 +15,8 @@ public class DateTimeUtil {
 
     public static String DATE_PATTERN = "dd/MM/yyyy";
 
+    public static final String DATE_TIME_PATTERN = "dd/MM/yyyy HH:mm:ss";
+
     public static Timestamp getCurrentTime() {
         return new Timestamp(new Date().getTime());
     }
@@ -51,6 +53,15 @@ public class DateTimeUtil {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate localDate = LocalDate.now().plusDays(1);
         return dtf.format(localDate);
+    }
+
+    /**
+     * Format date
+     * @param date (java.sql.Timestamp extends java.util.Date)
+     * @return
+     */
+    public static String formatDate(Date date) {
+        return new SimpleDateFormat(DATE_TIME_PATTERN).format(date);
     }
 
 }
