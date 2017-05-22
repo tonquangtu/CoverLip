@@ -48,6 +48,27 @@ public class CoverServiceImpl implements CoverService {
         return coverList;
     }
 
+    @Override
+    public List<Cover> getListNewCover(int limit, int currentVideoId) {
+
+        List<NewCoverEntity> newCoverEntityList = coverRepository.getListNewCover(limit, currentVideoId);
+        List<Cover> coverList = new ArrayList<Cover>();
+        for(int i=0; i<newCoverEntityList.size(); i++){
+//            Cover cover = new Cover();
+            VideoInfoEntity videoInfoEntity = newCoverEntityList.get(i).getVideoInfoByVideoId();
+            Collection<CoverInfoEntity> coverInfoEntities =  videoInfoEntity.getCoverInfosById();
+            if(coverInfoEntities!=null){
+                CoverInfoEntity coverInfoEntity = (CoverInfoEntity)coverInfoEntities.toArray()[0];
+                Video video = new Video();
+                video.copyData(videoInfoEntity, videoInfoEntity.getAccountByAccountId());
+                Cover cover = new Cover(video, coverInfoEntity.getCoverName(), coverInfoEntity.getMp3Link());
+//                cover.copyData(coverInfoEntity, videoInfoEntity, videoInfoEntity.getAccountByAccountId());
+                coverList.add(cover);
+            }
+        }
+        return coverList;
+    }
+
     public List<Cover> getListHotCover(int limit) {
         List<Cover> coverList = new ArrayList<Cover>();
         List<HotCoverEntity> hotCoverList = coverRepository.getLimitHotCover(limit);
@@ -75,25 +96,23 @@ public class CoverServiceImpl implements CoverService {
         List<PlaylistInfoEntity> playlistInfoEntities = playlistRepository.getAllPlaylist(limit);
 
         for (int i=0; i<playlistInfoEntities.size(); i++){
-
             Playlist playlist = new Playlist();
             PlaylistInfoEntity playlistInfoEntity = playlistInfoEntities.get(i);
             List<PlaylistItem> items = new ArrayList<>();
             Collection<CoverOfPlaylistEntity> coverOfPlaylistEntities = playlistInfoEntity.getCoverOfPlaylistsById();
+
             if (coverOfPlaylistEntities != null){
-
                 for (int k=0; k < coverOfPlaylistEntities.size(); k++){
-
                     PlaylistItem playlistItem = new PlaylistItem();
 
                     CoverOfPlaylistEntity coverOfPlaylistEntity = (CoverOfPlaylistEntity) coverOfPlaylistEntities.toArray()[k];
                     VideoInfoEntity videoInfoEntity = coverOfPlaylistEntity.getVideoInfoByVideoId();
 
                     Collection<CoverInfoEntity> coverInfoEntities = videoInfoEntity.getCoverInfosById();
-                    if(coverInfoEntities !=null){
+                    if(coverInfoEntities != null){
                         CoverInfoEntity coverInfoEntity = (CoverInfoEntity) coverInfoEntities.toArray()[0];
                         AccountEntity accountEntity = videoInfoEntity.getAccountByAccountId();
-                        if(accountEntity !=null){
+                        if(accountEntity != null){
                             playlistItem.copyData(coverOfPlaylistEntity, coverInfoEntity, videoInfoEntity, accountEntity);
                         }
                     }
@@ -184,5 +203,44 @@ public class CoverServiceImpl implements CoverService {
             }
         }
         return listCoverOfUser;
+    }
+
+    public List<Playlist> getListPlaylistOfUser(int accountId, int limit, int currentPlaylistId){
+        List<PlaylistInfoEntity> playlistInfoEntities = playlistRepository.getListPlaylistOfUser(accountId, limit, currentPlaylistId);
+        if(playlistInfoEntities==null || playlistInfoEntities.size()==0){
+            return null;
+        }
+        List<Playlist> playlistList = new ArrayList<>();
+        for (int i=0; i<playlistInfoEntities.size(); i++){
+
+            Playlist playlist = new Playlist();
+            PlaylistInfoEntity playlistInfoEntity = playlistInfoEntities.get(i);
+            List<PlaylistItem> items = new ArrayList<>();
+            Collection<CoverOfPlaylistEntity> coverOfPlaylistEntities = playlistInfoEntity.getCoverOfPlaylistsById();
+            if (coverOfPlaylistEntities != null){
+
+                for (int k=0; k < coverOfPlaylistEntities.size(); k++){
+
+                    PlaylistItem playlistItem = new PlaylistItem();
+
+                    CoverOfPlaylistEntity coverOfPlaylistEntity = (CoverOfPlaylistEntity) coverOfPlaylistEntities.toArray()[k];
+                    VideoInfoEntity videoInfoEntity = coverOfPlaylistEntity.getVideoInfoByVideoId();
+
+                    Collection<CoverInfoEntity> coverInfoEntities = videoInfoEntity.getCoverInfosById();
+                    if(coverInfoEntities !=null){
+                        CoverInfoEntity coverInfoEntity = (CoverInfoEntity) coverInfoEntities.toArray()[0];
+                        AccountEntity accountEntity = videoInfoEntity.getAccountByAccountId();
+                        if(accountEntity !=null){
+                            playlistItem.copyData(coverOfPlaylistEntity, coverInfoEntity, videoInfoEntity, accountEntity);
+                        }
+                    }
+                    items.add(playlistItem);
+                }
+            }
+            playlist.copyData(playlistInfoEntity, items, playlistInfoEntity.getAccountByAccountId());
+
+            playlistList.add(playlist);
+        }
+        return playlistList;
     }
 }

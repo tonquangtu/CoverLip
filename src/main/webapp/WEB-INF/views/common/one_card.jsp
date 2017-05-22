@@ -20,15 +20,15 @@
                 <div class="singer_video_box">
                     <div class="thumbnail_video_box">
                         <a class="thumbnail_video" href="#"
-                           title="${item.coverName}">
+                           title="${item.videoName}">
                             <span class="icon_play"></span>
-                            <img src="${item.video.videoThumbnailLink}" alt="${item.coverName}"
-                                 title="${item.coverName}">
+                            <img src="${item.video.videoThumbnailLink}" alt="${item.videoName}"
+                                 title="${item.videoName}">
                             <div class="background_one_card"></div>
                         </a>
                     </div>
                     <div class="info_singer_video_box">
-                        <span>${item.compactNameCover(5)}</span>
+                        <span>${item.compactNameVideo(5)}</span>
                     </div>
                 </div>
             </li>

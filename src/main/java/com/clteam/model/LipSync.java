@@ -74,6 +74,7 @@ public class LipSync {
         videoWrapper.setVideo(this.video);
         if (lipSyncTemplate != null) {
             videoWrapper.setVideoName(lipSyncTemplate.getLipSyncTemplateName());
+            videoWrapper.setFullLink();
         }
 
         return videoWrapper;

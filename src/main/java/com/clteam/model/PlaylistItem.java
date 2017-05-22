@@ -6,6 +6,7 @@ import com.clteam.dataobject.CoverOfPlaylistEntity;
 import com.clteam.dataobject.VideoInfoEntity;
 
 import java.sql.Timestamp;
+import java.util.Random;
 
 /**
  * Created by Dell on 03-May-17.
@@ -81,5 +82,6 @@ public class PlaylistItem {
 
 
     }
+
 
 }

@@ -3,6 +3,11 @@
  */
 $(document).ready(function(){
     $('#select_date').on('click',function(){
+        if($('.ui-datepicker').css('display') ==='none'){
+            $('.ui-datepicker').show();
+        }else{
+            $('.ui-datepicker').hide();
+        }
         var startDate;
         var endDate;
 
@@ -24,6 +29,7 @@ $(document).ready(function(){
                 // $('#endDate').text($.datepicker.formatDate( dateFormat, endDate, inst.settings ));
 
                 selectCurrentWeek();
+                $('.ui-datepicker').hide();
             },
             beforeShowDay: function(date) {
                 var cssClass = '';
@@ -38,5 +44,14 @@ $(document).ready(function(){
 
         $('.week-picker .ui-datepicker-calendar tr').mouseover( function() { $(this).find('td a').addClass('ui-state-hover'); });
         $('.week-picker .ui-datepicker-calendar tr').mouseout( function() { $(this).find('td a').removeClass('ui-state-hover'); });
+    });
+
+    //Set default when click outer
+    $(document).click(function (e) {
+        var container = $('#select_date');
+
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            $('.ui-datepicker').hide();
+        }
     });
 });

@@ -373,7 +373,7 @@ input:checked + .slider:before {
 }
 
 .suggestion-video-owner-name:hover {
-    color: #9c27b0 !important;
+    color: #ff6d00 !important;
 }
 
 .suggestion-video-item:hover a {
@@ -608,6 +608,9 @@ input:checked + .slider:before {
     background: #ffffff;
 }
 
+.border-box {
+    border-radius: 2px !important;
+}
 
 
 

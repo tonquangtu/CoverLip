@@ -1,5 +1,6 @@
 package com.clteam.controllers.commonpagecontroller;
 
+import com.clteam.dataconstant.DataConstant;
 import com.clteam.model.*;
 import com.clteam.services.commonservice.api.RecommenderService;
 import com.clteam.services.commonservice.api.VideoService;
@@ -32,10 +33,8 @@ public class VideoPlayerPageController {
     @Autowired
     RecommenderService recommenderService;
 
-    @RequestMapping("cover/{singerName}/{songName}/{videoIdString}")
-    public ModelAndView playCover(@PathVariable String singerName,
-                                             @PathVariable String songName,
-                                             @PathVariable String videoIdString) {
+    @RequestMapping("cover/{videoInfoString}/{videoIdString}")
+    public ModelAndView playCover (@PathVariable String infoVideoString, @PathVariable String videoIdString) {
 
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();
@@ -63,7 +62,8 @@ public class VideoPlayerPageController {
                     }
                 }
 
-
+                map.put("subBaseUrl", DataConstant.COVER_BASE_URL);
+                map.put("targetPage", DataConstant.COVER_PAGE);
                 map.put("user", user);
                 map.put("recommendationList", recommendationList);
                 modelAndView.setViewName("commonpage/video_player_page");
@@ -79,10 +79,8 @@ public class VideoPlayerPageController {
         return modelAndView;
     }
 
-    @RequestMapping("lipsync/{singerName}/{songName}/{videoIdString}")
-    public ModelAndView playLipSync(@PathVariable String singerName,
-                                             @PathVariable String songName,
-                                             @PathVariable String videoIdString) {
+    @RequestMapping("lipsync/{videoInfoString}/{videoIdString}")
+    public ModelAndView playLipSync(@PathVariable String videoInfoString, @PathVariable String videoIdString) {
 
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();
@@ -108,6 +106,8 @@ public class VideoPlayerPageController {
                     }
                 }
 
+                map.put("subBaseUrl", DataConstant.LIP_SYNC_BASE_URL);
+                map.put("targetPage", DataConstant.LIP_SYNC_PAGE);
                 map.put("user", user);
                 map.put("recommendationList", recommendationList);
                 modelAndView.setViewName("commonpage/video_player_page");

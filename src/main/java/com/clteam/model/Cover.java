@@ -7,7 +7,6 @@ import com.clteam.dataobject.VideoInfoEntity;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
-import java.util.StringTokenizer;
 
 /**
  * Created by Dell on 30-Apr-17.
@@ -103,6 +102,7 @@ public class Cover implements Serializable {
         videoWrapper.setVideo(this.video);
         videoWrapper.setVideoName(this.coverName);
         videoWrapper.setMp3Link(this.mp3Link);
+        videoWrapper.setFullLink();
 
         return videoWrapper;
     }
@@ -113,20 +113,5 @@ public class Cover implements Serializable {
         this.mp3Link = coverInfoEntity.getMp3Link();
         this.video = new Video();
         this.video.copyData(videoInfoEntity, accountEntity);
-    }
-
-    public String compactNameCover(int numWord) {
-        StringBuilder result = new StringBuilder();
-        StringTokenizer stringTokenizer = new StringTokenizer(this.coverName, " ");
-        if (stringTokenizer.countTokens() <= numWord) {
-            return this.coverName;
-        }
-        int count = 0;
-        while (stringTokenizer.hasMoreTokens() && count < numWord) {
-            result.append(stringTokenizer.nextToken()).append(" ");
-            count++;
-        }
-
-        return result.toString().trim() + "...";
     }
 }

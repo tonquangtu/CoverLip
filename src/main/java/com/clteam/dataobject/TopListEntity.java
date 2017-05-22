@@ -11,6 +11,8 @@ import java.util.Collection;
 @Table(name = "top_list")
 public class TopListEntity {
     private int id;
+    private int type;
+    private int active;
     private Timestamp timeTopStart;
     private Timestamp timeEndStart;
     private String topDescription;
@@ -27,6 +29,27 @@ public class TopListEntity {
     public void setId(int id) {
         this.id = id;
     }
+
+    @Basic
+    @Column(name = "type", nullable = false)
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    @Basic
+    @Column(name = "active", nullable = false)
+    public int getActive() {
+        return active;
+    }
+
+    public void setActive(int active) {
+        this.active = active;
+    }
+
 
     @Basic
     @Column(name = "time_top_start")

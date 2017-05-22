@@ -1,5 +1,6 @@
 package com.clteam.services.commonservice.api;
 
+import com.clteam.dataobject.VideoInfoEntity;
 import com.clteam.model.*;
 
 import java.util.List;
@@ -39,5 +40,8 @@ public interface VideoService {
 
     List<LipSync> findTopLipSyncOfAccount(int accountId, int limit);
 
+     public Video getVideo(VideoInfoEntity videoEntity);
 
+
+     List<LipSync> getListLipSyncOfUser(int accountId, int limit, int currentVideoId);
 }
