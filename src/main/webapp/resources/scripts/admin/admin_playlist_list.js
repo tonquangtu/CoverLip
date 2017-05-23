@@ -6,12 +6,12 @@ $(function () {
         var self = $(this);
         var trCurrent = self.parentsUntil("tr").parent();
         var trNext = trCurrent.next();
-        if (self.text() === "+") {
+        if (self.text().trim() === "+") {
             self.text("-");
-            trNext.slideDown(1000);
+            trNext.slideDown();
         } else {
             self.text("+");
-            trNext.slideUp(500);
+            trNext.slideUp();
         }
     });
 });

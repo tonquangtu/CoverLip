@@ -46,9 +46,9 @@ public class AuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccess
         Object principal = authentication.getPrincipal();
         int state = -1;
         if (principal instanceof CustomUser) {
-            state = ((CustomUser) principal).getState();
+            state = ((CustomUser) principal).getAccountEntity().getState();
         } else if (principal instanceof CustomSocialUser) {
-            state = ((CustomSocialUser) principal).getState();
+            state = ((CustomSocialUser) principal).getAccountEntity().getState();
         }
 
         if (state == SecurityConstant.ACCOUNT_ACTIVATED_INT) {

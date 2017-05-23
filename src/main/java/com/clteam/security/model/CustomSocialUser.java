@@ -1,5 +1,6 @@
 package com.clteam.security.model;
 
+import com.clteam.dataobject.AccountEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.social.security.SocialUser;
 
@@ -10,13 +11,23 @@ import java.util.Collection;
  */
 public class CustomSocialUser extends SocialUser {
 
+    private AccountEntity accountEntity;
     private String name;
-    private byte state;
+    private int state;
 
-    public CustomSocialUser(String username, String password, Collection<? extends GrantedAuthority> authorities, String name, byte state) {
+    public CustomSocialUser(String username, String password, Collection<? extends GrantedAuthority> authorities, AccountEntity accountEntity) {
         super(username, password, authorities);
-        this.name = name;
-        this.state = state;
+        this.accountEntity = accountEntity;
+        this.name = accountEntity.getFullname();
+        this.state = accountEntity.getState();
+    }
+
+    public AccountEntity getAccountEntity() {
+        return accountEntity;
+    }
+
+    public void setAccountEntity(AccountEntity accountEntity) {
+        this.accountEntity = accountEntity;
     }
 
     public String getName() {
@@ -27,12 +38,11 @@ public class CustomSocialUser extends SocialUser {
         this.name = name;
     }
 
-    public byte getState() {
+    public int getState() {
         return state;
     }
 
-    public void setState(byte state) {
+    public void setState(int state) {
         this.state = state;
     }
-
 }

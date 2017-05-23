@@ -17,18 +17,21 @@
 <!-- Latest compiled JavaScript -->
 <script
         src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href="http://mottie.github.io/tablesorter/css/theme.default.css"
-      rel="stylesheet">
-<link rel="stylesheet"
-      href="https://mottie.github.io/tablesorter/css/theme.blue.css">
+<%--<link href="http://mottie.github.io/tablesorter/css/theme.default.css"--%>
+      <%--rel="stylesheet">--%>
+<%--<link rel="stylesheet"--%>
+      <%--href="https://mottie.github.io/tablesorter/css/theme.blue.css">--%>
+
+<link rel="stylesheet" href="/resources/styles/admin/theme.default.css">
+<link rel="stylesheet" href="/resources/styles/admin/theme.blue.css">
 <script
         src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.js"></script>
 <script
         src="https://mottie.github.io/tablesorter/js/widgets/widget-storage.js"></script>
 <script
         src="https://mottie.github.io/tablesorter/js/widgets/widget-filter.js"></script>
-<link rel="stylesheet"
-      href="https://mottie.github.io/tablesorter/css/theme.blue.css">
+<%--<link rel="stylesheet"--%>
+      <%--href="https://mottie.github.io/tablesorter/css/theme.blue.css">--%>
 <script
         src="${pageContext.request.contextPath}/resources/scripts/admin/admin.tablesorter.js"></script>
 <!-- HTML includes are done by JavaScript -->
