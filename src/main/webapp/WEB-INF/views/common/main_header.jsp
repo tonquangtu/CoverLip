@@ -158,15 +158,15 @@
                     <c:otherwise>
                         <ul class="notifi" id="menuTop">
                             <li class="icon_logo_menu" >
-                                <a href="/" title="Thịnh hành" class="active">Thịnh hành</a>
+                                <a href="/lipsync" title="Thịnh hành" class="active">Thịnh hành</a>
                             </li>
 
                             <li class="">
-                                <a href="/" title="Lipsync mới">Lipsync mới</a>
+                                <a href="/new-lipsync" title="Lipsync mới">Lipsync mới</a>
                             </li>
 
                             <li class="">
-                                <a href="/" title="Tất cả">Tất cả</a>
+                                <a href="/all-lipsync" title="Tất cả">Tất cả</a>
                             </li>
                         </ul>
                     </c:otherwise>

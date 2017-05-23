@@ -1,7 +1,7 @@
 package com.clteam.controllers.coverpagecontroller;
 
 import com.clteam.model.Cover;
-import com.clteam.model.TopIdol;
+import com.clteam.model.TopList;
 import com.clteam.model.VideoWrapper;
 import com.clteam.services.commonservice.api.CoverService;
 import com.clteam.services.userservice.api.TopIdolService;
@@ -18,46 +18,53 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by mrgnu on 19/05/2017.
+ * Created by mrgnu on 21/05/2017.
  */
 @Controller
-public class NewCoverPageController {
+public class AllCoverPageController {
 
     @Autowired
     private CoverService coverService;
     @Autowired
     private TopIdolService topIdolService;
 
-    @RequestMapping("/new-cover")
+    @RequestMapping("/all-cover")
     public ModelAndView visitNewCoverPage(){
 
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();
 
-        List<Cover> newCoverList = coverService.getListNewCover(5, -1);
-        List<TopIdol> listTopCoverIdols = topIdolService.getListTopCoverIdols(10);
+        List<Cover> coverList = coverService.getAllCover(9, -1);
+        TopList<Cover> coverTopList = coverService.getListTopCover(0);
+        System.out.println("   "+ coverTopList.getItems().size());
 
         List<VideoWrapper> videoWrapperList = new ArrayList<VideoWrapper>();
-        for ( Cover cover: newCoverList) {
+        for ( Cover cover: coverList) {
             videoWrapperList.add(cover.toVideoWrapper());
         }
-        map.put("newCoverList", videoWrapperList);
-        map.put("listTopCoverIdols", listTopCoverIdols);
+        map.put("coverList", videoWrapperList);
+        map.put("coverTopList", coverTopList);
 
-        modelAndView.setViewName("coverpage/new_cover_page");
+        modelAndView.setViewName("coverpage/all_cover_page");
         modelAndView.addAllObjects(map);
         return modelAndView;
     }
 
-    @RequestMapping("/load_more_new_cover")
+    @RequestMapping("/load_more_all_cover")
     public @ResponseBody
-    List<Cover> loadMoreNewCover(@RequestParam String currentVideoId,
-                                 @RequestParam String limit){
-
+    List<VideoWrapper> loadMoreAllCoverPage(@RequestParam String currentVideoId,
+                                     @RequestParam String limit){
         int currentVideoIdx = Integer.parseInt(currentVideoId);
         int limitx = Integer.parseInt(limit);
-        List<Cover> newCoverList = coverService.getListNewCover(limitx, currentVideoIdx);
+        List<VideoWrapper> videoWrapperList = new ArrayList<VideoWrapper>();
+        List<Cover> coverList = coverService.getAllCover(limitx, currentVideoIdx);
 
-        return newCoverList;
+        for ( Cover cover: coverList) {
+            videoWrapperList.add(cover.toVideoWrapper());
+        }
+
+        return videoWrapperList;
     }
+
+
 }

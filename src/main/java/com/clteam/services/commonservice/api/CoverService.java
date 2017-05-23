@@ -18,6 +18,7 @@ public interface CoverService {
     List<Cover> getListCoverOfUser(int accountId, int limit, int currentVideoId);
     List<Playlist> getListPlaylistOfUser(int accountId, int limit, int currentPlaylistId);
     public List<Cover> getListNewCover(int limit, int currentVideoId);
+    public List<Cover> getAllCover(int limit, int currentVideoId);
     int getNumWeekFromTimestamp(Timestamp timestamp);
     public Timestamp getNowTimestamp();
 }

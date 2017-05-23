@@ -1,6 +1,7 @@
 package com.clteam.services.userservice.impl;
 
 import com.clteam.dataobject.TopCoverIdolEntity;
+import com.clteam.dataobject.TopLipSyncIdolEntity;
 import com.clteam.dataobject.TopListEntity;
 import com.clteam.dataobject.UserInfoEntity;
 import com.clteam.model.TopIdol;
@@ -43,6 +44,33 @@ public class TopIdolServiceImpl implements TopIdolService {
             if (userInfoEntities != null){
                 UserInfoEntity userInfoEntity = (UserInfoEntity) userInfoEntities.toArray()[0];
                 topIdol.copyData(topCoverIdolEntity, userInfoEntity, userInfoEntity.getAccountByAccountId());
+            }
+
+            topIdolList.add(topIdol);
+        }
+        return topIdolList;
+    }
+
+    @Override
+    public List<TopIdol> getListTopLipSyncIdols(int limit) {
+
+        List<TopIdol> topIdolList = new ArrayList<TopIdol>();
+        List<TopLipSyncIdolEntity> topLipSyncIdols = new ArrayList<TopLipSyncIdolEntity>();
+
+        int maxTopId = topRepository.getMaxTopId();
+        while (topLipSyncIdols.size() == 0 && maxTopId >= 0) {
+            topLipSyncIdols = topRepository.getListTopLipSyncIdols(limit, maxTopId);
+            maxTopId--;
+        }
+
+        for (int i=0; i < topLipSyncIdols.size(); i++){
+            TopIdol topIdol = new TopIdol();
+            TopLipSyncIdolEntity topLipSyncIdolEntity = topLipSyncIdols.get(i);
+            Collection<UserInfoEntity> userInfoEntities = topLipSyncIdolEntity.getAccountByAccountId().getUserInfosById();
+
+            if (userInfoEntities != null){
+                UserInfoEntity userInfoEntity = (UserInfoEntity) userInfoEntities.toArray()[0];
+                topIdol.copyData(topLipSyncIdolEntity, userInfoEntity, userInfoEntity.getAccountByAccountId());
             }
 
             topIdolList.add(topIdol);

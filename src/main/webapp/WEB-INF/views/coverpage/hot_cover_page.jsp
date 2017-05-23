@@ -9,7 +9,7 @@
 
     <%@include file="../common/common_lib.jsp"%>
 
-    <link rel="stylesheet" href="../../../resources/styles/hot_cover_page_style.css">
+    <link rel="stylesheet" href="../../../resources/styles/hot_new_cover_page_style.css">
     <%--<link rel="stylesheet" href="/resources/styles/main_navigation_style.css">--%>
     <link rel="stylesheet" href="/resources/styles/main_header_style.css">
     <link rel="stylesheet" href="/resources/styles/main_footer_style.css">

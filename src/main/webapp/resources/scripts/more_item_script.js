@@ -7,6 +7,7 @@ $(document).ready(function () {
     var cardColor = ["#f44336", "#e91e63", "#9c27b0", "#673ab7", "#3f51b5", "#2196f3", "#03a9f4",
         "#009688", "#4caf50", "#8bc34a", "#cddc39", "#ffeb3b", "#ffc107", "#ff9800", "#795548", "#9e9e9e"];
     var loading = $('#loading');
+    var defaultDistanceToLoad = $(window).height() + $('footer').height() + 40;
     loading.hide();
     var type = loading.attr('type');
     if (type === 'cover'){
@@ -54,7 +55,7 @@ $(document).ready(function () {
     function ajaxLoadMore(currentItemId, limit, accountId, type, addItem, status, oneItem){
         $(window).scroll(function (tt) {
             var height = heightToLoadMore();
-            if (height < 300 && status) {
+            if (height < defaultDistanceToLoad && status) {
                 $.ajax({
                     type: 'get',
                     url: urlServer,
@@ -91,8 +92,12 @@ $(document).ready(function () {
 
                     },
                     complete: function () {
-                        status = true;
-                        loading.hide();
+                        setTimeout(
+                            function()
+                            {
+                                status = true;
+                                loading.hide();
+                            }, 1000);
                     }
                 });
             }
@@ -100,10 +105,8 @@ $(document).ready(function () {
     }
 
     function heightToLoadMore(){
-        var windowHeight = $(window).height();
         var documentHeight = $(document).height();
-        var scrollBarHeight = windowHeight * (windowHeight / documentHeight);
-        var offset = documentHeight - $(window).scrollTop() - scrollBarHeight  - $('footer').height();
+        var offset = documentHeight -  $(window).scrollTop();
 
         return offset;
     }
