@@ -34,6 +34,7 @@
 
 <content>
     <div style="height:20px; width: 100%; clear: both"></div>
+
     <div id="slider" class="container">
         <div id="carousel-id" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">

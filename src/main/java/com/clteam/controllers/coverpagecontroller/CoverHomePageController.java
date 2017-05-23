@@ -108,7 +108,10 @@ public class CoverHomePageController {
             modelAndView.setViewName("commonpage/personal_page");
         } else if (Objects.equals(type, "change-password")) {
             modelAndView.setViewName("commonpage/personal_page");
-        } else if (Objects.equals(type, "my-cover")) {
+        } else if(Objects.equals(type, "upload")){
+            modelAndView.setViewName("commonpage/personal_page");
+        }
+        else if (Objects.equals(type, "my-cover")) {
             List<Cover> coverOfUserList = coverService.getListCoverOfUser(accountId, 6, -1);
             if (coverOfUserList == null) {
                 modelAndView.setViewName("commonpage/error_page");

@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 /**
  * Created by Dell on 12-May-17.
  */
-public class VideoWrapper {
+public class VideoWrapper implements Comparable<VideoWrapper>{
 
     private String videoName;
 
@@ -18,8 +18,9 @@ public class VideoWrapper {
 
     private String fullLink;
 
-    public VideoWrapper() {
+    private float similarityWithOther;
 
+    public VideoWrapper() {
     }
 
     public VideoWrapper(String videoName, Video video) {
@@ -51,6 +52,18 @@ public class VideoWrapper {
         this.mp3Link = mp3Link;
     }
 
+    public void setFullLink(String fullLink) {
+        this.fullLink = fullLink;
+    }
+
+    public float getSimilarityWithOther() {
+        return similarityWithOther;
+    }
+
+    public void setSimilarityWithOther(float similarityWithOther) {
+        this.similarityWithOther = similarityWithOther;
+    }
+
     public String compactNameCover(int numWord) {
         StringBuilder result = new StringBuilder();
         StringTokenizer stringTokenizer = new StringTokenizer(this.videoName, " ");
@@ -73,18 +86,11 @@ public class VideoWrapper {
     public String getFullVideoLink(String subBaseUrl) {
         String fullLink = DataConstant.BASE_URL + subBaseUrl + "/";
         try {
-//
-//            if (video == null) {
-//                System.out.println("Video null");
-//            } else if(video.getAccount() == null) {
-//                System.out.println("Account null");
-//            }
 
             String newOwnerName = CommonUtils.transformToSluxSearch(video.getAccount().getFullname());
             String newVideoName = CommonUtils.transformToSluxSearch(videoName);
 
             fullLink += newOwnerName + "-" + newVideoName + "/" + video.getId();
-//            System.out.println("Full link video: " + fullLink);
 
         }catch (Exception e) {
             e.printStackTrace();
@@ -107,7 +113,18 @@ public class VideoWrapper {
         this.fullLink = getFullVideoLink(subBaseUrl);
     }
 
+    public String getFullLink() {
+        return fullLink;
+    }
 
+    @Override
+    public int compareTo(VideoWrapper o) {
 
-
+        if (o.getSimilarityWithOther() > similarityWithOther) {
+            return 1;
+        } else if (o.getSimilarityWithOther() < similarityWithOther) {
+            return -1;
+        }
+        return 0;
+    }
 }

@@ -19,6 +19,10 @@ public class Video implements Serializable{
 
     public static final int LIP_SYNC_TYPE = 2;
 
+    public static final byte ACTIVE_STATE = 1;
+
+    public static final byte DEACTIVE_STATE = 0;
+
 
     public Video() {
     }
@@ -44,6 +48,8 @@ public class Video implements Serializable{
     private String description;
 
     private int type;
+
+    private String storageId;
 
 
     private Account account;
@@ -144,6 +150,13 @@ public class Video implements Serializable{
         this.account = account;
     }
 
+    public String getStorageId() {
+        return storageId;
+    }
+
+    public void setStorageId(String storageId) {
+        this.storageId = storageId;
+    }
 
     public void copyData(VideoInfoEntity videoEntity) {
 
@@ -168,6 +181,8 @@ public class Video implements Serializable{
         description = videoEntity.getDescription();
 
         this.type = videoEntity.getType();
+
+        this.storageId = videoEntity.getStorageId();
     }
 
     public String periodCreatedForNow() {
@@ -235,7 +250,12 @@ public class Video implements Serializable{
 
         description = videoEntity.getDescription();
 
+        this.type = videoEntity.getType();
+
+        this.storageId = videoEntity.getStorageId();
+
         this.account = new Account();
+
         this.account.copyData(accountEntity);
     }
 }

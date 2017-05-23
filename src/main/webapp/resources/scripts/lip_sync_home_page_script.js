@@ -7,7 +7,8 @@ $(document).ready(function () {
     var lastVideoId = $('.load-more-box').attr('lastVideoId');
     var list = $('.lip-syncs');
     var loading = false;
-    var footerHeight = $('.main-footer').height();
+    // var footerHeight = $('.main-footer').height();
+    var defaultDistanceToLoad = $(window).height() + $('.main-footer').height() + 40;
 
     loadMoreData();
 
@@ -15,12 +16,9 @@ $(document).ready(function () {
 
         $(window).scroll(function (scroll)
         {
-            var windowHeight = $(window).height();
-            var documentHeight = $(document).height();
-            var scrollBarHeight = windowHeight * (windowHeight / documentHeight);
-            var offset = documentHeight - $(window).scrollTop() - scrollBarHeight  - footerHeight;
 
-            if (offset < 300) {
+            var offset = $(document).height() - $(window).scrollTop();
+            if (offset < defaultDistanceToLoad) {
                 if (!loading) {
                     fetchData(scroll);
                 }
@@ -43,14 +41,17 @@ $(document).ready(function () {
 
             beforeSend: function(){
                 loading = true;
-                $(".load-more-box").css("display","block");
+                $(".load-more-box").show();
             },
 
             complete: function(){
-                // console.log("complete");
-                loading = false;
-                $(".load-more-box").css("display", "none");
 
+                setTimeout( function () {
+
+                    loading = false;
+                    $(".load-more-box").hide();
+
+                }, 1000);
             },
 
             success: function(data){
@@ -61,7 +62,10 @@ $(document).ready(function () {
                     $(".load-more-box").remove();
                 }
 
-                addMoreData(data.result);
+                setTimeout( function () {
+                    addMoreData(data.result);
+                }, 1000);
+
             },
             error: function(){
                 console.log("error");

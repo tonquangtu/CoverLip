@@ -44,7 +44,7 @@
                     </h3>
                     <a href="/personal/information" class="selected">Thông Tin</a>
                     <a href="/personal/change-password">Thay Đổi Mật Khẩu</a>
-                    <a href="">Upload</a>
+                    <a href="/personal/upload">Upload</a>
                     <a href="/user/${userInfo.account.id}">Kênh Của Tôi</a>
                     <a href="/personal/my-cover">Cover Đã Đăng</a>
                     <a href="/personal/my-lipsync">LipSync Đã Đăng</a>
@@ -62,6 +62,11 @@
                     </c:when>
                     <c:when test="${type.equals('change-password')}">
                         <%@include file="personalpage/change_password.jsp"%>
+                    </c:when>
+                    <c:when test="${type.equals('upload')}">
+                        <c:set var="message" scope="request" value="${message}"/>
+                        <c:set var="userInfo" scope="request" value="${userInfo}"/>
+                        <%@include file="personalpage/upload_video_page.jsp"%>
                     </c:when>
                     <c:when test="${type.equals('my-cover')}">
                         <c:set var="videoList" scope="request" value="${videoList}"/>

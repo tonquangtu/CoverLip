@@ -38,4 +38,30 @@ $(document).ready(function(){
             return false;
         }
     });
+    validateUpload();
+
+    function validateUpload(){
+        $('#submit').attr("disabled","disabled");
+        $('#choose_video').on('change',function(){
+            var videoPath = $(this).val();
+            var extn = videoPath.substring(videoPath.lastIndexOf('.') + 1).toLowerCase();
+            if (extn === "webm" || extn === "mp4" || extn === "flv" || extn === "mkv" || extn==="3gp") {
+                $('#submit').prop("disabled",false);
+            } else {
+                $('#submit').attr("disabled","disabled");
+                alert("Hãy lựa chọn video để upload");
+            }
+        });
+
+        $('#submit').on('click',function(){
+           if($('input[name="title"]').val().trim()==='' || $('input[name="description"]').val().trim()===''){
+               alert("Hãy điền đầy đủ thông tin");
+               return false;
+           }else{
+               $('form').submit();
+           }
+        });
+    }
+
+
 });

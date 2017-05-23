@@ -57,20 +57,22 @@
 
         <div class="col-md-8 column-content">
            <div class="video-content-box">
-               <div class="media-wrapper box-shadow">
-                   <video id="player1" width="750" height="460">
-                       <%--../../..${cover.video.videoLink}--%>
+               <%--<div class="media-wrapper box-shadow">--%>
+                   <%--<video id="player1" width="750" height="460">--%>
+                       <%--<source type="video/mp4"  src="${currItem.video.videoLink}"/>--%>
+                       <%--<!-- <track srclang="en" label="English" kind=--%>
+                       <%--ib/mediaelement.vtt"> -->--%>
+                       <%--<!--  <track srclang="en" kind="chapters" src="video lib/chapters.vtt">  -->--%>
+                   <%--</video>--%>
+               <%--</div>--%>
 
-                       <source type="video/mp4"  src="${currItem.video.videoLink}"/>
+                   <div class="video-box box-shadow border-box">
 
+                       <iframe width="750" height="460" src="${currItem.video.videoLink}" frameborder="0" allowfullscreen></iframe>
 
-                       <!-- <track srclang="en" label="English" kind=
-                       ib/mediaelement.vtt"> -->
-                       <!--  <track srclang="en" kind="chapters" src="video lib/chapters.vtt">  -->
-                   </video>
-               </div>
+                   </div>
 
-               <div class="video-detail-box box-shadow">
+               <div class="video-detail-box box-shadow border-box">
 
                    <div class="video-common-info">
                        <div class="video-title-box">
@@ -133,7 +135,7 @@
 
                </div>
 
-               <div class="box-shadow fb-comment-box">
+               <div class="box-shadow fb-comment-box border-box">
                    <h3 class="comment-title center-vertical-content">BÌNH LUẬN</h3>
                    <div class="fb-comments custom-fb-comment"
                         data-href="http://localhost:63342/CoverLip.com/html/play_one_video_page.html"
@@ -184,16 +186,16 @@
                 <c:forEach var ="item" begin="0" end="${size1 -1}" items="${recommendationList}" varStatus="i">
 
                     <%--${VideoWrapper video = recommendationList.get(i)}--%>
-                    <li class="suggestion-video-item box-shadow ">
+                    <li class="suggestion-video-item box-shadow border-box">
 
                         <a href="${item.getFullVideoLink(subBaseUrl)}">
-                            <div class="video-thumbnail-box">
-                                <img class="video-thumbnail " src="${item.video.videoThumbnailLink}"/>
+                            <div class="video-thumbnail-box border-box">
+                                <img class="video-thumbnail border-box " src="${item.video.videoThumbnailLink}"/>
                             </div>
                         </a>
 
                         <a href="${item.getFullVideoLink(subBaseUrl)}">
-                            <div class="thumb-mask"></div>
+                            <div class="thumb-mask border-box"></div>
                         </a>
 
                         <div class="suggestion-video-info">

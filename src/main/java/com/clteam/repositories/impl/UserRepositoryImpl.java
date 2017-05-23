@@ -72,8 +72,11 @@ public class UserRepositoryImpl implements UserRepository {
 
             fullTextSession.createIndexer(LipSyncTemplateInfoEntity.class).startAndWait();
 
+            fullTextSession.createIndexer(VideoInfoEntity.class).startAndWait();
 
-//
+            fullTextSession.createIndexer(AccountEntity.class).startAndWait();
+
+
 //            fullTextSession
 //                    .createIndexer(LipSyncTemplateInfoEntity.class, CoverInfoEntity.class)
 //                    .batchSizeToLoadObjects( 25 )
