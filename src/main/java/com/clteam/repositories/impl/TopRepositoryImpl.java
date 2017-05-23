@@ -1,15 +1,16 @@
 package com.clteam.repositories.impl;
 
-import com.clteam.dataobject.TopCoverIdolEntity;
-import com.clteam.dataobject.TopLipSyncIdolEntity;
-import com.clteam.dataobject.TopListEntity;
+import com.clteam.dataobject.*;
 import com.clteam.repositories.api.TopRepository;
+import com.sun.org.apache.regexp.internal.RE;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.criterion.SimpleExpression;
+import org.hibernate.service.spi.SessionFactoryServiceInitiator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -86,4 +87,73 @@ public class TopRepositoryImpl implements TopRepository{
 
         return topLipSyncIdol;
     }
+
+    @Override
+    public int setFollowIdol(int acoundId, int topId, Timestamp timestampFollow){
+        Session session = sessionFactory.getCurrentSession();
+
+        Criteria criteria = session.createCriteria(IdolFollowingEntity.class);
+        SimpleExpression simpleExpression1 =  Restrictions.eq("accountId", acoundId);
+        SimpleExpression simpleExpression2 =  Restrictions.eq("followedAccountId", topId);
+        List<IdolFollowingEntity> idolFollowingEntities = criteria.add(Restrictions.and(simpleExpression1, simpleExpression2)).list();
+        if (idolFollowingEntities != null && idolFollowingEntities.size() > 0){
+            return 0;
+        }
+
+        IdolFollowingEntity topLipSyncIdolEntity = new IdolFollowingEntity();
+        topLipSyncIdolEntity.setAccountId(acoundId);
+        topLipSyncIdolEntity.setFollowedAccountId(topId);
+        topLipSyncIdolEntity.setTimeStartFollow(timestampFollow);
+
+        session.save(topLipSyncIdolEntity);
+        changeNumFollow(topId, 0);
+        return 1;
+    }
+
+    public int changeNumFollow(int followId, int statusFollow){
+
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(UserInfoEntity.class);
+
+        List<UserInfoEntity> userInfoEntities = criteria.add(Restrictions.eq("accountId", followId)).list();
+        if (userInfoEntities != null && userInfoEntities.size() > 0){
+            UserInfoEntity userInfoEntity = userInfoEntities.get(0);
+            int numFollow = userInfoEntity.getNumHaveFollowed();
+
+            if (statusFollow == 0){
+                userInfoEntity.setNumHaveFollowed(numFollow + 1);
+            }
+            else {
+                userInfoEntity.setNumHaveFollowed(numFollow - 1);
+            }
+
+        }
+
+        return 1;
+    }
+
+    @Override
+    public int unFollowIdol(int acoundId, int topId) {
+
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(IdolFollowingEntity.class);
+        //IdolFollowingEntity idolFollowingEntity =
+
+        SimpleExpression simpleExpression1 =  Restrictions.eq("accountId", acoundId);
+        SimpleExpression simpleExpression2 =  Restrictions.eq("followedAccountId", topId);
+        List<IdolFollowingEntity> idolFollowingEntities = criteria.add(Restrictions.and(simpleExpression1, simpleExpression2)).list();
+        if (idolFollowingEntities != null && idolFollowingEntities.size() > 0){
+            for (IdolFollowingEntity idolFollowingEntity : idolFollowingEntities){
+                session.delete(idolFollowingEntity);
+            }
+            changeNumFollow(topId, 1);
+            return 1;
+        }
+        else{
+            return 0;
+        }
+
+    }
+
+
 }

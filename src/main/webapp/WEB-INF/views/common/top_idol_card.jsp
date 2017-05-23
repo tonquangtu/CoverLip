@@ -26,9 +26,38 @@
                     <img src="${item1.user.account.avatarThumbnail}" class="img-circle hvr-pulse-grow" alt="top cover idol">
                     <div class="idol_info">
                         <a href="#"><strong>${item1.user.account.fullname}</strong></a>
-                        <p>${item1.user.numHaveFollowed} người theo dõi</p>
+                        <p><span>${item1.user.numHaveFollowed}</span> người theo dõi</p>
                     </div>
-                    <button type="button" class="btn-follow btn btn-success btn-sm hvr-buzz-out">Theo dõi</button>
+
+                    <c:choose>
+                        <c:when test="${idolList == null || idolList.size() == 0}">
+                            <button type="button" class="btn-follow btn btn-success btn-sm hvr-buzz-out"
+                                    topIdolId = "${item1.user.account.id}"
+                                    statusFollow = "0">
+                                Theo dõi</button>
+
+                        </c:when>
+                        <c:otherwise>
+                            <c:set var="checkFollow" value="false"/>
+                            <c:forEach items="${idolList}" var="itemFollow" varStatus="j">
+                                <c:if test="${item1.user.account.id == itemFollow.account.id}">
+                                    <c:set var="j.index" value="${idolList.size() + 1}"/>
+                                    <c:set var="checkFollow" value="true"/>
+                                    <button type="button" class="btn-follow btn btn-success btn-sm hvr-buzz-out"
+                                            style="background-color: #ffffff; border-color: #4cae4c; color: #4cae4c;"
+                                            topIdolId = "${item1.user.account.id}"
+                                            statusFollow = "1">
+                                        Đã theo dõi</button>
+                                </c:if>
+                            </c:forEach>
+                            <c:if test="${checkFollow == 'false'}">
+                                <button type="button" class="btn-follow btn btn-success btn-sm hvr-buzz-out"
+                                        topIdolId = "${item1.user.account.id}"
+                                        statusFollow = "0">
+                                    Theo dõi</button>
+                            </c:if>
+                        </c:otherwise>
+                    </c:choose>
                 </li>
             </c:forEach>
         </ul>

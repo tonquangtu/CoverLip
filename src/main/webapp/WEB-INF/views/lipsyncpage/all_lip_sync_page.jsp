@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/resources/libs/jb/hover-min.css">
     <script src="/resources/scripts/main_header_script.js"></script>
     <script src="/resources/scripts/all_cover_lipsync_script.js"></script>
+    <script src="/resources/scripts/click_follow_idol_script.js"></script>
 
 </head>
 <body>
@@ -67,6 +68,7 @@
             </div>
             <div  class="col-md-3 top_cover_idol_layout">
                 <c:set var="listHot" value="${listTopLipSyncIdols}" scope="request"/>
+                <c:set var="idolList" value="${idolList}" scope="request"/>
                 <%@include file="../common/top_idol_card.jsp" %>
             </div>
         </div>
