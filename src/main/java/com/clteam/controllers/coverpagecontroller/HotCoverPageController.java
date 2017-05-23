@@ -1,10 +1,12 @@
 package com.clteam.controllers.coverpagecontroller;
 
 import com.clteam.model.Cover;
+import com.clteam.model.FollowingList;
 import com.clteam.model.TopIdol;
 import com.clteam.model.VideoWrapper;
 import com.clteam.services.commonservice.api.CoverService;
 import com.clteam.services.userservice.api.TopIdolService;
+import com.clteam.services.userservice.api.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,10 +29,13 @@ public class HotCoverPageController {
     private CoverService coverService;
     @Autowired
     private TopIdolService topIdolService;
+    @Autowired
+    private UserService userService;
 
     @RequestMapping("/hot-cover")
     public ModelAndView visitHotCoverPage(){
 
+        int accountId = 3;
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();
 
@@ -42,6 +47,15 @@ public class HotCoverPageController {
         }
         map.put("hotCoverList", videoWrapperList);
         map.put("listTopCoverIdols", listTopCoverIdols);
+
+        if (accountId > 0){
+            FollowingList userList = userService.getIdolOfUser(accountId, -1, -1);
+            if (userList == null) {
+                modelAndView.setViewName("commonpage/error_page");
+            } else {
+                map.put("idolList", userList.getFollowings());
+            }
+        }
 
         modelAndView.setViewName("coverpage/hot_cover_page");
         modelAndView.addAllObjects(map);

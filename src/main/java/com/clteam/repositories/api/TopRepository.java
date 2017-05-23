@@ -31,4 +31,8 @@ public interface TopRepository {
     TopListEntity getNewTop();
 
     List<TopLipSyncIdolEntity> getListTopLipSyncIdols(int limit, int topId);
+
+    int setFollowIdol(int acoundId, int topId, Timestamp timestampFollow);
+
+    int unFollowIdol(int acoundId, int topId);
 }

@@ -77,4 +77,17 @@ public class TopIdolServiceImpl implements TopIdolService {
         }
         return topIdolList;
     }
+
+    @Override
+    public int setFollowIdol(int acoundId, int topId, Timestamp timestampFollow) {
+
+        int check = topRepository.setFollowIdol(acoundId, topId, timestampFollow);
+        return check;
+    }
+
+    @Override
+    public int unFollowIdol(int acoundId, int topId) {
+        int check = topRepository.unFollowIdol(acoundId, topId);
+        return check;
+    }
 }
