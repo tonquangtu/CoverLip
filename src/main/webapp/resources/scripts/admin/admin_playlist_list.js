@@ -5,7 +5,7 @@ $(function () {
     $("tr button").on("click", function () {
         var self = $(this);
         var trCurrent = self.parentsUntil("tr").parent();
-        var trNext = trCurrent.next();    
+        var trNext = trCurrent.next();
         if (self.text().trim() === "+") {
             self.text("-");
             trNext.slideDown();
