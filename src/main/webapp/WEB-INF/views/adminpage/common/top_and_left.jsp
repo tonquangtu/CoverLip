@@ -94,6 +94,16 @@
             </li>
             <li>
                 <div class="left-nav-content-main">
+                    <i class="glyphicon glyphicon-cog fa"></i> Quản lý playlist <span
+                        class="glyphicon glyphicon-chevron-down gl-right"></span>
+                </div>
+                <ul class="child-menu">
+                    <li class=""><a href="/admin/playlist/list">Danh sách playlist</a></li>
+                    <li><a href="#">Dashboard 1</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="left-nav-content-main">
                     <i class="glyphicon glyphicon-cog fa"></i> Quản lý lipsync <span
                         class="glyphicon glyphicon-chevron-down gl-right"></span>
                 </div>
@@ -104,25 +114,11 @@
             </li>
             <li>
                 <div class="left-nav-content-main">
-                    <i class="glyphicon glyphicon-cog fa"></i> Quản lý playlist <span
-                        class="glyphicon glyphicon-chevron-down gl-right"></span>
-                </div>
-                <ul class="child-menu">
-                    <li class=""><a href="/admin/playlist/list">Danh sách playlist</a></li>
-                    <li><a href="#">Dashboard 1</a></li>
-                    <li><a href="#">Dashboard 1</a></li>
-                </ul>
-            </li>
-            <li>
-                <div class="left-nav-content-main">
                     <i class="glyphicon glyphicon-cog fa"></i> Quản lý người đăng <span
                         class="glyphicon glyphicon-chevron-down gl-right"></span>
                 </div>
                 <ul class="child-menu">
                     <li class=""><a href="#">Danh sách người đăng </a></li>
-                    <li><a href="#">Dashboard 1</a></li>
-                    <li><a href="#">Dashboard 1</a></li>
-                    <li><a href="#">Dashboard 1</a></li>
                     <li><a href="#">Dashboard 1</a></li>
                 </ul>
             </li>

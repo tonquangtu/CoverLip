@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="../../../resources/styles/card_playlist_cover_style.css">
     <link rel="stylesheet" href="../../../resources/styles/personal_style.css">
 
-    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src = "../../../resources/scripts/one_card_script.js"></script>
     <script src="../../../resources/scripts/more_item_script.js"></script>
     <script type="text/javascript" src="../../../resources/scripts/personal_script.js"></script>

@@ -2,7 +2,7 @@
  * Created by nguyenthanhtung on 15/05/2017.
  */
 $(document).ready(function(){
-    var urlServer = 'http://localhost:8080/top-cover';
+    var urlServer = '/top-cover';
     $('#select_date').on('click',function(){
         if($('.ui-datepicker').css('display') ==='none'){
             $('.ui-datepicker').show();
@@ -34,8 +34,9 @@ $(document).ready(function(){
                 selectCurrentWeek();
                 $('.ui-datepicker').hide();
                 $.ajax({
-                    type:"POST",
+                    type:"GET",
                     url:urlServer+"/get-num-week",
+                    dataType: 'jsonp',
                     data:{timestamp:new Date(nowDate).getTime()},
                     success:function(data){
                         window.location=urlServer+"/Bang-Xep-Hang-Lan-" + data;
