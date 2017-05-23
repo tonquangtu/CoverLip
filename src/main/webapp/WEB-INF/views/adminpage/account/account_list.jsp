@@ -99,6 +99,7 @@
                         <th>Tổng số Lipsync</th>
                         <th>Tổng số playlist</th>
                         <th>Mô tả</th>
+                        <th>Cập nhật</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -143,7 +144,15 @@
                                     <td>${user.account.username}</td>
                                     <td>${user.account.fullname}</td>
                                     <td><fmt:formatDate pattern="dd-MM-yyyy HH:mm:ss" value="${user.dateOfBirth}"/></td>
-                                    <td>${user.account.state == 1 ? 'Đã kích hoạt' : 'Chưa kích hoạt'}</td>
+                                    <td>
+                                        <select>
+                                            <c:set value="${user.account.state}" var="opt"/>
+                                            <option value="0" ${opt == 0 ? 'selected' : ''}>Non-activate</option>
+                                            <option value="1" ${opt == 1 ? 'selected' : ''}>Activated</option>
+                                            <option value="2" ${opt == 2 ? 'selected' : ''}>Blocked</option>
+                                        </select>
+                                    </td>
+                                    <%--<td>${user.account.state == 1 ? 'Đã kích hoạt' : 'Chưa kích hoạt'}</td>--%>
                                     <td><fmt:formatDate pattern="dd-MM-yyyy HH:mm:ss" value="${user.account.dateJoin}"/></td>
                                     <td class="text-center"><img src="${user.account.coverImage}" alt="Không có ảnh" class="cover-image"></td>
                                     <td>${user.numHaveFollowed}</td>
@@ -151,6 +160,7 @@
                                     <td>${user.numLipsync}</td>
                                     <td>${user.numPlaylist}</td>
                                     <td>${user.description}</td>
+                                    <td><button class="update-btn" id="${user.account.id}"> Update </button></td>
                                         <%--<td><a href="<c:url value="/admin/account/edit"/>"><span class="glyphicon glyphicon-pencil"></span></a></td>--%>
                                         <%--<td><a href="<c:url value="/admin/account/delete"/>"><span class="glyphicon glyphicon-trash"></span></a></td>--%>
                                 </tr>
@@ -213,6 +223,8 @@
 </div>
 
 <%@ include file="../common/footer.jsp"%>
+
+<script src="/resources/scripts/admin/admin_account_list.js"></script>
 
 </body>
 </html>

@@ -1,14 +1,13 @@
 package com.clteam.security.controller;
 
 import com.clteam.model.User;
+import com.clteam.security.service.AccountSecurityService;
 import com.clteam.security.service.AdminAccountService;
 import com.clteam.security.util.PaginationUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletContext;
 
@@ -21,6 +20,9 @@ public class AdminAccountController {
 
     @Autowired
     private AdminAccountService adminAccountService;
+
+    @Autowired
+    private AccountSecurityService accountSecurityService;
 
 //    @GetMapping("/list")
 //    public String list(Model model) {
@@ -47,6 +49,13 @@ public class AdminAccountController {
             model.addAttribute("pagingUser", pagingUser);
             return "adminpage/account/account_list";
         }
+    }
+
+    @PostMapping("/update")
+    public @ResponseBody boolean update(
+            @RequestParam("accountId") String accountId, @RequestParam("statusAccount") String statusAccount) {
+        System.out.println("### begin update status account");
+        return accountSecurityService.saveAccountStatusDto(accountId, statusAccount);
     }
 
 }

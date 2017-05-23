@@ -73,4 +73,19 @@ public class AccountSecurityServiceImpl implements AccountSecurityService {
             }
         }
     }
+
+    @Override
+    public boolean saveAccountStatusDto(String accountId, String statusAccount) {
+
+        AccountEntity accountEntity = findByUserId(accountId);
+        byte currentState = accountEntity.getState();
+        int clientState = Integer.parseInt(statusAccount);
+        if ((byte) clientState != currentState && (clientState == 0 || clientState == 1 || clientState == 2)) {
+            accountEntity.setState((byte) clientState);
+            saveAccountEntity(accountEntity);
+            System.out.println("### update status of account");
+            return true;
+        }
+        return false;
+    }
 }
