@@ -6,7 +6,7 @@
             <img class="img-responsive img-circle" src="${item.video.account.avatarThumbnail}" alt="${item.video.account.fullname}">
         </div>
         <div class="name_member">
-            <a href="/user/${item.video.account.id}"><h2>${item.video.account.fullname}</h2></a>
+            <a href="/account/${item.video.account.id}"><h2>${item.video.account.fullname}</h2></a>
         </div>
         <div class="option_card" role="button">
             <img src="../../../resources/icons/icon_more_vertical.svg" alt="" class="icon_more_vertical">

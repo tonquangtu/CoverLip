@@ -15,7 +15,7 @@
         <div class="member_post">
             <img src="${item.account.avatarThumbnail}"
                  class="img-circle avatar_member">
-            <a href="#">${item.account.fullname}</a>
+            <a href="/account/${item.account.id}">${item.account.fullname}</a>
         </div>
     </div>
 </div>
