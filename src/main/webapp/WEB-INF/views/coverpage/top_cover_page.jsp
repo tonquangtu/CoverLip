@@ -25,7 +25,7 @@ To change this template use File | Settings | File Templates.
     <script src="/resources/scripts/main_header_script.js"></script>
 
 
-    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" type="text/javascript"></script>
     <script src="../../../resources/scripts/top_cover_script.js"></script>
 </head>
 <body>
@@ -98,7 +98,7 @@ To change this template use File | Settings | File Templates.
                                                    title="Bài hát ${item.coverName} - ${item.video.account.fullname}">${item.coverName}</a>
                                             </h3>
                                             <span class="singer">
-				                    <h4><a href="/user/${item.video.account.id}"
+				                    <h4><a href="/account/${item.video.account.id}"
                                            title="Nghệ sĩ ${item.video.account.fullname}">${item.video.account.fullname}</a></h4>
 				                </span>
                                             <div class="footer_card">
@@ -156,8 +156,8 @@ To change this template use File | Settings | File Templates.
                                             <a href="" title="${item.playlistName}">${item.playlistName}</a>
                                         </h4>
                                         <div class="member_post">
-                                            <a href="/user/${item.account.id}" title="Nghệ sĩ ${item.account.fullname}">
-                                                <img src="../../../resources/storage/image/thumbnail/owner_thumbnail/avatar1.jpg"
+                                            <a href="/account/${item.account.id}" title="Nghệ sĩ ${item.account.fullname}">
+                                                <img src="${item.account.avatarThumbnail}"
                                                      class="img-circle avatar_member">
                                                 <p>${item.account.fullname}</p>
                                             </a>
