@@ -45,7 +45,6 @@ public class Video implements Serializable{
 
     private int type;
 
-
     private Account account;
 
     public int getId() {
@@ -185,6 +184,7 @@ public class Video implements Serializable{
            period = "Đăng cách đây " + minutes + " phút";
 
        } else {
+
 
            long hours = duration.toHours();
            if (hours < 24) {

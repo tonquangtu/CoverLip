@@ -8,6 +8,8 @@ import com.clteam.services.userservice.api.TopIdolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
@@ -44,5 +46,16 @@ public class HotCoverPageController {
         modelAndView.setViewName("coverpage/hot_cover_page");
         modelAndView.addAllObjects(map);
         return modelAndView;
+    }
+
+    @RequestMapping("/hot-cover/json")
+    public @ResponseBody List getHotCover(@RequestParam String limit){
+        int limitx = Integer.parseInt(limit);
+        List<Cover> hotCoverList = coverService.getListHotCover(limitx);
+        List<VideoWrapper> videoWrapperList = new ArrayList<VideoWrapper>();
+        for ( Cover cover: hotCoverList) {
+            videoWrapperList.add(cover.toVideoWrapper());
+        }
+        return videoWrapperList;
     }
 }

@@ -35,7 +35,8 @@ public class AllCoverPageController {
         Map<String, Object> map = new HashMap<String, Object>();
 
         List<Cover> coverList = coverService.getAllCover(9, -1);
-        TopList<Cover> coverTopList = coverService.getListTopCover(0);
+        TopList<Cover> coverTopList = coverService.getListTopCover(0
+        );
         System.out.println("   "+ coverTopList.getItems().size());
 
         List<VideoWrapper> videoWrapperList = new ArrayList<VideoWrapper>();
@@ -62,7 +63,7 @@ public class AllCoverPageController {
         for ( Cover cover: coverList) {
             videoWrapperList.add(cover.toVideoWrapper());
         }
-
+        System.out.println("fuck "+videoWrapperList.size());
         return videoWrapperList;
     }
 

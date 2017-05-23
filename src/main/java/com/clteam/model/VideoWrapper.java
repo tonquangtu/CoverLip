@@ -101,7 +101,7 @@ public class VideoWrapper {
         } else if (video.getType() == Video.LIP_SYNC_TYPE) {
             subBaseUrl = DataConstant.LIP_SYNC_BASE_URL;
         } else {
-            subBaseUrl = "Demo";
+            subBaseUrl = DataConstant.LIP_SYNC_BASE_URL;
         }
 
         this.fullLink = getFullVideoLink(subBaseUrl);

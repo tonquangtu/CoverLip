@@ -183,12 +183,12 @@ public class CoverHomePageController {
         return modelAndView;
     }
 
-    @RequestMapping("user/{idUser}")
+    @RequestMapping("account/{idUser}")
     public String visitUserPage(@PathVariable String idUser) {
-        return "redirect: /user/" + idUser + "/cover";
+        return "redirect: /account/" + idUser + "/cover";
     }
 
-    @RequestMapping("/user/{idUser}/{type}")
+    @RequestMapping("/account/{idUser}/{type}")
     public ModelAndView visitUserPage(@PathVariable String idUser, @PathVariable String type) {
         int accountId = Integer.parseInt(idUser);
         User user = userService.getUser(accountId);
@@ -224,7 +224,7 @@ public class CoverHomePageController {
         return modelAndView;
     }
 
-    @RequestMapping("/user")
+    @RequestMapping("/account")
     public @ResponseBody
     List getMoreCoverOfUser(@RequestParam String accountId,
                             @RequestParam String currentItemId,
