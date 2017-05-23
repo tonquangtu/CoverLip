@@ -368,3 +368,40 @@ ul.notifi li a {
     transition: all 0.2s linear;
 }
 
+/*Search card*/
+#result_search{
+    display:none;
+}
+#result_search .item{
+    list-style-type: none;
+    width: 95%;
+    padding:0 10px;
+    border-bottom: 1px solid #EEE;
+}
+#result_search .one_item{
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-top:10px;
+    overflow: hidden;
+    width: 95%;
+}
+#result_search .image_item{
+    float: left;
+    margin-right: 10px;
+}
+#result_search .info-table .name_item{
+    margin-top: 5px;
+}
+
+#result_search .member_post .avatar_member{
+    width: 5%;
+    background: grey;
+    float: left;
+    margin-right: 5px;
+}
+#result_search .title-box{
+    font-size: 20px;
+    background: #FF6D00;
+    padding: 10px;
+    color: white;
+}

@@ -5,6 +5,7 @@ import com.clteam.dataobject.CoverInfoEntity;
 import com.clteam.dataobject.VideoInfoEntity;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -19,6 +20,18 @@ public class Cover implements Serializable {
         this.video = video;
         this.coverName = coverName;
         this.mp3Link = mp3Link;
+    }
+
+    public Cover(VideoInfoEntity videoInfoEntity) {
+        Collection<CoverInfoEntity> coverInfoEntity = videoInfoEntity.getCoverInfosById();
+        AccountEntity accountEntity = videoInfoEntity.getAccountByAccountId();
+        if (coverInfoEntity != null && !coverInfoEntity.isEmpty()
+                && accountEntity != null) {
+            copyData(coverInfoEntity.iterator().next(), videoInfoEntity, accountEntity);
+        } else {
+            video = new Video();
+            video.copyData(videoInfoEntity);
+        }
     }
 
     private Video video;

@@ -30,7 +30,7 @@
 
 
 <c:set var="targetPage" scope="request" value="cover_home_page"/>
-<%@include file="../common/main_header.jsp" %>
+<%@ include file="../common/main_header.jsp" %>
 
 <content>
     <div style="height:20px; width: 100%; clear: both"></div>
@@ -49,8 +49,8 @@
                     <div class="background-gadian"></div>
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>Phia Sau Mot Co Gai</h1>
-                            <p>Mot ban cover di vao long nguoi cua hot girl Beo La</p><br>
+                            <h1>Phía Sau Một Cô Gái</h1>
+                            <p>Một bản cover mới của thánh chửi Bella</p><br>
                             <a href="" class="banner-button">
                                 <img src="https://fptplay.net/img/playicon.png"/>
                                 <p>Xem Ngay</p>
@@ -64,8 +64,8 @@
                     <div class="background-gadian"></div>
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>Di De Tro Ve</h1>
-                            <p>Le Roi tro lai voi ban hit dinh dam "Di de tro ve"</p><br>
+                            <h1>Đi Để Trở Về</h1>
+                            <p>Lệ Rơi trở lại với bản hit đình đám "Đi để trở về"</p><br>
                             <a href="" class="banner-button">
                                 <img src="https://fptplay.net/img/playicon.png"/>
                                 <p>Xem Ngay</p>
@@ -79,8 +79,8 @@
                     <div class="background-gadian"></div>
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>Lac Troi</h1>
-                            <p>Girl Xinh Maria Ozawa cover hit Lac Troi cua Son Tung MTP</p><br>
+                            <h1>Lạc Trôi</h1>
+                            <p>Girl Xinh Maria Ozawa cover hit Lạc Trôi của Sơn Tùng MTP</p><br>
                             <a href="" class="banner-button">
                                 <img src="https://fptplay.net/img/playicon.png"/>
                                 <p>Xem Ngay</p>
@@ -89,10 +89,12 @@
                     </div>
                 </div>
             </div>
-            <a class="left carousel-control" href="#carousel-id" data-slide="prev"><span
-                    class="glyphicon glyphicon-chevron-left"></span></a>
-            <a class="right carousel-control" href="#carousel-id" data-slide="next"><span
-                    class="glyphicon glyphicon-chevron-right"></span></a>
+            <a class="left carousel-control" href="#carousel-id" data-slide="prev">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </a>
+            <a class="right carousel-control" href="#carousel-id" data-slide="next">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </a>
         </div>
     </div> <!-- slider -->
     <div id="main_content" class="container">
@@ -100,18 +102,17 @@
         <div class="new_list_content">
             <!-- Page Header -->
             <div class="row title">
-                <div class="col-lg-12">
-                    <h2 class="page-header"><a href="">Mới Đăng</a>
-                        <!-- <small>Secondary Text</small> -->
-                        <div class="action_slide">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary next_first"><span
-                                        class="glyphicon glyphicon-chevron-up"></span></button>
-                                <button type="button" class="btn btn-primary prev_first"><span
-                                        class="glyphicon glyphicon-chevron-down"></span></button>
-                            </div>
+                <div class="col-lg-12" style="float:right">
+                    <div class="action_slide">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary next_first">
+                                <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                            </button>
+                            <button type="button" class="btn btn-primary prev_first">
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </button>
                         </div>
-                    </h2>
+                    </div>
                 </div>
             </div>
             <!-- /.row -->
@@ -120,15 +121,15 @@
             <div class="row" style="overflow:hidden;">
                 <div class="col-md-3 text-center">
                     <div class="subject">
-                        <a href="#">
+                        <a href="/new-cover">
                             <img class="img-responsive"
                                  src="../../../resources/storage/image/normal_image/slide_image/singer.jpg" alt="">
                         </a>
                         <h3>
-                            <a href="#">Mới Đăng</a>
+                            <a href="/new-cover">Mới Đăng</a>
                         </h3>
                         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p> -->
-                        <a href="">
+                        <a href="/new-cover">
                             <button type="button" class="btn btn-primary">Xem toàn bộ</button>
                         </a>
                     </div>
@@ -167,18 +168,18 @@
         <div class="hot_list_content">
             <!-- Page Header -->
             <div class="row title">
-                <div class="col-lg-12">
-                    <h2 class="page-header"><a href="/hot-cover">Cover Hot</a>
-                        <!-- <small>Secondary Text</small> -->
-                        <div class="action_slide">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary next_second"><span
-                                        class="glyphicon glyphicon-chevron-up"></span></button>
-                                <button type="button" class="btn btn-primary prev_second"><span
-                                        class="glyphicon glyphicon-chevron-down"></span></button>
-                            </div>
+                <div class="col-lg-12" style="float:right">
+                    <div class="action_slide">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary next_second">
+                                <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                            </button>
+                            <button type="button" class="btn btn-primary prev_second">
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+
+                            </button>
                         </div>
-                    </h2>
+                    </div>
                 </div>
             </div>
             <!-- /.row -->
@@ -235,8 +236,8 @@
         <div class="cover_list_content">
             <!-- Page Header -->
             <div class="row title">
-                <div class="col-lg-12">
-                    <h2 class="page-header"><a href="#">Cover Hay Mỗi Ngày</a></h2>
+                <div class="col-lg-12 title">
+                    <span>Cover Hay Mỗi Ngày</span>
                 </div>
             </div>
             <!-- /.row -->
@@ -266,19 +267,14 @@
         </div>
 
         <div class="top_member">
-            <!-- Page Header -->
-            <div class="row title">
-                <div class="col-lg-12">
-                    <h2 class="page-header"><a href="">Top Người Đăng Nổi Bật</a></h2>
-                </div>
-            </div>
             <!-- /.row -->
             <div class="row">
                 <div class="top_idol">
+                    <h2 class="page-header"><span>Top Người Đăng Nổi Bật</span></h2>
                     <div class="col-md-3">
                         <div class="one_member text-center subject"
                              style="padding-bottom:10px;">
-                            <a href="">
+                            <a href="/user/${topIdolList.get(0).user.account.id}">
                                 <div class="avatar">
                                     <img src="${topIdolList.get(0).user.account.avatarThumbnail}"
                                          alt="${topIdolList.get(0).user.account.fullname}"
@@ -298,7 +294,7 @@
                                     <div class="row">
                                 </c:if>
                                 <div class="col-md-3 one_member text-center">
-                                    <a href="">
+                                    <a href="/user/${item1.user.account.id}">
                                         <div class="avatar">
                                             <img src="${item1.user.account.avatarThumbnail}"
                                                  alt="${item1.user.account.fullname}"

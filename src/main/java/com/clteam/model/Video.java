@@ -255,7 +255,6 @@ public class Video implements Serializable{
         this.storageId = videoEntity.getStorageId();
 
         this.account = new Account();
-
         this.account.copyData(accountEntity);
     }
 }

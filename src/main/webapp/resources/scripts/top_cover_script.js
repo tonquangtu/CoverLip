@@ -2,6 +2,7 @@
  * Created by nguyenthanhtung on 15/05/2017.
  */
 $(document).ready(function(){
+    var urlServer = '/top-cover';
     $('#select_date').on('click',function(){
         if($('.ui-datepicker').css('display') ==='none'){
             $('.ui-datepicker').show();
@@ -22,14 +23,27 @@ $(document).ready(function(){
             selectOtherMonths: true,
             onSelect: function(dateText, inst) {
                 var date = $(this).datepicker('getDate');
+                var nowDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
                 startDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay());
                 endDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay() + 6);
                 var dateFormat = inst.settings.dateFormat || $.datepicker._defaults.dateFormat;
-                // $('#startDate').text($.datepicker.formatDate( dateFormat, startDate, inst.settings ));
-                // $('#endDate').text($.datepicker.formatDate( dateFormat, endDate, inst.settings ));
+                startDate = $.datepicker.formatDate( dateFormat, startDate, inst.settings );
+                endDate = $.datepicker.formatDate( dateFormat, endDate, inst.settings );
+                nowDate = $.datepicker.formatDate(dateFormat, nowDate, inst.settings);
 
                 selectCurrentWeek();
                 $('.ui-datepicker').hide();
+                $.ajax({
+                    type:"GET",
+                    url:urlServer+"/get-num-week",
+                    dataType: 'jsonp',
+                    data:{timestamp:new Date(nowDate).getTime()},
+                    success:function(data){
+                        window.location=urlServer+"/Bang-Xep-Hang-Lan-" + data;
+                    },
+                    error:function(){
+                    }
+                });
             },
             beforeShowDay: function(date) {
                 var cssClass = '';

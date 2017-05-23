@@ -1,9 +1,7 @@
 package com.clteam.services.commonservice.impl;
 
-import com.clteam.dataobject.HotLipSyncEntity;
-import com.clteam.dataobject.LipSyncInfoEntity;
-import com.clteam.dataobject.LipSyncTemplateInfoEntity;
-import com.clteam.dataobject.VideoInfoEntity;
+import com.clteam.dataobject.*;
+import com.clteam.model.Cover;
 import com.clteam.model.LipSync;
 import com.clteam.model.LipSyncTemplate;
 import com.clteam.model.Video;
@@ -14,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -99,6 +98,60 @@ public class LipSyncServiceImpl implements LipSyncService{
             }
         }
         return lipSync;
+    }
+
+    @Override
+    public List<LipSync> getListNewLipSync(int limit) {
+        List<NewLipsyncEntity> newLipSyncEntityList = lipSyncRepo.getListNewLipsync(limit);
+        List<LipSync> lipSyncList = new ArrayList<LipSync>();
+
+        for(int i=0; i<newLipSyncEntityList.size(); i++){
+
+            VideoInfoEntity videoInfoEntity = newLipSyncEntityList.get(i).getVideoInfoByVideoId();
+            Collection<LipSyncInfoEntity> lipSyncInfoEntities = videoInfoEntity.getLipSyncInfosById();
+
+            if(lipSyncInfoEntities!=null){
+                LipSyncInfoEntity lipSyncInfoEntity = (LipSyncInfoEntity) lipSyncInfoEntities.toArray()[0];
+                LipSyncTemplateInfoEntity lipSyncTemplateInfoEntity =  lipSyncInfoEntity.getLipSyncTemplateInfoByLipSyncTemplateId();
+                VideoInfoEntity videoTemplateLipSyncEntity = lipSyncTemplateInfoEntity.getVideoInfoByVideoId();
+                Video videoTemplateLipSync = new Video();
+                videoTemplateLipSync.copyData(videoTemplateLipSyncEntity, videoTemplateLipSyncEntity.getAccountByAccountId());
+                LipSyncTemplate lipSyncTemplate = new LipSyncTemplate(videoTemplateLipSync, lipSyncTemplateInfoEntity.getLipSyncTemplateName(), lipSyncTemplateInfoEntity.getNumLipSync());
+
+                Video video = new Video();
+                video.copyData(videoInfoEntity, videoInfoEntity.getAccountByAccountId());
+                LipSync lipSync = new LipSync(video, lipSyncTemplate);
+//                cover.copyData(coverInfoEntity, videoInfoEntity, videoInfoEntity.getAccountByAccountId());
+                lipSyncList.add(lipSync);
+            }
+        }
+        return lipSyncList;
+    }
+
+    @Override
+    public List<LipSync> getListLipSync(int limit, int currentVideoId) {
+
+        List<LipSyncInfoEntity> lipSyncEntityList = lipSyncRepo.getListLipsync(limit, currentVideoId);
+        List<LipSync> lipSyncList = new ArrayList<LipSync>();
+
+        for(int i=0; i<lipSyncEntityList.size(); i++){
+
+            LipSyncInfoEntity lipSyncInfoEntity = (LipSyncInfoEntity) lipSyncEntityList.get(i);
+            VideoInfoEntity videoInfoEntity = lipSyncInfoEntity.getVideoInfoByVideoId();
+
+            LipSyncTemplateInfoEntity lipSyncTemplateInfoEntity =  lipSyncInfoEntity.getLipSyncTemplateInfoByLipSyncTemplateId();
+            VideoInfoEntity videoTemplateLipSyncEntity = lipSyncTemplateInfoEntity.getVideoInfoByVideoId();
+            Video videoTemplateLipSync = new Video();
+            videoTemplateLipSync.copyData(videoTemplateLipSyncEntity, videoTemplateLipSyncEntity.getAccountByAccountId());
+            LipSyncTemplate lipSyncTemplate = new LipSyncTemplate(videoTemplateLipSync, lipSyncTemplateInfoEntity.getLipSyncTemplateName(), lipSyncTemplateInfoEntity.getNumLipSync());
+
+            Video video = new Video();
+            video.copyData(videoInfoEntity, videoInfoEntity.getAccountByAccountId());
+            LipSync lipSync = new LipSync(video, lipSyncTemplate);
+//                cover.copyData(coverInfoEntity, videoInfoEntity, videoInfoEntity.getAccountByAccountId());
+            lipSyncList.add(lipSync);
+        }
+        return lipSyncList;
     }
 
 

@@ -13,9 +13,9 @@
         <p><strong>${item.numView} view</strong></p>
         <h5><strong>${item.playlistName}</strong></h5>
         <div class="member_post">
-            <img src="/resources/storage/image/thumbnail/owner_thumbnail/avatar1.jpg"
+            <img src="${item.account.avatarThumbnail}"
                  class="img-circle avatar_member">
-            <a href="#">${item.account.fullname}</a>
+            <a href="/account/${item.account.id}">${item.account.fullname}</a>
         </div>
     </div>
 </div>

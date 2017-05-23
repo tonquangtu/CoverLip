@@ -3,6 +3,7 @@ package com.clteam.repositories.impl;
 import com.clteam.dataobject.HotLipSyncEntity;
 import com.clteam.dataobject.LipSyncInfoEntity;
 import com.clteam.dataobject.LipSyncTemplateInfoEntity;
+import com.clteam.dataobject.NewLipsyncEntity;
 import com.clteam.repositories.api.LipSyncRepository;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -195,6 +196,30 @@ public class LipSyncRepositoryImpl  implements LipSyncRepository {
         }
 
         return criteria.list();
+    }
+
+    @Override
+    public List<NewLipsyncEntity> getListNewLipsync(int limit) {
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(NewLipsyncEntity.class);
+        criteria.addOrder(Order.asc("priority"));
+        if (limit == -1){
+            criteria.setMaxResults(limit);
+        }
+        List newLipsyncList = criteria.list();
+        return newLipsyncList;
+    }
+
+    @Override
+    public List<LipSyncInfoEntity> getListLipsync(int limit, int currentVideoId) {
+
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(LipSyncInfoEntity.class);
+        if (currentVideoId > -1){
+            criteria.add(Restrictions.lt("videoId", currentVideoId));
+        }
+        List lipsyncList = criteria.addOrder(Order.desc("videoId")).setMaxResults(limit).list();
+        return lipsyncList;
     }
 
 }

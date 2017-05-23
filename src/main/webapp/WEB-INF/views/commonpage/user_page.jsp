@@ -66,9 +66,9 @@
             <div class="section-nav">
                 <div class="width-limit">
                     <ul class="col-md-5 col-md-offset-4">
-                        <li><a class="cover_history selected" href="/user/${userInfo.account.id}/cover">Cover</a></li>
-                        <li><a class="lipsync_history" href="/user/${userInfo.account.id}/lipsync">LipSync</a></li>
-                        <li><a class="playlist_history" href="/user/${userInfo.account.id}/playlist">Playlist</a></li>
+                        <li><a class="cover_history selected" href="/account/${userInfo.account.id}/cover">Cover</a></li>
+                        <li><a class="lipsync_history" href="/account/${userInfo.account.id}/lipsync">LipSync</a></li>
+                        <li><a class="playlist_history" href="/account/${userInfo.account.id}/playlist">Playlist</a></li>
                     </ul>
                 </div>
             </div>

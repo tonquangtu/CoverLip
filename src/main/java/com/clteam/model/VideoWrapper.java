@@ -21,6 +21,7 @@ public class VideoWrapper implements Comparable<VideoWrapper>{
     private float similarityWithOther;
 
     public VideoWrapper() {
+
     }
 
     public VideoWrapper(String videoName, Video video) {
@@ -86,11 +87,18 @@ public class VideoWrapper implements Comparable<VideoWrapper>{
     public String getFullVideoLink(String subBaseUrl) {
         String fullLink = DataConstant.BASE_URL + subBaseUrl + "/";
         try {
+//
+//            if (video == null) {
+//                System.out.println("Video null");
+//            } else if(video.getAccount() == null) {
+//                System.out.println("Account null");
+//            }
 
             String newOwnerName = CommonUtils.transformToSluxSearch(video.getAccount().getFullname());
             String newVideoName = CommonUtils.transformToSluxSearch(videoName);
 
             fullLink += newOwnerName + "-" + newVideoName + "/" + video.getId();
+//            System.out.println("Full link video: " + fullLink);
 
         }catch (Exception e) {
             e.printStackTrace();
