@@ -10,7 +10,7 @@ $(document).ready(function () {
                 '<ul>' +
                 '<li>' +
                 '<span class="report" role="button">' +
-                '<i class="glyphicon glyphicon-remove"></i> Báo cáo' +
+                '<i class="fa fa-remove"></i> Báo cáo' +
                 '</span>' +
                 '</li>' +
                 '</ul>' +

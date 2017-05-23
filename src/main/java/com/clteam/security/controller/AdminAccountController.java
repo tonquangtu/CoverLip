@@ -3,6 +3,7 @@ package com.clteam.security.controller;
 import com.clteam.model.User;
 import com.clteam.security.service.AccountSecurityService;
 import com.clteam.security.service.AdminAccountService;
+import com.clteam.security.util.GenericResponse;
 import com.clteam.security.util.PaginationUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletContext;
+import java.util.Map;
 
 /**
  * Created by Khanh Nguyen on 21/5/2017.
@@ -51,11 +53,16 @@ public class AdminAccountController {
         }
     }
 
-    @PostMapping("/update")
-    public @ResponseBody boolean update(
+    @RequestMapping("/update")
+    public @ResponseBody
+    GenericResponse update(
             @RequestParam("accountId") String accountId, @RequestParam("statusAccount") String statusAccount) {
         System.out.println("### begin update status account");
-        return accountSecurityService.saveAccountStatusDto(accountId, statusAccount);
+        String msg = String.valueOf(accountSecurityService.saveAccountStatusDto(accountId, statusAccount));
+        return new GenericResponse(
+                msg,
+                msg
+        );
     }
 
 }

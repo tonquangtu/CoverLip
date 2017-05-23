@@ -2,8 +2,7 @@
  * Created by mrgnu on 19/05/2017.
  */
 $(document).ready(function (){
-    var storageUrl = 'http://zmp3-photo-td.zadn.vn/thumb/240_135/';
-    var urlServer = 'http://localhost:8080/load_more_new_cover';
+    var urlServer = '/load_more_new_cover';
     var loading = $('#load_more_new_cover');
     loadMoreNewCover();
 
@@ -61,9 +60,9 @@ $(document).ready(function (){
             '<li class="item_singer_video ">' +
             '<div class="singer_video_box">' +
             '<div class="thumbnail_video_box">' +
-            '<a class="thumbnail_video" href="#" title="' + item.coverName + '">' +
+            '<a class="thumbnail_video" href="'+item.fullLink+'" title="' + item.coverName + '">' +
             '<span class="icon_play"></span>' +
-            '<img src="' + storageUrl + item.video.videoThumbnailLink + '" alt="' + item.coverName + '" title="' + item.coverName + '">' +
+            '<img src="' + item.video.videoThumbnailLink + '" alt="' + item.coverName + '" title="' + item.coverName + '">' +
             '<div class="background_one_card"></div>' +
             '</a>' +
             '</div>' +
@@ -81,7 +80,7 @@ $(document).ready(function (){
             '<span class="like_counter">' + item.video.numLike + '</span>' +
             '</li>' +
             '<li class="comment">' +
-            '<a href="#">' +
+            '<a href="'+item.fullLink+'">' +
             '<img src="../../../resources/icons/icon_comment.svg" alt="" class="icon_react">&nbsp;' + item.video.numComment +
             '</a>' +
             '</li>' +

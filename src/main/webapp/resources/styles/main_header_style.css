@@ -368,3 +368,7 @@ ul.notifi li a {
     transition: all 0.2s linear;
 }
 
+/*Search card*/
+#result_search{
+    display:none;
+}

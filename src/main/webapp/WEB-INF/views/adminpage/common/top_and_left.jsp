@@ -88,8 +88,8 @@
                 </div>
                 <ul class="child-menu">
                     <li class=""><a href="/admin/cover/list"> Danh sách cover </a></li>
-                    <li><a href="#">Danh sách cover</a></li>
-                    <li><a href="#">Dashboard 1</a></li>
+                    <li><a href="/admin/cover/new-list">Danh sách cover mới</a></li>
+                    <li><a href="/admin/cover/hot-list">Danh sách cover hot</a></li>
                 </ul>
             </li>
             <li>

@@ -1,10 +1,10 @@
 package com.clteam.repositories.api;
 
 import com.clteam.dataobject.TopCoverIdolEntity;
+import com.clteam.dataobject.TopLipSyncIdolEntity;
 import com.clteam.dataobject.TopListEntity;
 
 import java.sql.Timestamp;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -26,5 +26,13 @@ public interface TopRepository {
 
     public int getMaxTopId();
 
+    TopListEntity getTopList(int type, int numWeek);
+    public int getNumWeekFromTimestamp(int type, Timestamp timestamp);
     TopListEntity getNewTop();
+
+    List<TopLipSyncIdolEntity> getListTopLipSyncIdols(int limit, int topId);
+
+    int setFollowIdol(int acoundId, int topId, Timestamp timestampFollow);
+
+    int unFollowIdol(int acoundId, int topId);
 }

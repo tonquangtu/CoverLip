@@ -43,10 +43,12 @@ public class SignUpServiceImpl implements SignUpService {
         accountEntity.setDateJoin(DateTimeUtil.getCurrentTime());
         int accountId = accountSecurityRepository.saveAccountEntity(accountEntity);
 
+        System.out.println("### accountId =" + accountId);
+
         System.out.println("### address: " + accountDto.getAddress());
 
         AccountEntity newAccount = accountSecurityRepository.findByEmail(accountEntity.getUsername());
-
+        System.out.println("new account: " + newAccount.getFullname());
         UserInfoEntity userInfoEntity = new UserInfoEntity();
         userInfoEntity.setAccountId(accountId);
         userInfoEntity.setNumCover(0);

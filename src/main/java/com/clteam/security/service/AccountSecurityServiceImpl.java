@@ -83,7 +83,6 @@ public class AccountSecurityServiceImpl implements AccountSecurityService {
         if ((byte) clientState != currentState && (clientState == 0 || clientState == 1 || clientState == 2)) {
             accountEntity.setState((byte) clientState);
             saveAccountEntity(accountEntity);
-            System.out.println("### update status of account");
             return true;
         }
         return false;

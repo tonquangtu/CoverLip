@@ -7,16 +7,14 @@ import com.clteam.services.userservice.api.TopIdolService;
 import com.clteam.services.userservice.api.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.WebUtils;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.sql.Timestamp;
 import java.util.*;
 
 /**
@@ -34,6 +32,10 @@ public class CoverHomePageController {
     private VideoService videoService;
 
     @RequestMapping("/")
+    public String redirectToCoverPage(){
+        return "redirect:/cover";
+    }
+    @RequestMapping("/cover")
     public ModelAndView visitHomeCoverPage(HttpServletResponse response) {
         List<Cover> newCoverList = coverService.getListNewCover(12);
         List<Cover> hotCoverList = coverService.getListHotCover(12);
@@ -62,16 +64,30 @@ public class CoverHomePageController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/top-cover/get-num-week",method = RequestMethod.POST)
+    public @ResponseBody int getNumWeek(@RequestParam String timestamp){
+        long time = Long.parseLong(timestamp);
+        return coverService.getNumWeekFromTimestamp(new Timestamp(time));
+    }
+    @RequestMapping("/top-cover/{stringTitle}")
+    public ModelAndView visitTopCoverPage(@PathVariable String stringTitle) {
+        int numWeek = 0;
+        try {
+            numWeek = Integer.parseInt(stringTitle.substring(stringTitle.lastIndexOf("-") + 1, stringTitle.length()));
+        }catch(Exception e){
+            e.printStackTrace();
+        }
 
-    @RequestMapping("/top-cover")
-    public ModelAndView visitTopCoverPage() {
-
+        int nowNumWeek = coverService.getNumWeekFromTimestamp(coverService.getNowTimestamp());
+        if(numWeek>=nowNumWeek || numWeek==0){
+            numWeek = nowNumWeek;
+        }
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();
 
         List<Playlist> playlistList = coverService.getListPlayListCover(-1);
         List<TopIdol> topIdolList = topIdolService.getListTopCoverIdols(5);
-        TopList<Cover> coverTopList = coverService.getListTopCover();
+        TopList<Cover> coverTopList = coverService.getListTopCover(numWeek);
 
         if (playlistList == null || topIdolList == null || coverTopList == null) {
             modelAndView.setViewName("commonpage/error_page");
@@ -79,12 +95,18 @@ public class CoverHomePageController {
             map.put("hotPlayListCover", playlistList);
             map.put("topIdolList", topIdolList);
             map.put("coverTopList", coverTopList);
+            map.put("numWeek", numWeek);
+            map.put("nowNumWeek", nowNumWeek);
             modelAndView.setViewName("coverpage/top_cover_page");
         }
         modelAndView.addAllObjects(map);
         return modelAndView;
     }
 
+    @RequestMapping("/top-cover")
+    public ModelAndView visitTopCoverPage(){
+        return visitTopCoverPage("Bang-Xep-Hang-0");
+    }
     @RequestMapping("/personal")
     public String visitPersonalInfomationPage() {
         return "redirect:/personal/information";
@@ -161,12 +183,12 @@ public class CoverHomePageController {
         return modelAndView;
     }
 
-    @RequestMapping("user/{idUser}")
+    @RequestMapping("account/{idUser}")
     public String visitUserPage(@PathVariable String idUser) {
-        return "redirect: /user/" + idUser + "/cover";
+        return "redirect: /account/" + idUser + "/cover";
     }
 
-    @RequestMapping("/user/{idUser}/{type}")
+    @RequestMapping("/account/{idUser}/{type}")
     public ModelAndView visitUserPage(@PathVariable String idUser, @PathVariable String type) {
         int accountId = Integer.parseInt(idUser);
         User user = userService.getUser(accountId);
@@ -202,7 +224,7 @@ public class CoverHomePageController {
         return modelAndView;
     }
 
-    @RequestMapping("/user")
+    @RequestMapping("/account")
     public @ResponseBody
     List getMoreCoverOfUser(@RequestParam String accountId,
                             @RequestParam String currentItemId,
