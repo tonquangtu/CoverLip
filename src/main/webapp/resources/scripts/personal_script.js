@@ -7,6 +7,7 @@ $(document).ready(function(){
     $(".avatar").css("height",width);
 
     $( "#calendar" ).datepicker();
+    $( "#calendar" ).datepicker( "option", "dateFormat", "dd/mm/yy" );
     $('#choose_file').on('change',function(){
         var imgPath = $(this).val();
         var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();

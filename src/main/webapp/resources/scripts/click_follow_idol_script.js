@@ -12,7 +12,7 @@ $(document).ready(function () {
     
     function ajaxFollowIdol(acoundId, idolId, statusFollow, button, numFollow) {
         $.ajax({
-            type: "post",
+            type: "get",
             url: urlFollowIdol,
             data: {acoundId: acoundId, idolId: idolId, statusFollow: statusFollow},
             success: function (data) {

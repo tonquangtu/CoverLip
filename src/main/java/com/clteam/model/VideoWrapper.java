@@ -107,7 +107,11 @@ public class VideoWrapper {
         this.fullLink = getFullVideoLink(subBaseUrl);
     }
 
+    public String getFullLink() {
+        return fullLink;
+    }
 
-
-
+    public void setFullLink(String fullLink) {
+        this.fullLink = fullLink;
+    }
 }

@@ -65,6 +65,7 @@ div.one_card.col-md-3:last-child{
 .footer_card ul.interaction{
     height: 20px;
 	padding-left: 0;
+    margin-bottom: 0;
 }
 
 .footer_card ul.interaction li{

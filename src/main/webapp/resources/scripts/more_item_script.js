@@ -2,11 +2,12 @@
  * Created by nguyenthanhtung on 17/05/2017.
  */
 $(document).ready(function () {
-    var storageUrl = 'http://zmp3-photo-td.zadn.vn/thumb/240_135/';
-    var urlServer = 'http://localhost:8080/user';
+    var urlServerAccount = 'http://localhost:8080/account';
     var cardColor = ["#f44336", "#e91e63", "#9c27b0", "#673ab7", "#3f51b5", "#2196f3", "#03a9f4",
         "#009688", "#4caf50", "#8bc34a", "#cddc39", "#ffeb3b", "#ffc107", "#ff9800", "#795548", "#9e9e9e"];
     var loading = $('#loading');
+    var defaultDistanceToLoad = $(window).height() + $('footer').height() + 40;
+    loading.hide();
     var type = loading.attr('type');
     if (type === 'cover'){
         loadMoreVideo();
@@ -53,13 +54,14 @@ $(document).ready(function () {
     function ajaxLoadMore(currentItemId, limit, accountId, type, addItem, status, oneItem){
         $(window).scroll(function (tt) {
             var height = heightToLoadMore();
-            if (height < 300 && status) {
+            if (height < defaultDistanceToLoad && status) {
                 $.ajax({
                     type: 'get',
-                    url: urlServer,
+                    url: urlServerAccount,
                     data: {currentItemId: currentItemId, limit: limit, accountId: accountId, type: type},
                     beforeSend: function () {
                         status = false;
+                        loading.show();
                     },
                     success: function (data) {
                         if (data !== null && data.length >0) {
@@ -89,7 +91,12 @@ $(document).ready(function () {
 
                     },
                     complete: function () {
-                        status = true;
+                        setTimeout(
+                            function()
+                            {
+                                status = true;
+                                loading.hide();
+                            }, 1000);
                     }
                 });
             }
@@ -97,10 +104,8 @@ $(document).ready(function () {
     }
 
     function heightToLoadMore(){
-        var windowHeight = $(window).height();
         var documentHeight = $(document).height();
-        var scrollBarHeight = windowHeight * (windowHeight / documentHeight);
-        var offset = documentHeight - $(window).scrollTop() - scrollBarHeight  - $('footer').height();
+        var offset = documentHeight -  $(window).scrollTop();
 
         return offset;
     }
@@ -111,7 +116,7 @@ $(document).ready(function () {
             '<img class="img-responsive img-circle" src="' + item.video.account.avatarThumbnail + '" alt="' + item.video.account.fullname + '">' +
             '</div>' +
             '<div class="name_member">' +
-            '<a href="/user/' + item.video.account.id + '"><h2>' + item.video.account.fullname + '</h2></a>' +
+            '<a href="/account/' + item.video.account.id + '"><h2>' + item.video.account.fullname + '</h2></a>' +
             '</div>' +
             '<div class="option_card" role="button">' +
             '<img src="../../../resources/icons/icon_more_vertical.svg" alt="" class="icon_more_vertical">' +
@@ -123,9 +128,9 @@ $(document).ready(function () {
             '<li class="item_singer_video ">' +
             '<div class="singer_video_box">' +
             '<div class="thumbnail_video_box">' +
-            '<a class="thumbnail_video" href="#" title="' + item.videoName + '">' +
+            '<a class="thumbnail_video" href="'+item.fullLink+'" title="' + item.videoName + '">' +
             '<span class="icon_play"></span>' +
-            '<img src="' + storageUrl + item.video.videoThumbnailLink + '" alt="' + item.videoName + '" title="' + item.videoName + '">' +
+            '<img src="' + item.video.videoThumbnailLink + '" alt="' + item.videoName + '" title="' + item.videoName + '">' +
             '<div class="background_one_card"></div>' +
             '</a>' +
             '</div>' +
@@ -143,7 +148,7 @@ $(document).ready(function () {
             '<span class="like_counter">' + item.video.numLike + '</span>' +
             '</li>' +
             '<li class="comment">' +
-            '<a href="#">' +
+            '<a href="'+item.fullLink+'">' +
             '<img src="../../../resources/icons/icon_comment.svg" alt="" class="icon_react">&nbsp;' + item.video.numComment +
             '</a>' +
             '</li>' +
@@ -163,14 +168,14 @@ $(document).ready(function () {
             '<img src="http://' + itemPlaylist.playlistThumbnaiLink + '" class="avatar_playlist">' +
             '<ul class="avatar_cover_list">';
         $.each(itemPlaylist.items, function (i, item) {
-            string += '<li><img src="'+storageUrl+item.item.video.videoThumbnailLink+'" class="img-circle img-responsive"></li>';
+            string += '<li><img src="'+item.item.video.videoThumbnailLink+'" class="img-circle img-responsive"></li>';
         });
         string += '</ul>' +
             '<div class="info_card_playlist">' +
             '<p><strong>' + itemPlaylist.numView + ' view</strong></p>' +
             '<h5><strong>' + itemPlaylist.playlistName + '</strong></h5>' +
             '<div class="member_post">' +
-            '<img src="/resources/storage/image/thumbnail/owner_thumbnail/avatar1.jpg" class="img-circle avatar_member">' +
+            '<img src="'+itemPlaylist.account.avatarThumbnail+'" class="img-circle avatar_member">' +
             '<p>' + itemPlaylist.account.fullname + '</p>' +
             '</div>' +
             '</div>' +
@@ -180,7 +185,7 @@ $(document).ready(function () {
 
     function oneIdolFollowing(item){
         return '<div class="one_member text-center">'+
-            '<a href="">'+
+            '<a href="/account/'+item.account.id+'">'+
             '<div class="avatar">'+
             '<img src="'+item.account.avatarThumbnail+'" alt="'+item.account.fullname+'" class="img-responsive img-circle">'+
             '</div>'+

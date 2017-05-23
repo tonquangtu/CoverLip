@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/resources/styles/main_footer_style.css">
     <link rel="stylesheet" href="/resources/styles/one_card_style.css">
     <link rel="stylesheet" href="/resources/libs/jb/hover-min.css">
+    <script src="/resources/scripts/main_header_script.js"></script>
     <script src="/resources/scripts/all_cover_lipsync_script.js"></script>
 </head>
 <body>

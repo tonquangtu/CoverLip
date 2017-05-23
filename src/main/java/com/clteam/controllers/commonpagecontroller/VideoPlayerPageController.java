@@ -34,7 +34,7 @@ public class VideoPlayerPageController {
     RecommenderService recommenderService;
 
     @RequestMapping("cover/{videoInfoString}/{videoIdString}")
-    public ModelAndView playCover (@PathVariable String infoVideoString, @PathVariable String videoIdString) {
+    public ModelAndView playCover (@PathVariable String videoInfoString, @PathVariable String videoIdString) {
 
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();

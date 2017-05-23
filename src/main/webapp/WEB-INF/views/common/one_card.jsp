@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-
 <div class="one_card col-md-12">
     <div class="header_card">
         <div class="img-circle avatar_member">
@@ -19,7 +18,7 @@
             <li class="item_singer_video ">
                 <div class="singer_video_box">
                     <div class="thumbnail_video_box">
-                        <a class="thumbnail_video" href="#"
+                        <a class="thumbnail_video" href="${item.fullLink}"
                            title="${item.videoName}">
                             <span class="icon_play"></span>
                             <img src="${item.video.videoThumbnailLink}" alt="${item.videoName}"
@@ -41,7 +40,7 @@
                     class="like_counter">${item.video.numLike}</span>
             </li>
             <li class="comment">
-                <a href="#">
+                <a href="${item.fullLink}">
                     <img src="../../../resources/icons/icon_comment.svg" alt="" class="icon_react">&nbsp;${item.video.numComment}
                 </a>
             </li>

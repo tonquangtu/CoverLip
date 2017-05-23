@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/resources/styles/main_footer_style.css">
     <link rel="stylesheet" href="/resources/styles/one_card_style.css">
     <link rel="stylesheet" href="/resources/libs/jb/hover-min.css">
+    <link rel="stylesheet" href="/resources/styles/top_idol_card_style.css">
     <script src="/resources/scripts/main_header_script.js"></script>
     <script src="/resources/scripts/click_follow_idol_script.js"></script>
 
@@ -22,7 +23,7 @@
 </head>
 <body>
 <c:set var="targetPage" scope="request" value="cover_home_page"/>
-<%@include file="../common/main_header.jsp"%>
+<%@include file="../common/main_header.jsp" %>
 
 <content>
     <div style="height:20px; width: 100%; clear: both"></div>

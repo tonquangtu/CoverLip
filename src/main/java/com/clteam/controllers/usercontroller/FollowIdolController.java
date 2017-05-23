@@ -18,7 +18,7 @@ public class FollowIdolController {
     @Autowired
     TopIdolService topIdolService;
 
-    @RequestMapping("/follow_idol")
+    @RequestMapping(value = "/follow_idol")
     public @ResponseBody
     int followIdol( @RequestParam String acoundId,
                     @RequestParam String idolId,

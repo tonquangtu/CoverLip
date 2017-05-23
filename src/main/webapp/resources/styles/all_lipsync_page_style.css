@@ -42,7 +42,7 @@ body{
 #cover_page{
 
     position: relative;
-    padding-left: 6px;
+    padding-left: 0px;
 }
 
 #cover_page #title_cover{
@@ -54,6 +54,7 @@ body{
 #cover_list{
 
     margin-top: 13px;
+    padding-left: 9px;
 }
 
 #top_cover_idol{
