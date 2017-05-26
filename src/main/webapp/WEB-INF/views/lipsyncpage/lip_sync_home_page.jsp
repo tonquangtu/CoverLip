@@ -41,7 +41,7 @@
                     </h3>
                     <div class="col-md-3">
                         <div class="one_member text-center subject first-idol">
-                            <a href="">
+                            <a href="/account/${topIdolList.get(0).user.account.id}">
                                 <div class="avatar">
                                     <img src="${topIdolList.get(0).user.account.avatarThumbnail}" alt="${topIdolList.get(0).user.account.fullname}"
                                          class="img-responsive" style="width:100% ; height:302px;">
@@ -62,7 +62,7 @@
                                     <div class="row">
                                 </c:if>
                                 <div class="col-md-3 one_member text-center">
-                                    <a href="">
+                                    <a href="/account/${item1.user.account.id}">
                                         <div class="avatar">
                                             <img src="${item1.user.account.avatarThumbnail}" alt="${item1.user.account.fullname}"
                                                  class="img-responsive img-circle">

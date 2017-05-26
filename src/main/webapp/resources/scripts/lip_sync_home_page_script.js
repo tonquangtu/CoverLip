@@ -3,7 +3,6 @@
  */
 
 $(document).ready(function () {
-    var storageUrl = 'http://zmp3-photo-td.zadn.vn/thumb/240_135/';
     var lastVideoId = $('.load-more-box').attr('lastVideoId');
     var list = $('.lip-syncs');
     var loading = false;
@@ -31,8 +30,8 @@ $(document).ready(function () {
 
         console.log("Loading daata : last video id: " + lastVideoId);
         $.ajax({
-            url: "http://localhost:8080/hot-lip-sync/fetchdata",
-            type: "POST",
+            url: "/hot-lip-sync/fetchdata",
+            type: "GET",
             data:  {
                 type: "hot_lip_sync",
                 lastVideoId: lastVideoId
@@ -104,7 +103,7 @@ $(document).ready(function () {
             '<img class="img-responsive img-circle" src="' + item.video.account.avatarThumbnail + '" alt="' + item.video.account.fullname + '">' +
             '</div>' +
             '<div class="name_member">' +
-            '<a href="/user/' + item.video.account.id + '"><h2>' + item.video.account.fullname + '</h2></a>' +
+            '<a href="/account/' + item.video.account.id + '"><h2>' + item.video.account.fullname + '</h2></a>' +
             '</div>' +
             '<div class="option_card" role="button">' +
             '<img src="../../../resources/icons/icon_more_vertical.svg" alt="" class="icon_more_vertical">' +
@@ -118,7 +117,7 @@ $(document).ready(function () {
             '<div class="thumbnail_video_box">' +
             '<a class="thumbnail_video" href="' + item.fullLink + '" title="' + item.videoName + '">' +
             '<span class="icon_play"></span>' +
-            '<img src="' + storageUrl + item.video.videoThumbnailLink + '" alt="' + item.videoName + '" title="' + item.videoName + '">' +
+            '<img src="'+ item.video.videoThumbnailLink + '" alt="' + item.videoName + '" title="' + item.videoName + '">' +
             '<div class="background_one_card"></div>' +
             '</a>' +
             '</div>' +
@@ -136,7 +135,7 @@ $(document).ready(function () {
             '<span class="like_counter">' + item.video.numLike + '</span>' +
             '</li>' +
             '<li class="comment">' +
-            '<a href="#">' +
+            '<a href="'+item.video.fullLink+'">' +
             '<img src="../../../resources/icons/icon_comment.svg" alt="" class="icon_react">&nbsp;' + item.video.numComment +
             '</a>' +
             '</li>' +

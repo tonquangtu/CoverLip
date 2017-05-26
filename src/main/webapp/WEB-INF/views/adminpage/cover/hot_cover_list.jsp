@@ -32,7 +32,7 @@
             <div class="list shadow-all">
                 <div id="creator-subheader">
                     <div class="creator-subheader-content">
-                        <h2>Danh sách cover</h2>
+                        <h2>Danh sách cover hot</h2>
                         <span id="creator-subheader-item-count" class="badge-creator" style="display: none;">100</span>
                     </div>
                     <div class="creator-subheader-controls">
@@ -72,58 +72,62 @@
                     </div>
                 </div>
                 <table class="table table-hover tablesorter" id="myTable">
-                        <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Tên cover</th>
-                            <th>MP3 link</th>
-                            <th>Video link</th>
-                            <th>Ảnh</th>
-                            <th>Độ dài</th>
-                            <th>Ngày tạo</th>
-                            <th>Lượt xem</th>
-                            <th>Lượt thích</th>
-                            <th>Lượt bình luận</th>
-                            <th>Trạng thái</th>
-                            <th>Mô tả</th>
-                            <th>Đăng bởi</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <c:choose>
-                            <c:when test="${empty requestScope.pagingCover}">
-                                <h3>Danh sách Cover rỗng</h3>
-                            </c:when>
-                            <c:otherwise>
-                                <c:if test="${not empty param.page}">
-                                    <c:set var="count" value="${(param.page - 1) * (pagingCover.maxRecordPerPage)}" scope="page" />
-                                </c:if>
-                                <c:if test="${empty param.page}">
-                                    <c:set var="count" value="${0}" scope="page"/>
-                                </c:if>
-                                <c:forEach items="${requestScope.pagingCover.resultList}" var="cover">
-                                    <tr>
-                                        <c:set var="count" value="${count + 1}"/>
-                                        <td>${count}</td>
-                                        <td>${cover.coverName}</td>
-                                        <td>${cover.mp3Link}</td>
-                                        <td>${cover.video.videoLink}</td>
-                                        <td><img src="${cover.video.videoThumbnailLink}" class="video-thumbnail-size"/></td>
-                                        <td><fmt:formatDate pattern="HH:mm:ss" value="${cover.video.duration}"/></td>
-                                        <td><fmt:formatDate pattern="dd-MM-yyyy HH:mm:ss" value="${cover.video.createDate}"/></td>
-                                        <td>${cover.video.numView}</td>
-                                        <td>${cover.video.numLike}</td>
-                                        <td>${cover.video.numComment}</td>
-                                        <td>${cover.video.state}</td>
-                                        <td>${cover.video.description}</td>
-                                        <td>${cover.video.account.fullname}</td>
-                                    </tr>
-                                </c:forEach>
-                            </c:otherwise>
-                        </c:choose>
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Tên cover</th>
+                        <th>MP3 link</th>
+                        <th>Video link</th>
+                        <th>Ảnh</th>
+                        <th>Độ dài</th>
+                        <th>Ngày tạo</th>
+                        <th>Lượt xem</th>
+                        <th>Lượt thích</th>
+                        <th>Lượt bình luận</th>
+                        <th>Trạng thái</th>
+                        <th>Mô tả</th>
+                        <th>Đăng bởi</th>
+                        <th>Độ ưu tiên</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:choose>
+                        <c:when test="${empty requestScope.pagingCover}">
+                            <h3>Danh sách Cover mới rỗng</h3>
+                        </c:when>
+                        <c:otherwise>
+                            <c:if test="${not empty param.page}">
+                                <c:set var="count" value="${(param.page - 1) * (pagingCover.maxRecordPerPage)}" scope="page" />
+                            </c:if>
+                            <c:if test="${empty param.page}">
+                                <c:set var="count" value="${0}" scope="page"/>
+                            </c:if>
+                            <c:forEach items="${requestScope.pagingCover.resultList}" var="newCover">
+                                <tr>
+                                    <c:set var="count" value="${count + 1}"/>
+                                    <td>${count}</td>
+                                    <c:set var="coverInfo" value="${newCover.videoInfoByVideoId.coverInfosById.iterator().next()}"/>
+                                    <td>${coverInfo.coverName}</td>
+                                    <td>${coverInfo.mp3Link}</td>
+                                    <c:set var="videoInfo" value="${newCover.videoInfoByVideoId}"/>
+                                    <td>${videoInfo.videoLink}</td>
+                                    <td><img src="http://zmp3-photo-td.zadn.vn/${videoInfo.videoThumbnailLink}" class="video-thumbnail-size"/></td>
+                                    <td><fmt:formatDate pattern="HH:mm:ss" value="${videoInfo.duration}"/></td>
+                                    <td><fmt:formatDate pattern="dd-MM-yyyy HH:mm:ss" value="${videoInfo.createDate}"/></td>
+                                    <td>${videoInfo.numView}</td>
+                                    <td>${videoInfo.numLike}</td>
+                                    <td>${videoInfo.numComment}</td>
+                                    <td>${videoInfo.state}</td>
+                                    <td>${videoInfo.description}</td>
+                                    <td>${videoInfo.accountByAccountId.fullname}</td>
+                                    <td>${newCover.priority}</td>
+                                </tr>
+                            </c:forEach>
+                        </c:otherwise>
+                    </c:choose>
 
-                        </tbody>
-                    </table>
+                    </tbody>
+                </table>
                 <div>
                     <div class="pull-right">
                         <div class="pagination">

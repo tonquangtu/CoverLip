@@ -36,7 +36,6 @@ $(document).ready(function(){
                 $.ajax({
                     type:"GET",
                     url:urlServer+"/get-num-week",
-                    dataType: 'jsonp',
                     data:{timestamp:new Date(nowDate).getTime()},
                     success:function(data){
                         window.location=urlServer+"/Bang-Xep-Hang-Lan-" + data;

@@ -1,7 +1,6 @@
 package com.clteam.services.commonservice.impl;
 
 import com.clteam.dataobject.*;
-import com.clteam.model.Cover;
 import com.clteam.model.LipSync;
 import com.clteam.model.LipSyncTemplate;
 import com.clteam.model.Video;
@@ -110,7 +109,7 @@ public class LipSyncServiceImpl implements LipSyncService{
             VideoInfoEntity videoInfoEntity = newLipSyncEntityList.get(i).getVideoInfoByVideoId();
             Collection<LipSyncInfoEntity> lipSyncInfoEntities = videoInfoEntity.getLipSyncInfosById();
 
-            if(lipSyncInfoEntities!=null){
+            if(lipSyncInfoEntities!=null && lipSyncInfoEntities.size()>0){
                 LipSyncInfoEntity lipSyncInfoEntity = (LipSyncInfoEntity) lipSyncInfoEntities.toArray()[0];
                 LipSyncTemplateInfoEntity lipSyncTemplateInfoEntity =  lipSyncInfoEntity.getLipSyncTemplateInfoByLipSyncTemplateId();
                 VideoInfoEntity videoTemplateLipSyncEntity = lipSyncTemplateInfoEntity.getVideoInfoByVideoId();

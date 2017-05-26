@@ -39,7 +39,7 @@ $(document).ready(function(){
             return false;
         }
     });
-    validateUpload();
+    // validateUpload();
 
     function validateUpload(){
         $('#submit').attr("disabled","disabled");

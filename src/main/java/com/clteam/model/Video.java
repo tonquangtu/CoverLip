@@ -71,7 +71,11 @@ public class Video implements Serializable{
     }
 
     public String getVideoThumbnailLink() {
-        return DataConstant.STORAGE_BASE_URL + videoThumbnailLink;
+        if(storageId==null || storageId.length()<=0){
+            return DataConstant.STORAGE_BASE_URL + videoThumbnailLink;
+        }else{
+            return videoThumbnailLink;
+        }
     }
 
     public void setVideoThumbnailLink(String videoThumbnailLink) {

@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="../../../resources/styles/video_player_style.css">
 
     <!--Facebook header-->
-    <meta property="og:url"           content="http://localhost:63342/CoverLip.com/html/play_one_video_page.html" />
+    <meta property="og:url"           content="${currItem.fullLink}" />
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="I'm Losing You" />
     <meta property="og:description"   content="Cover Hay cua chang ngoc" />
@@ -123,7 +123,7 @@
                   <div class="fb-like-share-box">
 
                       <div class="fb-like "
-                           data-href="http://localhost:63342/CoverLip.com/html/play_one_video_page.html"
+                           data-href="${currItem.fullLink}"
                            data-width="700"
                            data-layout="standard"
                            data-action="like"
@@ -138,7 +138,7 @@
                <div class="box-shadow fb-comment-box border-box">
                    <h3 class="comment-title center-vertical-content">BÌNH LUẬN</h3>
                    <div class="fb-comments custom-fb-comment"
-                        data-href="http://localhost:63342/CoverLip.com/html/play_one_video_page.html"
+                        data-href="${currItem.fullLink}"
                         data-width="100%"
                         data-numposts="5">
                    </div>

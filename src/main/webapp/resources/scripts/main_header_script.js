@@ -3,6 +3,7 @@
  */
 
 $(document).ready(function () {
+    setActiveItemMenu();
     var urlServer = "/hot-cover/json";
     var status = true;
     var limit = 5;
@@ -68,12 +69,12 @@ $(document).ready(function () {
             startTime = new Date();
             a = setInterval(function () {
                 distance = new Date() - startTime;
-                if (distance >= 3000) {
+                if (distance >= 1500) {
                     // console.log("vl");
                     clearInterval(a);
                     sendAjax($('#txtSearch').val().trim(),6);
                 }
-            }, 1000);
+            }, 500);
         });
     }
 
@@ -82,6 +83,11 @@ $(document).ready(function () {
             type: "GET",
             url: "/search",
             data:{searchString: searchString, limit:limit},
+            beforeSend:function(){
+                $('#best_search').text("");
+                $('#list_singer_table').text("");
+                $('#list_video_table').text("");
+            },
             success:function(data){
                 var string = '';
                 var string1 = '';
@@ -129,7 +135,7 @@ $(document).ready(function () {
             '</div>'+
             '</li>';
         else if(type===2){
-            return '<li class="playlist">'+
+            return '<li class="item">'+
                 '<div class="one_item">'+
                 '<a class="image_item" href="/account/'+item.id+'">'+
                 '<img src="'+item.avatarThumbnail+'" alt="'+item.fullname+'" class="img-responsive img-circle" width="55" height="55">'+
@@ -143,5 +149,17 @@ $(document).ready(function () {
             '</li>';
         }
     }
-
+    function setActiveItemMenu(){
+        var url = window.location.href;
+        var type = url.substring(url.lastIndexOf('/'), url.length);
+        var allItem = $('#menuTop').children('li');
+        $.each(allItem, function(i, item){
+            var temp = $(this).children('a');
+            if(temp.attr('href')===type){
+                temp.addClass('active');
+            }else{
+                temp.removeClass('active');
+            }
+        });
+    }
 });

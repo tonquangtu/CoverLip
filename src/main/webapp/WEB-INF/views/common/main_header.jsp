@@ -8,7 +8,8 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <c:set var="targetPage" scope="page" value="${requestScope.targetPage}"/>
 <div class="main-menu header-shadow">
     <div class="header-box" id="header">
@@ -20,13 +21,13 @@
 
                     <c:choose>
                         <c:when test="${targetPage eq 'cover_home_page'}">
-                            <a href="http://localhost:8080/cover" class="active">COVER</a>
-                            <a href="http://localhost:8080/lipsync">LIP-SYNC</a>
+                            <a href="/cover" class="active">COVER</a>
+                            <a href="/lipsync">LIP-SYNC</a>
                         </c:when>
 
                         <c:otherwise>
-                            <a href="http://localhost:8080/cover" >COVER</a>
-                            <a href="http://localhost:8080/lipsync" class="active">LIP-SYNC</a>
+                            <a href="/cover" >COVER</a>
+                            <a href="/lipsync" class="active">LIP-SYNC</a>
                         </c:otherwise>
                     </c:choose>
 
@@ -46,8 +47,14 @@
                 <div id="user_login_box" class="user-login-box">
 
                     <div class="avatar" style="float: right;">
-                        <a id="btnShowBoxLogin" title="Đăng nhập" rel="nofollow" href="#">Đăng nhập</a> |
-                        <a title="Upload" rel="nofollow" href="#">Upload</a>
+                        <sec:authorize access="isAuthenticated()">
+                            <a href="/personal"><sec:authentication property="principal.accountEntity.fullname"/></a> |
+                        </sec:authorize>
+
+                        <sec:authorize access="!isAuthenticated()">
+                            <a id="btnShowBoxLogin" title="Đăng nhập" rel="nofollow" href="/login">Đăng nhập</a> |
+                        </sec:authorize>
+                        <a title="Upload" rel="nofollow" href="/personal/upload">Upload</a>
                     </div>
 
                 </div>

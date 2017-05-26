@@ -1,7 +1,10 @@
 package com.clteam.controllers.lipsyncpagecontroller;
 
-import com.clteam.model.*;
-import com.clteam.services.commonservice.api.CoverService;
+import com.clteam.model.FollowingList;
+import com.clteam.model.LipSync;
+import com.clteam.model.TopIdol;
+import com.clteam.model.VideoWrapper;
+import com.clteam.security.util.AccountUtil;
 import com.clteam.services.commonservice.api.LipSyncService;
 import com.clteam.services.userservice.api.TopIdolService;
 import com.clteam.services.userservice.api.UserService;
@@ -31,7 +34,7 @@ public class NewLipSyncPageController {
     @RequestMapping("/new-lipsync")
     public ModelAndView visitNewLipSyncPage(){
 
-        int accountId = 3;
+        int accountId = AccountUtil.getCurrentUserId();
         ModelAndView modelAndView = new ModelAndView();
         Map<String, Object> map = new HashMap<String, Object>();
 

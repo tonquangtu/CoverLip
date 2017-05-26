@@ -11,7 +11,7 @@
 <div id="divSuggestion" class="suggestion hideShowCase" m="0">
     <div class="search-suggestion-box">
         <div class="slimScrollDiv">
-            <div id="idScrollSuggestion" style="overflow: hidden; width: auto; max-height: 450px;">
+            <div id="idScrollSuggestion" style="overflow: hidden; width: auto;">
                 <ul id="contentSuggestion" class="content_search" style="text-transform:capitalize;">
                     <li id="liTopKeyWordFirst">
                         <h3 class="title_row">Top từ khóa tìm kiếm nhiều nhất</h3>

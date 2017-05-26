@@ -14,7 +14,9 @@
     <div class="subhead">
         <h2 class="subhead-heading">Thông Tin Công Khai</h2>
     </div>
-    <form accept-charset="UTF-8" action="/personal/upload" class="form_person" method="post" enctype="multipart/form-data">
+    <form accept-charset="UTF-8" action="./upload?${_csrf.parameterName}=${_csrf.token}" class="form_person" method="POST" enctype="multipart/form-data">
+
+
 
         <div class="col-md-12">
             <dl class="form-group">
@@ -46,6 +48,7 @@
                 <button type="submit" class="btn btn-success" id="submit">Upload</button>
             </p>
         </div>
+        <%--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">--%>
     </form>
 </div>
 

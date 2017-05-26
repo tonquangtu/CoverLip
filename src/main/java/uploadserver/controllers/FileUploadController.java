@@ -36,6 +36,7 @@ public class FileUploadController {
                                    @RequestParam("description") String description,
                                    @RequestParam("file") MultipartFile file) {
 
+        System.out.println("Vao upload file");
         ModelAndView modelAndView = new ModelAndView();
         Map<String, String> map = new HashMap<>();
         String message;
