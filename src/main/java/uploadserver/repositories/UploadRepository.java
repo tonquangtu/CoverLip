@@ -48,6 +48,16 @@ public class UploadRepository {
         return (Integer) session.save(tempEntity);
     }
 
+    public int insertTempNewLS(TempNewLipSyncAdminEntity tempEntity) {
+
+        if (tempEntity == null) {
+            return -1;
+        }
+
+        Session session = sessionFactory.getCurrentSession();
+        return (Integer) session.save(tempEntity);
+    }
+
     public int insertLipSync(LipSyncInfoEntity lipSyncEntity) {
         if (lipSyncEntity == null) {
             return -1;

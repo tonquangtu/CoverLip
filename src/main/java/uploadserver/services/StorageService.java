@@ -65,8 +65,8 @@ public class StorageService {
             int insertId = uploadRepo.insertVideo(videoEntity);
             if (insertId != -1) {
                 System.out.println("Insert VideoId: " + insertId);
-                if (post.getType() == Video.COVER_TYPE) {
 
+                if (post.getType() == Video.COVER_TYPE) {
                     CoverInfoEntity coverEntity = new CoverInfoEntity();
                     coverEntity.setVideoId(insertId);
                     coverEntity.setCoverName(post.getTitle());
@@ -80,6 +80,8 @@ public class StorageService {
 
                         saveSuccess = true;
                     }
+                    insertTempNewCover(insertId);
+
                 } else {
 
                     LipSyncInfoEntity lipSyncEntity = new LipSyncInfoEntity();
@@ -92,8 +94,9 @@ public class StorageService {
                         uploadRepo.updateUser(userEntity);
                         saveSuccess = true;
                     }
+                    insertTempNewLipSync(insertId);
                 }
-                insertTempNewCover(insertId);
+
             }
         }
 
@@ -105,6 +108,12 @@ public class StorageService {
         TempNewCoverAdminEntity tempNewCoverEntity = new TempNewCoverAdminEntity();
         tempNewCoverEntity.setVideoId(videoId);
         uploadRepo.insertTempNewCover(tempNewCoverEntity);
+    }
+
+    public void insertTempNewLipSync(int videoId) {
+        TempNewLipSyncAdminEntity tempNewLSEntity = new TempNewLipSyncAdminEntity();
+        tempNewLSEntity.setVideoId(videoId);
+        uploadRepo.insertTempNewLS(tempNewLSEntity);
     }
 
     public VideoInfoEntity createVideoEntity(Post post) {

@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="../../../resources/styles/main_footer_style.css">
 
     <!--Lib video player-->
-    <link rel="stylesheet" href="../../../resources/libs/videoplayer/mediaelementplayer.min.css">
+    <%--<link rel="stylesheet" href="../../../resources/libs/videoplayer/mediaelementplayer.min.css">--%>
 
     <link rel="stylesheet" href="../../../resources/styles/video_player_style.css">
 
@@ -66,7 +66,7 @@
                    <%--</video>--%>
                <%--</div>--%>
 
-                   <div class="video-box box-shadow border-box">
+                   <div class="video-box box-shadow border-box " videoId="${currItem.video.id}" >
 
                        <iframe width="750" height="460" src="${currItem.video.videoLink}" frameborder="0" allowfullscreen></iframe>
 
@@ -266,7 +266,7 @@
 <%--<script type="text/javascript"> w3IncludeHTML();</script>--%>
 
 <%@include file="../common/main_footer.jsp"%>
-<script src="../../../resources/libs/videoplayer/mediaelement-and-player.js"></script>
-<script src="../../../resources/libs/videoplayer/video_controller.js"></script>
+<%--<script src="../../../resources/libs/videoplayer/mediaelement-and-player.js"></script>--%>
+<%--<script src="../../../resources/libs/videoplayer/video_controller.js"></script>--%>
 </body>
 </html>

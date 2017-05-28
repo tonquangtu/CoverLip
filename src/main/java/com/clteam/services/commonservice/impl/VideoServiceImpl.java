@@ -526,5 +526,16 @@ public class VideoServiceImpl implements VideoService{
         return lipSyncs;
     }
 
+    @Override
+    public boolean increaseVideoView(int videoId) {
+
+        VideoInfoEntity videoEntity = videoRepo.getVideoInfo(videoId);
+        if (videoEntity != null) {
+            videoEntity.setNumView(videoEntity.getNumView() + 1);
+            return videoRepo.updateVideo(videoEntity);
+        }
+        return false;
+    }
+
 
 }

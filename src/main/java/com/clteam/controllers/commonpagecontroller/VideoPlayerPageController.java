@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
@@ -122,6 +124,30 @@ public class VideoPlayerPageController {
         modelAndView.addAllObjects(map);
         return modelAndView;
     }
+
+
+    @RequestMapping(path = "video/update-view")
+    @ResponseBody
+    public ClientData updateNumView(@RequestParam("videoId") String videoId) {
+
+        System.out.println("Update view for video:" + videoId);
+        ClientData response = new ClientData();
+        int videoIdInt;
+        try {
+
+            videoIdInt = Integer.parseInt(videoId);
+            boolean updateSuccess = videoService.increaseVideoView(videoIdInt);
+            int success = updateSuccess ? ClientData.SUCCESS : ClientData.ERROR;
+            response.setSuccess(success);
+            System.out.println("Success: " + success);
+        }catch (Exception e) {
+            response.setSuccess(ClientData.ERROR);
+            e.printStackTrace();
+        }
+
+        return response;
+    }
+
 
     @RequestMapping("menu")
     public ModelAndView testMenu() {
