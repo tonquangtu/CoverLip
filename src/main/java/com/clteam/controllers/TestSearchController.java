@@ -115,6 +115,94 @@ public class TestSearchController {
     }
 
 
+    @RequestMapping("test-search-lip/{searchString}")
+    public ModelAndView testSearchLipSync(@PathVariable String searchString) {
+
+        //   videoService.createTestLipSyncData();
+
+        int limit = 6;
+        System.out.println("Vao test");
+        ModelAndView modelAndView = new ModelAndView();
+        List<VideoWrapper> videoWrappers = searchService.searchLipSyncs(searchString, limit);
+        StringBuilder coverNames = new StringBuilder();
+        coverNames.append("Input: " + searchString + "<br>");
+        if (videoWrappers != null && videoWrappers.size() > 0) {
+//            System.out.println("Tim thay ket qua");
+
+            for (VideoWrapper videoWrapper : videoWrappers) {
+
+                coverNames.append(videoWrapper.getVideoName() +
+                        " - " + videoWrapper.getVideo().getAccount().getFullname() +
+                        " - " + videoWrapper.getVideo().getId()
+                        + "<br>");
+            }
+        }
+        Map<String, String> map = new HashMap<>();
+        map.put("coverName", coverNames.toString());
+        modelAndView.addAllObjects(map);
+        modelAndView.setViewName("test/test");
+        return modelAndView;
+    }
+
+    @RequestMapping("test-search-cover2/{searchString}")
+    public ModelAndView testSearchCover2(@PathVariable String searchString) {
+
+        //   videoService.createTestLipSyncData();
+
+        int limit = 6;
+        System.out.println("Vao test");
+        ModelAndView modelAndView = new ModelAndView();
+        List<VideoWrapper> videoWrappers = searchService.searchCovers(searchString, limit);
+        StringBuilder coverNames = new StringBuilder();
+        coverNames.append("Input: " + searchString + "<br>");
+        if (videoWrappers != null && videoWrappers.size() > 0) {
+//            System.out.println("Tim thay ket qua");
+
+            for (VideoWrapper videoWrapper : videoWrappers) {
+
+                coverNames.append(videoWrapper.getVideoName() +
+                        " - " + videoWrapper.getVideo().getAccount().getFullname() +
+                        " - " + videoWrapper.getVideo().getId()
+                        + "<br>");
+            }
+        }
+        Map<String, String> map = new HashMap<>();
+        map.put("coverName", coverNames.toString());
+        modelAndView.addAllObjects(map);
+        modelAndView.setViewName("test/test");
+        return modelAndView;
+    }
+
+
+    @RequestMapping("test-search-lip2/{searchString}")
+    public ModelAndView testSearchLipSync2(@PathVariable String searchString) {
+
+        //   videoService.createTestLipSyncData();
+
+        int limit = 6;
+        System.out.println("Vao test");
+        ModelAndView modelAndView = new ModelAndView();
+        List<VideoWrapper> videoWrappers = searchService.searchLipSyncs(searchString, limit);
+        StringBuilder coverNames = new StringBuilder();
+        coverNames.append("Input: " + searchString + "<br>");
+        if (videoWrappers != null && videoWrappers.size() > 0) {
+//            System.out.println("Tim thay ket qua");
+
+            for (VideoWrapper videoWrapper : videoWrappers) {
+
+                coverNames.append(videoWrapper.getVideoName() +
+                        " - " + videoWrapper.getVideo().getAccount().getFullname() +
+                        " - " + videoWrapper.getVideo().getId()
+                        + "<br>");
+            }
+        }
+        Map<String, String> map = new HashMap<>();
+        map.put("coverName", coverNames.toString());
+        modelAndView.addAllObjects(map);
+        modelAndView.setViewName("test/test");
+        return modelAndView;
+    }
+
 
 
 }

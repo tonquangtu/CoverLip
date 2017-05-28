@@ -29,7 +29,7 @@
                 </ul>
                 <div id="result_search">
                     <div class="video_box">
-                        <h2 class="title_box">Top Tìm Kiếm</h2>
+                        <h2 class="title_box">Kết quả phù hợp nhất</h2>
                         <div class="box_content">
                             <ul id="best_search">
 

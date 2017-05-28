@@ -100,7 +100,7 @@ $(document).ready(function (){
         return '<div class="one_card col-md-12">' +
             '<div class="header_card">' +
             '<div class="img-circle avatar_member">' +
-            '<img class="img-responsive img-circle" src="' + item.video.account.avatarThumbnail + '" alt="' + item.video.account.fullname + '">' +
+            '<img class="img-responsive img-circle" src="' + item.video.account.avatarThumbnail + '" alt="">' +
             '</div>' +
             '<div class="name_member">' +
             '<a href="/account/' + item.video.account.id + '"><h2>' + item.video.account.fullname + '</h2></a>' +

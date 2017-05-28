@@ -8,7 +8,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <c:set var="targetPage" scope="page" value="${requestScope.targetPage}"/>
 <div class="main-menu header-shadow">
@@ -23,11 +22,13 @@
                         <c:when test="${targetPage eq 'cover_home_page'}">
                             <a href="/cover" class="active">COVER</a>
                             <a href="/lipsync">LIP-SYNC</a>
+                            <c:set var="typeVideo" value="1" scope="page"/>
                         </c:when>
 
                         <c:otherwise>
                             <a href="/cover" >COVER</a>
                             <a href="/lipsync" class="active">LIP-SYNC</a>
+                            <c:set var = "typeVideo" value="2" scope="page"/>
                         </c:otherwise>
                     </c:choose>
 
@@ -36,8 +37,10 @@
 
                 <div id="quick-search-box" class="search-box">
                     <%--<div class="bg-top-noel"></div>--%>
-                    <form id="quickFormSearch" method="GET" action="#" onsubmit="">
-                        <input id="txtSearch" maxlength="45" name="q" class="i-search" value="" rel="Tìm bài hát, video, playlist, ca sĩ" autocomplete="off" type="text">
+                    <form id="quickFormSearch" method="GET" action="/search" onsubmit="">
+                        <input id="txtSearch" maxlength="45" name="searchString" class="i-search" value="" placeholder="Tìm video, ca sĩ" autocomplete="off" type="text">
+                        <input type="hidden" name="limit" value="50">
+                        <input type="hidden" name="type" value="${typeVideo}">
                         <input id="btnSearch" class="b-search" value="TÌM KIẾM" type="submit">
                         <div class="list-keyword" id="divHotKeyword">
                         </div>

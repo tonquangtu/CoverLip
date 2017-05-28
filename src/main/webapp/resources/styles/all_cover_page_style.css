@@ -76,8 +76,12 @@ body{
 
     padding: 10px 0;
     margin: 0;
-    color: red;
-
+    /*color: red;*/
+    color:#1abc9c;
+}
+.top_cover h3:hover{
+    color:#1abc9c;
+    text-decoration: none;
 }
 
 .icon_react{
@@ -281,4 +285,12 @@ a{
 
 #loading{
     text-align: center;
+}
+
+/*Override one card*/
+.header_card{
+    margin-bottom:-5px;
+}
+.option_card{
+    margin-top:0;
 }

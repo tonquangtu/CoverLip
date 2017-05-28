@@ -140,7 +140,6 @@ public class YoutubeUpload  {
 
             if (listener != null) {
                 listener.uploadComplete(post);
-
             }
 
             if (returnedVideo != null && returnedVideo.getId() != null) {

@@ -65,7 +65,6 @@ public class CoverHomePageController {
 //        //
         return modelAndView;
     }
-
     @RequestMapping(value = "/top-cover/get-num-week")
     public @ResponseBody int getNumWeek(@RequestParam String timestamp){
         long time = Long.parseLong(timestamp);
@@ -267,4 +266,28 @@ public class CoverHomePageController {
         return null;
     }
 
+
+    @RequestMapping("/result-search")
+    public ModelAndView testResultSearch(){
+        ModelAndView modelAndView = new ModelAndView();
+        Map<String, Object> map = new HashMap<String, Object>();
+
+        List<Cover> coverList = coverService.getAllCover(9, -1);
+        TopList<Cover> coverTopList = coverService.getListTopCover(0
+        );
+
+        List<TopIdol> topIdolList = topIdolService.getListTopCoverIdols(9);
+
+        List<VideoWrapper> videoWrapperList = new ArrayList<VideoWrapper>();
+        for ( Cover cover: coverList) {
+            videoWrapperList.add(cover.toVideoWrapper());
+        }
+        map.put("coverList", videoWrapperList);
+        map.put("coverTopList", coverTopList);
+        map.put("topIdolList", topIdolList);
+
+        modelAndView.setViewName("commonpage/result_search");
+        modelAndView.addAllObjects(map);
+        return modelAndView;
+    }
 }

@@ -8,6 +8,7 @@ $(document).ready(function () {
     var status = true;
     var limit = 5;
     var loading_search = $('#loading_search');
+    var active = $('.super-menu').children('.active');
     loading_search.hide();
     var string = '';
     $('#txtSearch').click(function () {
@@ -24,7 +25,7 @@ $(document).ready(function () {
                         string += getOneSuggess(item, i);
                     });
                     $('#ulTopKeyWord').append(string);
-                    loading_search.remove();
+                    loading_search.hide();
                     status = false;
                 },
                 error: function () {
@@ -69,20 +70,29 @@ $(document).ready(function () {
             startTime = new Date();
             a = setInterval(function () {
                 distance = new Date() - startTime;
-                if (distance >= 1500) {
+                if (distance >= 1000) {
                     // console.log("vl");
                     clearInterval(a);
-                    sendAjax($('#txtSearch').val().trim(),6);
+                    if($('#txtSearch').val().trim()!==''){
+                        if(active.attr('href').indexOf('cover')!==-1){
+                            sendAjax($('#txtSearch').val().trim(),6, 1);
+                        }else{
+                            sendAjax($('#txtSearch').val().trim(),6, 2);
+                        }
+                    }else{
+                        $('#contentSuggestion').show();
+                        $('#result_search').hide();
+                    }
                 }
             }, 500);
         });
     }
 
-    function sendAjax(searchString, limit) {
+    function sendAjax(searchString, limit, type) {
         $.ajax({
             type: "GET",
             url: "/search",
-            data:{searchString: searchString, limit:limit},
+            data:{searchString: searchString, limit:limit, type:type},
             beforeSend:function(){
                 $('#best_search').text("");
                 $('#list_singer_table').text("");
@@ -119,7 +129,7 @@ $(document).ready(function () {
         return '<li class="item">'+
             '<div class="one_item">'+
             '<a class="image_item" href="">'+
-            '<img class="thumb" src="'+item.video.videoThumbnailLink+'" alt="'+item.videoName+'" width="55" height="55">'+
+            '<img class="thumb" src="'+item.video.videoThumbnailLink+'" alt="'+item.videoName+'" width="38.5" height="38.5">'+
             '</a>'+
             '<div class="info-table">'+
             '<h4 class="name_item">'+
@@ -138,10 +148,10 @@ $(document).ready(function () {
             return '<li class="item">'+
                 '<div class="one_item">'+
                 '<a class="image_item" href="/account/'+item.id+'">'+
-                '<img src="'+item.avatarThumbnail+'" alt="'+item.fullname+'" class="img-responsive img-circle" width="55" height="55">'+
+                '<img src="'+item.avatarThumbnail+'" alt="'+item.fullname+'" class="img-responsive img-circle" width="38.5" height="38.5">'+
                 '</a>'+
                 '<div class="info-table">'+
-                '<p class="name_item" style="margin-top: 10px;">'+
+                '<p class="name_item" style="margin-bottom: 0;line-height: 38px;">'+
                 '<a href="" title="'+item.fullname+'">'+item.fullname+'</a>'+
             '</p>'+
             '</div>'+

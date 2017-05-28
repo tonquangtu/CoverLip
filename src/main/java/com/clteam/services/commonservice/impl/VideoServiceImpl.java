@@ -200,6 +200,12 @@ public class VideoServiceImpl implements VideoService{
     public List<LipSync> searchLipSyncByName(String name, int limit) {
 
         List<LipSyncTemplateInfoEntity> lipSyncTemplates = lipSyncRepo.searchLipSyncByName(name, limit);
+        return getLipSyncs(lipSyncTemplates, limit);
+    }
+
+    @Override
+    public List<LipSync> getLipSyncs(List<LipSyncTemplateInfoEntity> lipSyncTemplates, int limit) {
+
         List<LipSync> lipSyncs = new ArrayList<>();
 
         if (lipSyncTemplates != null) {
@@ -217,7 +223,7 @@ public class VideoServiceImpl implements VideoService{
                             Video lipSyncVideo = getVideo(videoEntity);
                             LipSync lipSync = new LipSync(lipSyncVideo, template);
                             lipSyncs.add(lipSync);
-                            if (lipSyncs.size() >= limit) {
+                            if (limit > 0 && lipSyncs.size() >= limit) {
                                 break;
                             }
                         }
@@ -503,6 +509,21 @@ public class VideoServiceImpl implements VideoService{
     public LipSync getLipSync(LipSyncInfoEntity lipSyncEntity) {
 
         return lipSyncService.getLipSync(lipSyncEntity);
+    }
+
+    @Override
+    public List<LipSync> getLipSyncs(List<LipSyncInfoEntity> lipSyncInfoEntities) {
+
+        List<LipSync> lipSyncs = new ArrayList<>();
+        if (lipSyncInfoEntities != null && lipSyncInfoEntities.size() > 0) {
+            for (LipSyncInfoEntity lipSyncEntity : lipSyncInfoEntities) {
+                LipSync lipSync = getLipSync(lipSyncEntity);
+                if (lipSync != null) {
+                    lipSyncs.add(lipSync);
+                }
+            }
+        }
+        return lipSyncs;
     }
 
 

@@ -20,12 +20,14 @@ public class SearchController {
 
     @RequestMapping(path = "search", method = RequestMethod.GET)
     @ResponseBody
-    public SearchData search(@RequestParam("searchString") String searchString, @RequestParam("limit") String limit) {
+    public SearchData search(@RequestParam("searchString") String searchString,
+                             @RequestParam("limit") String limit,
+                             @RequestParam(value = "type", defaultValue = "1") String type) {
         SearchData searchData = null;
         try {
-
+            int searchType = Integer.parseInt(type);
             int searchLimit = Integer.parseInt(limit);
-            searchData = searchService.search(searchString, searchLimit);
+            searchData = searchService.search(searchString, searchType, searchLimit);
         }catch (Exception e) {
             searchData = new SearchData();
         }
