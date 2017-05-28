@@ -62,34 +62,6 @@ public class UserRepositoryImpl implements UserRepository {
         return null;
     }
 
-    public void indexTables() {
-
-        try {
-            Session session = sessionFactory.getCurrentSession();
-            FullTextSession fullTextSession = Search.getFullTextSession(session);
-
-            fullTextSession.createIndexer(CoverInfoEntity.class).startAndWait();
-
-            fullTextSession.createIndexer(LipSyncTemplateInfoEntity.class).startAndWait();
-
-            fullTextSession.createIndexer(VideoInfoEntity.class).startAndWait();
-
-            fullTextSession.createIndexer(AccountEntity.class).startAndWait();
-
-
-//            fullTextSession
-//                    .createIndexer(LipSyncTemplateInfoEntity.class, CoverInfoEntity.class)
-//                    .batchSizeToLoadObjects( 25 )
-//                    .cacheMode( CacheMode.IGNORE )
-//                    .threadsToLoadObjects( 12 )
-//                    .idFetchSize( 150 )
-//                    .startAndWait();
-
-
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     @Override
     public List<TopLipSyncIdolEntity> getTopLipSyncIdols(int limit) {

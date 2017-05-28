@@ -1,10 +1,14 @@
 package com.clteam.dataobject;
 
+import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.IndexedEmbedded;
+
 import javax.persistence.*;
 
 /**
  * Created by Dell on 30-Apr-17.
  */
+@Indexed
 @Entity
 @Table(name = "lip_sync_info", schema = "coverlip")
 public class LipSyncInfoEntity {
@@ -67,6 +71,7 @@ public class LipSyncInfoEntity {
         return result;
     }
 
+    @IndexedEmbedded
     @ManyToOne
     @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public VideoInfoEntity getVideoInfoByVideoId() {
@@ -77,6 +82,7 @@ public class LipSyncInfoEntity {
         this.videoInfoByVideoId = videoInfoByVideoId;
     }
 
+    @IndexedEmbedded
     @ManyToOne
     @JoinColumn(name = "lip_sync_template_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public LipSyncTemplateInfoEntity getLipSyncTemplateInfoByLipSyncTemplateId() {

@@ -61,7 +61,7 @@ public class StorageService {
         UserInfoEntity userEntity = uploadRepo.getUserEntity(post.getAccountId());
         if (userEntity != null) {
 
-            VideoInfoEntity videoEntity = toVideoInfoEntity(post);
+            VideoInfoEntity videoEntity = createVideoEntity(post);
             int insertId = uploadRepo.insertVideo(videoEntity);
             if (insertId != -1) {
                 System.out.println("Insert VideoId: " + insertId);
@@ -77,6 +77,7 @@ public class StorageService {
                         System.out.println("Insert CoverId: " + coverId);
                         userEntity.setNumCover(userEntity.getNumCover() + 1);
                         uploadRepo.updateUser(userEntity);
+
                         saveSuccess = true;
                     }
                 } else {
@@ -92,6 +93,7 @@ public class StorageService {
                         saveSuccess = true;
                     }
                 }
+                insertTempNewCover(insertId);
             }
         }
 
@@ -99,7 +101,13 @@ public class StorageService {
         return saveSuccess;
     }
 
-    public VideoInfoEntity toVideoInfoEntity(Post post) {
+    public void insertTempNewCover(int videoId) {
+        TempNewCoverAdminEntity tempNewCoverEntity = new TempNewCoverAdminEntity();
+        tempNewCoverEntity.setVideoId(videoId);
+        uploadRepo.insertTempNewCover(tempNewCoverEntity);
+    }
+
+    public VideoInfoEntity createVideoEntity(Post post) {
         VideoInfoEntity videoEntity = new VideoInfoEntity();
         videoEntity.setAccountId(post.getAccountId());
         videoEntity.setVideoLink(post.getVideoLink());
@@ -116,6 +124,10 @@ public class StorageService {
 
         return videoEntity;
     }
+
+
+
+
 
     public void deleteFile(String pathFile) {
 

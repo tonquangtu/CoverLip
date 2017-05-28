@@ -2,11 +2,8 @@ package com.clteam.services.commonservice.impl;
 
 import com.clteam.dataobject.AccountEntity;
 import com.clteam.dataobject.CoverInfoEntity;
-import com.clteam.dataobject.VideoInfoEntity;
-import com.clteam.model.Account;
-import com.clteam.model.Cover;
-import com.clteam.model.SearchData;
-import com.clteam.model.VideoWrapper;
+import com.clteam.dataobject.LipSyncInfoEntity;
+import com.clteam.model.*;
 import com.clteam.repositories.impl.SearchRepositoryImpl;
 import com.clteam.services.commonservice.api.VideoService;
 import com.clteam.utils.CommonUtils;
@@ -15,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -35,7 +31,12 @@ public class SearchServiceImpl{
     public static final int SEARCH_BY_USER = 2;
 
 
-    public SearchData search(String searchString, int limit) {
+    public static final int SEARCH_COVER = 1;
+
+    public static final int SEARCH_LIP_SYNC = 2;
+
+
+    public SearchData search(String searchString, int searchType, int limit) {
 
         if (limit < 2 || limit > 50) {
             limit = 6;
@@ -48,7 +49,13 @@ public class SearchServiceImpl{
             int limitSearchAcc = limit / 2;
             int limitSearchVideo = limit;
 
-            List<VideoWrapper> videoSearchResults = searchCovers(searchString, limitSearchVideo);
+            List<VideoWrapper> videoSearchResults;
+            if (searchType == SEARCH_COVER) {
+                videoSearchResults = searchCovers(searchString, limitSearchVideo);
+            } else {
+                videoSearchResults = searchLipSyncs(searchString, limitSearchVideo);
+            }
+
             List<Account> accSearchResults = searchUsers(searchString, limitSearchAcc);
 
             VideoWrapper firstSearchVideo = null;
@@ -98,36 +105,6 @@ public class SearchServiceImpl{
         return searchData;
     }
 
-    public List<VideoWrapper> searchCovers(String searchString, int limit) {
-
-        List<CoverInfoEntity> coverInfoEntitiesByName = searchRepo.searchCoversByName(searchString, limit);
-        List<CoverInfoEntity> coverEntitiesByUser = searchRepo.searchCoversByUser(searchString, limit);
-
-        List<Cover> coversByName = videoService.getCovers(coverInfoEntitiesByName);
-        List<Cover> coversByUser = videoService.getCovers(coverEntitiesByUser);
-        List<VideoWrapper> searchList = new ArrayList<>();
-        List<VideoWrapper> result = new ArrayList<>();
-
-        int numMerger = 2;
-        mergerCovers(result, coversByName, coversByUser, numMerger);
-        System.out.println("Merger : " + result.size());
-
-        calculateSearchRank(searchList, coversByName, searchString, SEARCH_BY_NAME);
-        calculateSearchRank(searchList, coversByUser, searchString, SEARCH_BY_USER);
-        Collections.sort(searchList);
-
-        for (VideoWrapper videoWrapper : searchList) {
-
-            if (isExists(result, videoWrapper) == 0) {
-                result.add(videoWrapper);
-                if (result.size() >= limit) {
-                    break;
-                }
-            }
-        }
-        return result;
-    }
-
     public List<Account> searchUsers(String searchString, int limit) {
 
         List<AccountEntity> accountEntities = searchRepo.searchUsers(searchString, limit);
@@ -143,104 +120,37 @@ public class SearchServiceImpl{
         return result;
     }
 
-    public List<Cover> getCovers(List<VideoInfoEntity> videoInfoEntities) {
+    public List<VideoWrapper> searchCovers(String searchString, int limit) {
 
-        List<Cover> covers = new ArrayList<>();
-        for (VideoInfoEntity videoEntity : videoInfoEntities) {
-
-            Cover cover = videoService.getCoverInfo(videoEntity);
-            if (cover != null) {
-                covers.add(cover);
-            }
-        }
-        return covers;
-    }
-
-    public void mergerCovers(List<VideoWrapper> list, List<Cover> covers1, List<Cover> covers2, int numMerger) {
-
-        for (Cover cover : covers1) {
-
-            for (Cover otherCover : covers2) {
-
-                if (equals(cover, otherCover) == 1) {
-                    int exists = isExists(list, cover);
-                    if (exists == 0) {
-                        list.add(cover.toVideoWrapper());
-                        if (list.size() >= numMerger) {
-                            return;
-                        }
-                        break;
-                    }
-                }
-            }
-        }
-    }
-
-    public int isExists(List<VideoWrapper> videoWrappers, Cover checkCover) {
-
-        if (checkCover == null || checkCover.getVideo() == null) {
-            return -1;
-        }
-        for (VideoWrapper videoWrapper : videoWrappers) {
-
-            if (videoWrapper.getVideo() != null && checkCover.getVideo().getId() == videoWrapper.getVideo().getId()) {
-                return 1;
-            }
-        }
-        return 0;
-    }
-
-    public int isExists(List<VideoWrapper> videoWrappers, VideoWrapper checkVideo) {
-
-        if (checkVideo == null || checkVideo.getVideo() == null) {
-            return -1;
-        }
-        for (VideoWrapper videoWrapper : videoWrappers) {
-
-            if (videoWrapper.getVideo() != null && checkVideo.getVideo().getId() == videoWrapper.getVideo().getId()) {
-                return 1;
-            }
-        }
-        return 0;
-    }
-
-    public int equals(Cover cover1, Cover cover2) {
-
-        if (cover1 == null || cover1.getVideo() == null || cover2 == null || cover2.getVideo() == null) {
-            return -1;
-        }
-
-        if (cover1.getVideo().getId() == cover2.getVideo().getId()) {
-            return 1;
-        }
-
-        return 0;
-    }
-
-    public void calculateSearchRank(List<VideoWrapper> tempSearchList, List<Cover> covers, String searchString, int type) {
-
+        List<CoverInfoEntity> coverInfoEntities = searchRepo.searchCovers(searchString, limit);
+        List<Cover> covers = videoService.getCovers(coverInfoEntities);
+        List<VideoWrapper> result = new ArrayList<>();
         if (covers != null) {
-            if (type == SEARCH_BY_NAME) {
-                for (Cover cover : covers) {
-
-                    float similarity = SimilarityVideo.similarityStrings(cover.getCoverName(), searchString);
-                    VideoWrapper videoWrapper = cover.toVideoWrapper();
-                    videoWrapper.setSimilarityWithOther(similarity);
-                    tempSearchList.add(videoWrapper);
-                }
-
-            } else if (type == SEARCH_BY_USER) {
-
-                for (Cover cover : covers) {
-
-                    float similarity = SimilarityVideo.similarityStrings(cover.getVideo().getAccount().getFullname(), searchString);
-                    VideoWrapper videoWrapper = cover.toVideoWrapper();
-                    videoWrapper.setSimilarityWithOther(similarity);
-                    tempSearchList.add(videoWrapper);
+            for (Cover cover : covers) {
+                if (cover != null) {
+                    result.add(cover.toVideoWrapper());
                 }
             }
         }
+        return result;
     }
+
+    public List<VideoWrapper> searchLipSyncs(String searchString, int limit) {
+        List<LipSyncInfoEntity> lipSyncInfoEntities = searchRepo.searchLipSyncs(searchString, limit);
+        List<LipSync> lipSyncs = videoService.getLipSyncs(lipSyncInfoEntities);
+
+        List<VideoWrapper> result = new ArrayList<>();
+        if (lipSyncs != null) {
+
+            for (LipSync lipSync : lipSyncs) {
+                if (lipSync != null) {
+                    result.add(lipSync.toVideoWrapper());
+                }
+            }
+        }
+        return result;
+    }
+
 
     public String standardSearchString(String searchString) {
 
@@ -262,5 +172,11 @@ public class SearchServiceImpl{
 
         return searchString;
     }
+
+    public void indexSearchTables() {
+
+        searchRepo.indexTables();
+    }
+
 
 }

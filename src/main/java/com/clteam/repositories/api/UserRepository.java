@@ -23,8 +23,6 @@ public interface UserRepository {
 
     public UserInfoEntity getUserInfoByAccountId(int accountId);
 
-    public void indexTables();
-
     public List<TopLipSyncIdolEntity> getTopLipSyncIdols(int limit);
 
 
