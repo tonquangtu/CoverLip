@@ -25,6 +25,14 @@ public class BaseApplication implements ApplicationListener<ContextRefreshedEven
             System.out.println("Start Index for all table");
             userService.indexForAllTables();
             System.out.println("Complete index for all table");
+
+//            List<String> scopes = Lists.newArrayList("https://www.googleapis.com/auth/youtube.upload");
+//
+//            try {
+//                Credential credential = Auth.authorize(scopes, "uploadvideo");
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
         }
     }
 }

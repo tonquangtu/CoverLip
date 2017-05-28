@@ -1,7 +1,9 @@
 package com.clteam.security.controller;
 
 import com.clteam.model.User;
+import com.clteam.security.service.AccountSecurityService;
 import com.clteam.security.service.AdminAccountService;
+import com.clteam.security.util.GenericResponse;
 import com.clteam.security.util.PaginationUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,8 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import javax.servlet.ServletContext;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by Khanh Nguyen on 21/5/2017.
@@ -21,6 +22,9 @@ public class AdminAccountController {
 
     @Autowired
     private AdminAccountService adminAccountService;
+
+    @Autowired
+    private AccountSecurityService accountSecurityService;
 
 //    @GetMapping("/list")
 //    public String list(Model model) {
@@ -47,6 +51,18 @@ public class AdminAccountController {
             model.addAttribute("pagingUser", pagingUser);
             return "adminpage/account/account_list";
         }
+    }
+
+    @RequestMapping("/update")
+    public @ResponseBody
+    GenericResponse update(
+            @RequestParam("accountId") String accountId, @RequestParam("statusAccount") String statusAccount) {
+        System.out.println("### begin update status account");
+        String msg = String.valueOf(accountSecurityService.saveAccountStatusDto(accountId, statusAccount));
+        return new GenericResponse(
+                msg,
+                msg
+        );
     }
 
 }

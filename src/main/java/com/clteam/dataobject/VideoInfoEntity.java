@@ -1,5 +1,9 @@
 package com.clteam.dataobject;
 
+import com.clteam.factory.AccountSearchFilter;
+import com.clteam.factory.CoverSearchFilter;
+import org.hibernate.search.annotations.*;
+
 import javax.persistence.*;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -8,8 +12,15 @@ import java.util.Collection;
 /**
  * Created by Dell on 30-Apr-17.
  */
+@Indexed
 @Entity
 @Table(name = "video_info")
+//@FullTextFilterDef(name = "videoFilter", impl = CoverSearchFilter.class)
+@FullTextFilterDefs( {
+        @FullTextFilterDef(name = "videoFilter", impl = CoverSearchFilter.class),
+        @FullTextFilterDef(name = "accountFilter", impl = AccountSearchFilter.class)
+})
+
 public class VideoInfoEntity {
     private int id;
     private int accountId;
@@ -23,6 +34,7 @@ public class VideoInfoEntity {
     private byte state;
     private String description;
     private int type;
+    private String storageId;
 
     private Collection<CoverInfoEntity> coverInfosById;
     private Collection<CoverOfPlaylistEntity> coverOfPlaylistsById;
@@ -39,6 +51,7 @@ public class VideoInfoEntity {
     private Collection<TempNewCoverAdminEntity> tempNewCoverAdminsById;
     private Collection<TempNewLipSyncAdminEntity> tempNewLipSyncAdminsById;
     private AccountEntity accountByAccountId;
+
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -152,6 +165,18 @@ public class VideoInfoEntity {
     }
 
     @Basic
+    @Column(name="storage_id", columnDefinition = "TEXT")
+    public String getStorageId() {
+        return storageId;
+    }
+
+    public void setStorageId(String storageId) {
+        this.storageId = storageId;
+    }
+
+    @Field
+    @NumericField
+    @Basic
     @Column(name="type")
     public int getType() {
         return type;
@@ -200,6 +225,7 @@ public class VideoInfoEntity {
         return result;
     }
 
+//    @IndexedEmbedded
     @OneToMany(mappedBy = "videoInfoByVideoId")
     public Collection<CoverInfoEntity> getCoverInfosById() {
         return coverInfosById;
@@ -326,6 +352,7 @@ public class VideoInfoEntity {
         this.tempNewLipSyncAdminsById = tempNewLipSyncAdminsById;
     }
 
+    @IndexedEmbedded
     @ManyToOne
     @JoinColumn(name = "account_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public AccountEntity getAccountByAccountId() {

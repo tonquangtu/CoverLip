@@ -272,6 +272,7 @@ public class VideoServiceImpl implements VideoService{
         return videos;
     }
 
+    @Override
     public List<Cover> getCovers(List<CoverInfoEntity> coverInfoEntities) {
 
         List<Cover> covers = new ArrayList<>();
@@ -342,6 +343,7 @@ public class VideoServiceImpl implements VideoService{
         return cover;
     }
 
+    @Override
     public Cover getCoverInfo(VideoInfoEntity videoEntity) {
 
         Cover cover = null;

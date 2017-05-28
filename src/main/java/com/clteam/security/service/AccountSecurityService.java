@@ -19,4 +19,6 @@ public interface AccountSecurityService {
 
     AccountEntity createNewAccount(Connection<?> conn);
 
+    boolean saveAccountStatusDto(String accountId, String statusAccount);
+
 }

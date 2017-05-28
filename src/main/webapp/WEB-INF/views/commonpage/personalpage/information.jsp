@@ -7,10 +7,13 @@
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <div class="information_person main_person">
     <div class="subhead">
         <h2 class="subhead-heading">Thông Tin Công Khai</h2>
+        <%--<h1><sec:authentication property="principal.accountEntity.id"/></h1>--%>
     </div>
     <form accept-charset="UTF-8" action="" class="form_person" method="post">
         <dl class="form-group float-right col-md-4">

@@ -20,9 +20,17 @@
         <param-value>WEB-INF/config/applicationContext.xml</param-value>
     </context-param>
 
+    <!--Save upload file-->
+    <context-param>
+        <param-name>upload.location</param-name>
+        <param-value>/path/to/uploads</param-value>
+    </context-param>
+    <!--  end-->
+
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+
 
     <filter>
         <filter-name>hibernateFilter</filter-name>

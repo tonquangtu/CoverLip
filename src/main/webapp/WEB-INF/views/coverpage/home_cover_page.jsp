@@ -34,6 +34,7 @@
 
 <content>
     <div style="height:20px; width: 100%; clear: both"></div>
+
     <div id="slider" class="container">
         <div id="carousel-id" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -122,7 +123,7 @@
                     <div class="subject">
                         <a href="/new-cover">
                             <img class="img-responsive"
-                                 src="../../../resources/storage/image/normal_image/slide_image/singer.jpg" alt="">
+                                 src="/resources/storage/image/normal_image/owner_image/new_cover.jpg" alt="">
                         </a>
                         <h3>
                             <a href="/new-cover">Mới Đăng</a>
@@ -189,7 +190,7 @@
                     <div class="subject">
                         <a href="/hot-cover">
                             <img class="img-responsive"
-                                 src="../../../resources/storage/image/normal_image/slide_image/singer.jpg" alt="">
+                                 src="/resources/storage/image/normal_image/owner_image/cover_hot.jpg" alt="">
                         </a>
                         <a href="/hot-cover">
                             <h3>

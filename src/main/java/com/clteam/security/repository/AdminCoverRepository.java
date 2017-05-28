@@ -9,4 +9,8 @@ public interface AdminCoverRepository {
 
     public Query getQueryCoverList();
 
+    public Query getQueryCoverHotList();
+
+    public Query getQueryCoverNewList();
+
 }

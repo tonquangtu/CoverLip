@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/resources/styles/main_header_style.css">
     <link rel="stylesheet" href="/resources/styles/main_footer_style.css">
     <link rel="stylesheet" href="/resources/styles/one_card_style.css">
+    <link rel="stylesheet" href="/resources/styles/top_idol_card_style.css">
     <link rel="stylesheet" href="/resources/libs/jb/hover-min.css">
     <script src="/resources/scripts/main_header_script.js"></script>
     <script src="/resources/scripts/all_cover_lipsync_script.js"></script>
@@ -66,7 +67,7 @@
                     <span>Đang tải dữ liệu...</span>
                 </div>
             </div>
-            <div  class="col-md-3 top_cover_idol_layout">
+            <div  class="col-md-3 top_cover_idol_layout" style="margin-top: 13px;">
                 <c:set var="listHot" value="${listTopLipSyncIdols}" scope="request"/>
                 <c:set var="idolList" value="${idolList}" scope="request"/>
                 <%@include file="../common/top_idol_card.jsp" %>

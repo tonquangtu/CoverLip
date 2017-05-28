@@ -1,5 +1,7 @@
 package com.clteam.dataobject;
 
+import org.hibernate.search.annotations.*;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Collection;
@@ -7,6 +9,7 @@ import java.util.Collection;
 /**
  * Created by Dell on 30-Apr-17.
  */
+@Indexed
 @Entity
 @Table(name = "account")
 public class AccountEntity {
@@ -59,6 +62,8 @@ public class AccountEntity {
         this.password = password;
     }
 
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
+    @Analyzer(definition = "customanalyzer")
     @Basic
     @Column(name = "fullname")
     public String getFullname() {

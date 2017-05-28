@@ -1,5 +1,6 @@
 package com.clteam.services.commonservice.api;
 
+import com.clteam.dataobject.CoverInfoEntity;
 import com.clteam.dataobject.VideoInfoEntity;
 import com.clteam.model.*;
 
@@ -44,4 +45,9 @@ public interface VideoService {
 
 
      List<LipSync> getListLipSyncOfUser(int accountId, int limit, int currentVideoId);
+
+     public Cover getCoverInfo(VideoInfoEntity videoEntity);
+
+     public List<Cover> getCovers(List<CoverInfoEntity> coverInfoEntities);
+
 }

@@ -26,16 +26,16 @@ public class DataSeedingListener implements ApplicationListener<ContextRefreshed
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
-//        insertAccount("admin@gmail.com",
-//                "Abc@1234",
-//                "Khanh Nguyen",
-//                (byte) SecurityConstant.ROLE_ADMIN_BYTE,
-//                (byte) SecurityConstant.ACCOUNT_ACTIVATED);
-//        insertAccount("normal@gmail.com",
-//                "Abc@1234",
-//                "Khanh Nguyen",
-//                (byte) SecurityConstant.ROLE_USER_BYTE,
-//                (byte) SecurityConstant.ACCOUNT_ACTIVATED);
+        insertAccount("admin@gmail.com",
+                "Abc@1234",
+                "Khanh Nguyen",
+                (byte) SecurityConstant.ROLE_ADMIN_BYTE,
+                (byte) SecurityConstant.ACCOUNT_ACTIVATED);
+        insertAccount("normal@gmail.com",
+                "Abc@1234",
+                "Khanh Nguyen",
+                (byte) SecurityConstant.ROLE_USER_BYTE,
+                (byte) SecurityConstant.ACCOUNT_ACTIVATED);
     }
 
     private void insertAccount(String email, String pwd, String fullName, byte role, byte status) {

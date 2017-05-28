@@ -88,7 +88,17 @@
                 </div>
                 <ul class="child-menu">
                     <li class=""><a href="/admin/cover/list"> Danh sách cover </a></li>
-                    <li><a href="#">Danh sách cover</a></li>
+                    <li><a href="/admin/cover/new-list">Danh sách cover mới</a></li>
+                    <li><a href="/admin/cover/hot-list">Danh sách cover hot</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="left-nav-content-main">
+                    <i class="glyphicon glyphicon-cog fa"></i> Quản lý playlist <span
+                        class="glyphicon glyphicon-chevron-down gl-right"></span>
+                </div>
+                <ul class="child-menu">
+                    <li class=""><a href="/admin/playlist/list">Danh sách playlist</a></li>
                     <li><a href="#">Dashboard 1</a></li>
                 </ul>
             </li>
@@ -104,25 +114,11 @@
             </li>
             <li>
                 <div class="left-nav-content-main">
-                    <i class="glyphicon glyphicon-cog fa"></i> Quản lý playlist <span
-                        class="glyphicon glyphicon-chevron-down gl-right"></span>
-                </div>
-                <ul class="child-menu">
-                    <li class=""><a href="/admin/playlist/list">Danh sách playlist</a></li>
-                    <li><a href="#">Dashboard 1</a></li>
-                    <li><a href="#">Dashboard 1</a></li>
-                </ul>
-            </li>
-            <li>
-                <div class="left-nav-content-main">
                     <i class="glyphicon glyphicon-cog fa"></i> Quản lý người đăng <span
                         class="glyphicon glyphicon-chevron-down gl-right"></span>
                 </div>
                 <ul class="child-menu">
                     <li class=""><a href="#">Danh sách người đăng </a></li>
-                    <li><a href="#">Dashboard 1</a></li>
-                    <li><a href="#">Dashboard 1</a></li>
-                    <li><a href="#">Dashboard 1</a></li>
                     <li><a href="#">Dashboard 1</a></li>
                 </ul>
             </li>

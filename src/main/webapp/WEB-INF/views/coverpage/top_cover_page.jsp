@@ -75,7 +75,7 @@ To change this template use File | Settings | File Templates.
                                         <span class="priority">${i.count}</span>
                                         <span class="change">
 			            		<span class=""></span>
-			            		<p>6</p>
+			            		<p>${10-i.index}</p>
 			            	</span>
                                         <a class="thumb-video" href="${item.toVideoWrapper().fullLink}"
                                            title="${item.coverName} - ${item.video.account.fullname}">
