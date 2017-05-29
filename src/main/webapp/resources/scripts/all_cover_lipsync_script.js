@@ -2,9 +2,8 @@
  * Created by mrgnu on 19/05/2017.
  */
 $(document).ready(function (){
-    var storageUrl = 'http://zmp3-photo-td.zadn.vn/thumb/240_135/';
-    var urlServerCorver = 'http://localhost:8080/load_more_all_cover';
-    var urlServerLipSync = 'http://localhost:8080/load_more_all_lipsync';
+    var urlServerCorver = '/load_more_all_cover';
+    var urlServerLipSync = '/load_more_all_lipsync';
     var loading = $('#loading');
     var status = true;
     var defaultDistanceToLoad = $(window).height() + $('footer').height() + 40;
@@ -46,7 +45,6 @@ $(document).ready(function (){
                         loading.show();
                     },
                     success: function (data) {
-                        alert(data[0].video.id);
                         setTimeout(
                             function()
                             {
@@ -105,7 +103,7 @@ $(document).ready(function (){
             '<img class="img-responsive img-circle" src="' + item.video.account.avatarThumbnail + '" alt="' + item.video.account.fullname + '">' +
             '</div>' +
             '<div class="name_member">' +
-            '<a href="/user/' + item.video.account.id + '"><h2>' + item.video.account.fullname + '</h2></a>' +
+            '<a href="/account/' + item.video.account.id + '"><h2>' + item.video.account.fullname + '</h2></a>' +
             '</div>' +
             '<div class="option_card" role="button">' +
             '<img src="../../../resources/icons/icon_more_vertical.svg" alt="" class="icon_more_vertical">' +
@@ -117,9 +115,9 @@ $(document).ready(function (){
             '<li class="item_singer_video ">' +
             '<div class="singer_video_box">' +
             '<div class="thumbnail_video_box">' +
-            '<a class="thumbnail_video" href="#" title="' + item.videoName + '">' +
+            '<a class="thumbnail_video" href="'+item.fullLink+'" title="' + item.videoName + '">' +
             '<span class="icon_play"></span>' +
-            '<img src="' + storageUrl + item.video.videoThumbnailLink + '" alt="' + item.videoName + '" title="' + item.videoName + '">' +
+            '<img src="' + item.video.videoThumbnailLink + '" alt="' + item.videoName + '" title="' + item.videoName + '">' +
             '<div class="background_one_card"></div>' +
             '</a>' +
             '</div>' +
@@ -137,7 +135,7 @@ $(document).ready(function (){
             '<span class="like_counter">' + item.video.numLike + '</span>' +
             '</li>' +
             '<li class="comment">' +
-            '<a href="#">' +
+            '<a href="'+item.fullLink+'">' +
             '<img src="../../../resources/icons/icon_comment.svg" alt="" class="icon_react">&nbsp;' + item.video.numComment +
             '</a>' +
             '</li>' +

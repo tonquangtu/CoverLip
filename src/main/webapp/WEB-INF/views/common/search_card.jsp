@@ -17,10 +17,29 @@
                         <h3 class="title_row">Top từ khóa tìm kiếm nhiều nhất</h3>
                         <ul id="ulTopKeyWord" class="info-search">
                             <%--Data--%>
+
                             <div id="loading_search" style="text-align: center;margin-top: 20px;margin-bottom: 20px;">
                                 <span><img class="loadicon" src="../../../resources/icons/loadding.svg"
                                            style="width:50px"></span>
                                 <span>Đang tải dữ liệu...</span>
+                            </div>
+                            <div id="result_search">
+                                <div class="video_box">
+                                    <h2 class="title_box">Video</h2>
+                                    <div class="box_content">
+                                        <ul id="list_video_table">
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="singer_box">
+                                    <h2 class="title_box">Ca sĩ</h2>
+                                    <div class="box_content">
+                                        <ul id="list_singer_table">
+
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </ul>
                     </li>

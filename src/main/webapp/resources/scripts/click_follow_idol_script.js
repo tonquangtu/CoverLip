@@ -1,7 +1,7 @@
 $(document).ready(function () {
     
     var buttonFollow = $(".btn-follow");
-    var urlFollowIdol = "http://localhost:8080/follow_idol";
+    var urlFollowIdol = "/follow_idol";
     buttonFollow.click(function () {
         var idolId = $(this).attr("topIdolId");
         var acoundId = "3";
