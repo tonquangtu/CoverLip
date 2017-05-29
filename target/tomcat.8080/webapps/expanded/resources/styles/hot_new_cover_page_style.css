@@ -1,0 +1,163 @@
+body{
+    background-color: #eeeeee;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#slider .item {
+    height: 350px;
+}
+#slider .item img {
+    width:70%;
+    height:350px;
+    float:right;
+}
+.backgroun-gadian {
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    width: 15%;
+    color: #ffffff;
+    height: 100%;
+    background: -webkit-linear-gradient(right,rgba(0,0,0,1),rgba(15,10,13,0.0));
+    background: -o-linear-gradient(right,rgba(0,0,0,1),rgba(15,10,13,0.0));
+    background: -moz-linear-gradient(right,rgba(0,0,255,1),rgba(0,0,0,.0));
+    background: linear-gradient(to right, rgba(0,0,0,1), rgba(3,2,2,.0));
+}
+.carousel-inner {
+    background:black;
+}
+.carousel-control {
+    width:5%;
+}
+.carousel-caption {
+    right: 65%;
+    left: 5%;
+    top:15%;
+}
+
+#cover_page{
+
+    position: relative;
+    padding-left: 0;
+}
+
+#cover_page #title_cover{
+    position: absolute;
+    bottom: 10px;
+    left: 25px;
+}
+
+#cover_list{
+
+    margin-top: 13px;
+}
+
+#top_cover_idol{
+    background-color: #ffffff;
+    /*height: 1000px;*/
+    margin-top: 15px;
+    padding-left: 15px;
+    border-radius: 5px;
+}
+
+.item_not_first .col-md-4{
+
+    padding: 0 6px;
+}
+
+.item_top_cover_idol{
+
+    list-style-type: none;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 10px 0;
+    /*background-color: red;*/
+    position: relative;
+    overflow: hidden;
+}
+
+.item_top_cover_idol img{
+
+    width: 70px;
+    height: 70px;
+    float: left;
+    margin-right: 10px;
+
+}
+
+.item_top_cover_idol button{
+    position: absolute;
+    top: 30px;
+    right: 10px;
+
+}
+
+.item_top_cover_idol .idol_info{
+
+    padding-top: 15px;
+}
+
+.item_top_cover_idol .idol_info p{
+
+    margin-bottom: 0;
+}
+
+#cover_list{
+    width: 72%;
+    padding-right: 22px;
+    padding-left: 9px;
+}
+
+.top_cover_idol_layout{
+    width: 28%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top:12px;
+}
+
+#top_cover_idol h3{
+
+    padding: 10px 0;
+    margin: 0;
+    color: red;
+
+}
+
+.icon_react{
+
+    height: 20px;
+    width: 20px;
+    margin-top: -2px;
+}
+
+.icon_more_vertical{
+
+    height: 15px;
+}
+
+.item_first .thumbnail_video img {
+    height: 210px !important;
+}
+
+.item_first .col-md-6{
+
+    padding: 0 6px;
+}
+
+.item_not_first .thumbnail_video img {
+    height: 150px !important;
+}
+
+.top_idol{
+    box-shadow: 2px 1px 4px 2px rgba(0,0,0,0.14);
+}
+#content_page{
+    padding-left: 0;
+}
+
+.item_top_cover_idol img{
+    margin-left: 5px;
+}
