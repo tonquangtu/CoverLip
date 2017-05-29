@@ -72,9 +72,9 @@ public class Video implements Serializable{
 
     public String getVideoThumbnailLink() {
         if(storageId==null || storageId.length()<=0){
-            return DataConstant.STORAGE_BASE_URL + videoThumbnailLink;
+            return DataConstant.ZING_THUMBNAIL_BASE_URL + videoThumbnailLink;
         }else{
-            return videoThumbnailLink;
+            return DataConstant.YOUTUBE_THUMBNAIL_BASE_URL + videoThumbnailLink;
         }
     }
 
