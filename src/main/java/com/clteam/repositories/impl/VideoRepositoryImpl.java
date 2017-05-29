@@ -33,6 +33,13 @@ public class VideoRepositoryImpl implements VideoRepository {
     }
 
     public boolean updateVideo(VideoInfoEntity video) {
+
+        if (video != null) {
+            Session session = sessionFactory.getCurrentSession();
+            session.update(video);
+            return true;
+        }
+
         return false;
     }
 

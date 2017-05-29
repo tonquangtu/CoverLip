@@ -19,6 +19,10 @@ public class Video implements Serializable{
 
     public static final int LIP_SYNC_TYPE = 2;
 
+    public static final byte ACTIVE_STATE = 1;
+
+    public static final byte DEACTIVE_STATE = 0;
+
 
     public Video() {
     }
@@ -45,6 +49,9 @@ public class Video implements Serializable{
 
     private int type;
 
+    private String storageId;
+
+
     private Account account;
 
     public int getId() {
@@ -64,7 +71,11 @@ public class Video implements Serializable{
     }
 
     public String getVideoThumbnailLink() {
-        return DataConstant.STORAGE_BASE_URL + videoThumbnailLink;
+        if(storageId==null || storageId.length()<=0){
+            return DataConstant.STORAGE_BASE_URL + videoThumbnailLink;
+        }else{
+            return videoThumbnailLink;
+        }
     }
 
     public void setVideoThumbnailLink(String videoThumbnailLink) {
@@ -143,6 +154,13 @@ public class Video implements Serializable{
         this.account = account;
     }
 
+    public String getStorageId() {
+        return storageId;
+    }
+
+    public void setStorageId(String storageId) {
+        this.storageId = storageId;
+    }
 
     public void copyData(VideoInfoEntity videoEntity) {
 
@@ -167,6 +185,8 @@ public class Video implements Serializable{
         description = videoEntity.getDescription();
 
         this.type = videoEntity.getType();
+
+        this.storageId = videoEntity.getStorageId();
     }
 
     public String periodCreatedForNow() {
@@ -184,7 +204,6 @@ public class Video implements Serializable{
            period = "Đăng cách đây " + minutes + " phút";
 
        } else {
-
 
            long hours = duration.toHours();
            if (hours < 24) {
@@ -236,6 +255,9 @@ public class Video implements Serializable{
         description = videoEntity.getDescription();
 
         this.type = videoEntity.getType();
+
+        this.storageId = videoEntity.getStorageId();
+
         this.account = new Account();
         this.account.copyData(accountEntity);
     }

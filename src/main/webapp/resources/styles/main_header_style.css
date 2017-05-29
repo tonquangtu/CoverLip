@@ -160,7 +160,7 @@ input[type="text"]:focus {
 .search-suggestion-box {
     float:left;
     width:446px;
-    max-height: 450px;
+    /*max-height: 450px;*/
 }
 
 .slimScrollDiv {
@@ -168,7 +168,7 @@ input[type="text"]:focus {
     position: relative;
     overflow: hidden;
     width: auto;
-    max-height: 450px;
+    /*max-height: 450px;*/
 }
 
 .hideShowCase {
@@ -371,4 +371,41 @@ ul.notifi li a {
 /*Search card*/
 #result_search{
     display:none;
+}
+#result_search .item{
+    list-style-type: none;
+    width: 95%;
+    padding:0 10px;
+    border-bottom: 1px solid #EEE;
+}
+#result_search .item:last-child{
+    border-bottom:none;
+}
+#result_search .one_item{
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-top:10px;
+    overflow: hidden;
+    width: 95%;
+}
+#result_search .image_item{
+    float: left;
+    margin-right: 10px;
+}
+#result_search .info-table .name_item{
+    margin-top: 5px;
+}
+
+#result_search .member_post .avatar_member{
+    width: 5%;
+    background: grey;
+    float: left;
+    margin-right: 5px;
+}
+#result_search .title_box{
+    font-size: 17px;
+    background: #F1F1F1;
+    padding: 10px;
+    color: #3c3c3c;
+    margin-top:0;
 }

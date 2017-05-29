@@ -1,17 +1,19 @@
 package com.clteam.controllers.coverpagecontroller;
 
 import com.clteam.model.*;
+import com.clteam.security.util.AccountUtil;
 import com.clteam.services.commonservice.api.CoverService;
 import com.clteam.services.commonservice.api.VideoService;
 import com.clteam.services.userservice.api.TopIdolService;
 import com.clteam.services.userservice.api.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.util.WebUtils;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.Timestamp;
@@ -57,14 +59,14 @@ public class CoverHomePageController {
         modelAndView.addAllObjects(map);
 
 
-        //Gia lap cookie sau khi login
-        response.addCookie(new Cookie("myaccount", "" + userService.getUser(8).getAccount().getId()));
-
-        //
+//        //Gia lap cookie sau khi login
+//        response.addCookie(new Cookie("myaccount", "" + userService.getUser(8).getAccount().getId()));
+//
+//        //
         return modelAndView;
     }
 
-    @RequestMapping(value = "/top-cover/get-num-week",method = RequestMethod.POST)
+    @RequestMapping(value = "/top-cover/get-num-week")
     public @ResponseBody int getNumWeek(@RequestParam String timestamp){
         long time = Long.parseLong(timestamp);
         return coverService.getNumWeekFromTimestamp(new Timestamp(time));
@@ -119,8 +121,9 @@ public class CoverHomePageController {
 
         map.put("type", type);
         //Get id personal from cookie
-        Cookie cookie = WebUtils.getCookie(request, "myaccount");
-        int accountId = Integer.parseInt(cookie.getValue());
+//        Cookie cookie = WebUtils.getCookie(request, "myaccount");
+        int accountId = AccountUtil.getCurrentUserId();
+        if(accountId>0){
         User user = userService.getUser(accountId);
         map.put("userInfo", user);
         //
@@ -130,7 +133,10 @@ public class CoverHomePageController {
             modelAndView.setViewName("commonpage/personal_page");
         } else if (Objects.equals(type, "change-password")) {
             modelAndView.setViewName("commonpage/personal_page");
-        } else if (Objects.equals(type, "my-cover")) {
+        } else if(Objects.equals(type, "upload")){
+            modelAndView.setViewName("commonpage/personal_page");
+        }
+        else if (Objects.equals(type, "my-cover")) {
             List<Cover> coverOfUserList = coverService.getListCoverOfUser(accountId, 6, -1);
             if (coverOfUserList == null) {
                 modelAndView.setViewName("commonpage/error_page");
@@ -180,6 +186,9 @@ public class CoverHomePageController {
         }
 
         modelAndView.addAllObjects(map);
+        }else {
+            modelAndView.setViewName("commonpage/error_page");
+        }
         return modelAndView;
     }
 

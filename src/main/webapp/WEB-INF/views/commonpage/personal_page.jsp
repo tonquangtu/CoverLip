@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="../../../resources/styles/card_playlist_cover_style.css">
     <link rel="stylesheet" href="../../../resources/styles/personal_style.css">
 
-    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src = "../../../resources/scripts/one_card_script.js"></script>
     <script src="../../../resources/scripts/more_item_script.js"></script>
     <script type="text/javascript" src="../../../resources/scripts/personal_script.js"></script>
@@ -44,7 +44,7 @@
                     </h3>
                     <a href="/personal/information" class="selected">Thông Tin</a>
                     <a href="/personal/change-password">Thay Đổi Mật Khẩu</a>
-                    <a href="">Upload</a>
+                    <a href="/personal/upload">Upload</a>
                     <a href="/user/${userInfo.account.id}">Kênh Của Tôi</a>
                     <a href="/personal/my-cover">Cover Đã Đăng</a>
                     <a href="/personal/my-lipsync">LipSync Đã Đăng</a>
@@ -62,6 +62,11 @@
                     </c:when>
                     <c:when test="${type.equals('change-password')}">
                         <%@include file="personalpage/change_password.jsp"%>
+                    </c:when>
+                    <c:when test="${type.equals('upload')}">
+                        <c:set var="message" scope="request" value="${message}"/>
+                        <c:set var="userInfo" scope="request" value="${userInfo}"/>
+                        <%@include file="personalpage/upload_video_page.jsp"%>
                     </c:when>
                     <c:when test="${type.equals('my-cover')}">
                         <c:set var="videoList" scope="request" value="${videoList}"/>

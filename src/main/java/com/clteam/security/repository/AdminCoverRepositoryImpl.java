@@ -26,4 +26,18 @@ public class AdminCoverRepositoryImpl implements AdminCoverRepository {
                         " from VideoInfoEntity v where v.type=:type order by v.createDate desc")
                 .setParameter("type", Video.COVER_TYPE);
     }
+
+    @Override
+    public Query getQueryCoverHotList() {
+        return sessionFactory
+                .getCurrentSession()
+                .createQuery("from HotCoverEntity h order by h.priority desc");
+    }
+
+    @Override
+    public Query getQueryCoverNewList() {
+        return sessionFactory
+                .getCurrentSession()
+                .createQuery("from NewCoverEntity n order by n.priority desc");
+    }
 }

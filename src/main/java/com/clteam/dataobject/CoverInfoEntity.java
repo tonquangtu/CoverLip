@@ -33,6 +33,7 @@ public class CoverInfoEntity{
 
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     public int getId() {
         return id;
     }
@@ -97,6 +98,7 @@ public class CoverInfoEntity{
         return result;
     }
 
+    @IndexedEmbedded
     @ManyToOne
     @JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     public VideoInfoEntity getVideoInfoByVideoId() {

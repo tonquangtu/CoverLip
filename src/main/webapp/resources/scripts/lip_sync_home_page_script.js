@@ -3,11 +3,11 @@
  */
 
 $(document).ready(function () {
-    var storageUrl = 'http://zmp3-photo-td.zadn.vn/thumb/240_135/';
     var lastVideoId = $('.load-more-box').attr('lastVideoId');
     var list = $('.lip-syncs');
     var loading = false;
-    var footerHeight = $('.main-footer').height();
+    // var footerHeight = $('.main-footer').height();
+    var defaultDistanceToLoad = $(window).height() + $('.main-footer').height() + 40;
 
     loadMoreData();
 
@@ -15,12 +15,9 @@ $(document).ready(function () {
 
         $(window).scroll(function (scroll)
         {
-            var windowHeight = $(window).height();
-            var documentHeight = $(document).height();
-            var scrollBarHeight = windowHeight * (windowHeight / documentHeight);
-            var offset = documentHeight - $(window).scrollTop() - scrollBarHeight  - footerHeight;
 
-            if (offset < 300) {
+            var offset = $(document).height() - $(window).scrollTop();
+            if (offset < defaultDistanceToLoad) {
                 if (!loading) {
                     fetchData(scroll);
                 }
@@ -33,8 +30,8 @@ $(document).ready(function () {
 
         console.log("Loading daata : last video id: " + lastVideoId);
         $.ajax({
-            url: "http://localhost:8080/hot-lip-sync/fetchdata",
-            type: "POST",
+            url: "/hot-lip-sync/fetchdata",
+            type: "GET",
             data:  {
                 type: "hot_lip_sync",
                 lastVideoId: lastVideoId
@@ -43,14 +40,17 @@ $(document).ready(function () {
 
             beforeSend: function(){
                 loading = true;
-                $(".load-more-box").css("display","block");
+                $(".load-more-box").show();
             },
 
             complete: function(){
-                // console.log("complete");
-                loading = false;
-                $(".load-more-box").css("display", "none");
 
+                setTimeout( function () {
+
+                    loading = false;
+                    $(".load-more-box").hide();
+
+                }, 1000);
             },
 
             success: function(data){
@@ -61,7 +61,10 @@ $(document).ready(function () {
                     $(".load-more-box").remove();
                 }
 
-                addMoreData(data.result);
+                setTimeout( function () {
+                    addMoreData(data.result);
+                }, 1000);
+
             },
             error: function(){
                 console.log("error");
@@ -100,7 +103,7 @@ $(document).ready(function () {
             '<img class="img-responsive img-circle" src="' + item.video.account.avatarThumbnail + '" alt="' + item.video.account.fullname + '">' +
             '</div>' +
             '<div class="name_member">' +
-            '<a href="/user/' + item.video.account.id + '"><h2>' + item.video.account.fullname + '</h2></a>' +
+            '<a href="/account/' + item.video.account.id + '"><h2>' + item.video.account.fullname + '</h2></a>' +
             '</div>' +
             '<div class="option_card" role="button">' +
             '<img src="../../../resources/icons/icon_more_vertical.svg" alt="" class="icon_more_vertical">' +
@@ -114,7 +117,7 @@ $(document).ready(function () {
             '<div class="thumbnail_video_box">' +
             '<a class="thumbnail_video" href="' + item.fullLink + '" title="' + item.videoName + '">' +
             '<span class="icon_play"></span>' +
-            '<img src="' + storageUrl + item.video.videoThumbnailLink + '" alt="' + item.videoName + '" title="' + item.videoName + '">' +
+            '<img src="'+ item.video.videoThumbnailLink + '" alt="' + item.videoName + '" title="' + item.videoName + '">' +
             '<div class="background_one_card"></div>' +
             '</a>' +
             '</div>' +
@@ -132,7 +135,7 @@ $(document).ready(function () {
             '<span class="like_counter">' + item.video.numLike + '</span>' +
             '</li>' +
             '<li class="comment">' +
-            '<a href="#">' +
+            '<a href="'+item.video.fullLink+'">' +
             '<img src="../../../resources/icons/icon_comment.svg" alt="" class="icon_react">&nbsp;' + item.video.numComment +
             '</a>' +
             '</li>' +

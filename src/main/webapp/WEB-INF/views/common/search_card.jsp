@@ -11,7 +11,7 @@
 <div id="divSuggestion" class="suggestion hideShowCase" m="0">
     <div class="search-suggestion-box">
         <div class="slimScrollDiv">
-            <div id="idScrollSuggestion" style="overflow: hidden; width: auto; max-height: 450px;">
+            <div id="idScrollSuggestion" style="overflow: hidden; width: auto;">
                 <ul id="contentSuggestion" class="content_search" style="text-transform:capitalize;">
                     <li id="liTopKeyWordFirst">
                         <h3 class="title_row">Top từ khóa tìm kiếm nhiều nhất</h3>
@@ -23,27 +23,36 @@
                                            style="width:50px"></span>
                                 <span>Đang tải dữ liệu...</span>
                             </div>
-                            <div id="result_search">
-                                <div class="video_box">
-                                    <h2 class="title_box">Video</h2>
-                                    <div class="box_content">
-                                        <ul id="list_video_table">
 
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="singer_box">
-                                    <h2 class="title_box">Ca sĩ</h2>
-                                    <div class="box_content">
-                                        <ul id="list_singer_table">
-
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
                         </ul>
                     </li>
                 </ul>
+                <div id="result_search">
+                    <div class="video_box">
+                        <h2 class="title_box">Top Tìm Kiếm</h2>
+                        <div class="box_content">
+                            <ul id="best_search">
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="video_box">
+                        <h2 class="title_box">Video</h2>
+                        <div class="box_content">
+                            <ul id="list_video_table">
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="singer_box">
+                        <h2 class="title_box">Ca sĩ</h2>
+                        <div class="box_content">
+                            <ul id="list_singer_table">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="slimScrollBar"
                  style="background: rgb(0, 0, 0) none repeat scroll 0% 0%; width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 312px;"></div>

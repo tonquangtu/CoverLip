@@ -1,6 +1,6 @@
 package com.clteam.configuration;
 
-import com.clteam.services.userservice.api.UserService;
+import com.clteam.services.commonservice.impl.SearchServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -15,7 +15,7 @@ public class BaseApplication implements ApplicationListener<ContextRefreshedEven
     public static boolean isIndexed = false;
 
     @Autowired
-    UserService userService;
+    SearchServiceImpl searchService;
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
@@ -23,8 +23,16 @@ public class BaseApplication implements ApplicationListener<ContextRefreshedEven
         if (!isIndexed) {
             isIndexed = true;
             System.out.println("Start Index for all table");
-            userService.indexForAllTables();
+            searchService.indexSearchTables();
             System.out.println("Complete index for all table");
+
+//            List<String> scopes = Lists.newArrayList("https://www.googleapis.com/auth/youtube.upload");
+//
+//            try {
+//                Credential credential = Auth.authorize(scopes, "uploadvideo");
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
         }
     }
 }

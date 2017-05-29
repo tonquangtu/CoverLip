@@ -26,7 +26,7 @@ public final class SecurityConstant {
     public static final int USER_SESSION_TIMEOUT = 30 * 60;
     public static final int ADMIN_SESSION_TIMEOUT = 40 * 60;
 
-    public static final String TARGET_USER_URL = "/user";
+    public static final String TARGET_USER_URL = "/cover";
     public static final String TARGET_ADMIN_URL = "/admin";
 
     public static final int MAX_RECORD_PER_PAGE = 20;

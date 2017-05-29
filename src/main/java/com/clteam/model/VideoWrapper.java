@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 /**
  * Created by Dell on 12-May-17.
  */
-public class VideoWrapper {
+public class VideoWrapper implements Comparable<VideoWrapper>{
 
     private String videoName;
 
@@ -17,6 +17,8 @@ public class VideoWrapper {
     private String mp3Link;
 
     private String fullLink;
+
+    private float similarityWithOther;
 
     public VideoWrapper() {
 
@@ -49,6 +51,18 @@ public class VideoWrapper {
 
     public void setMp3Link(String mp3Link) {
         this.mp3Link = mp3Link;
+    }
+
+    public void setFullLink(String fullLink) {
+        this.fullLink = fullLink;
+    }
+
+    public float getSimilarityWithOther() {
+        return similarityWithOther;
+    }
+
+    public void setSimilarityWithOther(float similarityWithOther) {
+        this.similarityWithOther = similarityWithOther;
     }
 
     public String compactNameCover(int numWord) {
@@ -111,7 +125,14 @@ public class VideoWrapper {
         return fullLink;
     }
 
-    public void setFullLink(String fullLink) {
-        this.fullLink = fullLink;
+    @Override
+    public int compareTo(VideoWrapper o) {
+
+        if (o.getSimilarityWithOther() > similarityWithOther) {
+            return 1;
+        } else if (o.getSimilarityWithOther() < similarityWithOther) {
+            return -1;
+        }
+        return 0;
     }
 }

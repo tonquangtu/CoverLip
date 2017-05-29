@@ -26,10 +26,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserRepository userRepo;
 
-    public void indexForAllTables() {
-
-        userRepo.indexTables();
-    }
 
     public User getUser(int accountId) {
 

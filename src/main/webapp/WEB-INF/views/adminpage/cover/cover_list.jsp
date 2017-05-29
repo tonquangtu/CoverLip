@@ -57,7 +57,7 @@
                     <div class="pull-right">
                         <a href="#"
                            class="btn btn-success"> <span
-                                class="glyphicon glyphicon-plus"></span> Thêm tài khoản mới
+                                class="glyphicon glyphicon-plus"></span> Thêm mới
                         </a>
                     </div>
                     <div class="pull-left">

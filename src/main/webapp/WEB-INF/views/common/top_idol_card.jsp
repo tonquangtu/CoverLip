@@ -25,7 +25,7 @@
                 <li class="item_top_cover_idol">
                     <img src="${item1.user.account.avatarThumbnail}" class="img-circle hvr-pulse-grow" alt="top cover idol">
                     <div class="idol_info">
-                        <a href="#"><strong>${item1.user.account.fullname}</strong></a>
+                        <a href="/account/${item1.user.account.id}"><strong>${item1.user.account.fullname}</strong></a>
                         <p><span>${item1.user.numHaveFollowed}</span> người theo dõi</p>
                     </div>
 

@@ -31,6 +31,7 @@ public class SignUpController {
 
     @GetMapping("")
     public String index(Model model) {
+
         model.addAttribute("accountForm", new AccountDto());
         return "common/signup";
     }
@@ -49,7 +50,7 @@ public class SignUpController {
             AccountEntity account = signUpService.createNewAccount(accountDto);
             eventPublisher.publishEvent(new OnRegistrationCompleteEvent(account, getAppUrl(req)));
             // return view nontify sign up success and contain url link to main page
-            return "redirect:/signup/success";
+            return "redirect:/cover";
         }
     }
 
@@ -73,7 +74,7 @@ public class SignUpController {
 
 
     private String getAppUrl(HttpServletRequest request) {
-        return "http://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath();
+        return "https://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath();
     }
 
 }

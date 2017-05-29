@@ -33,7 +33,7 @@
             <div class="list shadow-all">
                 <div id="creator-subheader">
                     <div class="creator-subheader-content">
-                        <h2>Danh sách cover</h2>
+                        <h2>Danh sách playlist</h2>
                         <span id="creator-subheader-item-count" class="badge-creator" style="display: none;">100</span>
                     </div>
                     <div class="creator-subheader-controls">
@@ -58,7 +58,7 @@
                     <div class="pull-right">
                         <a href="#"
                            class="btn btn-success"> <span
-                                class="glyphicon glyphicon-plus"></span> Thêm tài khoản mới
+                                class="glyphicon glyphicon-plus"></span> Thêm mới
                         </a>
                     </div>
                     <div class="pull-left">

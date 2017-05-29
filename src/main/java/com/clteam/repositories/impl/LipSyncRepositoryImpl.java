@@ -203,7 +203,7 @@ public class LipSyncRepositoryImpl  implements LipSyncRepository {
         Session session = sessionFactory.getCurrentSession();
         Criteria criteria = session.createCriteria(NewLipsyncEntity.class);
         criteria.addOrder(Order.asc("priority"));
-        if (limit == -1){
+        if (limit > 0){
             criteria.setMaxResults(limit);
         }
         List newLipsyncList = criteria.list();
