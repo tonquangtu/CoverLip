@@ -107,7 +107,8 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     text-align: center;
     line-height: 34px;
     font-weight: 500;
-    background: #ff6d00;
+    /*background: #ff6d00;*/
+    background: #1abc9c;
     border: 0px;
     padding: 0px;
     cursor: pointer;
@@ -362,7 +363,8 @@ ul.notifi li a {
 
 .main-menu a:hover {
     text-decoration: none;
-    color: #ff6d00;
+    /*color: #ff6d00;*/
+    color:#1abc9c;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
     transition: all 0.2s linear;
@@ -375,16 +377,17 @@ ul.notifi li a {
 #result_search .item{
     list-style-type: none;
     width: 95%;
-    padding:0 10px;
+    padding:8px 10px;
     border-bottom: 1px solid #EEE;
+    line-height:0;
 }
 #result_search .item:last-child{
     border-bottom:none;
 }
 #result_search .one_item{
     display: inline-block;
-    margin-bottom: 5px;
-    margin-top:10px;
+    /*margin-bottom: 5px;*/
+    /*margin-top:10px;*/
     overflow: hidden;
     width: 95%;
 }
@@ -393,19 +396,38 @@ ul.notifi li a {
     margin-right: 10px;
 }
 #result_search .info-table .name_item{
-    margin-top: 5px;
+    margin: 0 0 3px 0;
 }
 
 #result_search .member_post .avatar_member{
-    width: 5%;
+    width: 5% !important;
     background: grey;
     float: left;
     margin-right: 5px;
 }
+#result_search .member_post p{
+    margin: 0;
+    line-height: 20px;
+    font-size: 12px;
+}
 #result_search .title_box{
-    font-size: 17px;
     background: #F1F1F1;
-    padding: 10px;
+    padding: 4px 4px 4px 10px;
     color: #3c3c3c;
-    margin-top:0;
+    margin-top: 0;
+    margin-bottom:0;
+    font-size: 15px;
+}
+#result_search ul{
+    margin-bottom:0;
+}
+.super-menu a:hover, .super-menu a.active{
+    color:#1abc9c !important;
+}
+ul.notifi li a:hover, ul.notifi li a.active{
+    color:#1abc9c !important;
+    border-bottom: #1abc9c solid 2px!important;
+}
+#quickFormSearch{
+    margin-bottom:0;
 }

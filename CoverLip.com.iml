@@ -26,6 +26,7 @@
       <configuration>
         <datasource-map>
           <unit-entry name="a.xml" value="dd719508-4e1c-499b-a5b3-4dae52bc158b" />
+          <unit-entry name="sessionFactory" value="2fc81469-b1fd-45e0-8bc0-09198f0e48ad" />
         </datasource-map>
         <naming-strategy-map />
       </configuration>
@@ -40,7 +41,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jquery-DefinitelyTyped" level="application" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.6.4" level="project" />

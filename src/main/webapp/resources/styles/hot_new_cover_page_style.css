@@ -59,7 +59,7 @@ body{
 #top_cover_idol{
     background-color: #ffffff;
     /*height: 1000px;*/
-    margin-top: 15px;
+    margin-top: 2px !important;
     padding-left: 15px;
     border-radius: 5px;
 }
@@ -160,4 +160,18 @@ body{
 
 .item_top_cover_idol img{
     margin-left: 5px;
+}
+
+/*Over one card*/
+.col-md-6 .name_member h2{
+    line-height:38px !important;
+}
+.option_card{
+    margin-top:0 !important;
+}
+.col-md-6 .option_card{
+    margin-top:5px !important;
+}
+.header_card{
+    margin-bottom:-5px;
 }

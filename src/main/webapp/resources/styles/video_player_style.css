@@ -22,7 +22,7 @@ a {
 
 a:hover {
     outline: 0;
-    color: #ff6d00;
+    color: #1abc9c;
     text-decoration: none !important;
 }
 
@@ -376,7 +376,7 @@ input:checked + .slider:before {
 }
 
 .suggestion-video-owner-name:hover {
-    color: #ff6d00 !important;
+    color: #1abc9c !important;
 }
 
 .suggestion-video-item:hover a {

@@ -37,7 +37,7 @@
                 <div class="top_idol">
 
                     <h3 class="title-top-idol">
-                        <a href="">Top idol lip-sync</a>
+                        <a href="">Top Idol Lip-Sync</a>
                     </h3>
                     <div class="col-md-3">
                         <div class="one_member text-center subject first-idol">

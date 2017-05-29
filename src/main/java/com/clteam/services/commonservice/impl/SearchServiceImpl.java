@@ -41,9 +41,11 @@ public class SearchServiceImpl{
 
     public static final int EXPECTED_ALL = 3;
 
+    public static final int NUM_ITEM_IN_PAGE = 9;
+
     public SearchData search(String searchString, int searchType, int limit) {
 
-        if (limit < 2 || limit > 50) {
+        if (limit!=-1&&(limit < 2 || limit > 50)) {
             limit = 6;
         }
         searchString = standardSearchString(searchString);
@@ -56,12 +58,12 @@ public class SearchServiceImpl{
 
             List<VideoWrapper> videoSearchResults;
             if (searchType == SEARCH_COVER) {
-                videoSearchResults = searchCovers(searchString, limitSearchVideo);
+                videoSearchResults = searchCovers(searchString, limitSearchVideo, 0).getRawData();
             } else {
-                videoSearchResults = searchLipSyncs(searchString, limitSearchVideo);
+                videoSearchResults = searchLipSyncs(searchString, limitSearchVideo, 0).getRawData();
             }
 
-            List<Account> accSearchResults = doSearchUsers(searchString, limitSearchAcc);
+            List<Account> accSearchResults = doSearchUsers(searchString, limitSearchAcc, 0).getRawData();
 
             VideoWrapper firstSearchVideo = null;
             Account firstSearchAcc = null;
@@ -110,41 +112,58 @@ public class SearchServiceImpl{
         return searchData;
     }
 
-    public SearchData searchVideos(String searchString, int searchType, int limit) {
+    public SearchData searchVideos(String searchString, int searchType, int limit, int currentPage) {
 
-        if (limit < 2 || limit > 50) {
+        if (limit!=-1 &&(limit < 2 || limit > 50)) {
             limit = 6;
         }
+        if (currentPage < 1 || currentPage > 100) {
+            currentPage = 1;
+        }
+        int firstItemIndex = (currentPage - 1) * NUM_ITEM_IN_PAGE;
         searchString = standardSearchString(searchString);
         SearchData searchData = new SearchData();
         List<VideoWrapper> videoSearchResults;
+        RawSearchData<VideoWrapper> rawSearchData;
         if (searchType == SEARCH_COVER) {
-            videoSearchResults = searchCovers(searchString, limit);
+            rawSearchData = searchCovers(searchString, limit, firstItemIndex);
         } else {
-            videoSearchResults = searchLipSyncs(searchString, limit);
+            rawSearchData = searchLipSyncs(searchString, limit, firstItemIndex);
         }
 
-        searchData.setVideoSearchList(videoSearchResults);
+        searchData.setVideoSearchList(rawSearchData.getRawData());
+        searchData.setTotalVideo(rawSearchData.getTotalResult());
         return searchData;
 
     }
 
-    public SearchData searchUsers(String searchString, int limit) {
-        if (limit < 2 || limit > 50) {
+    public SearchData searchUsers(String searchString, int limit, int currentPage) {
+        if (limit!=-1&&(limit < 2 || limit > 50)) {
             limit = 6;
         }
+        if (currentPage < 1 || currentPage > 100) {
+            currentPage = 1;
+        }
+        int firstItemIndex = (currentPage - 1) * NUM_ITEM_IN_PAGE;
         searchString = standardSearchString(searchString);
-        List<Account> accSearchResults = doSearchUsers(searchString, limit);
+        RawSearchData<Account> rawSearchData;
+        rawSearchData = doSearchUsers(searchString, limit, firstItemIndex);
         SearchData searchData = new SearchData();
-        searchData.setAccountSearchList(accSearchResults);
+        searchData.setAccountSearchList(rawSearchData.getRawData());
+        searchData.setTotalAccount(rawSearchData.getTotalResult());
 
         return searchData;
     }
 
-    public List<Account> doSearchUsers(String searchString, int limit) {
+    public RawSearchData<Account> doSearchUsers(String searchString, int limit, int firstItemIndex) {
 
-        List<AccountEntity> accountEntities = searchRepo.searchUsers(searchString, limit);
+        RawSearchData<Account> returnData = new RawSearchData<>();
+        RawSearchData<AccountEntity> rawSearchData = searchRepo.searchUsers(searchString, limit, firstItemIndex);
+
+        List<AccountEntity> accountEntities = rawSearchData.getRawData();
+
         List<Account> result = new ArrayList<>();
+
         if (accountEntities != null) {
 
             for (AccountEntity accountEntity : accountEntities) {
@@ -153,13 +172,16 @@ public class SearchServiceImpl{
                 result.add(account);
             }
         }
-        return result;
+        returnData.setRawData(result);
+        returnData.setTotalResult(rawSearchData.getTotalResult());
+        return returnData;
     }
 
-    public List<VideoWrapper> searchCovers(String searchString, int limit) {
+    public RawSearchData<VideoWrapper> searchCovers(String searchString, int limit, int firstItemIndex) {
 
-        List<CoverInfoEntity> coverInfoEntities = searchRepo.searchCovers(searchString, limit);
-        List<Cover> covers = videoService.getCovers(coverInfoEntities);
+        RawSearchData<CoverInfoEntity> rawSearchData = searchRepo.searchCovers(searchString, limit, firstItemIndex);
+        RawSearchData<VideoWrapper> returnData = new RawSearchData<>();
+        List<Cover> covers = videoService.getCovers(rawSearchData.getRawData());
         List<VideoWrapper> result = new ArrayList<>();
         if (covers != null) {
             for (Cover cover : covers) {
@@ -168,12 +190,16 @@ public class SearchServiceImpl{
                 }
             }
         }
-        return result;
+        returnData.setRawData(result);
+        returnData.setTotalResult(rawSearchData.getTotalResult());
+        return returnData;
     }
 
-    public List<VideoWrapper> searchLipSyncs(String searchString, int limit) {
-        List<LipSyncInfoEntity> lipSyncInfoEntities = searchRepo.searchLipSyncs(searchString, limit);
-        List<LipSync> lipSyncs = videoService.getLipSyncs(lipSyncInfoEntities);
+    public RawSearchData<VideoWrapper> searchLipSyncs(String searchString, int limit, int firstItemIndex) {
+
+        RawSearchData<VideoWrapper> returnData = new RawSearchData<>();
+        RawSearchData<LipSyncInfoEntity> rawSearchData = searchRepo.searchLipSyncs(searchString, limit, firstItemIndex);
+        List<LipSync> lipSyncs = videoService.getLipSyncs(rawSearchData.getRawData());
 
         List<VideoWrapper> result = new ArrayList<>();
         if (lipSyncs != null) {
@@ -184,7 +210,10 @@ public class SearchServiceImpl{
                 }
             }
         }
-        return result;
+
+        returnData.setTotalResult(rawSearchData.getTotalResult());
+        returnData.setRawData(result);
+        return returnData;
     }
 
 

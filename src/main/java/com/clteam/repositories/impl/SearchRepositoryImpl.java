@@ -1,6 +1,7 @@
 package com.clteam.repositories.impl;
 
 import com.clteam.dataobject.*;
+import com.clteam.model.RawSearchData;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.search.FullTextQuery;
@@ -71,7 +72,9 @@ public class SearchRepositoryImpl  {
 
     }
 
-    public List<AccountEntity> searchUsers(String searchString, int limit) {
+    public RawSearchData<AccountEntity> searchUsers(String searchString, int limit, int firstItemIndex) {
+
+        RawSearchData<AccountEntity> rawData = new RawSearchData<>();
 
         Session session = sessionFactory.getCurrentSession();
         FullTextSession fullTextSession = Search.getFullTextSession(session);
@@ -87,9 +90,18 @@ public class SearchRepositoryImpl  {
                 fullTextSession.createFullTextQuery(query, AccountEntity.class);
 //        fullTextQuery.enableFullTextFilter("accountFilter");
 
-        fullTextQuery.setMaxResults(limit);
+        rawData.setTotalResult(fullTextQuery.getResultSize());
+
+        if (firstItemIndex >= 0) {
+            fullTextQuery.setFirstResult(firstItemIndex);
+        }
+
+        if(limit>0) {
+            fullTextQuery.setMaxResults(limit);
+        }
         List<AccountEntity> results = fullTextQuery.list();
-        return results;
+        rawData.setRawData(results);
+        return rawData;
     }
 
     public List<CoverInfoEntity> searchCoversByUser(String searchString, int limit) {
@@ -152,6 +164,7 @@ public class SearchRepositoryImpl  {
                 .createQuery();
 
         FullTextQuery fullTextQuery = fullTextSession.createFullTextQuery(query, LipSyncInfoEntity.class);
+
 //        fullTextQuery.enableFullTextFilter("videoFilter");
 //        fullTextQuery.enableFullTextFilter("videoFilter").setParameter("type", 1);
 
@@ -195,8 +208,9 @@ public class SearchRepositoryImpl  {
         }
     }
 
-    public List<CoverInfoEntity> searchCovers(String searchString, int limit){
+    public RawSearchData<CoverInfoEntity> searchCovers(String searchString, int limit, int firstItemIndex){
 
+        RawSearchData<CoverInfoEntity> rawData = new RawSearchData<>();
         Session session = sessionFactory.getCurrentSession();
         FullTextSession fullTextSession = Search.getFullTextSession(session);
 
@@ -207,17 +221,26 @@ public class SearchRepositoryImpl  {
                 .matching(searchString)
                 .createQuery();
 
-        org.hibernate.Query hibQuery =
+        FullTextQuery fullTextQuery =
                 fullTextSession.createFullTextQuery(query, CoverInfoEntity.class);
 
-        hibQuery.setMaxResults(limit);
-        List<CoverInfoEntity> results = hibQuery.list();
-        return results;
+        rawData.setTotalResult(fullTextQuery.getResultSize());
+
+        if(limit>0) {
+            fullTextQuery.setMaxResults(limit);
+        }
+        if (firstItemIndex >= 0) {
+            fullTextQuery.setFirstResult(firstItemIndex);
+        }
+        List<CoverInfoEntity> results = fullTextQuery.list();
+        rawData.setRawData(results);
+        return rawData;
 
     }
 
-    public List<LipSyncInfoEntity> searchLipSyncs(String searchString, int limit) {
+    public RawSearchData<LipSyncInfoEntity> searchLipSyncs(String searchString, int limit, int firstItemIndex) {
 
+        RawSearchData<LipSyncInfoEntity> rawData = new RawSearchData<>();
         Session session = sessionFactory.getCurrentSession();
         FullTextSession fullTextSession = Search.getFullTextSession(session);
 
@@ -229,12 +252,20 @@ public class SearchRepositoryImpl  {
                 .matching(searchString)
                 .createQuery();
 
-        org.hibernate.Query hibQuery =
+        FullTextQuery fullTextQuery =
                 fullTextSession.createFullTextQuery(query, LipSyncInfoEntity.class);
 
-        hibQuery.setMaxResults(limit);
-        List<LipSyncInfoEntity> results = hibQuery.list();
-        return results;
+        rawData.setTotalResult(fullTextQuery.getResultSize());
+
+        if(limit>0) {
+            fullTextQuery.setMaxResults(limit);
+        }
+        if (firstItemIndex >= 0) {
+            fullTextQuery.setFirstResult(firstItemIndex);
+        }
+        List<LipSyncInfoEntity> results = fullTextQuery.list();
+        rawData.setRawData(results);
+        return rawData;
     }
 
 }

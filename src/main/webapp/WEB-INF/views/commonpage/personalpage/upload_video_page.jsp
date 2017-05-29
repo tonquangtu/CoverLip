@@ -16,8 +16,6 @@
     </div>
     <form accept-charset="UTF-8" action="./upload?${_csrf.parameterName}=${_csrf.token}" class="form_person" method="POST" enctype="multipart/form-data">
 
-
-
         <div class="col-md-12">
             <dl class="form-group">
                 <dt><label>Tiêu Đề</label></dt>

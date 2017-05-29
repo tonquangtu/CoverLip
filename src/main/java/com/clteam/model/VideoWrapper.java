@@ -97,7 +97,7 @@ public class VideoWrapper implements Comparable<VideoWrapper>{
             String newOwnerName = CommonUtils.transformToSluxSearch(video.getAccount().getFullname());
             String newVideoName = CommonUtils.transformToSluxSearch(videoName);
 
-            fullLink += newOwnerName + "-" + newVideoName + "/" + video.getId();
+            fullLink += newVideoName + "-" + newOwnerName + "/" + video.getId();
 //            System.out.println("Full link video: " + fullLink);
 
         }catch (Exception e) {

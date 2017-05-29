@@ -90,4 +90,12 @@ public class TopIdolServiceImpl implements TopIdolService {
         int check = topRepository.unFollowIdol(acoundId, topId);
         return check;
     }
+
+    @Override
+    public int checkFollowIdol(int acoundId, int acoundFollowId) {
+        int check = topRepository.checkFollowIdol(acoundId, acoundFollowId);
+        return check;
+    }
+
+
 }

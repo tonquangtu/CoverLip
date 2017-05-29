@@ -65,7 +65,6 @@ public class CoverHomePageController {
 //        //
         return modelAndView;
     }
-
     @RequestMapping(value = "/top-cover/get-num-week")
     public @ResponseBody int getNumWeek(@RequestParam String timestamp){
         long time = Long.parseLong(timestamp);

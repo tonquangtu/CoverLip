@@ -12,6 +12,7 @@
     <%@ include file="../common/common_lib.jsp" %>
     <!--Play One Video Page Script-->
     <script src="../../../resources/scripts/video_player_script.js"></script>
+    <script src="/resources/scripts/main_header_script.js"></script>
 
     <!--Play one video style-->
 
@@ -27,6 +28,8 @@
     <%--<link rel="stylesheet" href="../../../resources/libs/videoplayer/mediaelementplayer.min.css">--%>
 
     <link rel="stylesheet" href="../../../resources/styles/video_player_style.css">
+
+    <script src="/resources/scripts/click_follow_script.js"></script>
 
     <!--Facebook header-->
     <meta property="og:url"           content="${currItem.fullLink}" />
@@ -109,7 +112,20 @@
                        <div class="divider"></div>
 
                        <div class="line-horizontal-left btn-group-interact-video">
-                           <button id="btn-follow" class="btn btn-template btn-follow " type="button">Theo dõi Idol</button>
+                           <c:choose>
+                               <c:when test="${checkFollow == null || checkFollow == 0}">
+                                   <button id="btn-follow" class="btn btn-template btn-follow " type="button"
+                                           accountFollowId = "${user.account.id}"
+                                           statusFollow = "0">Theo dõi Idol</button>
+                               </c:when>
+                               <c:otherwise>
+                                   <button id="btn-follow" class="btn btn-template btn-follow " type="button"
+                                           accountFollowId = "${user.account.id}"
+                                           style="background-color: #ffffff; border-color: #00c853; color: #00c853;"
+                                           statusFollow = "1">Đã theo dõi</button>
+                               </c:otherwise>
+                           </c:choose>
+
                            <button class="btn btn-template btn-add-favorite " type= "button">Thêm vào danh sách yêu thích</button>
 
                        </div>

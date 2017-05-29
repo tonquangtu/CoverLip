@@ -80,7 +80,7 @@ div.one_card.col-md-3:last-child{
 	text-align: center;
 }
 .footer_card .comment a{
-	color: grey;
+	color: grey !important;
 }
 .footer_card .comment a:hover{
 	text-decoration: none;

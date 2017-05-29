@@ -7,6 +7,10 @@ body{
     margin: 0;
 }
 
+a:hover{
+    text-decoration:none;
+}
+
 #slider .item {
     height: 350px;
 }
@@ -76,8 +80,12 @@ body{
 
     padding: 10px 0;
     margin: 0;
-    color: red;
-
+    /*color: red;*/
+    color:#1abc9c;
+}
+.top_cover h3:hover{
+    color:#1abc9c;
+    text-decoration: none;
 }
 
 .icon_react{
@@ -258,8 +266,8 @@ a{
     -moz-border-radius: 12px;
     border-radius: 50%;
     position: absolute;
-    right: 0px;
-    top: 0px;
+    right: 3px;
+    top: 3px;
     color: #fff;
     text-align: center;
 }
@@ -270,8 +278,8 @@ a{
     height: 45px;
     line-height: 40px;
     background: #b00000;
-    right: 0;
-    top: 0;
+    right: 3px;
+    top: 3px;
     bottom: auto;
 }
 
@@ -281,4 +289,12 @@ a{
 
 #loading{
     text-align: center;
+}
+
+/*Override one card*/
+.header_card{
+    margin-bottom:-5px;
+}
+.option_card{
+    margin-top:0;
 }

@@ -30,7 +30,7 @@ body {
 
 .title-top-idol {
     margin-bottom: 11px;
-    margin-top: 8px;
+    margin-top: 13px;
 }
 
 .title-top-idol a {
@@ -167,7 +167,8 @@ body {
     color:#3c3c3c;
 }
 .one_member a:hover .name_of_member p{
-    color:#ff6d00;
+    /*color:#ff6d00;*/
+    color:#1abc9c;
 }
 
 
@@ -193,7 +194,8 @@ body {
 .button-follow {
     /*background: transparent none repeat scroll 0 0;*/
     /*color: black;*/
-    background: #ff6d00;
+    /*background: #ff6d00;*/
+    background: #1abc9c;
     color: #ffffff;
     border: 1px solid #ffffff;
 

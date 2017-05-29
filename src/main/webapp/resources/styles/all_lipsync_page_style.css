@@ -60,9 +60,10 @@ body{
 #top_cover_idol{
     background-color: #ffffff;
     /*height: 1000px;*/
-    margin-top: 15px;
+    /*margin-top: 15px;*/
     padding-left: 15px;
     border-radius: 5px;
+    margin-top: 0px !important;
 }
 
 .item_not_first .col-md-4{
@@ -163,4 +164,12 @@ body{
 
 #loading{
     text-align: center;
+}
+
+.header_card {
+    height: 32px !important;
+}
+
+.header_card .option_card {
+    margin-top: 1px !important;
 }

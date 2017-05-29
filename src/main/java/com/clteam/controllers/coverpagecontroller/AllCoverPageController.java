@@ -37,7 +37,6 @@ public class AllCoverPageController {
         List<Cover> coverList = coverService.getAllCover(9, -1);
         TopList<Cover> coverTopList = coverService.getListTopCover(0
         );
-        System.out.println("   "+ coverTopList.getItems().size());
 
         List<VideoWrapper> videoWrapperList = new ArrayList<VideoWrapper>();
         for ( Cover cover: coverList) {

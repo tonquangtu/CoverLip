@@ -5,6 +5,7 @@ import com.clteam.services.userservice.api.TopIdolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -21,8 +22,7 @@ public class FollowIdolController {
 
     @RequestMapping(value = "/follow_idol")
     public @ResponseBody
-    int followIdol( @RequestParam String acoundId,
-                    @RequestParam String idolId,
+    int followIdol( @RequestParam String idolId,
                     @RequestParam String statusFollow){
 
         int acoundIdx = AccountUtil.getCurrentUserId();

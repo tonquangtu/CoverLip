@@ -128,7 +128,7 @@
                         <h3>
                             <a href="/new-cover">Mới Đăng</a>
                         </h3>
-                        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p> -->
+                        <p>Tổng hợp các bản cover mới nhất. Xem ngay và luôn</p>
                         <a href="/new-cover">
                             <button type="button" class="btn btn-primary">Xem toàn bộ</button>
                         </a>
@@ -197,7 +197,7 @@
                                 Cover Hot
                             </h3>
                         </a>
-                        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p> -->
+                        <p>Tổng hợp các bản cover hot nhất. Xem luôn và ngay</p>
                         <a href="/hot-cover">
                             <button type="button" class="btn btn-primary">Xem toàn bộ</button>
                         </a>
@@ -270,11 +270,11 @@
             <!-- /.row -->
             <div class="row">
                 <div class="top_idol">
-                    <h2 class="page-header"><span>Top Người Đăng Nổi Bật</span></h2>
+                    <h3 class="page-header"><span>Top Idol Cover </span></h3>
                     <div class="col-md-3">
                         <div class="one_member text-center subject"
                              style="padding-bottom:10px;">
-                            <a href="/user/${topIdolList.get(0).user.account.id}">
+                            <a href="/account/${topIdolList.get(0).user.account.id}">
                                 <div class="avatar">
                                     <img src="${topIdolList.get(0).user.account.avatarThumbnail}"
                                          alt="${topIdolList.get(0).user.account.fullname}"
@@ -294,7 +294,7 @@
                                     <div class="row">
                                 </c:if>
                                 <div class="col-md-3 one_member text-center">
-                                    <a href="/user/${item1.user.account.id}">
+                                    <a href="/account/${item1.user.account.id}">
                                         <div class="avatar">
                                             <img src="${item1.user.account.avatarThumbnail}"
                                                  alt="${item1.user.account.fullname}"

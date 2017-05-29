@@ -27,6 +27,7 @@
     <script src = "../../../resources/scripts/one_card_script.js"></script>
     <script src="../../../resources/scripts/more_item_script.js"></script>
     <script type="text/javascript" src="../../../resources/scripts/personal_script.js"></script>
+    <script src="/resources/scripts/main_header_script.js"></script>
 
 </head>
 <body>
