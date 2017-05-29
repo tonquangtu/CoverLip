@@ -10,7 +10,7 @@ import javax.persistence.*;
  */
 @Indexed
 @Entity
-@Table(name = "lip_sync_info", schema = "coverlip")
+@Table(name = "lip_sync_info")
 public class LipSyncInfoEntity {
     private int id;
     private int videoId;

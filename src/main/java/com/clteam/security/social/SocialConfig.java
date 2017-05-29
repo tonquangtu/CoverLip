@@ -16,6 +16,7 @@ import org.springframework.social.connect.UsersConnectionRepository;
 import org.springframework.social.connect.jdbc.JdbcUsersConnectionRepository;
 import org.springframework.social.connect.web.ConnectController;
 import org.springframework.social.connect.web.ProviderSignInController;
+import org.springframework.social.facebook.connect.FacebookConnectionFactory;
 import org.springframework.social.security.AuthenticationNameUserIdSource;
 
 import javax.sql.DataSource;
@@ -38,12 +39,12 @@ public class SocialConfig implements SocialConfigurer {
 
     @Override
     public void addConnectionFactories(ConnectionFactoryConfigurer connectionFactoryConfigurer, Environment environment) {
-//        FacebookConnectionFactory fbConnFactory = new FacebookConnectionFactory(
-//                environment.getProperty("facebook.app.id"),
-//                environment.getProperty("facebook.app.secret")
-//        );
-//        fbConnFactory.setScope(environment.getProperty("facebook.scope"));
-//        connectionFactoryConfigurer.addConnectionFactory(fbConnFactory);
+        FacebookConnectionFactory fbConnFactory = new FacebookConnectionFactory(
+                environment.getProperty("facebook.app.id"),
+                environment.getProperty("facebook.app.secret")
+        );
+        fbConnFactory.setScope(environment.getProperty("facebook.scope"));
+        connectionFactoryConfigurer.addConnectionFactory(fbConnFactory);
     }
 
     @Override

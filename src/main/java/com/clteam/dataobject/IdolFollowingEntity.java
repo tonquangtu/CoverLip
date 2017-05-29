@@ -7,7 +7,7 @@ import java.sql.Timestamp;
  * Created by Dell on 30-Apr-17.
  */
 @Entity
-@Table(name = "idol_following", schema = "coverlip")
+@Table(name = "idol_following")
 public class IdolFollowingEntity {
     private int id;
     private int accountId;

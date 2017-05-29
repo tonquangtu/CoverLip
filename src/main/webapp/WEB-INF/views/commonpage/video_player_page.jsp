@@ -32,7 +32,7 @@
     <script src="/resources/scripts/click_follow_script.js"></script>
 
     <!--Facebook header-->
-    <meta property="og:url"           content="${currItem.fullLink}" />
+    <meta property="og:url"           content="http://localhost:8080${currItem.fullLink}" />
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="I'm Losing You" />
     <meta property="og:description"   content="Cover Hay cua chang ngoc" />
@@ -71,7 +71,7 @@
 
                    <div class="video-box box-shadow border-box " videoId="${currItem.video.id}" >
 
-                       <iframe width="750" height="460" src="${currItem.video.videoLink}" frameborder="0" allowfullscreen></iframe>
+                       <iframe width="750" height="460" src="${currItem.video.videoLink}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
                    </div>
 
@@ -139,7 +139,7 @@
                   <div class="fb-like-share-box">
 
                       <div class="fb-like "
-                           data-href="${currItem.fullLink}"
+                           data-href="http://localhost:8080${currItem.fullLink}"
                            data-width="700"
                            data-layout="standard"
                            data-action="like"
@@ -154,7 +154,7 @@
                <div class="box-shadow fb-comment-box border-box">
                    <h3 class="comment-title center-vertical-content">BÌNH LUẬN</h3>
                    <div class="fb-comments custom-fb-comment"
-                        data-href="${currItem.fullLink}"
+                        data-href="http://localhost:8080${currItem.fullLink}"
                         data-width="100%"
                         data-numposts="5">
                    </div>

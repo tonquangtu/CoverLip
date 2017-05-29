@@ -9,7 +9,7 @@ import java.util.Date;
  * Created by Khanh Nguyen on 18/5/2017.
  */
 @Entity
-@Table(name = "verification_token", schema = "coverlip")
+@Table(name = "verification_token")
 public class VerificationTokenEntity {
 
     private int id;
