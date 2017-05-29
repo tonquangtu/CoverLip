@@ -81,7 +81,7 @@ To change this template use File | Settings | File Templates.
                                            title="${item.coverName} - ${item.video.account.fullname}">
                                             <img class="img-responsive" alt="${item.coverName}"
                                                  src="${item.video.videoThumbnailLink}"
-                                                 style="width:170px">
+                                                 style="width:170px; height:100px">
                                             <span class="icon-circle-play icon-small"></span>
                                         </a>
                                         <div class="tool-video">
