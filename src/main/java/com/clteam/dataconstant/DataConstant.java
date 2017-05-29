@@ -5,7 +5,8 @@ package com.clteam.dataconstant;
  */
 public class DataConstant {
 
-    public static String BASE_URL = "http://localhost:8080/";
+//    public static String BASE_URL = "http://localhost:8080/";
+    public static String BASE_URL = "/";
 
     public static String STORAGE_BASE_URL = "http://zmp3-photo-td.zadn.vn/thumb/240_135/";
 
