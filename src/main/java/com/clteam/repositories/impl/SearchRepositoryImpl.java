@@ -168,6 +168,7 @@ public class SearchRepositoryImpl  {
 //        fullTextQuery.enableFullTextFilter("videoFilter");
 //        fullTextQuery.enableFullTextFilter("videoFilter").setParameter("type", 1);
 
+
         fullTextQuery.setMaxResults(limit);
         List<LipSyncInfoEntity> results = fullTextQuery.list();
         System.out.println("Tim theo user: " + results.size());
@@ -181,7 +182,7 @@ public class SearchRepositoryImpl  {
         try {
             Session session = sessionFactory.getCurrentSession();
             FullTextSession fullTextSession = Search.getFullTextSession(session);
-
+            fullTextSession.createIndexer(LipSyncInfoEntity.class).startAndWait();;
             fullTextSession.createIndexer(CoverInfoEntity.class).startAndWait();
 
             fullTextSession.createIndexer(LipSyncTemplateInfoEntity.class).startAndWait();
@@ -190,7 +191,7 @@ public class SearchRepositoryImpl  {
 
             fullTextSession.createIndexer(AccountEntity.class).startAndWait();
 
-            fullTextSession.createIndexer(LipSyncInfoEntity.class).startAndWait();;
+
 
 
 //            fullTextSession

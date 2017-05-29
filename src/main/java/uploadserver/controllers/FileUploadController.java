@@ -55,6 +55,7 @@ public class FileUploadController {
                 message = "Title hoặc mô tả không hợp lệ";
             }
         } catch (Exception e) {
+            e.printStackTrace();
             message = "error";
         }
 

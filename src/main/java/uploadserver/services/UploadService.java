@@ -44,6 +44,8 @@ public class UploadService {
     }
 
     public String doUploadFile(Post post, MultipartFile part) {
+
+        System.out.println("Receive file from client");
         String message = "";
         if (!part.isEmpty()) {
             try {
@@ -51,7 +53,7 @@ public class UploadService {
                 String fileName = getUniqueString(post.getTitle());
                 byte [] dataUpload = part.getBytes();
                 String pathFile = storageService.storeUploadFile(fileName, dataUpload);
-
+                System.out.println("Save file complete");
                 if (pathFile != null && !pathFile.isEmpty()) {
                     YoutubeUploadListener listener = new YoutubeUploadListener();
                     youtubeUpload.uploadVideoHandler(post, pathFile, listener);
