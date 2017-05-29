@@ -41,6 +41,8 @@ public class SignUpServiceImpl implements SignUpService {
         accountEntity.setRole(SecurityConstant.ROLE_USER_BYTE);
         accountEntity.setState(SecurityConstant.ACCOUNT_NON_ACTIVATED);
         accountEntity.setDateJoin(DateTimeUtil.getCurrentTime());
+        accountEntity.setCoverImage("/resources/storage/image/thumbnail/owner_thumbnail/avatar1.jpg");
+        accountEntity.setAvatarThumbnail("/resources/storage/image/thumbnail/owner_thumbnail/avatar1.jpg");
         int accountId = accountSecurityRepository.saveAccountEntity(accountEntity);
 
         System.out.println("### accountId =" + accountId);
