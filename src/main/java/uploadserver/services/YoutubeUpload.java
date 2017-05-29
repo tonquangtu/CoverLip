@@ -50,6 +50,7 @@ public class YoutubeUpload  {
             listener.startUpload();
         }
 
+        System.out.println("Start authentication");
         List<String> scopes = Lists.newArrayList("https://www.googleapis.com/auth/youtube.upload");
 
         try {
@@ -57,6 +58,8 @@ public class YoutubeUpload  {
 
             youtube = new YouTube.Builder(Auth.HTTP_TRANSPORT, Auth.JSON_FACTORY, credential).setApplicationName(
                     "youtube-cmdline-uploadvideo-sample").build();
+
+            System.out.println("Success authentication");
 
             // Add extra information to the video before uploading.
             Video videoObjectDefiningMetadata = new Video();
