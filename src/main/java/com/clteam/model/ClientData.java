@@ -11,9 +11,9 @@ public class ClientData<E> {
 
     public static int ERROR = 0;
 
-    public static String NO_DATA = "no_data";
+    public static final String NO_DATA = "no_data";
 
-    public static String HAVE_DATA = "have_data";
+    public static final String HAVE_DATA = "have_data";
 
     private String message;
 

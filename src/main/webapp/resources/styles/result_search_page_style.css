@@ -1,3 +1,6 @@
+.top_cover_layout{
+    margin-top:52px;
+}
 .one_member {
     margin-bottom: 20px;
     -moz-transition: all 0.3s;
@@ -16,7 +19,7 @@
     transform: scale(1.05);
 }
 .one_member img {
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
 }
 .one_member .avatar{
@@ -97,6 +100,74 @@
 }
 .page-header{
     border-bottom: none;
-    padding-left: 10px;
-    margin:20px 0;
+    margin: 0 -10px 10px;
+    font-size: 28px;
+    text-shadow: 0 2px 1px rgb(182, 171, 171);
+    color: #3c3c3c;
+}
+
+.page-header a{
+    float: right;
+    font-size: 16px;
+    line-height: 28px;
+}
+.page-header a:hover{
+    text-decoration: none;
+    color:#1abc9c;
+    text-shadow: none;
+}
+
+.button-transparent {
+    /*background-color: #4CAF50; !* Green *!*/
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button-follow {
+    /*background: transparent none repeat scroll 0 0;*/
+    /*color: black;*/
+    /*background: #ff6d00;*/
+    background: #1abc9c;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    transform: scale(0);
+    -moz-transform: scale(0);
+    -webkit-transform: scale(0);
+
+    position: absolute;
+    top: 38%;
+    left: 30%;
+    padding: 5px 15px;
+
+}
+
+.position-button-follow {
+    position: absolute;
+    right: 33%;
+    top: 70%;
+    width: 60px;
+    height: 30px;
+}
+.button-follow:hover {
+    background: #ff6d00;
+    color: #ffffff;
+}
+
+.avatar:hover button  {
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
 }

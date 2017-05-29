@@ -7,6 +7,10 @@ body{
     margin: 0;
 }
 
+a:hover{
+    text-decoration:none;
+}
+
 #slider .item {
     height: 350px;
 }
@@ -262,8 +266,8 @@ a{
     -moz-border-radius: 12px;
     border-radius: 50%;
     position: absolute;
-    right: 0px;
-    top: 0px;
+    right: 3px;
+    top: 3px;
     color: #fff;
     text-align: center;
 }
@@ -274,8 +278,8 @@ a{
     height: 45px;
     line-height: 40px;
     background: #b00000;
-    right: 0;
-    top: 0;
+    right: 3px;
+    top: 3px;
     bottom: auto;
 }
 

@@ -35,6 +35,11 @@ public class SearchServiceImpl{
 
     public static final int SEARCH_LIP_SYNC = 2;
 
+    public static final int EXPECTED_VIDEO = 1;
+
+    public static final int EXPECTED_USER = 2;
+
+    public static final int EXPECTED_ALL = 3;
 
     public SearchData search(String searchString, int searchType, int limit) {
 
@@ -56,7 +61,7 @@ public class SearchServiceImpl{
                 videoSearchResults = searchLipSyncs(searchString, limitSearchVideo);
             }
 
-            List<Account> accSearchResults = searchUsers(searchString, limitSearchAcc);
+            List<Account> accSearchResults = doSearchUsers(searchString, limitSearchAcc);
 
             VideoWrapper firstSearchVideo = null;
             Account firstSearchAcc = null;
@@ -105,7 +110,38 @@ public class SearchServiceImpl{
         return searchData;
     }
 
-    public List<Account> searchUsers(String searchString, int limit) {
+    public SearchData searchVideos(String searchString, int searchType, int limit) {
+
+        if (limit < 2 || limit > 50) {
+            limit = 6;
+        }
+        searchString = standardSearchString(searchString);
+        SearchData searchData = new SearchData();
+        List<VideoWrapper> videoSearchResults;
+        if (searchType == SEARCH_COVER) {
+            videoSearchResults = searchCovers(searchString, limit);
+        } else {
+            videoSearchResults = searchLipSyncs(searchString, limit);
+        }
+
+        searchData.setVideoSearchList(videoSearchResults);
+        return searchData;
+
+    }
+
+    public SearchData searchUsers(String searchString, int limit) {
+        if (limit < 2 || limit > 50) {
+            limit = 6;
+        }
+        searchString = standardSearchString(searchString);
+        List<Account> accSearchResults = doSearchUsers(searchString, limit);
+        SearchData searchData = new SearchData();
+        searchData.setAccountSearchList(accSearchResults);
+
+        return searchData;
+    }
+
+    public List<Account> doSearchUsers(String searchString, int limit) {
 
         List<AccountEntity> accountEntities = searchRepo.searchUsers(searchString, limit);
         List<Account> result = new ArrayList<>();

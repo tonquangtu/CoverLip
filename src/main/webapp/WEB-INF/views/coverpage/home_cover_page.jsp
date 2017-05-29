@@ -274,7 +274,7 @@
                     <div class="col-md-3">
                         <div class="one_member text-center subject"
                              style="padding-bottom:10px;">
-                            <a href="/user/${topIdolList.get(0).user.account.id}">
+                            <a href="/account/${topIdolList.get(0).user.account.id}">
                                 <div class="avatar">
                                     <img src="${topIdolList.get(0).user.account.avatarThumbnail}"
                                          alt="${topIdolList.get(0).user.account.fullname}"
@@ -294,7 +294,7 @@
                                     <div class="row">
                                 </c:if>
                                 <div class="col-md-3 one_member text-center">
-                                    <a href="/user/${item1.user.account.id}">
+                                    <a href="/account/${item1.user.account.id}">
                                         <div class="avatar">
                                             <img src="${item1.user.account.avatarThumbnail}"
                                                  alt="${item1.user.account.fullname}"

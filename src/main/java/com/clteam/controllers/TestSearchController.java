@@ -95,7 +95,7 @@ public class TestSearchController {
         int limit = 6;
         System.out.println("Vao test");
         ModelAndView modelAndView = new ModelAndView();
-        List<Account> accounts = searchService.searchUsers(searchString, limit);
+        List<Account> accounts = searchService.doSearchUsers(searchString, limit);
         StringBuilder coverNames = new StringBuilder();
         coverNames.append("Input: " + searchString + "<br>");
         if (accounts != null && accounts.size() > 0) {

@@ -37,9 +37,9 @@
 
                 <div id="quick-search-box" class="search-box">
                     <%--<div class="bg-top-noel"></div>--%>
-                    <form id="quickFormSearch" method="GET" action="/search" onsubmit="">
+                    <form id="quickFormSearch" method="GET" action="/search-all" onsubmit="">
                         <input id="txtSearch" maxlength="45" name="searchString" class="i-search" value="" placeholder="Tìm video, ca sĩ" autocomplete="off" type="text">
-                        <input type="hidden" name="limit" value="50">
+                        <input type="hidden" name="limit" value="9">
                         <input type="hidden" name="type" value="${typeVideo}">
                         <input id="btnSearch" class="b-search" value="TÌM KIẾM" type="submit">
                         <div class="list-keyword" id="divHotKeyword">

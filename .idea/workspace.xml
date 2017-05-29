@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0b42ca8-e3c9-41fc-bfaa-36ce203b6f1e" name="Default" comment="" />
+    <list default="true" id="a0b42ca8-e3c9-41fc-bfaa-36ce203b6f1e" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/result_search.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/result_search_page.jsp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/result_search.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/result_search_page_style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/TestSearchController.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/TestSearchController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/commonpagecontroller/SearchController.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/commonpagecontroller/SearchController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/commonpagecontroller/VideoPlayerPageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/commonpagecontroller/VideoPlayerPageController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/CoverHomePageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/CoverHomePageController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/model/ClientData.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/model/ClientData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/VideoRepositoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/VideoRepositoryImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/api/VideoService.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/api/VideoService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/SearchServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/SearchServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/VideoServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/VideoServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uploadserver/repositories/UploadRepository.java" afterPath="$PROJECT_DIR$/src/main/java/uploadserver/repositories/UploadRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uploadserver/services/StorageService.java" afterPath="$PROJECT_DIR$/src/main/java/uploadserver/services/StorageService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/main_header.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/main_header.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/video_player_page.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/video_player_page.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/scripts/video_player_script.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/video_player_script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/all_cover_page_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/all_cover_page_style.css" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,61 +69,69 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="result_search.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/result_search.jsp">
+      <file leaf-file-name="result_search_page.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/result_search_page.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CoverHomePageController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/CoverHomePageController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1860">
-              <caret line="284" column="12" lean-forward="false" selection-start-line="284" selection-start-column="12" selection-end-line="284" selection-end-column="12" />
+            <state relative-caret-position="271">
+              <caret line="57" column="61" lean-forward="false" selection-start-line="57" selection-start-column="61" selection-end-line="57" selection-end-column="61" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1299#1300#0" expanded="false" />
-                <element signature="e#1339#1340#0" expanded="false" />
-                <element signature="e#1761#1777#0" expanded="false" />
-                <element signature="method#visitTopCoverPage#0;class#CoverHomePageController#0" expanded="false" />
-                <element signature="e#3500#3516#0" expanded="false" />
-                <element signature="e#4388#4389#0" expanded="false" />
-                <element signature="e#4447#4448#0" expanded="false" />
-                <element signature="e#4530#4531#0" expanded="false" />
-                <element signature="e#4585#4586#0" expanded="false" />
-                <element signature="method#visitPersonalInfomationPage#1;class#CoverHomePageController#0" expanded="false" />
-                <element signature="e#4838#4854#0" expanded="false" />
-                <element signature="e#8254#8255#0" expanded="false" />
-                <element signature="e#8318#8319#0" expanded="false" />
-                <element signature="method#visitUserPage#1;class#CoverHomePageController#0" expanded="false" />
-                <element signature="e#8668#8684#0" expanded="false" />
-                <element signature="method#getMoreCoverOfUser#0;class#CoverHomePageController#0" expanded="false" />
-                <element signature="e#12148#12164#0" expanded="false" />
-                <element signature="e#12451#12465#0" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#content#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#content#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home_cover_style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/home_cover_style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6020">
-              <caret line="301" column="1" lean-forward="false" selection-start-line="205" selection-start-column="0" selection-end-line="301" selection-end-column="1" />
+      <file leaf-file-name="coverlip.account" pinned="false" current-in-tab="true">
+        <entry file="dbDummy://dbtable:/d88e422/2fc81469-b1fd-45e0-8bc0-09198f0e48ad/coverlip.account">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="result_search.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/result_search.css">
+      <file leaf-file-name="SearchController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/controllers/commonpagecontroller/SearchController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="940">
-              <caret line="47" column="7" lean-forward="false" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
+            <state relative-caret-position="120">
+              <caret line="82" column="50" lean-forward="false" selection-start-line="82" selection-start-column="50" selection-end-line="82" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main_header.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/main_header.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="41" column="68" lean-forward="true" selection-start-line="41" selection-start-column="68" selection-end-line="41" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="result_search_page_style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/result_search_page_style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20">
+              <caret line="1" column="20" lean-forward="false" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lip_sync_home_page.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/lipsyncpage/lip_sync_home_page.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="122">
+              <caret line="48" column="130" lean-forward="false" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="130" />
               <folding />
             </state>
           </provider>
@@ -124,13 +151,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>55</find>
-      <find>item</find>
-      <find>name</find>
-      <find>name_item</find>
-      <find>18px</find>
-      <find>Top T</find>
-      <find>M</find>
       <find>15</find>
       <find>subject</find>
       <find>one_</find>
@@ -141,7 +161,6 @@
       <find>page_</find>
       <find>.main-menu a:hover</find>
       <find>.carousel-caption .banner-button:hover</find>
-      <find>top</find>
       <find>head</find>
       <find>optio</find>
       <find>#000</find>
@@ -154,6 +173,14 @@
       <find>avatar_m</find>
       <find>ulTopKeyWord</find>
       <find>top_idol</find>
+      <find>h3</find>
+      <find>button</find>
+      <find>a</find>
+      <find>a href</find>
+      <find>top</find>
+      <find>order_number</find>
+      <find>.one_member img</find>
+      <find>20px</find>
     </findStrings>
     <replaceStrings>
       <replace>@JoinColumn(insertable = false, updatable = false,</replace>
@@ -179,10 +206,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/styles/top_idol_card_style.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/scripts/personal_script.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/styles/main_footer_style.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/main_footer.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/clteam/repositories/api/TopRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/api/CoverService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/CoverServiceImpl.java" />
@@ -220,16 +243,20 @@
         <option value="$PROJECT_DIR$/src/main/webapp/resources/styles/one_card_style.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/styles/hot_new_cover_page_style.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/scripts/all_cover_lipsync_script.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/styles/all_cover_page_style.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/styles/main_header_style.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/search_card.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/coverpage/home_cover_page.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/scripts/main_header_script.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/main_header.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/AllCoverPageController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/CoverHomePageController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/styles/result_search.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/result_search.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/CoverHomePageController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/clteam/controllers/TestSearchController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/main_header.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/styles/all_cover_page_style.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/styles/result_search_page_style.css" />
+        <option value="$PROJECT_DIR$/src/main/java/com/clteam/controllers/commonpagecontroller/SearchController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/result_search_page.jsp" />
       </list>
     </option>
   </component>
@@ -311,7 +338,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -622,8 +648,43 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoverLip" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoverLip" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clteam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commonpagecontroller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -692,7 +753,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1561,6 +1622,7 @@
       <workItem from="1495951167775" duration="577000" />
       <workItem from="1495951978107" duration="13773000" />
       <workItem from="1496024747410" duration="278000" />
+      <workItem from="1496025103730" duration="9717000" />
     </task>
     <task id="LOCAL-00001" summary="init project coverlip&#10;Init structure for project&#10;by Quang Tu">
       <created>1490494974394</created>
@@ -1573,7 +1635,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="794485000" />
+    <option name="totallyTimeSpent" value="804202000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1586,6 +1648,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1595,7 +1658,7 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26969698" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26969698" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24886535" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1606,12 +1669,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35603714" sideWeight="0.53939396" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35603714" sideWeight="0.53939396" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24767801" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24767801" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35022694" sideWeight="0.3586626" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23560606" sideWeight="0.6413374" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23939393" sideWeight="0.6413374" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1693,35 +1756,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/dataobject/VerificationTokenEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="21" column="53" lean-forward="false" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/250a5509/2fc81469-b1fd-45e0-8bc0-09198f0e48ad/coverlip.account" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/security/seed/DataSeedingListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="37" column="43" lean-forward="false" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/main_header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="47" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/coverpage/playlist_cover_page.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -1879,20 +1913,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/lipsyncpage/lip_sync_home_page.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="39" column="49" lean-forward="false" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/lip_sync_home_page_style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="169" column="22" lean-forward="true" selection-start-line="169" selection-start-column="22" selection-end-line="169" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/top_idol_card.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -1928,13 +1948,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/all_cover_page_style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="294" column="17" lean-forward="false" selection-start-line="294" selection-start-column="17" selection-end-line="294" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/search_card.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -1950,14 +1963,6 @@
           <folding>
             <element signature="method#visitHotCoverPage#0;class#HotCoverPageController#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/main_header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1998,34 +2003,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/CoverHomePageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1860">
-          <caret line="284" column="12" lean-forward="false" selection-start-line="284" selection-start-column="12" selection-end-line="284" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1299#1300#0" expanded="false" />
-            <element signature="e#1339#1340#0" expanded="false" />
-            <element signature="e#1761#1777#0" expanded="false" />
-            <element signature="method#visitTopCoverPage#0;class#CoverHomePageController#0" expanded="false" />
-            <element signature="e#3500#3516#0" expanded="false" />
-            <element signature="e#4388#4389#0" expanded="false" />
-            <element signature="e#4447#4448#0" expanded="false" />
-            <element signature="e#4530#4531#0" expanded="false" />
-            <element signature="e#4585#4586#0" expanded="false" />
-            <element signature="method#visitPersonalInfomationPage#1;class#CoverHomePageController#0" expanded="false" />
-            <element signature="e#4838#4854#0" expanded="false" />
-            <element signature="e#8254#8255#0" expanded="false" />
-            <element signature="e#8318#8319#0" expanded="false" />
-            <element signature="method#visitUserPage#1;class#CoverHomePageController#0" expanded="false" />
-            <element signature="e#8668#8684#0" expanded="false" />
-            <element signature="method#getMoreCoverOfUser#0;class#CoverHomePageController#0" expanded="false" />
-            <element signature="e#12148#12164#0" expanded="false" />
-            <element signature="e#12451#12465#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/home_cover_style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6020">
@@ -2041,21 +2018,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/coverpage/top_cover_page.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="51" column="17" lean-forward="false" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/result_search.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="940">
-          <caret line="47" column="7" lean-forward="false" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/coverpage/all_cover_page.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -2063,10 +2025,119 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/result_search.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/search_page.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/CoverHomePageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="267" column="0" lean-forward="false" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
+          <folding>
+            <element signature="method#visitTopCoverPage#0;class#CoverHomePageController#0" expanded="false" />
+            <element signature="method#visitPersonalInfomationPage#1;class#CoverHomePageController#0" expanded="false" />
+            <element signature="method#visitUserPage#1;class#CoverHomePageController#0" expanded="false" />
+            <element signature="method#getMoreCoverOfUser#0;class#CoverHomePageController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/controllers/TestSearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="94" column="22" lean-forward="false" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/main_header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="41" column="68" lean-forward="true" selection-start-line="41" selection-start-column="68" selection-end-line="41" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/services/commonservice/impl/SearchServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5">
+          <caret line="123" column="51" lean-forward="false" selection-start-line="123" selection-start-column="51" selection-end-line="123" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/lipsyncpage/lip_sync_home_page.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="48" column="130" lean-forward="false" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="130" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/lip_sync_home_page_style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="235" column="1" lean-forward="true" selection-start-line="226" selection-start-column="0" selection-end-line="235" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/coverpage/top_cover_page.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-311">
+          <caret line="51" column="17" lean-forward="false" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/all_cover_page_style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-220">
+          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/styles/result_search_page_style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
-          <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <caret line="1" column="20" lean-forward="false" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/controllers/commonpagecontroller/SearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="82" column="50" lean-forward="false" selection-start-line="82" selection-start-column="50" selection-end-line="82" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/result_search_page.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="57" column="61" lean-forward="false" selection-start-line="57" selection-start-column="61" selection-end-line="57" selection-end-column="61" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#content#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#content#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/d88e422/2fc81469-b1fd-45e0-8bc0-09198f0e48ad/coverlip.account">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

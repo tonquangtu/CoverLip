@@ -56,4 +56,5 @@ public interface VideoService {
 
     public List<LipSync> getLipSyncs(List<LipSyncInfoEntity> lipSyncEntities);
 
+    public boolean increaseVideoView(int videoId);
 }
