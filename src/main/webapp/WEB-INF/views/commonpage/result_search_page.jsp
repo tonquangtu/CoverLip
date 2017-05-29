@@ -16,14 +16,24 @@
     <link rel="stylesheet" href="../../../resources/styles/result_search_page_style.css">
     <script src="../../../resources/scripts/one_card_script.js"></script>
     <script src="../../../resources/scripts/more_item_script.js"></script>
+    <script src="/resources/scripts/main_header_script.js"></script>
 
 
 </head>
 <body>
-<c:set var="targetPage" scope="request" value="cover_home_page"/>
+<c:choose>
+    <c:when test="${type eq 1}">
+        <c:set var="targetPage" scope="request" value="cover_home_page"/>
+    </c:when>
+    <c:otherwise>
+        <c:set var="targetPage" scope="request" value="lip_sync_home_page"/>
+    </c:otherwise>
+</c:choose>
+
 <%@include file="../common/main_header.jsp" %>
 
 <content>
+    <c:set var="urlSearch" value="/search-all?searchString=${searchString}&limit=9&type=${type}"/>
     <div style="height:20px; width: 100%; clear: both"></div>
     <div id="main_content_hot_cover" class="container">
         <div id="content_page" class="container">
@@ -31,9 +41,16 @@
                 <c:if test="${resultType eq 1 || resultType eq 3}">
                     <div>
                         <h3 class="page-header">
-                            <span>Kết quả tìm kiếm cover "${searchString}"</span>
+                            <c:choose>
+                                <c:when test="${type eq 1}">
+                                    <span>Kết quả tìm kiếm cover "${searchString}"</span>
+                                </c:when>
+                                <c:when test="${type eq 2}">
+                                    <span>Kết quả tìm kiếm lipsync "${searchString}"</span>
+                                </c:when>
+                            </c:choose>
                             <c:if test="${resultType eq 3}">
-                                <a href="/search-all?searchString=${searchString}&limit=-1&type=${type}&resultType=1">Xem
+                                <a href="${urlSearch}&resultType=1">Xem
                                     tất cả <i class="fa fa-caret-right" aria-hidden="true"></i>
                                 </a></c:if>
                         </h3>
@@ -56,7 +73,7 @@
                             <h3 class="page-header" style="margin: 40px 0 20px;">
                                 <span>Kết quả tìm kiếm ca sĩ "${searchString}" </span>
                                 <c:if test="${resultType eq 3}">
-                                    <a href="/search-all?searchString=${searchString}&limit=-1&type=${type}&resultType=2">Xem
+                                    <a href="${urlSearch}&resultType=2">Xem
                                         tất cả <i class="fa fa-caret-right" aria-hidden="true"></i>
                                     </a>
                                 </c:if>
@@ -87,6 +104,52 @@
                                         </c:if>
                                     </c:if>
                                 </c:forEach>
+                            </div>
+                        </div>
+                    </div>
+                </c:if>
+                <c:if test="${resultType eq 1|| resultType eq 2}">
+                    <div>
+                        <div class="pull-right">
+                            <div class="pagination">
+                                <c:if test="${currentPage > 1}">
+                                    <a href="${urlSearch}&resultType=${resultType}&page=1">Đầu</a>
+                                    <a href="${urlSearch}&resultType=${resultType}&page=${currentPage-1}">&laquo;</a>
+                                </c:if>
+                                <c:choose>
+                                    <c:when test="${currentPage-2>0}">
+                                        <c:choose>
+                                            <c:when test="${currentPage+2<lastPage}">
+                                                <c:set var="beginPage" value="${currentPage-2}"/>
+                                                <c:set var="endPage" value="${currentPage+2}"/>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <c:set var="beginPage" value="${currentPage-2}"/>
+                                                <c:set var="endPage" value="${lastPage}"/>
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <c:choose>
+                                            <c:when test="${5<lastPage}">
+                                                <c:set var="beginPage" value="1"/>
+                                                <c:set var="endPage" value="5"/>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <c:set var="beginPage" value="1"/>
+                                                <c:set var="endPage" value="${lastPage}"/>
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </c:otherwise>
+                                </c:choose>
+
+                                <c:forEach varStatus="indexPage" begin="${beginPage}" end="${endPage}">
+                                    <a href="${urlSearch}&resultType=${resultType}&page=${indexPage.index}" class="${indexPage.index == currentPage ? 'active' : ''}">${indexPage.index}</a>
+                                </c:forEach>
+                                <c:if test="${currentPage < lastPage}">
+                                    <a href="${urlSearch}&resultType=${resultType}&page=${currentPage+1}">&raquo;</a>
+                                    <a href="${urlSearch}&resultType=${resultType}&page=${lastPage}">Cuối</a>
+                                </c:if>
                             </div>
                         </div>
                     </div>

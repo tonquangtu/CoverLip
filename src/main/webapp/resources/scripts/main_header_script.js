@@ -4,18 +4,20 @@
 
 $(document).ready(function () {
     setActiveItemMenu();
-    var urlServer = "/hot-cover/json";
+    var urlServerCover = "/hot-cover/json";
+    var urlServerLipSync = "/hot-lip-sync/json";
     var status = true;
     var limit = 5;
     var loading_search = $('#loading_search');
     var active = $('.super-menu').children('.active');
+    var typeHot = active.attr('href').indexOf('cover')!==-1?1:2;
     loading_search.hide();
     var string = '';
     $('#txtSearch').click(function () {
         if (status) {
             $.ajax({
                 type: "GET",
-                url: urlServer,
+                url: typeHot===1?urlServerCover:urlServerLipSync,
                 data: {limit: limit},
                 beforeSend: function () {
                     loading_search.show();
@@ -25,7 +27,7 @@ $(document).ready(function () {
                         string += getOneSuggess(item, i);
                     });
                     $('#ulTopKeyWord').append(string);
-                    loading_search.hide();
+                    loading_search.remove();
                     status = false;
                 },
                 error: function () {
@@ -74,11 +76,7 @@ $(document).ready(function () {
                     // console.log("vl");
                     clearInterval(a);
                     if($('#txtSearch').val().trim()!==''){
-                        if(active.attr('href').indexOf('cover')!==-1){
-                            sendAjax($('#txtSearch').val().trim(),6, 1);
-                        }else{
-                            sendAjax($('#txtSearch').val().trim(),6, 2);
-                        }
+                            sendAjax($('#txtSearch').val().trim(),6, typeHot);
                     }else{
                         $('#contentSuggestion').show();
                         $('#result_search').hide();

@@ -13,6 +13,10 @@ public class SearchData {
 
     private int bestSearchType;
 
+    private int totalVideo;
+
+    private int totalAccount;
+
     private Account bestAccountSearch;
 
     private VideoWrapper bestVideoSearch;
@@ -59,5 +63,21 @@ public class SearchData {
 
     public void setAccountSearchList(List<Account> accountSearchList) {
         this.accountSearchList = accountSearchList;
+    }
+
+    public int getTotalVideo() {
+        return totalVideo;
+    }
+
+    public void setTotalVideo(int totalVideo) {
+        this.totalVideo = totalVideo;
+    }
+
+    public int getTotalAccount() {
+        return totalAccount;
+    }
+
+    public void setTotalAccount(int totalAccount) {
+        this.totalAccount = totalAccount;
     }
 }

@@ -12,6 +12,7 @@
     <%@ include file="../common/common_lib.jsp" %>
     <!--Play One Video Page Script-->
     <script src="../../../resources/scripts/video_player_script.js"></script>
+    <script src="/resources/scripts/main_header_script.js"></script>
 
     <!--Play one video style-->
 
