@@ -52,7 +52,7 @@ public class TopRepositoryImpl implements TopRepository {
 
         Session session = sessionFactory.getCurrentSession();
         Criteria criteria = session.createCriteria(TopListEntity.class);
-        criteria.add(Restrictions.ge("type", type));
+        criteria.add(Restrictions.eq("type", type));
         if (numWeek > 0) {
             List<TopListEntity> topListEntities = criteria.list();
             if (topListEntities.size() >= numWeek)
@@ -87,7 +87,7 @@ public class TopRepositoryImpl implements TopRepository {
     public int getNumWeekFromTimestamp(int type, Timestamp timestamp) {
         Session session = sessionFactory.getCurrentSession();
         Criteria criteria = session.createCriteria(TopListEntity.class);
-        criteria.add(Restrictions.ge("type", type));
+        criteria.add(Restrictions.eq("type", type));
         List<TopListEntity> topListEntities = criteria.list();
         int i = 0;
         if (timestamp != null) {

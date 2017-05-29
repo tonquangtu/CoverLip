@@ -49,7 +49,7 @@ $(document).ready(function () {
         return '<li id="li' + i + '" class="top-search" rel="' + i + '">' +
             '<a class="tkw" href="' + item.fullLink + '">' +
             '<span class="top-number top-number-' + (i + 1) + '">' + (i + 1) + '</span>' +
-            '<span>' + item.videoName + '</span>' +
+            '<span>' + compactNameCover(item.videoName, 13) + '</span>' +
             '</a>' +
             '</li>';
     }
@@ -127,15 +127,15 @@ $(document).ready(function () {
         return '<li class="item">'+
             '<div class="one_item">'+
             '<a class="image_item" href="">'+
-            '<img class="thumb" src="'+item.video.videoThumbnailLink+'" alt="'+item.videoName+'" width="38.5" height="38.5">'+
+            '<img class="thumb" src="'+item.video.videoThumbnailLink+'" alt="" width="38.5" height="38.5">'+
             '</a>'+
             '<div class="info-table">'+
             '<h4 class="name_item">'+
-            '<a href="'+item.fullLink+'" title="'+item.videoName+'">'+item.videoName+'</a>'+
+            '<a href="'+item.fullLink+'" title="'+item.videoName+'">'+compactNameCover(item.videoName, 12)+'</a>'+
             '</h4>'+
             '<div class="member_post">'+
             '<a href="/account/' + item.video.account.id+'" title="Nghệ sĩ '+item.video.account.fullname+'">'+
-            '<img src="'+item.video.account.avatarThumbnail+'" class="img-circle avatar_member">'+
+            '<img src="'+item.video.account.avatarThumbnail+'" class="img-circle avatar_member1">'+
             '<p>'+item.video.account.fullname+'</p>'+
             '</a>'+
             '</div>'+
@@ -169,5 +169,15 @@ $(document).ready(function () {
                 temp.removeClass('active');
             }
         });
+    }
+
+    function compactNameCover(string, numWord) {
+        var arr = string.split(' ');
+        if (numWord < arr.length) {
+            arr = arr.slice(0, numWord);
+            return arr.join(' ') + '...';
+        } else {
+            return string;
+        }
     }
 });

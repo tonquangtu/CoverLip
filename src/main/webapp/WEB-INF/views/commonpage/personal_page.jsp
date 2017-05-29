@@ -46,7 +46,7 @@
                     <a href="/personal/information" class="selected">Thông Tin</a>
                     <a href="/personal/change-password">Thay Đổi Mật Khẩu</a>
                     <a href="/personal/upload">Upload</a>
-                    <a href="/user/${userInfo.account.id}">Kênh Của Tôi</a>
+                    <a href="/account/${userInfo.account.id}">Kênh Của Tôi</a>
                     <a href="/personal/my-cover">Cover Đã Đăng</a>
                     <a href="/personal/my-lipsync">LipSync Đã Đăng</a>
                     <a href="/personal/my-playlist">Playlist Đã Đăng</a>

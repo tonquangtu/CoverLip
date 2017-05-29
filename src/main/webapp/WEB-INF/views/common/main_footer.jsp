@@ -25,14 +25,13 @@
         </div>
         <div>
             <i class="fa fa-envelope"></i>
-            <p><a href="mailto:support@clteam.com">support@clteam.com</a></p>
+            <p><a href="mailto:support@clteam.com">clteam95@gmail.com</a></p>
         </div>
     </div>
     <div class="footer-right">
         <p class="footer-company-about">
             <span>Thông tin về CoverLip</span>
-            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus
-            vehicula sit amet.
+            CoverLip là một website chia sẻ video về các bản cover, lip sync, là nơi mọi người có thể thể hiện tài năng âm nhạc, biểu diễn.
         </p>
         <div class="footer-icons">
             <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>

@@ -20,8 +20,6 @@
 
     <link rel="stylesheet" href="../../../resources/styles/main_header_style.css">
 
-    <script src="../../../resources/scripts/main_header_script.js"></script>
-
     <link rel="stylesheet" href="../../../resources/styles/main_footer_style.css">
 
     <!--Lib video player-->

@@ -50,7 +50,7 @@
                                     </div>
                                 </c:if>
                             </div>
-                            <form id="loginForm" action="https://localhost:8443/perform_login" method="POST">
+                            <form id="loginForm" action="/perform_login" method="POST">
                                 <%--<form method="POST" action="/perform_login">--%>
                                 <%-- We have 4 ways to using csrf--%>
                                 <%-- 1. using <sec:csrfInput />--%>

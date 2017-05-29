@@ -26,11 +26,15 @@
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/coverlip?UseUnicode=true&amp;characterEncoding=utf8" />
         <!--<property name="url" value="jdbc:mysql://sql3.freemysqlhosting.net:3306/sql3177066?UseUnicode=true&amp;characterEncoding=utf8" />-->
+        <!--<property name="url" value="jdbc:mysql://sql12.freemysqlhosting.net:3306/?UseUnicode=true&amp;characterEncoding=utf8" />-->
 
         <!--<property name="username" value="sql3177066" />-->
         <!--<property name="password" value="iVL9cSdWcD" />-->
         <property name="username" value="thanhtung"/>
         <property name="password" value="123456789"/>
+        <!--<property name="username" value="sql12177188" />-->
+        <!--<property name="password" value="ZmYtccRhlP" />-->
+
     </bean>
 
     <!-- Session Factory Declaration -->

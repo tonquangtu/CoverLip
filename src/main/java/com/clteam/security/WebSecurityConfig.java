@@ -69,7 +69,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // http.csrf().disable();
         http
 ////                  If only using https
-                 .requiresChannel().anyRequest().requiresSecure()
+//                 .requiresChannel().anyRequest().requiresSecure()
 //                // If only using http
 //                // .requiresChannel().anyRequest().requiresInsecure()
 //
@@ -93,7 +93,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .requiresInsecure()
 
 
-        .and()
+//        .and()
                 //Authorize request
                 .authorizeRequests()
                 .antMatchers("/admin/**").hasRole(SecurityConstant.ADMIN)

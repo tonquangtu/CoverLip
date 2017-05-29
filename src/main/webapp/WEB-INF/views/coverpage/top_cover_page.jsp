@@ -138,7 +138,7 @@ To change this template use File | Settings | File Templates.
         <div class="col-md-4" style="padding-left:30px; padding-right:0">
             <div id="hot_list" class="border_common">
                 <div class="box_title">
-                    <h2 class="name"><a href="/hot-cover">Hot PlayList</a></h2>
+                    <h3 class="name"><a href="/hot-cover">HOT PLAYLIST</a></h3>
                 </div>
                 <div class="box_content">
                     <ul class="list_playlist_table">

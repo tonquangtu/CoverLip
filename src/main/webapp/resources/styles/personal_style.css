@@ -41,7 +41,8 @@ a:hover{
     color:#3c3c3c;
 }
 .menu a:hover, .selected{
-    color: #ff6d00 !important;
+    /*color: #ff6d00 !important;*/
+    color:#1abc9c !important;
     background:#f3f3f3;
 }
 .main_person{
