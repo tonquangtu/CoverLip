@@ -31,7 +31,7 @@
                         </div>
                     </a>
                 </div>
-                <c:if test="${i.index%3==2||idolList.size()-1==i.index}">
+                <c:if test="${i.index%3==2||fanList.size()-1==i.index}">
                     </div>
                 </c:if>
             </c:if>
