@@ -155,6 +155,7 @@ public class SearchRepositoryImpl  {
 //        fullTextQuery.enableFullTextFilter("videoFilter");
 //        fullTextQuery.enableFullTextFilter("videoFilter").setParameter("type", 1);
 
+
         fullTextQuery.setMaxResults(limit);
         List<LipSyncInfoEntity> results = fullTextQuery.list();
         System.out.println("Tim theo user: " + results.size());
