@@ -26,7 +26,7 @@
       <configuration>
         <datasource-map>
           <unit-entry name="a.xml" value="dd719508-4e1c-499b-a5b3-4dae52bc158b" />
-          <unit-entry name="sessionFactory" value="2fc81469-b1fd-45e0-8bc0-09198f0e48ad" />
+          <unit-entry name="sessionFactory" value="dataSource" />
         </datasource-map>
         <naming-strategy-map />
       </configuration>
@@ -131,6 +131,7 @@
     <orderEntry type="library" name="Maven: org.springframework.social:spring-social-web:1.1.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.social:spring-social-security:1.1.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.social:spring-social-facebook:3.0.0.M1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.social:spring-social-google:1.0.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.social:spring-social-twitter:1.1.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-crypto:3.2.8.RELEASE" level="project" />
