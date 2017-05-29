@@ -1,7 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0b42ca8-e3c9-41fc-bfaa-36ce203b6f1e" name="Default" comment="" />
+    <list default="true" id="a0b42ca8-e3c9-41fc-bfaa-36ce203b6f1e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.AccountEntity/_0.fdt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.AccountEntity/_0.fdx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.AccountEntity/_0.fnm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.AccountEntity/_0.frq" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.AccountEntity/_0.nrm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.AccountEntity/_0.prx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.AccountEntity/_0.tii" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.AccountEntity/_0.tis" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.AccountEntity/segments.gen" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.AccountEntity/segments_2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.CoverInfoEntity/_0.fdt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.CoverInfoEntity/_0.fdx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.CoverInfoEntity/_0.fnm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.CoverInfoEntity/_0.frq" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.CoverInfoEntity/_0.nrm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.CoverInfoEntity/_0.prx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.CoverInfoEntity/_0.tii" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.CoverInfoEntity/_0.tis" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.CoverInfoEntity/segments.gen" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.CoverInfoEntity/segments_2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.LipSyncInfoEntity/_0.fdt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.LipSyncInfoEntity/_0.fdx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.LipSyncInfoEntity/_0.fnm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.LipSyncInfoEntity/_0.frq" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.LipSyncInfoEntity/_0.nrm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.LipSyncInfoEntity/_0.prx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.LipSyncInfoEntity/_0.tii" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.LipSyncInfoEntity/_0.tis" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.LipSyncInfoEntity/segments.gen" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.LipSyncInfoEntity/segments_2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.LipSyncTemplateInfoEntity/_0.fdt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.LipSyncTemplateInfoEntity/_0.fdx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.LipSyncTemplateInfoEntity/_0.fnm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.LipSyncTemplateInfoEntity/_0.frq" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.LipSyncTemplateInfoEntity/_0.nrm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.LipSyncTemplateInfoEntity/_0.prx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.LipSyncTemplateInfoEntity/_0.tii" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.LipSyncTemplateInfoEntity/_0.tis" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.LipSyncTemplateInfoEntity/segments.gen" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.LipSyncTemplateInfoEntity/segments_2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.VideoInfoEntity/_0.fdt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.VideoInfoEntity/_0.fdx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.VideoInfoEntity/_0.fnm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.VideoInfoEntity/_0.frq" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.VideoInfoEntity/_0.nrm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.VideoInfoEntity/_0.prx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.VideoInfoEntity/_0.tii" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.VideoInfoEntity/_0.tis" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.VideoInfoEntity/segments.gen" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/$CONF{hibernate.search.default.indexBase}/com.clteam.dataobject.VideoInfoEntity/segments_2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Procfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CoverLip.com.iml" afterPath="$PROJECT_DIR$/CoverLip.com.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/TestSearchController.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/TestSearchController.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -121,7 +176,18 @@
     <favorites_list name="CoverLipCopy" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-154">
+              <caret line="383" column="28" lean-forward="true" selection-start-line="383" selection-start-column="28" selection-end-line="383" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -310,6 +376,75 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="CoverLipCopy">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="CoverLipCopy">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/main">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="webapp">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="WEB-INF">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="CoverLipCopy">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/main">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="webapp">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="CoverLipCopy">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/main">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -807,75 +942,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="CoverLipCopy">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="CoverLipCopy">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src/main">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="webapp">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="WEB-INF">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="CoverLipCopy">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src/main">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="webapp">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="CoverLipCopy">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src/main">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1980,6 +2046,7 @@
       <workItem from="1495849219122" duration="25117000" />
       <workItem from="1495933533858" duration="8267000" />
       <workItem from="1495953012141" duration="8943000" />
+      <workItem from="1496029653273" duration="20000" />
     </task>
     <task id="LOCAL-00001" summary="init project coverlip&#10;Init structure for project&#10;by Quang Tu">
       <created>1490494974394</created>
@@ -1992,7 +2059,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="834688000" />
+    <option name="totallyTimeSpent" value="834708000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2005,6 +2072,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2014,62 +2082,34 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23676248" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24886535" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5531915" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42553192" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38297874" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35022694" sideWeight="0.3586626" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6686838" sideWeight="0.55482817" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26399395" sideWeight="0.44517186" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27155825" sideWeight="0.42389524" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54664487" sideWeight="0.5060514" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23676248" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24886535" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5531915" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44680852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42553192" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38297874" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35022694" sideWeight="0.3586626" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30030257" sideWeight="0.55482817" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30484116" sideWeight="0.55482817" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26399395" sideWeight="0.44517186" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27155825" sideWeight="0.42389524" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44680852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2140,18 +2180,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="dbDummy://dbtable:/db1fae61/2fc81469-b1fd-45e0-8bc0-09198f0e48ad/coverlip.lip_sync_info">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/repositories/impl/UserRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -2488,7 +2516,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2527,6 +2554,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="781">
           <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-154">
+          <caret line="383" column="28" lean-forward="true" selection-start-line="383" selection-start-column="28" selection-end-line="383" selection-end-column="28" />
           <folding />
         </state>
       </provider>
