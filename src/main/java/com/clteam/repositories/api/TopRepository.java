@@ -35,4 +35,6 @@ public interface TopRepository {
     int setFollowIdol(int acoundId, int topId, Timestamp timestampFollow);
 
     int unFollowIdol(int acoundId, int topId);
+
+    int checkFollowIdol(int acoundId, int acoundFollowId);
 }

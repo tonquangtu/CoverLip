@@ -132,6 +132,7 @@ public class TopRepositoryImpl implements TopRepository {
         SimpleExpression simpleExpression2 =  Restrictions.eq("followedAccountId", topId);
         List<IdolFollowingEntity> idolFollowingEntities = criteria.add(Restrictions.and(simpleExpression1, simpleExpression2)).list();
         if (idolFollowingEntities != null && idolFollowingEntities.size() > 0){
+            System.out.println("trung");
             return 0;
         }
 
@@ -185,9 +186,27 @@ public class TopRepositoryImpl implements TopRepository {
             return 1;
         }
         else{
+            System.out.println("unfollow");
             return 0;
         }
 
+    }
+
+    @Override
+    public int checkFollowIdol(int acoundId, int acoundFollowId) {
+
+        Session session = sessionFactory.getCurrentSession();
+
+        Criteria criteria = session.createCriteria(IdolFollowingEntity.class);
+        SimpleExpression simpleExpression1 =  Restrictions.eq("accountId", acoundId);
+        SimpleExpression simpleExpression2 =  Restrictions.eq("followedAccountId", acoundFollowId);
+        List<IdolFollowingEntity> idolFollowingEntities = criteria.add(Restrictions.and(simpleExpression1, simpleExpression2)).list();
+        if (idolFollowingEntities != null && idolFollowingEntities.size() > 0){
+            return 1;
+        }
+        else{
+            return 0;
+        }
     }
 
 

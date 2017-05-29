@@ -1,18 +1,18 @@
 $(document).ready(function () {
-    
-    var buttonFollow = $(".btn-follow");
+
+    var buttonFollow = $("#btn-follow");
     var urlFollowIdol = "/follow_idol"
     var status = 1;
     buttonFollow.click(function () {
-        var idolId = $(this).attr("topIdolId");
+        var idolId = $(this).attr("accountFollowId");
         var statusFollow = $(this).attr("statusFollow");
-        var numFollow = $(this).parent().children(".idol_info").children("p").children("span");
+        //alert("trung");
         if (status === 1){
-            ajaxFollowIdol(idolId, statusFollow, $(this), numFollow);
+            ajaxFollowIdol(idolId, statusFollow, $(this));
         }
     });
-    
-    function ajaxFollowIdol(idolId, statusFollow, button, numFollow) {
+
+    function ajaxFollowIdol(idolId, statusFollow, button) {
         $.ajax({
             type: "get",
             url: urlFollowIdol,
@@ -25,41 +25,33 @@ $(document).ready(function () {
                 if (data === 1) {
                     if (statusFollow === "0") {
                         button.attr("statusFollow", "1");
-                        follow(button, numFollow)
-
+                        follow(button)
                     }
                     else {
                         button.attr("statusFollow", "0");
-                        unFollow(button, numFollow);
+                        unFollow(button);
                     }
                 }
                 else {
                     // window.location = "/WEB-INF/views/commonpage/error_page.jsp";
                 }
-
             }
         })
-
     }
 
-    function follow(button, numFollow) {
+    function follow(button) {
         button.text("Đã theo dõi");
-        button.css("color", "#4cae4c");
+        button.css("color", "#00c853");
         button.css("background-color", "#ffffff");
-        button.css("border-color", "#4cae4c");
-        var text = numFollow.text();
-        numFollow.text(parseInt(text) + 1);
+        button.css("border-color", "#00c853");
     }
 
-    function unFollow(button, numFollow) {
-        button.text("Theo dõi");
+    function unFollow(button) {
+        button.text("Theo dõi Idol");
         button.css("color", "#ffffff");
-        button.css("background-color", "#5cb85c");
-        button.css("border-color", "#4cae4c");
-        var text = numFollow.text()
-        if (text > 0){
-            numFollow.text(text - 1);
-        }
-
+        button.css("background-color", "#00c853");
+        button.css("border-color", "#00c853");
     }
-});
+});/**
+ * Created by mrgnu on 29/05/2017.
+ */
