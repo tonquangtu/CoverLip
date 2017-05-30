@@ -306,7 +306,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <c:if test="${(i.index+3)%4==3}">
+                                <c:if test="${(i.index+3)%4==3 || i.index ==topIdolList.size()-1}">
                                     </div>
                                 </c:if>
                             </c:if>

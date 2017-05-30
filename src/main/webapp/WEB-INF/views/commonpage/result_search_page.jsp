@@ -109,8 +109,8 @@
                     </div>
                 </c:if>
                 <c:if test="${resultType eq 1|| resultType eq 2}">
-                    <div>
-                        <div class="pull-right">
+                    <div style="text-align:center">
+                        <div>
                             <div class="pagination">
                                 <c:if test="${currentPage > 1}">
                                     <a href="${urlSearch}&resultType=${resultType}&page=1">Đầu</a>
@@ -144,7 +144,8 @@
                                 </c:choose>
 
                                 <c:forEach varStatus="indexPage" begin="${beginPage}" end="${endPage}">
-                                    <a href="${urlSearch}&resultType=${resultType}&page=${indexPage.index}" class="${indexPage.index == currentPage ? 'active' : ''}">${indexPage.index}</a>
+                                    <a href="${urlSearch}&resultType=${resultType}&page=${indexPage.index}"
+                                       class="${indexPage.index == currentPage ? 'active' : ''}">${indexPage.index}</a>
                                 </c:forEach>
                                 <c:if test="${currentPage < lastPage}">
                                     <a href="${urlSearch}&resultType=${resultType}&page=${currentPage+1}">&raquo;</a>

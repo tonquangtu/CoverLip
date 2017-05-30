@@ -173,3 +173,9 @@
     font-size: 18px !important;
 }
 
+.content_card{
+    margin-top:-3px;
+}
+.name_member{
+    margin-top:8px;
+}

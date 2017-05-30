@@ -97,7 +97,7 @@ public class VideoWrapper implements Comparable<VideoWrapper>{
             String newOwnerName = CommonUtils.transformToSluxSearch(video.getAccount().getFullname());
             String newVideoName = CommonUtils.transformToSluxSearch(videoName);
 
-            fullLink += newVideoName + "-" + newOwnerName + "/" + video.getId();
+            fullLink += trimStrangerCharacter(newVideoName) + "-" + newOwnerName + "/" + video.getId();
 //            System.out.println("Full link video: " + fullLink);
 
         }catch (Exception e) {
@@ -105,6 +105,15 @@ public class VideoWrapper implements Comparable<VideoWrapper>{
         }
 
         return fullLink;
+    }
+    public String trimStrangerCharacter(String aString) {
+
+        if (aString != null && aString.length() > 0) {
+
+            aString = aString.replaceAll("\\|", " ");
+        }
+        return aString;
+
     }
 
     public void setFullLink() {
