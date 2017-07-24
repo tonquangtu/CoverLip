@@ -222,8 +222,6 @@
         <!-- End youtube module-->
 
 
-
-
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core</artifactId>
@@ -278,11 +276,11 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.springframework.social/spring-social-facebook -->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.social</groupId>-->
-            <!--<artifactId>spring-social-facebook</artifactId>-->
-            <!--<version>${spring.social.facebook.version}</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-facebook</artifactId>
+            <version>${spring.social.facebook.version}</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework.social/spring-social-google -->
         <dependency>
             <groupId>org.springframework.social</groupId>

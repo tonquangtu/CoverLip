@@ -203,6 +203,14 @@ public class TestSearchController {
         return modelAndView;
     }
 
+    @RequestMapping("/test-csrf")
+    public ModelAndView testCsrf() {
+
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("/test/attack_csrf");
+        return modelAndView;
+    }
+
 
 
 }

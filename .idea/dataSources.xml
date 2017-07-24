@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="sql8177212@sql8.freemysqlhosting.net" uuid="2fc81469-b1fd-45e0-8bc0-09198f0e48ad">
+    <data-source source="LOCAL" name="coverlip@localhost" uuid="2fc81469-b1fd-45e0-8bc0-09198f0e48ad">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://sql8.freemysqlhosting.net:3306/sql8177212</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/coverlip</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />

@@ -37,6 +37,7 @@ public class CoverHomePageController {
     public String redirectToCoverPage(){
         return "redirect:/cover";
     }
+
     @RequestMapping("/cover")
     public ModelAndView visitHomeCoverPage(HttpServletResponse response) {
         List<Cover> newCoverList = coverService.getListNewCover(12);
@@ -65,11 +66,13 @@ public class CoverHomePageController {
 //        //
         return modelAndView;
     }
+
     @RequestMapping(value = "/top-cover/get-num-week")
     public @ResponseBody int getNumWeek(@RequestParam String timestamp){
         long time = Long.parseLong(timestamp);
         return coverService.getNumWeekFromTimestamp(new Timestamp(time));
     }
+
     @RequestMapping("/top-cover/{stringTitle}")
     public ModelAndView visitTopCoverPage(@PathVariable String stringTitle) {
         int numWeek = 0;
@@ -108,6 +111,8 @@ public class CoverHomePageController {
     public ModelAndView visitTopCoverPage(){
         return visitTopCoverPage("Bang-Xep-Hang-0");
     }
+
+
     @RequestMapping("/personal")
     public String visitPersonalInfomationPage() {
         return "redirect:/personal/information";

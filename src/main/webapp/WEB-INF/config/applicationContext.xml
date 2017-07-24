@@ -25,14 +25,14 @@
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <!--<property name="url" value="jdbc:mysql://localhost:3306/coverlip?UseUnicode=true&amp;characterEncoding=utf8" />-->
-        <property name="url" value="jdbc:mysql://sql8.freemysqlhosting.net:3306/sql8177212?UseUnicode=true&amp;characterEncoding=utf8" />
+        <property name="url" value="jdbc:mysql://sql3.freemysqlhosting.net:3306/sql3186828?UseUnicode=true&amp;characterEncoding=utf8" />
 
         <!--<property name="username" value="sql3177066" />-->
         <!--<property name="password" value="iVL9cSdWcD" />-->
-        <!--<property name="username" value="thanhtung"/>-->
+        <!--<property name="username" value="quangtu"/>-->
         <!--<property name="password" value="123456789"/>-->
-        <property name="username" value="sql8177212" />
-        <property name="password" value="akHdEyCyva" />
+        <property name="username" value="sql3186828" />
+        <property name="password" value="7vZCYvQznd" />
 
     </bean>
 
@@ -46,7 +46,8 @@
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
                 <!--<prop key="hibernate.show_sql">true</prop>-->
                 <prop key="hibernate.enable_lazy_load_no_trans">true</prop>
-                <prop key="hibernate.default_schema">sql8177212</prop>
+                <!--<prop key="hibernate.default_schema">coverlip</prop>-->
+                <prop key="hibernate.default_schema">sql3186828</prop>
                 <prop key="format_sql">true</prop>
                 <prop key="use_sql_comments">true</prop>
                 <prop key="hibernate.hbm2ddl.auto">validate</prop>
