@@ -2,20 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0b42ca8-e3c9-41fc-bfaa-36ce203b6f1e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_social_spring_social_facebook_3_0_0_M1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/test/attack_csrf.jsp" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_social_spring_social_facebook_3_0_0_M1.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/CoverLip_com_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/CoverLip_com_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/2fc81469-b1fd-45e0-8bc0-09198f0e48ad.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/2fc81469-b1fd-45e0-8bc0-09198f0e48ad.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CoverLip.com.iml" afterPath="$PROJECT_DIR$/CoverLip.com.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/TestSearchController.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/TestSearchController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/CoverHomePageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/CoverHomePageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/security/WebSecurityConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/security/WebSecurityConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/clteam/security/social/SocialConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/clteam/security/social/SocialConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/applicationContext.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/applicationContext.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -113,12 +105,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/applicationContext.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="49" column="70" lean-forward="true" selection-start-line="49" selection-start-column="70" selection-end-line="49" selection-end-column="70" />
+            <state relative-caret-position="208">
+              <caret line="45" column="59" lean-forward="false" selection-start-line="45" selection-start-column="59" selection-end-line="45" selection-end-column="59" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="282" column="28" lean-forward="false" selection-start-line="282" selection-start-column="28" selection-end-line="282" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SocialConfig.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/security/social/SocialConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="223">
+              <caret line="79" column="25" lean-forward="true" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
+              <folding>
+                <element signature="e#2095#2096#0" expanded="true" />
+                <element signature="e#2154#2155#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -139,30 +154,6 @@
             <state relative-caret-position="68">
               <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="11" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CoverHomePageController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/CoverHomePageController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1299#1300#0" expanded="false" />
-                <element signature="e#1339#1340#0" expanded="false" />
-                <element signature="e#1762#1778#0" expanded="false" />
-                <element signature="e#3503#3519#0" expanded="false" />
-                <element signature="e#4391#4392#0" expanded="false" />
-                <element signature="e#4450#4451#0" expanded="false" />
-                <element signature="e#4535#4536#0" expanded="false" />
-                <element signature="e#4590#4591#0" expanded="false" />
-                <element signature="e#4843#4859#0" expanded="false" />
-                <element signature="e#8259#8260#0" expanded="false" />
-                <element signature="e#8323#8324#0" expanded="false" />
-                <element signature="e#8673#8689#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -302,14 +293,14 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/2fc81469-b1fd-45e0-8bc0-09198f0e48ad/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/clteam/model/VideoWrapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/clteam/security/WebSecurityConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/clteam/security/social/SocialConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/clteam/security/AuthenticationSuccessHandler.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/clteam/controllers/coverpagecontroller/CoverHomePageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/clteam/controllers/TestSearchController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/test/attack_csrf.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/scripts/personal_script.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/clteam/security/social/SocialConfig.java" />
       </list>
     </option>
   </component>
@@ -683,7 +674,7 @@
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="getThumbnail&#9;PSI&#9;JAVA://com.clteam.model.Video#getVideoThumbnailLink&#10;getThumb&#9;PSI&#9;JAVA://com.clteam.model.Video#getVideoThumbnailLink&#10;getThum&#9;PSI&#9;JAVA://com.clteam.dataobject.VideoInfoEntity#getVideoThumbnailLink&#10;fullLink&#9;PSI&#9;JAVA://com.clteam.model.VideoWrapper#fullLink&#10;searchLipSync&#9;PSI&#9;JAVA://com.clteam.repositories.api.LipSyncRepository#searchLipSyncByName&#10;OF&#9;FILE&#9;file://F:/Java Web Project/CoverLip/.idea/libraries/Maven__org_hibernate_hibernate_core_4_1_0_Final.xml" />
+    <property name="SearchEverywhereHistoryKey" value="SocialC&#9;FILE&#9;file://F:/Java Web Project/CoverLip/src/main/java/com/clteam/security/social/SocialConfig.java&#10;getThumbnail&#9;PSI&#9;JAVA://com.clteam.model.Video#getVideoThumbnailLink&#10;getThumb&#9;PSI&#9;JAVA://com.clteam.model.Video#getVideoThumbnailLink&#10;getThum&#9;PSI&#9;JAVA://com.clteam.dataobject.VideoInfoEntity#getVideoThumbnailLink&#10;fullLink&#9;PSI&#9;JAVA://com.clteam.model.VideoWrapper#fullLink&#10;searchLipSync&#9;PSI&#9;JAVA://com.clteam.repositories.api.LipSyncRepository#searchLipSyncByName&#10;OF&#9;FILE&#9;file://F:/Java Web Project/CoverLip/.idea/libraries/Maven__org_hibernate_hibernate_core_4_1_0_Final.xml" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -1786,7 +1777,7 @@
       <workItem from="1496761963371" duration="18000" />
       <workItem from="1497017343624" duration="134000" />
       <workItem from="1497268979722" duration="659000" />
-      <workItem from="1500878611290" duration="2890000" />
+      <workItem from="1500878611290" duration="4546000" />
     </task>
     <task id="LOCAL-00001" summary="init project coverlip&#10;Init structure for project&#10;by Quang Tu">
       <created>1490494974394</created>
@@ -1799,7 +1790,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="908818000" />
+    <option name="totallyTimeSpent" value="910474000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1812,6 +1803,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1833,9 +1825,9 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42553192" sideWeight="0.4908397" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42553192" sideWeight="0.4908397" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3420622" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3420622" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35022694" sideWeight="0.3586626" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28244275" sideWeight="0.55482817" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2091,13 +2083,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/security/social/SocialConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="57" column="25" lean-forward="false" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/security/constant/SecurityConstant.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -2208,17 +2193,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6086">
-          <caret line="358" column="43" lean-forward="false" selection-start-line="358" selection-start-column="43" selection-end-line="358" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/commonpage/video_player_page.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2327,9 +2306,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="49" column="70" lean-forward="true" selection-start-line="49" selection-start-column="70" selection-end-line="49" selection-end-column="70" />
+        <state relative-caret-position="208">
+          <caret line="45" column="59" lean-forward="false" selection-start-line="45" selection-start-column="59" selection-end-line="45" selection-end-column="59" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="282" column="28" lean-forward="false" selection-start-line="282" selection-start-column="28" selection-end-line="282" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/clteam/security/social/SocialConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="79" column="25" lean-forward="true" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
+          <folding>
+            <element signature="e#2095#2096#0" expanded="true" />
+            <element signature="e#2154#2155#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
