@@ -69,9 +69,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // http.csrf().disable();
         http
 ////                  If only using https
-                 .requiresChannel().anyRequest().requiresSecure()
+//                 .requiresChannel().anyRequest().requiresSecure()
 //                // If only using http
-//                // .requiresChannel().anyRequest().requiresInsecure()
+                 .requiresChannel().anyRequest().requiresInsecure()
 //
 //                //Mixing http and https
 ////                .requiresChannel()
